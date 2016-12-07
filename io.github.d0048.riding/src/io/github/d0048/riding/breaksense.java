@@ -146,22 +146,28 @@ public class breaksense implements Listener{
 public void onBlockPlace(BlockPlaceEvent e)  
 {  int x,y,z;
     
-    if(e.getBlock().getType() == Material.DIAMOND_BLOCK)  
-    {   if(isInList(e.getPlayer())==true){//如果发出者在列表里，就执行下面的内容（单独执行不会报错，工作正常）
-        e.setCancelled(true);
-        //x=e.getBlock().getLocation().getBlockX();
-        //y=e.getBlock().getLocation().getBlockY();
-        //z=e.getBlock().getLocation().getBlockZ();
+    if(e.getBlock().getType() == Material.DIAMOND_BLOCK){  
+        if(isInList(e.getPlayer())==true){//如果发出者在列表里，就执行下面的内容（单独执行不会报错，工作正常）
+        //e.getBlock().getLocation().
         e.getPlayer().getWorld().createExplosion(e.getBlock().getLocation(), ExplodeSize);
-        //getLogger().log(Level.INFO, "{0}\u5728{1}", new Object[]{e.getPlayer(), e.getBlock().getLocation()}+"放置了钻石块并且炸了");
         System.out.print(e.getPlayer()+"在"+e.getBlock().getLocation()+"放置了"+e.getBlock()+"并且炸了");
         return;  
        }
         return;
-    }  
-    return;
+    }
     
-      
+        if(e.getBlock().getType() == Material.DIAMOND_BLOCK){  
+        if(isInList(e.getPlayer())==true){//如果发出者在列表里，就执行下面的内容（单独执行不会报错，工作正常）
+        e.setCancelled(true);
+        e.getPlayer().getWorld().createExplosion(e.getBlock().getLocation(), ExplodeSize);
+        System.out.print(e.getPlayer()+"在"+e.getBlock().getLocation()+"放置了"+e.getBlock()+"并且炸了");
+        return;  
+       }
+        return;
+    }
+        
+        
+    return;
 }
 
     //下面是getter和setter
