@@ -148,25 +148,120 @@ public class breaksense implements Listener{
        }
        return false;
    }
+      
+      void fourDirectionGenerate(){
+          
+      }
    
 @EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = true)  //这就是我说的那个监听器了，事件发生时会触发下面这个方法
 public void onBlockPlace(BlockPlaceEvent e)  
-{   int x,y,z;
-    Location playerLocation=e.getPlayer().getLocation(),blockLocation=e.getBlock().getLocation();
+{   int x=e.getBlock().getX(),
+        y=e.getBlock().getY(),
+        z=e.getBlock().getZ();
+    Location playerLocation=e.getPlayer().getLocation(),
+             blockLocation=e.getBlock().getLocation();
+    
     //方块砖头
     if(e.getBlock().getType() == Material.GLASS){  
         if(isInList(e.getPlayer())==true){//如果发出者在列表里，就执行下面的内容（单独执行不会报错，工作正常）
-            Block [][]wall=new Block[Wall_Size_X][Wall_Size_Y];
+            Location [][]wall=new Location[Wall_Size_X][Wall_Size_Y];
+            Location middle=new Location(e.getBlock().getWorld(),x,y,z),
+                     up=new Location(e.getBlock().getWorld(),x,y,z),
+                     down=new Location(e.getBlock().getWorld(),x,y,z),
+                     left=new Location(e.getBlock().getWorld(),x,y,z),
+                     right=new Location(e.getBlock().getWorld(),x,y,z);
             
+            for(int ix=0;ix<Wall_Size_X;ix++){//随便初始化一下一下，记得别指向同一个玩意导致指针相同，而改一个全改
+                for(int iy=0;iy<Wall_Size_X;iy++){
+                    wall[ix][iy]=new Location(e.getBlock().getWorld(),x,y,z);
+                }
+            }
+            //解决方案1
+            /*if(playerLocation.getX()-blockLocation.getBlockX()>0.5){//如果在后面,>,而且超过一半
+                middle.setX(e.getBlock().getX()-3);
+                getLogger().info("x-3");
+            }
+            //else if(playerLocation.getX()==blockLocation.getBlockX()){}//纯粹是为了占用掉这种情况
+            else if(playerLocation.getX()-blockLocation.getBlockX()<-0.5){
+                middle.setX(e.getBlock().getX()+3);
+                getLogger().info("X+3");
+            }
+            else{}
             
-            //e.getBlock().setType(Material.AIR);
-            //e.getBlock().getLocation().
-            e.getPlayer().getWorld().createExplosion(e.getBlock().getLocation(), ExplodeSize);
-            getLogger().info(ChatColor.GREEN+e.getPlayer().toString()+"在"+e.getBlock().getLocation()+"放置了"+e.getBlock()+"并且炸了");
+            if(playerLocation.getZ()-blockLocation.getBlockZ()>0.5){//如果在左面,>
+                middle.setZ(e.getBlock().getZ()-3);
+                getLogger().info("Z-3");
+            }
+            //else if(playerLocation.getZ()==blockLocation.getBlockZ()){}//纯粹是为了占用掉这种情况
+            if(playerLocation.getZ()-blockLocation.getBlockZ()<-0.5){
+                middle.setZ(e.getBlock().getZ()+3);
+                getLogger().info("Z+3");
+            }
+            else{}
+            //这之后middle就已经作为护盾中心了*/
+            
+            //解决方案2
+            /*
+            Double disX=Math.abs(blockLocation.getBlockX()-playerLocation.getX()),
+                   disY=Math.abs(blockLocation.getBlockY()-playerLocation.getY()),
+                   disZ=Math.abs(blockLocation.getBlockZ()-playerLocation.getZ());
+            getLogger().info(disX+","+disY+","+disZ);
+            //X对称
+            if(playerLocation.getX()<blockLocation.getBlockX()){
+                middle.setX(e.getBlock().getX()+disX);
+                getLogger().info("x+"+disX);
+            }
+            else if(playerLocation.getX()==blockLocation.getBlockX()){}
+            else{
+                middle.setX(e.getBlock().getX()-disX);
+                getLogger().info("x-"+disX);
+            }
+            //Y对称
+            if(playerLocation.getY()<blockLocation.getBlockY()){
+                middle.setY(e.getBlock().getY()+disY);
+                getLogger().info("Y+"+disY);
+            }
+            else if(playerLocation.getY()==blockLocation.getBlockY()){}
+            else{
+                middle.setY(e.getBlock().getY()+1);
+                getLogger().info("Y+"+1);
+            }
+            //Z对称
+            if(playerLocation.getZ()<blockLocation.getBlockZ()){
+                middle.setZ(e.getBlock().getZ()+disZ);
+                getLogger().info("Z+"+disZ);
+            }
+            else if(playerLocation.getZ()==blockLocation.getBlockZ()){}
+            else{
+                middle.setZ(e.getBlock().getZ()-disZ);
+                getLogger().info("Z("+e.getBlock().getZ()+")-"+disZ);
+            }
+            //middle.setY(blockLocation.getBlockY()*2-playerLocation.getY());
+            //middle.setZ(blockLocation.getBlockZ()*2-playerLocation.getZ());
+            //这之后middle就已经作为护盾中心了*/
+            //解决方案3(最佳)
+            Double disX=blockLocation.getBlockX()-playerLocation.getX(),
+                   disY=blockLocation.getBlockY()-playerLocation.getY(),
+                   disZ=blockLocation.getBlockZ()-playerLocation.getZ();
+            getLogger().info(disX+","+disY+","+disZ);
+            middle.setX(e.getBlock().getX()+disX);
+            middle.setY(e.getBlock().getY()+disY);
+            middle.setZ(e.getBlock().getZ()+disZ);
+            //middle.setY(blockLocation.getBlockY()*2-playerLocation.getY());
+            //middle.setZ(blockLocation.getBlockZ()*2-playerLocation.getZ());
+            //这之后middle就已经作为护盾中心了
+            middle.getBlock().setType(Material.GLASS);
+            up.getBlock().setType(Material.GLASS);
+            down.getBlock().setType(Material.GLASS);
+            left.getBlock().setType(Material.GLASS);
+            right.getBlock().setType(Material.GLASS);
+            getLogger().info(e.getBlock().getLocation()+"到"+middle);
+
             return;  
         }
         return;
     }
+    //貌似上面那个加上去之后下面这个就废了。。
     
     //方块TNT,爆炸
     if(e.getBlock().getType() == Material.TNT){  

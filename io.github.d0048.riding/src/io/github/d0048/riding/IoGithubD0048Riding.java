@@ -75,6 +75,9 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
                 if(breaksense1.addtoPlayerList((Player)sender)==false){//鉴于这里也会出相同的错误，我判断就是那个方法的问题(已解决)
                     sender.sendMessage("玩家已满或已加入");//这里是报错至玩家
                     }
+                else{
+                    sender.sendMessage("成功加入"+sender.getName()+"到玩家列表");
+                }
             }
             else if(argc==1){//一个参数则使用参数
                 if(Bukkit.getPlayer(args[0])==null) {
