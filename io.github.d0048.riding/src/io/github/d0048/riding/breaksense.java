@@ -8,6 +8,7 @@ package io.github.d0048.riding;
 import java.util.logging.Level;
 import org.bukkit.Bukkit;
 import static org.bukkit.Bukkit.getLogger;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -145,22 +146,23 @@ public class breaksense implements Listener{
 @EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = false)  //这就是我说的那个监听器了，事件发生时会触发下面这个方法
 public void onBlockPlace(BlockPlaceEvent e)  
 {  int x,y,z;
-    
+    //方块钻石
     if(e.getBlock().getType() == Material.DIAMOND_BLOCK){  
         if(isInList(e.getPlayer())==true){//如果发出者在列表里，就执行下面的内容（单独执行不会报错，工作正常）
         //e.getBlock().getLocation().
         e.getPlayer().getWorld().createExplosion(e.getBlock().getLocation(), ExplodeSize);
-        System.out.print(e.getPlayer()+"在"+e.getBlock().getLocation()+"放置了"+e.getBlock()+"并且炸了");
+        getLogger().info(ChatColor.GREEN+e.getPlayer().toString()+"在"+e.getBlock().getLocation()+"放置了"+e.getBlock()+"并且炸了");
         return;  
        }
         return;
     }
     
-        if(e.getBlock().getType() == Material.DIAMOND_BLOCK){  
+    //方块TNT
+        if(e.getBlock().getType() == Material.TNT){  
         if(isInList(e.getPlayer())==true){//如果发出者在列表里，就执行下面的内容（单独执行不会报错，工作正常）
         e.setCancelled(true);
         e.getPlayer().getWorld().createExplosion(e.getBlock().getLocation(), ExplodeSize);
-        System.out.print(e.getPlayer()+"在"+e.getBlock().getLocation()+"放置了"+e.getBlock()+"并且炸了");
+        getLogger().info(ChatColor.GREEN+e.getPlayer().toString()+"在"+e.getBlock().getLocation()+"放置了"+e.getBlock()+"并且炸了");
         return;  
        }
         return;
