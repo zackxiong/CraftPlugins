@@ -6,10 +6,13 @@
 package io.github.d0048.riding;
 
 import java.util.logging.Level;
+import net.minecraft.server.v1_7_R4.World;
 import org.bukkit.Bukkit;
 import static org.bukkit.Bukkit.getLogger;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -23,9 +26,12 @@ import org.bukkit.event.block.BlockPlaceEvent;
 public class breaksense implements Listener{
     
     String []PlayerList;
+    EffectExec executer;
     int PlayerNumber=0;//减一之后再使用
     private int MaximumPlayer=12;//最多12个人
     private int ExplodeSize=4;
+    private int Wall_Size_X=3;
+    private int Wall_Size_Y=3;
     
     public breaksense(){
         System.out.print("[breaksense()]");
@@ -143,36 +149,44 @@ public class breaksense implements Listener{
        return false;
    }
    
-@EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = false)  //这就是我说的那个监听器了，事件发生时会触发下面这个方法
+@EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = true)  //这就是我说的那个监听器了，事件发生时会触发下面这个方法
 public void onBlockPlace(BlockPlaceEvent e)  
-{  int x,y,z;
-    //方块钻石
-    if(e.getBlock().getType() == Material.DIAMOND_BLOCK){  
+{   int x,y,z;
+    Location playerLocation=e.getPlayer().getLocation(),blockLocation=e.getBlock().getLocation();
+    //方块砖头
+    if(e.getBlock().getType() == Material.GLASS){  
         if(isInList(e.getPlayer())==true){//如果发出者在列表里，就执行下面的内容（单独执行不会报错，工作正常）
-        //e.getBlock().getLocation().
-        e.getPlayer().getWorld().createExplosion(e.getBlock().getLocation(), ExplodeSize);
-        getLogger().info(ChatColor.GREEN+e.getPlayer().toString()+"在"+e.getBlock().getLocation()+"放置了"+e.getBlock()+"并且炸了");
-        return;  
-       }
+            Block [][]wall=new Block[Wall_Size_X][Wall_Size_Y];
+            
+            
+            //e.getBlock().setType(Material.AIR);
+            //e.getBlock().getLocation().
+            e.getPlayer().getWorld().createExplosion(e.getBlock().getLocation(), ExplodeSize);
+            getLogger().info(ChatColor.GREEN+e.getPlayer().toString()+"在"+e.getBlock().getLocation()+"放置了"+e.getBlock()+"并且炸了");
+            return;  
+        }
         return;
     }
     
-    //方块TNT
-        if(e.getBlock().getType() == Material.TNT){  
+    //方块TNT,爆炸
+    if(e.getBlock().getType() == Material.TNT){  
         if(isInList(e.getPlayer())==true){//如果发出者在列表里，就执行下面的内容（单独执行不会报错，工作正常）
-        e.setCancelled(true);
-        e.getPlayer().getWorld().createExplosion(e.getBlock().getLocation(), ExplodeSize);
-        getLogger().info(ChatColor.GREEN+e.getPlayer().toString()+"在"+e.getBlock().getLocation()+"放置了"+e.getBlock()+"并且炸了");
-        return;  
+            e.getBlock().setType(Material.AIR);
+            e.getPlayer().getWorld().createExplosion(e.getBlock().getLocation(), ExplodeSize); 
+            e.getPlayer().sendMessage(ChatColor.AQUA+"如你所见，TNT炸了。。");
+            //getLogger().info(ChatColor.GREEN+e.getPlayer().toString()+"在"+e.getBlock().getLocation()+"放置了"+e.getBlock()+"并且炸了");
+            return;  
        }
         return;
     }
         
         
     return;
-}
+}    
+//下面是getter和setter
 
-    //下面是getter和setter
+
+
 
     public void setPlayerList(String[] PlayerList) {
         this.PlayerList = PlayerList;
@@ -207,6 +221,22 @@ public void onBlockPlace(BlockPlaceEvent e)
    public String []getPlayerList(){
        return PlayerList;
    }
+
+    public int getWall_Size_X() {
+        return Wall_Size_X;
+    }
+
+    public int getWall_Size_Y() {
+        return Wall_Size_Y;
+    }
+
+    public void setWall_Size_X(int Wall_Size_X) {
+        this.Wall_Size_X = Wall_Size_X;
+    }
+
+    public void setWall_Size_Y(int Wall_Size_Y) {
+        this.Wall_Size_Y = Wall_Size_Y;
+    }
    
 
 }
