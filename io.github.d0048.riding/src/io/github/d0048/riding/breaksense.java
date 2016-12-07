@@ -261,7 +261,7 @@ public void onBlockPlace(BlockPlaceEvent e)
         }
         return;
     }
-    //貌似上面那个加上去之后下面这个就废了。。
+    //貌似上面那个加上去之后下面这个就废了。。（已解决，我眼瞎了）
     
     //方块TNT,爆炸
     if(e.getBlock().getType() == Material.TNT){  
