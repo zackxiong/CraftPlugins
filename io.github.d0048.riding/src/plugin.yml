@@ -1,0 +1,21 @@
+name: blockode
+main: io.github.d0048.riding.IoGithubD0048Riding
+version: beta
+description: This is my first plugin for environment testing.
+author: HXB
+commands: 
+    addtoplayerlist:
+        description: 添加玩家到游戏中
+        usage: /<command> or /<command> [player]
+        permission: <plugin name>.basic
+        permission-message: You don't have <permission></source> </code> </blockquote> 
+    removefromplayerlist:
+        description: 将玩家从游戏中移除
+        usage: /<command>|/<command> [player]
+        permission: <plugin name>.basic
+        permission-message: You don't have <permission></source> </code> </blockquote>
+    getinfo:
+        description: 获取游戏中的玩家
+        usage: /<command>
+        permission: <plugin name>.basic
+        permission-message: You don't have <permission></source> </code> </blockquote>
