@@ -166,6 +166,7 @@ public void onBlockPlace(BlockPlaceEvent e)  {
     if(e.getBlock().getType() == Material.BEACON){
         if(isInList(e.getPlayer())==true){//如果发出者在列表里，就执行下面的内容（单独执行不会报错，工作正常）
             EffectExec shield=new EffectExec();
+            e.getPlayer().sendMessage(ChatColor.BLUE+"正在充能...");
             shield.SheildEnterence(e,shieldDelay);
             shield=null;//即时释放内存。。
             return;

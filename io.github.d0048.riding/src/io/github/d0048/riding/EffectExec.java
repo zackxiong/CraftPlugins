@@ -5,10 +5,15 @@
  */
 package io.github.d0048.riding;
 
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 import org.bukkit.Bukkit;
 import static org.bukkit.Bukkit.getLogger;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockPlaceEvent;
@@ -30,26 +35,76 @@ public class EffectExec {
     }
     
     
-    void ChargeSheild(BlockPlaceEvent e,int delay){//充能动画+延时
+    public void ChargeSheild(BlockPlaceEvent e,int delay){//充能动画+延时
         new BukkitRunnable(){
-            int time = delay;  // 5秒
+            int time = delay;  // delay秒
+            float exp=(float)time/(float)delay*18f;
+            @Override
+            public void run() {
+                exp=(float)time/(float)delay;                
+                e.getPlayer().setExp(time+exp);
+                //e.getPlayer().setExp(0.1f);
+                System.out.print(exp+","+e.getPlayer().getExp());
+                time=time-1;
+                if(time == 0){
+                    //Bukkit.getLogger().info("my1");
+                    //MakeSheild(e);
+                    CreatePulse(e);
+                    e.getPlayer().setExp(0.0F);
+                    cancel();  // 终止线程
+                    return;
+                }
+                else{
+                    //System.out.print(time);
+                }
+                // your code ...
+                //Bukkit.getLogger().info("my2-1");
+            }
+        }.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 0L, 2L);
+    }
+    
+    
+    public boolean CreatePulse(BlockPlaceEvent e){//先冲击
+        int x=e.getBlock().getX(),
+        y=e.getBlock().getY(),
+        z=e.getBlock().getZ();
+        Location playerLocation=e.getPlayer().getLocation(),
+                 blockLocation=e.getBlock().getLocation();
+        Double disX=blockLocation.getBlockX()-playerLocation.getX(),
+                   disY=blockLocation.getBlockY()-playerLocation.getY(),
+                   disZ=blockLocation.getBlockZ()-playerLocation.getZ();
+             for(Entity entity : e.getPlayer().getNearbyEntities(7.0D, 5.0D, 7.0D)){
+                    //if(entity instanceof Player){
+                    //    Player nearby = (Player) entity;
+                    //    if(nearby!=null)
+                    getLogger().info(entity.toString());
+                    entity.setVelocity(new Vector(disX*1.2,disY*1.2,disZ*1.2));
+                    if(entity instanceof Player){
+                 ((Player) entity).damage(0.5);
+             }
+                            //}
+        }
+        //延时后挡住  
+        new BukkitRunnable(){
+            int time = 2;  // delay秒
             @Override
             public void run() {
                 time=time-1;
                 if(time == 0){
-                    Bukkit.getLogger().info("my");
+                    //Bukkit.getLogger().info("my2");
                     MakeSheild(e);
                     cancel();  // 终止线程
                     return;
                 }
                 else{
-                    System.out.print(time);
+                    //System.out.print(time);
                 }
                 // your code ...
-                Bukkit.getLogger().info("my");
+                //Bukkit.getLogger().info("my2-2");
             }
-        }.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 0L, 20L);
-    }
+        }.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 0L, 2L);
+        return true;
+        }
     
     
     public  boolean MakeSheild(BlockPlaceEvent e){//充能完成
@@ -57,7 +112,7 @@ public class EffectExec {
         y=e.getBlock().getY(),
         z=e.getBlock().getZ();
         Location playerLocation=e.getPlayer().getLocation(),
-             blockLocation=e.getBlock().getLocation();
+                 blockLocation=e.getBlock().getLocation();
     
         Location [][]wall=new Location[Wall_Size_X][Wall_Size_Y];
         Location middle=new Location(e.getBlock().getWorld(),x,y,z),
@@ -67,6 +122,7 @@ public class EffectExec {
                      right=new Location(e.getBlock().getWorld(),x,y,z),
                      marker=new Location(e.getBlock().getWorld(),x,y,z),
                      init=e.getBlock().getLocation();
+        HashSet<Block> s = new HashSet<Block>();
             
             for(int ix=0;ix<Wall_Size_X;ix++){//随便初始化一下一下，记得别指向同一个玩意导致指针相同，而改一个全改
                 for(int iy=0;iy<Wall_Size_X;iy++){
@@ -184,6 +240,7 @@ public class EffectExec {
                    marker.setZ(middle.getZ()+radious_horizontal*Math.sin(a0*3.14/180));
                    //marker.setY(middle.getY()+radious_horizontal*Math.sin(a0*3.14/180));
                    marker.getBlock().setType(Material.GLASS);
+                   s.add(marker.clone().getBlock());
                    //getLogger().info("left");
                 }
               for(double a0=playeryaw;a0<playeryaw+200;a0=a0+1){//右边一半画出二维
@@ -210,10 +267,23 @@ public class EffectExec {
                                 //entity.damage(3.0);
                             //}
                 }
-
+            e.getPlayer().sendMessage(ChatColor.GREEN+"充能完成！护盾已构建!");
+            this.removeShield(e, s);//进入下一阶段
             return true;  
         }
-
+    
+    
+    public void removeShield(BlockPlaceEvent e,Set<Block> s){
+        Block b[]=(Block[]) s.toArray();
+        new BukkitRunnable(){
+            @Override
+            public void run() {cancel();}
+        }.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 50L, 2L);//延时一段时间后拆除
+        
+        for(int i=0;i<b.length;i++){
+            b[i].setType(Material.AIR);
+        }
     }
 
+}
 
