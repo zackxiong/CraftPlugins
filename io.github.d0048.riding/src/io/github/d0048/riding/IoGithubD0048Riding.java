@@ -50,6 +50,7 @@ private FileConfiguration config;
         breaksense1.setWall_Size_X(this.getConfig().getInt("Wall_Size_X"));
         breaksense1.setWall_Size_Y(this.getConfig().getInt("Wall_Size_Y"));
         breaksense1.setShieldDelay(this.getConfig().getInt("Shield_Delay")+1);
+        breaksense1.setShieldHold(this.getConfig().getInt("Shield_Hold"));
         getLogger().info("你的插件已被加载！"); //向日志写入
     }
     

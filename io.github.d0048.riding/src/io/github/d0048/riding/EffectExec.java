@@ -5,6 +5,7 @@
  */
 package io.github.d0048.riding;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -28,39 +29,57 @@ import org.bukkit.util.Vector;
 public class EffectExec {
     
     int Wall_Size_X=3,Wall_Size_Y=3;
+    float shieldHold;
+
+    public EffectExec(float shieldHold) {
+        this.shieldHold = shieldHold;
+    }
+
+    public int getWall_Size_X() {
+        return Wall_Size_X;
+    }
+
+    public void setWall_Size_X(int Wall_Size_X) {
+        this.Wall_Size_X = Wall_Size_X;
+    }
+
+    public int getWall_Size_Y() {
+        return Wall_Size_Y;
+    }
+
+    public void setWall_Size_Y(int Wall_Size_Y) {
+        this.Wall_Size_Y = Wall_Size_Y;
+    }
+
+    public float getShieldHold() {
+        return shieldHold;
+    }
+
+    public void setShieldHold(float shieldHold) {
+        this.shieldHold = shieldHold;
+    }
     
-    public boolean SheildEnterence(BlockPlaceEvent e,int delay){
+    public boolean SheildEnterence(BlockPlaceEvent e,float delay){
         this.ChargeSheild(e,delay);
         return true;
     }
     
     
-    public void ChargeSheild(BlockPlaceEvent e,int delay){//充能动画+延时
+    public void ChargeSheild(BlockPlaceEvent e,float delay){//充能动画+延时
         new BukkitRunnable(){
-            int time = delay;  // delay秒
-            float exp=(float)time/(float)delay*18f;
+            float time = delay;  // delay秒
             @Override
-            public void run() {
-                exp=(float)time/(float)delay;                
-                e.getPlayer().setExp(time+exp);
-                //e.getPlayer().setExp(0.1f);
-                System.out.print(exp+","+e.getPlayer().getExp());
-                time=time-1;
-                if(time == 0){
-                    //Bukkit.getLogger().info("my1");
-                    //MakeSheild(e);
+            public void run() {               
+                e.getPlayer().setExp(1-time/delay);
+                time=time-0.1f;
+                if(time <= 0){
                     CreatePulse(e);
                     e.getPlayer().setExp(0.0F);
                     cancel();  // 终止线程
                     return;
                 }
-                else{
-                    //System.out.print(time);
-                }
-                // your code ...
-                //Bukkit.getLogger().info("my2-1");
             }
-        }.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 0L, 2L);
+        }.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 0L, 1L);
     }
     
     
@@ -122,7 +141,7 @@ public class EffectExec {
                      right=new Location(e.getBlock().getWorld(),x,y,z),
                      marker=new Location(e.getBlock().getWorld(),x,y,z),
                      init=e.getBlock().getLocation();
-        HashSet<Block> s = new HashSet<Block>();
+        ArrayList s = new ArrayList();
             
             for(int ix=0;ix<Wall_Size_X;ix++){//随便初始化一下一下，记得别指向同一个玩意导致指针相同，而改一个全改
                 for(int iy=0;iy<Wall_Size_X;iy++){
@@ -222,6 +241,7 @@ public class EffectExec {
                    marker.setZ(middle.getZ()+radious_horizontal*Math.sin(a0*3.14/180));
                    //marker.setY(middle.getY()+radious_horizontal*Math.sin(a0*3.14/180));
                    marker.getBlock().setType(Material.GLASS);
+                   s.add(marker.clone().getBlock());
                    //getLogger().info("left");
                 }
               for(double a0=playeryaw;a0<playeryaw+200;a0=a0+1){//右边一半画出二维
@@ -229,6 +249,7 @@ public class EffectExec {
                    marker.setZ(middle.getZ()+radious_horizontal*Math.sin(a0*3.14/180));
                    //marker.setY(middle.getY()+radious_horizontal*Math.sin(a0*3.14/180));
                    marker.getBlock().setType(Material.GLASS);
+                   s.add(marker.clone().getBlock());
                    //getLogger().info("right");
                 }
             }
@@ -248,6 +269,7 @@ public class EffectExec {
                    marker.setZ(middle.getZ()+radious_horizontal*Math.sin(a0*3.14/180));
                    //marker.setY(middle.getY()+radious_horizontal*Math.sin(a0*3.14/180));
                    marker.getBlock().setType(Material.GLASS);
+                   s.add(marker.clone().getBlock());
                    //getLogger().info("right");
                 }
             }
@@ -264,25 +286,59 @@ public class EffectExec {
                             //    if(nearby!=null)
                                 getLogger().info(entity.toString());
                                 entity.setVelocity(new Vector(disX*1.5,disY*1.5,disZ*1.5));
-                                //entity.damage(3.0);
+                                //((Player)entity).damage(3.0);
                             //}
                 }
             e.getPlayer().sendMessage(ChatColor.GREEN+"充能完成！护盾已构建!");
-            this.removeShield(e, s);//进入下一阶段
+            this.removeShield(e,middle,s);//进入下一阶段
             return true;  
         }
     
     
-    public void removeShield(BlockPlaceEvent e,Set<Block> s){
-        Block b[]=(Block[]) s.toArray();
-        new BukkitRunnable(){
-            @Override
-            public void run() {cancel();}
-        }.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 50L, 2L);//延时一段时间后拆除
+    public void removeShield(BlockPlaceEvent e,Location middle,ArrayList s){
+        System.out.print("enter");
+        /*Block[] b=(Block[]) s.toArray();
+        e.getPlayer().sendMessage(b.toString()+"..");
+        for(int i=0;i<s.toArray().length;i++){
+                    b[i].setType(Material.AIR);
+                    System.out.print("clearing"+i);
+                    }*/
+        Iterator i=s.iterator();
         
-        for(int i=0;i<b.length;i++){
+        new BukkitRunnable(){
+            float time =shieldHold;
+            @Override
+            public void run() {
+                time=time-0.1f;
+                e.getPlayer().setExp(time/5);
+                if(time<=0f){
+                    while(i.hasNext()){
+                        ((Block)(i.next())).setType(Material.AIR);
+                    }
+                    middle.getBlock().setType(Material.AIR);
+                    cancel();
+                }
+            }
+        }.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 0L, 1L);//延时一段时间后拆除
+        
+        /*for(int i=0;i<b.length;i++){
             b[i].setType(Material.AIR);
-        }
+        }*/
+    }
+    
+    public void ExpTimer(Player player,float time1){//时间用0.1秒计算
+        new BukkitRunnable(){
+            float time = time1;  // delay秒
+            @Override
+            public void run() {
+                time=time-0.1f;
+                if(time == 0){
+                    cancel();  // 终止线程
+                    return;
+                }
+            }
+        }.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 0L, 2L);
+        
     }
 
 }

@@ -1,4 +1,5 @@
 Explode_Size: 5
 Wall_Size_X: 3
 Wall_Size_Y: 3
-Shield_Delay: 3
+Shield_Delay: 2
+Shield_Hold: 5

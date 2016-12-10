@@ -33,6 +33,15 @@ public class breaksense implements Listener{
     private int Wall_Size_X=3;
     private int Wall_Size_Y=3;
     private int shieldDelay=1;
+    float shieldHold=4;
+
+    public float getShieldHold() {
+        return shieldHold;
+    }
+
+    public void setShieldHold(float shieldHold) {
+        this.shieldHold = shieldHold;
+    }
     
     public breaksense(){
         System.out.print("[breaksense()]");
@@ -165,7 +174,7 @@ public void onBlockPlace(BlockPlaceEvent e)  {
     //方块信标,制造一面墙和冲击
     if(e.getBlock().getType() == Material.BEACON){
         if(isInList(e.getPlayer())==true){//如果发出者在列表里，就执行下面的内容（单独执行不会报错，工作正常）
-            EffectExec shield=new EffectExec();
+            EffectExec shield=new EffectExec(shieldHold);
             e.getPlayer().sendMessage(ChatColor.BLUE+"正在充能...");
             shield.SheildEnterence(e,shieldDelay);
             shield=null;//即时释放内存。。
