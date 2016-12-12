@@ -13,7 +13,7 @@ Use `/removefromplayerlist` or `/aremovefromplayerlist [player]` to remove a pla
 (When adding or removing, player status will be initialized including Exp level and speed.)<br>
 Use `/getinfo` to gather the current game info. <br>
 
-###Current Function:
+###Current Functions:
 BEACON: Create a pulse and a wall based on the distance between player and the block placed, use "w" to stay away to chage to create a stronger pulse. 
 		When charging, the player's speed will be slowed down. <br>
 		
