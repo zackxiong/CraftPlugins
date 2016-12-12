@@ -14,12 +14,11 @@ Use `/removefromplayerlist` or `/aremovefromplayerlist [player]` to remove a pla
 Use `/getinfo` to gather the current game info. <br>
 
 ###Current Function:
-BEACON: Create a pulse and a wall based on the distance between player and the block placed, use "w" to stay away to chage to create a stronger pulse. <br>
-		When charging, the player's speed will be slowed down. 
+BEACON: Create a pulse and a wall based on the distance between player and the block placed, use "w" to stay away to chage to create a stronger pulse. 
+		When charging, the player's speed will be slowed down. <br>
 		
 TNT:    Creat an explosion after a short delay. When delaying, player's speed will be increased. <br>
 
-Bow:    When shooting, player will ride on the arrow and fly with it until the arrow hits the ground or an entity. When hitting, player will be ejcted <br>
-		and damage will be caused if an entity is hit. The volocity of the arrow is enhanced to fly faster and straighter. If an entity is going to be <br>
-		hit, the player on the arrow will be eject a little bit earlier to land face to the entity. Also, special treatments has been made to prevent  <br>
-		the player from stucking inside the ground/wall.
+Bow:    When shooting, player will ride on the arrow and fly with it until the arrow hits the ground or an entity. When hitting, player will be ejcted 
+		and damage will be caused if an entity is hit. The volocity of the arrow is enhanced to fly faster and straighter. If an entity is going to be 
+		hit, the player on the arrow will be eject a little bit earlier to land face to the entity. Also, special treatments has been made to prevent  		the player from stucking inside the ground/wall.
