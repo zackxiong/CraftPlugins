@@ -14,10 +14,15 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.Projectile;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
+import org.bukkit.event.entity.EntityShootBowEvent;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.util.Vector;
 
 /**
  *
@@ -34,6 +39,7 @@ public class breaksense implements Listener{
     private int Wall_Size_Y=3;
     private int shieldDelay=1;
     float shieldHold=4;
+    int TNTdelay=2;
 
     public float getShieldHold() {
         return shieldHold;
@@ -58,6 +64,7 @@ public class breaksense implements Listener{
        else {
            if(isInList(name)==false){
                this.PlayerList[PlayerNumber]=name;
+               initPlayer(player);
                getLogger().info("玩家:"+name+"已被添加至游戏列表。");
                //Bukkit.getPlayer(name).sendMessage("玩家:"+name+"已被添加至游戏列表。");
                PlayerNumber++;
@@ -77,6 +84,7 @@ public class breaksense implements Listener{
        else {
            if(isInList(name)==false){
                this.PlayerList[PlayerNumber]=name;
+               initPlayer(Bukkit.getPlayer(name));
                getLogger().info("玩家:"+name+"已被添加至游戏列表。");
                //Bukkit.getPlayer(name).sendMessage("玩家:"+name+"已被添加至游戏列表。");
                PlayerNumber++;
@@ -104,6 +112,7 @@ public class breaksense implements Listener{
            if(this.PlayerList[i].equals(player.getName())) {
                this.PlayerList[i]="use less"; 
                this.PlayerNumber=this.PlayerNumber-1;
+               initPlayer(player);
                return true;
                }
              } 
@@ -123,6 +132,7 @@ public class breaksense implements Listener{
            if(this.PlayerList[i].equals(name)) {
                this.PlayerList[i]="use less"; 
                this.PlayerNumber=this.PlayerNumber-1;
+               initPlayer(Bukkit.getPlayer(name));
                return true;
                }
              } 
@@ -159,23 +169,35 @@ public class breaksense implements Listener{
        return false;
    }
       
+      public void initPlayer(Player player){
+          player.setWalkSpeed(0.2f);
+          player.setMaxHealth(40);
+          player.setFoodLevel(20);
+          player.setExp(0);
+          player.eject();
+          for(PotionEffect effect : player.getActivePotionEffects())//清空药水效果
+          {
+            player.removePotionEffect(effect.getType());
+          }
+      }
+      
       void fourDirectionGenerate(){
           
       }
-   
+//监听器放置
 @EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = true)  //这就是我说的那个监听器了，事件发生时会触发下面这个方法
 public void onBlockPlace(BlockPlaceEvent e)  {
-    int x=e.getBlock().getX(),
-        y=e.getBlock().getY(),
-        z=e.getBlock().getZ();
-    Location playerLocation=e.getPlayer().getLocation(),
-             blockLocation=e.getBlock().getLocation();
+    //int x=e.getBlock().getX(),
+    //    y=e.getBlock().getY(),
+    //    z=e.getBlock().getZ();
+    //Location playerLocation=e.getPlayer().getLocation(),
+    //         blockLocation=e.getBlock().getLocation();
     
     //方块信标,制造一面墙和冲击
     if(e.getBlock().getType() == Material.BEACON){
         if(isInList(e.getPlayer())==true){//如果发出者在列表里，就执行下面的内容（单独执行不会报错，工作正常）
             EffectExec shield=new EffectExec(shieldHold);
-            e.getPlayer().sendMessage(ChatColor.BLUE+"正在充能...");
+            e.getPlayer().sendMessage(ChatColor.BLUE+"按住\"W\"以充能...按得越久护盾距离越远哦");
             shield.SheildEnterence(e,shieldDelay);
             shield=null;//即时释放内存。。
             return;
@@ -186,9 +208,11 @@ public void onBlockPlace(BlockPlaceEvent e)  {
     //方块TNT,爆炸
     if(e.getBlock().getType() == Material.TNT){  
         if(isInList(e.getPlayer())==true){//如果发出者在列表里，就执行下面的内容（单独执行不会报错，工作正常）
-            e.getBlock().setType(Material.AIR);
-            e.getPlayer().getWorld().createExplosion(e.getBlock().getLocation(), ExplodeSize); 
-            e.getPlayer().sendMessage(ChatColor.AQUA+"如你所见，TNT炸了。。");
+            EffectExec TNT=new EffectExec(ExplodeSize);
+            TNT.setExplodePower(ExplodeSize);
+            TNT.setTNTdelay(TNTdelay);
+            TNT.ChargeTNT(e);
+            TNT=null;//释放内存
             //getLogger().info(ChatColor.GREEN+e.getPlayer().toString()+"在"+e.getBlock().getLocation()+"放置了"+e.getBlock()+"并且炸了");
             return;  
        }
@@ -197,7 +221,53 @@ public void onBlockPlace(BlockPlaceEvent e)  {
 
     return;
 }
+
+
+//射箭监听器使用
+    @EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = true)  //这就是我说的那个监听器了，事件发生时会触发下面这个方法
+    public void onEntityShootBow(EntityShootBowEvent e)  {
+        if(e.getEntity() instanceof Player&&isInList((Player)e.getEntity())){
+            e.getProjectile().setVelocity(e.getProjectile().getVelocity().add(e.getProjectile().getVelocity()));
+            e.getProjectile().setPassenger(e.getEntity());
+            new BukkitRunnable(){//确认不会卡在墙里面
+            @Override
+            public void run() {
+                boolean isdo=false;
+                boolean needdo=false;
+                if(e.getEntity().getLocation().getBlock().getType()!=Material.AIR){
+                    //System.out.print("一次执行");
+                    e.getEntity().eject();
+                    e.getProjectile().eject();
+                    e.getEntity().getLocation().setY(e.getEntity().getLocation().getY()+3);
+                    isdo=true;
+                    //int i=0;
+                    /*while(e.getEntity().getLocation().getBlock().getType()!=Material.AIR){
+                        System.out.print("2次执行");
+                        i++;
+                        if(i>20) {cancel();}
+                        e.getEntity().getLocation().setY(e.getEntity().getLocation().getY()+3);
+                    }*/
+                        needdo=true;
+                    }
+                    if(isdo==true&&needdo==true){
+                    cancel();
+                    }
+                }
+            }.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 10L, 2L);
+            return;
+        }
+    }
+    
+    
 //下面是getter和setter
+
+    public int getTNTdelay() {
+        return TNTdelay;
+    }
+
+    public void setTNTdelay(int TNTdelay) {
+        this.TNTdelay = TNTdelay;
+    }
 
     public void setPlayerList(String[] PlayerList) {
         this.PlayerList = PlayerList;

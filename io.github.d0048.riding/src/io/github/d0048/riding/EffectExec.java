@@ -12,6 +12,7 @@ import java.util.Set;
 import org.bukkit.Bukkit;
 import static org.bukkit.Bukkit.getLogger;
 import org.bukkit.ChatColor;
+import org.bukkit.Effect;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -19,6 +20,7 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.plugin.Plugin;
+import org.bukkit.potion.PotionType;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
@@ -30,11 +32,22 @@ public class EffectExec {
     
     int Wall_Size_X=3,Wall_Size_Y=3;
     float shieldHold;
+    int explodePower=4;
+    private int TNTdelay=2;
 
     public EffectExec(float shieldHold) {
         this.shieldHold = shieldHold;
     }
 
+    public int getExplodePower() {
+        return explodePower;
+    }
+
+    public void setExplodePower(int explodePower) {
+        this.explodePower = explodePower;
+    }
+
+//下面的方法属于Shield效果
     public int getWall_Size_X() {
         return Wall_Size_X;
     }
@@ -66,15 +79,23 @@ public class EffectExec {
     
     
     public void ChargeSheild(BlockPlaceEvent e,float delay){//充能动画+延时
+        float speed=e.getPlayer().getWalkSpeed();
+        System.out.print(e.getPlayer().getWalkSpeed());
+        e.getPlayer().setWalkSpeed(0.05f);
         new BukkitRunnable(){
             float time = delay;  // delay秒
             @Override
             public void run() {               
-                e.getPlayer().setExp(1-time/delay);
+                e.getPlayer().setExp(1-time/delay);//充能进度条
                 time=time-0.1f;
+                for(float i=0; i<delay-time;i=i+0.01f){
+                    e.getBlock().getWorld().playEffect(e.getBlock().getLocation(), Effect.PORTAL, 0);
+                }
                 if(time <= 0){
                     CreatePulse(e);
                     e.getPlayer().setExp(0.0F);
+                    e.getPlayer().setWalkSpeed(0.2f);
+                    //System.out.print("调回来了");
                     cancel();  // 终止线程
                     return;
                 }
@@ -90,17 +111,17 @@ public class EffectExec {
         Location playerLocation=e.getPlayer().getLocation(),
                  blockLocation=e.getBlock().getLocation();
         Double disX=blockLocation.getBlockX()-playerLocation.getX(),
-                   disY=blockLocation.getBlockY()-playerLocation.getY(),
-                   disZ=blockLocation.getBlockZ()-playerLocation.getZ();
-             for(Entity entity : e.getPlayer().getNearbyEntities(7.0D, 5.0D, 7.0D)){
-                    //if(entity instanceof Player){
-                    //    Player nearby = (Player) entity;
-                    //    if(nearby!=null)
-                    getLogger().info(entity.toString());
-                    entity.setVelocity(new Vector(disX*1.2,disY*1.2,disZ*1.2));
-                    if(entity instanceof Player){
-                 ((Player) entity).damage(0.5);
-             }
+               disY=blockLocation.getBlockY()-playerLocation.getY(),
+               disZ=blockLocation.getBlockZ()-playerLocation.getZ();
+         for(Entity entity : e.getPlayer().getNearbyEntities(7.0D, 5.0D, 7.0D)){
+                //if(entity instanceof Player){
+                //    Player nearby = (Player) entity;
+                //    if(nearby!=null)
+                //getLogger().info(entity.toString());
+                entity.setVelocity(new Vector(disX*1.2,disY*1.2+2,disZ*1.2));
+                if(entity instanceof Player){
+                    ((Player) entity).damage(0.5);
+                }
                             //}
         }
         //延时后挡住  
@@ -215,7 +236,7 @@ public class EffectExec {
             Double disX=blockLocation.getBlockX()-playerLocation.getX(),
                    disY=blockLocation.getBlockY()-playerLocation.getY(),
                    disZ=blockLocation.getBlockZ()-playerLocation.getZ();
-            getLogger().info(disX+","+disY+","+disZ);
+            //getLogger().info(disX+","+disY+","+disZ);
             middle.setX((e.getBlock().getX()+disX));
             middle.setY((e.getBlock().getY()+disY)+1);//提高一个改善效果
             middle.setZ((e.getBlock().getZ()+disZ));
@@ -284,19 +305,32 @@ public class EffectExec {
                             //if(entity instanceof Player){
                             //    Player nearby = (Player) entity;
                             //    if(nearby!=null)
-                                getLogger().info(entity.toString());
+                                //getLogger().info(entity.toString());
                                 entity.setVelocity(new Vector(disX*1.5,disY*1.5,disZ*1.5));
                                 //((Player)entity).damage(3.0);
                             //}
                 }
-            e.getPlayer().sendMessage(ChatColor.GREEN+"充能完成！护盾已构建!");
+            for(float i=0; i<50;i=i+0.01f){//渲染点粒子效果
+                    e.getBlock().getWorld().playEffect(middle, Effect.PORTAL, 5);
+                }
+            new BukkitRunnable(){//第二层粒子效果
+            @Override
+            public void run(){
+                for(float i=0; i<50;i=i+0.01f){//渲染点粒子效果
+                    e.getBlock().getWorld().playEffect(middle, Effect.PORTAL, 5);
+                }
+                cancel();
+            }
+        }.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 40L, 0L);
+            
+            e.getPlayer().sendMessage(ChatColor.GREEN+"充能完成！护盾已构建!"+"\n"+ChatColor.DARK_AQUA+"(恩对了这破护盾质量差目测撑不过"+shieldHold+"秒的，so...）");
             this.removeShield(e,middle,s);//进入下一阶段
             return true;  
         }
     
     
     public void removeShield(BlockPlaceEvent e,Location middle,ArrayList s){
-        System.out.print("enter");
+        //System.out.print("enter");
         /*Block[] b=(Block[]) s.toArray();
         e.getPlayer().sendMessage(b.toString()+"..");
         for(int i=0;i<s.toArray().length;i++){
@@ -310,23 +344,28 @@ public class EffectExec {
             @Override
             public void run() {
                 time=time-0.1f;
-                e.getPlayer().setExp(time/5);
+                //System.out.print(time);
+                e.getPlayer().setExp(time/5);//持续进度条
                 if(time<=0f){
                     while(i.hasNext()){
                         ((Block)(i.next())).setType(Material.AIR);
+                        //Block b=(Block)i.next();//这里我改了试试能不能行
+                        //b.setType(b.getType());
                     }
                     middle.getBlock().setType(Material.AIR);
+                    e.getPlayer().sendMessage(ChatColor.RED+"看我说过什么来着- -");
                     cancel();
                 }
             }
-        }.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 0L, 1L);//延时一段时间后拆除
+        }.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 0L, 2L);//延时一段时间后拆除
         
         /*for(int i=0;i<b.length;i++){
             b[i].setType(Material.AIR);
         }*/
     }
     
-    public void ExpTimer(Player player,float time1){//时间用0.1秒计算
+    @Deprecated
+    public void ExpTimer(Player player,float time1){//时间用0.1秒计算（这是一个半废掉的毫无卵用的方法，留着改成别的的时候用）
         new BukkitRunnable(){
             float time = time1;  // delay秒
             @Override
@@ -340,6 +379,43 @@ public class EffectExec {
         }.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 0L, 2L);
         
     }
+//下面的方法属于TNT效果
+    public void ChargeTNT(BlockPlaceEvent e){
+        float speed=e.getPlayer().getWalkSpeed();
+        e.getPlayer().setWalkSpeed(1.5f*speed);
+        new BukkitRunnable(){
+            float time=TNTdelay;
+            @Override
+            public void run(){
+                time=time-0.1f;
+                e.getPlayer().setExp(1-(time/TNTdelay));
+                for(float i=0;i<TNTdelay-time;i=i+0.1f){
+                    e.getBlock().getWorld().playEffect(e.getBlock().getLocation(), Effect.FLAME, (int)i);//随便放点火花啥子的庆祝庆祝，时间越短越多
+                }
+                if(time<=0) {
+                    e.getPlayer().setWalkSpeed(speed);
+                    Explode(e);
+                    cancel();
+                }
+            }
+        }.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 0L, 2L);
+        //this.Explode(e);
+    }
+    
+    public void Explode(BlockPlaceEvent e){
+        e.getBlock().setType(Material.AIR);
+        e.getPlayer().getWorld().createExplosion(e.getBlock().getLocation(), explodePower); 
+        e.getPlayer().sendMessage(ChatColor.AQUA+"如你所见，TNT炸了。。");
+    }
 
+    public int getTNTdelay() {
+        return TNTdelay;
+    }
+
+    public void setTNTdelay(int TNTdelay) {
+        this.TNTdelay = TNTdelay;
+    }
+    
+//下面属于雪球
 }
 

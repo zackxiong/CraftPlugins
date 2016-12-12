@@ -32,7 +32,7 @@ private FileConfiguration config;
         breaksense1=new breaksense();//这里应该已经初始化了，类里面那个出错的数组也初始化了
         getServer().getPluginManager().registerEvents(breaksense1, this);//注册监听器，也就是另一个类里面的onBlockPlace(BlockPlaceEvent e)
         //breaksense1.breaksense();
-        breaksense1.addtoPlayerList("HXB");
+        //breaksense1.addtoPlayerList("HXB");
         /*if(breaksense1.isInList("HXB")){
                 System.out.print(breaksense1.isInList("HXB"));
                 System.out.print("HXB在列表中");
@@ -51,6 +51,7 @@ private FileConfiguration config;
         breaksense1.setWall_Size_Y(this.getConfig().getInt("Wall_Size_Y"));
         breaksense1.setShieldDelay(this.getConfig().getInt("Shield_Delay")+1);
         breaksense1.setShieldHold(this.getConfig().getInt("Shield_Hold"));
+        breaksense1.setTNTdelay(this.getConfig().getInt("TNTdelay"));
         getLogger().info("你的插件已被加载！"); //向日志写入
     }
     
