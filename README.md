@@ -9,8 +9,10 @@ of maps are suitable for this game.
 
 ###Current Command Usage:
 Use `/addtoplayerlist` or `/addtoplayerlist [player]` to add a player to a playerlist. (Till now, I only provide one playerlist)<br>
+
 Use `/removefromplayerlist` or `/aremovefromplayerlist [player]` to remove a player from a playerlist. (Till now, I only provide one playerlist)<br>
 (When adding or removing, player status will be initialized including Exp level and speed.)<br>
+
 Use `/getinfo` to gather the current game info. <br>
 
 ###Current Functions:
