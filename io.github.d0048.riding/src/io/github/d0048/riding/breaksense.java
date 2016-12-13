@@ -226,6 +226,8 @@ public void onBlockPlace(BlockPlaceEvent e)  {
 //射箭监听器使用
     @EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = true)  //这就是我说的那个监听器了，事件发生时会触发下面这个方法
     public void onEntityShootBow(EntityShootBowEvent e)  {
+        
+        //把人挂上去
         if(e.getEntity() instanceof Player&&isInList((Player)e.getEntity())){
             e.getProjectile().setVelocity(e.getProjectile().getVelocity().add(e.getProjectile().getVelocity()));
             e.getProjectile().setPassenger(e.getEntity());

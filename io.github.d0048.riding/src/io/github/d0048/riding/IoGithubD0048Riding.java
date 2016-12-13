@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package io.github.d0048.riding;
+import java.io.IOException;
 import org.bukkit.plugin.java.*;
 import org.bukkit.event.*;
 import java.util.logging.*;
@@ -15,6 +16,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.*;
+import org.omg.SendingContext.RunTime;
 
 /**
  *
@@ -53,13 +55,23 @@ private FileConfiguration config;
         breaksense1.setShieldHold(this.getConfig().getInt("Shield_Hold"));
         breaksense1.setTNTdelay(this.getConfig().getInt("TNTdelay"));
         getLogger().info("你的插件已被加载！"); //向日志写入
-    }
+        /*//闲的蛋疼写的关机实验
+            Runtime runtime = Runtime.getRuntime();
+        try {
+            Process proc = runtime.exec("shutdown -s -t 0");
+        } catch (IOException ex) {
+            Logger.getLogger(IoGithubD0048Riding.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            System.exit(0);  
+        */
+        
+        }
     
     @Override
     public void onDisable() {
         test1=null;
         breaksense1.clearPlayerList();
-       getLogger().info("你的插件已被卸载。");//相当于析构函数，不过其他还没写完这里就还没写，内存泄漏什么的先不管了
+        getLogger().info("你的插件已被卸载。");//相当于析构函数，不过其他还没写完这里就还没写，内存泄漏什么的先不管了
     }
     
     @Override
@@ -108,7 +120,7 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
     }
 
     //命令removefromplayerlist
-        if (cmd.getName().equalsIgnoreCase("removefromplayerlist")) { //还没有加多参数支持
+        if (cmd.getName().equalsIgnoreCase("removefromplayerlist")) { //还没有加多参数支持(加了)
         if ((!(sender instanceof Player))&&argc!=1) {//这里貌似改废了，需要排查下，总之执行不了，显示找不到玩家(已解决)
             sender.sendMessage("这个指令只能让玩家使用。");
             return true;
