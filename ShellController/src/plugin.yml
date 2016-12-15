@@ -3,7 +3,7 @@ main: shellcontroller.ShellController
 version: beta
 description: This is a plugin to control the computer.
 author: HXB
-command: 
+commands: 
     exec:
         description: 执行一条命令并且获取输出
         usage: /<command> [command]

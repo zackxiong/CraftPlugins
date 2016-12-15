@@ -8,6 +8,7 @@ import java.io.IOException;
 import org.bukkit.plugin.java.*;
 import org.bukkit.event.*;
 import java.util.logging.*;
+import net.minecraft.server.v1_7_R4.World;
 import org.bukkit.Bukkit;
 import static org.bukkit.Bukkit.getLogger;
 import org.bukkit.Material;
@@ -25,15 +26,15 @@ import org.omg.SendingContext.RunTime;
 public final class IoGithubD0048Riding extends JavaPlugin{
 
 public static IoGithubD0048Riding test1;
-breaksense breaksense1;
+Blockode breaksense1;
 private FileConfiguration config;
 
     @Override
     public void onEnable() {//这个就算是这个插件的main函数了，插件从这里开始执行
         test1=this;
-        breaksense1=new breaksense();//这里应该已经初始化了，类里面那个出错的数组也初始化了
+        breaksense1=new Blockode();//这里应该已经初始化了，类里面那个出错的数组也初始化了
         getServer().getPluginManager().registerEvents(breaksense1, this);//注册监听器，也就是另一个类里面的onBlockPlace(BlockPlaceEvent e)
-        //breaksense1.breaksense();
+        //breaksense1.Blockode();
         //breaksense1.addtoPlayerList("HXB");
         /*if(breaksense1.isInList("HXB")){
                 System.out.print(breaksense1.isInList("HXB"));
@@ -48,6 +49,10 @@ private FileConfiguration config;
         
         config = this.getConfig();
         this.saveDefaultConfig();
+        breaksense1.setGameworld(Bukkit.getWorld("world"));
+        if(this.getConfig().getString("Game_World")!=null){
+            breaksense1.setGameworld(Bukkit.getWorld(this.getConfig().getString("Game_World")));
+        }
         breaksense1.setExplodeSize(this.getConfig().getInt("Explode_Size"));
         breaksense1.setWall_Size_X(this.getConfig().getInt("Wall_Size_X"));
         breaksense1.setWall_Size_Y(this.getConfig().getInt("Wall_Size_Y"));
@@ -168,7 +173,8 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
         if ((sender instanceof Player)){
             sender.sendMessage("列表中当前有"+breaksense1.getPlayerNumber()+"个玩家，"
                                 + "最大人数为"+breaksense1.getMaximumPlayer()+","
-                                + "当前爆炸威力："+breaksense1.getExplodeSize());
+                                + "当前爆炸威力："+breaksense1.getExplodeSize()
+                                + "当前游戏世界: "+breaksense1.getGameworld());
             sender.sendMessage(breaksense1.getPlayerList());
             return true;
         }

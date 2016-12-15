@@ -6,20 +6,28 @@
 package io.github.d0048.riding;
 
 import java.util.logging.Level;
-import net.minecraft.server.v1_7_R4.World;
 import org.bukkit.Bukkit;
 import static org.bukkit.Bukkit.getLogger;
 import org.bukkit.ChatColor;
+import org.bukkit.Effect;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.World;
 import org.bukkit.block.Block;
+import org.bukkit.craftbukkit.v1_7_R4.entity.CraftPlayer;
+import org.bukkit.entity.Arrow;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Projectile;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityShootBowEvent;
+import org.bukkit.event.entity.ProjectileHitEvent;
+import org.bukkit.event.player.PlayerBedEnterEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
@@ -28,7 +36,7 @@ import org.bukkit.util.Vector;
  *
  * @author HXB
  */
-public class breaksense implements Listener{
+public class Blockode implements Listener{
     
     String []PlayerList;
     private EffectExec executer;
@@ -40,6 +48,7 @@ public class breaksense implements Listener{
     private int shieldDelay=1;
     float shieldHold=4;
     int TNTdelay=2;
+    private World gameworld;
 
     public float getShieldHold() {
         return shieldHold;
@@ -49,7 +58,7 @@ public class breaksense implements Listener{
         this.shieldHold = shieldHold;
     }
     
-    public breaksense(){
+    public Blockode(){
         System.out.print("[breaksense()]");
         PlayerList=new String[this.MaximumPlayer];
     }
@@ -150,7 +159,7 @@ public class breaksense implements Listener{
    public boolean isInList(Player player){
        for(int i=0;i<=(PlayerNumber-1);i++){
            //getLogger().info("匹配"+player.getName()+"第"+(i+1)+"次");
-           if(this.PlayerList[i].equals(player.getName())) {
+           if(this.PlayerList[i].equals(player.getName())&&this.gameworld.equals(player.getWorld())) {
                //getLogger().info("匹配到列表中是玩家");
                return true;
            }
@@ -161,7 +170,7 @@ public class breaksense implements Listener{
       public boolean isInList(String name){
        for(int i=0;i<=(PlayerNumber-1);i++){
            //getLogger().info("匹配"+name+"第"+(i+1)+"次");
-           if(this.PlayerList[i].equals(name)) {
+           if(this.PlayerList[i].equals(name)&&this.gameworld.equals(Bukkit.getPlayer(name).getWorld())) {
                //getLogger().info("匹配到列表中是玩家");
                return true;
            }
@@ -207,7 +216,7 @@ public void onBlockPlace(BlockPlaceEvent e)  {
     
     //方块TNT,爆炸
     if(e.getBlock().getType() == Material.TNT){  
-        if(isInList(e.getPlayer())==true){//如果发出者在列表里，就执行下面的内容（单独执行不会报错，工作正常）
+        if(isInList(e.getPlayer())==true){//如果发出者在列表里，就执行下面的内容（单独执行不会报错，工作正常）(连续使用会无法传递事件，是getspeed/setpseed的问题)
             EffectExec TNT=new EffectExec(ExplodeSize);
             TNT.setExplodePower(ExplodeSize);
             TNT.setTNTdelay(TNTdelay);
@@ -231,11 +240,15 @@ public void onBlockPlace(BlockPlaceEvent e)  {
         if(e.getEntity() instanceof Player&&isInList((Player)e.getEntity())){
             e.getProjectile().setVelocity(e.getProjectile().getVelocity().add(e.getProjectile().getVelocity()));
             e.getProjectile().setPassenger(e.getEntity());
+            
             new BukkitRunnable(){//确认不会卡在墙里面
             @Override
             public void run() {
                 boolean isdo=false;
                 boolean needdo=false;
+                for(int i=0;i<10;i++){
+                    e.getProjectile().getWorld().playEffect(e.getProjectile().getLocation(), Effect.MAGIC_CRIT, 2);
+                }
                 if(e.getEntity().getLocation().getBlock().getType()!=Material.AIR){
                     //System.out.print("一次执行");
                     e.getEntity().eject();
@@ -260,6 +273,69 @@ public void onBlockPlace(BlockPlaceEvent e)  {
         }
     }
     
+    //命中监听器使用
+    @EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = true)
+    public void OnProjectileHit(ProjectileHitEvent e){
+        //if(e.getEntity().getPassenger()!=null && isInList((Player)e.getEntity().getPassenger())){
+            //e.getEntity().getPassenger().setVelocity(e.getEntity().getVelocity());
+        //}
+        
+    }
+    
+    //受伤监听器使用
+    @EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = true)
+    public void OnPlayerDamage(EntityDamageEvent e){
+        //if(e.getEntity() instanceof Player && isInList((Player)e.getEntity())&&){
+            //e.getEntity().getPassenger().setVelocity(e.getEntity().getVelocity());
+        //}
+    }
+    
+    //被射中受伤监听器使用
+    @EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = true)//确认不会把自己射中
+    public void OnEntityDamageByEntity(EntityDamageByEntityEvent e){
+        if (e.getDamager() != null//找得到发出者
+                &&isInList((Player)e.getEntity())//被击中者在列表中
+                &&isInList((Player)((Arrow) e.getDamager()).getShooter())
+                && e.getEntityType() == EntityType.PLAYER //是玩家
+                && e.getDamager().getType() == EntityType.ARROW//是箭
+                && ((Arrow) e.getDamager()).getShooter() == e.getEntity()//是自己发出的
+                ) {
+            //e.getEntity().setVelocity(e.getDamager().getVelocity());
+            ((Player)e.getEntity()).sendMessage(ChatColor.RED+"你已达到最大射程，为了免得你摔死，你正在降落");
+            e.setCancelled(true);
+        }
+    }
+    
+    //进入床监听器使用
+    @EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = true)  //这就是我说的那个监听器了，事件发生时会触发下面这个方法
+    public void onBedEnter(PlayerBedEnterEvent e)  {
+        new BukkitRunnable(){//保证晚上
+                @Override
+                public void run(){
+                    gameworld.setTime(111111);
+                };
+            }.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 0L, 200L);
+        
+        if(isInList(e.getPlayer()) && e.getPlayer().getHealth()<e.getPlayer().getMaxHealth()){//回血
+            new BukkitRunnable(){
+                @Override
+                public void run(){
+                    if(e.getPlayer().getHealth()<e.getPlayer().getMaxHealth()&&e.getPlayer().isSleeping()){
+                        e.getPlayer().setHealth(e.getPlayer().getHealth()+6);
+                    }
+                    else{
+                        //e.getPlayer().teleport(e.getPlayer().getLocation());
+                        ((CraftPlayer) e.getPlayer()).getHandle().a(true, false, false);
+                        e.getBed().setType(Material.AIR);
+                        cancel();
+                            };
+                }
+            }.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 20L, 20L);
+        }
+        else{
+            return;
+        }
+    }
     
 //下面是getter和setter
 
@@ -335,6 +411,14 @@ public void onBlockPlace(BlockPlaceEvent e)  {
 
     public void setShieldDelay(int shieldDelay) {
         this.shieldDelay = shieldDelay;
+    }
+
+    public World getGameworld() {
+        return gameworld;
+    }
+
+    public void setGameworld(World gameworld) {
+        this.gameworld = gameworld;
     }
    
 

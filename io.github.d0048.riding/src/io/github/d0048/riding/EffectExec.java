@@ -17,6 +17,7 @@ import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.plugin.Plugin;
@@ -119,8 +120,8 @@ public class EffectExec {
                 //    if(nearby!=null)
                 //getLogger().info(entity.toString());
                 entity.setVelocity(new Vector(disX*1.2,disY*1.2+2,disZ*1.2));
-                if(entity instanceof Player){
-                    ((Player) entity).damage(0.5);
+                if(entity instanceof LivingEntity){
+                    ((LivingEntity) entity).damage(2);
                 }
                             //}
         }
@@ -380,9 +381,14 @@ public class EffectExec {
         
     }
 //下面的方法属于TNT效果
-    public void ChargeTNT(BlockPlaceEvent e){
+    public void ChargeTNT(BlockPlaceEvent e){//问题找到了，双重TNT会有两次加速。。
         float speed=e.getPlayer().getWalkSpeed();
-        e.getPlayer().setWalkSpeed(1.5f*speed);
+        if(1.5f*speed<=1){
+            e.getPlayer().setWalkSpeed(1.5f*speed);
+        }
+        else{
+            e.getPlayer().setWalkSpeed(1f);
+        }
         new BukkitRunnable(){
             float time=TNTdelay;
             @Override
@@ -393,7 +399,7 @@ public class EffectExec {
                     e.getBlock().getWorld().playEffect(e.getBlock().getLocation(), Effect.FLAME, (int)i);//随便放点火花啥子的庆祝庆祝，时间越短越多
                 }
                 if(time<=0) {
-                    e.getPlayer().setWalkSpeed(speed);
+                    e.getPlayer().setWalkSpeed(0.2f);
                     Explode(e);
                     cancel();
                 }
