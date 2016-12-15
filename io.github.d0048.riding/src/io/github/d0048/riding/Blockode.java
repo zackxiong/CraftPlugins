@@ -206,7 +206,7 @@ public void onBlockPlace(BlockPlaceEvent e)  {
     if(e.getBlock().getType() == Material.BEACON){
         if(isInList(e.getPlayer())==true){//如果发出者在列表里，就执行下面的内容（单独执行不会报错，工作正常）
             EffectExec shield=new EffectExec(shieldHold);
-            e.getPlayer().sendMessage(ChatColor.BLUE+"按住\"W\"以充能...按得越久护盾距离越远哦");
+            e.getPlayer().sendMessage(ChatColor.BLUE+"按住\"S\"以充能...按得越久护盾距离越远哦");
             shield.SheildEnterence(e,shieldDelay);
             shield=null;//即时释放内存。。
             return;

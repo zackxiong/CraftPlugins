@@ -81,7 +81,7 @@ public class EffectExec {
     
     public void ChargeSheild(BlockPlaceEvent e,float delay){//充能动画+延时
         float speed=e.getPlayer().getWalkSpeed();
-        System.out.print(e.getPlayer().getWalkSpeed());
+        //System.out.print(e.getPlayer().getWalkSpeed());
         e.getPlayer().setWalkSpeed(0.05f);
         new BukkitRunnable(){
             float time = delay;  // delay秒
@@ -114,11 +114,15 @@ public class EffectExec {
         Double disX=blockLocation.getBlockX()-playerLocation.getX(),
                disY=blockLocation.getBlockY()-playerLocation.getY(),
                disZ=blockLocation.getBlockZ()-playerLocation.getZ();
-         for(Entity entity : e.getPlayer().getNearbyEntities(7.0D, 5.0D, 7.0D)){
+         for(Entity entity : e.getPlayer().getNearbyEntities(6.0D, 5.0D, 6.0D)){
                 //if(entity instanceof Player){
                 //    Player nearby = (Player) entity;
                 //    if(nearby!=null)
                 //getLogger().info(entity.toString());
+                Double WWX=blockLocation.getBlockX()-entity.getLocation().getX(),
+                        Y=blockLocation.getBlockY()-entity.getLocation().getY(),
+                        Z=blockLocation.getBlockZ()-entity.getLocation().getZ();
+                
                 entity.setVelocity(new Vector(disX*1.2,disY*1.2+2,disZ*1.2));
                 if(entity instanceof LivingEntity){
                     ((LivingEntity) entity).damage(2);
