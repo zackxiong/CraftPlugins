@@ -109,17 +109,17 @@ public class Blockode implements Listener{
    
    
    public boolean removefromPlayerList(Player player){
-       getLogger().info("开始查询玩家");
+       //getLogger().info("开始查询玩家");
        if(!isInList(player)){
            getLogger().info("找不到玩家");
            return false;
        }
        else{
-           getLogger().info("确认玩家在列表内，开始搜索");
+           //getLogger().info("确认玩家在列表内，开始搜索");
            for(int i=0;i<=(PlayerNumber-1);i++){
            getLogger().info("removefromPlayerList():匹配"+player.getName()+"第"+(i+1)+"次");
            if(this.PlayerList[i].equals(player.getName())) {
-               this.PlayerList[i]="use less"; 
+               this.PlayerList[i]=null; 
                this.PlayerNumber=this.PlayerNumber-1;
                initPlayer(player);
                return true;
@@ -139,7 +139,7 @@ public class Blockode implements Listener{
            for(int i=0;i<=(PlayerNumber-1);i++){
            //getLogger().info("removefromPlayerList():匹配"+name+"第"+(i+1)+"次");
            if(this.PlayerList[i].equals(name)) {
-               this.PlayerList[i]="use less"; 
+               this.PlayerList[i]=null; 
                this.PlayerNumber=this.PlayerNumber-1;
                initPlayer(Bukkit.getPlayer(name));
                return true;

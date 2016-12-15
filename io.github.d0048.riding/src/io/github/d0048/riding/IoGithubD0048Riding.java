@@ -11,6 +11,7 @@ import java.util.logging.*;
 import net.minecraft.server.v1_7_R4.World;
 import org.bukkit.Bukkit;
 import static org.bukkit.Bukkit.getLogger;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -93,29 +94,29 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
         else {
             if(argc==0){//没有参数默认玩家自身
                 if(breaksense1.addtoPlayerList((Player)sender)==false){//鉴于这里也会出相同的错误，我判断就是那个方法的问题(已解决)
-                    sender.sendMessage("玩家已满或已加入");//这里是报错至玩家
+                    sender.sendMessage(ChatColor.GOLD+"玩家已满或已加入");//这里是报错至玩家
                     }
                 else{
-                    sender.sendMessage("成功加入"+sender.getName()+"到玩家列表");
+                    sender.sendMessage(ChatColor.GOLD+"成功加入"+sender.getName()+"到玩家列表");
                 }
             }
             else if(argc==1){//一个参数则使用参数
                 if(Bukkit.getPlayer(args[0])==null) {
-                    sender.sendMessage("玩家:"+args[0]+"不在线或不存在");
+                    sender.sendMessage(ChatColor.GOLD+"玩家:"+args[0]+"不在线或不存在");
                     //getLogger().warning("玩家:"+args[0]+"不在线或不存在");
                     return true;
                     }
                 Player player=Bukkit.getPlayer(args[0]);//权宜之计
                 if(breaksense1.addtoPlayerList(player)==false){//目前来看，当玩家在线的时候不会报错了，但是不在线时会有空指针（已解决）
-                    sender.sendMessage("玩家已满或已加入");//这里是报错至玩家
+                    sender.sendMessage(ChatColor.GOLD+"玩家已满或已加入");//这里是报错至玩家
                     }
                 else{
-                     sender.sendMessage("成功加入"+args[0]+"到玩家列表");
+                     sender.sendMessage(ChatColor.GOLD+"成功加入"+args[0]+"到玩家列表");
                      return true;
                     }
                 }
             else    {//其他直接报错
-                sender.sendMessage("你后面加的那一长串是什么鬼啊。。。");//这里在正常的时候也被被执行了，原因不明(已解决)
+                sender.sendMessage(ChatColor.GOLD+"你后面加的那一长串是什么鬼啊。。。");//这里在正常的时候也被被执行了，原因不明(已解决)
                 //getLogger().warning("玩家"+sender.getName()+"错误的输入了"+argc+"个参数。。。");
                 return false;
             }
@@ -127,17 +128,17 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
     //命令removefromplayerlist
         if (cmd.getName().equalsIgnoreCase("removefromplayerlist")) { //还没有加多参数支持(加了)
         if ((!(sender instanceof Player))&&argc!=1) {//这里貌似改废了，需要排查下，总之执行不了，显示找不到玩家(已解决)
-            sender.sendMessage("这个指令只能让玩家使用。");
+            sender.sendMessage(ChatColor.GOLD+"这个指令只能让玩家使用。");
             return true;
             } //如果不是玩家执行的，就直接报错返回
         else {
                 
             if(argc==0){//没有参数默认玩家自身
                     if(breaksense1.removefromPlayerList((Player)sender)==false){
-                        sender.sendMessage("找不到玩家或未知错误，具体是啥你看后台。。。");//这里是报错至玩家
+                        sender.sendMessage(ChatColor.GOLD+"找不到玩家或未知错误，具体是啥你看后台。。。");//这里是报错至玩家
                     }
                     else{
-                        sender.sendMessage("已经将"+sender.getName()+"从列表中移除");
+                        sender.sendMessage(ChatColor.GOLD+"已经将"+sender.getName()+"从列表中移除");
                     }
                     return true;
                 }
@@ -145,22 +146,23 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
             else if(argc==1){//一个参数则使用参数
                     
                     if(breaksense1.isInList(args[0])==false) {//这一块额外加一个判断存在的代码，以免加进不存在的玩意
-                    sender.sendMessage("玩家:"+args[0]+"不存在列表中");
+                    sender.sendMessage(ChatColor.GOLD+"玩家:"+args[0]+"不存在列表中");
                     //getLogger().warning("玩家:"+args[0]+"不存在列表中");
                     return true;
                     }
                     
                     if(breaksense1.removefromPlayerList(args[0])==false){//目前来看，当玩家在线的时候不会报错了，但是不在线时会有空指针（已解决）
-                        sender.sendMessage("移除玩家:"+args[0]+" 失败");//这里是报错至玩家
+                        sender.sendMessage(ChatColor.GOLD+"移除玩家:"+args[0]+" 失败");//这里是报错至玩家
                         return true;
                         }
                     else{
-                        sender.sendMessage("成功把"+args[0]+"从列表中移除");
+                        sender.sendMessage(ChatColor.GOLD+"成功把"+args[0]+"从列表中移除");
+                        Bukkit.getPlayer(args[0]).sendMessage(ChatColor.GOLD+"你已被加入游戏！");
                         return true;
                         }
                     }
             else    {//其他直接报错
-                sender.sendMessage("你后面加的那一长串是什么鬼啊。。。");//这里在正常的时候也被被执行了，原因不明(已解决)
+                sender.sendMessage(ChatColor.GOLD+"你后面加的那一长串是什么鬼啊。。。");//这里在正常的时候也被被执行了，原因不明(已解决)
                 //getLogger().warning("玩家"+sender.getName()+"错误的输入了"+argc+"个参数。。。");
                 return false;
             }
@@ -168,29 +170,72 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
         //return true;
     }
         
-    //命令getplayerlist
+    //命令getinfo
     if (cmd.getName().equalsIgnoreCase("getinfo")) {
         if ((sender instanceof Player)){
-            sender.sendMessage("列表中当前有"+breaksense1.getPlayerNumber()+"个玩家，"
-                                + "最大人数为"+breaksense1.getMaximumPlayer()+","
+            sender.sendMessage(ChatColor.GOLD+"列表中当前有"+breaksense1.getPlayerNumber()+"个玩家，\n"
+                                + "最大人数为"+breaksense1.getMaximumPlayer()+",\n"
                                 + "当前爆炸威力："+breaksense1.getExplodeSize()
-                                + "当前游戏世界: "+breaksense1.getGameworld());
-            sender.sendMessage(breaksense1.getPlayerList());
+                                + "\n当前游戏世界: "+breaksense1.getGameworld()
+                                + "\n当前玩家列表：\n");
+            for(int i=0;i<breaksense1.getMaximumPlayer();i++){
+                if(breaksense1.getPlayerList()[i]!=null){
+                    sender.sendMessage(ChatColor.GOLD+"玩家"+(i+1)+"是："+breaksense1.getPlayerList()[i]+"\n");   
+                }
+            //sender.sendMessage(breaksense1.getPlayerList());
             return true;
         }
         if (!(sender instanceof Player)){
-            getLogger().info("列表中当前有"+breaksense1.getPlayerNumber()+"个玩家，"
-                                + "最大人数为"+breaksense1.getMaximumPlayer()+","
+            getLogger().info(ChatColor.GOLD+"列表中当前有"+breaksense1.getPlayerNumber()+"个玩家，\n"
+                                + "最大人数为"+breaksense1.getMaximumPlayer()+",\n"
                                 + "当前爆炸威力："+breaksense1.getExplodeSize());
             for(int i=0;i<breaksense1.getMaximumPlayer();i++){
                 if(breaksense1.getPlayerList()[i]!=null){
-                    getLogger().info("玩家"+(i+1)+"是："+breaksense1.getPlayerList()[i]);   
-                }                
+                    getLogger().info(ChatColor.GOLD+"玩家"+(i+1)+"是："+breaksense1.getPlayerList()[i]+"\n");   
+                }
             }
             
             return true;
+            }
         }
     }
+    
+    //命令/setgameworld
+    if (cmd.getName().equalsIgnoreCase("setgameworld")) {
+        if(args.length==0){//无参数只能玩家用
+            if ((sender instanceof Player)){//是玩家就设置
+                breaksense1.setGameworld(((Player) sender).getWorld());
+                this.getConfig().set("Game_World", ((Player) sender).getWorld().getName());
+                ((Player)sender).sendMessage(ChatColor.GOLD+sender.getName()+"已设置当前的游戏世界为"+((Player) sender).getWorld().getName());
+                getLogger().warning(ChatColor.GOLD+sender.getName()+"已设置当前的游戏世界为"+((Player) sender).getWorld().getName());
+                return true;
+            }
+            else{//不是就报错
+                getLogger().warning(ChatColor.GOLD+sender.getName()+"我告诉你,不要用控制台执行玩家指令啊喂");
+                return true;
+            }
+        }
+        else if(args.length==1){//一个参数使用参数
+            if(Bukkit.getWorld(args[0])!=null){
+                breaksense1.setGameworld(Bukkit.getWorld(args[0]));
+                this.getConfig().set("Game_World", Bukkit.getWorld(args[0]).getName());
+                if ((sender instanceof Player)){
+                    ((Player)sender).sendMessage(ChatColor.GOLD+sender.getName()+"已设置当前的游戏世界为"+Bukkit.getWorld(args[0]).getName());
+                }
+                getLogger().warning(ChatColor.GOLD+sender.getName()+"已设置当前的游戏世界为"+ Bukkit.getWorld(args[0]).getName());
+                return true;
+            }
+            else{
+                sender.sendMessage(ChatColor.GOLD+"世界不存在！");
+                return true;
+            }
+        }
+        else{
+            sender.sendMessage(ChatColor.GOLD+"参数过多！");
+            return true;
+        }
+    }
+        
     return true;
 
 
