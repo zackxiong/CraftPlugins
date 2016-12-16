@@ -299,7 +299,6 @@ public void onBlockPlace(BlockPlaceEvent e)  {
                     if(e.getEntity().getLocation().getBlock().getType()==Material.AIR){
                         cancel();
                     }
-
                 }//解决方案2
                 
             }
