@@ -16,6 +16,7 @@ import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.craftbukkit.v1_7_R4.entity.CraftPlayer;
 import org.bukkit.entity.Arrow;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Projectile;
@@ -235,40 +236,74 @@ public void onBlockPlace(BlockPlaceEvent e)  {
 //射箭监听器使用
     @EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = true)  //这就是我说的那个监听器了，事件发生时会触发下面这个方法
     public void onEntityShootBow(EntityShootBowEvent e)  {
-        
         //把人挂上去
         if(e.getEntity() instanceof Player&&isInList((Player)e.getEntity())){
             e.getProjectile().setVelocity(e.getProjectile().getVelocity().add(e.getProjectile().getVelocity()));
             e.getProjectile().setPassenger(e.getEntity());
             
+            new BukkitRunnable(){//效果播放
+                int timemax=15;
+                @Override
+                public void run(){
+                    timemax=timemax-1;
+                    if(timemax<=0){
+                        cancel();
+                    }
+                    boolean exist=false;
+                    //System.out.print("effect,enter");
+                    /*for(Entity entity : e.getProjectile().getNearbyEntities(2d, 2d, 2d)){
+                        if(entity instanceof Projectile){
+                            exist=true;
+                        }
+                    }*/
+                    //if(!e.getProjectile().isOnGround()|!e.getEntity().isOnGround()){
+                    if(Material.AIR==e.getProjectile().getWorld().getBlockAt((int)e.getProjectile().getLocation().getX(), (int)e.getProjectile().getLocation().getY()-1, (int)e.getProjectile().getLocation().getZ()).getType()){
+                        for(int i=0;i<10;i++){
+                            e.getProjectile().getWorld().playEffect(e.getProjectile().getLocation(), Effect.FIREWORKS_SPARK, 2);
+                            Material m=e.getProjectile().getWorld().getBlockAt((int)e.getProjectile().getLocation().getX(), (int)e.getProjectile().getLocation().getY()-1, (int)e.getProjectile().getLocation().getZ()).getType();
+                            //System.out.print(m.name()+",effect,"+e.getEntity().isOnGround());
+                        }
+                    }
+                    else{
+                        cancel();
+                    }
+                }
+            }.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 10L, 2L);
+            
             new BukkitRunnable(){//确认不会卡在墙里面
+            int a=0;
             @Override
             public void run() {
-                boolean isdo=false;
-                boolean needdo=false;
-                for(int i=0;i<10;i++){
-                    e.getProjectile().getWorld().playEffect(e.getProjectile().getLocation(), Effect.MAGIC_CRIT, 2);
-                }
-                if(e.getEntity().getLocation().getBlock().getType()!=Material.AIR){
+                /*if(e.getEntity().getLocation().getBlock().getType()!=Material.AIR){//防止困住
                     //System.out.print("一次执行");
                     e.getEntity().eject();
                     e.getProjectile().eject();
                     e.getEntity().getLocation().setY(e.getEntity().getLocation().getY()+3);
-                    isdo=true;
-                    //int i=0;
-                    /*while(e.getEntity().getLocation().getBlock().getType()!=Material.AIR){
-                        System.out.print("2次执行");
-                        i++;
-                        if(i>20) {cancel();}
-                        e.getEntity().getLocation().setY(e.getEntity().getLocation().getY()+3);
-                    }*/
+                    if(e.getEntity().getLocation().getBlock().getType()==Material.AIR){
                         needdo=true;
                     }
-                    if(isdo==true&&needdo==true){
-                    cancel();
+                    isdo=true;
                     }
-                }
-            }.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 10L, 2L);
+                    if(isdo==true&&needdo==true){
+                        System.out.print("全部完了isdo:"+isdo+",needdo:"+needdo);
+                        cancel();
+                    }*///解决方案1
+                if(e.getEntity().getLocation().getBlock().getType()!=Material.AIR||e.getProjectile().getVelocity()==new Vector(0,0,0)){
+                    //System.out.print("eject");
+                    e.getEntity().eject();
+                    e.getProjectile().eject();
+                    e.getProjectile().remove();
+                    Location loc=e.getEntity().getLocation();
+                    loc.setY(e.getEntity().getLocation().getY()+1);
+                    e.getEntity().teleport(loc);
+                    if(e.getEntity().getLocation().getBlock().getType()==Material.AIR){
+                        cancel();
+                    }
+
+                }//解决方案2
+                
+            }
+        }.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 10L, 2L);
             return;
         }
     }
