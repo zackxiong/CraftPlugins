@@ -2,7 +2,7 @@ title: Craftplugins
 description: These are the Bukkit plugins I am developping
 google_analytics: 
 show_downloads: true
-theme: jekyll-theme-slate
+theme: jekyll-theme-minimal
 
 gems:
   - jekyll-mentions
