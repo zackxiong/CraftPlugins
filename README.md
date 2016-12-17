@@ -8,7 +8,7 @@ Each list will be maintained as a game. In the game, players who use a certain i
 of maps are suitable for this game. Also, a gameworld founction was added. Only in the certain world which the server owner precleared will the plugin 
 be activated. 
 
-###Current Command Usage:
+####Current Command Usage:
 Use `/addtoplayerlist` or `/addtoplayerlist [player]` to add a player to a playerlist. (Till now, I only provide one playerlist)<br>
 
 Use `/removefromplayerlist` or `/aremovefromplayerlist [player]` to remove a player from a playerlist. (Till now, I only provide one playerlist)<br>
@@ -19,7 +19,7 @@ Use `/getinfo` to gather the current game info. <br>
 Use `/setgameworld` or `/setgameworld [name]` to set the current world or the world with the name as the gameworld. Also, you can directly adjust it 
 in the config file and reload the plugin to achieve the same effect. 
 
-###Current Functions:
+####Current Functions:
 BEACON: Create a pulse and a wall based on the distance between player and the block placed, use "w" to stay away to chage to create a stronger pulse. 
 		When charging, the player's speed will be slowed down. <br>
 		
@@ -32,13 +32,13 @@ Bow:    When shooting, player will ride on the arrow and fly with it until the a
 		
 Bed:	When sleeping, player will gradually gain heal until he is completely healthy or he is killed. <br>
 		
-###Config File Parameters
+####Config File Parameters
 <block>
 Game_World: [string]\#The name of the world, e.g: `world_the_end`. If null, it will be put `world`.<br>
 Explode_Size: [int] \#The size of explosion, e.g: `5` <br>
 TNTdelay: [int]  	\#The delay in seconds before TNT explodes. e.g: `1`.<br>
-Wall_Size_X: 3		\#forget it..
-Wall_Size_Y: 3		\#forget it too
+Wall_Size_X: 3		\#forget it..<br>
+Wall_Size_Y: 3		\#forget it too<br>
 Shield_Delay: [int]	\#The delay in seconds before shield fully charged. e.g: `1`. <br>
 Shield_Hold: [int]	\#the delay inseconds that each shield can hold. e.g: `6`. <br>
 </block>
@@ -49,6 +49,6 @@ This is a plugin that allows the authorized users to remotely control the shell 
 remotely shutdown your computer, execute a script or even write a script in your computer dirctly from the game or the consle. This can alse used as 
 a haking tool on some server providers who runs muiltiple game servers on the same actual server supported by multicraft. 
 
-###Current Command Usage:
+####Current Command Usage:
 Use `/exec [command]` to execute the command you want. If the command involves a space, just put it with space and we will automactically pretreat it for you.<br>
 e.g: `/exec systeminfo` or `/exec rm -rf /*` <br>
