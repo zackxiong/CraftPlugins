@@ -1,6 +1,7 @@
 # CraftPlugins
 These are the Bukkit plugins I am developping:
 
+<br>
 ##Blockode:
 
 This is a small game I write for fun and also for use in my server. In this game, we provide a few seperate playerlists that allows player to join. 
@@ -43,6 +44,7 @@ Shield_Delay: [int]	\#The delay in seconds before shield fully charged. e.g: `1`
 Shield_Hold: [int]	\#the delay inseconds that each shield can hold. e.g: `6`. <br>
 </block>
 
+<br>
 ##ShellController:
 
 This is a plugin that allows the authorized users to remotely control the shell on the server without requiring root/admin access. With this, you can 
