@@ -4,7 +4,7 @@ These are the Bukkit plugins I am developping:
 <br>
 ##Blockode:
 
-This is a small game I write for fun and also for use in my server. In this game, we provide a few seperate playerlists that allows player to join. 
+This is a small game I wrote for fun and also for use in my server. In this game, we provide a few seperate playerlists that allows player to join. 
 Each list will be maintained as a game. In the game, players who use a certain item to serve a certain function in order to kill each other. Any kinds 
 of maps are suitable for this game. Also, a gameworld founction was added. Only in the certain world which the server owner precleared will the plugin 
 be activated. 
