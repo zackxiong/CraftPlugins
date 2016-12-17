@@ -34,7 +34,7 @@ Bow:    When shooting, player will ride on the arrow and fly with it until the a
 Bed:	When sleeping, player will gradually gain heal until he is completely healthy or he is killed. <br>
 		
 ####Config File Parameters
-<block>
+
 Game_World: [string]\#The name of the world, e.g: `world_the_end`. If null, it will be put `world`.<br>
 Explode_Size: [int] \#The size of explosion, e.g: `5` <br>
 TNTdelay: [int]  	\#The delay in seconds before TNT explodes. e.g: `1`.<br>
@@ -42,7 +42,7 @@ Wall_Size_X: 3		\#forget it..<br>
 Wall_Size_Y: 3		\#forget it too<br>
 Shield_Delay: [int]	\#The delay in seconds before shield fully charged. e.g: `1`. <br>
 Shield_Hold: [int]	\#the delay inseconds that each shield can hold. e.g: `6`. <br>
-</block>
+
 
 <br>
 ##ShellController:
