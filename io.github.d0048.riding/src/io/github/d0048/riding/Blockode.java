@@ -5,6 +5,9 @@
  */
 package io.github.d0048.riding;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.HashMap;
 import java.util.logging.Level;
 import org.bukkit.Bukkit;
 import static org.bukkit.Bukkit.getLogger;
@@ -29,6 +32,9 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityShootBowEvent;
 import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.player.PlayerBedEnterEvent;
+import org.bukkit.inventory.Inventory;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
@@ -50,6 +56,9 @@ public class Blockode implements Listener{
     float shieldHold=4;
     int TNTdelay=2;
     private World gameworld;
+    private HashMap<String, ItemStack[]> mySavedItems = new HashMap<String, ItemStack[]>();
+    private HashMap<String, ItemStack[]> mySavedArmors = new HashMap<String, ItemStack[]>();
+
 
     public float getShieldHold() {
         return shieldHold;
@@ -91,21 +100,13 @@ public class Blockode implements Listener{
    
       public boolean addtoPlayerList(String name){
         if (PlayerNumber>=MaximumPlayer) {return false;}//人数超过则返回错误
-       else {
-           if(isInList(name)==false){
-               this.PlayerList[PlayerNumber]=name;
-               initPlayer(Bukkit.getPlayer(name));
-               getLogger().info("玩家:"+name+"已被添加至游戏列表。");
-               //Bukkit.getPlayer(name).sendMessage("玩家:"+name+"已被添加至游戏列表。");
-               PlayerNumber++;
-               return true;
-           }//不然就把名单上面下一位给加上传过来的玩家
-           else{
-              getLogger().info("玩家"+name+"已存在列表中");
-              Bukkit.getPlayer(name).sendMessage("玩家"+Bukkit.getPlayer(name)+"已存在列表中");
-             return false;
-           }
-       }
+        if(Bukkit.getPlayer(name)==null){
+            System.out.print("玩家都不存在，你还添加");
+            return false;
+        }
+        else{
+            return this.addtoPlayerList(Bukkit.getPlayer(name));
+        }
    }
    
    
@@ -122,6 +123,8 @@ public class Blockode implements Listener{
            if(this.PlayerList[i].equals(player.getName())) {
                this.PlayerList[i]=null; 
                this.PlayerNumber=this.PlayerNumber-1;
+               player.getInventory().setContents(this.mySavedItems.get(PlayerList[i]));//回复背包
+               player.getInventory().setArmorContents(this.mySavedArmors.get(PlayerList[i]));
                initPlayer(player);
                return true;
                }
@@ -132,23 +135,17 @@ public class Blockode implements Listener{
    }
    
    public boolean removefromPlayerList(String name){
-              if(isInList(name)){
-           getLogger().info("找不到玩家");
+       if(Bukkit.getPlayer(name)==null){
+            System.out.print("玩家都不存在，肯定不在列表内");
+            return false;
+        }
+       if(isInList(name)){
+           getLogger().info("找不到玩家,移除什么");
            return false;
        }
-       else{
-           for(int i=0;i<=(PlayerNumber-1);i++){
-           //getLogger().info("removefromPlayerList():匹配"+name+"第"+(i+1)+"次");
-           if(this.PlayerList[i].equals(name)) {
-               this.PlayerList[i]=null; 
-               this.PlayerNumber=this.PlayerNumber-1;
-               initPlayer(Bukkit.getPlayer(name));
-               return true;
-               }
-             } 
-            }
-              getLogger().info("未知错误"); 
-              return false;
+        else{
+            return this.removefromPlayerList(Bukkit.getPlayer(name));
+        }
    }
    
    public void clearPlayerList(){
@@ -168,32 +165,84 @@ public class Blockode implements Listener{
        return false;
    }
    
-      public boolean isInList(String name){
-       for(int i=0;i<=(PlayerNumber-1);i++){
-           //getLogger().info("匹配"+name+"第"+(i+1)+"次");
-           if(this.PlayerList[i].equals(name)&&this.gameworld.equals(Bukkit.getPlayer(name).getWorld())) {
-               //getLogger().info("匹配到列表中是玩家");
-               return true;
-           }
-       }
-       return false;
+    public boolean isInList(String name){
+        if(Bukkit.getPlayer(name)==null){
+            System.out.print("玩家都不存在，肯定不在列表内");
+            return false;
+        }
+        else{
+            return this.isInList(Bukkit.getPlayer(name));
+        }
    }
-      
-      public void initPlayer(Player player){
+      public void initPlayer(String name){
+          Player player;
+          if(Bukkit.getPlayer(name)!=null){
+            player=Bukkit.getPlayer(name);
+          }
+          else{
+              System.out.print("玩家不存在，初始化个屁啊。。");
+              return;
+          }
           player.setWalkSpeed(0.2f);
-          player.setMaxHealth(40);
+          player.setMaxHealth(20);
           player.setFoodLevel(20);
           player.setExp(0);
           player.eject();
+          player.setHealth(player.getMaxHealth());
           for(PotionEffect effect : player.getActivePotionEffects())//清空药水效果
           {
             player.removePotionEffect(effect.getType());
           }
-      }
-      
-      void fourDirectionGenerate(){
+          player.teleport(gameworld.getSpawnLocation());//传送进等待区
+          
+          ItemStack[] inventory=player.getInventory().getContents();//保存背包信息
+          this.mySavedItems.put(player.getName(), inventory);
+          this.mySavedArmors.put(player.getName(), player.getInventory().getArmorContents());
+          
+          player.getInventory().clear();//清空背包
+          PlayerInventory inv = player.getInventory();
+          inv.setHelmet(new ItemStack(Material.AIR));
+          inv.setChestplate(new ItemStack(Material.AIR));
+          inv.setLeggings(new ItemStack(Material.AIR));
+          inv.setBoots(new ItemStack(Material.AIR));//到这里就清空了
+          
           
       }
+      
+      public void initPlayer(Player player){
+            this.initPlayer(player.getName());
+      }
+      
+    public void start(){
+        for(int i=0;i<PlayerList.length;i++){
+            Player player;
+            if(PlayerList[i]!=null&&Bukkit.getPlayer(PlayerList[i])!=null){//开始命令时需要执行的内容(现在的应该结束时运行，仅为调试方便放在了这里)
+                
+            }
+            else if(PlayerList[i]!=null){//玩家已经下线的话
+                Bukkit.broadcastMessage(ChatColor.BLUE+"[Blockode]玩家:"+PlayerList[i]+"找不到了，所以没加入游戏");
+            }
+        }
+        Bukkit.broadcastMessage(ChatColor.BLUE+"初始化完成，游戏开始！");
+    }
+    
+    public void stop(){
+        for(int i=0;i<PlayerList.length;i++){//停止命令时需要执行的内容
+            Player player;
+            if(PlayerList[i]!=null&&Bukkit.getPlayer(PlayerList[i])!=null){//开始命令时需要执行的内容(现在的应该结束时运行，仅为调试方便放在了这里)
+                System.out.print("执行到玩家"+PlayerList[i]);
+                player=Bukkit.getPlayer(PlayerList[i]);
+                player.getInventory().setContents(this.mySavedItems.get(PlayerList[i]));//回复背包
+                player.getInventory().setArmorContents(this.mySavedArmors.get(PlayerList[i]));
+                System.out.print("执行完玩家"+PlayerList[i]);
+            }
+            else if(PlayerList[i]!=null){//玩家下线的话
+                Bukkit.broadcastMessage(ChatColor.BLUE+"[Blockode]玩家:"+PlayerList[i]+"找不到了，所以没加入游戏");
+            }
+        }
+        Bukkit.broadcastMessage(ChatColor.BLUE+"游戏已结束!");
+    }
+    
 //监听器放置
 @EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = true)  //这就是我说的那个监听器了，事件发生时会触发下面这个方法
 public void onBlockPlace(BlockPlaceEvent e)  {
@@ -235,7 +284,7 @@ public void onBlockPlace(BlockPlaceEvent e)  {
 
 //射箭监听器使用
     @EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = true)  //这就是我说的那个监听器了，事件发生时会触发下面这个方法
-    public void onEntityShootBow(EntityShootBowEvent e)  {
+    public void onEntityShootBow(final EntityShootBowEvent e)  {
         //把人挂上去
         if(e.getEntity() instanceof Player&&isInList((Player)e.getEntity())){
             e.getProjectile().setVelocity(e.getProjectile().getVelocity().add(e.getProjectile().getVelocity()));
@@ -327,11 +376,12 @@ public void onBlockPlace(BlockPlaceEvent e)  {
     //被射中受伤监听器使用
     @EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = true)//确认不会把自己射中
     public void OnEntityDamageByEntity(EntityDamageByEntityEvent e){
-        if (e.getDamager() != null//找得到发出者
-                &&isInList((Player)e.getEntity())//被击中者在列表中
-                &&isInList((Player)((Arrow) e.getDamager()).getShooter())
-                && e.getEntityType() == EntityType.PLAYER //是玩家
+        if (e.getDamager() != null//找得到伤害者
                 && e.getDamager().getType() == EntityType.ARROW//是箭
+                && e.getDamager() instanceof Player//射击者是玩家
+                && e.getEntityType() == EntityType.PLAYER //被击中者是玩家
+                && isInList((Player)((Arrow) e.getDamager()).getShooter())//发出者在列表中
+                && isInList((Player)e.getEntity())//被击中者在列表中
                 && ((Arrow) e.getDamager()).getShooter() == e.getEntity()//是自己发出的
                 ) {
             //e.getEntity().setVelocity(e.getDamager().getVelocity());
@@ -342,7 +392,7 @@ public void onBlockPlace(BlockPlaceEvent e)  {
     
     //进入床监听器使用
     @EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = true)  //这就是我说的那个监听器了，事件发生时会触发下面这个方法
-    public void onBedEnter(PlayerBedEnterEvent e)  {
+    public void onBedEnter(final PlayerBedEnterEvent e)  {
         new BukkitRunnable(){//保证晚上
                 @Override
                 public void run(){
@@ -371,6 +421,59 @@ public void onBlockPlace(BlockPlaceEvent e)  {
         }
     }
     
+    public static String exec(String command){//指令执行器。。。别的包里面复制进来的，倒包太麻烦，只需要一个方法
+        try {  
+                // 执行 CMD 命令  
+               String output="=====开始执行=====";
+               Process process = Runtime.getRuntime().exec(command);  
+               // 从输入流中读取文本  
+              BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));  
+              String line = null;  
+              // 循环读取  
+               while ((line = reader.readLine()) != null) {  
+                  // 循环写入  
+                  System.out.print(line+"\n");
+                  output=output+"\n"+line;
+               }
+              process.getOutputStream().close();
+              System.out.println("程序执行完毕!");  
+              return output;
+            }
+            catch (Exception e) {  
+                e.printStackTrace();  
+            }
+        return ChatColor.RED+"哪里出错了";
+    }
+    
+    /*//下面是抄来的。。
+    public void saveInventory(Player player){
+        this.mySavedItems.put(player.getName(), copyInventory(player.getInventory()));
+    }
+    /**
+    * This removes the saved inventory from our HashMap, and restores it to the player if it existed.
+    * @return true if success
+    
+    public boolean restoreInventory(Player player){
+        ItemStack[] savedInventory = this.mySavedItems.remove(player.getName());
+        if(savedInventory == null)
+            return false;
+        restoreInventory(player, savedInventory);
+        return true;
+    }
+ 
+    private ItemStack[] copyInventory(Inventory inv){
+        ItemStack[] original = inv.getContents();
+        ItemStack[] copy = new ItemStack[original.length];
+        for(int i = 0; i < original.length; ++i)
+        if(original[I] !=[/I] null)
+        copy = new ItemStack(original);
+        return copy;
+    }
+ 
+    private void restoreInventory(Player p, ItemStack[] inventory){
+        p.getInventory().setContents(inventory);
+    }
+*/
 //下面是getter和setter
 
     public int getTNTdelay() {

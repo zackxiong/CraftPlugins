@@ -5,8 +5,10 @@ import java.io.*;
 import java.io.InputStreamReader;
 import org.bukkit.Bukkit;
 import static org.bukkit.Bukkit.getLogger;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 
@@ -48,29 +50,48 @@ public final class ShellController extends JavaPlugin{
     
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
-        if (cmd.getName().equalsIgnoreCase("exec")&&args.length==0) {//无参数时
+        if (cmd.getName().equalsIgnoreCase("exec")&&args.length==0&&!(sender instanceof Player)) {//无参数+控制台下时
             String command = "systeminfo" ; 
             exec(command);
         }
         
-        if (cmd.getName().equalsIgnoreCase("exec")&&args.length==1) {//一个参数时
+        if (cmd.getName().equalsIgnoreCase("exec")&&args.length==0&&(sender instanceof Player)) {//无参数+玩家下时
+            String command = "systeminfo" ; 
+            ((Player)sender).sendMessage(ChatColor.GREEN+exec(command));
+        }
+        
+        else if (cmd.getName().equalsIgnoreCase("exec")&&args.length==1&&!(sender instanceof Player)) {//一个参数+控制台下时
             String command = "cmd /c"+args[0] ; 
             exec(command);
         }
         
-        else{ //多个参数时用空格连接
+        else if (cmd.getName().equalsIgnoreCase("exec")&&args.length==1&&(sender instanceof Player)) {//一个参数+玩家下时
+            String command = "cmd /c"+args[0] ; 
+            ((Player)sender).sendMessage(ChatColor.GREEN+exec(command));
+        }
+        
+        else if (cmd.getName().equalsIgnoreCase("exec")&&args.length>=1&&!(sender instanceof Player)){ //多个参数+控制台下时用空格连接
             String command = "cmd /c"+args[0];
             for(int i=1;i<args.length;i++){
                 command=command+" "+args[i];
             }
             exec(command);
         }
+        
+        else{//多个参数+玩家下时用空格连接
+            String command = "cmd /c"+args[0];
+            for(int i=1;i<args.length;i++){
+                command=command+" "+args[i];
+            }
+            ((Player)sender).sendMessage(ChatColor.GREEN+exec(command));
+        }
         return true;
     }
     
-    public void exec(String command){
+    public static String exec(String command){
         try {  
                 // 执行 CMD 命令  
+               String output="=====开始执行=====";
                Process process = Runtime.getRuntime().exec(command);  
                // 从输入流中读取文本  
               BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));  
@@ -79,12 +100,15 @@ public final class ShellController extends JavaPlugin{
                while ((line = reader.readLine()) != null) {  
                   // 循环写入  
                   System.out.print(line+"\n");
+                  output=output+"\n"+line;
                }
               process.getOutputStream().close();
               System.out.println("程序执行完毕!");  
+              return output;
             }
             catch (Exception e) {  
                 e.printStackTrace();  
             }
+        return ChatColor.RED+"哪里出错了";
     }
 }

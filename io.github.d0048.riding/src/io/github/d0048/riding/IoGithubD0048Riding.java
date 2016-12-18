@@ -76,6 +76,7 @@ private FileConfiguration config;
     @Override
     public void onDisable() {
         test1=null;
+        breaksense1.stop();
         breaksense1.clearPlayerList();
         getLogger().info("你的插件已被卸载。");//相当于析构函数，不过其他还没写完这里就还没写，内存泄漏什么的先不管了
     }
@@ -234,6 +235,18 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
             sender.sendMessage(ChatColor.GOLD+"参数过多！");
             return true;
         }
+    }
+    
+    //命令startgame
+    if (cmd.getName().equalsIgnoreCase("startgame")) {
+        breaksense1.start();
+        return true;
+    }
+    
+    //命令stopgame
+    if (cmd.getName().equalsIgnoreCase("stopgame")) {
+        breaksense1.stop();
+        return true;
     }
         
     return true;

@@ -7,5 +7,5 @@ commands:
     exec:
         description: 执行一条命令并且获取输出
         usage: /<command> [command]
-        permission: <plugin name>.basic
-        permission-message: You don't have <permission></source> </code> </blockquote> 
+        permission: shellcontroller.op
+        permission-message: 你没权限。。别试了

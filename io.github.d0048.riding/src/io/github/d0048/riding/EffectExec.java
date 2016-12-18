@@ -79,7 +79,7 @@ public class EffectExec {
     }
     
     
-    public void ChargeSheild(BlockPlaceEvent e,float delay){//充能动画+延时
+    public void ChargeSheild(final BlockPlaceEvent e,final float delay){//充能动画+延时
         float speed=e.getPlayer().getWalkSpeed();
         //System.out.print(e.getPlayer().getWalkSpeed());
         e.getPlayer().setWalkSpeed(0.05f);
@@ -105,7 +105,7 @@ public class EffectExec {
     }
     
     
-    public boolean CreatePulse(BlockPlaceEvent e){//先冲击
+    public boolean CreatePulse(final BlockPlaceEvent e){//先冲击
         int x=e.getBlock().getX(),
         y=e.getBlock().getY(),
         z=e.getBlock().getZ();
@@ -152,7 +152,7 @@ public class EffectExec {
         }
     
     
-    public  boolean MakeSheild(BlockPlaceEvent e){//充能完成
+    public  boolean MakeSheild(final BlockPlaceEvent e){//充能完成
         int x=e.getBlock().getX(),
         y=e.getBlock().getY(),
         z=e.getBlock().getZ();
@@ -160,7 +160,7 @@ public class EffectExec {
                  blockLocation=e.getBlock().getLocation();
     
         Location [][]wall=new Location[Wall_Size_X][Wall_Size_Y];
-        Location middle=new Location(e.getBlock().getWorld(),x,y,z),
+        final Location middle=new Location(e.getBlock().getWorld(),x,y,z),
                      up=new Location(e.getBlock().getWorld(),x,y,z),
                      down=new Location(e.getBlock().getWorld(),x,y,z),
                      left=new Location(e.getBlock().getWorld(),x,y,z),
@@ -334,7 +334,7 @@ public class EffectExec {
         }
     
     
-    public void removeShield(BlockPlaceEvent e,Location middle,ArrayList s){
+    public void removeShield(final BlockPlaceEvent e,final Location middle,final ArrayList s){
         //System.out.print("enter");
         /*Block[] b=(Block[]) s.toArray();
         e.getPlayer().sendMessage(b.toString()+"..");
@@ -342,7 +342,7 @@ public class EffectExec {
                     b[i].setType(Material.AIR);
                     System.out.print("clearing"+i);
                     }*/
-        Iterator i=s.iterator();
+        final Iterator i=s.iterator();
         
         new BukkitRunnable(){
             float time =shieldHold;
@@ -370,7 +370,7 @@ public class EffectExec {
     }
     
     @Deprecated
-    public void ExpTimer(Player player,float time1){//时间用0.1秒计算（这是一个半废掉的毫无卵用的方法，留着改成别的的时候用）
+    public void ExpTimer(Player player,final float time1){//时间用0.1秒计算（这是一个半废掉的毫无卵用的方法，留着改成别的的时候用）
         new BukkitRunnable(){
             float time = time1;  // delay秒
             @Override
@@ -385,7 +385,7 @@ public class EffectExec {
         
     }
 //下面的方法属于TNT效果
-    public void ChargeTNT(BlockPlaceEvent e){//问题找到了，双重TNT会有两次加速。。
+    public void ChargeTNT(final BlockPlaceEvent e){//问题找到了，双重TNT会有两次加速。。
         float speed=e.getPlayer().getWalkSpeed();
         if(1.5f*speed<=1){
             e.getPlayer().setWalkSpeed(1.5f*speed);
