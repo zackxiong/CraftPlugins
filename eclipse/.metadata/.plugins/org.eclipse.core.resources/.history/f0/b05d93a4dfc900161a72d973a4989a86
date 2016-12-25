@@ -251,26 +251,14 @@ public final class Blockode implements Listener{
     public void stop(){//停止命令时需要执行的内容
         for(int i=0;i<PlayerList.length;i++){
             Player player;
-            Damageable playerdg;
+            Damageable dg;
             if(PlayerList[i]!=null&&Bukkit.getPlayer(PlayerList[i])!=null){//停止命令时需要执行的内容(现在的应该结束时运行，仅为调试方便放在了这里)（现在放这里挺好的）
                 System.out.print("执行到玩家"+PlayerList[i]);
                 player=Bukkit.getPlayer(PlayerList[i]);
-                playerdg=(Damageable)player;
                 player.getInventory().setContents(this.mySavedItems.get(PlayerList[i]));//回复背包
                 player.getInventory().setArmorContents(this.mySavedArmors.get(PlayerList[i]));
                 
-                player.setWalkSpeed(0.2f);//状态再次归零
-                player.setMaxHealth(20);
-                player.setFoodLevel(20);
-                player.setExp(0);
-                player.eject();
-                player.setHealth(playerdg.getMaxHealth());
-                for(PotionEffect effect : player.getActivePotionEffects())//清空药水效果
-                {
-                  player.removePotionEffect(effect.getType());
-                }
-                player.teleport(gameworld.getSpawnLocation());//传送进等待区
-                
+                player.
                 System.out.print("执行完玩家"+PlayerList[i]);
             }
             else if(PlayerList[i]!=null){//玩家下线的话
