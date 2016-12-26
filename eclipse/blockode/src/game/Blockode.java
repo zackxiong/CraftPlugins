@@ -8,7 +8,6 @@ package game;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.HashMap;
-import java.util.logging.Level;
 import org.bukkit.Bukkit;
 import static org.bukkit.Bukkit.getLogger;
 import org.bukkit.ChatColor;
@@ -16,14 +15,11 @@ import org.bukkit.Effect;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
-import org.bukkit.block.Block;
 import org.bukkit.craftbukkit.v1_7_R4.entity.CraftPlayer;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Damageable;
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
-import org.bukkit.entity.Projectile;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -31,11 +27,10 @@ import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityShootBowEvent;
+import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.player.PlayerBedEnterEvent;
-import org.bukkit.event.player.PlayerChangedWorldEvent;
 import org.bukkit.event.player.PlayerTeleportEvent;
-import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.potion.PotionEffect;
@@ -68,24 +63,9 @@ public final class Blockode implements Listener{
             amountBread=1,
             amountTNT=1,
             amountIronSward=1;
-    private ItemStack[] gameItems = {new ItemStack(Material.ARROW,this.amountArrow),
-        new ItemStack(Material.BEACON,this.amountBeacon),
-        new ItemStack(Material.BED,this.amountBed),
-        new ItemStack(Material.BOW,this.amountBow),
-        new ItemStack(Material.BREAD,this.amountBread),
-        new ItemStack(Material.TNT,this.amountTNT),
-        new ItemStack(Material.IRON_SWORD,this.amountIronSward)
-    };
+    private ItemStack[] gameItems;
 
 
-    public float getShieldHold() {
-        return shieldHold;
-    }
-
-    public void setShieldHold(float shieldHold) {
-        this.shieldHold = shieldHold;
-    }
-    
     public Blockode(){
         System.out.print("[breaksense()]");
         PlayerList=new String[this.MaximumPlayer];
@@ -128,7 +108,8 @@ public final class Blockode implements Listener{
    }
    
    
-   public boolean removefromPlayerList(Player player){
+   @SuppressWarnings("deprecation")
+public boolean removefromPlayerList(Player player){
        //getLogger().info("开始查询玩家");
        if(!isInList(player)){
            getLogger().info("找不到玩家");
@@ -136,11 +117,32 @@ public final class Blockode implements Listener{
        }
        else{
            //getLogger().info("确认玩家在列表内，开始搜索");
+    	 //下面是移过来到内容：
+           System.out.print("执行到玩家"+player.getName());
+           Damageable playerdg=(Damageable)player;
+           //player.getInventory().setContents(this.mySavedItems.get(player.getName()));//回复背包
+           //player.getInventory().setArmorContents(this.mySavedArmors.get(player.getName()));
+           player.setWalkSpeed(0.2f);//状态再次归零
+           player.setMaxHealth(20);
+           player.setFoodLevel(20);
+           player.setExp(0);
+           player.eject();
+           player.setHealth(playerdg.getMaxHealth());
+           for(PotionEffect effect : player.getActivePotionEffects())//清空药水效果
+           {
+             player.removePotionEffect(effect.getType());
+           }
+           player.teleport(gameworld.getSpawnLocation());//传送进等待区
+           
+           System.out.print("执行完玩家"+player.getName());
+           //上面是移过来到内容
+           
            for(int i=0;i<=(PlayerNumber-1);i++){
            getLogger().info("removefromPlayerList():匹配"+player.getName()+"第"+(i+1)+"次");
            if(this.PlayerList[i].equals(player.getName())) {
-               player.getInventory().setContents(this.mySavedItems.get(PlayerList[i]));//回复背包
-               player.getInventory().setArmorContents(this.mySavedArmors.get(PlayerList[i]));
+               //player.getInventory().setContents(this.mySavedItems.get(PlayerList[i]));//回复背包
+               //player.getInventory().setArmorContents(this.mySavedArmors.get(PlayerList[i]));
+               this.recoverBackpack(PlayerList[i]);
                initPlayer(player);
                this.PlayerList[i]=null; 
                this.PlayerNumber=this.PlayerNumber-1;
@@ -192,7 +194,8 @@ public final class Blockode implements Listener{
             return this.isInList(Bukkit.getPlayer(name));
         }
    }
-      public void initPlayer(String name){
+      @SuppressWarnings("deprecation")
+	public void initPlayer(String name){
           Player player;
           Damageable playerdg;
           if(Bukkit.getPlayer(name)!=null){
@@ -226,7 +229,7 @@ public final class Blockode implements Listener{
           inv.setLeggings(new ItemStack(Material.AIR));
           inv.setBoots(new ItemStack(Material.AIR));//到这里就清空了
           
-          inv.addItem(gameItems);//加入设定物品
+
           
           
       }
@@ -235,11 +238,27 @@ public final class Blockode implements Listener{
             this.initPlayer(player.getName());
       }
       
+      public void recoverBackpack(String name){
+    	  Player player=Bukkit.getPlayer(name);
+    	  player.getInventory().setContents(this.mySavedItems.get(name));//回复背包
+          player.getInventory().setArmorContents(this.mySavedArmors.get(name));
+      }
+      
     public void start(){
         for(int i=0;i<PlayerList.length;i++){
             Player player;
             if(PlayerList[i]!=null&&Bukkit.getPlayer(PlayerList[i])!=null){//开始命令时需要执行的内容(现在的应该结束时运行，仅为调试方便放在了这里)
-                
+            	player=Bukkit.getPlayer(PlayerList[i]);
+            	PlayerInventory inv = player.getInventory();
+            	gameItems = new ItemStack[]{new ItemStack(Material.ARROW,this.amountArrow),//更新实时的配置文件设置
+            	        new ItemStack(Material.BEACON,this.amountBeacon),
+            	        new ItemStack(Material.BED,this.amountBed),
+            	        new ItemStack(Material.BOW,this.amountBow),
+            	        new ItemStack(Material.BREAD,this.amountBread),
+            	        new ItemStack(Material.TNT,this.amountTNT),
+            	        new ItemStack(Material.IRON_SWORD,this.amountIronSward)
+            	    };
+            	inv.addItem(gameItems);//加入设定物品
             }
             else if(PlayerList[i]!=null){//玩家已经下线的话
                 Bukkit.broadcastMessage(ChatColor.BLUE+"[Blockode]玩家:"+PlayerList[i]+"找不到了，所以没加入游戏");
@@ -248,7 +267,8 @@ public final class Blockode implements Listener{
         Bukkit.broadcastMessage(ChatColor.BLUE+"初始化完成，游戏开始！");
     }
     
-    public void stop(){//停止命令时需要执行的内容
+    @SuppressWarnings("deprecation")
+	public void stop(){//停止命令时需要执行的内容
         for(int i=0;i<PlayerList.length;i++){
             Player player;
             Damageable playerdg;
@@ -256,8 +276,9 @@ public final class Blockode implements Listener{
                 System.out.print("执行到玩家"+PlayerList[i]);
                 player=Bukkit.getPlayer(PlayerList[i]);
                 playerdg=(Damageable)player;
-                player.getInventory().setContents(this.mySavedItems.get(PlayerList[i]));//回复背包
-                player.getInventory().setArmorContents(this.mySavedArmors.get(PlayerList[i]));
+                //player.getInventory().setContents(this.mySavedItems.get(PlayerList[i]));//回复背包
+                //player.getInventory().setArmorContents(this.mySavedArmors.get(PlayerList[i]));
+                this.recoverBackpack(PlayerList[i]);
                 
                 player.setWalkSpeed(0.2f);//状态再次归零
                 player.setMaxHealth(20);
@@ -273,7 +294,7 @@ public final class Blockode implements Listener{
                 
                 System.out.print("执行完玩家"+PlayerList[i]);
             }
-            else if(PlayerList[i]!=null){//玩家下线的话
+            else if(PlayerList[i]!=null&&PlayerList[i]!=""&&PlayerList[i]!=" "){//玩家下线的话
                 Bukkit.broadcastMessage(ChatColor.BLUE+"[Blockode]玩家:"+PlayerList[i]+"找不到了，所以没加入游戏");
             }
         }
@@ -282,45 +303,44 @@ public final class Blockode implements Listener{
     }
     
 //监听器放置
-@EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = true)  //这就是我说的那个监听器了，事件发生时会触发下面这个方法
-public void onBlockPlace(BlockPlaceEvent e)  {
-    //int x=e.getBlock().getX(),
-    //    y=e.getBlock().getY(),
-    //    z=e.getBlock().getZ();
-    //Location playerLocation=e.getPlayer().getLocation(),
-    //         blockLocation=e.getBlock().getLocation();
-    
-    //方块信标,制造一面墙和冲击
-    if(e.getBlock().getType() == Material.BEACON){
-        if(isInList(e.getPlayer())==true){//如果发出者在列表里，就执行下面的内容（单独执行不会报错，工作正常）
-            EffectExec shield=new EffectExec(shieldHold);
-            e.getPlayer().sendMessage(ChatColor.BLUE+"按住\"S\"以充能...按得越久护盾距离越远哦");
-            shield.SheildEnterence(e,shieldDelay);
-            shield=null;//即时释放内存。。
-            return;
-        }
-    }
-    //貌似上面那个加上去之后下面这个就废了。。（已解决，我眼瞎了）
-    
-    //方块TNT,爆炸
-    if(e.getBlock().getType() == Material.TNT){  
-        if(isInList(e.getPlayer())==true){//如果发出者在列表里，就执行下面的内容（单独执行不会报错，工作正常）(连续使用会无法传递事件，是getspeed/setpseed的问题)
-            EffectExec TNT=new EffectExec(ExplodeSize);
-            TNT.setExplodePower(ExplodeSize);
-            TNT.setTNTdelay(TNTdelay);
-            TNT.ChargeTNT(e);
-            TNT=null;//释放内存
-            //getLogger().info(ChatColor.GREEN+e.getPlayer().toString()+"在"+e.getBlock().getLocation()+"放置了"+e.getBlock()+"并且炸了");
-            return;  
-       }
-        return;
-    }
+	@EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = true)  //这就是我说的那个监听器了，事件发生时会触发下面这个方法
+	public void onBlockPlace(BlockPlaceEvent e)  {
+	    //int x=e.getBlock().getX(),
+	    //    y=e.getBlock().getY(),
+	    //    z=e.getBlock().getZ();
+	    //Location playerLocation=e.getPlayer().getLocation(),
+	    //         blockLocation=e.getBlock().getLocation();
+	    
+	    //方块信标,制造一面墙和冲击
+	    if(e.getBlock().getType() == Material.BEACON){
+	        if(isInList(e.getPlayer())==true){//如果发出者在列表里，就执行下面的内容（单独执行不会报错，工作正常）
+	            EffectExec shield=new EffectExec(shieldHold);
+	            e.getPlayer().sendMessage(ChatColor.BLUE+"按住\"S\"以充能...按得越久护盾距离越远哦");
+	            shield.SheildEnterence(e,shieldDelay);
+	            shield=null;//即时释放内存。。
+	            return;
+	        }
+	    }
+	    //貌似上面那个加上去之后下面这个就废了。。（已解决，我眼瞎了）
+	    
+	    //方块TNT,爆炸
+	    if(e.getBlock().getType() == Material.TNT){  
+	        if(isInList(e.getPlayer())==true){//如果发出者在列表里，就执行下面的内容（单独执行不会报错，工作正常）(连续使用会无法传递事件，是getspeed/setpseed的问题)
+	            EffectExec TNT=new EffectExec(ExplodeSize);
+	            TNT.setExplodePower(ExplodeSize);
+	            TNT.setTNTdelay(TNTdelay);
+	            TNT.ChargeTNT(e);
+	            TNT=null;//释放内存
+	            //getLogger().info(ChatColor.GREEN+e.getPlayer().toString()+"在"+e.getBlock().getLocation()+"放置了"+e.getBlock()+"并且炸了");
+	            return;  
+	       }
+	        return;
+	    }
+	
+	    return;
+	}
 
-    return;
-}
-
-
-//射箭监听器使用
+	//射箭监听器使用
     @EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = true)  //这就是我说的那个监听器了，事件发生时会触发下面这个方法
     public void onEntityShootBow(final EntityShootBowEvent e)  {
         //把人挂上去
@@ -336,7 +356,7 @@ public void onBlockPlace(BlockPlaceEvent e)  {
                     if(timemax<=0){
                         cancel();
                     }
-                    boolean exist=false;
+                    //boolean exist=false;
                     //System.out.print("effect,enter");
                     /*for(Entity entity : e.getProjectile().getNearbyEntities(2d, 2d, 2d)){
                         if(entity instanceof Projectile){
@@ -347,7 +367,7 @@ public void onBlockPlace(BlockPlaceEvent e)  {
                     if(Material.AIR==e.getProjectile().getWorld().getBlockAt((int)e.getProjectile().getLocation().getX(), (int)e.getProjectile().getLocation().getY()-1, (int)e.getProjectile().getLocation().getZ()).getType()){
                         for(int i=0;i<10;i++){
                             e.getProjectile().getWorld().playEffect(e.getProjectile().getLocation(), Effect.FIREWORKS_SPARK, 2);
-                            Material m=e.getProjectile().getWorld().getBlockAt((int)e.getProjectile().getLocation().getX(), (int)e.getProjectile().getLocation().getY()-1, (int)e.getProjectile().getLocation().getZ()).getType();
+                            //Material m=e.getProjectile().getWorld().getBlockAt((int)e.getProjectile().getLocation().getX(), (int)e.getProjectile().getLocation().getY()-1, (int)e.getProjectile().getLocation().getZ()).getType();
                             //System.out.print(m.name()+",effect,"+e.getEntity().isOnGround());
                         }
                     }
@@ -358,7 +378,7 @@ public void onBlockPlace(BlockPlaceEvent e)  {
             }.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 10L, 2L);
             
             new BukkitRunnable(){//确认不会卡在墙里面
-            int a=0;
+            //int a=0;
             @Override
             public void run() {
                 /*if(e.getEntity().getLocation().getBlock().getType()!=Material.AIR){//防止困住
@@ -412,17 +432,22 @@ public void onBlockPlace(BlockPlaceEvent e)  {
     }
     
     //被射中受伤监听器使用
-    @EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = true)//确认不会把自己射中
+    @SuppressWarnings("deprecation")
+	@EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = true)//确认不会把自己射中
     public void OnEntityDamageByEntity(EntityDamageByEntityEvent e){
+    	//System.out.print("监听到了被射中事件:\ndamager:"+e.getDamager().getType().toString()+
+    		//			"\n entityType:"+e.getEntityType().toString()+
+    			//		"\n entity:"+e.getEntity());
         if (e.getDamager() != null//找得到伤害者
                 && e.getDamager().getType() == EntityType.ARROW//是箭
-                && e.getDamager() instanceof Player//射击者是玩家
+                && ((Arrow) e.getDamager()).getShooter() instanceof Player//射击者是玩家
                 && e.getEntityType() == EntityType.PLAYER //被击中者是玩家
                 && isInList((Player)((Arrow) e.getDamager()).getShooter())//发出者在列表中
                 && isInList((Player)e.getEntity())//被击中者在列表中
                 && ((Arrow) e.getDamager()).getShooter() == e.getEntity()//是自己发出的
                 ) {
             //e.getEntity().setVelocity(e.getDamager().getVelocity());
+        	//System.out.print("监听到了被射中事件2");
             ((Player)e.getEntity()).sendMessage(ChatColor.RED+"你已达到最大射程，为了免得你摔死，你正在降落");
             e.setCancelled(true);
         }
@@ -460,7 +485,7 @@ public void onBlockPlace(BlockPlaceEvent e)  {
         }
     }
     
-    //进入床监听器使用
+    //传送监听器使用，除op外不允许传送
     @EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = true)  //这就是我说的那个监听器了，事件发生时会触发下面这个方法
     public void onPlayerTeleport(PlayerTeleportEvent e)  {
         if(this.isInList(e.getPlayer())&&!e.getTo().getWorld().equals(this.gameworld)&&!e.getPlayer().isOp()){//里面的人试图出去（op例外）
@@ -471,6 +496,50 @@ public void onBlockPlace(BlockPlaceEvent e)  {
             e.getPlayer().sendMessage("你不在游戏中，不能进来");
             e.setCancelled(true);
         }
+    }
+    
+    //死亡监听器使用，自动重生
+    @EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = true)  //这就是我说的那个监听器了，事件发生时会触发下面这个方法
+    public void onPlayerDeath(PlayerDeathEvent e)  {
+    	final Player p=(Player)e.getEntity();
+    	final Damageable dg=p;
+    	//if(e.getEntity().getKiller().getDisplayName()!=null && e.getEntity().getDisplayName()!=null){//死亡信息
+        //	e.setDeathMessage(ChatColor.BLUE+e.getEntity().getDisplayName()+ChatColor.RED+"被"+ChatColor.YELLOW+e.getEntity().getKiller().getDisplayName()+ChatColor.RED+"出局了!");
+    	//}
+    	//else{
+    	//	e.setDeathMessage(ChatColor.RED+e.getEntity().getDisplayName()+"出局了！");
+    	//}
+
+    	while(p.getWorld().getSpawnLocation().getBlock().getType()!=Material.AIR){//确保不会出现在墙里面
+    		p.getWorld().setSpawnLocation((int)p.getWorld().getSpawnLocation().getX(),(int)p.getWorld().getSpawnLocation().getY()+1,(int)p.getWorld().getSpawnLocation().getZ());
+    		System.out.print("检测到重生点在方块内部，自动提升一格当前方块："+p.getWorld().getSpawnLocation().getBlock().getType().toString());
+    	}
+		p.setHealth(dg.getMaxHealth());
+    	p.teleport(p.getWorld().getSpawnLocation());
+    	this.removefromPlayerList(e.getEntity());
+    	new BukkitRunnable(){
+            @Override
+            public void run() {
+            		
+            		cancel();
+            }
+        }.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 8L, 2L);
+            		
+    	/*Bukkit.getScheduler().scheduleSyncDelayedTask(Bukkit.getPluginManager().getPlugin("blocode"), new Runnable() {
+            @Override
+            public void run() {
+            	try {
+                    Object nmsPlayer = p.getClass().getMethod("getHandle").invoke(p);
+                    Object packet = Class.forName("net.minecraft.server." + Bukkit.getServer().getClass().getPackage().getName().replace(".", ",").split(",")[3] + ".Packet205ClientCommand").newInstance();
+                    packet.getClass().getField("a").set(packet, 1);
+                    Object con = nmsPlayer.getClass().getField("playerConnection").get(nmsPlayer);
+                    con.getClass().getMethod("a", packet.getClass()).invoke(con, packet);
+                } 
+            	catch (Throwable e) {
+                    e.printStackTrace();
+                }
+            }
+        }, 8L); */
     }
     
     public static String exec(String command){//指令执行器。。。别的包里面复制进来的，倒包太麻烦，只需要一个方法（现在有卡死问题，那个插件里面修复完了，这里反正没用懒得修）
@@ -528,11 +597,19 @@ public void onBlockPlace(BlockPlaceEvent e)  {
 */
 //下面是getter和setter
 
-    public int getTNTdelay() {
+    public float getShieldHold() {
+	    return shieldHold;
+	}
+
+	public int getTNTdelay() {
         return TNTdelay;
     }
 
-    public void setTNTdelay(int TNTdelay) {
+    public void setShieldHold(float shieldHold) {
+	    this.shieldHold = shieldHold;
+	}
+
+	public void setTNTdelay(int TNTdelay) {
         this.TNTdelay = TNTdelay;
     }
 
@@ -683,11 +760,11 @@ public void onBlockPlace(BlockPlaceEvent e)  {
     }
 
     public ItemStack[] getItems() {
-        return items;
+        return gameItems;
     }
 
     public void setItems(ItemStack[] items) {
-        this.items = items;
+        this.gameItems = items;
     }
    
 
