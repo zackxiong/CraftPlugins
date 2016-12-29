@@ -108,7 +108,8 @@ public final class Blockode implements Listener{
    }
    
    
-   public boolean removefromPlayerList(Player player){
+   @SuppressWarnings("deprecation")
+public boolean removefromPlayerList(Player player){
        //getLogger().info("开始查询玩家");
        if(!isInList(player)){
            getLogger().info("找不到玩家");
@@ -116,51 +117,35 @@ public final class Blockode implements Listener{
        }
        else{
            //getLogger().info("确认玩家在列表内，开始搜索");
+    	 //下面是移过来到内容：
+           System.out.print("执行到玩家"+player.getName());
+           Damageable playerdg=(Damageable)player;
+           //player.getInventory().setContents(this.mySavedItems.get(player.getName()));//回复背包
+           //player.getInventory().setArmorContents(this.mySavedArmors.get(player.getName()));
+           player.setWalkSpeed(0.2f);//状态再次归零
+           player.setMaxHealth(20);
+           player.setFoodLevel(20);
+           player.setExp(0);
+           player.eject();
+           player.setHealth(playerdg.getMaxHealth());
+           for(PotionEffect effect : player.getActivePotionEffects())//清空药水效果
+           {
+             player.removePotionEffect(effect.getType());
+           }
+           player.teleport(gameworld.getSpawnLocation());//传送进等待区
+           
+           System.out.print("执行完玩家"+player.getName());
+           //上面是移过来到内容
+           
            for(int i=0;i<=(PlayerNumber-1);i++){
            getLogger().info("removefromPlayerList():匹配"+player.getName()+"第"+(i+1)+"次");
            if(this.PlayerList[i].equals(player.getName())) {
-               player.getInventory().setContents(this.mySavedItems.get(PlayerList[i]));//回复背包
-               player.getInventory().setArmorContents(this.mySavedArmors.get(PlayerList[i]));
+               //player.getInventory().setContents(this.mySavedItems.get(PlayerList[i]));//回复背包
+               //player.getInventory().setArmorContents(this.mySavedArmors.get(PlayerList[i]));
+               this.recoverBackpack(PlayerList[i]);
                initPlayer(player);
                this.PlayerList[i]=null; 
                this.PlayerNumber=this.PlayerNumber-1;
-               player=Bukkit.getPlayer(PlayerList[i]);
-               Damageable playerdg=(Damageable)player;
-               player.getInventory().setContents(this.mySavedItems.get(PlayerList[i]));//回复背包
-               player.getInventory().setArmorContents(this.mySavedArmors.get(PlayerList[i]));
-               
-               player.setWalkSpeed(0.2f);//状态再次归零
-               player.setMaxHealth(20);
-               player.setFoodLevel(20);
-               player.setExp(0);
-               player.eject();
-               player.setHealth(playerdg.getMaxHealth());
-               for(PotionEffect effect : player.getActivePotionEffects())//清空药水效果
-               {
-                 player.removePotionEffect(effect.getType());
-               }
-               player.teleport(gameworld.getSpawnLocation());//传送进等待区
-               
-               player=Bukkit.getPlayer(PlayerList[i]);
-               playerdg=(Damageable)player;
-               player.getInventory().setContents(this.mySavedItems.get(PlayerList[i]));//回复背包
-               player.getInventory().setArmorContents(this.mySavedArmors.get(PlayerList[i]));
-               
-               player.setWalkSpeed(0.2f);//状态再次归零
-               player.setMaxHealth(20);
-               player.setFoodLevel(20);
-               player.setExp(0);
-               player.eject();
-               player.setHealth(playerdg.getMaxHealth());
-               for(PotionEffect effect : player.getActivePotionEffects())//清空药水效果
-               {
-                 player.removePotionEffect(effect.getType());
-               }
-               player.teleport(gameworld.getSpawnLocation());//传送进等待区
-               
-               System.out.print("执行完玩家"+PlayerList[i]);
-               
-               System.out.print("执行完玩家"+PlayerList[i]);
                return true;
                }
              } 
@@ -253,6 +238,12 @@ public final class Blockode implements Listener{
             this.initPlayer(player.getName());
       }
       
+      public void recoverBackpack(String name){
+    	  Player player=Bukkit.getPlayer(name);
+    	  player.getInventory().setContents(this.mySavedItems.get(name));//回复背包
+          player.getInventory().setArmorContents(this.mySavedArmors.get(name));
+      }
+      
     public void start(){
         for(int i=0;i<PlayerList.length;i++){
             Player player;
@@ -285,8 +276,9 @@ public final class Blockode implements Listener{
                 System.out.print("执行到玩家"+PlayerList[i]);
                 player=Bukkit.getPlayer(PlayerList[i]);
                 playerdg=(Damageable)player;
-                player.getInventory().setContents(this.mySavedItems.get(PlayerList[i]));//回复背包
-                player.getInventory().setArmorContents(this.mySavedArmors.get(PlayerList[i]));
+                //player.getInventory().setContents(this.mySavedItems.get(PlayerList[i]));//回复背包
+                //player.getInventory().setArmorContents(this.mySavedArmors.get(PlayerList[i]));
+                this.recoverBackpack(PlayerList[i]);
                 
                 player.setWalkSpeed(0.2f);//状态再次归零
                 player.setMaxHealth(20);
@@ -302,7 +294,7 @@ public final class Blockode implements Listener{
                 
                 System.out.print("执行完玩家"+PlayerList[i]);
             }
-            else if(PlayerList[i]!=null){//玩家下线的话
+            else if(PlayerList[i]!=null&&PlayerList[i]!=""&&PlayerList[i]!=" "){//玩家下线的话
                 Bukkit.broadcastMessage(ChatColor.BLUE+"[Blockode]玩家:"+PlayerList[i]+"找不到了，所以没加入游戏");
             }
         }
@@ -511,12 +503,20 @@ public final class Blockode implements Listener{
     public void onPlayerDeath(PlayerDeathEvent e)  {
     	final Player p=(Player)e.getEntity();
     	final Damageable dg=p;
+    	//if(e.getEntity().getKiller().getDisplayName()!=null && e.getEntity().getDisplayName()!=null){//死亡信息
+        //	e.setDeathMessage(ChatColor.BLUE+e.getEntity().getDisplayName()+ChatColor.RED+"被"+ChatColor.YELLOW+e.getEntity().getKiller().getDisplayName()+ChatColor.RED+"出局了!");
+    	//}
+    	//else{
+    	//	e.setDeathMessage(ChatColor.RED+e.getEntity().getDisplayName()+"出局了！");
+    	//}
+
     	while(p.getWorld().getSpawnLocation().getBlock().getType()!=Material.AIR){//确保不会出现在墙里面
     		p.getWorld().setSpawnLocation((int)p.getWorld().getSpawnLocation().getX(),(int)p.getWorld().getSpawnLocation().getY()+1,(int)p.getWorld().getSpawnLocation().getZ());
     		System.out.print("检测到重生点在方块内部，自动提升一格当前方块："+p.getWorld().getSpawnLocation().getBlock().getType().toString());
     	}
 		p.setHealth(dg.getMaxHealth());
     	p.teleport(p.getWorld().getSpawnLocation());
+    	this.removefromPlayerList(e.getEntity());
     	new BukkitRunnable(){
             @Override
             public void run() {

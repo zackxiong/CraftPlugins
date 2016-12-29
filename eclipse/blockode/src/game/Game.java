@@ -167,7 +167,7 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
                         }
                     else{
                         sender.sendMessage(ChatColor.GOLD+"成功把"+args[0]+"从列表中移除");
-                        Bukkit.getPlayer(args[0]).sendMessage(ChatColor.GOLD+"你已被加入游戏！");
+                        Bukkit.getPlayer(args[0]).sendMessage(ChatColor.GOLD+"你已被从游戏中移除！");
                         return true;
                         }
                     }

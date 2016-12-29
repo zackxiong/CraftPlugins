@@ -133,22 +133,24 @@ public boolean removefromPlayerList(Player player){
              player.removePotionEffect(effect.getType());
            }
            player.teleport(gameworld.getSpawnLocation());//传送进等待区
+           this.recoverBackpack(player.getName());//改进后的回复背包
            
            System.out.print("执行完玩家"+player.getName());
            //上面是移过来到内容
            
-           for(int i=0;i<=(PlayerNumber-1);i++){
-           getLogger().info("removefromPlayerList():匹配"+player.getName()+"第"+(i+1)+"次");
-           if(this.PlayerList[i].equals(player.getName())) {
+           int a=0;
+           for(String name : PlayerList){
+           getLogger().info("removefromPlayerList():匹配"+player.getName()+"第"+(a+1)+"次");
+           if(name.equals(player.getName())) {
                //player.getInventory().setContents(this.mySavedItems.get(PlayerList[i]));//回复背包
                //player.getInventory().setArmorContents(this.mySavedArmors.get(PlayerList[i]));
-               this.recoverBackpack(PlayerList[i]);
-               initPlayer(player);
-               this.PlayerList[i]=null; 
+               //initPlayer(player);
+               this.PlayerList[a]=null; 
                this.PlayerNumber=this.PlayerNumber-1;
                return true;
                }
-             } 
+           a++;
+             }
             }
               getLogger().info("未知错误"); 
               return false;
@@ -159,7 +161,7 @@ public boolean removefromPlayerList(Player player){
             System.out.print("玩家都不存在，肯定不在列表内");
             return false;
         }
-       if(isInList(name)){
+       if(!isInList(name)){
            getLogger().info("找不到玩家,移除什么");
            return false;
        }
@@ -240,8 +242,11 @@ public boolean removefromPlayerList(Player player){
       
       public void recoverBackpack(String name){
     	  Player player=Bukkit.getPlayer(name);
+    	  ItemStack[] items=this.mySavedArmors.get(name);
     	  player.getInventory().setContents(this.mySavedItems.get(name));//回复背包
           player.getInventory().setArmorContents(this.mySavedArmors.get(name));
+          
+          System.out.print("已回复"+name+"的"+items.length);
       }
       
     public void start(){
