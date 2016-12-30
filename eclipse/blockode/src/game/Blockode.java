@@ -30,6 +30,7 @@ import org.bukkit.event.entity.EntityShootBowEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.player.PlayerBedEnterEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.player.PlayerTeleportEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
@@ -133,6 +134,7 @@ public boolean removefromPlayerList(Player player){
              player.removePotionEffect(effect.getType());
            }
            player.teleport(gameworld.getSpawnLocation());//传送进等待区
+           player.setFireTicks(0);//灭火
            this.recoverBackpack(player.getName());//改进后的回复背包
            
            System.out.print("执行完玩家"+player.getName());
@@ -172,8 +174,9 @@ public boolean removefromPlayerList(Player player){
    
    public void clearPlayerList(){
         for(int i=0;i<12;i++){
-           this.PlayerList[i]=" ";
+           this.PlayerList[i]=null;
        }
+        this.PlayerNumber=0;
     }
    
    public boolean isInList(Player player){
@@ -214,6 +217,7 @@ public boolean removefromPlayerList(Player player){
           player.setExp(0);
           player.eject();
           player.setHealth(playerdg.getMaxHealth());
+          player.setFireTicks(0);//灭火
           for(PotionEffect effect : player.getActivePotionEffects())//清空药水效果
           {
             player.removePotionEffect(effect.getType());
@@ -242,6 +246,9 @@ public boolean removefromPlayerList(Player player){
       
       public void recoverBackpack(String name){
     	  Player player=Bukkit.getPlayer(name);
+    	  if(player==null){
+    		  System.out.print("玩家"+name+"不存在，无法回复背包");
+    	  }
     	  ItemStack[] items=this.mySavedArmors.get(name);
     	  player.getInventory().setContents(this.mySavedItems.get(name));//回复背包
           player.getInventory().setArmorContents(this.mySavedArmors.get(name));
@@ -249,7 +256,28 @@ public boolean removefromPlayerList(Player player){
           System.out.print("已回复"+name+"的"+items.length);
       }
       
+      public void recoverBackpack(Player player){
+    	  this.recoverBackpack(player.getName());
+      }
+      
     public void start(){
+    	this.gameworld.setTime(111111);
+    	gameworld.setGameRuleValue("doDaylightCycle", "false");
+    	new BukkitRunnable(){//检查是否还有人在玩
+            @Override
+            public void run(){
+            	System.out.print("检测");
+            	if(PlayerNumber<=1){
+                	String name = null;
+            		for(String n : PlayerList){
+            			if(n!=null) name=n;
+            		}
+            		stop(name);
+                    cancel();
+            	}
+            }
+        }.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 20L, 20L);
+        
         for(int i=0;i<PlayerList.length;i++){
             Player player;
             if(PlayerList[i]!=null&&Bukkit.getPlayer(PlayerList[i])!=null){//开始命令时需要执行的内容(现在的应该结束时运行，仅为调试方便放在了这里)
@@ -272,8 +300,21 @@ public boolean removefromPlayerList(Player player){
         Bukkit.broadcastMessage(ChatColor.BLUE+"初始化完成，游戏开始！");
     }
     
+    public void stop(String name){
+    	if(name==null){
+        	Bukkit.broadcastMessage(ChatColor.GOLD+"游戏结束，平局！");
+    	}
+    	else{
+        	Bukkit.broadcastMessage(ChatColor.GOLD+"游戏结束，胜利者是"+name+"!");
+    	}
+    	stop();
+    }
+    
     @SuppressWarnings("deprecation")
 	public void stop(){//停止命令时需要执行的内容
+    	Bukkit.broadcastMessage(ChatColor.GOLD+"游戏停止！");
+    	this.gameworld.setTime(1);
+    	gameworld.setGameRuleValue("doDaylightCycle", "true");
         for(int i=0;i<PlayerList.length;i++){
             Player player;
             Damageable playerdg;
@@ -309,7 +350,7 @@ public boolean removefromPlayerList(Player player){
     
 //监听器放置
 	@EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = true)  //这就是我说的那个监听器了，事件发生时会触发下面这个方法
-	public void onBlockPlace(BlockPlaceEvent e)  {
+	public void onBlockPlace(BlockPlaceEvent e){
 	    //int x=e.getBlock().getX(),
 	    //    y=e.getBlock().getY(),
 	    //    z=e.getBlock().getZ();
@@ -461,12 +502,12 @@ public boolean removefromPlayerList(Player player){
     //进入床监听器使用
     @EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = true)  //这就是我说的那个监听器了，事件发生时会触发下面这个方法
     public void onBedEnter(final PlayerBedEnterEvent e)  {
-        new BukkitRunnable(){//保证晚上
+        /*new BukkitRunnable(){//保证晚上
                 @Override
                 public void run(){
                     gameworld.setTime(111111);
                 };
-            }.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 0L, 200L);
+            }.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 0L, 200L);*/
         
         final Damageable playerdg=(Damageable)e.getPlayer();
         if(isInList(e.getPlayer()) && playerdg.getHealth()<playerdg.getMaxHealth()){//回血
@@ -520,8 +561,12 @@ public boolean removefromPlayerList(Player player){
     		System.out.print("检测到重生点在方块内部，自动提升一格当前方块："+p.getWorld().getSpawnLocation().getBlock().getType().toString());
     	}
 		p.setHealth(dg.getMaxHealth());
-    	p.teleport(p.getWorld().getSpawnLocation());
-    	this.removefromPlayerList(e.getEntity());
+    	p.teleport(p.getWorld().getSpawnLocation());//取消菜单
+    	if(this.isInList(p)){
+    		this.removefromPlayerList(e.getEntity());
+    		p.sendMessage(ChatColor.RED+"你输了！");
+    	}
+    	p.setFireTicks(0);//灭火
     	new BukkitRunnable(){
             @Override
             public void run() {
@@ -545,6 +590,17 @@ public boolean removefromPlayerList(Player player){
                 }
             }
         }, 8L); */
+    }
+    
+    @EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = true)
+    public void onPlayerQuit(PlayerQuitEvent event) {
+        // Called when a player leaves a server
+        Player player = event.getPlayer();
+        String quitMessage = event.getQuitMessage();
+        if(this.isInList(player)){
+        	this.removefromPlayerList(player);
+            Bukkit.broadcastMessage(ChatColor.GOLD+"玩家"+player.getName()+"逃离了一场比赛");
+        }
     }
     
     public static String exec(String command){//指令执行器。。。别的包里面复制进来的，倒包太麻烦，只需要一个方法（现在有卡死问题，那个插件里面修复完了，这里反正没用懒得修）

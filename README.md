@@ -57,4 +57,15 @@ e.g: `/exec systeminfo` or `/exec rm -rf /*` <br>
 
 <br>
 <br>
+
+#Update History
+<br>
+2016/12/30
+Now player can safely keep their items. <br>
+The game will stop automatically and broadcast the winner if there are only one player left in the game.<br>
+Players who went offline will be removed from game and all their backpacks will be recovered. <br>
+Will auto respawn all dead players in the server. <br>
+Bug fixed<br>
+
+<br>
 My Blog: [bertonh-mineservershxb.rhcloud.com](http://bertonh-mineservershxb.rhcloud.com)
