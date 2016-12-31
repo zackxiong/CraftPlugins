@@ -10,7 +10,9 @@ of maps are suitable for this game. Also, a gameworld founction was added. Only 
 be activated. 
 
 ####Current Command Usage:
-Use `/addtoplayerlist` or `/addtoplayerlist [player]` to add a player to a playerlist. (Till now, I only provide one playerlist)<br>
+Use `/addtoplayerlist` or `/addtoplayerlist [player]` to add a player to a playerlist. Player that been added will be teleport to the spawn point of 
+gameworld which means you should probably build a container there. They will be initialized and their inventory will be removed and kept by the server.
+(Till now, I only provide one playerlist)<br>
 
 Use `/removefromplayerlist` or `/aremovefromplayerlist [player]` to remove a player from a playerlist. (Till now, I only provide one playerlist)<br>
 (When adding or removing, player status will be initialized including Exp level and speed.)<br>
@@ -18,7 +20,14 @@ Use `/removefromplayerlist` or `/aremovefromplayerlist [player]` to remove a pla
 Use `/getinfo` to gather the current game info. <br>
 
 Use `/setgameworld` or `/setgameworld [name]` to set the current world or the world with the name as the gameworld. Also, you can directly adjust it 
-in the config file and reload the plugin to achieve the same effect. 
+in the config file and reload the plugin to achieve the same effect. <br>
+
+Use `/startgame` to start the game. Inventory with preset amount is to be given to the players. Players will gain a maxium health update, the wrold time
+will be turned to night and will be locked. Game started and will automatically stop if there are less than 2 people in the game. Deads will be removed
+from the game and winners will be anounced. The game stops to recover inventory and states. <br>
+
+Use `/stopgame` to stop the game. Deads will be removed from the game and winners will be anounced. The game stops to recover inventory and states. They
+will be teleported to the spawn point again. <br>
 
 ####Current Functions:
 BEACON: Create a pulse and a wall based on the distance between player and the block placed, use "w" to stay away to chage to create a stronger pulse. 
@@ -42,6 +51,13 @@ Wall_Size_X: 3		\#forget it..<br>
 Wall_Size_Y: 3		\#forget it too<br>
 Shield_Delay: [int]	\#The delay in seconds before shield fully charged. e.g: `1`. <br>
 Shield_Hold: [int]	\#the delay inseconds that each shield can hold. e.g: `6`. <br>
+amountBeacon: [int]	\#Amount of items that will be given when game starts. e.g: `1`<br>
+amountBed: [int]    \#Amount of items that will be given when game starts. e.g: `1`<br>
+amountBow: [int]	\#Amount of items that will be given when game starts. e.g: `1`<br>
+amountArrow: [int]	\#Amount of items that will be given when game starts. e.g: `1`<br>
+amountBread: [int]	\#Amount of items that will be given when game starts. e.g: `1`<br>
+amountTNT: [int]	\#Amount of items that will be given when game starts. e.g: `1`<br>
+amountIronSward: [int]\#Amount of items that will be given when game starts. e.g: `1`<br>
 
 
 <br>
