@@ -2,4 +2,6 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="org.bukkit.entity.Damageable"/>
 <fullyQualifiedTypeName name="org.bukkit.event.entity.PlayerDeathEvent"/>
+<fullyQualifiedTypeName name="org.bukkit.event.player.PlayerQuitEvent"/>
+<fullyQualifiedTypeName name="org.bukkit.Bukkit"/>
 </qualifiedTypeNameHistroy>

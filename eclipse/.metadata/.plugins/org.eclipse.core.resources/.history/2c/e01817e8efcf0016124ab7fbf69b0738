@@ -136,8 +136,6 @@ public boolean removefromPlayerList(Player player){
            player.teleport(gameworld.getSpawnLocation());//传送进等待区
            player.setFireTicks(0);//灭火
            this.recoverBackpack(player.getName());//改进后的回复背包
-           System.out.print("已回复玩家"+player.getName()+"的背包");
-           player.sendMessage("你的背包已经恢复");
            
            System.out.print("执行完玩家"+player.getName());
            //上面是移过来到内容
