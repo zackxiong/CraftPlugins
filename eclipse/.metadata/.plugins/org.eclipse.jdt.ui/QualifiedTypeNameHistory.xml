@@ -4,4 +4,5 @@
 <fullyQualifiedTypeName name="org.bukkit.event.entity.PlayerDeathEvent"/>
 <fullyQualifiedTypeName name="org.bukkit.event.player.PlayerQuitEvent"/>
 <fullyQualifiedTypeName name="org.bukkit.Bukkit"/>
+<fullyQualifiedTypeName name="net.minecraft.server.v1_7_R4.World"/>
 </qualifiedTypeNameHistroy>

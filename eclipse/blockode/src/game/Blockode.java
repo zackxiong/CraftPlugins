@@ -264,7 +264,8 @@ public boolean removefromPlayerList(Player player){
       
     public void start(){
     	this.gameworld.setTime(111111);
-    	gameworld.setGameRuleValue("doDaylightCycle", "false");
+    	gameworld.setGameRuleValue("doDaylightCycle", "false");//调整至晚上
+    	gameworld.setGameRuleValue("keepInventory", "trues");//取消死亡掉落以免出现bug
     	new BukkitRunnable(){//检查是否还有人在玩
             @Override
             public void run(){

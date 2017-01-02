@@ -17,6 +17,7 @@ import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.craftbukkit.v1_7_R4.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.*;
 import org.omg.SendingContext.RunTime;
@@ -49,26 +50,72 @@ private FileConfiguration config;
                 getLogger().info("HXB不在列表中)");
         }*/
         
+        
         config = this.getConfig();
         this.saveDefaultConfig();
+        /*
         breaksense1.setGameworld(Bukkit.getWorld("world"));
-        if(this.getConfig().getString("Game_World")!=null){//看看世界有没有被设置，如果没有就用world顶替
-            breaksense1.setGameworld(Bukkit.getWorld(this.getConfig().getString("Game_World")));
+        System.out.print("第一次设置"+Bukkit.getWorld("world").toString());
+        
+        String worldGot1=this.getConfig().getString("Game_World");
+        if(worldGot1!=null){//看看世界有没有被设置，如果没有就用world顶替
+            breaksense1.setGameworld(Bukkit.getWorld(worldGot1));
+            System.out.print("第二次设置"+worldGot1);
         }
+        */
+        
+        this.getConfig().set("Game_World", this.getConfig().getString("Game_World"));//读取原来的设置并且注册
+        //this.getConfig().set("Game_World","set2");
+        String worldGot=this.getConfig().getString("Game_World");
+        if(worldGot!=null){//如果世界被设置
+            breaksense1.setGameworld(Bukkit.getWorld(worldGot));
+            System.out.print(ChatColor.GOLD+"[敏感操作]尝试设置游戏世界为:"+worldGot);
+        }
+        //先获取再注册
         breaksense1.setExplodeSize(this.getConfig().getInt("Explode_Size"));
+        config.set("Explode_Size", this.getConfig().getInt("Explode_Size"));
+        
         breaksense1.setWall_Size_X(this.getConfig().getInt("Wall_Size_X"));
+        config.set("Wall_Size_X", this.getConfig().getInt("Wall_Size_X"));
+        
         breaksense1.setWall_Size_Y(this.getConfig().getInt("Wall_Size_Y"));
+        config.set("Wall_Size_Y", this.getConfig().getInt("Wall_Size_Y"));
+        
         breaksense1.setShieldDelay(this.getConfig().getInt("Shield_Delay")+1);
+        config.set("Shield_Delay", this.getConfig().getInt("Shield_Delay"));
+        
         breaksense1.setShieldHold(this.getConfig().getInt("Shield_Hold"));
+        config.set("Shield_Hold", this.getConfig().getInt("Shield_Hold"));
+        
         breaksense1.setTNTdelay(this.getConfig().getInt("TNTdelay"));
+        config.set("TNTdelay", this.getConfig().getInt("TNTdelay"));
+        
         
         breaksense1.setAmountBeacon(this.getConfig().getInt("amountBeacon"));
+        config.set("amountBeacon", this.getConfig().getInt("amountBeacon"));
+        
         breaksense1.setAmountBed(this.getConfig().getInt("amountBed"));
+        config.set("amountBed", this.getConfig().getInt("amountBed"));
+        
         breaksense1.setAmountBow(this.getConfig().getInt("amountBow"));
+        config.set("amountBow", this.getConfig().getInt("amountBow"));
+        
         breaksense1.setAmountArrow(this.getConfig().getInt("amountArrow"));
+        config.set("amountArrow", this.getConfig().getInt("amountArrow"));
+        
         breaksense1.setAmountBread(this.getConfig().getInt("amountBread"));
+        config.set("amountBread", this.getConfig().getInt("amountBread"));
+        
         breaksense1.setAmountTNT(this.getConfig().getInt("amountTNT"));
+        config.set("amountTNT", this.getConfig().getInt("amountTNT"));
+        
         breaksense1.setAmountIronSward(this.getConfig().getInt("amountIronSward"));
+        config.set("amountIronSward", this.getConfig().getInt("amountIronSward"));
+        
+        
+        if(breaksense1.getGameworld()==null){
+        	getLogger().warning(ChatColor.RED+"检测到游戏世界设置不正确，请使用/setgameworld手动设置!");
+        }
         //World gw = new World();
         getLogger().info("你的插件已被加载！"); //向日志写入
         /*//闲的蛋疼写的关机实验
@@ -80,7 +127,7 @@ private FileConfiguration config;
         }
             System.exit(0);  
         */
-        
+        this.saveConfig();//最后才保存
         }
     
     @Override
@@ -195,11 +242,15 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
                 }
             //sender.sendMessage(breaksense1.getPlayerList());
             return true;
+            }
         }
         if (!(sender instanceof Player)){
-            getLogger().info(ChatColor.GOLD+"列表中当前有"+breaksense1.getPlayerNumber()+"个玩家，\n"
-                                + "最大人数为"+breaksense1.getMaximumPlayer()+",\n"
-                                + "当前爆炸威力："+breaksense1.getExplodeSize());
+        	//System.out.print("执行");
+        	getLogger().info(ChatColor.GOLD+"列表中当前有"+breaksense1.getPlayerNumber()+"个玩家，\n"
+                    + "最大人数为"+breaksense1.getMaximumPlayer()+",\n"
+                    + "当前爆炸威力："+breaksense1.getExplodeSize()
+                    + "\n当前游戏世界: "+breaksense1.getGameworld()
+                    + "\n当前玩家列表：\n");
             for(int i=0;i<breaksense1.getMaximumPlayer();i++){
                 if(breaksense1.getPlayerList()[i]!=null){
                     getLogger().info(ChatColor.GOLD+"玩家"+(i+1)+"是："+breaksense1.getPlayerList()[i]+"\n");   
@@ -208,7 +259,19 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
             
             return true;
             }
+        
+        else{
+        	getLogger().info(ChatColor.GOLD+"列表中当前有"+breaksense1.getPlayerNumber()+"个玩家，\n"
+                    + "最大人数为"+breaksense1.getMaximumPlayer()+",\n"
+                    + "当前爆炸威力："+breaksense1.getExplodeSize());
+        	for(int i=0;i<breaksense1.getMaximumPlayer();i++){
+        		if(breaksense1.getPlayerList()[i]!=null){
+        			getLogger().info(ChatColor.GOLD+"玩家"+(i+1)+"是："+breaksense1.getPlayerList()[i]+"\n");   
+        		}
+        	}
         }
+        
+        
     }
     
     //命令/setgameworld
@@ -217,8 +280,11 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
             if ((sender instanceof Player)){//是玩家就设置
                 breaksense1.setGameworld(((Player) sender).getWorld());
                 this.getConfig().set("Game_World", ((Player) sender).getWorld().getName());
-                ((Player)sender).sendMessage(ChatColor.GOLD+sender.getName()+"已设置当前的游戏世界为"+((Player) sender).getWorld().getName());
-                getLogger().warning(ChatColor.GOLD+sender.getName()+"已设置当前的游戏世界为"+((Player) sender).getWorld().getName());
+                ((Player)sender).sendMessage(ChatColor.GOLD+"[敏感操作]"+sender.getName()+"已设置当前的游戏世界为"+((Player) sender).getWorld().getName());
+                getLogger().warning(ChatColor.GOLD+"[敏感操作]"+sender.getName()+"已设置当前的游戏世界为"+((Player) sender).getWorld().getName());
+                this.mySaveConfig("config.yml");
+                getLogger().warning(ChatColor.GOLD+"[敏感操作]设置已保存");
+                ((Player)sender).sendMessage(ChatColor.GOLD+"[敏感操作]设置已保存");
                 return true;
             }
             else{//不是就报错
@@ -230,10 +296,13 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
             if(Bukkit.getWorld(args[0])!=null){
                 breaksense1.setGameworld(Bukkit.getWorld(args[0]));
                 this.getConfig().set("Game_World", Bukkit.getWorld(args[0]).getName());
+                this.mySaveConfig("config.yml");
                 if ((sender instanceof Player)){
-                    ((Player)sender).sendMessage(ChatColor.GOLD+sender.getName()+"已设置当前的游戏世界为"+Bukkit.getWorld(args[0]).getName());
+                    ((Player)sender).sendMessage(ChatColor.GOLD+"[敏感操作]"+sender.getName()+"已设置当前的游戏世界为"+Bukkit.getWorld(args[0]).getName());
+                    getLogger().warning(ChatColor.GOLD+"[敏感操作]设置已保存");
                 }
-                getLogger().warning(ChatColor.GOLD+sender.getName()+"已设置当前的游戏世界为"+ Bukkit.getWorld(args[0]).getName());
+                getLogger().warning(ChatColor.GOLD+"[敏感操作]"+sender.getName()+"已设置当前的游戏世界为"+ Bukkit.getWorld(args[0]).getName());
+                getLogger().warning(ChatColor.GOLD+"[敏感操作]设置已保存");
                 return true;
             }
             else{
@@ -263,4 +332,9 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
 
 
 
-}}//这是类的那个反括号。。。
+}
+    
+    void mySaveConfig(String name){
+    	this.saveConfig();
+    }
+}//这是类的那个反括号。。。
