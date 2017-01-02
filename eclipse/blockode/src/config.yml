@@ -1,9 +1,14 @@
-path:
-  to:
-    list:
-    - Hello World
-    - Welcome to Bukkit
-    - Have a Good Day!
+UnBlocked_Commands:
+- /addtoplayerlist
+- /removefromplayerlist
+- /setgameworld
+- /getinfo
+- /startgame
+- /stopgame
+- /leave
+Blocked_Quotes:
+- sb
+- 傻逼
 Game_World: gw
 Explode_Size: 5
 TNTdelay: 1

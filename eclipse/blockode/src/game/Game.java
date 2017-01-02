@@ -5,9 +5,6 @@
  */
 package game;
 
-import java.util.Arrays;
-import java.util.List;
-
 import org.bukkit.plugin.java.*;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -57,8 +54,14 @@ private FileConfiguration config;
             System.out.print("第二次设置"+worldGot1);
         }
         */
-        List<String> listOfStrings = Arrays.asList("Hello World", "Welcome to Bukkit", "Have a Good Day!");
-        this.getConfig().set("path.to.list", listOfStrings);
+        //设置屏蔽白名单
+        //List<String> unBlockedCommand = Arrays.asList("Hello World", "Welcome to Bukkit", "Have a Good Day!");
+        
+        this.getConfig().set("UnBlocked_Commands", this.getConfig().getStringList("UnBlocked_Commands"));//注册并载入指令白名单
+        this.breaksense1.setUnBlockedCommand(this.getConfig().getStringList("UnBlocked_Commands"));
+        
+        this.getConfig().set("Blocked_Quotes", this.getConfig().getStringList("Blocked_Quotes"));//注册并载入语句黑名单
+        this.breaksense1.setBlockedQuotes(this.getConfig().getStringList("Blocked_Quotes"));
         
         this.getConfig().set("Game_World", this.getConfig().getString("Game_World"));//读取原来的设置并且注册世界
         //this.getConfig().set("Game_World","set2");
@@ -327,6 +330,26 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
     if (cmd.getName().equalsIgnoreCase("stopgame")) {
         breaksense1.stop();
         return true;
+    }
+    
+    //命令leavegame
+    if (cmd.getName().equalsIgnoreCase("leftgame")) {
+    	if(sender instanceof Player){
+    		if(breaksense1.isInList((Player)sender)){
+    			if(breaksense1.removefromPlayerList((Player) sender)){
+    				sender.sendMessage(ChatColor.YELLOW+"成功退出了游戏！");
+    			}
+    			else{
+    				sender.sendMessage(ChatColor.YELLOW+"退出失败了呢！");
+    			}
+    		}
+    		else{
+    			sender.sendMessage(ChatColor.YELLOW+"你不在游戏里，无法退出！");
+    		}
+    	}
+    	else{
+    		System.out.print(ChatColor.YELLOW+"控制台就别退出游戏了吧。。");
+    	}
     }
         
     return true;
