@@ -1,3 +1,9 @@
+path:
+  to:
+    list:
+    - Hello World
+    - Welcome to Bukkit
+    - Have a Good Day!
 Game_World: gw
 Explode_Size: 5
 TNTdelay: 1

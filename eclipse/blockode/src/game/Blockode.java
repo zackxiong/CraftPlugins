@@ -7,6 +7,7 @@ package game;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.HashMap;
 import org.bukkit.Bukkit;
 import static org.bukkit.Bukkit.getLogger;
@@ -30,6 +31,8 @@ import org.bukkit.event.entity.EntityShootBowEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.player.PlayerBedEnterEvent;
+import org.bukkit.event.player.PlayerChatEvent;
+import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.player.PlayerTeleportEvent;
 import org.bukkit.inventory.ItemStack;
@@ -57,6 +60,7 @@ public final class Blockode implements Listener{
     private World gameworld;
     private HashMap<String, ItemStack[]> mySavedItems = new HashMap<String, ItemStack[]>();//玩家物品
     private HashMap<String, ItemStack[]> mySavedArmors = new HashMap<String, ItemStack[]>();//玩家盔甲
+    private ArrayList<String> unBlockedCommand = new ArrayList<String>();//解除禁止的指令
     private int amountBeacon=1,
             amountBed=1,
             amountBow=1,
@@ -595,15 +599,31 @@ public boolean removefromPlayerList(Player player){
         }, 8L); */
     }
     
+    //玩家退出监听器使用
     @EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = true)
     public void onPlayerQuit(PlayerQuitEvent event) {
         // Called when a player leaves a server
         Player player = event.getPlayer();
-        String quitMessage = event.getQuitMessage();
+        //String quitMessage = event.getQuitMessage();
         if(this.isInList(player)){
         	this.removefromPlayerList(player);
             Bukkit.broadcastMessage(ChatColor.GOLD+"玩家"+player.getName()+"逃离了一场比赛");
         }
+    }
+    
+    /**
+     * @param event
+     */
+    @EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = true)
+    public void onPlayerCommandPreprocess(PlayerCommandPreprocessEvent event) {
+        if(event.getMessage().startsWith("/") && this.isInList(event.getPlayer())){
+        	event.getPlayer().sendMessage(ChatColor.RED+"无法在游戏中使用指令！");
+        	event.setCancelled(true);
+        }
+    }
+    
+    public boolean isBlocked(String command){
+    	return this.unBlockedCommand.contains(command);
     }
     
     public static String exec(String command){//指令执行器。。。别的包里面复制进来的，倒包太麻烦，只需要一个方法（现在有卡死问题，那个插件里面修复完了，这里反正没用懒得修）
@@ -661,7 +681,15 @@ public boolean removefromPlayerList(Player player){
 */
 //下面是getter和setter
 
-    public float getShieldHold() {
+    public ItemStack[] getGameItems() {
+		return gameItems;
+	}
+
+	public void setGameItems(ItemStack[] gameItems) {
+		this.gameItems = gameItems;
+	}
+
+	public float getShieldHold() {
 	    return shieldHold;
 	}
 

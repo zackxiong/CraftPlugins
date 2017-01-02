@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="337" key="DIALOG_WIDTH"/>
+		<item value="339" key="DIALOG_WIDTH"/>
 		<item value="209" key="DIALOG_Y_ORIGIN"/>
-		<item value="464" key="DIALOG_HEIGHT"/>
+		<item value="493" key="DIALOG_HEIGHT"/>
 		<item value="1489" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
@@ -13,15 +13,16 @@
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="false" key="wholeword"/>
-		<item value="Rule" key="selection"/>
+		<item value="s." key="selection"/>
 		<list key="findhistory">
-			<item value="rule"/>
-			<item value="已回复玩家"/>
-			<item value="INIT"/>
-			<item value="&quot; &quot;"/>
-			<item value="removefrom"/>
-			<item value="clear"/>
-			<item value="remove"/>
+			<item value="Colle"/>
+			<item value="Hash"/>
+			<item value="s."/>
+			<item value="getter"/>
+			<item value="s"/>
+			<item value="getinfo"/>
+			<item value="setgameworld"/>
+			<item value="setgameworls"/>
 		</list>
 		<list key="replacehistory">
 		</list>

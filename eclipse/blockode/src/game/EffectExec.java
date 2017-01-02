@@ -6,11 +6,8 @@
 package game;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Iterator;
-import java.util.Set;
 import org.bukkit.Bukkit;
-import static org.bukkit.Bukkit.getLogger;
 import org.bukkit.ChatColor;
 import org.bukkit.Effect;
 import org.bukkit.Location;
@@ -20,8 +17,6 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockPlaceEvent;
-import org.bukkit.plugin.Plugin;
-import org.bukkit.potion.PotionType;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
 
@@ -40,39 +35,7 @@ public final class EffectExec {
         this.shieldHold = shieldHold;
     }
 
-    public int getExplodePower() {
-        return explodePower;
-    }
-
-    public void setExplodePower(int explodePower) {
-        this.explodePower = explodePower;
-    }
-
-//下面的方法属于Shield效果
-    public int getWall_Size_X() {
-        return Wall_Size_X;
-    }
-
-    public void setWall_Size_X(int Wall_Size_X) {
-        this.Wall_Size_X = Wall_Size_X;
-    }
-
-    public int getWall_Size_Y() {
-        return Wall_Size_Y;
-    }
-
-    public void setWall_Size_Y(int Wall_Size_Y) {
-        this.Wall_Size_Y = Wall_Size_Y;
-    }
-
-    public float getShieldHold() {
-        return shieldHold;
-    }
-
-    public void setShieldHold(float shieldHold) {
-        this.shieldHold = shieldHold;
-    }
-    
+    //下面的方法属于Shield效果
     public boolean SheildEnterence(BlockPlaceEvent e,float delay){
         this.ChargeSheild(e,delay);
         return true;
@@ -80,7 +43,7 @@ public final class EffectExec {
     
     
     public void ChargeSheild(final BlockPlaceEvent e,final float delay){//充能动画+延时
-        float speed=e.getPlayer().getWalkSpeed();
+        //float speed=e.getPlayer().getWalkSpeed();
         //System.out.print(e.getPlayer().getWalkSpeed());
         e.getPlayer().setWalkSpeed(0.05f);
         new BukkitRunnable(){
@@ -105,10 +68,11 @@ public final class EffectExec {
     }
     
     
-    public boolean CreatePulse(final BlockPlaceEvent e){//先冲击
-        int x=e.getBlock().getX(),
-        y=e.getBlock().getY(),
-        z=e.getBlock().getZ();
+    @SuppressWarnings("deprecation")
+	public boolean CreatePulse(final BlockPlaceEvent e){//先冲击
+        //int x=e.getBlock().getX(),
+        //y=e.getBlock().getY(),
+        //z=e.getBlock().getZ();
         Location playerLocation=e.getPlayer().getLocation(),
                  blockLocation=e.getBlock().getLocation();
         Double disX=blockLocation.getBlockX()-playerLocation.getX(),
@@ -119,9 +83,9 @@ public final class EffectExec {
                 //    Player nearby = (Player) entity;
                 //    if(nearby!=null)
                 //getLogger().info(entity.toString());
-                Double WWX=blockLocation.getBlockX()-entity.getLocation().getX(),
+                /*Double WWX=blockLocation.getBlockX()-entity.getLocation().getX(),
                         Y=blockLocation.getBlockY()-entity.getLocation().getY(),
-                        Z=blockLocation.getBlockZ()-entity.getLocation().getZ();
+                        Z=blockLocation.getBlockZ()-entity.getLocation().getZ();*/
                 
                 entity.setVelocity(new Vector(disX*1.2,disY*1.2+2,disZ*1.2));
                 if(entity instanceof LivingEntity){
@@ -161,13 +125,14 @@ public final class EffectExec {
     
         Location [][]wall=new Location[Wall_Size_X][Wall_Size_Y];
         final Location middle=new Location(e.getBlock().getWorld(),x,y,z),
-                     up=new Location(e.getBlock().getWorld(),x,y,z),
-                     down=new Location(e.getBlock().getWorld(),x,y,z),
-                     left=new Location(e.getBlock().getWorld(),x,y,z),
-                     right=new Location(e.getBlock().getWorld(),x,y,z),
-                     marker=new Location(e.getBlock().getWorld(),x,y,z),
-                     init=e.getBlock().getLocation();
-        ArrayList s = new ArrayList();
+                     //up=new Location(e.getBlock().getWorld(),x,y,z),
+                     //down=new Location(e.getBlock().getWorld(),x,y,z),
+                     //left=new Location(e.getBlock().getWorld(),x,y,z),
+                     //right=new Location(e.getBlock().getWorld(),x,y,z),
+                     marker=new Location(e.getBlock().getWorld(),x,y,z)//,
+                     //init=e.getBlock().getLocation()
+                     ;
+        ArrayList<Block> s = new ArrayList<Block>();
             
             for(int ix=0;ix<Wall_Size_X;ix++){//随便初始化一下一下，记得别指向同一个玩意导致指针相同，而改一个全改
                 for(int iy=0;iy<Wall_Size_X;iy++){
@@ -334,7 +299,7 @@ public final class EffectExec {
         }
     
     
-    public void removeShield(final BlockPlaceEvent e,final Location middle,final ArrayList s){
+    public void removeShield(final BlockPlaceEvent e,final Location middle,final ArrayList<Block> s){
         //System.out.print("enter");
         /*Block[] b=(Block[]) s.toArray();
         e.getPlayer().sendMessage(b.toString()+"..");
@@ -342,7 +307,7 @@ public final class EffectExec {
                     b[i].setType(Material.AIR);
                     System.out.print("clearing"+i);
                     }*/
-        final Iterator i=s.iterator();
+        final Iterator<Block> i=s.iterator();
         
         new BukkitRunnable(){
             float time =shieldHold;
@@ -384,7 +349,7 @@ public final class EffectExec {
         }.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 0L, 2L);
         
     }
-//下面的方法属于TNT效果
+    //下面的方法属于TNT效果
     public void ChargeTNT(final BlockPlaceEvent e){//问题找到了，双重TNT会有两次加速。。
         float speed=e.getPlayer().getWalkSpeed();
         if(1.5f*speed<=1){
@@ -418,11 +383,44 @@ public final class EffectExec {
         e.getPlayer().sendMessage(ChatColor.AQUA+"如你所见，TNT炸了。。");
     }
 
-    public int getTNTdelay() {
-        return TNTdelay;
-    }
 
-    public void setTNTdelay(int TNTdelay) {
+	public int getWall_Size_X() {
+	    return Wall_Size_X;
+	}
+
+	public int getWall_Size_Y() {
+	    return Wall_Size_Y;
+	}
+
+	public float getShieldHold() {
+	    return shieldHold;
+	}
+
+	public int getExplodePower() {
+	    return explodePower;
+	}
+
+	public int getTNTdelay() {
+	    return TNTdelay;
+	}
+
+	public void setExplodePower(int explodePower) {
+	    this.explodePower = explodePower;
+	}
+
+	public void setWall_Size_X(int Wall_Size_X) {
+	    this.Wall_Size_X = Wall_Size_X;
+	}
+
+	public void setWall_Size_Y(int Wall_Size_Y) {
+	    this.Wall_Size_Y = Wall_Size_Y;
+	}
+
+	public void setShieldHold(float shieldHold) {
+	    this.shieldHold = shieldHold;
+	}
+
+	public void setTNTdelay(int TNTdelay) {
         this.TNTdelay = TNTdelay;
     }
     

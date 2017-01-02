@@ -5,6 +5,9 @@
  */
 package game;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.bukkit.plugin.java.*;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -54,8 +57,10 @@ private FileConfiguration config;
             System.out.print("第二次设置"+worldGot1);
         }
         */
+        List<String> listOfStrings = Arrays.asList("Hello World", "Welcome to Bukkit", "Have a Good Day!");
+        this.getConfig().set("path.to.list", listOfStrings);
         
-        this.getConfig().set("Game_World", this.getConfig().getString("Game_World"));//读取原来的设置并且注册
+        this.getConfig().set("Game_World", this.getConfig().getString("Game_World"));//读取原来的设置并且注册世界
         //this.getConfig().set("Game_World","set2");
         String worldGot=this.getConfig().getString("Game_World");
         if(worldGot!=null){//如果世界被设置
@@ -129,7 +134,8 @@ private FileConfiguration config;
         getLogger().info("你的插件已被卸载。");//相当于析构函数，不过其他还没写完这里就还没写，内存泄漏什么的先不管了
     }
     
-    @Override
+    @SuppressWarnings("unused")
+	@Override
 public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {//当玩家执行了注册的指令时，让该玩家加入监听器的响应列表
     //命令addtoplayerlist
     //System.out.print("收到以下参数: label="+label+"argc="+args.length);
@@ -225,7 +231,7 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
             sender.sendMessage(ChatColor.GOLD+"列表中当前有"+breaksense1.getPlayerNumber()+"个玩家，\n"
                                 + "最大人数为"+breaksense1.getMaximumPlayer()+",\n"
                                 + "当前爆炸威力："+breaksense1.getExplodeSize()
-                                + "\n当前游戏世界: "+breaksense1.getGameworld()
+                                + "\n当前游戏世界: "+breaksense1.getGameworld().getName()
                                 + "\n当前玩家列表：\n");
             for(int i=0;i<breaksense1.getMaximumPlayer();i++){
                 if(breaksense1.getPlayerList()[i]!=null){
@@ -240,7 +246,7 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
         	getLogger().info(ChatColor.GOLD+"列表中当前有"+breaksense1.getPlayerNumber()+"个玩家，\n"
                     + "最大人数为"+breaksense1.getMaximumPlayer()+",\n"
                     + "当前爆炸威力："+breaksense1.getExplodeSize()
-                    + "\n当前游戏世界: "+breaksense1.getGameworld()
+                    + "\n当前游戏世界: "+breaksense1.getGameworld().getName()
                     + "\n当前玩家列表：\n");
             for(int i=0;i<breaksense1.getMaximumPlayer();i++){
                 if(breaksense1.getPlayerList()[i]!=null){
@@ -254,12 +260,16 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
         else{
         	getLogger().info(ChatColor.GOLD+"列表中当前有"+breaksense1.getPlayerNumber()+"个玩家，\n"
                     + "最大人数为"+breaksense1.getMaximumPlayer()+",\n"
-                    + "当前爆炸威力："+breaksense1.getExplodeSize());
-        	for(int i=0;i<breaksense1.getMaximumPlayer();i++){
-        		if(breaksense1.getPlayerList()[i]!=null){
-        			getLogger().info(ChatColor.GOLD+"玩家"+(i+1)+"是："+breaksense1.getPlayerList()[i]+"\n");   
-        		}
-        	}
+                    + "当前爆炸威力："+breaksense1.getExplodeSize()
+                    + "\n当前游戏世界: "+breaksense1.getGameworld().getName()
+                    + "\n当前玩家列表：\n");
+            for(int i=0;i<breaksense1.getMaximumPlayer();i++){
+                if(breaksense1.getPlayerList()[i]!=null){
+                    getLogger().info(ChatColor.GOLD+"玩家"+(i+1)+"是："+breaksense1.getPlayerList()[i]+"\n");   
+                }
+            }
+            
+            return true;
         }
         
         
@@ -325,7 +335,7 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
 
 }
     
-    void mySaveConfig(String name){
+    public void mySaveConfig(String name){
     	this.saveConfig();
     }
 }//这是类的那个反括号。。。
