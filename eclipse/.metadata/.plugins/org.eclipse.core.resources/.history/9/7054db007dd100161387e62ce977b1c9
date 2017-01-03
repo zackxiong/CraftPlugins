@@ -8,34 +8,34 @@ commands:
         description: 添加玩家到游戏中
         usage: /<command> or /<command> [player]
         permission: blockode.op
-        permission-message: 不用试了，你没权限0.0
+        permission-message: 不用试了，你没权限
     removefromplayerlist:
         description: 将玩家从游戏中移除
         usage: /<command>|/<command> [player]
         permission: blockode.op
-        permission-message: 不用试了，你没权限0.0
+        permission-message: 不用试了，你没权限
     setgameworld:
         description: 设置当前世界或目标世界为游戏世界
         usage: /<command>|/<command> [world]
         permission: blockode.op
-        permission-message: 不用试了，你没权限0.0
+        permission-message: 不用试了，你没权限
     getinfo:
         description: 获取游戏中的玩家
         usage: /<command>
         permission: blockode.basic
-        permission-message: 不用试了，你没权限0.0
+        permission-message: 不用试了，你没权限
     startgame:
         description: 开始游戏！
         usage: /<command>
         permission: blockode.op
-        permission-message: 不用试了，你没权限0.0
+        permission-message: 不用试了，你没权限
     stopgame:
         description: 停止游戏！
         usage: /<command>
         permission: blockode.op
-        permission-message: 不用试了，你没权限0.0
-    leavegame:
+        permission-message: 不用试了，你没权限
+	leavegame:
         description: 自行退出游戏
         usage: /<command>
         permission: blockode.basic
-        permission-message: 不用试了，你没权限0.0
+        permission-message: 不用试了，你没权限

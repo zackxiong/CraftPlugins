@@ -641,7 +641,7 @@ public final class Blockode implements Listener{
     
     @EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = true)
     public void onPlayerChat(PlayerChatEvent event) {
-        if(this.isQuoteBlocked(event.getMessage())){
+        if(this.isInList(event.getPlayer()) && this.isQuoteBlocked(event.getMessage())){
         	event.getPlayer().sendMessage(ChatColor.RED+"这话你可不能说啊。。。！");
         	event.setCancelled(true);
         }

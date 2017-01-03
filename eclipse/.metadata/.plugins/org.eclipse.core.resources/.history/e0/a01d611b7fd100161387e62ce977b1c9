@@ -5,7 +5,7 @@ UnBlocked_Commands:
 - /getinfo
 - /startgame
 - /stopgame
-- /leavegame
+- /leave
 Blocked_Quotes:
 - sb
 - 傻逼
