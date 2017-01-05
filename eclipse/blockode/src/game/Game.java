@@ -111,6 +111,9 @@ private FileConfiguration config;
         breaksense1.setAmountIronSward(this.getConfig().getInt("amountIronSward"));
         config.set("amountIronSward", this.getConfig().getInt("amountIronSward"));
         
+        breaksense1.setAmountSnow(this.getConfig().getInt("amountSnow"));
+        config.set("amountSnow", this.getConfig().getInt("amountSnow"));
+        
         
         if(breaksense1.getGameworld()==null){
         	getLogger().warning(ChatColor.RED+"检测到游戏世界设置不正确，请使用/setgameworld手动设置!");

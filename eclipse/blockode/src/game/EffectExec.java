@@ -382,6 +382,19 @@ public final class EffectExec {
         e.getPlayer().getWorld().createExplosion(e.getBlock().getLocation(), explodePower); 
         e.getPlayer().sendMessage(ChatColor.AQUA+"如你所见，TNT炸了。。");
     }
+    
+    //以下方法属于云梯
+    public static void blockTemp(long time, final Location loc, Material material){
+    	//final Material backupType=loc.getBlock().getType();
+    	loc.getBlock().setType(material);
+    	new BukkitRunnable(){
+			@Override
+			public void run() {
+				loc.getBlock().setType(Material.AIR);
+				cancel();
+			}
+    	}.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), time, 0L);
+    }
 
 
 	public int getWall_Size_X() {

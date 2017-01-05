@@ -34,6 +34,7 @@ import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.player.PlayerBedEnterEvent;
 import org.bukkit.event.player.PlayerChatEvent;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
+import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.event.player.PlayerTeleportEvent;
 import org.bukkit.inventory.ItemStack;
@@ -65,6 +66,19 @@ public final class Blockode implements Listener{
     //private ArrayList<String> unBlockedCommand = new ArrayList<String>();//解除禁止的指令
     List<String> unBlockedCommand;//解除禁止的指令
     List<String> BlockedQuotes;//禁止的语句
+    private int amountBeacon=1,
+            amountBed=1,
+            amountBow=1,
+            amountArrow=1,
+            amountBread=1,
+            amountTNT=1,
+            amountIronSward=1,
+            amountSnow=1;
+    private ItemStack[] gameItems;
+    public boolean start=false;
+    public GameController gc;
+
+
     public List<String> getBlockedQuotes() {
 		return BlockedQuotes;
 	}
@@ -73,17 +87,7 @@ public final class Blockode implements Listener{
 		BlockedQuotes = blockedQuotes;
 	}
 
-	private int amountBeacon=1,
-            amountBed=1,
-            amountBow=1,
-            amountArrow=1,
-            amountBread=1,
-            amountTNT=1,
-            amountIronSward=1;
-    private ItemStack[] gameItems;
-
-
-    public List<String> getUnBlockedCommand() {
+	public List<String> getUnBlockedCommand() {
 		return unBlockedCommand;
 	}
 
@@ -94,45 +98,10 @@ public final class Blockode implements Listener{
 	public Blockode(){
         System.out.print("[breaksense()]");
         PlayerList=new String[this.MaximumPlayer];
+        this.gc=new GameController();
+        gc.addBlockode(this);
     }
     
-    static public void test(){
-        System.out.print("[test()]");
-    }
-
-   public boolean addtoPlayerList(Player player){
-       String name=player.getName();
-        if (PlayerNumber>=MaximumPlayer) {return false;}//人数超过则返回错误
-       else {
-           if(isInList(name)==false){
-               this.PlayerList[PlayerNumber]=name;
-               initPlayer(player);
-               getLogger().info("玩家:"+name+"已被添加至游戏列表。");
-               //Bukkit.getPlayer(name).sendMessage("玩家:"+name+"已被添加至游戏列表。");
-               PlayerNumber++;
-               return true;
-           }//不然就把名单上面下一位给加上传过来的玩家
-           else{
-              getLogger().info("玩家"+name+"已存在列表中");
-              Bukkit.getPlayer(name).sendMessage("玩家"+Bukkit.getPlayer(name)+"已存在列表中");
-             return false;
-           }
-       }
-   }
-   
-   
-      public boolean addtoPlayerList(String name){
-        if (PlayerNumber>=MaximumPlayer) {return false;}//人数超过则返回错误
-        if(Bukkit.getPlayer(name)==null){
-            System.out.print("玩家都不存在，你还添加");
-            return false;
-        }
-        else{
-            return this.addtoPlayerList(Bukkit.getPlayer(name));
-        }
-   }
-   
-   
    public boolean removefromPlayerList(Player player){
        //getLogger().info("开始查询玩家");
        if(!isInList(player)){
@@ -288,7 +257,8 @@ public final class Blockode implements Listener{
     	this.gameworld.setTime(111111);
     	gameworld.setGameRuleValue("doDaylightCycle", "false");//调整至晚上
     	gameworld.setGameRuleValue("keepInventory", "trues");//取消死亡掉落以免出现bug
-    	new BukkitRunnable(){//检查是否还有人在玩
+    	this.setStart(true);
+    	/*new BukkitRunnable(){//检查是否还有人在玩(不需要了，已经用控制器替代功能)
             @Override
             public void run(){
             	System.out.print("检测");
@@ -301,7 +271,7 @@ public final class Blockode implements Listener{
                     cancel();
             	}
             }
-        }.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 20L, 20L);
+        }.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 20L, 20L);*/
         
         for(int i=0;i<PlayerList.length;i++){
             Player player;
@@ -314,7 +284,8 @@ public final class Blockode implements Listener{
             	        new ItemStack(Material.BOW,this.amountBow),
             	        new ItemStack(Material.BREAD,this.amountBread),
             	        new ItemStack(Material.TNT,this.amountTNT),
-            	        new ItemStack(Material.IRON_SWORD,this.amountIronSward)
+            	        new ItemStack(Material.IRON_SWORD,this.amountIronSward),
+            	        new ItemStack(Material.SNOW,this.amountSnow)
             	    };
             	inv.addItem(gameItems);//加入设定物品
             }
@@ -325,7 +296,15 @@ public final class Blockode implements Listener{
         Bukkit.broadcastMessage(ChatColor.BLUE+"初始化完成，游戏开始！");
     }
     
-    public void stop(String name){
+    public int getAmountSnow() {
+		return amountSnow;
+	}
+
+	public void setAmountSnow(int amountSnow) {
+		this.amountSnow = amountSnow;
+	}
+
+	public void stop(String name){
     	if(name==null){
         	Bukkit.broadcastMessage(ChatColor.GOLD+"游戏结束，平局！");
     	}
@@ -339,6 +318,7 @@ public final class Blockode implements Listener{
     	Bukkit.broadcastMessage(ChatColor.GOLD+"游戏停止！");
     	this.gameworld.setTime(1);
     	gameworld.setGameRuleValue("doDaylightCycle", "true");
+    	this.setStart(false);
         for(int i=0;i<PlayerList.length;i++){
             Player player;
             Damageable playerdg;
@@ -372,7 +352,23 @@ public final class Blockode implements Listener{
         Bukkit.broadcastMessage(ChatColor.BLUE+"游戏已结束!");
     }
     
-//监听器放置
+public boolean isStart() {
+		return start;
+	}
+
+	public void setStart(boolean start) {
+		this.start = start;
+	}
+
+	public GameController getGc() {
+		return gc;
+	}
+
+	public void setGc(GameController gc) {
+		this.gc = gc;
+	}
+
+	//监听器放置
 	@EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = true)  //这就是我说的那个监听器了，事件发生时会触发下面这个方法
 	public void onBlockPlace(BlockPlaceEvent e){
 	    //int x=e.getBlock().getX(),
@@ -647,6 +643,81 @@ public final class Blockode implements Listener{
         }
     }
     
+    //交互监听器使用
+	@EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = true)
+    public void onPlayerInteract(final PlayerInteractEvent event){
+		//右击物品
+		if(this.isInList(event.getPlayer()) 
+		&& event.getPlayer().getItemInHand().getType().equals(Material.SNOW)
+		&& event.getPlayer().getItemInHand().getAmount()>1){
+			//只执行一次的内容
+			event.getPlayer().setVelocity(event.getPlayer().getVelocity().add(new Vector(0,1,0)));
+			event.getPlayer().setWalkSpeed(0.4f);
+			//event.getPlayer().getItemInHand().setDurability((short) 150);
+			new BukkitRunnable(){
+				@Override
+				public void run() {
+					//event.getPlayer().getItemInHand().setDurability((short) (event.getPlayer().getItemInHand().getDurability()-1));
+					if(event.getPlayer().getItemInHand().getAmount()>1
+					&&isInList(event.getPlayer()) 
+					&& event.getPlayer().getItemInHand().getType().equals(Material.SNOW)
+					&& event.getPlayer().getItemInHand().getAmount()>=1){
+						System.out.print("检测到"+event.getPlayer().getItemInHand().getAmount()+"个");
+						Location loc0=new Location(gameworld,event.getPlayer().getLocation().getX(),
+										event.getPlayer().getLocation().getY()-1,
+										event.getPlayer().getLocation().getZ());
+						Location marker=loc0.clone(),loc1,loc2,loc3,loc4;
+						marker.setX(marker.getX()+1);
+						loc1=marker.clone();
+						marker.setX(marker.getX()-2);
+						loc2=marker.clone();
+						marker.setX(marker.getX()+1);
+						marker.setZ(marker.getZ()+1);
+						loc3=marker.clone();
+						marker.setZ(marker.getZ()-2);
+						loc4=marker.clone();
+						marker.setZ(marker.getZ()+1);
+						if(loc0.getBlock().getType()==Material.AIR){
+							//EffectExec.blockTemp(40L, event.getPlayer().getLocation(), Material.ICE);
+							EffectExec.blockTemp(40L, loc0.clone(), Material.ICE);
+							EffectExec.blockTemp(40L, loc1.clone(), Material.ICE);
+							EffectExec.blockTemp(40L, loc2.clone(), Material.ICE);
+							EffectExec.blockTemp(40L, loc3.clone(), Material.ICE);
+							EffectExec.blockTemp(40L, loc4.clone(), Material.ICE);
+							/*event.getPlayer().getLocation().getBlock().setType(Material.CARPET);
+							loc1.getBlock().setType(Material.CARPET);
+							loc2.getBlock().setType(Material.CARPET);
+							loc3.getBlock().setType(Material.CARPET);
+							loc4.getBlock().setType(Material.CARPET);*/
+							event.getPlayer().getItemInHand().setAmount(event.getPlayer().getItemInHand().getAmount()-1);
+						}
+					}
+					
+					else if(event.getPlayer().getItemInHand().getAmount()>1
+					&&isInList(event.getPlayer()) 
+					&& event.getPlayer().getItemInHand().getType().equals(Material.SNOW)
+					&& event.getPlayer().getItemInHand().getAmount()>=1){
+						event.getPlayer().sendMessage(ChatColor.RED+"效果已经取消！");
+						event.getPlayer().setWalkSpeed(0.2f);
+            			System.out.print("取消");
+            			cancel();
+					}
+					
+        			else{
+        				event.getPlayer().sendMessage(ChatColor.RED+"燃料用光了！");
+        				event.getPlayer().setWalkSpeed(0.2f);
+            			System.out.print("取消");
+            			cancel();
+            		}
+				}}.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 0L, 1L);
+		}
+		else if(this.isInList(event.getPlayer()) 
+		&& event.getPlayer().getItemInHand().getType().equals(Material.SNOW)
+		&& event.getPlayer().getItemInHand().getAmount()>1){
+			event.getPlayer().sendMessage(ChatColor.RED+"燃料不足!");
+		}
+    }
+    
     public boolean isCommandBlocked(String command){
     	for(String c : this.unBlockedCommand){
     		if(command.startsWith(c)){
@@ -723,6 +794,37 @@ public final class Blockode implements Listener{
     public ItemStack[] getGameItems() {
 		return gameItems;
 	}
+
+	public boolean addtoPlayerList(Player player){
+	       String name=player.getName();
+	        if (PlayerNumber>=MaximumPlayer) {return false;}//人数超过则返回错误
+	       else {
+	           if(isInList(name)==false){
+	               this.PlayerList[PlayerNumber]=name;
+	               initPlayer(player);
+	               getLogger().info("玩家:"+name+"已被添加至游戏列表。");
+	               //Bukkit.getPlayer(name).sendMessage("玩家:"+name+"已被添加至游戏列表。");
+	               PlayerNumber++;
+	               return true;
+	           }//不然就把名单上面下一位给加上传过来的玩家
+	           else{
+	              getLogger().info("玩家"+name+"已存在列表中");
+	              Bukkit.getPlayer(name).sendMessage("玩家"+Bukkit.getPlayer(name)+"已存在列表中");
+	             return false;
+	           }
+	       }
+	   }
+
+	public boolean addtoPlayerList(String name){
+	        if (PlayerNumber>=MaximumPlayer) {return false;}//人数超过则返回错误
+	        if(Bukkit.getPlayer(name)==null){
+	            System.out.print("玩家都不存在，你还添加");
+	            return false;
+	        }
+	        else{
+	            return this.addtoPlayerList(Bukkit.getPlayer(name));
+	        }
+	   }
 
 	public void setGameItems(ItemStack[] gameItems) {
 		this.gameItems = gameItems;

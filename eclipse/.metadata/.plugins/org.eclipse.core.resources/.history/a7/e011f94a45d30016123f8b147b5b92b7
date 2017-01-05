@@ -1,0 +1,16 @@
+package game;
+
+import java.util.List;
+
+public class GameController {
+	public List<Blockode> blockodeList;
+	
+	public GameController(Blockode blockode) {
+		this.blockodeList.add(blockode);
+	}
+	
+	startOrStopRanger(){
+		
+	}
+
+}
