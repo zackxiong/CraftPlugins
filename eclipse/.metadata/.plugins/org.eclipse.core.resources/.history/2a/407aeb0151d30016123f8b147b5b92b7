@@ -651,11 +651,9 @@ public boolean isStart() {
 		&& event.getPlayer().getItemInHand().getType().equals(Material.SNOW)
 		&& event.getPlayer().getItemInHand().getAmount()>1){
 			//只执行一次的内容
-			event.getPlayer().sendMessage(ChatColor.GREEN+"起飞成功！");
 			event.getPlayer().setVelocity(event.getPlayer().getVelocity().add(new Vector(0,1,0)));
 			event.getPlayer().setWalkSpeed(0.4f);
 			event.getPlayer().getItemInHand().setAmount(event.getPlayer().getItemInHand().getAmount()-1);
-			event.setCancelled(true);
 			//event.getPlayer().getItemInHand().setDurability((short) 150);
 			new BukkitRunnable(){
 				@Override
@@ -665,7 +663,7 @@ public boolean isStart() {
 					&&isInList(event.getPlayer()) 
 					&& event.getPlayer().getItemInHand().getType().equals(Material.SNOW)
 					&& event.getPlayer().getItemInHand().getAmount()>=1){
-						//System.out.print("检测到"+event.getPlayer().getItemInHand().getAmount()+"个");
+						System.out.print("检测到"+event.getPlayer().getItemInHand().getAmount()+"个");
 						Location loc0=new Location(gameworld,event.getPlayer().getLocation().getX(),
 										event.getPlayer().getLocation().getY()-1,
 										event.getPlayer().getLocation().getZ());

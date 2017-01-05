@@ -651,7 +651,7 @@ public boolean isStart() {
 		&& event.getPlayer().getItemInHand().getType().equals(Material.SNOW)
 		&& event.getPlayer().getItemInHand().getAmount()>1){
 			//只执行一次的内容
-			event.getPlayer().sendMessage(ChatColor.GREEN+"起飞成功！");
+			event.getPlayer();
 			event.getPlayer().setVelocity(event.getPlayer().getVelocity().add(new Vector(0,1,0)));
 			event.getPlayer().setWalkSpeed(0.4f);
 			event.getPlayer().getItemInHand().setAmount(event.getPlayer().getItemInHand().getAmount()-1);
