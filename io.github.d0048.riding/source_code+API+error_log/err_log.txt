@@ -1,0 +1,29 @@
+[15:13:39 ERROR]: Error occurred while enabling testplugin171 vbeta (Is it up to
+ date?)
+java.lang.NullPointerException
+        at io.github.d0048.riding.breaksense.addtoPlayerList(breaksense.java:67)
+ ~[?:?]
+        at io.github.d0048.riding.IoGithubD0048Riding.onEnable(IoGithubD0048Ridi
+ng.java:29) ~[?:?]
+        at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:316) ~[s
+pigot-1.7.10.jar:git-Spigot-1627]
+        at org.bukkit.plugin.java.JavaPluginLoader.enablePlugin(JavaPluginLoader
+.java:332) [spigot-1.7.10.jar:git-Spigot-1627]
+        at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManage
+r.java:405) [spigot-1.7.10.jar:git-Spigot-1627]
+        at org.bukkit.craftbukkit.v1_7_R4.CraftServer.loadPlugin(CraftServer.jav
+a:476) [spigot-1.7.10.jar:git-Spigot-1627]
+        at org.bukkit.craftbukkit.v1_7_R4.CraftServer.enablePlugins(CraftServer.
+java:394) [spigot-1.7.10.jar:git-Spigot-1627]
+        at net.minecraft.server.v1_7_R4.MinecraftServer.n(MinecraftServer.java:3
+60) [spigot-1.7.10.jar:git-Spigot-1627]
+        at net.minecraft.server.v1_7_R4.MinecraftServer.g(MinecraftServer.java:3
+34) [spigot-1.7.10.jar:git-Spigot-1627]
+        at net.minecraft.server.v1_7_R4.MinecraftServer.a(MinecraftServer.java:2
+90) [spigot-1.7.10.jar:git-Spigot-1627]
+        at net.minecraft.server.v1_7_R4.DedicatedServer.init(DedicatedServer.jav
+a:210) [spigot-1.7.10.jar:git-Spigot-1627]
+        at net.minecraft.server.v1_7_R4.MinecraftServer.run(MinecraftServer.java
+:458) [spigot-1.7.10.jar:git-Spigot-1627]
+        at net.minecraft.server.v1_7_R4.ThreadServerApplication.run(SourceFile:6
+28) [spigot-1.7.10.jar:git-Spigot-1627]

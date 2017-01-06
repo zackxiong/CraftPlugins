@@ -1,0 +1,5 @@
+name: ShellController
+main: shellcontroller.ShellController
+version: beta
+description: This is a plugin to control the computer.
+author: HXB

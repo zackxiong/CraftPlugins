@@ -1,0 +1,38 @@
+package game;
+
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.Label;
+
+import javax.swing.JFrame;  
+import javax.swing.JLabel;
+import javax.swing.WindowConstants;
+  
+public class Gui extends JFrame{  
+  
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public static void main(String[] args) {  
+        Label label=new Label();
+        JLabel jlabel=new JLabel(); 
+        Gui f = new Gui();  
+        f.setVisible(true);  
+        f.setSize(800,500);  
+        f.setTitle("Blockode控制台");
+        f.setLayout(new FlowLayout());
+        label.setLocation(0, 0);
+        label.setText("插件日志:");
+        jlabel.setText(jlabel.getText()+"载入成功！");
+        jlabel.setBackground(Color.black);
+        jlabel.setLocation(10, 6);
+        f.add(label);
+        f.add(jlabel);
+        //再加上这一句就可以把Frame放在最中间了  
+        f.setLocationRelativeTo(null);  
+        //如果没有这一句，在点击关闭Frame的时候程序其实还是在执行状态中的，加上这一句才算是真正的把资源释放掉了  
+        f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);  
+    }  
+} 

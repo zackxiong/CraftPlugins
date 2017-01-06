@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.bukkit.entity.Damageable"/>
+<fullyQualifiedTypeName name="org.bukkit.event.entity.PlayerDeathEvent"/>
+<fullyQualifiedTypeName name="org.bukkit.event.player.PlayerQuitEvent"/>
+<fullyQualifiedTypeName name="org.bukkit.Bukkit"/>
+<fullyQualifiedTypeName name="net.minecraft.server.v1_7_R4.World"/>
+<fullyQualifiedTypeName name="org.bukkit.craftbukkit.v1_7_R4.entity.CraftPlayer"/>
+<fullyQualifiedTypeName name="org.bukkit.event.player.PlayerCommandPreprocessEvent"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="org.bukkit.event.player.PlayerChatEvent"/>
+<fullyQualifiedTypeName name="org.bukkit.event.player.PlayerInteractEvent"/>
+<fullyQualifiedTypeName name="org.bukkit.Material"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="org.bukkit.ChatColor"/>
+<fullyQualifiedTypeName name="java.awt.Label"/>
+<fullyQualifiedTypeName name="java.awt.FlowLayout"/>
+<fullyQualifiedTypeName name="javax.swing.Box"/>
+<fullyQualifiedTypeName name="javax.swing.JLabel"/>
+<fullyQualifiedTypeName name="java.awt.Color"/>
+<fullyQualifiedTypeName name="javax.swing.JTextField"/>
+</qualifiedTypeNameHistroy>
