@@ -10,17 +10,17 @@ import javax.swing.JTextField;
 import javax.swing.WindowConstants;
   
 public class Gui extends JFrame{  
-    static Label label=new Label();
-    static JLabel jlabel=new JLabel(); 
-    static Gui f = new Gui();  
-    static JTextField textField = new JTextField(20);
+  
     /**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
 	public static void main(String[] args) {  
-
+        Label label=new Label();
+        JLabel jlabel=new JLabel(); 
+        Gui f = new Gui();  
+        JTextField textField = new JTextField(20);
         
         f.setVisible(true);  
         f.setSize(800,500);  
@@ -41,7 +41,4 @@ public class Gui extends JFrame{
         //如果没有这一句，在点击关闭Frame的时候程序其实还是在执行状态中的，加上这一句才算是真正的把资源释放掉了  
         f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);  
     }  
-	public static void log(String msg){
-		jlabel.setText(jlabel.getText()+msg);
-	}
 } 

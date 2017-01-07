@@ -37,7 +37,8 @@ public class Gui extends JFrame{
         f.add(jlabel);
         f.add(textField);
         //再加上这一句就可以把Frame放在最中间了  
-        f.setLocationRelativeTo(null);  
+        f.setLocationRelativeTo(null);
+        jlabel.setText(jlabel.getText()+"1/n1");
         //如果没有这一句，在点击关闭Frame的时候程序其实还是在执行状态中的，加上这一句才算是真正的把资源释放掉了  
         f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);  
     }  
