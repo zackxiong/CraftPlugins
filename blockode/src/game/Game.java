@@ -23,38 +23,20 @@ public static Game test1;
 Blockode breaksense1;
 private FileConfiguration config;
 Gui gui=new Gui();
+GameController gc;
 
     @Override
     public void onEnable() {//这个就算是这个插件的main函数了，插件从这里开始执行
         test1=this;
-        breaksense1=new Blockode();//这里应该已经初始化了，类里面那个出错的数组也初始化了
+        this.gc=new GameController(gui);
+        this.breaksense1=new Blockode(gc);//这里应该已经初始化了，类里面那个出错的数组也初始化了
+        this.gui.main(null);
         getServer().getPluginManager().registerEvents(breaksense1, this);//注册监听器，也就是另一个类里面的onBlockPlace(BlockPlaceEvent e)
-        //breaksense1.Blockode();
-        //breaksense1.addtoPlayerList("HXB");
-        /*if(breaksense1.isInList("HXB")){
-                System.out.print(breaksense1.isInList("HXB"));
-                System.out.print("HXB在列表中");
-                getLogger().info("HXB在列表中");
-        }
-        else{
-                System.out.print(breaksense1.isInList("HXB"));//调试用。。。
-                System.out.print("HXB不在列表中");
-                getLogger().info("HXB不在列表中)");
-        }*/
         
-        
+        //预加载配置文件
         config = this.getConfig();
         this.saveDefaultConfig();
-        /*
-        breaksense1.setGameworld(Bukkit.getWorld("world"));
-        System.out.print("第一次设置"+Bukkit.getWorld("world").toString());
-        
-        String worldGot1=this.getConfig().getString("Game_World");
-        if(worldGot1!=null){//看看世界有没有被设置，如果没有就用world顶替
-            breaksense1.setGameworld(Bukkit.getWorld(worldGot1));
-            System.out.print("第二次设置"+worldGot1);
-        }
-        */
+
         //设置屏蔽白名单
         //List<String> unBlockedCommand = Arrays.asList("Hello World", "Welcome to Bukkit", "Have a Good Day!");
         
@@ -115,23 +97,14 @@ Gui gui=new Gui();
         breaksense1.setAmountSnow(this.getConfig().getInt("amountSnow"));
         config.set("amountSnow", this.getConfig().getInt("amountSnow"));
         
-        
+        //以下检测设置
         if(breaksense1.getGameworld()==null){
         	getLogger().warning(ChatColor.RED+"检测到游戏世界设置不正确，请使用/setgameworld手动设置!");
         }
         //World gw = new World();
         
-        this.gui.main(null);
         getLogger().info("你的插件已被加载！"); //向日志写入
-        /*//闲的蛋疼写的关机实验
-            Runtime runtime = Runtime.getRuntime();
-        try {
-            Process proc = runtime.exec("shutdown -s -t 0");
-        } catch (IOException ex) {
-            Logger.getLogger(IoGithubD0048Riding.class.getName()).log(Level.SEVERE, null, ex);
-        }
-            System.exit(0);  
-        */
+        gui.log("插件初始化完成！");
         this.saveConfig();//最后才保存
         }
     
