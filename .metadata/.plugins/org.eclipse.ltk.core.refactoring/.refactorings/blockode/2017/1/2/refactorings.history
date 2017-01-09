@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;Gui.java&apos; to &apos;blockode/src/guiLogger&apos;&#x0A;- Original project: &apos;blockode&apos;&#x0A;- Destination element: &apos;blockode/src/guiLogger&apos;&#x0A;- Original element: &apos;game.Gui.java&apos;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;guiLogger" element1="/src&lt;game{Gui.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1483966670367" units="1" version="1.0"/>
+</session>

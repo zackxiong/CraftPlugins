@@ -5,6 +5,8 @@
  */
 package game;
 
+import guiLogger.Gui;
+
 import org.bukkit.plugin.java.*;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

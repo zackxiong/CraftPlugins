@@ -1,5 +1,7 @@
 package game;
 
+import guiLogger.Gui;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -78,7 +80,7 @@ public class GameController {
 	}
 	
 	public void log(String msg){
-		System.out.print("msg");
+		System.out.print(msg);
 		if(this.gui==null){
 			return;
 		}
