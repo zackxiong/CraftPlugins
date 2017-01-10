@@ -1,4 +1,4 @@
-package game;
+package guiLogger;
 
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -28,8 +28,6 @@ public class Gui extends JFrame{
 	private static final long serialVersionUID = 1L;
 
 	public static void main(String[] args) {  
-
-        
         f.setVisible(true);  
         f.setSize(1000,800);  
         f.setTitle("Blockode控制台");
@@ -42,17 +40,19 @@ public class Gui extends JFrame{
         jtextarea.setEditable(false);
         jtextarea.setLineWrap(true);
         jtextarea.setWrapStyleWord(true);
-        
-        JScrollPane jsp=new JScrollPane(jtextarea);
-        jsp.setViewportView(jtextarea);
-        
-        f.add(jsp.add(jtextarea));
-        //f.add(new JScrollPane(jtextarea));
+        jsp=new JScrollPane(jtextarea);
+        jsp.setHorizontalScrollBarPolicy( 
+        		JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED); 
+        jsp.setVerticalScrollBarPolicy( 
+        		JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED); 
+		jsp.setWheelScrollingEnabled(true);
+		
+        f.add(jsp);
         
         f.add(label);
         f.add(jlabel);
-        //f.add(jtextField);
-        f.add(jtextarea);
+        f.add(jtextField);
+        //f.add(jtextarea);
         //再加上这一句就可以把Frame放在最中间了  
         f.setLocationRelativeTo(null);  
         //jlabel.setLocation(15, 20);
@@ -60,6 +60,12 @@ public class Gui extends JFrame{
         f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);  
         for(int i=0;i<95;i++){
         	log("test");
+        	try {
+				Thread.sleep(20);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         }
 
         	//log("test");
@@ -67,6 +73,8 @@ public class Gui extends JFrame{
     }  
 	public static void log(String msg){
 		//jtextarea.setText(jlabel.getText().replace("</html>", "")+msg+"<br></html>");
-		jtextarea.setText(jtextarea.getText()+"["+df.format(new Date())+"]"+jlabel.getText()+msg+"\n");
+		jtextarea.setText(jtextarea.getText()+"["+df.format(new Date())+"] "+jlabel.getText()+msg+"\n");
+		jtextarea.setCaretPosition(jtextarea.getText().length());
+
 	}
 } 

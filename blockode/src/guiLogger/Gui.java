@@ -58,7 +58,7 @@ public class Gui extends JFrame{
         //jlabel.setLocation(15, 20);
         //如果没有这一句，在点击关闭Frame的时候程序其实还是在执行状态中的，加上这一句才算是真正的把资源释放掉了  
         f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);  
-        for(int i=0;i<95;i++){
+        /*for(int i=0;i<95;i++){
         	log("test");
         	try {
 				Thread.sleep(20);
@@ -66,14 +66,14 @@ public class Gui extends JFrame{
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-        }
+        }*/
 
         	//log("test");
         log("Gui载入成功！");
     }  
 	public static void log(String msg){
 		//jtextarea.setText(jlabel.getText().replace("</html>", "")+msg+"<br></html>");
-		jtextarea.setText(jtextarea.getText()+"["+df.format(new Date())+"] "+jlabel.getText()+msg+"\n");
+		jtextarea.setText(jlabel.getText()+jtextarea.getText()+"["+df.format(new Date())+"] "+msg+"\n");
 		jtextarea.setCaretPosition(jtextarea.getText().length());
 
 	}

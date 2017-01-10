@@ -17,9 +17,8 @@ public class GameController {
 	
 	@SuppressWarnings("static-access")
 	public GameController(Gui g) {
-		this.blockodeList= new ArrayList<Blockode>();
+		this();
 		this.gui=g;
-		this.startOrStopRanger();
 		if(this.gui==null){
 			System.out.print(ChatColor.RED+"gui设置出现问题，没有找到gui！");
 		}
@@ -82,6 +81,7 @@ public class GameController {
 	public void log(String msg){
 		System.out.print(msg);
 		if(this.gui==null){
+			System.out.print("找不到gui");
 			return;
 		}
 		else{

@@ -27,11 +27,12 @@ private FileConfiguration config;
 Gui gui=new Gui();
 GameController gc;
 
-    @Override
+    @SuppressWarnings("static-access")
+	@Override
     public void onEnable() {//这个就算是这个插件的main函数了，插件从这里开始执行
         test1=this;
         this.gc=new GameController(gui);
-        this.breaksense1=new Blockode(gc);//这里应该已经初始化了，类里面那个出错的数组也初始化了
+        this.breaksense1=new Blockode(gc,gui);//这里应该已经初始化了，类里面那个出错的数组也初始化了
         this.gui.main(null);
         getServer().getPluginManager().registerEvents(breaksense1, this);//注册监听器，也就是另一个类里面的onBlockPlace(BlockPlaceEvent e)
         
@@ -53,7 +54,7 @@ GameController gc;
         String worldGot=this.getConfig().getString("Game_World");
         if(worldGot!=null){//如果世界被设置
             breaksense1.setGameworld(Bukkit.getWorld(worldGot));
-            System.out.print(ChatColor.GOLD+"[敏感操作]尝试设置游戏世界为:"+worldGot);
+            log(ChatColor.GOLD+"[敏感操作]尝试设置游戏世界为:"+worldGot);
         }
         //先获取再注册
         breaksense1.setExplodeSize(this.getConfig().getInt("Explode_Size"));
@@ -101,11 +102,11 @@ GameController gc;
         
         //以下检测设置
         if(breaksense1.getGameworld()==null){
-        	getLogger().warning(ChatColor.RED+"检测到游戏世界设置不正确，请使用/setgameworld手动设置!");
+        	log(ChatColor.RED+"检测到游戏世界设置不正确，请使用/setgameworld手动设置!");
         }
         //World gw = new World();
         
-        getLogger().info("你的插件已被加载！"); //向日志写入
+        log("你的插件已被加载！"); //向日志写入
         gui.log("插件初始化完成！");
         this.saveConfig();//最后才保存
         }
@@ -115,7 +116,7 @@ GameController gc;
         test1=null;
         breaksense1.stop();
         breaksense1.clearPlayerList();
-        getLogger().info("你的插件已被卸载。");//相当于析构函数，不过其他还没写完这里就还没写，内存泄漏什么的先不管了
+        log("你的插件已被卸载。");//相当于析构函数，不过其他还没写完这里就还没写，内存泄漏什么的先不管了
     }
     
     @SuppressWarnings("unused")
@@ -227,14 +228,14 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
         }
         if (!(sender instanceof Player)){
         	//System.out.print("执行");
-        	getLogger().info(ChatColor.GOLD+"列表中当前有"+breaksense1.getPlayerNumber()+"个玩家，\n"
+        	log(ChatColor.GOLD+"列表中当前有"+breaksense1.getPlayerNumber()+"个玩家，\n"
                     + "最大人数为"+breaksense1.getMaximumPlayer()+",\n"
                     + "当前爆炸威力："+breaksense1.getExplodeSize()
                     + "\n当前游戏世界: "+breaksense1.getGameworld().getName()
                     + "\n当前玩家列表：\n");
             for(int i=0;i<breaksense1.getMaximumPlayer();i++){
                 if(breaksense1.getPlayerList()[i]!=null){
-                    getLogger().info(ChatColor.GOLD+"玩家"+(i+1)+"是："+breaksense1.getPlayerList()[i]+"\n");   
+                	log(ChatColor.GOLD+"玩家"+(i+1)+"是："+breaksense1.getPlayerList()[i]+"\n");   
                 }
             }
             
@@ -242,14 +243,14 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
             }
         
         else{
-        	getLogger().info(ChatColor.GOLD+"列表中当前有"+breaksense1.getPlayerNumber()+"个玩家，\n"
+        	log(ChatColor.GOLD+"列表中当前有"+breaksense1.getPlayerNumber()+"个玩家，\n"
                     + "最大人数为"+breaksense1.getMaximumPlayer()+",\n"
                     + "当前爆炸威力："+breaksense1.getExplodeSize()
                     + "\n当前游戏世界: "+breaksense1.getGameworld().getName()
                     + "\n当前玩家列表：\n");
             for(int i=0;i<breaksense1.getMaximumPlayer();i++){
                 if(breaksense1.getPlayerList()[i]!=null){
-                    getLogger().info(ChatColor.GOLD+"玩家"+(i+1)+"是："+breaksense1.getPlayerList()[i]+"\n");   
+                	log(ChatColor.GOLD+"玩家"+(i+1)+"是："+breaksense1.getPlayerList()[i]+"\n");   
                 }
             }
             
@@ -266,14 +267,14 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
                 breaksense1.setGameworld(((Player) sender).getWorld());
                 this.getConfig().set("Game_World", ((Player) sender).getWorld().getName());
                 ((Player)sender).sendMessage(ChatColor.GOLD+"[敏感操作]"+sender.getName()+"已设置当前的游戏世界为"+((Player) sender).getWorld().getName());
-                getLogger().warning(ChatColor.GOLD+"[敏感操作]"+sender.getName()+"已设置当前的游戏世界为"+((Player) sender).getWorld().getName());
+                log(ChatColor.GOLD+"[敏感操作]"+sender.getName()+"已设置当前的游戏世界为"+((Player) sender).getWorld().getName());
                 this.mySaveConfig("config.yml");
-                getLogger().warning(ChatColor.GOLD+"[敏感操作]设置已保存");
+                log(ChatColor.GOLD+"[敏感操作]设置已保存");
                 ((Player)sender).sendMessage(ChatColor.GOLD+"[敏感操作]设置已保存");
                 return true;
             }
             else{//不是就报错
-                getLogger().warning(ChatColor.GOLD+sender.getName()+"我告诉你,不要用控制台执行玩家指令啊喂");
+            	log(ChatColor.GOLD+sender.getName()+"我告诉你,不要用控制台执行玩家指令啊喂");
                 return true;
             }
         }
@@ -284,10 +285,10 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
                 this.mySaveConfig("config.yml");
                 if ((sender instanceof Player)){
                     ((Player)sender).sendMessage(ChatColor.GOLD+"[敏感操作]"+sender.getName()+"已设置当前的游戏世界为"+Bukkit.getWorld(args[0]).getName());
-                    getLogger().warning(ChatColor.GOLD+"[敏感操作]设置已保存");
+                    log(ChatColor.GOLD+"[敏感操作]设置已保存");
                 }
-                getLogger().warning(ChatColor.GOLD+"[敏感操作]"+sender.getName()+"已设置当前的游戏世界为"+ Bukkit.getWorld(args[0]).getName());
-                getLogger().warning(ChatColor.GOLD+"[敏感操作]设置已保存");
+                log(ChatColor.GOLD+"[敏感操作]"+sender.getName()+"已设置当前的游戏世界为"+ Bukkit.getWorld(args[0]).getName());
+                log(ChatColor.GOLD+"[敏感操作]设置已保存");
                 return true;
             }
             else{
@@ -329,7 +330,7 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
     		}
     	}
     	else{
-    		System.out.print(ChatColor.YELLOW+"控制台就别退出游戏了吧。。");
+    		log(ChatColor.YELLOW+"控制台就别退出游戏了吧。。");
     	}
     }
         
@@ -342,4 +343,16 @@ public boolean onCommand(CommandSender sender, Command cmd, String label, String
     public void mySaveConfig(String name){
     	this.saveConfig();
     }
+    
+    @SuppressWarnings("static-access")
+	public void log(String msg){
+    	System.out.print(msg);
+		if(this.gui==null){
+			return;
+		}
+		else{
+			gui.log(msg);
+		}
+    }
+    
 }//这是类的那个反括号。。。

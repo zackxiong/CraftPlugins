@@ -5,6 +5,8 @@
  */
 package game;
 
+import guiLogger.Gui;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.HashMap;
@@ -75,8 +77,9 @@ public final class Blockode implements Listener{
             amountIronSward=1,
             amountSnow=1;
     private ItemStack[] gameItems;
-    public boolean start=false;
+    public boolean start=false, isGuiEnabled=false;
     public GameController gc;
+    public Gui gui;
 
 
     public List<String> getBlockedQuotes() {
@@ -94,19 +97,40 @@ public final class Blockode implements Listener{
 	public void setUnBlockedCommand(List<String> unBlockedCommand) {
 		this.unBlockedCommand = unBlockedCommand;
 	}
-
-	public Blockode(){
-        System.out.print("[breaksense()]");
+	//以下为构造方法
+	public Blockode(){//自带控制器的构造方法
+        this.log("[breaksense()]");
         PlayerList=new String[this.MaximumPlayer];
         this.gc=new GameController();
         gc.addBlockode(this);
+        this.isGuiEnabled=false;
     }
 	
-	public Blockode(GameController gamecontroller){
-        System.out.print("[breaksense()]");
+	public Blockode(GameController gamecontroller){//制定控制器的构造方法
+		this.log("[breaksense()]");
         PlayerList=new String[this.MaximumPlayer];
         this.gc=gamecontroller;
         gc.addBlockode(this);
+        this.isGuiEnabled=false;
+    }
+	
+	public Blockode(GameController gamecontroller, Gui gui){//制定控制器和日志的构造方法
+        this.gui=gui;
+		this.log("[breaksense()]");
+        PlayerList=new String[this.MaximumPlayer];
+        this.gc=gamecontroller;
+        gc.addBlockode(this);
+        this.isGuiEnabled=true;
+    }
+	
+	public Blockode(Gui gui){//制定日志的构造方法
+        this.gui=gui;
+		this.log("[breaksense()]");
+        PlayerList=new String[this.MaximumPlayer];
+        this.gc=new GameController();
+        gc.addBlockode(this);
+        //this.gui=gui;
+        this.isGuiEnabled=true;
     }
     
    public boolean removefromPlayerList(Player player){
@@ -118,7 +142,7 @@ public final class Blockode implements Listener{
        else{
            //getLogger().info("确认玩家在列表内，开始搜索");
     	 //下面是移过来到内容：
-           System.out.print("执行到玩家"+player.getName());
+    	   this.log("执行到玩家"+player.getName());
            Damageable playerdg=(Damageable)player;
            //player.getInventory().setContents(this.mySavedItems.get(player.getName()));//回复背包
            //player.getInventory().setArmorContents(this.mySavedArmors.get(player.getName()));
@@ -135,10 +159,10 @@ public final class Blockode implements Listener{
            player.teleport(gameworld.getSpawnLocation());//传送进等待区
            player.setFireTicks(0);//灭火
            this.recoverBackpack(player.getName());//改进后的回复背包
-           System.out.print("已回复玩家"+player.getName()+"的背包");
+           this.log("已回复玩家"+player.getName()+"的背包");
            player.sendMessage("你的背包已经恢复");
            
-           System.out.print("执行完玩家"+player.getName());
+           this.log("执行完玩家"+player.getName());
            //上面是移过来到内容
            
            int a=0;
@@ -161,7 +185,7 @@ public final class Blockode implements Listener{
    
    public boolean removefromPlayerList(String name){
        if(Bukkit.getPlayer(name)==null){
-            System.out.print("玩家都不存在，肯定不在列表内");
+    	   this.log("玩家都不存在，肯定不在列表内");
             return false;
         }
        if(!isInList(name)){
@@ -193,7 +217,7 @@ public final class Blockode implements Listener{
    
     public boolean isInList(String name){
         if(Bukkit.getPlayer(name)==null){
-            System.out.print("玩家都不存在，肯定不在列表内");
+        	this.log("玩家都不存在，肯定不在列表内");
             return false;
         }
         else{
@@ -208,7 +232,7 @@ public final class Blockode implements Listener{
             playerdg=(Damageable)player;
           }
           else{
-              System.out.print("玩家不存在，初始化个屁啊。。");
+        	  this.log("玩家不存在，初始化个屁啊。。");
               return;
           }
           player.setWalkSpeed(0.2f);
@@ -247,13 +271,13 @@ public final class Blockode implements Listener{
       public void recoverBackpack(String name){
     	  Player player=Bukkit.getPlayer(name);
     	  if(player==null){
-    		  System.out.print("玩家"+name+"不存在，无法回复背包");
+    		  this.log("玩家"+name+"不存在，无法回复背包");
     	  }
     	  ItemStack[] items=this.mySavedArmors.get(name);
     	  player.getInventory().setContents(this.mySavedItems.get(name));//回复背包
           player.getInventory().setArmorContents(this.mySavedArmors.get(name));
           
-          System.out.print("已回复"+name+"的"+items.length);
+          this.log("已回复"+name+"的"+items.length);
       }
       
       public void recoverBackpack(Player player){
@@ -330,7 +354,7 @@ public final class Blockode implements Listener{
             Player player;
             Damageable playerdg;
             if(PlayerList[i]!=null&&Bukkit.getPlayer(PlayerList[i])!=null){//停止命令时需要执行的内容(现在的应该结束时运行，仅为调试方便放在了这里)（现在放这里挺好的）
-                System.out.print("执行到玩家"+PlayerList[i]);
+            	this.log("执行到玩家"+PlayerList[i]);
                 player=Bukkit.getPlayer(PlayerList[i]);
                 playerdg=(Damageable)player;
                 //player.getInventory().setContents(this.mySavedItems.get(PlayerList[i]));//回复背包
@@ -349,7 +373,7 @@ public final class Blockode implements Listener{
                 }
                 player.teleport(gameworld.getSpawnLocation());//传送进等待区
                 
-                System.out.print("执行完玩家"+PlayerList[i]);
+                this.log("执行完玩家"+PlayerList[i]);
             }
             else if(PlayerList[i]!=null&&PlayerList[i]!=""&&PlayerList[i]!=" "){//玩家下线的话
                 Bukkit.broadcastMessage(ChatColor.BLUE+"[Blockode]玩家:"+PlayerList[i]+"找不到了，所以没加入游戏");
@@ -584,7 +608,7 @@ public boolean isStart() {
 
     	while(p.getWorld().getSpawnLocation().getBlock().getType()!=Material.AIR){//确保不会出现在墙里面
     		p.getWorld().setSpawnLocation((int)p.getWorld().getSpawnLocation().getX(),(int)p.getWorld().getSpawnLocation().getY()+1,(int)p.getWorld().getSpawnLocation().getZ());
-    		System.out.print("检测到重生点在方块内部，自动提升一格当前方块："+p.getWorld().getSpawnLocation().getBlock().getType().toString());
+    		this.log("检测到重生点在方块内部，自动提升一格当前方块："+p.getWorld().getSpawnLocation().getBlock().getType().toString());
     	}
 		p.setHealth(dg.getMaxHealth());
     	p.teleport(p.getWorld().getSpawnLocation());//取消菜单
@@ -709,14 +733,14 @@ public boolean isStart() {
 					&& event.getPlayer().getItemInHand().getAmount()>=1){
 						event.getPlayer().sendMessage(ChatColor.RED+"效果已经取消！");
 						event.getPlayer().setWalkSpeed(0.2f);
-            			System.out.print("取消");
+						log("取消");
             			cancel();
 					}
 					
         			else{
         				event.getPlayer().sendMessage(ChatColor.RED+"燃料用光了！");
         				event.getPlayer().setWalkSpeed(0.2f);
-            			System.out.print("取消");
+        				log("取消");
             			cancel();
             		}
 				}}.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 0L, 1L);
@@ -746,28 +770,15 @@ public boolean isStart() {
 		return false;
     }
     
-    public static String exec(String command){//指令执行器。。。别的包里面复制进来的，倒包太麻烦，只需要一个方法（现在有卡死问题，那个插件里面修复完了，这里反正没用懒得修）
-        try {  
-                // 执行 CMD 命令  
-               String output="=====开始执行=====";
-               Process process = Runtime.getRuntime().exec(command);  
-               // 从输入流中读取文本  
-              BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));  
-              String line = null;  
-              // 循环读取  
-               while ((line = reader.readLine()) != null) {  
-                  // 循环写入  
-                  System.out.print(line+"\n");
-                  output=output+"\n"+line;
-               }
-              process.getOutputStream().close();
-              System.out.println("程序执行完毕!");  
-              return output;
-            }
-            catch (Exception e) {  
-                e.printStackTrace();  
-            }
-        return ChatColor.RED+"哪里出错了";
+    @SuppressWarnings("static-access")
+	public void log(String msg){
+    	System.out.print(msg);
+		if(this.gui==null){
+			return;
+		}
+		else{
+			gui.log(msg);
+		}
     }
     
     /*//下面是抄来的。。
@@ -828,7 +839,7 @@ public boolean isStart() {
 	public boolean addtoPlayerList(String name){
 	        if (PlayerNumber>=MaximumPlayer) {return false;}//人数超过则返回错误
 	        if(Bukkit.getPlayer(name)==null){
-	            System.out.print("玩家都不存在，你还添加");
+	        	log("玩家都不存在，你还添加");
 	            return false;
 	        }
 	        else{
