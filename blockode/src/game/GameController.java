@@ -1,6 +1,7 @@
 package game;
 
 import guiLogger.Gui;
+import hud.HudGiver;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +14,7 @@ public class GameController {
 	public List<Blockode> blockodeList;
 	Gui gui;
 	boolean guiEnabled=false;
+	HudGiver hg=new HudGiver();
 	
 	
 	@SuppressWarnings("static-access")
@@ -36,10 +38,12 @@ public class GameController {
 	}
 	
 	public void addBlockode(Blockode blockode){
+		this.hg.addBlockode(blockode);
 		this.blockodeList.add(blockode);
 	}
 	
 	public void removeBlockode(Blockode blockode){
+		this.hg.removeBlockode(blockode);
 		this.blockodeList.remove(blockode);
 	}
 	
@@ -49,6 +53,7 @@ public class GameController {
 
 	public void setBlockodeList(List<Blockode> blockodeList) {
 		this.blockodeList = blockodeList;
+		this.hg.setBlockodeList(blockodeList);
 	}
 
 	public void startOrStopRanger(){
@@ -60,22 +65,26 @@ public class GameController {
 					for(Blockode b : blockodeList){
 						//if(b==null) break;
 						log(ChatColor.GREEN+"Controller执行检测检测，位于："+b.toString()+"编号:"+b.hashCode());
-		            	if(b.isStart() && b.getPlayerNumber()<=1){//已经开始，里面没人
-		                	String name = null;
-		            		for(String n : b.getPlayerList()){
-		            			if(n!=null) name=n;
-		            		}
-		            		b.stop(name);//获取胜利者并且宣布，结束
-		            	}
-		            	
-		            	if(b.getPlayerNumber()>=1 && !b.isStart()){//有人，还没开始
-		            		
-		            	}
+				    	if(b.isStart() && b.getPlayerNumber()<=1){//已经开始，里面没人
+				    		checkWinningState(b);
+				    	}
+				    	
+				    	if(b.getPlayerNumber()==1 && !b.isStart()){//有1个人，还没开始
+				    		Bukkit.broadcastMessage(ChatColor.GOLD+"[Blockode]还需要1个人来开始！");
+				    	}
 					}
 				}
 				//cancel();
 			}
-    	}.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 0L, 30L);
+    	}.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 0L, 60L);
+	}
+	
+	public void checkWinningState(Blockode b){
+        	String name = null;
+    		for(String n : b.getPlayerList()){
+    			if(n!=null) name=n;
+    		}
+    		b.stop(name);//获取胜利者并且宣布，结束
 	}
 	
 	public void log(String msg){

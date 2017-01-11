@@ -1,0 +1,11 @@
+package hud;
+
+import org.bukkit.event.Listener;
+
+public class HudGiver implements Listener {
+	
+	void HudGiver(){
+		
+	}
+
+}
