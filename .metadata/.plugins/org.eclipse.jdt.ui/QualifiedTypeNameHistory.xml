@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
-<fullyQualifiedTypeName name="guiLogger.Gui"/>
 <fullyQualifiedTypeName name="org.bukkit.ChatColor"/>
 <fullyQualifiedTypeName name="org.bukkit.scoreboard.ScoreboardManager"/>
 <fullyQualifiedTypeName name="org.bukkit.Bukkit"/>
@@ -9,4 +8,11 @@
 <fullyQualifiedTypeName name="hud.HudGiver"/>
 <fullyQualifiedTypeName name="org.bukkit.scoreboard.Objective"/>
 <fullyQualifiedTypeName name="org.bukkit.scoreboard.Scoreboard"/>
+<fullyQualifiedTypeName name="org.bukkit.entity.Player"/>
+<fullyQualifiedTypeName name="org.bukkit.scoreboard.Team"/>
+<fullyQualifiedTypeName name="org.bukkit.World"/>
+<fullyQualifiedTypeName name="org.bukkit.scoreboard.DisplaySlot"/>
+<fullyQualifiedTypeName name="guiLogger.Gui"/>
+<fullyQualifiedTypeName name="org.bukkit.scoreboard.Score"/>
+<fullyQualifiedTypeName name="org.bukkit.event.player.PlayerTeleportEvent"/>
 </qualifiedTypeNameHistroy>

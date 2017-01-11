@@ -1,9 +1,0 @@
-package hud;
-
-public class HudGiver {
-	
-	void HudGiver(){
-		
-	}
-
-}

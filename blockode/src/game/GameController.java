@@ -33,13 +33,17 @@ public class GameController {
 	public GameController() {
 		this.blockodeList= new ArrayList<Blockode>();
 		//this.gui=g;
-		System.out.print(ChatColor.YELLOW+"gui未开启！");
+		//System.out.print(ChatColor.YELLOW+"gui未开启！");
 		this.startOrStopRanger();
 	}
 	
 	public void addBlockode(Blockode blockode){
-		this.hg.addBlockode(blockode);
+		if(blockode==null){
+			System.out.print("[GameController]发送的blockode不存在");
+			return;
+		}
 		this.blockodeList.add(blockode);
+		this.hg.addBlockode(blockode);
 	}
 	
 	public void removeBlockode(Blockode blockode){
