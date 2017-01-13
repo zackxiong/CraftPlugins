@@ -55,6 +55,30 @@ public class GameController {
 		return blockodeList;
 	}
 
+	public Gui getGui() {
+		return gui;
+	}
+
+	public void setGui(Gui gui) {
+		this.gui = gui;
+	}
+
+	public boolean isGuiEnabled() {
+		return guiEnabled;
+	}
+
+	public void setGuiEnabled(boolean guiEnabled) {
+		this.guiEnabled = guiEnabled;
+	}
+
+	public HudGiver getHg() {
+		return hg;
+	}
+
+	public void setHg(HudGiver hg) {
+		this.hg = hg;
+	}
+
 	public void setBlockodeList(List<Blockode> blockodeList) {
 		this.blockodeList = blockodeList;
 		this.hg.setBlockodeList(blockodeList);

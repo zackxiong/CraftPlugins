@@ -15,4 +15,5 @@
 <fullyQualifiedTypeName name="guiLogger.Gui"/>
 <fullyQualifiedTypeName name="org.bukkit.scoreboard.Score"/>
 <fullyQualifiedTypeName name="org.bukkit.event.player.PlayerTeleportEvent"/>
+<fullyQualifiedTypeName name="org.bukkit.event.player.PlayerMoveEvent"/>
 </qualifiedTypeNameHistroy>

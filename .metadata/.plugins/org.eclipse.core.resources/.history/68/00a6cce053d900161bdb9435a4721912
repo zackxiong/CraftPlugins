@@ -1,0 +1,14 @@
+package guiLogger;
+
+import org.bukkit.World;
+import org.bukkit.entity.Player;
+
+public class Broadcaster {
+	
+	public static void BoardcastInWorld(World world){
+		for(Player p : world.getPlayers()){
+			p.sendMessage(arg0)
+		}
+	}
+
+}

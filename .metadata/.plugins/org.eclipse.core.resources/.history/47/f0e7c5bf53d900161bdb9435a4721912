@@ -1,0 +1,8 @@
+package guiLogger;
+
+public class Broadcaster {
+	public static void BoardcastInWorld(World world){
+		
+	}
+
+}

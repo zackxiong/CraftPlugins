@@ -1,0 +1,11 @@
+package guiLogger;
+
+import org.bukkit.World;
+
+public class Broadcaster {
+	
+	public static void BoardcastInWorld(World world){
+		
+	}
+
+}

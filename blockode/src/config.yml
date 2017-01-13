@@ -6,6 +6,7 @@ UnBlocked_Commands:
 - /startgame
 - /stopgame
 - /leavegame
+- /tp
 Blocked_Quotes:
 - sb
 - 傻逼

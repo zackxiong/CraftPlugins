@@ -35,6 +35,7 @@ GameController gc;
         this.breaksense1=new Blockode(gc,gui);//这里应该已经初始化了，类里面那个出错的数组也初始化了
         this.gui.main(null);
         getServer().getPluginManager().registerEvents(breaksense1, this);//注册监听器，也就是另一个类里面的onBlockPlace(BlockPlaceEvent e)
+        getServer().getPluginManager().registerEvents(breaksense1.getGc().getHg(), this);
         
         //预加载配置文件
         config = this.getConfig();
