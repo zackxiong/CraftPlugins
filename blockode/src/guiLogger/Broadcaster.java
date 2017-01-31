@@ -1,7 +1,5 @@
 package guiLogger;
 
-import game.Blockode;
-
 import java.util.List;
 
 import org.bukkit.World;

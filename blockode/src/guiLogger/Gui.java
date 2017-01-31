@@ -22,6 +22,7 @@ public class Gui extends JFrame{
     static JTextArea jtextarea=new JTextArea("插件日志开始记录:\n",50,120);
     static SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     static JScrollPane jsp;
+    static TextField tf;
     /**
 	 * 
 	 */

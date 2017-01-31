@@ -583,15 +583,11 @@ public boolean isStart() {
     //传送监听器使用，除op外不允许传送
     @EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = true)  //这就是我说的那个监听器了，事件发生时会触发下面这个方法
     public void onPlayerTeleport(PlayerTeleportEvent e)  {
-        if(this.isInList(e.getPlayer())
-        		&&!e.getTo().getWorld().equals(this.gameworld)
-        		&&!e.getPlayer().isOp()){//里面的人试图出去（op例外）
+        if(this.isInList(e.getPlayer())&&!e.getTo().getWorld().equals(this.gameworld)&&!e.getPlayer().isOp()){//里面的人试图出去（op例外）
             e.getPlayer().sendMessage("你还在游戏中，不能出去！");
             e.setCancelled(true);
         }
-        if(!this.isInList(e.getPlayer())
-        		&&e.getTo().getWorld().equals(this.gameworld)
-        		&&!e.getPlayer().isOp()){//外面的人试图进来(op例外)
+        if(!this.isInList(e.getPlayer())&&e.getTo().getWorld().equals(this.gameworld)&&!e.getPlayer().isOp()){//外面的人试图进来(op例外)
             e.getPlayer().sendMessage("你不在游戏中，不能进来");
             e.setCancelled(true);
         }
@@ -614,7 +610,7 @@ public boolean isStart() {
     		this.log("检测到重生点在方块内部，自动提升一格当前方块："+p.getWorld().getSpawnLocation().getBlock().getType().toString());
     	}
 		p.setHealth(dg.getMaxHealth());
-		p.setFireTicks(0); 
+		p.setFireTicks(0);
     	p.teleport(p.getWorld().getSpawnLocation());//取消菜单
     	if(this.isInList(p)){
     		this.removefromPlayerList(e.getEntity());

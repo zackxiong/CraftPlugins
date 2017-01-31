@@ -8,12 +8,13 @@
 <fullyQualifiedTypeName name="hud.HudGiver"/>
 <fullyQualifiedTypeName name="org.bukkit.scoreboard.Objective"/>
 <fullyQualifiedTypeName name="org.bukkit.scoreboard.Scoreboard"/>
-<fullyQualifiedTypeName name="org.bukkit.entity.Player"/>
 <fullyQualifiedTypeName name="org.bukkit.scoreboard.Team"/>
-<fullyQualifiedTypeName name="org.bukkit.World"/>
 <fullyQualifiedTypeName name="org.bukkit.scoreboard.DisplaySlot"/>
 <fullyQualifiedTypeName name="guiLogger.Gui"/>
 <fullyQualifiedTypeName name="org.bukkit.scoreboard.Score"/>
 <fullyQualifiedTypeName name="org.bukkit.event.player.PlayerTeleportEvent"/>
 <fullyQualifiedTypeName name="org.bukkit.event.player.PlayerMoveEvent"/>
+<fullyQualifiedTypeName name="org.bukkit.World"/>
+<fullyQualifiedTypeName name="org.bukkit.entity.Player"/>
+<fullyQualifiedTypeName name="guiLogger.Broadcaster"/>
 </qualifiedTypeNameHistroy>

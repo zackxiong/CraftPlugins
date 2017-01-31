@@ -44,11 +44,11 @@ public class GameController {
 			return;
 		}
 		this.blockodeList.add(blockode);
-		//this.hg.addBlockode(blockode);
+		this.hg.addBlockode(blockode);
 	}
 	
 	public void removeBlockode(Blockode blockode){
-		//this.hg.removeBlockode(blockode);
+		this.hg.removeBlockode(blockode);
 		this.blockodeList.remove(blockode);
 	}
 	
@@ -82,7 +82,7 @@ public class GameController {
 
 	public void setBlockodeList(List<Blockode> blockodeList) {
 		this.blockodeList = blockodeList;
-		//this.hg.setBlockodeList(blockodeList);
+		this.hg.setBlockodeList(blockodeList);
 	}
 
 	public void startOrStopRanger(){
