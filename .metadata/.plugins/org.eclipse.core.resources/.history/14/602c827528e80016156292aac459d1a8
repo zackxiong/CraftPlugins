@@ -1,0 +1,12 @@
+UnBlocked_Commands:
+- /addtoplayerlist
+- /removefromplayerlist
+- /setgameworld
+- /getinfo
+- /startgame
+- /stopgame
+- /leavegame
+- /tp
+Blocked_Quotes:
+- sb
+- 傻逼

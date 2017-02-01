@@ -44,6 +44,7 @@ public class GameController {
 			return;
 		}
 		this.blockodeList.add(blockode);
+		blockode.setGc(this);
 		//this.hg.addBlockode(blockode);
 	}
 	
@@ -52,18 +53,6 @@ public class GameController {
 		this.blockodeList.remove(blockode);
 	}
 	
-	public List<Blockode> getBlockodeList() {
-		return blockodeList;
-	}
-
-	public Gui getGui() {
-		return gui;
-	}
-
-	public void setGui(Gui gui) {
-		this.gui = gui;
-	}
-
 	public boolean isGuiEnabled() {
 		return guiEnabled;
 	}
@@ -89,23 +78,9 @@ public class GameController {
 		new BukkitRunnable(){
 			@Override
 			public void run() {
-				log(ChatColor.GREEN+"[Controller]检测状态中。。。");
-				if(blockodeList!=null && !blockodeList.isEmpty()){
-					for(Blockode b : blockodeList){
-						//if(b==null) break;
-						log(ChatColor.GREEN+"Controller执行检测检测，位于："+b.toString()+"编号:"+b.hashCode());
-				    	if(b.isStart() && b.getPlayerNumber()<=1){//已经开始，里面没人
-				    		checkWinningState(b);
-				    	}
-				    	
-				    	if(b.getPlayerNumber()==1 && !b.isStart()){//有1个人，还没开始
-				    		Broadcaster.BoardcastInWorld(b.getGameworld(), ChatColor.GOLD+"[Blockode]还需要1个人来开始！");
-				    	}
-					}
-				}
-				//cancel();
+				doRange();
 			}
-    	}.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 0L, 60L);
+    	}.runTaskTimer(Bukkit.getPluginManager().getPlugin("blockode"), 0L, 600L);
 	}
 	
 	public void checkWinningState(Blockode b){
@@ -126,6 +101,56 @@ public class GameController {
 		else{
 			gui.log(msg);
 		}
+	}
+	
+	public void doRange(){
+		log(ChatColor.GREEN+"[Controller]检测状态中。。。");
+		if(blockodeList!=null && !blockodeList.isEmpty()){
+			for(Blockode b : blockodeList){
+				//if(b==null) break;
+				log(ChatColor.GREEN+"Controller执行检测检测，位于："+b.toString()+"编号:"+b.hashCode());
+				
+				if(b.readyToStart){
+					if(b.getPlayerNumber()>1){
+						b.start();
+						b.setReadyToStart(false);
+					}
+					else{
+						Broadcaster.BoardcastInWorld(b.getGameworld(), ChatColor.GOLD+"[Blockode]该次开始因人数不足，被取消！");
+						b.setReadyToStart(false);
+					}
+				}
+				
+				if(b.isStart() && b.getPlayerNumber()<=1){//已经开始，里面没人
+		    		checkWinningState(b);
+		    		b.setReadyToStart(false);
+		    		
+		    	}
+		    	
+		    	else if(b.getPlayerNumber()==1 && !b.isStart()){//有1个人，还没开始
+		    		Broadcaster.BoardcastInWorld(b.getGameworld(), ChatColor.GOLD+"[Blockode]还需要1个人来开始！");
+		    		b.setReadyToStart(false);
+		    	}
+		    	
+		    	else if(b.getPlayerNumber()>1 && !b.isStart()){//有多于一个人，还没开始
+		    		b.setReadyToStart(true);
+		    		Broadcaster.BoardcastInWorld(b.getGameworld(), ChatColor.GOLD+"[Blockode]距离开始还有30秒");
+		    	}
+			}
+		}
+		//cancel();
+	}
+
+	public List<Blockode> getBlockodeList() {
+		return blockodeList;
+	}
+
+	public Gui getGui() {
+		return gui;
+	}
+
+	public void setGui(Gui gui) {
+		this.gui = gui;
 	}
 
 }

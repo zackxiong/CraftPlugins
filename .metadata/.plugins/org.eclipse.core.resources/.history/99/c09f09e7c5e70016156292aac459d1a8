@@ -1,0 +1,36 @@
+package banner;
+
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.event.Listener;
+import org.bukkit.plugin.java.JavaPlugin;
+
+public final class Banner extends JavaPlugin implements Listener{
+	private FileConfiguration config;
+    
+	@Override
+    public void onEnable() {
+		config = this.getConfig();
+        this.saveDefaultConfig();
+        getServer().getPluginManager().registerEvents(this, this);
+        this.getConfig().set("UnBlocked_Commands", this.getConfig().getStringList("UnBlocked_Commands"));//注册并载入指令白名单
+        this.breaksense1.setUnBlockedCommand(this.getConfig().getStringList("UnBlocked_Commands"));
+        
+        this.getConfig().set("Blocked_Quotes", this.getConfig().getStringList("Blocked_Quotes"));//注册并载入语句黑名单
+        this.breaksense1.setBlockedQuotes(this.getConfig().getStringList("Blocked_Quotes"));
+		getLogger().info("[Anti-Troll]Successfully loaded!");
+    	
+    }
+    
+    @Override
+    public void onDisable(){
+    	
+    }
+    
+    @Override
+    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+		return true;
+    }
+
+}

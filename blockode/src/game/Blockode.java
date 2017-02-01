@@ -79,6 +79,7 @@ public final class Blockode implements Listener{
     public boolean start=false, isGuiEnabled=false;
     public GameController gc;
     public Gui gui;
+    public boolean readyToStart=false;
 
 
     public List<String> getBlockedQuotes() {
@@ -87,6 +88,30 @@ public final class Blockode implements Listener{
 
 	public void setBlockedQuotes(List<String> blockedQuotes) {
 		BlockedQuotes = blockedQuotes;
+	}
+
+	public boolean isGuiEnabled() {
+		return isGuiEnabled;
+	}
+
+	public void setGuiEnabled(boolean isGuiEnabled) {
+		this.isGuiEnabled = isGuiEnabled;
+	}
+
+	public Gui getGui() {
+		return gui;
+	}
+
+	public void setGui(Gui gui) {
+		this.gui = gui;
+	}
+
+	public boolean isReadyToStart() {
+		return readyToStart;
+	}
+
+	public void setReadyToStart(boolean readyToStart) {
+		this.readyToStart = readyToStart;
 	}
 
 	public List<String> getUnBlockedCommand() {
@@ -589,12 +614,14 @@ public boolean isStart() {
             e.getPlayer().sendMessage("你还在游戏中，不能出去！");
             e.setCancelled(true);
         }
+        /*
         if(!this.isInList(e.getPlayer())
         		&&e.getTo().getWorld().equals(this.gameworld)
         		&&!e.getPlayer().isOp()){//外面的人试图进来(op例外)
             e.getPlayer().sendMessage("你不在游戏中，不能进来");
             e.setCancelled(true);
         }
+        */
     }
     
     //死亡监听器使用，自动重生
@@ -830,6 +857,7 @@ public boolean isStart() {
 	               getLogger().info("玩家:"+name+"已被添加至游戏列表。");
 	               //Bukkit.getPlayer(name).sendMessage("玩家:"+name+"已被添加至游戏列表。");
 	               PlayerNumber++;
+	    	       gc.doRange();
 	               return true;
 	           }//不然就把名单上面下一位给加上传过来的玩家
 	           else{
@@ -942,7 +970,12 @@ public boolean isStart() {
     }
 
     public void setGameworld(World gameworld) {
-        this.gameworld = gameworld;
+    	if(gameworld!=null){
+    		this.gameworld = gameworld;
+    		gameworld.setGameRuleValue("keepInventory", "true");//保证死亡时物品不会被捡回来
+    		gameworld.setTime(500);
+    		gameworld.setGameRuleValue("doDaylightCycle", "false");
+    	}
     }
 
     public HashMap<String, ItemStack[]> getMySavedItems() {

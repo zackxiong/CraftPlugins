@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 3 elements to &apos;game.GameController.log(...)&apos;&#x0A;- Original project: &apos;blockode&apos;&#x0A;- Destination element: &apos;game.GameController.log(...)&apos;&#x0A;- Original elements:&#x0A;     game.GameController.getBlockodeList()&#x0A;     game.GameController.getGui()&#x0A;     game.GameController.setGui(...)&#x0A;- Textual move only&#x0A;- Update references to refactored element" description="Move methods" destination="/src&lt;game{GameController.java[GameController~log~QString;" element1="/src&lt;game{GameController.java[GameController~getBlockodeList" element2="/src&lt;game{GameController.java[GameController~getGui" element3="/src&lt;game{GameController.java[GameController~setGui~QGui;" flags="589830" id="org.eclipse.jdt.ui.move" members="3" policy="org.eclipse.jdt.ui.moveMembers" stamp="1485862373625" version="1.0"/>
+</session>

@@ -1,0 +1,7 @@
+package banner;
+
+import org.bukkit.plugin.java.JavaPlugin;
+
+public final class Banner extends JavaPlugin{
+
+}
