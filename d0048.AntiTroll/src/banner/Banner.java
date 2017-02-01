@@ -20,16 +20,22 @@ public final class Banner extends JavaPlugin implements Listener{
     
 	@Override
     public void onEnable() {
-		config = this.getConfig();
-        this.saveDefaultConfig();
-        getServer().getPluginManager().registerEvents(this, this);
+        //config = getConfig();
+        //if(config==null) System.out.print("NPE");
         
-        this.getConfig().set("Blocked_Commands", this.getConfig().getStringList("Blocked_Commands"));//注册并载入指令白名单
-        this.setUnBlockedCommand(this.getConfig().getStringList("Blocked_Commands"));
+		getServer().getPluginManager().registerEvents(this, this);
+        
+        this.getConfig().set("Blocked_Commands", this.getConfig().getStringList("Blocked_Commands"));//注册并载入指令黑名单
+        this.setBlockedCommand(this.getConfig().getStringList("Blocked_Commands"));
         
         this.getConfig().set("Blocked_Quotes", this.getConfig().getStringList("Blocked_Quotes"));//注册并载入语句黑名单
-        this.setBlockedQuotes(this.getConfig().getStringList("Blocked_Quotes"));
-    	this.saveConfig();
+        this.blockedQuotes=this.getConfig().getStringList("Blocked_Quotes");
+        
+        this.saveDefaultConfig();
+        saveConfig();
+        System.out.print(this.blockedQuotes.toString());
+        
+    	//this.saveConfig();
 		getLogger().info("[Anti-Troll]Successfully loaded!");
     	
     }
@@ -45,8 +51,7 @@ public final class Banner extends JavaPlugin implements Listener{
         
     	//refresh指令使用
     	if(cmd.getName().equalsIgnoreCase("refresh")){ 
-    		this.onEnable();
-    		this.onDisable();
+    		this.reloadConfig();
     		sender.sendMessage(ChatColor.GREEN+"[Anti-Troll]Reloading!");
     	}
     	
@@ -62,8 +67,9 @@ public final class Banner extends JavaPlugin implements Listener{
     		}
     		else{
     			this.blockedCommands.add(args[0]);
-    			this.getConfig().addDefault("Blocked_Commands", args[0]);
-    			this.saveConfig();
+    			this.getConfig().set("Blocked_Commands", this.blockedCommands);
+    			this.saveDefaultConfig();
+    			saveConfig();
     			sender.sendMessage(ChatColor.GREEN+"[Anti-Troll]Command successfully added!");
     		}
     	}
@@ -80,8 +86,9 @@ public final class Banner extends JavaPlugin implements Listener{
     		}
     		else{
     			this.blockedQuotes.add(args[0]);
-    			this.getConfig().addDefault("Blocked_Quotes", args[0]);
-    			this.saveConfig();
+    			this.getConfig().set("Blocked_Quotes", this.blockedQuotes);
+    			this.saveDefaultConfig();
+    			saveConfig();
     			sender.sendMessage(ChatColor.GREEN+"[Anti-Troll]Quote successfully added!");
     		}
     	}
@@ -103,7 +110,8 @@ public final class Banner extends JavaPlugin implements Listener{
     		else{
     			this.blockedCommands.remove(args[0]);
     			this.getConfig().set("Blocked_Commands", this.blockedCommands);
-    			this.saveConfig();
+    			this.saveDefaultConfig();
+    			saveConfig();
     			sender.sendMessage(ChatColor.GREEN+"[Anti-Troll]Reading config file!");
     			sender.sendMessage(ChatColor.GREEN+"[Anti-Troll]Command successfully removed!");
     		}
@@ -126,7 +134,8 @@ public final class Banner extends JavaPlugin implements Listener{
     		else{
     			this.blockedQuotes.remove(args[0]);
     			this.getConfig().set("Blocked_Quotes", this.blockedQuotes);
-    			this.saveConfig();
+    			this.saveDefaultConfig();
+    			saveConfig();
     			sender.sendMessage(ChatColor.GREEN+"[Anti-Troll]Reading config file!");
     			sender.sendMessage(ChatColor.GREEN+"[Anti-Troll]Quote successfully removed!");
     		}
@@ -164,28 +173,23 @@ public final class Banner extends JavaPlugin implements Listener{
 		return false;
     }
     
-    public boolean isQuoteBlocked(String command){
+    public boolean isQuoteBlocked(String quote){
+    	System.out.print("0");
     	for(String c : this.blockedQuotes){
-    		if(command.contains(c) || command.equalsIgnoreCase(c)){
+    		System.out.print("1");
+    		if(quote.contains(c) || quote.equalsIgnoreCase(c)){
+    			System.out.print("2");
     			return true;
     		}
     	}
 		return false;
     }
 
-	public FileConfiguration getConfig() {
-		return config;
-	}
-
-	public void setConfig(FileConfiguration config) {
-		this.config = config;
-	}
-
 	public List<String> getBlockedCommands() {
 		return blockedCommands;
 	}
 
-	public void setUnBlockedCommand(List<String> BlockedCommand) {
+	public void setBlockedCommand(List<String> BlockedCommand) {
 		this.blockedCommands = BlockedCommand;
 	}
 
@@ -193,8 +197,5 @@ public final class Banner extends JavaPlugin implements Listener{
 		return blockedQuotes;
 	}
 
-	public void setBlockedQuotes(List<String> blockedQuotes) {
-		blockedQuotes = blockedQuotes;
-	}
 
 }

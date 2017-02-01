@@ -1,2 +1,4 @@
 1485916952037	Rename field 'BlockedCommand'
 1485916974089	Rename field 'BlockedQuotes'
+1485923951168	Delete element
+1485955838185	Rename local variable 'command'

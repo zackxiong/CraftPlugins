@@ -1,0 +1,11 @@
+Blocked_Commands:
+- /addtoplayerlist
+- /removefromplayerlist
+- /setgameworld
+- /getinfo
+- /startgame
+- /stopgame
+- /leavegame
+- /tp
+Blocked_Quotes:
+- ass

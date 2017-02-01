@@ -15,6 +15,7 @@
 <fullyQualifiedTypeName name="org.bukkit.event.player.PlayerTeleportEvent"/>
 <fullyQualifiedTypeName name="org.bukkit.event.player.PlayerMoveEvent"/>
 <fullyQualifiedTypeName name="org.bukkit.World"/>
-<fullyQualifiedTypeName name="org.bukkit.entity.Player"/>
 <fullyQualifiedTypeName name="guiLogger.Broadcaster"/>
+<fullyQualifiedTypeName name="org.bukkit.entity.Player"/>
+<fullyQualifiedTypeName name="org.bukkit.event.Listener"/>
 </qualifiedTypeNameHistroy>
