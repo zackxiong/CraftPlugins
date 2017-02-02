@@ -5,7 +5,6 @@ import java.util.List;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
@@ -13,8 +12,8 @@ import org.bukkit.event.player.PlayerChatEvent;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
+@SuppressWarnings("deprecation")
 public final class Banner extends JavaPlugin implements Listener{
-	private FileConfiguration config;
 	private List<String> blockedCommands;//禁止的指令
 	private List<String> blockedQuotes;//禁止的语句
     
@@ -174,11 +173,11 @@ public final class Banner extends JavaPlugin implements Listener{
     }
     
     public boolean isQuoteBlocked(String quote){
-    	System.out.print("0");
+    	//System.out.print("0");
     	for(String c : this.blockedQuotes){
-    		System.out.print("1");
+    		//System.out.print("1");
     		if(quote.contains(c) || quote.equalsIgnoreCase(c)){
-    			System.out.print("2");
+    			//System.out.print("2");
     			return true;
     		}
     	}

