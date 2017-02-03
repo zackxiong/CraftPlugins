@@ -1,5 +1,0 @@
-name: AutoRestart
-main: io.d0048.restarter.Restarter
-version: 1.0
-description: A simple restarter announcer
-author: HXB

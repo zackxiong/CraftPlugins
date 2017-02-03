@@ -3,7 +3,6 @@
 <fullyQualifiedTypeName name="java.lang.Thread"/>
 <fullyQualifiedTypeName name="org.bukkit.ChatColor"/>
 <fullyQualifiedTypeName name="org.bukkit.scoreboard.ScoreboardManager"/>
-<fullyQualifiedTypeName name="org.bukkit.Bukkit"/>
 <fullyQualifiedTypeName name="org.bukkit.event.player.PlayerChangedWorldEvent"/>
 <fullyQualifiedTypeName name="hud.HudGiver"/>
 <fullyQualifiedTypeName name="org.bukkit.scoreboard.Objective"/>
@@ -18,4 +17,6 @@
 <fullyQualifiedTypeName name="guiLogger.Broadcaster"/>
 <fullyQualifiedTypeName name="org.bukkit.entity.Player"/>
 <fullyQualifiedTypeName name="org.bukkit.event.Listener"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+<fullyQualifiedTypeName name="org.bukkit.Bukkit"/>
 </qualifiedTypeNameHistroy>

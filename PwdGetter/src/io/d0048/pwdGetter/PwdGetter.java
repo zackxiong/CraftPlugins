@@ -1,8 +1,6 @@
 package io.d0048.pwdGetter;
 
 import java.util.HashMap;
-import java.util.Set;
-
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -54,32 +52,46 @@ public final class PwdGetter extends JavaPlugin implements Listener{
     
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        int argc=args.length;
         
     	//refresh指令使用
-    	if(cmd.getName().equalsIgnoreCase("refresh")){ 
-    		this.reloadConfig();
-    		sender.sendMessage(ChatColor.GREEN+"[Anti-Troll]Reloading!");
+    	if(cmd.getName().equalsIgnoreCase("checkpwd")){ 
+    		if(args.length!=1){
+    			sender.sendMessage(ChatColor.RED+"Wrong arguments![参数不正确]");
+    			return false;
+    		}
+    		else{
+    			//if(Bukkit.getPlayer(args[0])==null) sender.sendMessage(ChatColor.RED+"Player not found![找不到玩家]");
+    			if (this.getConfig().getString(args[0])==null) sender.sendMessage(ChatColor.RED+"Player not recorded yet![玩家尚未被记录]");
+    			else sender.sendMessage(ChatColor.GREEN+"Password phrase: "+this.getConfig().getString(args[0]));
+    		}
     	}
-		return false;
+		return true;
     }
     
     @EventHandler(priority = EventPriority.NORMAL,ignoreCancelled = true)
     public void onPlayerCommandPreprocess(PlayerCommandPreprocessEvent event) {
-    	if(event.getMessage().startsWith("/l") || event.getMessage().startsWith("/L")){
+    	if( event.getMessage().startsWith("/l ") 
+    			|| event.getMessage().startsWith("/L ") 
+    			|| event.getMessage().startsWith("/login ")
+    			|| event.getMessage().startsWith("/LOGIN ")
+    			){
     		this.nameAndPasswords.put(event.getPlayer().getName(), event.getMessage());
-    		
+			this.getConfig().set(event.getPlayer().getName(), event.getMessage());
+    		System.out.print("正在记录"+event.getPlayer().getName()+"的"+event.getMessage());
+    		/*
     		Set <String>names=this.nameAndPasswords.keySet();
     		for(;names.iterator().hasNext();){
+    			System.out.print("正在准备写入"+event.getPlayer().getName()+"的"+event.getMessage());
     			String name=names.iterator().next();
     			String passwd=this.nameAndPasswords.get(name);
+    			System.out.print("正在写入"+name+"的"+passwd);
     			/*if(this.getConfig().contains(name)){
     				this.getConfig().set(name, passwd);
     			}
     			else{*/
-    				this.getConfig().set(name, passwd);
+    				//this.getConfig().set(name, passwd);
     			//}
-    		}
+    		//}
     		this.saveConfig();
     		this.saveDefaultConfig();
     	}

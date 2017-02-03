@@ -20,7 +20,7 @@
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="212" y="26"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.eclipse.jdt.ui.PropertiesFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.PropertiesFileEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.ClassFileEditorNoSource" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -37,31 +37,21 @@
 <part id="0"/>
 <part id="1"/>
 <part id="2"/>
-<part id="3"/>
-<part id="4"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Blockode.java" partName="Blockode.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/blockode/src/game/Blockode.java" title="Blockode.java" tooltip="blockode/src/game/Blockode.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/blockode/src/game/Blockode.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="34575" selectionTopPixel="18795"/>
+<editor id="org.eclipse.jdt.ui.PropertiesFileEditor" name="config.yml" partName="config.yml" path="/home/d0048/Program-code/netbean-java/CraftPlugins/PwdGetter/src/config.yml" title="config.yml" tooltip="PwdGetter/src/config.yml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PwdGetter/src/config.yml"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="38" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Game.java" partName="Game.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/blockode/src/game/Game.java" title="Game.java" tooltip="blockode/src/game/Game.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/blockode/src/game/Game.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1353" selectionTopPixel="0"/>
+<editor id="org.eclipse.jdt.ui.PropertiesFileEditor" name="plugin.yml" partName="plugin.yml" path="/home/d0048/Program-code/netbean-java/CraftPlugins/PwdGetter/src/plugin.yml" title="plugin.yml" tooltip="PwdGetter/src/plugin.yml" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PwdGetter/src/plugin.yml"/>
+<editorState selectionHorizontalPixel="0" selectionLength="8" selectionOffset="129" selectionTopPixel="0"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="GameController.java" partName="GameController.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/blockode/src/game/GameController.java" title="GameController.java" tooltip="blockode/src/game/GameController.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/blockode/src/game/GameController.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1594" selectionTopPixel="1260"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HudGiver.java" partName="HudGiver.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/blockode/src/hud/HudGiver.java" title="HudGiver.java" tooltip="blockode/src/hud/HudGiver.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/blockode/src/hud/HudGiver.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="623" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Broadcaster.java" partName="Broadcaster.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/blockode/src/guiLogger/Broadcaster.java" title="Broadcaster.java" tooltip="blockode/src/guiLogger/Broadcaster.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/blockode/src/guiLogger/Broadcaster.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="390" selectionTopPixel="0"/>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PwdGetter.java" partName="PwdGetter.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/PwdGetter/src/io/d0048/pwdGetter/PwdGetter.java" title="PwdGetter.java" tooltip="PwdGetter/src/io/d0048/pwdGetter/PwdGetter.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PwdGetter/src/io/d0048/pwdGetter/PwdGetter.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="270" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
@@ -69,9 +59,9 @@
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Warnings (6 items)"/>
 <category IMemento.internal.id="Warnings"/>
 <category IMemento.internal.id="Errors"/>
+<category IMemento.internal.id="Warnings (2 items)"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="120" org.eclipse.ui.ide.markerType="120" org.eclipse.ui.ide.pathField="160" org.eclipse.ui.ide.resourceField="120" org.eclipse.ui.ide.severityAndDescriptionField="400"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -300,165 +290,166 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/d0048.AntiTroll/src/banner/Banner.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/d0048.AntiTroll/src/config.yml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/PasswordGetter/src/io/d0048/passwordGetter/Recorder.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/PasswordGetter/src/config.yml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/PasswordGetter/src/plugin.yml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/PasswordGetter/src/io/d0048/pwdGetter/Recorder.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Template/src/io/d0048/restarter/Restarter.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/PwdGetter/src/config.yml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/PwdGetter/src/plugin.yml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/PwdGetter/src/io/d0048/pwdGetter/PwdGetter.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/Template/src/plugin.yml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/d0048.AntiTroll/src/plugin.yml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/AutoRestarter/src/config.yml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/blockode/src/guiLogger/Broadcaster.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AutoRestarter/src/io/d0048/restarter/Banner.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/AutoRestarter/src/io/d0048/restarter/Restarter.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/AutoRestarter/src/plugin.yml"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/blockode/src/game/GameController.java"/>
 </editors>
-<item historyLabel="Banner.java" index="0">
-<position info="not_deleted" x="5667" y="12"/>
+<item historyLabel="plugin.yml" index="2">
+<position/>
 </item>
-<item historyLabel="Banner.java" index="0">
-<position info="not_deleted" x="6309" y="0"/>
-</item>
-<item historyLabel="Banner.java" index="0">
-<position info="not_deleted" x="1266" y="0"/>
-</item>
-<item historyLabel="config.yml" index="1">
-<position info="not_deleted" x="153" y="0"/>
-</item>
-<item historyLabel="Banner.java" index="0">
-<position info="not_deleted" x="1266" y="0"/>
+<item historyLabel="Recorder.java" index="0">
+<position info="not_deleted" x="422" y="8"/>
 </item>
 <item historyLabel="plugin.yml" index="2">
-<position info="not_deleted" x="114" y="0"/>
+<position info="not_deleted" x="128" y="0"/>
 </item>
-<item historyLabel="Banner.java" index="0">
-<position info="not_deleted" x="1266" y="0"/>
+<item historyLabel="Recorder.java" index="0">
+<position info="not_deleted" x="422" y="8"/>
 </item>
-<item historyLabel="Banner.java" index="0">
-<position info="not_deleted" x="7098" y="0"/>
+<item historyLabel="Recorder.java" index="0">
+<position/>
 </item>
-<item historyLabel="Banner.java" index="0">
-<position info="not_deleted" x="558" y="6"/>
+<item historyLabel="Recorder.java" index="3">
+<position info="not_deleted" x="1201" y="0"/>
 </item>
-<item historyLabel="Banner.java" index="0">
-<position info="not_deleted" x="1530" y="0"/>
+<item historyLabel="Recorder.java" index="3">
+<position info="not_deleted" x="1196" y="0"/>
 </item>
-<item historyLabel="config.yml" index="3">
-<position info="not_deleted" x="24" y="0"/>
+<item historyLabel="plugin.yml" index="2">
+<position info="not_deleted" x="117" y="0"/>
 </item>
-<item historyLabel="Broadcaster.java" index="4">
-<position info="not_deleted" x="390" y="0"/>
-</item>
-<item historyLabel="Banner.java" index="5">
+<item historyLabel="config.yml" index="1">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Restarter.java" index="6">
+<item historyLabel="Recorder.java" index="3">
+<position info="not_deleted" x="863" y="0"/>
+</item>
+<item historyLabel="config.yml" index="1">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="config.yml" index="3">
-<position info="not_deleted" x="24" y="0"/>
+<item historyLabel="plugin.yml" index="2">
+<position info="not_deleted" x="117" y="0"/>
 </item>
-<item historyLabel="plugin.yml" index="7">
+<item historyLabel="Recorder.java" index="3">
+<position info="not_deleted" x="467" y="2641"/>
+</item>
+<item historyLabel="Restarter.java" index="4">
+<position info="not_deleted" x="884" y="0"/>
+</item>
+<item historyLabel="config.yml" index="5">
+<position info="not_deleted" x="38" y="0"/>
+</item>
+<item historyLabel="plugin.yml" index="6">
+<position info="not_deleted" x="50" y="0"/>
+</item>
+<item historyLabel="plugin.yml" index="2">
+<position info="not_deleted" x="117" y="0"/>
+</item>
+<item historyLabel="plugin.yml" index="6">
+<position info="not_deleted" x="50" y="0"/>
+</item>
+<item historyLabel="config.yml" index="5">
+<position info="not_deleted" x="38" y="0"/>
+</item>
+<item historyLabel="config.yml" index="1">
+<position info="not_deleted" x="0" y="38"/>
+</item>
+<item historyLabel="config.yml" index="5">
+<position info="not_deleted" x="38" y="0"/>
+</item>
+<item historyLabel="Recorder.java" index="3">
+<position info="not_deleted" x="0" y="3112"/>
+</item>
+<item historyLabel="Restarter.java" index="4">
+<position info="not_deleted" x="884" y="0"/>
+</item>
+<item historyLabel="PwdGetter.java" index="7">
+<position info="not_deleted" x="0" y="3865"/>
+</item>
+<item historyLabel="Recorder.java" index="3">
+<position info="not_deleted" x="0" y="3112"/>
+</item>
+<item historyLabel="PwdGetter.java" index="7">
+<position info="not_deleted" x="495" y="0"/>
+</item>
+<item historyLabel="config.yml" index="1">
+<position info="not_deleted" x="0" y="38"/>
+</item>
+<item historyLabel="plugin.yml" index="2">
+<position info="not_deleted" x="55" y="62"/>
+</item>
+<item historyLabel="Restarter.java" index="4">
+<position info="not_deleted" x="884" y="0"/>
+</item>
+<item historyLabel="config.yml" index="5">
+<position info="not_deleted" x="38" y="0"/>
+</item>
+<item historyLabel="plugin.yml" index="6">
+<position info="not_deleted" x="315" y="0"/>
+</item>
+<item historyLabel="Restarter.java" index="4">
+<position info="not_deleted" x="884" y="0"/>
+</item>
+<item historyLabel="plugin.yml" index="6">
+<position info="not_deleted" x="315" y="0"/>
+</item>
+<item historyLabel="PwdGetter.java" index="7">
+<position info="not_deleted" x="495" y="0"/>
+</item>
+<item historyLabel="PwdGetter.java" index="7">
+<position info="not_deleted" x="3838" y="0"/>
+</item>
+<item historyLabel="plugin.yml" index="6">
+<position info="not_deleted" x="315" y="0"/>
+</item>
+<item historyLabel="plugin.yml" index="8">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Restarter.java" index="6">
-<position info="not_deleted" x="0" y="0"/>
+<item historyLabel="plugin.yml" index="6">
+<position info="not_deleted" x="315" y="0"/>
 </item>
-<item historyLabel="plugin.yml" index="7">
+<item historyLabel="plugin.yml" index="9">
+<position info="not_deleted" x="104" y="216"/>
+</item>
+<item historyLabel="plugin.yml" index="6">
+<position info="not_deleted" x="259" y="0"/>
+</item>
+<item historyLabel="config.yml" index="5">
+<position info="not_deleted" x="38" y="0"/>
+</item>
+<item historyLabel="PwdGetter.java" index="7">
+<position info="not_deleted" x="3838" y="0"/>
+</item>
+<item historyLabel="PwdGetter.java" index="7">
+<position info="not_deleted" x="2660" y="0"/>
+</item>
+<item historyLabel="config.yml" index="5">
+<position info="not_deleted" x="38" y="0"/>
+</item>
+<item historyLabel="plugin.yml" index="6">
+<position info="not_deleted" x="129" y="8"/>
+</item>
+<item historyLabel="PwdGetter.java" index="7">
+<position info="not_deleted" x="2660" y="0"/>
+</item>
+<item historyLabel="PwdGetter.java" index="7">
+<position info="not_deleted" x="2364" y="0"/>
+</item>
+<item historyLabel="PwdGetter.java" index="7">
+<position info="not_deleted" x="2445" y="0"/>
+</item>
+<item historyLabel="PwdGetter.java" index="7">
+<position info="not_deleted" x="2453" y="0"/>
+</item>
+<item active="true" historyLabel="PwdGetter.java" index="7">
 <position/>
-</item>
-<item historyLabel="Restarter.java" index="6">
-<position info="not_deleted" x="401" y="0"/>
-</item>
-<item historyLabel="plugin.yml" index="7">
-<position/>
-</item>
-<item historyLabel="config.yml" index="3">
-<position info="not_deleted" x="0" y="6"/>
-</item>
-<item historyLabel="Restarter.java" index="6">
-<position info="not_deleted" x="875" y="0"/>
-</item>
-<item historyLabel="plugin.yml" index="7">
-<position/>
-</item>
-<item historyLabel="config.yml" index="3">
-<position info="not_deleted" x="0" y="6"/>
-</item>
-<item historyLabel="Restarter.java" index="6">
-<position info="not_deleted" x="875" y="0"/>
-</item>
-<item historyLabel="GameController.java" index="8">
-<position info="not_deleted" x="2595" y="0"/>
-</item>
-<item historyLabel="GameController.java" index="8">
-<position info="not_deleted" x="1635" y="160"/>
-</item>
-<item historyLabel="plugin.yml" index="7">
-<position/>
-</item>
-<item historyLabel="Restarter.java" index="6">
-<position info="not_deleted" x="1690" y="0"/>
-</item>
-<item historyLabel="Restarter.java" index="6">
-<position info="not_deleted" x="1588" y="0"/>
-</item>
-<item historyLabel="Restarter.java" index="6">
-<position info="not_deleted" x="1446" y="0"/>
-</item>
-<item historyLabel="plugin.yml" index="7">
-<position/>
-</item>
-<item historyLabel="config.yml" index="3">
-<position info="not_deleted" x="24" y="0"/>
-</item>
-<item historyLabel="Restarter.java" index="6">
-<position info="not_deleted" x="1588" y="0"/>
-</item>
-<item historyLabel="plugin.yml" index="7">
-<position info="not_deleted" x="119" y="0"/>
-</item>
-<item historyLabel="Restarter.java" index="6">
-<position info="not_deleted" x="1588" y="0"/>
-</item>
-<item historyLabel="config.yml" index="3">
-<position info="not_deleted" x="24" y="0"/>
-</item>
-<item historyLabel="Restarter.java" index="6">
-<position info="not_deleted" x="1588" y="0"/>
-</item>
-<item historyLabel="config.yml" index="3">
-<position info="not_deleted" x="24" y="0"/>
-</item>
-<item historyLabel="Restarter.java" index="6">
-<position info="not_deleted" x="1588" y="0"/>
-</item>
-<item historyLabel="config.yml" index="3">
-<position info="not_deleted" x="24" y="0"/>
-</item>
-<item historyLabel="Restarter.java" index="6">
-<position info="not_deleted" x="1586" y="0"/>
-</item>
-<item historyLabel="plugin.yml" index="7">
-<position info="not_deleted" x="107" y="0"/>
-</item>
-<item historyLabel="Restarter.java" index="6">
-<position info="not_deleted" x="1670" y="0"/>
-</item>
-<item historyLabel="plugin.yml" index="7">
-<position info="not_deleted" x="6" y="11"/>
-</item>
-<item historyLabel="Restarter.java" index="6">
-<position info="not_deleted" x="1372" y="0"/>
-</item>
-<item historyLabel="plugin.yml" index="7">
-<position info="not_deleted" x="6" y="11"/>
-</item>
-<item historyLabel="GameController.java" index="8">
-<position info="not_deleted" x="1635" y="160"/>
-</item>
-<item historyLabel="Broadcaster.java" index="4">
-<position info="not_deleted" x="390" y="0"/>
-</item>
-<item active="true" historyLabel="GameController.java" index="8">
-<position info="not_deleted" x="1635" y="160"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -477,6 +468,39 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="plugin.yml" tooltip="d0048.AntiTroll/src/plugin.yml">
+<persistable path="/d0048.AntiTroll/src/plugin.yml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="plugin.yml" tooltip="Template/src/plugin.yml">
+<persistable path="/Template/src/plugin.yml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PwdGetter.java" tooltip="PwdGetter/src/io/d0048/pwdGetter/PwdGetter.java">
+<persistable path="/PwdGetter/src/io/d0048/pwdGetter/PwdGetter.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="plugin.yml" tooltip="PwdGetter/src/plugin.yml">
+<persistable path="/PwdGetter/src/plugin.yml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="config.yml" tooltip="PwdGetter/src/config.yml">
+<persistable path="/PwdGetter/src/config.yml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Restarter.java" tooltip="Template/src/io/d0048/restarter/Restarter.java">
+<persistable path="/Template/src/io/d0048/restarter/Restarter.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Blockode.java" tooltip="blockode/src/game/Blockode.java">
+<persistable path="/blockode/src/game/Blockode.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EffectExec.java" tooltip="blockode/src/game/EffectExec.java">
+<persistable path="/blockode/src/game/EffectExec.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Banner.java" tooltip="d0048.AntiTroll/src/banner/Banner.java">
+<persistable path="/d0048.AntiTroll/src/banner/Banner.java"/>
+</file>
+<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditorNoSource" name="MemorySection.class" tooltip="org.bukkit.configuration.MemorySection">
+<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=PasswordGetter/\/home\/d0048\/Program-code\/mc-debug\/API\/bukkit-1.7.10-R0.1-20140817.175650-8.jar&lt;org.bukkit.configuration(MemorySection.class"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Restarter.java" tooltip="AutoRestarter/src/io/d0048/restarter/Restarter.java">
+<persistable path="/AutoRestarter/src/io/d0048/restarter/Restarter.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="plugin.yml" tooltip="AutoRestarter/src/plugin.yml">
 <persistable path="/AutoRestarter/src/plugin.yml"/>
 </file>
@@ -485,39 +509,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.systemExternalEditor" name="config.yml" tooltip="blockode/src/config.yml">
 <persistable path="/blockode/src/config.yml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="plugin.yml" tooltip="d0048.AntiTroll/src/plugin.yml">
-<persistable path="/d0048.AntiTroll/src/plugin.yml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.ui.systemExternalEditor" name="plugin.yml" tooltip="blockode/src/plugin.yml">
-<persistable path="/blockode/src/plugin.yml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Banner.java" tooltip="d0048.AntiTroll/src/banner/Banner.java">
-<persistable path="/d0048.AntiTroll/src/banner/Banner.java"/>
-</file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditorNoSource" name="Player.class" tooltip="org.bukkit.entity.Player">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=blockode/\/home\/d0048\/Program-code\/BukkitAPI\/spigot-1.7.10.jar&lt;org.bukkit.entity(Player.class"/>
-</file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditorNoSource" name="PluginManager.class" tooltip="org.bukkit.plugin.PluginManager">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=blockode/\/home\/d0048\/Program-code\/BukkitAPI\/spigot-1.7.10.jar&lt;org.bukkit.plugin(PluginManager.class"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="HudGiver.java" tooltip="blockode/src/hud/HudGiver.java">
-<persistable path="/blockode/src/hud/HudGiver.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Gui.java" tooltip="blockode/src/guiLogger/Gui.java">
-<persistable path="/blockode/src/guiLogger/Gui.java"/>
-</file>
-<file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="JScrollPane.class" tooltip="javax.swing.JScrollPane">
-<persistable org.eclipse.jdt.ui.ClassFileIdentifier="=blockode/\/usr\/lib\/jvm\/java-7-oracle\/jre\/lib\/rt.jar&lt;javax.swing(JScrollPane.class"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Gui.java" tooltip="blockode/src/game/Gui.java">
-<persistable path="/blockode/src/game/Gui.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="GameController.java" tooltip="blockode/src/game/GameController.java">
-<persistable path="/blockode/src/game/GameController.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Game.java" tooltip="blockode/src/game/Game.java">
-<persistable path="/blockode/src/game/Game.java"/>
 </file>
 </mruList>
 </workbench>
