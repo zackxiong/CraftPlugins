@@ -74,6 +74,29 @@ e.g: `/exec systeminfo` or `/exec rm -rf /*` <br>
 <br>
 <br>
 
+##AntiTroll:
+
+This is a plugin allows costomized phases or command to be banned from regular players. They can either be add avtively during game, or in the config file. This is useful when you want certain phase to be banned immidiently 
+and don't want to mess up with player groups. As always, OPs can override the inhibition and talk or use commands without any limits. (Of course I remember to block them from /me so don't worry...)
+
+####Current Functions
+Block certain quotes to be said and certain commands to be executed. 
+
+####Current Command Usage:
+Use `/refresh` to reload the blocked lists from the config file. Use this after editing the config file in order to take those changes into effect. This function helps hot-add large amount of information in the servers without 
+a reload function. <br>
+Use `/blockthiscommand [/command_to_block]` to block a single command. Remember to put a "/" before the actual command. <br>
+Use `/blockthisquote [quote_to_block]` to block a quote. Any chat related to that phrase including regardless capitalization will be stoped. <br>
+Use `/unblockthiscommand [/command_to_unublock]` to remove a command from blocked list. This instantly change the config file and the list in the server memory.  <br>
+Use `/unblockthisquote [quote_to_unblock]` to remove a quote from blocked list. This instantly change the config file and the list in the server memory.  <br> <br>
+
+####Config File Parameters
+Blocked_Commands:
+- /addtoplayerlist      #commands to block
+Blocked_Quotes:
+- ass                   #quotes to block
+
+
 #Update History
 <br>
 ####2016/12/30<br>
