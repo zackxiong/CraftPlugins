@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workbench progressCount="18" version="2.0">
 <workbenchAdvisor/>
-<window height="739" maximized="true" minimized="true" width="1018" x="0" y="24">
+<window height="739" maximized="true" width="1018" x="0" y="24">
 <fastViewData fastViewLocation="1024"/>
 <perspectiveBar>
 <itemSize x="160"/>
@@ -51,18 +51,13 @@
 </editor>
 <editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PwdGetter.java" partName="PwdGetter.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/PwdGetter/src/io/d0048/pwdGetter/PwdGetter.java" title="PwdGetter.java" tooltip="PwdGetter/src/io/d0048/pwdGetter/PwdGetter.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/PwdGetter/src/io/d0048/pwdGetter/PwdGetter.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="270" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
 <view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer"/>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>
-<category IMemento.internal.id="Warnings"/>
-<category IMemento.internal.id="Errors"/>
-<category IMemento.internal.id="Warnings (2 items)"/>
-</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="120" org.eclipse.ui.ide.markerType="120" org.eclipse.ui.ide.pathField="160" org.eclipse.ui.ide.resourceField="120" org.eclipse.ui.ide.severityAndDescriptionField="400"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -300,19 +295,9 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/PwdGetter/src/io/d0048/pwdGetter/PwdGetter.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/Template/src/plugin.yml"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/d0048.AntiTroll/src/plugin.yml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/PwdGetter/src/plugin.yml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/PwdGetter/src/config.yml"/>
 </editors>
-<item historyLabel="plugin.yml" index="2">
-<position/>
-</item>
-<item historyLabel="Recorder.java" index="0">
-<position info="not_deleted" x="422" y="8"/>
-</item>
-<item historyLabel="plugin.yml" index="2">
-<position info="not_deleted" x="128" y="0"/>
-</item>
-<item historyLabel="Recorder.java" index="0">
-<position info="not_deleted" x="422" y="8"/>
-</item>
 <item historyLabel="Recorder.java" index="0">
 <position/>
 </item>
@@ -448,8 +433,20 @@
 <item historyLabel="PwdGetter.java" index="7">
 <position info="not_deleted" x="2453" y="0"/>
 </item>
-<item active="true" historyLabel="PwdGetter.java" index="7">
+<item historyLabel="PwdGetter.java" index="7">
 <position/>
+</item>
+<item historyLabel="PwdGetter.java" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="plugin.yml" index="10">
+<position info="not_deleted" x="129" y="8"/>
+</item>
+<item historyLabel="config.yml" index="11">
+<position info="not_deleted" x="38" y="0"/>
+</item>
+<item active="true" historyLabel="PwdGetter.java" index="7">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
