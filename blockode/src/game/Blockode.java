@@ -611,17 +611,20 @@ public boolean isStart() {
         if(this.isInList(e.getPlayer())
         		&&!e.getTo().getWorld().equals(this.gameworld)
         		&&!e.getPlayer().isOp()){//里面的人试图出去（op例外）
-            e.getPlayer().sendMessage("你还在游戏中，不能出去！");
-            e.setCancelled(true);
+            e.getPlayer().sendMessage(ChatColor.RED+"你已经退出了游戏");
+            Bukkit.broadcastMessage(ChatColor.GOLD+e.getPlayer().getDisplayName()+"逃离了一场游戏！");
+            this.removefromPlayerList(e.getPlayer());
+            //e.setCancelled(true);
         }
-        /*
+        
         if(!this.isInList(e.getPlayer())
         		&&e.getTo().getWorld().equals(this.gameworld)
         		&&!e.getPlayer().isOp()){//外面的人试图进来(op例外)
-            e.getPlayer().sendMessage("你不在游戏中，不能进来");
-            e.setCancelled(true);
+            e.getPlayer().sendMessage(ChatColor.GREEN+"成功加入游戏");
+            this.addtoPlayerList(e.getPlayer());
+            //e.setCancelled(true);
         }
-        */
+        
     }
     
     //死亡监听器使用，自动重生

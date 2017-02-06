@@ -1,0 +1,6 @@
+package io.d0048.gather;
+
+public class PcInfo {
+	IpAdress ip;
+
+}

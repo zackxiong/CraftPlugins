@@ -1,30 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="321" key="DIALOG_WIDTH"/>
-		<item value="88" key="DIALOG_Y_ORIGIN"/>
-		<item value="1113" key="DIALOG_X_ORIGIN"/>
-		<item value="502" key="DIALOG_HEIGHT"/>
-		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item value="646" key="DIALOG_X_ORIGIN"/>
+		<item value="355" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item value="true" key="wrap"/>
-		<item value="false" key="casesensitive"/>
 		<item value="false" key="isRegEx"/>
+		<item value=".add" key="selection"/>
+		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
-		<item value="2" key="selection"/>
 		<list key="findhistory">
+			<item value=".add"/>
+			<item value="add"/>
+			<item value="exrc"/>
+			<item value="system.ou"/>
+			<item value="addto"/>
+			<item value="addtop"/>
 			<item value="2"/>
 			<item value="savede"/>
-			<item value="unblo"/>
-			<item value="block"/>
-			<item value="getinfo"/>
-			<item value="addtoplayerlis"/>
-			<item value="setgameworld"/>
-			<item value="lightcycle"/>
 		</list>
 		<list key="replacehistory">
 		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="323" key="DIALOG_WIDTH"/>
+		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="531" key="DIALOG_HEIGHT"/>
+		<item value="88" key="DIALOG_Y_ORIGIN"/>
+		<item value="1113" key="DIALOG_X_ORIGIN"/>
 	</section>
 </section>

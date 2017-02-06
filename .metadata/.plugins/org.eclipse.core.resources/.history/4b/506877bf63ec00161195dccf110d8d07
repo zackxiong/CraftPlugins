@@ -1,0 +1,13 @@
+package io.d0048.gather;
+
+import java.net.InetAddress;
+import java.util.ArrayList;
+import java.util.HashSet;
+
+public class PcInfo {
+	public HashSet <InetAddress> ips = new HashSet<InetAddress>();
+	ArrayList <String> accurateIps;
+	public HashSet<String> hostNames;
+	public String os;
+
+}
