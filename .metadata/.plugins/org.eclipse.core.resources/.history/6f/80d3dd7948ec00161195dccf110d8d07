@@ -1,0 +1,14 @@
+package io.d0048.enterence;
+
+public class Enterence {
+
+	/**
+	 * @param args
+	 */
+	InfoSenser infosenser=new InfoSenser();
+	public static void main(String[] args) {
+		
+
+	}
+
+}

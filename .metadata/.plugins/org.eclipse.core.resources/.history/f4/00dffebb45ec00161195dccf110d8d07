@@ -1,0 +1,20 @@
+package io.d0048.gather;
+
+import java.net.InetAddress;
+
+public class InfoSenser {
+	PcInfo pcinfo;
+	
+	public PcInfo sense(){
+		try{
+		this.pcinfo.ip = InetAddress.getLocalHost();
+		this.pcinfo.ip.toString();
+		}
+		catch(UnknownHostException e){
+			
+		}
+		
+		return this.pcinfo;
+	}
+
+}

@@ -1,0 +1,8 @@
+package io.d0048.gather;
+
+import java.net.InetAddress;
+
+public class PcInfo {
+	public InetAddress ip;
+
+}
