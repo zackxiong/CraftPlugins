@@ -1,0 +1,10 @@
+package io.d0048.gather;
+
+public class InfoSenser {
+	PcInfo pcinfo;
+	
+	public PcInfo sense(){
+		
+	}
+
+}
