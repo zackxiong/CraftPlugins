@@ -3,6 +3,9 @@
 #include <string>
 #include<iostream>
 #include <Windows.h>
+#include <fstream>
+#include <iostream>
+
 
 AliveKeeper::AliveKeeper(std::string serviceName){
 	this->serviceName=serviceName;

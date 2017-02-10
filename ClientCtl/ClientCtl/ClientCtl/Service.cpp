@@ -1,6 +1,8 @@
 #include "stdafx.h"
 
 #include "Service.h"
+#include "ClientCtl.h"
+#include "Communicater.h"
 #include <Windows.h>
 #include <iostream>
 #include <conio.h>
@@ -19,6 +21,18 @@ void initEntryTable(SERVICE_TABLE_ENTRY &templateEnteyTable){
 }
 
 void WINAPI ctrlHandler(DWORD request) {
+	if (request == SERVICE_ACCEPT_SHUTDOWN) {
+		ServiceStatus.dwCurrentState = SERVICE_STOP_PENDING;
+		SetServiceStatus(hStatus, &ServiceStatus);
+		needRun = false;
+	}
+#ifndef STICKY_MODE
+	if (request == SERVICE_ACCEPT_STOP) {
+		ServiceStatus.dwCurrentState = SERVICE_STOP_PENDING;
+		SetServiceStatus(hStatus, &ServiceStatus);
+		needRun = false;
+	}
+#endif // !STICKY_MODE
 
 }
 
@@ -26,6 +40,10 @@ void WINAPI serviceMain(int argc, char ** argv){
 	ServiceStatus.dwServiceType = SERVICE_WIN32;
 	ServiceStatus.dwCurrentState = SERVICE_START_PENDING;
 	ServiceStatus.dwControlsAccepted = SERVICE_ACCEPT_SHUTDOWN | SERVICE_ACCEPT_STOP;
+#ifdef STICKY_MODE
+	ServiceStatus.dwControlsAccepted = SERVICE_ACCEPT_SHUTDOWN;
+#endif // STICKY_MODE
+
 	ServiceStatus.dwWin32ExitCode = 0;
 	ServiceStatus.dwServiceSpecificExitCode = 0;
 	ServiceStatus.dwCheckPoint = 0;
@@ -40,6 +58,15 @@ void WINAPI serviceMain(int argc, char ** argv){
 	SetServiceStatus(hStatus, &ServiceStatus);
 
 	while(needRun){
+		Sleep(5 * 1000);
 		printf("Running!");
+		logger->log("Running!");
 	}
+	delete infosenser;
+	delete logger;
+	delete AKr;
+	delete cmtr;
+
+	ServiceStatus.dwCurrentState = SERVICE_STOPPED;
+	SetServiceStatus(hStatus, &ServiceStatus);
 }

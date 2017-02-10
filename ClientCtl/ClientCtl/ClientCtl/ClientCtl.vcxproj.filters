@@ -36,6 +36,18 @@
     <ClInclude Include="Service.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="InfoSenser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Communicater.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GetSysInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -48,6 +60,18 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Service.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="InfoSenser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Communicater.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GetSysInfo.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
