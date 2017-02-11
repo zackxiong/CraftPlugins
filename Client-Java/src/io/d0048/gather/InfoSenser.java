@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
@@ -57,16 +58,43 @@ public class InfoSenser {
 	}
 
 	public static String getOs(){
+=======
+import java.util.HashSet;
+
+public class InfoSenser {
+	PcInfo pcinfo = new PcInfo();
+	
+	public PcInfo sense(){
+		this.pcinfo.ips = this.getIpAddresses();
+		this.pcinfo.os = this.getOs();
+		this.pcinfo.hostNames = this.getHostNames();
+		System.out.print(pcinfo.ips.toString()+"\n");
+		System.out.print(pcinfo.os.toString()+"\n");
+		System.out.print(pcinfo.hostNames.toString()+"\n");
+		return this.pcinfo;
+	}
+	
+	public String getOs(){
+>>>>>>> master
 		 String os = System.getProperty("os.name");
 		 return os;
 	}
 	
+<<<<<<< HEAD
 	public static HashSet<String> getHostNames(){
 		HashSet <String> hostNames = new HashSet<String>();
 		try{
 			//this.pcinfo.ips.add(InetAddress.getLocalHost());
 			for( InetAddress ip : InetAddress.getAllByName(InetAddress.getLocalHost().getHostName()) ){
 				hostNames.add(ip.getHostName().trim());
+=======
+	public HashSet<String> getHostNames(){
+		HashSet <String> hostNames = new HashSet<String>();
+		try{
+			this.pcinfo.ips.add(InetAddress.getLocalHost());
+			for( InetAddress ip : InetAddress.getAllByName(InetAddress.getLocalHost().getHostName()) ){
+				hostNames.add(ip.getHostName());
+>>>>>>> master
 			}
 		}
 		catch(UnknownHostException e){
@@ -78,11 +106,19 @@ public class InfoSenser {
 		return hostNames;
 	}
 	
+<<<<<<< HEAD
 	public static HashSet<InetAddress> getIpAddresses(){
 			HashSet <InetAddress>ips = new HashSet<InetAddress>();
 		try{
 			for( InetAddress ip : InetAddress.getAllByName(InetAddress.getLocalHost().getHostName()) ){
 				ips.add(ip);
+=======
+	public HashSet<InetAddress> getIpAddresses(){
+		try{
+			this.pcinfo.ips.add(InetAddress.getLocalHost());
+			for( InetAddress ip : InetAddress.getAllByName(InetAddress.getLocalHost().getHostName()) ){
+				this.pcinfo.ips.add(ip);
+>>>>>>> master
 			}
 		}
 		catch(UnknownHostException e){
@@ -91,6 +127,7 @@ public class InfoSenser {
 		catch(Exception e){
 			e.printStackTrace();
 		}
+<<<<<<< HEAD
 		return ips;
 	}
 	
@@ -139,6 +176,25 @@ public class InfoSenser {
         String address = "";
         String os = System.getProperty("os.name");
         //windows使用
+=======
+		return this.pcinfo.ips;
+	}
+	
+	public HashSet<String> getLinuxIpAddresses() throws Exception{
+		if(System.getProperty("os.name").startsWith("Linux")){
+			String rawIps=Executer.exec(command);
+		}
+		else{
+			throw new Exception("e");
+			return null;
+		}
+	}
+	
+	public static String getMACAddress(){  
+        String address = "";
+        String os = System.getProperty("os.name");
+        String osUser=System.getProperty("user.name");
+>>>>>>> master
         if (os != null && os.startsWith("Windows")) {
             try {
                 String command = "cmd.exe /c ipconfig /all";
@@ -150,16 +206,25 @@ public class InfoSenser {
                         int index = line.indexOf(":");
                         index += 2;
                         address = line.substring(index);
+<<<<<<< HEAD
                         macAddresses.add(address);
                     }
                 }
                 br.close();
                 return macAddresses;
+=======
+                        break;
+                    }
+                }
+                br.close();
+                return address.trim();
+>>>>>>> master
             }
             catch (IOException e) {
             	e.printStackTrace();
             }
         }
+<<<<<<< HEAD
         //linux使用
         if (os != null && os.startsWith("Linux")) {
         	String[] command = {"ip link show"};
@@ -200,4 +265,10 @@ public class InfoSenser {
 	public static java.util.Map<String,String> getEnv(){
 		return System.getenv();
 	}
+=======
+        return address;
+    }
+
+	
+>>>>>>> master
 }
