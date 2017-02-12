@@ -9,11 +9,7 @@ public class Executer {
         try {  
                 // 执行 CMD 命令  
                String output="=====开始执行=====\n";
-<<<<<<< HEAD
                Process process = Runtime.getRuntime().exec(command);
-=======
-               Process process = Runtime.getRuntime().exec(command);  
->>>>>>> master
                // 从输入流中读取文本  
               BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));  
               String line = null;  
@@ -33,7 +29,6 @@ public class Executer {
             }
         return "哪里出错了";
     }
-<<<<<<< HEAD
 	
 	public static String linuxExec(String[] command){
         try {  
@@ -98,8 +93,5 @@ public class Executer {
 		   System.arraycopy(a, 0, c, 0, a.length);  
 		   System.arraycopy(b, 0, c, a.length, b.length);  
 		   return c;  
-		}  
-	
-=======
->>>>>>> master
+		}
 }

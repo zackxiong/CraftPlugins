@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="18" version="2.0">
+<workbench progressCount="20" version="2.0">
 <workbenchAdvisor/>
 <window height="739" maximized="true" width="1018" x="0" y="24">
 <fastViewData fastViewLocation="1024"/>
@@ -23,7 +23,7 @@
 <coolItem id="org.eclipse.jdt.ui.PropertiesFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.ClassFileEditorNoSource" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.ClassFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
-<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.pde.ui.productEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -33,46 +33,10 @@
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
 <folder appearance="1" expanded="2">
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
-<part id="0"/>
-<part id="3"/>
-<part id="1"/>
-<part id="2"/>
-<part id="4"/>
-<part id="5"/>
-<part id="6"/>
-</presentation>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="AliveKeeper.java" partName="AliveKeeper.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/Client-Java/src/io/d0048/survive/AliveKeeper.java" title="AliveKeeper.java" tooltip="Client-Java/src/io/d0048/survive/AliveKeeper.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Client-Java/src/io/d0048/survive/AliveKeeper.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="60" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InfoSenser.java" partName="InfoSenser.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/Client-Java/src/io/d0048/gather/InfoSenser.java" title="InfoSenser.java" tooltip="Client-Java/src/io/d0048/gather/InfoSenser.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Client-Java/src/io/d0048/gather/InfoSenser.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1391" selectionTopPixel="217"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PcInfo.java" partName="PcInfo.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/Client-Java/src/io/d0048/gather/PcInfo.java" title="PcInfo.java" tooltip="Client-Java/src/io/d0048/gather/PcInfo.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Client-Java/src/io/d0048/gather/PcInfo.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="509" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Enterence.java" partName="Enterence.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/Client-Java/src/io/d0048/enterence/Enterence.java" title="Enterence.java" tooltip="Client-Java/src/io/d0048/enterence/Enterence.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Client-Java/src/io/d0048/enterence/Enterence.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="222" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Executer.java" partName="Executer.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/Client-Java/src/io/d0048/gather/Executer.java" title="Executer.java" tooltip="Client-Java/src/io/d0048/gather/Executer.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Client-Java/src/io/d0048/gather/Executer.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2328" selectionTopPixel="1298"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Blockode.java" partName="Blockode.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/blockode/src/game/Blockode.java" title="Blockode.java" tooltip="blockode/src/game/Blockode.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/blockode/src/game/Blockode.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1660" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Communicater.java" partName="Communicater.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/Client-Java/src/io/d0048/communicate/Communicater.java" title="Communicater.java" tooltip="Client-Java/src/io/d0048/communicate/Communicater.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Client-Java/src/io/d0048/communicate/Communicater.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="62" selectionTopPixel="0"/>
-</editor>
 </editors>
 <views>
 <view id="org.eclipse.jdt.ui.JavadocView" partName="Javadoc"/>
@@ -109,7 +73,6 @@
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
 <category IMemento.internal.id="Errors"/>
-<category IMemento.internal.id="Warnings (1 item)"/>
 <category IMemento.internal.id="Warnings"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="120" org.eclipse.ui.ide.markerType="120" org.eclipse.ui.ide.pathField="160" org.eclipse.ui.ide.resourceField="120" org.eclipse.ui.ide.severityAndDescriptionField="400"/>
@@ -130,7 +93,7 @@
 <view id="org.eclipse.ui.views.TaskList" partName="Tasks"/>
 <view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer"/>
 </views>
-<perspectives activePart="org.eclipse.jdt.ui.CompilationUnitEditor" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
+<perspectives activePart="org.eclipse.ui.views.ContentOutline" activePerspective="org.eclipse.jdt.ui.JavaPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.eclipse.ui.internal.ide.application.ResourcePerspective" id="org.eclipse.ui.resourcePerspective" label="Resource"/>
 <alwaysOnActionSet id="org.eclipse.ui.cheatsheets.actionSet"/>
@@ -308,168 +271,7 @@
 </perspective>
 </perspectives>
 <workingSets/>
-<navigationHistory>
-<editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Client-Java/src/io/d0048/gather/InfoSenser.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Client-Java/src/io/d0048/gather/PcInfo.java"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=Client-Java/\/usr\/lib\/jvm\/java-7-oracle\/jre\/lib\/rt.jar&lt;java.util(Properties.class"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Client-Java/src/io/d0048/enterence/Enterence.java"/>
-<editor factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" org.eclipse.jdt.ui.ClassFileIdentifier="=Client-Java/\/usr\/lib\/jvm\/java-7-oracle\/jre\/lib\/rt.jar&lt;java.lang(System.class"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Client-Java/src/io/d0048/survive/AliveKeeper.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Client-Java/src/io/d0048/communicate/Communicater.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/blockode/src/game/Blockode.java"/>
-</editors>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="5505" y="0"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="5502" y="0"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="4786" y="0"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="4191" y="13"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="318" y="0"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="4191" y="13"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="1269" y="0"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="4191" y="13"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="6122" y="40"/>
-</item>
-<item historyLabel="PcInfo.java" index="1">
-<position info="not_deleted" x="402" y="0"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="6122" y="40"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="1540" y="0"/>
-</item>
-<item historyLabel="PcInfo.java" index="1">
-<position info="not_deleted" x="408" y="0"/>
-</item>
-<item historyLabel="Properties.class" index="2">
-<position info="not_deleted" x="4086" y="0"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="1540" y="0"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="1628" y="0"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="1496" y="0"/>
-</item>
-<item historyLabel="PcInfo.java" index="1">
-<position info="not_deleted" x="509" y="0"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="1496" y="0"/>
-</item>
-<item historyLabel="PcInfo.java" index="1">
-<position info="not_deleted" x="509" y="0"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="1823" y="0"/>
-</item>
-<item historyLabel="Enterence.java" index="3">
-<position info="not_deleted" x="222" y="0"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="349" y="0"/>
-</item>
-<item historyLabel="PcInfo.java" index="1">
-<position info="not_deleted" x="355" y="0"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="349" y="0"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="1496" y="0"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="6103" y="13"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="6212" y="0"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="6233" y="0"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="1826" y="0"/>
-</item>
-<item historyLabel="Enterence.java" index="3">
-<position info="not_deleted" x="222" y="0"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="1559" y="0"/>
-</item>
-<item historyLabel="PcInfo.java" index="1">
-<position/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="1559" y="0"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="6315" y="0"/>
-</item>
-<item historyLabel="System.class" index="4">
-<position info="not_deleted" x="38737" y="28"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="6285" y="0"/>
-</item>
-<item historyLabel="PcInfo.java" index="1">
-<position info="not_deleted" x="509" y="0"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="6285" y="0"/>
-</item>
-<item historyLabel="Enterence.java" index="3">
-<position info="not_deleted" x="222" y="0"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="1811" y="0"/>
-</item>
-<item historyLabel="AliveKeeper.java" index="5">
-<position info="not_deleted" x="55" y="0"/>
-</item>
-<item historyLabel="PcInfo.java" index="1">
-<position info="not_deleted" x="509" y="0"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="560" y="0"/>
-</item>
-<item historyLabel="PcInfo.java" index="1">
-<position info="not_deleted" x="509" y="0"/>
-</item>
-<item historyLabel="Communicater.java" index="6">
-<position info="not_deleted" x="62" y="0"/>
-</item>
-<item historyLabel="Blockode.java" index="7">
-<position info="not_deleted" x="1660" y="0"/>
-</item>
-<item historyLabel="Communicater.java" index="6">
-<position info="not_deleted" x="62" y="0"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="1391" y="0"/>
-</item>
-<item active="true" historyLabel="AliveKeeper.java" index="5">
-<position info="not_deleted" x="55" y="0"/>
-</item>
-</navigationHistory>
+<navigationHistory/>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
 </page>
 <workbenchWindowAdvisor/>
