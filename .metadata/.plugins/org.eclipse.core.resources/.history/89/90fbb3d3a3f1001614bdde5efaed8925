@@ -96,7 +96,7 @@ public class InfoSenser {
 	}
 	
 //<<<<<<< HEAD
-	public HashSet<InetAddress> getIpAddresses(){
+	public static HashSet<InetAddress> getIpAddresses(){
 			HashSet <InetAddress>ips = new HashSet<InetAddress>();
 		try{
 			for( InetAddress ip : InetAddress.getAllByName(InetAddress.getLocalHost().getHostName()) ){
@@ -113,7 +113,7 @@ public class InfoSenser {
 		return ips;
 	}
 	
-	public ArrayList <String> getAccurateIpAddresses() throws Exception{
+	public static ArrayList <String> getAccurateIpAddresses() throws Exception{
 		//String ipRegex = "[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}";//IP过滤表达式
 		String os = System.getProperty("os.name");
 		//linux使用
@@ -148,18 +148,19 @@ public class InfoSenser {
 		}
 	}
 	
-	public String getCurrentUser(){
+	public static String getCurrentUser(){
 		String osUser=System.getProperty("user.name");
 		return osUser;
 	}
 	
-	/*public HashSet<String> getMACAddress(){
+	public static HashSet<String> getMACAddress(){
 		HashSet<String> macAddresses = new HashSet<String>();
         String address = "";
         String os = System.getProperty("os.name");
         //windows使用
+//=======
 		return this.pcinfo.ips;
-	}*/
+	}
 	
 	public HashSet<String> getLinuxIpAddresses() throws Exception{
 		if(System.getProperty("os.name").startsWith("Linux")){
@@ -171,8 +172,8 @@ public class InfoSenser {
 		}
 	}
 	
-	public String getMACAddress(){
-        HashSet<String> macAddresses = new HashSet<String>();
+	public static String getMACAddress(){
+        HashSet<String> macadresses = new HashSet<String>();
 		String address = "";
         String os = System.getProperty("os.name");
 
@@ -226,16 +227,16 @@ public class InfoSenser {
 		return targets;
 	}
 */
-	public Properties getProperties(){
+	public static Properties getProperties(){
 		Properties props=System.getProperties();
 		return props;
 	}
 	
-	public Date getDate(){
+	public static Date getDate(){
 		return new Date();
 	}
 	
-	public java.util.Map<String,String> getEnv(){
+	public static java.util.Map<String,String> getEnv(){
 		return System.getenv();
 	}
 }
