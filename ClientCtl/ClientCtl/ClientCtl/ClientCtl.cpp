@@ -4,6 +4,7 @@
 #include "stdafx.h"
 
 #include <stdio.h>
+#include "GetSysInfo.h"
 #include "Windows.h"
 #include "AliveKeeper.h"
 #include <string>
@@ -81,6 +82,12 @@ int main(int argc, char *argv[]) {
 	//注册Communicater
 	//setterHandle = CreateThread(NULL, 0, communicaterThread, NULL, 0, NULL); 
 	//注册Communicater完毕
+	_getch();
+	GetSysInfo gSI;
+	CString str1, str2;
+	DWORD dw1, dw2;
+	gSI.GetOSVersion(str1, str2);
+	std::wcout << "str1: " << str1.GetBuffer() << std::endl << "str2: " << str2.GetBuffer() << std::endl;
 	_getch();
 }
 

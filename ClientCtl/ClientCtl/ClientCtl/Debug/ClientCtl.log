@@ -1,3 +1,5 @@
-﻿  GetSysInfo.cpp
+﻿  ClientCtl.cpp
+d:\netbeans-java\craftplugins\clientctl\clientctl\clientctl\clientctl.cpp(88): warning C4101: “dw1”: 未引用的局部变量
+d:\netbeans-java\craftplugins\clientctl\clientctl\clientctl\clientctl.cpp(88): warning C4101: “dw2”: 未引用的局部变量
   ClientCtl.vcxproj -> D:\netbeans-java\CraftPlugins\ClientCtl\ClientCtl\Debug\ClientCtl.exe
   ClientCtl.vcxproj -> D:\netbeans-java\CraftPlugins\ClientCtl\ClientCtl\Debug\ClientCtl.pdb (Full PDB)

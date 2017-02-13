@@ -9,6 +9,7 @@
 #pragma comment(lib,"ws2_32.lib") 
 
 InfoSenser::InfoSenser() {
+	this->InterfaceNames.clear();
 	//获取系统信息
 	GetSystemInfo(&sysInfo);
 	osvi.dwOSVersionInfoSize = sizeof(osvi);
