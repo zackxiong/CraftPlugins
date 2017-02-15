@@ -1,7 +1,7 @@
 #pragma once
 #include "stdafx.h"
 
-#include <Windows.h>
+#include <afxwin.h>
 
 extern SERVICE_TABLE_ENTRY entryTable[2];
 extern SERVICE_STATUS ServiceStatus;

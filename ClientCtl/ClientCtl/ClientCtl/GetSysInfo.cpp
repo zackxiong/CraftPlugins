@@ -485,7 +485,7 @@ void GetSysInfo::GetDiskInfo(DWORD &dwNum, CString chDriveInfo[])
 
 	//利用GetLogicalDrives()函数可以获取系统中逻辑驱动器的数量，函数返回的是一个32位无符号整型数据。  
 	DWORD DiskInfo = GetLogicalDrives();
-
+	
 	//通过循环操作查看每一位数据是否为1，如果为1则磁盘为真,如果为0则磁盘不存在。  
 	while (DiskInfo)
 	{

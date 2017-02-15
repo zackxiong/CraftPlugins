@@ -1,15 +1,20 @@
 #include "stdafx.h"
 #include "InfoSenser.h"
 #include "Service.h"
-#include "InfoSenser.h"
 #include <string>
 #include <iostream>
-#include <Windows.h>
+#include <afxwin.h>
+#include <vector>
 
 #pragma comment(lib,"ws2_32.lib") 
 
-InfoSenser::InfoSenser() {
+InfoSenser::InfoSenser(){
 	this->InterfaceNames.clear();
+	CString test[3000];
+	this->chDriveInfo = test;
+	//this->chDriveInfo = new CString[300];
+	this->gSI = new GetSysInfo();
+
 	//获取系统信息
 	GetSystemInfo(&sysInfo);
 	osvi.dwOSVersionInfoSize = sizeof(osvi);
@@ -19,6 +24,14 @@ InfoSenser::InfoSenser() {
 		std::cout << "Error init os info" << std::endl;
 		throw "Error init os info";
 	}
+	this->isWow64 = this->gSI->IsWow64();
+
+	//获取CPU信息
+	this->gSI->GetCpuInfo(this->chProcessorName, this->chProcessorType, this->dwProcessorNum, this->dwMaxClockSpeed);
+
+	//获取硬盘信息
+	this->gSI->GetDiskInfo(this->dwdriveNum, this->chDriveInfo);
+
 	//获取内存信息
 	statex.dwLength = sizeof(statex);
 	if ((!sysSuccess) | (!GlobalMemoryStatusEx(&statex))){
@@ -26,6 +39,7 @@ InfoSenser::InfoSenser() {
 		std::cout << "Error init memory info" << std::endl;
 		throw "Error init memory info";
 	}
+	this->gSI->GetMemoryInfo(this->dwTotalPhy_d, this->dwTotalVirtual);
 
 	//获取网络信息
 	this->netSuccess = true;
@@ -35,7 +49,8 @@ InfoSenser::InfoSenser() {
 		throw "WSAStartup failed";
 	}
 
-	if ((!netSuccess) | gethostname(hostName, sizeof(hostName))){		//获取主机名
+	//获取主机名
+	if ((!netSuccess) | gethostname(hostName, sizeof(hostName))){
 		std::cout<<"Error: "<<WSAGetLastError()<<std::endl;
 		netSuccess = false;
 		throw "Error: " + WSAGetLastError();
@@ -47,13 +62,31 @@ InfoSenser::InfoSenser() {
 		std::cout << "Error: " << WSAGetLastError() << std::endl;
 		throw "Error: " + WSAGetLastError();
 	}
+
+	//获取网卡信息
+	this->interfaceCount = this->gSI->GetInterFaceCount();
+	int count = this->interfaceCount;
+	CString interfaceName;
+	std::vector<CString>::iterator it = this->InterfaceNames.begin();
+	while (count-- > 0) {
+		this->gSI->GetInterFaceName(interfaceName, count);
+		if (interfaceName)
+			this->InterfaceNames.push_back(interfaceName);
+		else
+			std::cout << "Null name of Interface error!" << std::endl;
+	}
+
+	/*
+	//获取显卡信息
+	this->gSI->GetDisplayCardInfo(this->dwgraphicCardNum, this->chgraphicCardNames);
+	*/
 }
 
 InfoSenser::~InfoSenser(){
 	WSACleanup();
 }
 
-void InfoSenser::printNetInfo(){
+bool InfoSenser::printNetInfo(){
 	GlobalMemoryStatusEx(&statex);
 	if (netSuccess) {
 		printf("主机名：             %s\n", hostName);
@@ -65,11 +98,13 @@ void InfoSenser::printNetInfo(){
 		for (int i = 0; host->h_addr_list[i] != 0; i++) {
 			std::cout << "该主机IP" << i + 1 << ":        " << inet_ntoa(*(struct in_addr*)*host->h_addr_list) << std::endl;
 		}
+		return true;
 	}
 	else 	std::cout << "获取网络信息失败";
+	return false;
 }
 
-void InfoSenser::printHWInfo(){
+bool InfoSenser::printHWInfo(){
 	if (sysSuccess) {
 		printf("操作系统版本 :      %u.%u.%u\n", osvi.dwMajorVersion, osvi.dwMinorVersion, osvi.dwBuildNumber);
 		printf("Service Pack :      %u.%u\n", osvi.wServicePackMajor, osvi.wServicePackMinor);
@@ -89,7 +124,23 @@ void InfoSenser::printHWInfo(){
 		std::cout << "剩余内存:             " << statex.dwMemoryLoad <<
 			"% (" << (float)((float)statex.ullAvailPhys / (float)1024/ (float)1024) << "MB/"
 			<< (float)((float)statex.ullTotalPhys / (float)1024 / (float)1024) << "MB)" << std::endl;
+		return true;
 	}
 	else 	std::cout << "获取硬件信息失败";
+	return false;
+}
 
+bool InfoSenser::printDriveInfo(){
+	if (true) {
+		int count = this->dwdriveNum;
+		while (count-- > 0) {
+			std::cout << "磁盘" << count<< ": "<< this->chDriveInfo[count - 1] <<std::endl;
+		}
+		std::cout << "磁盘信息完成";
+		_getch();
+		return true;
+	}
+	else
+		std::cout << "获取磁盘信息失败";
+	return false;
 }

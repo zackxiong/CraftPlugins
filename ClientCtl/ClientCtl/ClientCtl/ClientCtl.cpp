@@ -4,8 +4,8 @@
 #include "stdafx.h"
 
 #include <stdio.h>
-#include "GetSysInfo.h"
-#include "Windows.h"
+//#include "GetSysInfo.h"
+#include <afxwin.h>
 #include "AliveKeeper.h"
 #include <string>
 #include <iostream>
@@ -76,6 +76,7 @@ int main(int argc, char *argv[]) {
 	//while (true){
 	infosenser->printHWInfo();
 	infosenser->printNetInfo();
+	infosenser->printDriveInfo();
 	//}
 	//注册系统信息完毕
 
@@ -83,12 +84,13 @@ int main(int argc, char *argv[]) {
 	//setterHandle = CreateThread(NULL, 0, communicaterThread, NULL, 0, NULL); 
 	//注册Communicater完毕
 	_getch();
+	/*
 	GetSysInfo gSI;
 	CString str1, str2;
 	DWORD dw1, dw2;
 	gSI.GetOSVersion(str1, str2);
 	std::wcout << "str1: " << str1.GetBuffer() << std::endl << "str2: " << str2.GetBuffer() << std::endl;
-	_getch();
+	_getch();*/
 }
 
 

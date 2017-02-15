@@ -4,11 +4,16 @@
 //
 
 #pragma once
-
+#ifndef _AFXDLL
+#define _AFXDLL
+#endif
 #include "targetver.h"
 
 #include <stdio.h>
 #include <tchar.h>
+#ifndef _INC_CONIO
+#include <conio.h>
+#endif
 
 
 
