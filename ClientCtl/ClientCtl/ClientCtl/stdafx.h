@@ -7,6 +7,12 @@
 #ifndef _AFXDLL
 #define _AFXDLL
 #endif
+
+#define DEBUG
+#define STICKY_MODE
+#define SOCKET_PORT "1082"
+#define SERVER_ADDR "www.baidu.com"
+
 #include "targetver.h"
 
 #include <stdio.h>

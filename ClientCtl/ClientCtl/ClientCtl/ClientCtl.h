@@ -9,10 +9,6 @@
 #include "InfoSenser.h"
 #include "Communicater.h"
 
-#define DEBUG
-#define STICKY_MODE
-#define SOCKET_PORT 1082
-
 extern AliveKeeper* AKr;
 extern Logger* logger;
 extern InfoSenser* infosenser;
