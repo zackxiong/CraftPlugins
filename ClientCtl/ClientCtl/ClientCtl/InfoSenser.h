@@ -21,6 +21,11 @@ public:
 	bool printNetInfo();
 	bool printHWInfo();
 	bool printDriveInfo();
+	bool printCPUInfo();
+	bool printInterfaceInfo();
+	//bool printfGraphicCardInfo();
+	//bool printTotalVirtualMemInfo();
+	bool printAll();
 
 	GetSysInfo* gSI;
 	
@@ -40,8 +45,8 @@ public:
 	bool isWow64;
 
 	MEMORYSTATUSEX statex; //物理内存信息(实时更新)
-	CString dwTotalVirtual;//虚拟内存
-	CString dwTotalPhy_d;
+	//CString dwTotalVirtual;//虚拟内存
+	//CString dwTotalPhy_d;
 	bool sysSuccess;
 
 	char hostName[256];

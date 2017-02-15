@@ -39,7 +39,7 @@ InfoSenser::InfoSenser(){
 		std::cout << "Error init memory info" << std::endl;
 		throw "Error init memory info";
 	}
-	this->gSI->GetMemoryInfo(this->dwTotalPhy_d, this->dwTotalVirtual);
+	//this->gSI->GetMemoryInfo(this->dwTotalPhy_d, this->dwTotalVirtual);
 
 	//获取网络信息
 	this->netSuccess = true;
@@ -84,6 +84,7 @@ InfoSenser::InfoSenser(){
 
 InfoSenser::~InfoSenser(){
 	WSACleanup();
+	delete this->gSI;
 }
 
 bool InfoSenser::printNetInfo(){
@@ -121,7 +122,12 @@ bool InfoSenser::printHWInfo(){
 		printf("OemId :             %u\n", sysInfo.dwOemId);
 		printf("wReserved :         %u\n", sysInfo.wReserved);
 
-		std::cout << "剩余内存:             " << statex.dwMemoryLoad <<
+		std::cout << "虚拟内存:             " << ((float)statex.ullAvailVirtual / (float)statex.ullTotalVirtual) <<
+			"% (" << (float)((statex.ullTotalVirtual - statex.ullAvailVirtual) / (float)1024 / (float)1024) << "MB/"
+			<< (float)((float)statex.ullTotalVirtual / (float)1024 / (float)1024) << "MB)" 
+			<< "[" << (float)((float)statex.ullAvailExtendedVirtual / (float)1024 / (float)1024) << "MB添加]" << std::endl;
+
+		std::cout << "物理内存:             " << statex.dwMemoryLoad <<
 			"% (" << (float)((float)statex.ullAvailPhys / (float)1024/ (float)1024) << "MB/"
 			<< (float)((float)statex.ullTotalPhys / (float)1024 / (float)1024) << "MB)" << std::endl;
 		return true;
@@ -131,16 +137,70 @@ bool InfoSenser::printHWInfo(){
 }
 
 bool InfoSenser::printDriveInfo(){
-	if (true) {
+	if (true && this->dwdriveNum > 0) {
 		int count = this->dwdriveNum;
 		while (count-- > 0) {
-			std::cout << "磁盘" << count<< ": "<< this->chDriveInfo[count - 1] <<std::endl;
+			std::cout << "磁盘" << count<< "          :"<< this->chDriveInfo[count - 1] <<std::endl;
 		}
 		std::cout << "磁盘信息完成";
 		_getch();
 		return true;
 	}
 	else
-		std::cout << "获取磁盘信息失败";
+		std::cout << "获取磁盘信息失败或没有磁盘"<< std::endl;
 	return false;
 }
+
+bool InfoSenser::printCPUInfo(){
+	if (true && this->dwProcessorNum > 0) {
+		std::wcout << "CPU型号:          " << this->chProcessorName.GetBuffer() << std::endl;
+		std::wcout << "CPU种类:          " << this->chProcessorType.GetBuffer() << std::endl;
+		std::wcout << "CPU核心数量:      " << this->dwProcessorNum << std::endl;
+		std::wcout << "CPU频率:          " << this->dwMaxClockSpeed << std::endl;
+		return true;
+	}
+	else
+		std::cout << "获取CPU信息失败或没有CPU" << std::endl;
+	return false;
+}
+
+bool InfoSenser::printInterfaceInfo(){
+	if (true && this->interfaceCount > 0) {
+		int count = 1;
+		for (std::vector<CString>::iterator it = this->InterfaceNames.begin();
+		  it != this->InterfaceNames.end();
+		  it++) {
+			CString name = *it;
+			std::wcout << "网卡" << count++ << "的型号:          " << name.GetBuffer() << std::endl;
+		}
+		return true;
+	}
+	else
+		std::cout << "获取网卡信息失败或没有网卡" << std::endl;
+	return false;
+}
+bool InfoSenser::printAll(){
+	this->printHWInfo();
+	this->printNetInfo();
+	this->printDriveInfo();
+	this->printCPUInfo();
+	this->printInterfaceInfo();
+	return true;
+}
+/*
+bool InfoSenser::printTotalVirtualMemInfo(){
+	if (true && this->dwTotalVirtual) {
+		std::wcout << "虚拟内存大小:          " << this->dwTotalVirtual.GetBuffer() << std::endl;
+		_getch();
+	}
+	else
+		std::cout << "获取虚拟信息失败或没有配置虚拟内存" << std::endl;
+	return false;
+}
+*/
+/*
+bool InfoSenser::printfGraphicCardInfo()
+{
+	return false;
+}
+*/

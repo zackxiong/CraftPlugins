@@ -74,9 +74,7 @@ int main(int argc, char *argv[]) {
 
 	//注册系统信息
 	//while (true){
-	infosenser->printHWInfo();
-	infosenser->printNetInfo();
-	infosenser->printDriveInfo();
+	infosenser->printAll();
 	//}
 	//注册系统信息完毕
 
