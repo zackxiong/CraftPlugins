@@ -1,0 +1,15 @@
+package main;
+
+public class Entery {
+
+	/**
+	 * @param args
+	 */
+	Gui gui = new Gui();
+	
+	public static void main(String[] args) {
+		
+
+	}
+
+}

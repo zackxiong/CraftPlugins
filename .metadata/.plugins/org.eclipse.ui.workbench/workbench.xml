@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="15" version="2.0">
+<workbench progressCount="20" version="2.0">
 <workbenchAdvisor/>
 <window height="739" maximized="true" width="1018" x="0" y="24">
 <fastViewData fastViewLocation="1024"/>
@@ -35,13 +35,33 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
+<part id="1"/>
+<part id="2"/>
+<part id="3"/>
+<part id="4"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InfoSenser.java" partName="InfoSenser.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/Client-Java/src/io/d0048/gather/InfoSenser.java" title="InfoSenser.java" tooltip="Client-Java/src/io/d0048/gather/InfoSenser.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/Client-Java/src/io/d0048/gather/InfoSenser.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="855" selectionTopPixel="189"/>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PC.java" partName="PC.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/ServerCtl/src/pc/PC.java" title="PC.java" tooltip="ServerCtl/src/pc/PC.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ServerCtl/src/pc/PC.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="32" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Gui.java" partName="Gui.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/ServerCtl/src/gui/Gui.java" title="Gui.java" tooltip="ServerCtl/src/gui/Gui.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ServerCtl/src/gui/Gui.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2062" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Entery.java" partName="Entery.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/ServerCtl/src/main/Entery.java" title="Entery.java" tooltip="ServerCtl/src/main/Entery.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ServerCtl/src/main/Entery.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="240" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Controller.java" partName="Controller.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/ServerCtl/src/communicater/Controller.java" title="Controller.java" tooltip="ServerCtl/src/communicater/Controller.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ServerCtl/src/communicater/Controller.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="803" selectionTopPixel="203"/>
+</editor>
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Reciever.java" partName="Reciever.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/ServerCtl/src/communicater/Reciever.java" title="Reciever.java" tooltip="ServerCtl/src/communicater/Reciever.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ServerCtl/src/communicater/Reciever.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="45" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
@@ -79,6 +99,7 @@
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
 <category IMemento.internal.id="Errors"/>
+<category IMemento.internal.id="Warnings"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="120" org.eclipse.ui.ide.markerType="120" org.eclipse.ui.ide.pathField="160" org.eclipse.ui.ide.resourceField="120" org.eclipse.ui.ide.severityAndDescriptionField="400"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -278,44 +299,165 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Client-Java/src/io/d0048/gather/InfoSenser.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/Client-Java/src/io/d0048/gather/PcInfo.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ServerCtl/src/gui/Gui.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/blockode/src/guiLogger/Gui.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ServerCtl/src/main/main.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ServerCtl/src/main/Entery.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ServerCtl/src/pc/PC.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ServerCtl/src/gui/Gui.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ServerCtl/src/main/Entery.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ServerCtl/src/communicater/Controller.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ServerCtl/src/communicater/Reciever.java"/>
 </editors>
-<item historyLabel="InfoSenser.java" index="0">
+<item historyLabel="Gui.java" index="1">
+<position info="not_deleted" x="0" y="2514"/>
+</item>
+<item historyLabel="Gui.java" index="0">
+<position info="not_deleted" x="2043" y="0"/>
+</item>
+<item historyLabel="main.java" index="2">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="InfoSenser.java" index="0">
+<item historyLabel="Gui.java" index="0">
+<position info="not_deleted" x="2048" y="0"/>
+</item>
+<item historyLabel="main.java" index="2">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Entery.java" index="3">
+<position info="not_deleted" x="170" y="0"/>
+</item>
+<item historyLabel="Entery.java" index="3">
+<position info="not_deleted" x="172" y="0"/>
+</item>
+<item historyLabel="Entery.java" index="3">
+<position info="not_deleted" x="169" y="0"/>
+</item>
+<item historyLabel="Entery.java" index="3">
+<position info="not_deleted" x="147" y="0"/>
+</item>
+<item historyLabel="PC.java" index="4">
+<position info="not_deleted" x="32" y="0"/>
+</item>
+<item historyLabel="Gui.java" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Entery.java" index="6">
+<position info="not_deleted" x="238" y="0"/>
+</item>
+<item historyLabel="Controller.java" index="7">
+<position info="not_deleted" x="806" y="0"/>
+</item>
+<item historyLabel="Entery.java" index="6">
+<position info="not_deleted" x="244" y="0"/>
+</item>
+<item historyLabel="Controller.java" index="7">
+<position info="not_deleted" x="806" y="0"/>
+</item>
+<item historyLabel="Controller.java" index="7">
+<position info="not_deleted" x="315" y="0"/>
+</item>
+<item historyLabel="Controller.java" index="7">
+<position info="not_deleted" x="465" y="0"/>
+</item>
+<item historyLabel="Entery.java" index="6">
+<position info="not_deleted" x="247" y="0"/>
+</item>
+<item historyLabel="Controller.java" index="7">
+<position info="not_deleted" x="465" y="0"/>
+</item>
+<item historyLabel="Controller.java" index="7">
+<position info="not_deleted" x="613" y="0"/>
+</item>
+<item historyLabel="Controller.java" index="7">
 <position/>
 </item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="5074" y="13"/>
+<item historyLabel="Controller.java" index="7">
+<position/>
 </item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="7119" y="6"/>
+<item historyLabel="Controller.java" index="7">
+<position info="not_deleted" x="555" y="0"/>
 </item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="7157" y="0"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="5113" y="0"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="5148" y="0"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="5150" y="0"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="7055" y="0"/>
-</item>
-<item historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="855" y="0"/>
-</item>
-<item historyLabel="PcInfo.java" index="1">
+<item historyLabel="Reciever.java" index="8">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item active="true" historyLabel="InfoSenser.java" index="0">
-<position info="not_deleted" x="855" y="0"/>
+<item historyLabel="Reciever.java" index="8">
+<position info="not_deleted" x="69" y="0"/>
+</item>
+<item historyLabel="Entery.java" index="6">
+<position info="not_deleted" x="202" y="0"/>
+</item>
+<item historyLabel="Controller.java" index="7">
+<position info="not_deleted" x="594" y="0"/>
+</item>
+<item historyLabel="Reciever.java" index="8">
+<position info="not_deleted" x="55" y="0"/>
+</item>
+<item historyLabel="Entery.java" index="6">
+<position info="not_deleted" x="240" y="0"/>
+</item>
+<item historyLabel="Controller.java" index="7">
+<position info="not_deleted" x="703" y="0"/>
+</item>
+<item historyLabel="Reciever.java" index="8">
+<position info="not_deleted" x="55" y="0"/>
+</item>
+<item historyLabel="Controller.java" index="7">
+<position info="not_deleted" x="703" y="0"/>
+</item>
+<item historyLabel="Reciever.java" index="8">
+<position info="not_deleted" x="45" y="0"/>
+</item>
+<item historyLabel="Controller.java" index="7">
+<position info="not_deleted" x="703" y="0"/>
+</item>
+<item historyLabel="Reciever.java" index="8">
+<position info="not_deleted" x="72" y="0"/>
+</item>
+<item historyLabel="Controller.java" index="7">
+<position info="not_deleted" x="703" y="0"/>
+</item>
+<item historyLabel="Controller.java" index="7">
+<position info="not_deleted" x="364" y="0"/>
+</item>
+<item historyLabel="Controller.java" index="7">
+<position info="not_deleted" x="394" y="0"/>
+</item>
+<item historyLabel="Controller.java" index="7">
+<position info="not_deleted" x="396" y="0"/>
+</item>
+<item historyLabel="Controller.java" index="7">
+<position info="not_deleted" x="760" y="0"/>
+</item>
+<item historyLabel="Controller.java" index="7">
+<position info="not_deleted" x="435" y="0"/>
+</item>
+<item historyLabel="Controller.java" index="7">
+<position info="not_deleted" x="717" y="1"/>
+</item>
+<item historyLabel="Reciever.java" index="8">
+<position info="not_deleted" x="45" y="0"/>
+</item>
+<item historyLabel="Controller.java" index="7">
+<position info="not_deleted" x="819" y="0"/>
+</item>
+<item historyLabel="Gui.java" index="5">
+<position info="not_deleted" x="2062" y="0"/>
+</item>
+<item historyLabel="Reciever.java" index="8">
+<position info="not_deleted" x="45" y="0"/>
+</item>
+<item historyLabel="Controller.java" index="7">
+<position info="not_deleted" x="819" y="0"/>
+</item>
+<item historyLabel="Entery.java" index="6">
+<position info="not_deleted" x="240" y="0"/>
+</item>
+<item historyLabel="Controller.java" index="7">
+<position info="not_deleted" x="819" y="0"/>
+</item>
+<item active="true" historyLabel="Controller.java" index="7">
+<position/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -334,6 +476,33 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Reciever.java" tooltip="ServerCtl/src/communicater/Reciever.java">
+<persistable path="/ServerCtl/src/communicater/Reciever.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Controller.java" tooltip="ServerCtl/src/communicater/Controller.java">
+<persistable path="/ServerCtl/src/communicater/Controller.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Entery.java" tooltip="ServerCtl/src/main/Entery.java">
+<persistable path="/ServerCtl/src/main/Entery.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Gui.java" tooltip="ServerCtl/src/gui/Gui.java">
+<persistable path="/ServerCtl/src/gui/Gui.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PC.java" tooltip="ServerCtl/src/pc/PC.java">
+<persistable path="/ServerCtl/src/pc/PC.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="main.java" tooltip="ServerCtl/src/main/main.java">
+<persistable path="/ServerCtl/src/main/main.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Gui.java" tooltip="blockode/src/guiLogger/Gui.java">
+<persistable path="/blockode/src/guiLogger/Gui.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Sender.java" tooltip="ServerCtl/src/communicater/Sender.java">
+<persistable path="/ServerCtl/src/communicater/Sender.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="config.yml" tooltip="ServerCtl/src/config.yml">
+<persistable path="/ServerCtl/src/config.yml"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PcInfo.java" tooltip="Client-Java/src/io/d0048/gather/PcInfo.java">
 <persistable path="/Client-Java/src/io/d0048/gather/PcInfo.java"/>
 </file>
@@ -351,33 +520,6 @@
 </file>
 <file factoryID="org.eclipse.jdt.ui.ClassFileEditorInputFactory" id="org.eclipse.jdt.ui.ClassFileEditor" name="String.class" tooltip="java.lang.String">
 <persistable org.eclipse.jdt.ui.ClassFileIdentifier="=Client-Java/\/usr\/lib\/jvm\/java-7-oracle\/jre\/lib\/rt.jar&lt;java.lang(String.class"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Blockode.java" tooltip="blockode/src/game/Blockode.java">
-<persistable path="/blockode/src/game/Blockode.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Executer.java" tooltip="Client-Java/src/io/d0048/gather/Executer.java">
-<persistable path="/Client-Java/src/io/d0048/gather/Executer.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Enterence.java" tooltip="Client-Java/src/io/d0048/enterence/Enterence.java">
-<persistable path="/Client-Java/src/io/d0048/enterence/Enterence.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="config.yml" tooltip="blockode/src/config.yml">
-<persistable path="/blockode/src/config.yml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Game.java" tooltip="blockode/src/game/Game.java">
-<persistable path="/blockode/src/game/Game.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="EffectExec.java" tooltip="blockode/src/game/EffectExec.java">
-<persistable path="/blockode/src/game/EffectExec.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="plugin.yml" tooltip="d0048.AntiTroll/src/plugin.yml">
-<persistable path="/d0048.AntiTroll/src/plugin.yml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="plugin.yml" tooltip="Template/src/plugin.yml">
-<persistable path="/Template/src/plugin.yml"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="PwdGetter.java" tooltip="PwdGetter/src/io/d0048/pwdGetter/PwdGetter.java">
-<persistable path="/PwdGetter/src/io/d0048/pwdGetter/PwdGetter.java"/>
 </file>
 </mruList>
 </workbench>
