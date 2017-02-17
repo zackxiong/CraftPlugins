@@ -1,0 +1,10 @@
+package communicater;
+
+public class Reciever implements Runnable{
+
+	@Override
+	public void run() {
+		
+	}
+
+}
