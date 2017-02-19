@@ -39,24 +39,18 @@ public class Controller implements Runnable{
 	//@Override
 	public void run(){
 		try{
-			while (true){
-				//Thread.sleep(5*1000);
-				gui.Gui.log("Thread activated:" + Thread.currentThread().getId());
+			while (true){   
 				//System.out.print("listen..");
 				socket = ss.accept();//本句阻塞！！！
 				gui.Gui.log("Accept connection with port:"+socket.getPort()
 						+"\n"+ "Close status: " + ss.isClosed()
-						+"\n"+ "Now reading:");
+						+"\n"+ "Now reading");
 				//log("listening");
-				Thread.sleep(5*1000);
 				in = new BufferedReader(new InputStreamReader(socket.getInputStream()));   
-				out = new PrintWriter(socket.getOutputStream(),true);
-				String line;
-				do{
-				line = in.readLine();
+				out = new PrintWriter(socket.getOutputStream(),true);   
+				String line = in.readLine();
 				out.println("you input is :" + line);
 				gui.Gui.log("you input is :" + line);
-				} while(line != null);
 				out.close();   
 				in.close();   
 				socket.close();

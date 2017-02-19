@@ -40,7 +40,7 @@ public class Controller implements Runnable{
 	public void run(){
 		try{
 			while (true){
-				//Thread.sleep(5*1000);
+				Thread.sleep(5*1000);
 				gui.Gui.log("Thread activated:" + Thread.currentThread().getId());
 				//System.out.print("listen..");
 				socket = ss.accept();//本句阻塞！！！
