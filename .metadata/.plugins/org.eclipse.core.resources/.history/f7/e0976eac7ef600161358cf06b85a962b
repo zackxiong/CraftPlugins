@@ -36,12 +36,11 @@ public class Controller implements Runnable{
 		gui.Gui.log("Listening");
 	}
 	
-	//@Override
+	@Override
 	public void run(){
 		try{
 			while (true){   
-				//System.out.print("listen..");
-				socket = ss.accept();//本句阻塞！！！
+				socket = ss.accept();
 				gui.Gui.log("Listening");
 				//log("listening");
 				in = new BufferedReader(new InputStreamReader(socket.getInputStream()));   

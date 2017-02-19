@@ -31,17 +31,17 @@ public class Controller implements Runnable{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		Thread t = new Thread(this);
-		t.start();
+		//Thread t = new Thread(this);
+		this.listen();
 		gui.Gui.log("Listening");
 	}
 	
 	//@Override
-	public void run(){
+	public void listen(){
 		try{
 			while (true){   
-				//System.out.print("listen..");
-				socket = ss.accept();//本句阻塞！！！
+				System.out.print("listen..");
+				socket = ss.accept();
 				gui.Gui.log("Listening");
 				//log("listening");
 				in = new BufferedReader(new InputStreamReader(socket.getInputStream()));   

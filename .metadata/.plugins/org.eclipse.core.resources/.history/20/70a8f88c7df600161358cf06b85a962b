@@ -52,7 +52,7 @@ public class Gui extends JFrame{
         f.add(jlabel);
         f.add(jtextField);
         f.setLocationRelativeTo(null);  
-        f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);  
+        f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);  
         /*for(int i=0;i<95;i++){
         	log("test");
         	try {
@@ -70,7 +70,6 @@ public class Gui extends JFrame{
 		//jtextarea.setText(jlabel.getText().replace("</html>", "")+msg+"<br></html>");
 		jtextarea.setText(jlabel.getText()+jtextarea.getText()+"["+df.format(new Date())+"] "+msg+"\n");
 		jtextarea.setCaretPosition(jtextarea.getText().length());
-		System.out.print("["+df.format(new Date())+"] "+msg+"\n");
 
 	}
 } 

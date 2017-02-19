@@ -70,7 +70,7 @@ public class Gui extends JFrame{
 		//jtextarea.setText(jlabel.getText().replace("</html>", "")+msg+"<br></html>");
 		jtextarea.setText(jlabel.getText()+jtextarea.getText()+"["+df.format(new Date())+"] "+msg+"\n");
 		jtextarea.setCaretPosition(jtextarea.getText().length());
-		System.out.print("["+df.format(new Date())+"] "+msg+"\n");
+		System.out.print("["+df.format(new Date())+"] "+msg+"\n"";)
 
 	}
 } 
