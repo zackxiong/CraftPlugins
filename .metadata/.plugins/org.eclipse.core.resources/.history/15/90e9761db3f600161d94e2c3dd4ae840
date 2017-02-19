@@ -57,8 +57,6 @@ public class Controller implements Runnable{
 					line = in.readLine();
 					if(line != null)
 						gui.Gui.log(line);
-					if(line == "close")
-						break;
 				} while(line != null);
 				gui.Gui.log("Closing session" + socket.getLocalSocketAddress()+":"+socket.getPort());
 				out.close();   

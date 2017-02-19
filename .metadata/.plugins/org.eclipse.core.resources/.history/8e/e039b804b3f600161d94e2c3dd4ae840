@@ -53,12 +53,9 @@ public class Controller implements Runnable{
 				out = new PrintWriter(socket.getOutputStream(),true);
 				String line;
 				do{
-					gui.Gui.log("waiting");
-					line = in.readLine();
-					if(line != null)
-						gui.Gui.log(line);
-					if(line == "close")
-						break;
+				line = in.readLine();
+				if(line != null)
+					gui.Gui.log(line);
 				} while(line != null);
 				gui.Gui.log("Closing session" + socket.getLocalSocketAddress()+":"+socket.getPort());
 				out.close();   

@@ -56,15 +56,15 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ServerCtl/src/main/Entery.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="46" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Controller.java" partName="Controller.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/ServerCtl/src/communicater/Controller.java" title="Controller.java" tooltip="ServerCtl/src/communicater/Controller.java" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Controller.java" partName="Controller.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/ServerCtl/src/communicater/Controller.java" title="Controller.java" tooltip="ServerCtl/src/communicater/Controller.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ServerCtl/src/communicater/Controller.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="310" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1447" selectionTopPixel="693"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Reciever.java" partName="Reciever.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/ServerCtl/src/communicater/Reciever.java" title="Reciever.java" tooltip="ServerCtl/src/communicater/Reciever.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ServerCtl/src/communicater/Reciever.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="45" selectionTopPixel="0"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Sender.java" partName="Sender.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/ServerCtl/src/communicater/Sender.java" title="Sender.java" tooltip="ServerCtl/src/communicater/Sender.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Sender.java" partName="Sender.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/ServerCtl/src/communicater/Sender.java" title="Sender.java" tooltip="ServerCtl/src/communicater/Sender.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ServerCtl/src/communicater/Sender.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
@@ -300,7 +300,6 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ServerCtl/src/gui/Gui.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ServerCtl/src/main/Entery.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ServerCtl/src/communicater/Controller.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ServerCtl/src/communicater/Reciever.java"/>
@@ -313,156 +312,159 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ServerCtl/src/communicater/Sender.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ServerCtl/src/gui/Gui.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ServerCtl/src/pc/PC.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ServerCtl/src/communicater/Reciever.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ServerCtl/src/gui/Gui.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/ServerCtl/src/communicater/Controller.java"/>
 </editors>
-<item historyLabel="Reciever.java" index="3">
+<item historyLabel="Reciever.java" index="2">
 <position info="not_deleted" x="45" y="0"/>
 </item>
-<item historyLabel="Controller.java" index="2">
-<position info="not_deleted" x="703" y="0"/>
-</item>
-<item historyLabel="Reciever.java" index="3">
-<position info="not_deleted" x="72" y="0"/>
-</item>
-<item historyLabel="Controller.java" index="2">
-<position info="not_deleted" x="703" y="0"/>
-</item>
-<item historyLabel="Controller.java" index="2">
-<position info="not_deleted" x="364" y="0"/>
-</item>
-<item historyLabel="Controller.java" index="2">
-<position info="not_deleted" x="394" y="0"/>
-</item>
-<item historyLabel="Controller.java" index="2">
-<position info="not_deleted" x="396" y="0"/>
-</item>
-<item historyLabel="Controller.java" index="2">
-<position info="not_deleted" x="760" y="0"/>
-</item>
-<item historyLabel="Controller.java" index="2">
-<position info="not_deleted" x="435" y="0"/>
-</item>
-<item historyLabel="Controller.java" index="2">
-<position info="not_deleted" x="717" y="1"/>
-</item>
-<item historyLabel="Reciever.java" index="3">
-<position info="not_deleted" x="45" y="0"/>
-</item>
-<item historyLabel="Controller.java" index="2">
+<item historyLabel="Controller.java" index="1">
 <position info="not_deleted" x="819" y="0"/>
 </item>
-<item historyLabel="Gui.java" index="0">
-<position info="not_deleted" x="2062" y="0"/>
-</item>
-<item historyLabel="Reciever.java" index="3">
-<position info="not_deleted" x="45" y="0"/>
-</item>
-<item historyLabel="Controller.java" index="2">
-<position info="not_deleted" x="819" y="0"/>
-</item>
-<item historyLabel="Entery.java" index="1">
+<item historyLabel="Entery.java" index="0">
 <position info="not_deleted" x="240" y="0"/>
 </item>
-<item historyLabel="Controller.java" index="2">
+<item historyLabel="Controller.java" index="1">
 <position info="not_deleted" x="819" y="0"/>
 </item>
-<item historyLabel="Controller.java" index="2">
+<item historyLabel="Controller.java" index="1">
 <position/>
 </item>
-<item historyLabel="Controller.java" index="2">
+<item historyLabel="Controller.java" index="1">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Gui.java" index="4">
+<item historyLabel="Gui.java" index="3">
 <position info="not_deleted" x="1537" y="0"/>
 </item>
-<item historyLabel="Controller.java" index="2">
+<item historyLabel="Controller.java" index="1">
 <position info="not_deleted" x="1313" y="0"/>
 </item>
-<item historyLabel="Controller.java" index="2">
+<item historyLabel="Controller.java" index="1">
 <position/>
 </item>
-<item historyLabel="Controller.java" index="2">
+<item historyLabel="Controller.java" index="1">
 <position/>
 </item>
-<item historyLabel="Controller.java" index="2">
+<item historyLabel="Controller.java" index="1">
 <position info="not_deleted" x="991" y="0"/>
 </item>
-<item historyLabel="Controller.java" index="2">
+<item historyLabel="Controller.java" index="1">
 <position info="not_deleted" x="808" y="0"/>
 </item>
-<item historyLabel="Gui.java" index="4">
+<item historyLabel="Gui.java" index="3">
 <position info="not_deleted" x="1537" y="0"/>
 </item>
-<item historyLabel="Gui.java" index="4">
+<item historyLabel="Gui.java" index="3">
 <position info="not_deleted" x="2065" y="3"/>
 </item>
-<item historyLabel="Gui.java" index="4">
+<item historyLabel="Gui.java" index="3">
 <position info="not_deleted" x="2383" y="0"/>
 </item>
-<item historyLabel="Gui.java" index="4">
+<item historyLabel="Gui.java" index="3">
 <position info="not_deleted" x="2383" y="0"/>
 </item>
-<item historyLabel="Controller.java" index="2">
+<item historyLabel="Controller.java" index="1">
 <position info="not_deleted" x="808" y="0"/>
 </item>
-<item historyLabel="Controller.java" index="2">
+<item historyLabel="Controller.java" index="1">
 <position/>
 </item>
-<item historyLabel="Reciever.java" index="5">
+<item historyLabel="Reciever.java" index="4">
 <position info="not_deleted" x="45" y="0"/>
 </item>
-<item historyLabel="Gui.java" index="4">
+<item historyLabel="Gui.java" index="3">
 <position info="not_deleted" x="2383" y="0"/>
 </item>
-<item historyLabel="Entery.java" index="6">
+<item historyLabel="Entery.java" index="5">
 <position info="not_deleted" x="240" y="0"/>
 </item>
-<item historyLabel="InfoSenser.java" index="7">
+<item historyLabel="InfoSenser.java" index="6">
 <position info="not_deleted" x="864" y="0"/>
 </item>
-<item historyLabel="Entery.java" index="6">
+<item historyLabel="Entery.java" index="5">
 <position info="not_deleted" x="246" y="0"/>
 </item>
-<item historyLabel="Controller.java" index="8">
+<item historyLabel="Controller.java" index="7">
 <position info="not_deleted" x="310" y="0"/>
 </item>
-<item historyLabel="Reciever.java" index="9">
+<item historyLabel="Reciever.java" index="8">
 <position info="not_deleted" x="45" y="0"/>
 </item>
-<item historyLabel="Sender.java" index="10">
+<item historyLabel="Sender.java" index="9">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Gui.java" index="11">
+<item historyLabel="Gui.java" index="10">
 <position info="not_deleted" x="2383" y="0"/>
 </item>
-<item historyLabel="PC.java" index="12">
+<item historyLabel="PC.java" index="11">
 <position info="not_deleted" x="32" y="0"/>
 </item>
-<item historyLabel="Gui.java" index="11">
+<item historyLabel="Gui.java" index="10">
 <position info="not_deleted" x="2383" y="0"/>
 </item>
-<item historyLabel="Entery.java" index="6">
+<item historyLabel="Entery.java" index="5">
 <position info="not_deleted" x="46" y="0"/>
 </item>
-<item historyLabel="Controller.java" index="8">
+<item historyLabel="Controller.java" index="7">
 <position info="not_deleted" x="310" y="0"/>
 </item>
-<item historyLabel="Reciever.java" index="9">
+<item historyLabel="Reciever.java" index="8">
 <position info="not_deleted" x="45" y="0"/>
 </item>
-<item historyLabel="Sender.java" index="10">
+<item historyLabel="Sender.java" index="9">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Entery.java" index="6">
+<item historyLabel="Entery.java" index="5">
 <position info="not_deleted" x="46" y="0"/>
 </item>
-<item historyLabel="PC.java" index="12">
+<item historyLabel="PC.java" index="11">
 <position info="not_deleted" x="36" y="0"/>
 </item>
-<item historyLabel="Reciever.java" index="9">
+<item historyLabel="Reciever.java" index="8">
 <position info="not_deleted" x="45" y="0"/>
 </item>
-<item active="true" historyLabel="Sender.java" index="10">
+<item historyLabel="Sender.java" index="9">
 <position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Reciever.java" index="12">
+<position info="not_deleted" x="45" y="0"/>
+</item>
+<item historyLabel="Gui.java" index="13">
+<position info="not_deleted" x="2383" y="0"/>
+</item>
+<item historyLabel="Controller.java" index="14">
+<position info="not_deleted" x="310" y="0"/>
+</item>
+<item historyLabel="Controller.java" index="14">
+<position info="not_deleted" x="1140" y="0"/>
+</item>
+<item historyLabel="Controller.java" index="14">
+<position info="not_deleted" x="1158" y="0"/>
+</item>
+<item historyLabel="Controller.java" index="14">
+<position info="not_deleted" x="1186" y="0"/>
+</item>
+<item historyLabel="Controller.java" index="14">
+<position info="not_deleted" x="1202" y="0"/>
+</item>
+<item historyLabel="Controller.java" index="14">
+<position info="not_deleted" x="1555" y="0"/>
+</item>
+<item historyLabel="Controller.java" index="14">
+<position info="not_deleted" x="994" y="0"/>
+</item>
+<item historyLabel="Controller.java" index="14">
+<position info="not_deleted" x="1573" y="0"/>
+</item>
+<item historyLabel="Controller.java" index="14">
+<position info="not_deleted" x="1628" y="0"/>
+</item>
+<item historyLabel="Controller.java" index="14">
+<position info="not_deleted" x="1447" y="0"/>
+</item>
+<item active="true" historyLabel="Controller.java" index="14">
+<position info="not_deleted" x="1559" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
