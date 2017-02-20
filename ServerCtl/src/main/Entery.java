@@ -1,7 +1,6 @@
 package main;
 
 import communicater.Controller;
-
 import gui.Gui;
 
 public class Entery {

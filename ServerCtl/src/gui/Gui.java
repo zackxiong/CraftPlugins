@@ -7,6 +7,7 @@ import java.awt.TextField;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.swing.BoxLayout;
 import javax.swing.JFrame;  
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
@@ -16,13 +17,14 @@ import javax.swing.WindowConstants;
   
 public class Gui extends JFrame{  
     static Label label=new Label();
-    static JLabel jlabel=new JLabel(); 
+    //static JLabel jlabel=new JLabel(); 
     static Gui f = new Gui();  
     static JTextField jtextField = new JTextField(20);
-    static JTextArea jtextarea=new JTextArea("Server日志开始记录:\n",50,120);
+    static JTextArea jtextarea=new JTextArea("Server日志开始记录:\n",10,50);
     static SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     static JScrollPane jsp;
     static TextField tf;
+    static FlowLayout mainLayout = new FlowLayout();
     /**
 	 * 
 	 */
@@ -32,11 +34,9 @@ public class Gui extends JFrame{
         f.setVisible(true);  
         f.setSize(1000,800);  
         f.setTitle("Server控制台");
-        f.setLayout(new FlowLayout());
+        f.setLayout(mainLayout);
         label.setLocation(0, 0);
         label.setText("日志:");
-        jlabel.setBackground(Color.black);
-        jlabel.setLocation(10, 6);
         //textField.append("1");
         jtextarea.setEditable(false);
         jtextarea.setLineWrap(true);
@@ -48,11 +48,10 @@ public class Gui extends JFrame{
         		JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED); 
 		jsp.setWheelScrollingEnabled(true);
         f.add(jsp);
-        f.add(label);
-        f.add(jlabel);
+        f.add(label, FlowLayout.LEFT);
         f.add(jtextField);
         f.setLocationRelativeTo(null);  
-        f.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);  
+        f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);  
         /*for(int i=0;i<95;i++){
         	log("test");
         	try {
@@ -68,8 +67,9 @@ public class Gui extends JFrame{
     }
 	public static void log(String msg){
 		//jtextarea.setText(jlabel.getText().replace("</html>", "")+msg+"<br></html>");
-		jtextarea.setText(jlabel.getText()+jtextarea.getText()+"["+df.format(new Date())+"] "+msg+"\n");
+		jtextarea.setText(jtextarea.getText()+"["+df.format(new Date())+"] "+msg+"\n");
 		jtextarea.setCaretPosition(jtextarea.getText().length());
+		System.out.print("["+df.format(new Date())+"] "+msg+"\n");
 
 	}
 } 

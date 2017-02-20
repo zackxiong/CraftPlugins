@@ -1,0 +1,5 @@
+package communicater;
+
+public final class HeadDic {
+	byte CLOSE_CONNECTION = 1;
+}
