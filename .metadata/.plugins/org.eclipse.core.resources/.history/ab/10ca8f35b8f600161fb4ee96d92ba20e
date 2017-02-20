@@ -1,0 +1,8 @@
+package communicater;
+
+public class Reciever{
+
+	public Reciever(){
+		byte CLOSE = 0;
+	}
+}
