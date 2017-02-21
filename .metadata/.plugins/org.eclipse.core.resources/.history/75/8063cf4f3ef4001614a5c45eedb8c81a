@@ -1,0 +1,26 @@
+package communicater;
+
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class Controller {
+	int port;
+	Reciever reciever = new Reciever();
+	Sender sender = new Sender();
+	
+	private ServerSocket ss;
+	private Socket socket;
+	private BufferedReader in;
+	private PrintWriter out;
+	
+	Controller(){
+		this(1800);
+	}
+
+	Controller(int port){
+		this.port = port;
+	}
+
+}
