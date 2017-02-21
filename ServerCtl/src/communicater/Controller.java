@@ -31,31 +31,45 @@ public class Controller implements Runnable{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		gui.Gui.log("Start a thread, listening on port:"+port);
 		Thread t = new Thread(this);
 		t.start();
-		gui.Gui.log("Listening");
 	}
 	
-	@Override
+	//@Override
 	public void run(){
-		try{
-			while (true){   
-				socket = ss.accept();
-				gui.Gui.log("Listening");
-				in = new BufferedReader(new InputStreamReader(socket.getInputStream()));   
-				out = new PrintWriter(socket.getOutputStream(),true);   
-				String line = in.readLine();   
-				out.println("you input is :" + line);
-				gui.Gui.log("you input is :" + line);
-				out.close();   
-				in.close();   
-				socket.close();
-				ss.close();
+			while (true){
+				try{
+					//Thread.sleep(5*1000);
+					gui.Gui.log("Thread activated:" + Thread.currentThread().getId());
+					//System.out.print("listen..");
+					socket = ss.accept();//本句阻塞！！！
+					gui.Gui.log("Accept connection with port:"+socket.getPort()
+							+"\n"+ "Close status: " + ss.isClosed()
+							+"\n"+ "Now reading:");
+					//log("listening");
+					//Thread.sleep(3*1000);
+					in = new BufferedReader(new InputStreamReader(socket.getInputStream()));   
+					out = new PrintWriter(socket.getOutputStream(),true);
+					String line;
+					do{
+						//gui.Gui.log("waiting");
+						line = in.readLine();
+						if(line != null)
+							gui.Gui.log(line);
+						if(line == "close")
+							break;
+					} while(line != null);
+					gui.Gui.log("Closing session" + socket.getLocalSocketAddress()+":"+socket.getPort());
+					out.close();   
+					in.close();   
+					socket.close();
+					//ss.close();
+				}
+				catch(Exception e){
+					e.printStackTrace();
+				}
 			}
-		}
-		catch(Exception e){
-			e.printStackTrace();
-		}
 	}
 }
 
