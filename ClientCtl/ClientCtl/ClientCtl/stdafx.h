@@ -10,8 +10,8 @@
 
 #define DEBUG
 #define STICKY_MODE
-#define SOCKET_PORT "1082"
-#define SERVER_ADDR "www.baidu.com"
+#define SOCKET_PORT "1800"
+#define SERVER_ADDR "127.0.0.1"
 
 #include "targetver.h"
 
