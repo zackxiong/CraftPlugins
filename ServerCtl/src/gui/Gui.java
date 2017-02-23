@@ -2,11 +2,14 @@ package gui;
 
 import java.awt.Color;
 import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.GridLayout;
 import java.awt.Label;
 import java.awt.TextField;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;  
 import javax.swing.JLabel;
@@ -16,28 +19,35 @@ import javax.swing.JTextField;
 import javax.swing.WindowConstants;
   
 public class Gui extends JFrame{  
-    static Label label=new Label();
-    //static JLabel jlabel=new JLabel(); 
-    static Gui f = new Gui();  
+    //static Label label=new Label();
+    static JLabel jlabel=new JLabel("LogOutput：                                                 "); 
+    static JFrame f = new JFrame();  
     static JTextField jtextField = new JTextField(20);
-    static JTextArea jtextarea=new JTextArea("Server日志开始记录:\n",10,50);
+    static JTextArea jtextarea=new JTextArea("Server日志开始记录:\n",10,30);
     static SimpleDateFormat df = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     static JScrollPane jsp;
-    static TextField tf;
-    static FlowLayout mainLayout = new FlowLayout();
+    static GridLayout mainLayout = new GridLayout(3,2);
+    static Box logBox = Box.createVerticalBox();
     /**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public static void startGui(String[] args) {  
+	public static void startGui(String[] args) {
+		//frame 初始化
         f.setVisible(true);  
         f.setSize(1000,800);  
         f.setTitle("Server控制台");
         f.setLayout(mainLayout);
-        label.setLocation(0, 0);
-        label.setText("日志:");
-        //textField.append("1");
+        f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        f.setLocationRelativeTo(null);
+        
+        //日志框初始化
+        //jlabel.setText("日志:");
+        jlabel.setFont((new Font("宋体",Font.BOLD, 16)));
+        jlabel.setSize(20, 20);
+        logBox.add(jlabel);
+
         jtextarea.setEditable(false);
         jtextarea.setLineWrap(true);
         jtextarea.setWrapStyleWord(true);
@@ -47,22 +57,13 @@ public class Gui extends JFrame{
         jsp.setVerticalScrollBarPolicy( 
         		JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED); 
 		jsp.setWheelScrollingEnabled(true);
-        f.add(jsp);
-        f.add(label, FlowLayout.LEFT);
-        f.add(jtextField);
-        f.setLocationRelativeTo(null);  
-        f.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);  
-        /*for(int i=0;i<95;i++){
-        	log("test");
-        	try {
-				Thread.sleep(20);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-        }*/
-
-        	//log("test");
+		logBox.add(jsp);
+		logBox.add(jtextField);
+		
+		f.add(logBox);
+        
+        //f.add(jtextField);
+        
         log("Gui载入成功！");
     }
 	public static void log(String msg){

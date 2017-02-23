@@ -3149,3 +3149,413 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64
 
 !ENTRY org.eclipse.core.resources 2 10035 2017-02-20 21:13:01.206
 !MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+!SESSION 2017-02-22 15:11:08.948 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=zh_CN
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.help.base 4 4 2017-02-22 15:48:15.537
+!MESSAGE Help documentation could not be indexed completely.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-02-22 15:48:15.537
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples/doc-html/swt_imageanalyzer_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-02-22 15:48:15.537
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples/doc-html/swt_hoverhelp_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-02-22 15:48:15.537
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples.controls/doc-html/swt_customcontrols_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-02-22 15:48:15.537
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples/doc-html/swt_addressbook_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-02-22 15:48:15.538
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples.launcher/doc-html/swt_launcher_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-02-22 15:48:15.538
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.compare.examples.xml/doc-html/ui_xmlcompare_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-02-22 15:48:15.538
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples.layouts/doc-html/swt_layout_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-02-22 15:48:15.538
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.team.examples.filesystem/doc-html/team_model_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-02-22 15:48:15.538
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.team.examples.filesystem/doc-html/team_filesystem_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-02-22 15:48:15.538
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples/doc-html/swt_javaviewer_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-02-22 15:48:15.538
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples/doc-html/swt_manual_setup.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-02-22 15:48:15.538
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.ui.examples.multipageeditor/doc-html/ui_multipageeditor_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-02-22 15:48:15.538
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.ui.examples.fieldassist/doc-html/ui_fieldassist_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-02-22 15:48:15.538
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples.ole.win32/doc-html/swt_ole_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-02-22 15:48:15.538
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.team.examples.filesystem/doc-html/team_localhistory_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-02-22 15:48:15.538
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples/doc-html/swt_clipboard_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-02-22 15:48:15.538
+!MESSAGE Help document /org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/awt/package-summary.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-02-22 15:48:15.538
+!MESSAGE Help document /org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/ole/win32/package-summary.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-02-22 15:48:15.538
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.ui.examples.readmetool/doc-html/ui_readmetool_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-02-22 15:48:15.538
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples.paint/doc-html/swt_paint_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-02-22 15:48:15.538
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples/doc-html/swt_texteditor_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-02-22 15:48:15.538
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples/doc-html/swt_helloworld_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-02-22 15:48:15.538
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples.controls/doc-html/swt_controls_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-02-22 15:48:15.538
+!MESSAGE Help document /org.eclipse.platform.doc.isv/reference/api/org/eclipse/swt/opengl/package-summary.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-02-22 15:48:15.538
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples.browser/doc-html/swt_browser_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-02-22 15:48:15.538
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.compare.examples/doc-html/ui_structurecreator_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-02-22 15:48:15.538
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.swt.examples/doc-html/swt_fileviewer_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-02-22 15:48:15.538
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.ui.examples.propertysheet/doc-html/ui_propertysheet_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-02-22 15:48:15.538
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.ui.examples.undo/doc-html/ui_undo_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-02-22 15:48:15.538
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.ui.examples.javaeditor/doc-html/ui_templateeditor_ex.html cannot be opened.
+!SUBENTRY 1 org.eclipse.help.base 4 4 2017-02-22 15:48:15.538
+!MESSAGE Help document /org.eclipse.platform.doc.isv/samples/org.eclipse.ui.examples.javaeditor/doc-html/ui_javaeditor_ex.html cannot be opened.
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2017-02-22 15:48:46.809
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2017-02-22 15:48:46.809
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:48:46.809
+!MESSAGE Software being installed: WindowBuilder XML Core (requires Eclipse WTP/WST) 1.7.0.r42x201405021458 (org.eclipse.wb.core.xml.feature.feature.group 1.7.0.r42x201405021458)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:48:46.809
+!MESSAGE Missing requirement: WindowBuilder Core for XML GUI's 1.7.0.r42x201405021458 (org.eclipse.wb.core.xml 1.7.0.r42x201405021458) requires 'bundle org.eclipse.wst.sse.core 0.0.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-02-22 15:48:46.809
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:48:46.809
+!MESSAGE From: WindowBuilder XML Core (requires Eclipse WTP/WST) 1.7.0.r42x201405021458 (org.eclipse.wb.core.xml.feature.feature.group 1.7.0.r42x201405021458)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:48:46.809
+!MESSAGE To: org.eclipse.wb.core.xml [1.7.0.r42x201405021458]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2017-02-22 15:48:46.811
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2017-02-22 15:48:46.811
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:48:46.811
+!MESSAGE Software being installed: WindowBuilder XML Core (requires Eclipse WTP/WST) 1.7.0.r42x201405021458 (org.eclipse.wb.core.xml.feature.feature.group 1.7.0.r42x201405021458)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:48:46.811
+!MESSAGE Missing requirement: WindowBuilder Core for XML GUI's 1.7.0.r42x201405021458 (org.eclipse.wb.core.xml 1.7.0.r42x201405021458) requires 'bundle org.eclipse.wst.sse.core 0.0.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-02-22 15:48:46.811
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:48:46.811
+!MESSAGE From: WindowBuilder XML Core (requires Eclipse WTP/WST) 1.7.0.r42x201405021458 (org.eclipse.wb.core.xml.feature.feature.group 1.7.0.r42x201405021458)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:48:46.811
+!MESSAGE To: org.eclipse.wb.core.xml [1.7.0.r42x201405021458]
+
+!ENTRY org.eclipse.osgi 2 1 2017-02-22 15:49:07.704
+!MESSAGE NLS unused message: CacheManager_CannotLoadNonUrlLocation in: org.eclipse.equinox.internal.p2.repository.messages
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2017-02-22 15:49:07.706
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: Communication with repository at https://dl-ssl.google.com/android/eclipse/ failed.
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.createCache(CacheManager.java:151)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.getLocalFile(SimpleMetadataRepositoryFactory.java:66)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:88)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:758)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:651)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:83)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:668)
+	at org.eclipse.ecf.provider.filetransfer.events.socket.SocketEventCreateUtil.createSocket(SocketEventCreateUtil.java:43)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient.ECFHttpClientProtocolSocketFactory.createSocket(ECFHttpClientProtocolSocketFactory.java:81)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient.ECFHttpClientProtocolSocketFactory.createSocket(ECFHttpClientProtocolSocketFactory.java:73)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient.ECFHttpClientProtocolSocketFactory.createSocket(ECFHttpClientProtocolSocketFactory.java:65)
+	at org.apache.commons.httpclient.HttpConnection.open(HttpConnection.java:707)
+	at org.apache.commons.httpclient.MultiThreadedHttpConnectionManager$HttpConnectionAdapter.open(MultiThreadedHttpConnectionManager.java:1361)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeWithRetry(HttpMethodDirector.java:387)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeMethod(HttpMethodDirector.java:171)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:397)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:346)
+	at org.eclipse.ecf.provider.filetransfer.httpclient.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:232)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	... 1 more
+!SUBENTRY 1 org.eclipse.equinox.p2.repository 4 1002 2017-02-22 15:49:07.772
+!MESSAGE Communication with repository at https://dl-ssl.google.com/android/eclipse/ failed.
+!STACK 0
+java.net.SocketTimeoutException: connect timed out
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:668)
+	at org.eclipse.ecf.provider.filetransfer.events.socket.SocketEventCreateUtil.createSocket(SocketEventCreateUtil.java:43)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient.ECFHttpClientProtocolSocketFactory.createSocket(ECFHttpClientProtocolSocketFactory.java:81)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient.ECFHttpClientProtocolSocketFactory.createSocket(ECFHttpClientProtocolSocketFactory.java:73)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient.ECFHttpClientProtocolSocketFactory.createSocket(ECFHttpClientProtocolSocketFactory.java:65)
+	at org.apache.commons.httpclient.HttpConnection.open(HttpConnection.java:707)
+	at org.apache.commons.httpclient.MultiThreadedHttpConnectionManager$HttpConnectionAdapter.open(MultiThreadedHttpConnectionManager.java:1361)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeWithRetry(HttpMethodDirector.java:387)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeMethod(HttpMethodDirector.java:171)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:397)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:346)
+	at org.eclipse.ecf.provider.filetransfer.httpclient.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:232)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2017-02-22 15:51:39.450 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=zh_CN
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.osgi 2 1 2017-02-22 15:56:56.416
+!MESSAGE NLS unused message: CacheManager_CannotLoadNonUrlLocation in: org.eclipse.equinox.internal.p2.repository.messages
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2017-02-22 15:56:56.582
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: Communication with repository at https://dl-ssl.google.com/android/eclipse/ failed.
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.createCache(CacheManager.java:151)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.getLocalFile(SimpleMetadataRepositoryFactory.java:66)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:88)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:758)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:651)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:83)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:668)
+	at org.eclipse.ecf.provider.filetransfer.events.socket.SocketEventCreateUtil.createSocket(SocketEventCreateUtil.java:43)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient.ECFHttpClientProtocolSocketFactory.createSocket(ECFHttpClientProtocolSocketFactory.java:81)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient.ECFHttpClientProtocolSocketFactory.createSocket(ECFHttpClientProtocolSocketFactory.java:73)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient.ECFHttpClientProtocolSocketFactory.createSocket(ECFHttpClientProtocolSocketFactory.java:65)
+	at org.apache.commons.httpclient.HttpConnection.open(HttpConnection.java:707)
+	at org.apache.commons.httpclient.MultiThreadedHttpConnectionManager$HttpConnectionAdapter.open(MultiThreadedHttpConnectionManager.java:1361)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeWithRetry(HttpMethodDirector.java:387)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeMethod(HttpMethodDirector.java:171)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:397)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:346)
+	at org.eclipse.ecf.provider.filetransfer.httpclient.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:232)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	... 1 more
+!SUBENTRY 1 org.eclipse.equinox.p2.repository 4 1002 2017-02-22 15:56:56.584
+!MESSAGE Communication with repository at https://dl-ssl.google.com/android/eclipse/ failed.
+!STACK 0
+java.net.SocketTimeoutException: connect timed out
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:668)
+	at org.eclipse.ecf.provider.filetransfer.events.socket.SocketEventCreateUtil.createSocket(SocketEventCreateUtil.java:43)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient.ECFHttpClientProtocolSocketFactory.createSocket(ECFHttpClientProtocolSocketFactory.java:81)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient.ECFHttpClientProtocolSocketFactory.createSocket(ECFHttpClientProtocolSocketFactory.java:73)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient.ECFHttpClientProtocolSocketFactory.createSocket(ECFHttpClientProtocolSocketFactory.java:65)
+	at org.apache.commons.httpclient.HttpConnection.open(HttpConnection.java:707)
+	at org.apache.commons.httpclient.MultiThreadedHttpConnectionManager$HttpConnectionAdapter.open(MultiThreadedHttpConnectionManager.java:1361)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeWithRetry(HttpMethodDirector.java:387)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeMethod(HttpMethodDirector.java:171)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:397)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:346)
+	at org.eclipse.ecf.provider.filetransfer.httpclient.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:232)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2017-02-22 15:58:36.125
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 1 10001 2017-02-22 15:58:36.125
+!MESSAGE Your original request has been modified.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10006 2017-02-22 15:58:36.125
+!MESSAGE "WindowBuilder Java Core" is already present because other installed software requires it.  It will be added to the installed software list.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10006 2017-02-22 15:58:36.125
+!MESSAGE "WindowBuilder Core" is already present because other installed software requires it.  It will be added to the installed software list.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10006 2017-02-22 15:58:36.125
+!MESSAGE "WindowBuilder Core Documentation" is already present because other installed software requires it.  It will be added to the installed software list.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10006 2017-02-22 15:58:36.125
+!MESSAGE "WindowBuilder GroupLayout Support" is already present because other installed software requires it.  It will be added to the installed software list.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10006 2017-02-22 15:58:36.125
+!MESSAGE "WindowBuilder Core UI" is already present because other installed software requires it.  It will be added to the installed software list.
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2017-02-22 15:58:36.125
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:58:36.125
+!MESSAGE Software being installed: SWT Designer XWT Support (requires Eclipse WTP/WST) 1.7.0.r42x201405021548 (org.eclipse.wb.xwt.feature.feature.group 1.7.0.r42x201405021548)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:58:36.125
+!MESSAGE Missing requirement: WindowBuilder Core for XML GUI's 1.7.0.r42x201405021458 (org.eclipse.wb.core.xml 1.7.0.r42x201405021458) requires 'bundle org.eclipse.wst.sse.core 0.0.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-02-22 15:58:36.125
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:58:36.125
+!MESSAGE From: WindowBuilder XML Core (requires Eclipse WTP/WST) 1.7.0.r42x201405021458 (org.eclipse.wb.core.xml.feature.feature.group 1.7.0.r42x201405021458)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:58:36.125
+!MESSAGE To: org.eclipse.wb.core.xml [1.7.0.r42x201405021458]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-02-22 15:58:36.125
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:58:36.125
+!MESSAGE From: SWT Designer XWT Support (requires Eclipse WTP/WST) 1.7.0.r42x201405021548 (org.eclipse.wb.xwt.feature.feature.group 1.7.0.r42x201405021548)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:58:36.125
+!MESSAGE To: org.eclipse.wb.core.xml.feature.feature.group 1.7.0.r42x201405021458
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2017-02-22 15:58:36.127
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 1 10001 2017-02-22 15:58:36.127
+!MESSAGE Your original request has been modified.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10006 2017-02-22 15:58:36.127
+!MESSAGE "WindowBuilder Java Core" is already present because other installed software requires it.  It will be added to the installed software list.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10006 2017-02-22 15:58:36.127
+!MESSAGE "WindowBuilder Core" is already present because other installed software requires it.  It will be added to the installed software list.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10006 2017-02-22 15:58:36.127
+!MESSAGE "WindowBuilder Core Documentation" is already present because other installed software requires it.  It will be added to the installed software list.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10006 2017-02-22 15:58:36.127
+!MESSAGE "WindowBuilder GroupLayout Support" is already present because other installed software requires it.  It will be added to the installed software list.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10006 2017-02-22 15:58:36.128
+!MESSAGE "WindowBuilder Core UI" is already present because other installed software requires it.  It will be added to the installed software list.
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2017-02-22 15:58:36.128
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:58:36.128
+!MESSAGE Software being installed: SWT Designer XWT Support (requires Eclipse WTP/WST) 1.7.0.r42x201405021548 (org.eclipse.wb.xwt.feature.feature.group 1.7.0.r42x201405021548)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:58:36.128
+!MESSAGE Missing requirement: WindowBuilder Core for XML GUI's 1.7.0.r42x201405021458 (org.eclipse.wb.core.xml 1.7.0.r42x201405021458) requires 'bundle org.eclipse.wst.sse.core 0.0.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-02-22 15:58:36.128
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:58:36.128
+!MESSAGE From: WindowBuilder XML Core (requires Eclipse WTP/WST) 1.7.0.r42x201405021458 (org.eclipse.wb.core.xml.feature.feature.group 1.7.0.r42x201405021458)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:58:36.128
+!MESSAGE To: org.eclipse.wb.core.xml [1.7.0.r42x201405021458]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-02-22 15:58:36.128
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:58:36.128
+!MESSAGE From: SWT Designer XWT Support (requires Eclipse WTP/WST) 1.7.0.r42x201405021548 (org.eclipse.wb.xwt.feature.feature.group 1.7.0.r42x201405021548)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:58:36.128
+!MESSAGE To: org.eclipse.wb.core.xml.feature.feature.group 1.7.0.r42x201405021458
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2017-02-22 15:58:48.233
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2017-02-22 15:58:48.233
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:58:48.233
+!MESSAGE Software being installed: SWT Designer XWT Support (requires Eclipse WTP/WST) 1.7.0.r42x201405021548 (org.eclipse.wb.xwt.feature.feature.group 1.7.0.r42x201405021548)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:58:48.233
+!MESSAGE Missing requirement: WindowBuilder Core for XML GUI's 1.7.0.r42x201405021458 (org.eclipse.wb.core.xml 1.7.0.r42x201405021458) requires 'bundle org.eclipse.wst.sse.core 0.0.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-02-22 15:58:48.233
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:58:48.233
+!MESSAGE From: WindowBuilder XML Core (requires Eclipse WTP/WST) 1.7.0.r42x201405021458 (org.eclipse.wb.core.xml.feature.feature.group 1.7.0.r42x201405021458)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:58:48.234
+!MESSAGE To: org.eclipse.wb.core.xml [1.7.0.r42x201405021458]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-02-22 15:58:48.234
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:58:48.234
+!MESSAGE From: SWT Designer XWT Support (requires Eclipse WTP/WST) 1.7.0.r42x201405021548 (org.eclipse.wb.xwt.feature.feature.group 1.7.0.r42x201405021548)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:58:48.234
+!MESSAGE To: org.eclipse.wb.core.xml.feature.feature.group 1.7.0.r42x201405021458
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2017-02-22 15:58:48.235
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2017-02-22 15:58:48.235
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:58:48.235
+!MESSAGE Software being installed: SWT Designer XWT Support (requires Eclipse WTP/WST) 1.7.0.r42x201405021548 (org.eclipse.wb.xwt.feature.feature.group 1.7.0.r42x201405021548)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:58:48.235
+!MESSAGE Missing requirement: WindowBuilder Core for XML GUI's 1.7.0.r42x201405021458 (org.eclipse.wb.core.xml 1.7.0.r42x201405021458) requires 'bundle org.eclipse.wst.sse.core 0.0.0' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-02-22 15:58:48.235
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:58:48.235
+!MESSAGE From: WindowBuilder XML Core (requires Eclipse WTP/WST) 1.7.0.r42x201405021458 (org.eclipse.wb.core.xml.feature.feature.group 1.7.0.r42x201405021458)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:58:48.235
+!MESSAGE To: org.eclipse.wb.core.xml [1.7.0.r42x201405021458]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2017-02-22 15:58:48.235
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:58:48.235
+!MESSAGE From: SWT Designer XWT Support (requires Eclipse WTP/WST) 1.7.0.r42x201405021548 (org.eclipse.wb.xwt.feature.feature.group 1.7.0.r42x201405021548)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2017-02-22 15:58:48.235
+!MESSAGE To: org.eclipse.wb.core.xml.feature.feature.group 1.7.0.r42x201405021458
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2017-02-22 16:01:35.263
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: Communication with repository at https://dl-ssl.google.com/android/eclipse/ failed.
+	at org.eclipse.equinox.internal.p2.repository.CacheManager.createCache(CacheManager.java:151)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.getLocalFile(SimpleMetadataRepositoryFactory.java:66)
+	at org.eclipse.equinox.internal.p2.metadata.repository.SimpleMetadataRepositoryFactory.load(SimpleMetadataRepositoryFactory.java:88)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.factoryLoad(MetadataRepositoryManager.java:57)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:758)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:651)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:83)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:668)
+	at org.eclipse.ecf.provider.filetransfer.events.socket.SocketEventCreateUtil.createSocket(SocketEventCreateUtil.java:43)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient.ECFHttpClientProtocolSocketFactory.createSocket(ECFHttpClientProtocolSocketFactory.java:81)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient.ECFHttpClientProtocolSocketFactory.createSocket(ECFHttpClientProtocolSocketFactory.java:73)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient.ECFHttpClientProtocolSocketFactory.createSocket(ECFHttpClientProtocolSocketFactory.java:65)
+	at org.apache.commons.httpclient.HttpConnection.open(HttpConnection.java:707)
+	at org.apache.commons.httpclient.MultiThreadedHttpConnectionManager$HttpConnectionAdapter.open(MultiThreadedHttpConnectionManager.java:1361)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeWithRetry(HttpMethodDirector.java:387)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeMethod(HttpMethodDirector.java:171)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:397)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:346)
+	at org.eclipse.ecf.provider.filetransfer.httpclient.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:232)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	... 1 more
+!SUBENTRY 1 org.eclipse.equinox.p2.repository 4 1002 2017-02-22 16:01:35.264
+!MESSAGE Communication with repository at https://dl-ssl.google.com/android/eclipse/ failed.
+!STACK 0
+java.net.SocketTimeoutException: connect timed out
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:668)
+	at org.eclipse.ecf.provider.filetransfer.events.socket.SocketEventCreateUtil.createSocket(SocketEventCreateUtil.java:43)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient.ECFHttpClientProtocolSocketFactory.createSocket(ECFHttpClientProtocolSocketFactory.java:81)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient.ECFHttpClientProtocolSocketFactory.createSocket(ECFHttpClientProtocolSocketFactory.java:73)
+	at org.eclipse.ecf.internal.provider.filetransfer.httpclient.ECFHttpClientProtocolSocketFactory.createSocket(ECFHttpClientProtocolSocketFactory.java:65)
+	at org.apache.commons.httpclient.HttpConnection.open(HttpConnection.java:707)
+	at org.apache.commons.httpclient.MultiThreadedHttpConnectionManager$HttpConnectionAdapter.open(MultiThreadedHttpConnectionManager.java:1361)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeWithRetry(HttpMethodDirector.java:387)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeMethod(HttpMethodDirector.java:171)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:397)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:346)
+	at org.eclipse.ecf.provider.filetransfer.httpclient.HttpClientFileSystemBrowser.runRequest(HttpClientFileSystemBrowser.java:232)
+	at org.eclipse.ecf.provider.filetransfer.browse.AbstractFileSystemBrowser$DirectoryJob.run(AbstractFileSystemBrowser.java:69)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
