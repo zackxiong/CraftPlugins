@@ -49,8 +49,7 @@ int main(int argc, char *argv[]) {
 
 	try {	infosenser = new InfoSenser();	}
 	catch (std::string str) { std::cout << str << std::endl; }
-
-	try { cmtr = new Communicater(); }
+	try { cmtr = new Communicater();  }
 	catch (std::string str) { std::cout << str << std::endl; }
 
 	//注册AliveKeeper

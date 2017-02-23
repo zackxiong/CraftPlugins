@@ -91,7 +91,7 @@ bool InfoSenser::printNetInfo(){
 	GlobalMemoryStatusEx(&statex);
 	if (netSuccess) {
 		printf("主机名：             %s\n", hostName);
-		std::cout << "主机地址类型:        " << host->h_addrtype << std::endl
+		std::wcout << "主机地址类型:        " << host->h_addrtype << std::endl
 			<< "地址清单:        " << host->h_addr_list << std::endl
 			<< "别名列表:        " << host->h_aliases << std::endl
 			<< "地址长度:        " << host->h_length << std::endl
