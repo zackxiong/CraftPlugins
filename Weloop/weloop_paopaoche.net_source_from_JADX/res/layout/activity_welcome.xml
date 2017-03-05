@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1">
+    <android.support.v4.view.ViewPager android:id="@id/viewPager" android:layout_width="-1" android:layout_height="-2" />
+    <LinearLayout android:gravity="1" android:layout_gravity="50" android:orientation="0" android:id="@id/viewGroup" android:layout_width="-1" android:layout_height="-2" android:layout_marginBottom="4dp">
+        <ImageView android:background="@drawable/page_indicator_focused" android:layout_width="12dp" android:layout_height="12dp" android:layout_marginStart="2dp" android:layout_marginEnd="2dp" />
+        <ImageView android:background="@drawable/page_indicator_unfocused" android:layout_width="12dp" android:layout_height="12dp" android:layout_marginStart="2dp" android:layout_marginEnd="2dp" />
+        <ImageView android:background="@drawable/page_indicator_unfocused" android:layout_width="12dp" android:layout_height="12dp" android:layout_marginStart="2dp" android:layout_marginEnd="2dp" />
+    </LinearLayout>
+</FrameLayout>

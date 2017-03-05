@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:layout_width="-1" android:layout_height="-1">
+    <TextView android:gravity="11" android:layout_gravity="800013" android:id="@id/libyf_start" android:layout_width="-2" android:layout_height="-1" android:layout_marginStart="5dp" />
+    <TextView android:gravity="11" android:layout_gravity="11" android:id="@id/libyf_center" android:layout_width="-2" android:layout_height="-1" />
+    <TextView android:gravity="11" android:layout_gravity="800015" android:id="@id/libyf_end" android:layout_width="-2" android:layout_height="-1" android:layout_marginEnd="10dp" />
+</merge>

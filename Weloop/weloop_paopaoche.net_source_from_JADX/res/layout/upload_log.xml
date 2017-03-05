@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="1" android:background="@color/upload_log_bg" android:layout_width="-1" android:layout_height="-1"
+    <RelativeLayout android:id="@id/ul_rl_titlebar" android:background="@color/green" android:layout_width="-1" android:layout_height="45dp">
+        <TextView android:textSize="22sp" android:textColor="@color/white" android:layout_width="-2" android:layout_height="-2" android:text="@string/send_wrong_log" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/ul_iv_back" android:background="@drawable/update_back" android:layout_width="30dp" android:layout_height="30dp" android:layout_marginLeft="@dimen/back_margin_left" android:layout_alignParentLeft="true" android:layout_centerVertical="true" android:onClick="back" android:contentDescription="@string/app_name" />
+    </RelativeLayout>
+    <TextView android:textAppearance="?unknown_attr_ref: 1010040" android:textSize="16sp" android:textColor="@color/text_normal2" android:gravity="10" android:id="@id/ul_tv_msg" android:layout_width="-1" android:layout_height="43dp" android:layout_marginLeft="20dp" android:layout_marginRight="20dp" android:text="@string/problem_description" android:layout_below="@id/ul_rl_titlebar" android:layout_centerHorizontal="true" />
+    <Button android:textSize="21sp" android:textColor="@color/white" android:id="@id/ul_btn_confirm" android:layout_width="300dp" android:layout_height="55dp" android:layout_marginBottom="32dp" android:text="@string/upload" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" style="@style/btn_upgrade_style" />
+    <RelativeLayout android:id="@id/ul_rl_content" android:background="@color/white" android:layout_width="-1" android:layout_height="-2" android:layout_below="@id/ul_tv_msg" android:layout_alignStart="@id/ul_tv_msg" android:layout_alignEnd="@id/ul_tv_msg">
+        <EditText android:gravity="30" android:id="@id/ul_et_content" android:background="@color/white" android:layout_width="-1" android:layout_height="200dp" android:layout_margin="10dp" android:hint="@string/problem_hint_content" />
+    </RelativeLayout>
+</RelativeLayout>

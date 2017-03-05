@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="0" android:background="@drawable/device_bg" android:layout_width="-1" android:layout_height="-2"
+    <LinearLayout android:layout_width="-2" android:layout_height="-1" android:layout_marginTop="10dp" android:layout_marginStart="10dp">
+        <ImageView android:id="@id/option_more" android:layout_width="-2" android:layout_height="-2" android:src="@drawable/device_tommy" android:layout_marginStart="10dp" />
+        <LinearLayout android:orientation="1" android:layout_width="200dp" android:layout_height="-2" android:layout_marginTop="5dp">
+            <TextView android:textSize="24sp" android:textColor="@color/all_title_bg" android:id="@id/option_name" android:layout_width="-1" android:layout_height="-2" android:text="小黑" />
+            <TextView android:textSize="15sp" android:textColor="@color/device_gray" android:id="@id/option_value" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp" android:text="简单设计,真正实用的智能手表。" />
+        </LinearLayout>
+        <ImageView android:layout_gravity="10" android:layout_width="11dp" android:layout_height="18dp" android:src="@drawable/arrow" android:scaleType="3" android:layout_centerVertical="true" android:layout_marginStart="20dp" android:layout_alignParentEnd="true" />
+    </LinearLayout>
+</LinearLayout>

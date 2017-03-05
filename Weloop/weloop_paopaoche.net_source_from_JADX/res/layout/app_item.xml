@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="-1" android:layout_height="-1">
+    <RelativeLayout android:background="@color/whitegrey" android:layout_width="-1" android:layout_height="65dp"
+        <RelativeLayout android:background="@drawable/app_item_bg_normal" android:layout_width="320dp" android:layout_height="55dp" android:layout_centerHorizontal="true" android:layout_centerVertical="true">
+            <TextView android:id="@id/ai_tv_topline" android:background="@color/line" android:visibility="1" android:layout_width="-1" android:layout_height="1dp" android:layout_alignParentTop="true" />
+            <TextView android:id="@id/ai_tv_bottom_line" android:background="@color/line" android:visibility="1" android:layout_width="-1" android:layout_height="1dp" android:layout_alignParentBottom="true" />
+            <TextView android:id="@id/ai_tv_bottom_center_line" android:background="@color/line" android:visibility="1" android:layout_width="-1" android:layout_height="1dp" android:layout_marginLeft="20dp" android:layout_alignParentBottom="true" />
+            <TextView android:textAppearance="?unknown_attr_ref: 1010040" android:textSize="19sp" android:textColor="#444444" android:ellipsize="4" android:gravity="1" android:id="@id/ai_tv_app_name" android:focusable="true" android:focusableInTouchMode="true" android:clickable="true" android:layout_width="200dp" android:layout_height="-2" android:singleLine="true" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+            <TextView android:visibility="1" android:layout_width="1dp" android:layout_height="50dp" android:layout_alignRight="@id/ai_tv_bottom_center_line" android:layout_centerVertical="true" />
+            <ImageView android:id="@id/ai_iv_del" android:layout_width="26dp" android:layout_height="26dp" android:layout_marginRight="20dp" android:src="@drawable/del" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:contentDescription="@string/action_settings" />
+            <ImageView android:id="@id/ai_iv_icon" android:layout_width="30dp" android:layout_height="30dp" android:layout_marginLeft="20dp" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+</FrameLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/alert_find_bg" android:layout_width="-1" android:layout_height="-2"
+    <RelativeLayout android:id="@id/ad_rl_msg" android:layout_width="-1" android:layout_height="-2">
+        <TextView android:textAppearance="?unknown_attr_ref: 1010041" android:textSize="20sp" android:textColor="@color/white" android:gravity="11" android:id="@id/ad_tv_description_title" android:visibility="2" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="10dp" android:text="@string/open_location" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
+        <TextView android:textAppearance="?unknown_attr_ref: 1010041" android:textSize="18sp" android:textColor="@color/white" android:gravity="3" android:id="@id/ad_tv_msg" android:paddingLeft="20dp" android:paddingRight="20dp" android:visibility="2" android:layout_width="-1" android:layout_height="-2" android:layout_marginTop="5dp" android:text="@string/location_msg" android:layout_below="@id/ad_tv_description_title" android:layout_centerHorizontal="true" />
+        <TextView android:textAppearance="?unknown_attr_ref: 1010041" android:textSize="20sp" android:textColor="@color/white" android:gravity="11" android:id="@id/ad_tv_description" android:paddingLeft="10dp" android:paddingRight="10dp" android:visibility="0" android:layout_width="-1" android:layout_height="80dp" android:text="@string/exit_alarm_edit" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+    <View android:id="@id/ad_view_line" android:background="@color/white" android:layout_width="-1" android:layout_height="1dp" android:layout_below="@id/ad_rl_msg" />
+    <LinearLayout android:orientation="0" android:id="@id/ad_ll_btns" android:layout_width="-1" android:layout_height="55dp" android:layout_below="@id/ad_view_line" android:layout_centerHorizontal="true">
+        <Button android:textSize="22sp" android:textColor="@color/white" android:id="@id/ad_btn_cancel" android:background="@styleable/View_android_theme" android:layout_width="-1" android:layout_height="-1" android:text="@string/cancel" android:layout_weight="1.0" />
+        <View android:id="@id/ad_view_ver_line" android:background="@color/white" android:layout_width="1dp" android:layout_height="-1" />
+        <Button android:textSize="22sp" android:textColor="@color/white" android:id="@id/ad_btn_sure" android:background="@styleable/View_android_theme" android:layout_width="-1" android:layout_height="-1" android:text="@string/sure" android:layout_weight="1.0" />
+    </LinearLayout>
+</RelativeLayout>

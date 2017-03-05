@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="-1" android:layout_height="-2">
+    <LinearLayout android:orientation="0" android:background="@drawable/alert_find_bg" android:layout_width="304dp" android:layout_height="80dp" android:layout_centerHorizontal="true">
+        <ProgressBar android:layout_gravity="10" android:layout_width="50dp" android:layout_height="50dp" android:layout_marginLeft="20dp" style="?unknown_attr_ref: 101007a" />
+        <TextView android:textAppearance="?unknown_attr_ref: 1010041" android:textColor="@color/whitegrey" android:layout_gravity="10" android:id="@id/tv_message" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="15dp" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="-1" android:layout_height="-1">
+    <ImageView android:id="@id/device_icon" android:layout_width="60dp" android:layout_height="60dp" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    <TextView android:textSize="22sp" android:textColor="@color/text_gray1" android:id="@id/device_name" android:layout_width="-1" android:layout_height="-2" android:layout_marginBottom="10dp" android:text="WeLoop Tommy" android:layout_toRightOf="@id/device_icon" android:layout_alignParentTop="true" />
+    <TextView android:textSize="18sp" android:textColor="@color/text_gray1" android:id="@id/device_id" android:layout_width="-2" android:layout_height="-2" android:text="ID:7YJ9" android:layout_toRightOf="@id/device_icon" android:layout_below="@id/device_name" />
+    <ImageView android:id="@id/connect_status" android:layout_width="60dp" android:layout_height="20dp" android:layout_marginLeft="10dp" android:src="@drawable/bt_unlinked" android:layout_toRightOf="@id/device_id" android:layout_below="@id/device_name" />
+</RelativeLayout>

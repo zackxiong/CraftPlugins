@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/item_bg_click" android:paddingLeft="20dp" android:paddingRight="20dp" android:layout_width="-1" android:layout_height="@dimen/alarm_item_height">
+    <TextView android:textAppearance="?unknown_attr_ref: 1010041" android:textSize="40sp" android:textStyle="1" android:id="@id/ai_tv_alarm_time" android:paddingTop="15dp" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_alignParentStart="true" />
+    <TextView android:textSize="13sp" android:textColor="@color/gray" android:id="@id/ai_tv_alarm_repeat" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:maxEms="14" android:singleLine="true" android:layout_below="@id/ai_tv_alarm_time" />
+    <TextView android:textSize="17sp" android:id="@id/ai_tv_alarm_time_msg" android:visibility="2" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:maxEms="6" android:singleLine="true" android:layout_toRightOf="@id/ai_tv_alarm_time" android:layout_centerVertical="true" />
+    <ImageView android:id="@id/ai_iv_alarm_edit" android:layout_width="-2" android:layout_height="-2" android:layout_marginRight="10dp" android:layout_centerVertical="true" android:layout_alignParentEnd="true" />
+    <ImageView android:id="@id/ai_iv_reminder_del" android:background="@drawable/del_icon" android:visibility="2" android:layout_width="30dp" android:layout_height="30dp" android:layout_marginRight="5dp" android:layout_centerVertical="true" android:layout_alignParentEnd="true" />
+</RelativeLayout>

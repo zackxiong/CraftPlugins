@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:textSize="18sp" android:textColor="@color/option_text_color" android:gravity="11" android:background="@drawable/shape_shadow_corner_selector" android:layout_width="-1" android:layout_height="80dp" />

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout app:layout_width="-2" app:layout_height="-2">
+    <LinearLayout app:orientation="0" app:id="@id/preparing" app:background="@drawable/alert_find_bg" app:layout_width="304dp" app:layout_height="80dp" app:layout_centerHorizontal="true">
+        <ProgressBar app:layout_gravity="10" app:layout_width="50dp" app:layout_height="50dp" app:layout_marginLeft="20dp" style="?unknown_attr_ref: 101007a" />
+        <TextView app:textAppearance="?unknown_attr_ref: 1010041" app:textColor="@color/whitegrey" app:layout_gravity="10" app:id="@id/tv_message" app:layout_width="-2" app:layout_height="-2" app:layout_marginLeft="15dp" app:text="@string/loading_watchface_info_in_watch" />
+    </LinearLayout>
+    <LinearLayout app:orientation="1" app:id="@id/change" app:background="@drawable/alert_bg" app:padding="10dp" app:visibility="2" app:layout_width="320dp" app:layout_height="240dp">
+        <TextView app:textSize="22sp" app:textColor="@color/text_gray2" app:gravity="11" app:id="@id/title" app:layout_width="-1" app:layout_height="-2" app:text="@string/select_one_watchface_to_replace" />
+        <LinearLayout app:orientation="0" app:id="@id/watchface_group" app:layout_width="-1" app:layout_height="-2">
+            <com.yf.smart.weloopx.android.ui.widget.OverlayImageView app:id="@id/watchface_1" app:clickable="true" app:layout_width="0dp" app:layout_height="100dp" app:layout_margin="10dp" app:src="@drawable/watchface_null" app:scaleType="1" app:layout_weight="1.0" app:overlayColor="@color/watchface_overlay_color" />
+            <com.yf.smart.weloopx.android.ui.widget.OverlayImageView app:id="@id/watchface_2" app:clickable="true" app:layout_width="0dp" app:layout_height="100dp" app:layout_margin="10dp" app:src="@drawable/watchface_null" app:scaleType="1" app:layout_weight="1.0" app:overlayColor="@color/watchface_overlay_color" />
+            <com.yf.smart.weloopx.android.ui.widget.OverlayImageView app:id="@id/watchface_3" app:clickable="true" app:layout_width="0dp" app:layout_height="100dp" app:layout_margin="10dp" app:src="@drawable/watchface_null" app:scaleType="1" app:layout_weight="1.0" app:overlayColor="@color/watchface_overlay_color" />
+        </LinearLayout>
+        <LinearLayout app:orientation="0" app:id="@id/ok_cancel_root" app:layout_width="-1" app:layout_height="-2">
+            <com.dd.processbutton.iml.SubmitProcessButton app:textSize="22sp" app:textColor="@color/watchface_btn_text_color" app:id="@id/cancel" app:background="@drawable/shape_gray_blue_selector" app:layout_width="0dp" app:layout_height="50dp" app:layout_margin="10dp" app:text="@string/cancel" app:layout_weight="1.0" />
+            <com.dd.processbutton.iml.SubmitProcessButton app:textSize="22sp" app:textColor="@color/watchface_btn_text_color" app:id="@id/sync" app:background="@drawable/shape_gray_blue_selector" app:layout_width="0dp" app:layout_height="50dp" app:layout_margin="10dp" app:text="@string/synchronize" app:layout_weight="1.0" app:pb_textProgress="@string/synchronizing" app:pb_textComplete="@string/finished" app:pb_textError="@string/sync_fail" app:pb_progressDrawable="@drawable/shape_corner_blue" app:pb_completeDrawable="@drawable/shape_corner_blue" app:pb_errorDrawable="@drawable/shape_corner_gray" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

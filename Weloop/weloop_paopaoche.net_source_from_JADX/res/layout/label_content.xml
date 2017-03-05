@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout app:background="@drawable/label_content_bg" app:visibility="0" app:layout_width="-1" app:layout_height="-2" app:layout_marginLeft="8dp" app:layout_marginRight="8dp"
+    <RelativeLayout app:id="@id/lc_rl_map_sleep" app:background="@color/white" app:layout_width="-1" app:layout_height="80dp" app:layout_marginLeft="@dimen/label_content_padding" app:layout_marginTop="@dimen/label_content_padding" app:layout_marginRight="@dimen/label_content_padding">
+        <ImageView app:id="@id/lc_iv_map" app:layout_width="-1" app:layout_height="-1" app:scaleType="1" />
+        <com.yf.smart.weloopx.view.PathView app:id="@id/lc_sleep_view" app:background="@drawable/label_sleep_bg" app:padding="8dp" app:visibility="0" app:layout_width="-2" app:layout_height="-1" app:strokeW="4dp" app:shadowRadius="4px" app:shadowDy="2dp" app:shadowColor="@color/shadow_color" app:gradientColors="@array/sleep_curve_colors" />
+        <com.yf.smart.weloopx.view.PathView app:id="@id/lc_low_activity_view" app:background="@drawable/label_low_activity_bg" app:padding="8dp" app:layout_width="-2" app:layout_height="-1" app:strokeW="4dp" app:shadowRadius="4px" app:shadowDy="2dp" app:shadowColor="@color/shadow_color" app:gradientColors="@array/low_activity_curve_colors" />
+    </RelativeLayout>
+    <LinearLayout app:layout_width="-1" app:layout_height="60dp" app:layout_marginLeft="@dimen/label_content_padding" app:layout_marginTop="10dp" app:layout_marginRight="@dimen/label_content_padding" app:layout_marginBottom="10dp" app:layout_below="@id/lc_rl_map_sleep">
+        <RelativeLayout app:id="@id/lc_rl_left" app:layout_weight="1.0" style="@style/partent_one">
+            <View app:id="@id/lc_lf_v_center" app:background="@color/white" app:layout_width="-1" app:layout_height="@dimen/label_line_height_width" app:layout_marginRight="10dp" app:layout_centerVertical="true" />
+            <View app:id="@id/lc_lf_v_above" app:background="@color/white" app:layout_width="@dimen/label_line_height_width" app:layout_height="-1" app:layout_marginRight="2dp" app:layout_marginBottom="8dp" app:layout_above="@id/lc_lf_v_center" app:layout_alignParentRight="true" app:layout_centerVertical="true" />
+            <View app:id="@id/lc_lf_v_below" app:background="@color/white" app:layout_width="@dimen/label_line_height_width" app:layout_height="-1" app:layout_marginTop="8dp" app:layout_marginRight="2dp" app:layout_below="@id/lc_lf_v_center" app:layout_alignParentRight="true" app:layout_centerVertical="true" />
+            <TextView app:id="@id/lc_lf_tv_one_msg" app:text="@string/calories" app:layout_alignBottom="@id/lc_lf_v_above" app:layout_alignParentStart="true" style="@style/label_tv_msg" />
+            <TextView app:textStyle="1" app:id="@id/lc_lf_tv_one" app:layout_marginRight="5dp" app:layout_alignBottom="@id/lc_lf_v_above" app:layout_alignEnd="@id/lc_lf_v_above" style="@style/label_tv_value" />
+            <TextView app:id="@id/lc_lf_tv_three_msg" app:text="@string/item_distance" app:layout_alignTop="@id/lc_lf_v_below" app:layout_alignParentStart="true" style="@style/label_tv_msg" />
+            <TextView app:textStyle="1" app:id="@id/lc_lf_tv_three" app:layout_marginRight="5dp" app:layout_alignTop="@id/lc_lf_v_below" app:layout_alignEnd="@id/lc_lf_v_below" style="@style/label_tv_value" />
+        </RelativeLayout>
+        <RelativeLayout app:layout_width="-1" app:layout_height="-1" app:layout_weight="1.0">
+            <TextView app:textAppearance="?unknown_attr_ref: 1010040" app:textSize="15sp" app:textStyle="1" app:textColor="#626161" app:gravity="11" app:id="@id/lc_tv_duraction_time" app:layout_width="-2" app:layout_height="-1" app:maxEms="5" app:layout_centerHorizontal="true" app:layout_centerVertical="true" />
+        </RelativeLayout>
+        <RelativeLayout app:id="@id/lc_rl_right" app:layout_width="-1" app:layout_height="-1" app:layout_weight="1.0">
+            <View app:id="@id/lc_rh_v_center" app:background="@color/white" app:layout_width="-1" app:layout_height="@dimen/label_line_height_width" app:layout_marginLeft="10dp" app:layout_centerVertical="true" />
+            <View app:id="@id/lc_rh_v_above" app:background="@color/white" app:layout_width="@dimen/label_line_height_width" app:layout_height="-1" app:layout_marginRight="2dp" app:layout_marginBottom="8dp" app:layout_above="@id/lc_rh_v_center" app:layout_alignParentLeft="true" app:layout_centerVertical="true" />
+            <View app:id="@id/lc_rh_v_below" app:background="@color/white" app:layout_width="@dimen/label_line_height_width" app:layout_height="-1" app:layout_marginTop="8dp" app:layout_marginRight="2dp" app:layout_below="@id/lc_rh_v_center" app:layout_alignParentLeft="true" app:layout_centerVertical="true" />
+            <TextView app:id="@id/lc_lf_tv_two_msg" app:layout_marginLeft="10dp" app:text="@string/steps" app:layout_alignBottom="@id/lc_rh_v_above" app:layout_alignParentStart="true" style="@style/label_tv_msg" />
+            <TextView app:textStyle="1" app:id="@id/lc_lf_tv_two" app:layout_marginRight="2dp" app:layout_alignBottom="@id/lc_rh_v_above" app:layout_alignParentRight="true" style="@style/label_tv_value" />
+            <TextView app:id="@id/lc_lf_tv_four_msg" app:layout_marginLeft="10dp" app:text="@string/item_speed" app:layout_alignTop="@id/lc_rh_v_below" app:layout_alignParentStart="true" style="@style/label_tv_msg" />
+            <TextView app:textStyle="1" app:id="@id/lc_lf_tv_four" app:layout_marginRight="2dp" app:text="114km/h" app:layout_alignTop="@id/lc_rh_v_below" app:layout_alignParentRight="true" style="@style/label_tv_value" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

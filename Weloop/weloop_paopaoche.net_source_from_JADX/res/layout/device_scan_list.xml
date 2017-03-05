@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:background="@drawable/box_4_radius" android:layout_width="380dp" android:layout_height="-1">
+    <TextView android:textSize="22sp" android:textColor="@color/ranking_normal" android:gravity="11" android:paddingTop="10dp" android:paddingBottom="10dp" android:layout_width="-1" android:layout_height="-2" android:layout_marginBottom="10dp" android:text="@string/ble_list" />
+    <include layout="@layout/gray_line" />
+    <ListView android:id="@id/listViewScanner" android:layout_width="-1" android:layout_height="300dp" />
+    <TextView android:textSize="16sp" android:textColor="@color/ranking_normal" android:gravity="11" android:id="@id/empty" android:layout_width="-1" android:layout_height="-1" android:text="@string/dfu_no_sensor_found" />
+    <Button android:textSize="22sp" android:textColor="@color/ranking_normal" android:id="@id/cancel" android:background="@drawable/btn_bottom_2_radius_bg" android:paddingTop="10dp" android:paddingBottom="10dp" android:layout_width="-1" android:layout_height="-1" android:layout_marginTop="10dp" android:text="@string/cancel" />
+</LinearLayout>

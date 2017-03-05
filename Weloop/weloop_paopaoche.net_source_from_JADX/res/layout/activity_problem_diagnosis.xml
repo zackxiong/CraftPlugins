@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout ProgressWheel2:layout_width="-1" ProgressWheel2:layout_height="-1">
+    <include ProgressWheel2:id="@id/pd_rl_title" ProgressWheel2:layout_width="-1" ProgressWheel2:layout_height="40dp" ProgressWheel2:layout_alignParentTop="true" ProgressWheel2:layout_alignParentStart="true" layout="@layout/all_title" />
+    <WebView ProgressWheel2:id="@id/pd_webview" ProgressWheel2:layout_width="-1" ProgressWheel2:layout_height="-1" ProgressWheel2:layout_below="@id/pd_rl_title" ProgressWheel2:layout_alignParentStart="true" />
+    <FrameLayout ProgressWheel2:layout_gravity="1" ProgressWheel2:id="@id/layout_Frame" ProgressWheel2:visibility="1" ProgressWheel2:layout_width="-1" ProgressWheel2:layout_height="-1">
+        <com.todddavies.components.progressbar.ProgressWheel2 ProgressWheel2:layout_gravity="11" ProgressWheel2:id="@id/progressbar" ProgressWheel2:layout_width="87dp" ProgressWheel2:layout_height="87dp" ProgressWheel2:pw_textColor="@color/whitegrey" ProgressWheel2:pw_textSize="24sp" ProgressWheel2:pw_barColor="#2ce9a0" ProgressWheel2:pw_rimColor="@color/whitegrey" ProgressWheel2:pw_rimWidth="25dp" ProgressWheel2:pw_spinSpeed="3dp" ProgressWheel2:pw_circleColor="@color/whitegrey" ProgressWheel2:pw_barWidth="5dp" ProgressWheel2:pw_contourColor="@color/whitegrey" />
+        <com.yf.gattlib.view.ShakeImageView ProgressWheel2:layout_gravity="11" ProgressWheel2:id="@id/iv_is_newest" ProgressWheel2:visibility="1" ProgressWheel2:layout_width="100dp" ProgressWheel2:layout_height="100dp" ProgressWheel2:src="@drawable/is_newest" />
+        <com.yf.gattlib.view.RotateImageView ProgressWheel2:layout_gravity="11" ProgressWheel2:id="@id/iv_checking" ProgressWheel2:visibility="1" ProgressWheel2:layout_width="100dp" ProgressWheel2:layout_height="100dp" ProgressWheel2:src="@drawable/checking" />
+        <RelativeLayout ProgressWheel2:layout_gravity="11" ProgressWheel2:layout_width="100dp" ProgressWheel2:layout_height="100dp">
+            <TextView ProgressWheel2:textSize="22sp" ProgressWheel2:textColor="#2ce9a0" ProgressWheel2:gravity="1" ProgressWheel2:id="@id/tv_version_indicator" ProgressWheel2:layout_width="-2" ProgressWheel2:layout_height="-2" ProgressWheel2:layout_centerInParent="true" />
+            <TextView ProgressWheel2:textSize="20sp" ProgressWheel2:textColor="#fff59710" ProgressWheel2:gravity="1" ProgressWheel2:id="@id/tv_new_version" ProgressWheel2:visibility="1" ProgressWheel2:layout_width="-2" ProgressWheel2:layout_height="-2" ProgressWheel2:text="V3.12" ProgressWheel2:layout_below="@id/tv_version_indicator" ProgressWheel2:layout_centerHorizontal="true" />
+        </RelativeLayout>
+        <LinearLayout ProgressWheel2:layout_gravity="11" ProgressWheel2:orientation="0" ProgressWheel2:id="@id/lt_percent" ProgressWheel2:layout_width="-2" ProgressWheel2:layout_height="-2">
+            <TextView ProgressWheel2:textSize="33sp" ProgressWheel2:textColor="#2ce9a0" ProgressWheel2:id="@id/tv_percent_number" ProgressWheel2:layout_width="-2" ProgressWheel2:layout_height="-2" ProgressWheel2:text="0" />
+            <TextView ProgressWheel2:textSize="12sp" ProgressWheel2:textColor="#2ce9a0" ProgressWheel2:id="@id/tv_percent_flag" ProgressWheel2:layout_width="-2" ProgressWheel2:layout_height="-2" ProgressWheel2:text="%" />
+        </LinearLayout>
+    </FrameLayout>
+</RelativeLayout>

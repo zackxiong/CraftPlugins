@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:layout_width="-1" android:layout_height="-1">
+    <TextView android:textSize="18sp" android:textColor="@color/white" android:id="@id/title_more" android:layout_width="-2" android:layout_height="-2" android:layout_centerVertical="true" android:layout_marginStart="7.3dp" />
+    <TextView android:textSize="20sp" android:id="@id/at_tv_title" style="@style/title_center_text" />
+    <TextView android:textSize="18sp" android:textColor="@color/white" android:id="@id/switch_device" android:layout_width="-2" android:layout_height="-2" android:layout_centerVertical="true" android:layout_marginEnd="7.3dp" android:layout_alignParentEnd="true" />
+</merge>

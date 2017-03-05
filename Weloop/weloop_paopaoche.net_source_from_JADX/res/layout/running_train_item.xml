@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/white" android:layout_width="-1" android:layout_height="-2"
+    <RelativeLayout android:id="@id/ti_rl_details" android:layout_width="-1" android:layout_height="100dp">
+        <ImageView android:id="@id/ti_tv_go" android:background="@drawable/arrow" android:layout_width="20dp" android:layout_height="30dp" android:layout_centerVertical="true" android:contentDescription="@string/app_name" android:layout_marginEnd="10dp" android:layout_alignParentEnd="true" />
+        <ImageView android:background="@drawable/running_train_icon" android:layout_width="60dp" android:layout_height="60dp" android:layout_alignBottom="@id/ti_tv_go" android:contentDescription="@string/app_name" android:layout_marginEnd="30dp" android:layout_alignParentEnd="true" />
+        <TextView android:textSize="20sp" android:textColor="@color/gray" android:id="@id/ti_tv_time" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="10dp" android:layout_marginStart="10dp" />
+        <LinearLayout android:gravity="50" android:orientation="0" android:layout_width="-1" android:layout_height="-1" android:layout_marginBottom="2dp">
+            <TextView android:textSize="50sp" android:textColor="@color/blue" android:gravity="11" android:id="@id/ti_tv_distance" android:layout_width="-2" android:layout_height="-2" android:singleLine="true" android:layout_weight="1.0" />
+            <TextView android:textSize="17sp" android:gravity="800003" android:layout_width="-2" android:layout_height="-2" android:text="@string/unit_kilometer" android:singleLine="true" android:layout_weight="1.0" />
+            <TextView android:textSize="17sp" android:gravity="11" android:id="@id/ti_tv_pace" android:layout_width="-2" android:layout_height="-2" android:singleLine="true" android:layout_weight="1.0" />
+            <TextView android:textSize="17sp" android:gravity="11" android:id="@id/ti_tv_duraction" android:layout_width="-2" android:layout_height="-2" android:singleLine="true" android:layout_weight="1.0" />
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/ti_rl_month" android:background="#e8e8e8" android:visibility="2" android:layout_width="-1" android:layout_height="30dp">
+        <TextView android:textSize="17sp" android:id="@id/ti_tv_month" android:layout_width="-2" android:layout_height="-2" android:singleLine="true" android:layout_centerVertical="true" android:layout_marginStart="10dp" android:layout_alignParentStart="true" />
+        <TextView android:textSize="17sp" android:gravity="11" android:id="@id/ti_tv_month_distance" android:layout_width="-2" android:layout_height="-2" android:singleLine="true" android:layout_centerVertical="true" android:layout_marginEnd="10dp" android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+</RelativeLayout>

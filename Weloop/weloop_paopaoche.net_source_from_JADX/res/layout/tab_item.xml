@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:textSize="12sp" android:textColor="@color/bottom_btn_text_color" android:gravity="11" android:id="@id/tab_text" android:background="@color/main_tab_bg" android:paddingTop="3dp" android:paddingBottom="2dp" android:layout_width="-1" android:layout_height="50dp" />

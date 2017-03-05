@@ -1,5 +1,0 @@
-package communicater;
-
-public class Reciever implements Runnable{
-
-}

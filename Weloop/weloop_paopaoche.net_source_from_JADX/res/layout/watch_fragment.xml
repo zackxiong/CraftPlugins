@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.handmark.pulltorefresh.library.PullToRefreshGridView app:gravity="11" app:id="@id/pull_grid" app:padding="10dp" app:scrollbars="0" app:layout_width="-1" app:layout_height="-1" app:listSelector="0x106000d" app:horizontalSpacing="10dp" app:verticalSpacing="10dp" app:stretchMode="2" app:numColumns="3" app:ptrMode="3" app:ptrShowIndicator="false" />

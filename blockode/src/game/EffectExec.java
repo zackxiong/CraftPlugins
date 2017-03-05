@@ -30,13 +30,14 @@ public final class EffectExec {
     float shieldHold;
     int explodePower=4;
     private int TNTdelay=2;
-
+    double playeryaw;
     public EffectExec(float shieldHold) {
         this.shieldHold = shieldHold;
     }
 
     //下面的方法属于Shield效果
     public boolean SheildEnterence(BlockPlaceEvent e,float delay){
+    	playeryaw=e.getPlayer().getLocation().getYaw();
         this.ChargeSheild(e,delay);
         return true;
     }
@@ -223,7 +224,6 @@ public final class EffectExec {
                 x1   =   x0   +   r   *   cos(ao   *   3.14   /180   ) 
                 y1   =   y0   +   r   *   sin(ao   *   3.14   /180   ) 
              */
-            double playeryaw=e.getPlayer().getLocation().getYaw();
             double radious_horizontal=Math.sqrt(disX*disX+disZ*disZ);
             for(radious_horizontal=6;radious_horizontal>2;radious_horizontal=radious_horizontal-1){//上面半部分
                 marker.setY(marker.getY()+1);
