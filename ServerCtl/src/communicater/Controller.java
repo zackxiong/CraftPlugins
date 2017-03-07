@@ -1,5 +1,7 @@
 package communicater;
 
+import gui.Gui;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -7,6 +9,8 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.HashSet;
+
+import pc.PC;
 
 public class Controller implements Runnable{
 	int port;
@@ -22,6 +26,11 @@ public class Controller implements Runnable{
 	
 	public Controller(){
 		this(1800);
+		try {
+			Gui.addPC(new PC("test from controller"), this.getClass());
+		} catch (Exception e) {
+			//Gui.displayException(e);
+		}
 	}
 
 	public Controller(int port){

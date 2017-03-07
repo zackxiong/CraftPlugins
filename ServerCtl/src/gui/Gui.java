@@ -8,20 +8,27 @@ import java.awt.Label;
 import java.awt.TextField;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Vector;
 
+import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;  
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
 import javax.swing.WindowConstants;
+
+import pc.PC;
   
 public class Gui extends JFrame{  
     //static Label label=new Label();
+	//log panel 用
     static JLabel jlabel_logTitle=new JLabel("LogOutput：                                                                                                  "); 
     static JFrame jFrame_mainWindow = new JFrame();  
     static JTextField jtextField_enterBox = new JTextField(20);
@@ -34,6 +41,17 @@ public class Gui extends JFrame{
     static Box hlogBox3 = Box.createHorizontalBox();
     static JPanel jPanel_log = new JPanel();
     static JButton button_send = new JButton("发送");
+    
+    //control panel用
+    static JPanel jPanel_ctl = new JPanel();
+    static JLabel jlabel_ctlTitle = new JLabel("My computers:                                                                                              ");
+    static Box vctlBox1 = Box.createVerticalBox(),
+    		hctlBox1 = Box.createHorizontalBox(),
+    		hctlBox2 = Box.createHorizontalBox();
+    static Vector<PC>vecPCs = new Vector();
+    static Vector vecFunctions = new Vector();
+    static JList jlistPCs = new JList(vecPCs),
+    		jlistFunctions = new JList(vecFunctions);
     /**
 	 * 
 	 */
@@ -50,15 +68,11 @@ public class Gui extends JFrame{
         jFrame_mainWindow.add(jPanel_log);
         
         createLogPanel();
-        
+        createControlPanel();
         //f.add(jtextField);
         
         log("Gui载入成功！");
     }
-	
-	static void createControlPanel(){
-		
-	}
 	
 	static void createLogPanel(){
         //日志框初始化
@@ -90,6 +104,65 @@ public class Gui extends JFrame{
 		jTextArea_logArea.setText(jTextArea_logArea.getText()+"["+df_date.format(new Date())+"] "+msg+"\n");
 		jTextArea_logArea.setCaretPosition(jTextArea_logArea.getText().length());
 		System.out.print("["+df_date.format(new Date())+"] "+msg+"\n");
+	}
+	
+	public static void displayException(Exception e){
+		String errInfo = "Error message: " + e.getMessage();
+		for(StackTraceElement ste : e.getStackTrace()){
+			errInfo = errInfo + "\n" + ste.toString();
+		}
+		log("[error]"+errInfo);
+	}
 
+	static void createControlPanel(){
+		//列表初始化
+		//标题位
+		jlabel_ctlTitle.setFont((new Font("宋体",Font.BOLD, 16)));
+		jlabel_ctlTitle.setSize(20, 20);
+		hctlBox1.add(jlabel_ctlTitle);
+		hctlBox1.add(Box.createGlue());
+		vctlBox1.add(hctlBox1);
+		jPanel_ctl.add(vctlBox1);
+
+		//列表位
+		vecPCs.add(new PC("                "));
+		vecFunctions.add("                ");
+		jlistPCs.setBorder(BorderFactory.createTitledBorder("Computers"));
+		jlistPCs.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		hctlBox2.add(jlistPCs);
+		
+		jlistFunctions.setBorder(BorderFactory.createTitledBorder("Operations"));
+		jlistFunctions.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		hctlBox2.add(jlistFunctions);
+		
+		hctlBox2.add(Box.createGlue());
+		
+		vctlBox1.add(hctlBox2);
+		jFrame_mainWindow.add(jPanel_ctl);
+		try {
+			addPC(new PC("test from gui"), Gui.class);
+		} catch (Exception e) {
+			//e.printStackTrace();
+		}
+	}
+	
+	public static String addPC(PC pc, Class envoker)throws Exception{
+		if(vecPCs.contains(pc)){
+			Exception e = new Exception("PC already exist!");
+			displayException(e);
+			throw e;
+		}
+		try{
+			StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
+			String className = stackTrace[stackTrace.length-1].toString();
+			className = envoker.getName();
+			vecPCs.add(pc);
+			log("\"" + className + "\"is trying to add these to PC list:\"" + pc + "\"");
+			log("Successfully added!");
+			return "Success!";
+		}
+		catch(Exception e){
+			throw e;
+		}
 	}
 } 

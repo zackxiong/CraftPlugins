@@ -1,0 +1,83 @@
+wl_JADX/com/yf/lib/bt/ScannedDevice.java:    public final BluetoothDevice f6519a;
+wl_JADX/com/yf/lib/bt/ScannedDevice.java:    public ScannedDevice(BluetoothDevice bluetoothDevice, int i, long j, BleAdvertisedData bleAdvertisedData) {
+wl_JADX/com/yf/lib/bt/client/GattClientConnectEvent.java:    public final BluetoothDevice device;
+wl_JADX/com/yf/lib/bt/client/GattClientConnectEvent.java:    public GattClientConnectEvent(BluetoothDevice bluetoothDevice, int i) {
+wl_JADX/com/yf/lib/bt/server/GattServerConnectEvent.java:    public final BluetoothDevice device;
+wl_JADX/com/yf/lib/bt/server/GattServerConnectEvent.java:    public GattServerConnectEvent(BluetoothDevice bluetoothDevice, int i) {
+wl_JADX/com/yf/smart/weloopx/android/ui/p139c/ak.java:    private BluetoothDevice f8210b;
+wl_JADX/com/yf/smart/weloopx/android/ui/p139c/ak.java:    public static void m10203a(Activity activity, BluetoothDevice bluetoothDevice) {
+wl_JADX/com/yf/smart/weloopx/android/ui/p139c/ak.java:        this.f8210b = (BluetoothDevice) getArguments().getParcelable("device");
+wl_JADX/com/yf/smart/weloopx/android/ui/activities/ck.java:                    com.yf.gattlib.p117p.ProGuard.m8293a("DfuActivity", "Bluetooth off");
+wl_JADX/com/yf/smart/weloopx/android/ui/activities/ck.java:                    com.yf.gattlib.p117p.ProGuard.m8293a("DfuActivity", "Turning Bluetooth on...");
+wl_JADX/com/yf/smart/weloopx/android/ui/activities/ck.java:                    com.yf.gattlib.p117p.ProGuard.m8293a("DfuActivity", "Bluetooth on");
+wl_JADX/com/yf/smart/weloopx/android/ui/activities/ck.java:                    com.yf.gattlib.p117p.ProGuard.m8293a("DfuActivity", "Turning Bluetooth off...");
+wl_JADX/com/yf/smart/weloopx/android/ui/activities/bo.java:    public void onLeScan(BluetoothDevice bluetoothDevice, int i, byte[] bArr) {
+wl_JADX/com/yf/smart/weloopx/android/ui/activities/bo.java:        BluetoothDevice bluetoothDevice2 = bluetoothDevice;
+wl_JADX/com/yf/smart/weloopx/android/ui/activities/ProGuard.java:        BluetoothDevice n = this.f8131G.m10710n();
+wl_JADX/com/yf/smart/weloopx/android/ui/activities/ProGuard.java:        return BluetoothAdapter.getDefaultAdapter().isEnabled();
+wl_JADX/com/yf/smart/weloopx/android/ui/activities/UpgradeActivity.java:            BluetoothDevice n = a.m10710n();
+wl_JADX/com/yf/smart/weloopx/p146c/aj.java:    void m10705c(BluetoothDevice bluetoothDevice);
+wl_JADX/com/yf/smart/weloopx/p146c/aj.java:    BluetoothDevice m10710n();
+wl_JADX/com/yf/gattlib/p109b/ProGuard.java:    public static boolean m7394a(BluetoothDevice bluetoothDevice) {
+wl_JADX/com/yf/gattlib/p109b/ProGuard.java:        BluetoothAdapter adapter = ((BluetoothManager) context.getSystemService("bluetooth")).getAdapter();
+wl_JADX/com/yf/gattlib/p109b/ProGuard.java:    public static boolean m7395a(BluetoothGatt bluetoothGatt) {
+wl_JADX/com/yf/gattlib/p109b/ProGuard.java:    public static void m7397b(BluetoothGatt bluetoothGatt) {
+wl_JADX/com/yf/gattlib/client/p113b/az.java:        Object bytes = com.yf.gattlib.p117p.ProGuard.m8262a(BluetoothAdapter.getDefaultAdapter().getName(), length, com.yf.gattlib.p129n.ProGuard.f6271a).getBytes(com.yf.gattlib.p129n.ProGuard.f6271a);
+wl_JADX/com/yf/gattlib/client/p113b/ai.java:    private BluetoothGattCharacteristic f5752e;
+wl_JADX/com/yf/gattlib/client/p113b/ai.java:    public boolean m7527a(BluetoothGattService bluetoothGattService) {
+wl_JADX/com/yf/gattlib/client/p113b/ai.java:    public void onServicesDiscovered(BluetoothGatt bluetoothGatt, int i) {
+wl_JADX/com/yf/gattlib/client/p113b/ai.java:        BluetoothGattService service = bluetoothGatt.getService(this.f5750c);
+wl_JADX/com/yf/gattlib/client/p113b/ai.java:            BluetoothGattCharacteristic characteristic = service.getCharacteristic(this.f5749b.m7463c());
+wl_JADX/com/yf/gattlib/client/p113b/ai.java:            BluetoothGattDescriptor descriptor = characteristic.getDescriptor(ProGuard.f6117a);
+wl_JADX/com/yf/gattlib/client/p113b/ai.java:            descriptor.setValue(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE);
+wl_JADX/com/yf/gattlib/client/p113b/ai.java:    public void onCharacteristicChanged(BluetoothGatt bluetoothGatt, BluetoothGattCharacteristic bluetoothGattCharacteristic) {
+wl_JADX/com/yf/gattlib/client/p113b/ai.java:    public void onCharacteristicWrite(BluetoothGatt bluetoothGatt, BluetoothGattCharacteristic bluetoothGattCharacteristic, int i) {
+wl_JADX/com/yf/gattlib/client/p113b/ai.java:            BluetoothGatt g = ProGuard.m7965a().m7989g();
+wl_JADX/com/yf/gattlib/client/ProGuard.java:class ProGuard extends BluetoothGattCallback {
+wl_JADX/com/yf/gattlib/client/ProGuard.java:    public void onConnectionStateChange(BluetoothGatt bluetoothGatt, int i, int i2) {
+wl_JADX/com/yf/gattlib/client/ProGuard.java:            BluetoothDevice device = bluetoothGatt.getDevice();
+wl_JADX/com/yf/gattlib/client/ProGuard.java:    public void onServicesDiscovered(BluetoothGatt bluetoothGatt, int i) {
+wl_JADX/com/yf/gattlib/client/ProGuard.java:    public void onCharacteristicRead(BluetoothGatt bluetoothGatt, BluetoothGattCharacteristic bluetoothGattCharacteristic, int i) {
+wl_JADX/com/yf/gattlib/client/ProGuard.java:        BluetoothGattService service = bluetoothGattCharacteristic.getService();
+wl_JADX/com/yf/gattlib/client/ProGuard.java:    public void onCharacteristicWrite(BluetoothGatt bluetoothGatt, BluetoothGattCharacteristic bluetoothGattCharacteristic, int i) {
+wl_JADX/com/yf/gattlib/client/ProGuard.java:        BluetoothGattService service = bluetoothGattCharacteristic.getService();
+wl_JADX/com/yf/gattlib/client/ProGuard.java:    public void onCharacteristicChanged(BluetoothGatt bluetoothGatt, BluetoothGattCharacteristic bluetoothGattCharacteristic) {
+wl_JADX/com/yf/gattlib/client/ProGuard.java:        BluetoothGattService service = bluetoothGattCharacteristic.getService();
+wl_JADX/com/yf/gattlib/client/ProGuard.java:    public void onDescriptorRead(BluetoothGatt bluetoothGatt, BluetoothGattDescriptor bluetoothGattDescriptor, int i) {
+wl_JADX/com/yf/gattlib/client/ProGuard.java:        BluetoothGattService service = bluetoothGattDescriptor.getCharacteristic().getService();
+wl_JADX/com/yf/gattlib/client/ProGuard.java:    public void onDescriptorWrite(BluetoothGatt bluetoothGatt, BluetoothGattDescriptor bluetoothGattDescriptor, int i) {
+wl_JADX/com/yf/gattlib/client/ProGuard.java:        BluetoothGattService service = bluetoothGattDescriptor.getCharacteristic().getService();
+wl_JADX/com/yf/gattlib/client/ProGuard.java:    public void onReliableWriteCompleted(BluetoothGatt bluetoothGatt, int i) {
+wl_JADX/com/yf/gattlib/client/ProGuard.java:    public void onReadRemoteRssi(BluetoothGatt bluetoothGatt, int i, int i2) {
+匹配到二进制文件 wl_JADX/com/yf/gattlib/p121f/ProGuard.java
+wl_JADX/com/yf/gattlib/p127m/p128a/ProGuard.java:            BluetoothDevice bluetoothDevice = (BluetoothDevice) intent.getParcelableExtra("android.bluetooth.device.extra.DEVICE");
+wl_JADX/com/yf/gattlib/server/ProGuard.java:class ProGuard extends BluetoothGattServerCallback {
+wl_JADX/com/yf/gattlib/server/p131a/p133b/p134a/ProGuard.java:    public void m8353a(BluetoothDevice bluetoothDevice, int i, BluetoothGattCharacteristic bluetoothGattCharacteristic, boolean z, boolean z2, int i2, byte[] bArr) {
+wl_JADX/com/yf/gattlib/server/p131a/p133b/p134a/ProGuard.java:    public void m8352a(BluetoothDevice bluetoothDevice, int i, int i2, BluetoothGattCharacteristic bluetoothGattCharacteristic) {
+wl_JADX/com/yf/gattlib/server/p131a/p133b/ProGuard.java:    private BluetoothGattService f6394a;
+wl_JADX/com/yf/gattlib/server/p131a/p133b/ProGuard.java:    private BluetoothGattServer f6395b;
+wl_JADX/com/yf/gattlib/server/p131a/p133b/ProGuard.java:    private Map<BluetoothDevice, Set<UUID>> f6396c;
+wl_JADX/com/yf/gattlib/server/p131a/p133b/ProGuard.java:    private class ProGuard extends BluetoothGattServerCallback implements com.yf.gattlib.server.p131a.ProGuard {
+wl_JADX/com/yf/gattlib/server/p131a/p133b/ProGuard.java:        public void onConnectionStateChange(BluetoothDevice bluetoothDevice, int i, int i2) {
+wl_JADX/com/yf/gattlib/server/p131a/p133b/ProGuard.java:                    com.yf.gattlib.p117p.ProGuard.m8292a("AncsServiceController MyBluetoothGattServerCallback -9");
+wl_JADX/com/yf/gattlib/server/p131a/p133b/ProGuard.java:                    com.yf.gattlib.p117p.ProGuard.m8292a("AncsServiceController MyBluetoothGattServerCallback -10");
+wl_JADX/com/yf/gattlib/server/p131a/p133b/ProGuard.java:        public void onServiceAdded(int i, BluetoothGattService bluetoothGattService) {
+wl_JADX/com/yf/gattlib/server/p131a/p133b/ProGuard.java:        public void onCharacteristicReadRequest(BluetoothDevice bluetoothDevice, int i, int i2, BluetoothGattCharacteristic bluetoothGattCharacteristic) {
+wl_JADX/com/yf/gattlib/server/p131a/p133b/ProGuard.java:        public void onCharacteristicWriteRequest(BluetoothDevice bluetoothDevice, int i, BluetoothGattCharacteristic bluetoothGattCharacteristic, boolean z, boolean z2, int i2, byte[] bArr) {
+wl_JADX/com/yf/gattlib/server/p131a/p133b/ProGuard.java:        public void onDescriptorReadRequest(BluetoothDevice bluetoothDevice, int i, int i2, BluetoothGattDescriptor bluetoothGattDescriptor) {
+wl_JADX/com/yf/gattlib/server/p131a/p133b/ProGuard.java:        public void onDescriptorWriteRequest(BluetoothDevice bluetoothDevice, int i, BluetoothGattDescriptor bluetoothGattDescriptor, boolean z, boolean z2, int i2, byte[] bArr) {
+wl_JADX/com/yf/gattlib/server/p131a/p133b/ProGuard.java:            if (Arrays.equals(BluetoothGattDescriptor.ENABLE_INDICATION_VALUE, bArr) || Arrays.equals(BluetoothGattDescriptor.ENABLE_NOTIFICATION_VALUE, bArr)) {
+wl_JADX/com/yf/gattlib/server/p131a/p133b/ProGuard.java:            } else if (Arrays.equals(BluetoothGattDescriptor.DISABLE_NOTIFICATION_VALUE, bArr)) {
+wl_JADX/com/yf/gattlib/server/p131a/p133b/ProGuard.java:        public void onExecuteWrite(BluetoothDevice bluetoothDevice, int i, boolean z) {
+wl_JADX/com/yf/gattlib/server/p131a/p133b/ProGuard.java:        public BluetoothGattServerCallback m8376a() {
+wl_JADX/com/yf/gattlib/server/p131a/p133b/ProGuard.java:    ProGuard(BluetoothGattServer bluetoothGattServer, BluetoothGattService bluetoothGattService) {
+wl_JADX/com/yf/gattlib/server/p131a/p133b/ProGuard.java:    public BluetoothGattServer m8387a() {
+wl_JADX/com/yf/gattlib/server/p131a/p133b/ProGuard.java:        BluetoothGattCharacteristic a = m8386a(uuid);
+wl_JADX/com/yf/gattlib/server/p131a/p133b/ProGuard.java:    private void m8381a(BluetoothGattCharacteristic bluetoothGattCharacteristic, String str, boolean z, byte[] bArr, int i, int i2) {
+wl_JADX/com/yf/gattlib/server/p131a/p133b/ProGuard.java:    private void m8380a(BluetoothGattCharacteristic bluetoothGattCharacteristic, String str, boolean z) {
+wl_JADX/com/yf/gattlib/server/p131a/p133b/ProGuard.java:            if ((str == null && ((Set) entry.getValue()).contains(bluetoothGattCharacteristic.getUuid())) || ((BluetoothDevice) entry.getKey()).getAddress().equals(str)) {
+wl_JADX/com/yf/gattlib/server/p131a/p133b/ProGuard.java:                this.f6395b.notifyCharacteristicChanged((BluetoothDevice) entry.getKey(), bluetoothGattCharacteristic, z);
+wl_JADX/com/yf/gattlib/server/p131a/p133b/ProGuard.java:    public BluetoothGattCharacteristic m8386a(UUID uuid) {
+wl_JADX/com/yf/gattlib/server/p131a/p133b/ProGuard.java:    private void m8379a(BluetoothDevice bluetoothDevice, UUID uuid) {
+wl_JADX/com/yf/gattlib/server/p131a/p133b/ProGuard.java:    private void m8378a(BluetoothDevice bluetoothDevice, BluetoothGattCharacteristic bluetoothGattCharacteristic) {
+wl_JADX/com/yf/gattlib/server/p131a/ProGuard.java:    BluetoothGattServerCallback m8375a();
