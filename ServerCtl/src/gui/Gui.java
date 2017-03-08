@@ -1,11 +1,7 @@
 package gui;
 
-import java.awt.Color;
-import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
-import java.awt.Label;
-import java.awt.TextField;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Vector;
@@ -49,9 +45,14 @@ public class Gui extends JFrame{
     		hctlBox1 = Box.createHorizontalBox(),
     		hctlBox2 = Box.createHorizontalBox();
     static Vector<PC>vecPCs = new Vector();
-    static Vector vecFunctions = new Vector();
+    static Vector<String> vecFunctions = new Vector<String>();
+    static String []functions = {
+    	"Info","ScreenShoot","Functions","files"
+    };
     static JList jlistPCs = new JList(vecPCs),
     		jlistFunctions = new JList(vecFunctions);
+    static JScrollPane jScrollpane_pclist = new JScrollPane(jlistPCs), jScrollpane_funclist = new JScrollPane(jlistFunctions);
+    static JPanel jPanel_content = new JPanel();
     /**
 	 * 
 	 */
@@ -126,24 +127,33 @@ public class Gui extends JFrame{
 
 		//列表位
 		vecPCs.add(new PC("                "));
-		vecFunctions.add("                ");
+		//vecFunctions.add("                ");
+		for(String f : functions){
+			vecFunctions.add(f);
+		}
+		//int i=99; while(i-- > 0){vecFunctions.add("edf");}
+		jScrollpane_pclist.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED); 
+		jScrollpane_pclist.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED); 
+		jScrollpane_pclist.setWheelScrollingEnabled(true);
+		jScrollpane_funclist.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED); 
+		jScrollpane_funclist.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED); 
+		jScrollpane_funclist.setWheelScrollingEnabled(true);
+		
 		jlistPCs.setBorder(BorderFactory.createTitledBorder("Computers"));
 		jlistPCs.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		hctlBox2.add(jlistPCs);
+		hctlBox2.add(jScrollpane_pclist);
 		
 		jlistFunctions.setBorder(BorderFactory.createTitledBorder("Operations"));
 		jlistFunctions.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		hctlBox2.add(jlistFunctions);
+		hctlBox2.add(jScrollpane_funclist);
 		
-		hctlBox2.add(Box.createGlue());
-		
+		//hctlBox2.add(Box.createGlue());
+		hctlBox2.add(jPanel_content);
 		vctlBox1.add(hctlBox2);
+		//内容位
+		jPanel_content.add(new JLabel("Nothing to show here"));
+		
 		jFrame_mainWindow.add(jPanel_ctl);
-		try {
-			addPC(new PC("test from gui"), Gui.class);
-		} catch (Exception e) {
-			//e.printStackTrace();
-		}
 	}
 	
 	public static String addPC(PC pc, Class envoker)throws Exception{
@@ -159,6 +169,26 @@ public class Gui extends JFrame{
 			vecPCs.add(pc);
 			log("\"" + className + "\"is trying to add these to PC list:\"" + pc + "\"");
 			log("Successfully added!");
+			return "Success!";
+		}
+		catch(Exception e){
+			throw e;
+		}
+	}
+
+	public static String removePC(PC pc, Class<?> envoker)throws Exception{
+		if(!vecPCs.contains(pc)){
+			Exception e = new Exception("PC do not exist!");
+			displayException(e);
+			throw e;
+		}
+		try{
+			StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
+			String className = stackTrace[stackTrace.length-1].toString();
+			className = envoker.getName();
+			vecPCs.remove(pc);
+			log("\"" + className + "\"is trying to remove these from PC list:\"" + pc + "\"");
+			log("Successfully removed!");
 			return "Success!";
 		}
 		catch(Exception e){
