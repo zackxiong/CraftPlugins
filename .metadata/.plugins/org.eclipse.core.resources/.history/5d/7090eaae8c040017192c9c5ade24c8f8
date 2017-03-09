@@ -1,0 +1,35 @@
+package gui.panels.logPanel;
+
+import java.awt.GridLayout;
+import java.text.SimpleDateFormat;
+
+import javax.swing.Box;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
+public class LogPanel extends JPanel{
+	private static final long serialVersionUID = -6111206288933781387L;
+	
+	public JLabel jlabel_logTitle=new JLabel("LogOutput：                                                                                                  "); 
+    public JFrame jFrame_mainWindow = new JFrame();  
+    public JTextField jtextField_enterBox = new JTextField(20);
+    public JTextArea jTextArea_logArea=new JTextArea("Server日志开始记录:\n",10,30);
+    public SimpleDateFormat df_date = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+    public JScrollPane jScrollpane_logScroll;
+    public GridLayout mainLayout = new GridLayout(3,2);//layout类型
+    public Box vlogBox1 = Box.createVerticalBox();
+    public Box hlogBox2 = Box.createHorizontalBox();
+    public Box hlogBox3 = Box.createHorizontalBox();
+    public JPanel jPanel_log = new JPanel();
+    public JButton button_send = new JButton("发送");
+    
+    public LogPanel(){
+    	super();
+    }
+
+}

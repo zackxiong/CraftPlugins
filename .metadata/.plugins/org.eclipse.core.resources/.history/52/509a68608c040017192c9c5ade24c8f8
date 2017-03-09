@@ -1,0 +1,7 @@
+package gui.panels.logPanel;
+
+import javax.swing.JPanel;
+
+public class LogPanel extends JPanel{
+
+}

@@ -1,0 +1,77 @@
+package gui.panels.controlPanel;
+
+import gui.panels.IdlePanel;
+
+import java.awt.Font;
+import java.util.Vector;
+
+import javax.swing.BorderFactory;
+import javax.swing.Box;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.ListSelectionModel;
+
+import pc.PC;
+
+public class ControlPanel extends JPanel{
+	private static final long serialVersionUID = -2823491917549154922L;
+	
+	static JPanel jPanel_ctl = new JPanel();
+    static JLabel jlabel_ctlTitle = new JLabel("My computers:                                                                                              ");
+    static Box vctlBox1 = Box.createVerticalBox(),
+    		hctlBox1 = Box.createHorizontalBox(),
+    		hctlBox2 = Box.createHorizontalBox();
+    static Vector<PC>vecPCs = new Vector<PC>();
+    static Vector<String> vecFunctions = new Vector<String>();
+    static String []functions = {
+    	"Info","ScreenShoot","Functions","files"
+    };
+    static JList jlistPCs = new JList(vecPCs),
+    		jlistFunctions = new JList(vecFunctions);
+    static JScrollPane jScrollpane_pclist = new JScrollPane(jlistPCs), jScrollpane_funclist = new JScrollPane(jlistFunctions);
+    static JPanel jPanel_content = new JPanel();
+    
+    public ControlPanel(){
+    	//列表初始化
+    			//标题位
+    			jlabel_ctlTitle.setFont((new Font("宋体",Font.BOLD, 16)));
+    			jlabel_ctlTitle.setSize(20, 20);
+    			hctlBox1.add(jlabel_ctlTitle);
+    			hctlBox1.add(Box.createGlue());
+    			vctlBox1.add(hctlBox1);
+    			jPanel_ctl.add(vctlBox1);
+
+    			//列表位
+    			vecPCs.add(new PC("                "));
+    			//vecFunctions.add("                ");
+    			for(String f : functions){
+    				vecFunctions.add(f);
+    			}
+    			//int i=99; while(i-- > 0){vecFunctions.add("edf");}
+    			jScrollpane_pclist.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED); 
+    			jScrollpane_pclist.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED); 
+    			jScrollpane_pclist.setWheelScrollingEnabled(true);
+    			jScrollpane_funclist.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED); 
+    			jScrollpane_funclist.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED); 
+    			jScrollpane_funclist.setWheelScrollingEnabled(true);
+    			
+    			jlistPCs.setBorder(BorderFactory.createTitledBorder("Computers"));
+    			jlistPCs.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+    			hctlBox2.add(jScrollpane_pclist);
+    			
+    			jlistFunctions.setBorder(BorderFactory.createTitledBorder("Operations"));
+    			jlistFunctions.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+    			hctlBox2.add(jScrollpane_funclist);
+    			
+    			//hctlBox2.add(Box.createGlue());
+    			hctlBox2.add(jPanel_content);
+    			vctlBox1.add(hctlBox2);
+    			//内容位
+    			//jPanel_content.add(new JLabel("Nothing to show here"));
+    			jPanel_content.add(new IdlePanel());
+    			
+    			jFrame_mainWindow.add(jPanel_ctl);
+    }
+}

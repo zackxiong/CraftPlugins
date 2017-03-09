@@ -39,11 +39,15 @@
 <fullyQualifiedTypeName name="java.awt.GridLayout"/>
 <fullyQualifiedTypeName name="javax.swing.Box"/>
 <fullyQualifiedTypeName name="java.awt.Font"/>
-<fullyQualifiedTypeName name="javax.swing.JPanel"/>
-<fullyQualifiedTypeName name="javax.swing.JButton"/>
 <fullyQualifiedTypeName name="javax.swing.BorderFactory"/>
 <fullyQualifiedTypeName name="javax.swing.ListSelectionModel"/>
-<fullyQualifiedTypeName name="pc.PC"/>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="pc.PC"/>
+<fullyQualifiedTypeName name="javax.swing.JLabel"/>
+<fullyQualifiedTypeName name="javax.swing.JButton"/>
+<fullyQualifiedTypeName name="javax.swing.JPanel"/>
+<fullyQualifiedTypeName name="gui.panels.logPanel.LogPanel"/>
+<fullyQualifiedTypeName name="gui.panels.IdlePanel"/>
 <fullyQualifiedTypeName name="gui.Gui"/>
+<fullyQualifiedTypeName name="gui.panels.controlPanel.ControlPanel"/>
 </qualifiedTypeNameHistroy>

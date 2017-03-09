@@ -1,0 +1,9 @@
+package gui;
+
+import javax.swing.JPanel;
+
+public class InfoPanel extends JPanel{
+
+	private static final long serialVersionUID = -6143438348516086903L;
+
+}
