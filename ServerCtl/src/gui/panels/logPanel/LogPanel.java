@@ -1,5 +1,9 @@
 package gui.panels.logPanel;
 
+import gui.MyColor;
+import gui.StatusFlag;
+
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.text.SimpleDateFormat;
@@ -13,13 +17,15 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.JTextPane;
 
-public class LogPanel extends JPanel{
+public class LogPanel extends JPanel implements Runnable{
 	private static final long serialVersionUID = -6111206288933781387L;
 	
 	public JLabel jlabel_logTitle=new JLabel("LogOutput：                                                                                                  "); 
     public JFrame jFrame_mainWindow = new JFrame();  
     public JTextField jtextField_enterBox = new JTextField(20);
+    //public JTextPane jTextArea_logArea=new JTextPane();
     public JTextArea jTextArea_logArea=new JTextArea("Server日志开始记录:\n",10,30);
     public SimpleDateFormat df_date = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     public JScrollPane jScrollpane_logScroll;
@@ -31,10 +37,16 @@ public class LogPanel extends JPanel{
     public JPanel jPanel_log = this;
     public JButton button_send = new JButton("发送");
     
+    Thread tflagChecker = new Thread(this);
+    public JLabel jlabel_status = new JLabel("●");
+    
     public LogPanel(){
     	super();
+    	//标题位
     	jlabel_logTitle.setFont((new Font("宋体",Font.BOLD, 16)));
         jlabel_logTitle.setSize(20, 20);
+        jlabel_status.setFont((new Font("宋体",Font.BOLD, 16)));
+        hlogBox2.add(jlabel_status);
         hlogBox2.add(jlabel_logTitle);
         hlogBox2.add(Box.createGlue());
         vlogBox1.add(hlogBox2);
@@ -54,6 +66,9 @@ public class LogPanel extends JPanel{
  		hlogBox3.add(button_send);
  		vlogBox1.add(hlogBox3);
  		jPanel_log.add(vlogBox1);//最后把整个panel加到窗口
+ 		//监视器
+    	tflagChecker.start();
+    	log("Starting Checker Thread on: "+tflagChecker.getId());
     }
  		
  	public void log(String msg){
@@ -61,6 +76,18 @@ public class LogPanel extends JPanel{
  		jTextArea_logArea.setText(jTextArea_logArea.getText()+"["+df_date.format(new Date())+"] "+msg+"\n");
  		jTextArea_logArea.setCaretPosition(jTextArea_logArea.getText().length());
  		System.out.print("["+df_date.format(new Date())+"] "+msg+"\n");
+ 	}
+ 	@Override
+ 	public void run(){
+ 		
+ 		try {
+ 			while(true){
+ 				this.jlabel_status.setForeground(StatusFlag.getHighestStatus());
+ 				Thread.sleep(2000);
+ 			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
  	}
 
 }

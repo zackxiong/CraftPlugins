@@ -50,4 +50,8 @@
 <fullyQualifiedTypeName name="gui.panels.IdlePanel"/>
 <fullyQualifiedTypeName name="gui.Gui"/>
 <fullyQualifiedTypeName name="gui.panels.controlPanel.ControlPanel"/>
+<fullyQualifiedTypeName name="java.awt.Color"/>
+<fullyQualifiedTypeName name="gui.MyColor"/>
+<fullyQualifiedTypeName name="gui.StatusFlag"/>
+<fullyQualifiedTypeName name="javax.swing.JTextPane"/>
 </qualifiedTypeNameHistroy>

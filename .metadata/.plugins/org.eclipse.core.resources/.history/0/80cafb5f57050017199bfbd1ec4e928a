@@ -1,0 +1,79 @@
+package gui;
+
+import java.awt.Color;
+
+public class StatusFlag {
+	private static boolean//优先级从高到低
+			isOffline = false,
+			isError = false,
+			isWarning = false,
+			isPending = false,
+			isOk = false;
+	private static int//优先级从高到低
+			countOffline = 0,
+			countError = 0,
+			countWarning = 0,
+			countPending = 0,
+			countOk = 0;
+	static int topCount = 0;
+	
+	public static Color getHighestStatus(){
+		if(isOffline){
+			
+			return MyColor.color_offline;
+		}
+		if(isError){
+			return MyColor.color_error;
+		}
+		if(isWarning){
+			return MyColor.color_warning;
+		}
+		if(isPending){
+			return MyColor.color_pending;
+		}
+		else{
+			return MyColor.color_ok;
+		}
+	}
+
+	public static boolean isOffline() {
+		return isOffline;
+	}
+
+	public static void setOffline(boolean isOffline, int milisec) {
+		topCount = milisec;
+		StatusFlag.isOffline = isOffline;
+	}
+
+	public static boolean isError() {
+		return isError;
+	}
+
+	public static void setError(boolean isError, int milisec) {
+		StatusFlag.isError = isError;
+	}
+
+	public static boolean isWarning() {
+		return isWarning;
+	}
+
+	public static void setWarning(boolean isWarning, int milisec) {
+		StatusFlag.isWarning = isWarning;
+	}
+
+	public static boolean isPending() {
+		return isPending;
+	}
+
+	public static void setPending(boolean isPending, int milisec) {
+		StatusFlag.isPending = isPending;
+	}
+
+	public static boolean isOk() {
+		return isOk;
+	}
+
+	public static void setOk(boolean isOk, int milisec) {
+		StatusFlag.isOk = isOk;
+	}
+}

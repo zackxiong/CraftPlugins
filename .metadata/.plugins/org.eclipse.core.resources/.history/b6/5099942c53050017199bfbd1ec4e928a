@@ -1,0 +1,23 @@
+package gui;
+
+import java.awt.Color;
+
+public class StatusFlag {
+	public static boolean//优先级从高到低
+			isOffline = false,
+			isError = false,
+			isWarning = false,
+			isPending = false,
+			isOk = false;
+	
+	public static Color getHighestStatus(){
+		if(isOffline)
+			return MyColor.color_offline;
+		if(isError)
+			return MyColor.color_error;
+		if(isWarning)
+			return MyColor.color_warning;
+		if(isPending)
+		
+	}
+}

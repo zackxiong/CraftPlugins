@@ -1,6 +1,8 @@
 package gui.panels.controlPanel;
 
 
+import gui.StatusFlag;
+
 import java.awt.Font;
 import java.util.Vector;
 
