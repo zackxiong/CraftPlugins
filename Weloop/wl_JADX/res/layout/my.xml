@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout app:orientation="1" app:background="@color/device_bg_gray" app:layout_width="-1" app:layout_height="-1">
+    <include app:id="@id/goal_include" app:layout_width="-1" app:layout_height="40dp" layout="@layout/all_title" />
+    <com.handmark.pulltorefresh.library.PullToRefreshScrollView app:id="@id/pull_refresh_scrollview" app:background="@color/device_bg_gray" app:scrollbars="0" app:layout_width="-1" app:layout_height="-1" app:layout_below="@id/goal_include" app:ptrShowIndicator="false">
+        <LinearLayout app:orientation="1" app:id="@id/scroll_child" app:background="@color/white" app:layout_width="-1" app:layout_height="-2" app:layout_marginTop="10dp">
+            <RelativeLayout app:id="@id/my_rl_profile" app:background="@color/device_bg_gray" app:layout_width="-1" app:layout_height="-2"
+                <RelativeLayout app:orientation="0" app:id="@id/profile" app:background="@color/device_bg_gray" app:layout_width="-1" app:layout_height="-2" app:layout_marginTop="10dp" app:layout_marginBottom="10dp" app:layout_marginStart="10dp" app:layout_marginEnd="10dp">
+                    <com.yf.smart.weloopx.android.ui.widget.CircularImageView app:id="@id/portrait" app:layout_width="80dp" app:layout_height="80dp" app:src="@styleable/View_android_theme" app:layout_alignParentStart="true" style="@style/portrait" />
+                    <TextView app:textSize="22sp" app:id="@id/nick_name" app:layout_width="-2" app:layout_height="-2" app:layout_marginTop="16dp" app:layout_marginStart="15dp" app:layout_toEndOf="@id/portrait" />
+                    <ImageView app:id="@id/option_more" app:layout_width="14dp" app:layout_height="22dp" app:src="@drawable/arrow" app:scaleType="3" app:layout_centerVertical="true" app:contentDescription="@string/app_name" app:layout_alignParentEnd="true" />
+                    <LinearLayout app:orientation="0" app:layout_width="-1" app:layout_height="-2" app:layout_marginTop="8dp" app:baselineAligned="false" app:layout_below="@id/nick_name" app:layout_marginStart="15dp" app:layout_marginEnd="30dp" app:layout_toEndOf="@id/portrait">
+                        <include app:id="@id/standard_reaching_rate" app:layout_width="-1" app:layout_height="-2" app:layout_weight="1.0" app:layout_marginEnd="10dp" layout="@layout/profile_head_item" />
+                        <include app:id="@id/active_point" app:layout_width="-1" app:layout_height="-2" app:layout_weight="1.0" app:layout_marginEnd="10dp" layout="@layout/profile_head_item" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+            <RelativeLayout app:background="@color/device_bg_gray" app:paddingTop="10dp" app:paddingBottom="15dp" app:layout_width="-1" app:layout_height="-2">
+                <LinearLayout app:orientation="0" app:background="@color/device_bg_gray" app:layout_width="-1" app:layout_height="-2" app:baselineAligned="false"
+                    <LinearLayout app:orientation="1" app:id="@id/my_message_filter" app:background="@color/device_bg_gray" app:layout_width="-2" app:layout_height="-2" app:layout_weight="1.0">
+                        <ImageView app:layout_gravity="1" app:layout_width="-2" app:layout_height="-2" app:src="@drawable/my_message_filter" app:contentDescription="@string/app_name" />
+                        <TextView app:textStyle="1" app:textColor="@color/ranking_gray" app:layout_gravity="1" app:layout_width="-2" app:layout_height="-2" app:text="@string/message_filter" />
+                    </LinearLayout>
+                    <LinearLayout app:orientation="1" app:id="@id/my_reminders" app:background="@color/device_bg_gray" app:layout_width="-2" app:layout_height="-2" app:layout_weight="1.0">
+                        <ImageView app:layout_gravity="1" app:layout_width="-2" app:layout_height="-2" app:src="@drawable/my_reminders" app:contentDescription="@string/app_name" />
+                        <TextView app:textStyle="1" app:textColor="@color/ranking_gray" app:layout_gravity="1" app:layout_width="-2" app:layout_height="-2" app:text="@string/reminders" />
+                    </LinearLayout>
+                    <LinearLayout app:orientation="1" app:id="@id/my_alarm" app:background="@color/device_bg_gray" app:layout_width="-2" app:layout_height="-2" app:layout_weight="1.0">
+                        <ImageView app:layout_gravity="1" app:layout_width="-2" app:layout_height="-2" app:src="@drawable/my_alarm" app:contentDescription="@string/app_name" />
+                        <TextView app:textStyle="1" app:textColor="@color/ranking_gray" app:layout_gravity="1" app:layout_width="-2" app:layout_height="-2" app:text="@string/set_alarm" />
+                    </LinearLayout>
+                    <LinearLayout app:orientation="1" app:id="@id/my_anti_disturb" app:background="@color/device_bg_gray" app:layout_width="-2" app:layout_height="-2" app:layout_weight="1.0">
+                        <ImageView app:layout_gravity="1" app:layout_width="-2" app:layout_height="-2" app:src="@drawable/my_anti_disturb" app:contentDescription="@string/app_name" />
+                        <TextView app:textStyle="1" app:textColor="@color/ranking_gray" app:layout_gravity="1" app:layout_width="-2" app:layout_height="-2" app:text="@string/night_anti_disturb" />
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+            <include layout="@layout/gray_line" />
+            <include app:id="@id/best_day" layout="@layout/user_profile_item" />
+            <View app:layout_gravity="800005" app:background="@color/device_gray" app:layout_width="340dp" app:layout_height="1dp" />
+            <include app:id="@id/best_week" layout="@layout/user_profile_item" />
+            <View app:layout_gravity="800005" app:background="@color/device_gray" app:layout_width="340dp" app:layout_height="1dp" />
+            <include app:id="@id/carrer_sum" layout="@layout/user_profile_item" />
+            <View app:layout_gravity="800005" app:background="@color/device_gray" app:layout_width="340dp" app:layout_height="1dp" />
+            <include app:id="@id/series_finish_day" layout="@layout/user_profile_item" />
+            <View app:layout_gravity="800005" app:background="@color/device_gray" app:layout_width="340dp" app:layout_height="1dp" />
+            <RelativeLayout app:background="@color/device_bg_gray" app:layout_width="-1" app:layout_height="25dp" />
+            <include app:id="@id/my_rl_download_history_data" app:layout_width="-1" app:layout_height="40dp" app:layout_marginTop="2dp" app:layout_marginBottom="2dp" app:layout_marginStart="10dp" app:layout_marginEnd="10dp" layout="@layout/device_more_option" />
+            <include layout="@layout/gray_line" />
+            <include app:id="@id/set_target" app:layout_width="-1" app:layout_height="40dp" app:layout_marginTop="2dp" app:layout_marginBottom="2dp" app:layout_marginStart="20dp" app:layout_marginEnd="10dp" layout="@layout/device_more_option" />
+            <include layout="@layout/gray_line" />
+            <include app:id="@id/sync_swich" layout="@layout/device_switch_option" />
+            <include layout="@layout/gray_line" />
+            <RelativeLayout app:background="@color/white" app:layout_width="-1" app:layout_height="44dp">
+                <TextView app:textSize="20sp" app:textColor="@color/text_gray1" app:gravity="10" app:id="@id/my_tv_location_msg" app:layout_width="-2" app:layout_height="-1" app:text="@string/trajectory" app:layout_marginStart="20dp" app:layout_alignParentStart="true" />
+                <com.yf.smart.weloopx.android.ui.widget.OptionToggleButton app:id="@id/my_otb_location" app:background="@drawable/toggle_selector" app:layout_width="52dp" app:layout_height="26dp" app:textOn="" app:textOff="" app:text="" app:layout_centerVertical="true" app:layout_marginEnd="10dp" app:layout_alignParentEnd="true" />
+            </RelativeLayout>
+            <include layout="@layout/gray_line" />
+            <RelativeLayout app:id="@id/my_rl_bind" app:background="@color/white" app:layout_width="-1" app:layout_height="44dp">
+                <TextView app:textSize="20sp" app:textColor="@color/text_gray1" app:gravity="10" app:id="@id/my_tv_bind_account" app:layout_width="-2" app:layout_height="-1" app:text="@string/account_bind" app:layout_marginStart="20dp" app:layout_alignParentStart="true" />
+                <TextView app:textSize="15sp" app:textColor="@color/red" app:gravity="11" app:id="@id/my_tv_bind_msg" app:layout_width="-2" app:layout_height="-2" app:text="@string/unbind" app:layout_centerVertical="true" app:layout_marginEnd="30dp" app:layout_alignParentEnd="true" />
+                <ImageView app:id="@id/my_iv_bind_go" app:layout_width="11dp" app:layout_height="18dp" app:src="@drawable/arrow" app:scaleType="3" app:layout_centerVertical="true" app:contentDescription="@string/app_name" app:layout_marginEnd="10dp" app:layout_alignParentEnd="true" />
+            </RelativeLayout>
+            <RelativeLayout app:id="@id/my_rl_bind_info" app:background="@color/white" app:layout_width="-1" app:layout_height="44dp">
+                <ImageView app:id="@id/my_iv_wechat" app:layout_width="35dp" app:layout_height="35dp" app:src="@drawable/wechat_bind" app:scaleType="3" app:layout_centerVertical="true" app:contentDescription="@string/app_name" app:layout_marginStart="20dp" app:layout_alignParentStart="true" />
+                <ImageView app:id="@id/my_iv_phone" app:layout_width="35dp" app:layout_height="35dp" app:src="@drawable/phone_bind" app:scaleType="3" app:layout_centerVertical="true" app:contentDescription="@string/app_name" app:layout_marginStart="10dp" app:layout_toEndOf="@id/my_iv_wechat" />
+            </RelativeLayout>
+            <include layout="@layout/gray_line" />
+            <include app:id="@id/my_rl_version_info" app:layout_width="-1" app:layout_height="40dp" app:layout_marginTop="2dp" app:layout_marginBottom="2dp" app:layout_marginStart="20dp" app:layout_marginEnd="10dp" layout="@layout/device_more_option" />
+            <include layout="@layout/gray_line" />
+            <include app:id="@id/my_rl_evaluation" app:layout_width="-1" app:layout_height="40dp" app:layout_marginTop="2dp" app:layout_marginBottom="2dp" app:layout_marginStart="10dp" app:layout_marginEnd="10dp" layout="@layout/device_more_option" />
+            <include app:id="@id/my_rl_goal_notification" app:layout_width="-1" app:layout_height="40dp" app:layout_marginTop="2dp" app:layout_marginBottom="2dp" app:layout_marginStart="20dp" app:layout_marginEnd="10dp" layout="@layout/device_more_option" />
+        </LinearLayout>
+    </com.handmark.pulltorefresh.library.PullToRefreshScrollView>
+</RelativeLayout>

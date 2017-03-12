@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout app:orientation="1" app:layout_width="-1" app:layout_height="-1">
+    <ProgressBar app:id="@id/daily_pb" app:visibility="2" app:layout_width="-1" app:layout_height="4dp" app:max="100" app:progressDrawable="@drawable/webview_progress_bar_states" style="?unknown_attr_ref: 1010078" />
+    <com.handmark.pulltorefresh.library.PullToRefreshListView app:scrollbarStyle="2000000" app:id="@id/dv_lv" app:scrollbars="0" app:fadingEdge="0" app:layout_width="-1" app:layout_height="-1" app:stackFromBottom="false" app:cacheColorHint="#00000000" app:divider="@styleable/View_android_theme" app:fastScrollEnabled="false" app:headerDividersEnabled="false" app:footerDividersEnabled="false" app:smoothScrollbar="true" app:ptrShowIndicator="false" />
+</RelativeLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="1" android:background="@color/goal_bg" android:layout_width="-1" android:layout_height="-1"
+    <RelativeLayout android:id="@id/label_rl_center_line" android:layout_width="-1" android:layout_height="-2" android:layout_centerHorizontal="true">
+        <ImageView android:id="@id/label_center_line1" android:visibility="0" android:layout_height="25dp" style="@style/label_center_line" />
+        <ImageView android:id="@id/label_center_line2" android:visibility="2" android:layout_height="50dp" style="@style/label_center_line" />
+        <ImageView android:id="@id/label_center_line3" android:visibility="2" android:layout_height="75dp" style="@style/label_center_line" />
+    </RelativeLayout>
+    <LinearLayout android:id="@id/ll_content" android:visibility="2" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_marginRight="10dp" android:layout_below="@id/label_rl_center_line">
+        <include layout="@layout/label_content" />
+    </LinearLayout>
+    <View android:id="@id/did_v_templine" android:visibility="0" android:layout_width="-2" android:layout_height="20dp" android:layout_below="@id/ll_content" />
+    <RelativeLayout android:visibility="0" android:layout_width="-1" android:layout_height="40dp" android:layout_below="@id/ll_content">
+        <View android:gravity="11" android:layout_gravity="11" android:id="@id/did_v_bottom_line" android:visibility="0" android:layout_height="-1" android:layout_marginLeft="0dp" android:layout_marginRight="0dp" style="@style/label_center_line" />
+        <TextView android:textSize="15sp" android:textColor="@color/goal_total_tv_msg" android:gravity="11" android:layout_gravity="11" android:id="@id/did_tv_time" android:layout_width="-1" android:layout_height="-2" android:text="01:23" android:layout_toLeftOf="@id/did_v_bottom_line" android:layout_centerVertical="true" />
+        <TextView android:textSize="15sp" android:textColor="@color/goal_total_tv_msg" android:gravity="11" android:layout_gravity="11" android:id="@id/did_tv_label" android:layout_width="-1" android:layout_height="-2" android:text="@string/sleep" android:layout_toRightOf="@id/did_v_bottom_line" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <ImageView android:id="@id/did_iv_label" android:layout_marginTop="-20dp" android:src="@drawable/sleep_icon" android:layout_below="@id/did_v_templine" style="@style/label_center_mark" />
+</RelativeLayout>

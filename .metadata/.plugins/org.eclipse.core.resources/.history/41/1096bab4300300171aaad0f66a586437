@@ -1,0 +1,13 @@
+package pc;
+
+public class PC {
+	String name;
+	PC(){
+		name = "unamed";
+	}
+	@Override
+	public String toString(){
+		return name;
+	}
+
+}

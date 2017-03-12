@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:id="@id/white_group" android:background="@color/white" android:layout_width="-1" android:layout_height="-2">
+    <include android:layout_width="-1" android:layout_height="-2" layout="@layout/watch_big_options" />
+    <LinearLayout android:background="@color/device_bg_gray" android:paddingTop="10dp" android:layout_width="-1" android:layout_height="-2" android:paddingStart="10dp" android:paddingEnd="10dp">
+        <include layout="@layout/gray_line" />
+    </LinearLayout>
+    <TextView android:background="@color/device_bg_gray" android:text="@string/base_settings" style="@style/device_label_text" />
+    <include layout="@layout/gray_line" />
+    <include android:id="@id/anti_lost" layout="@layout/device_switch_option" />
+    <include layout="@layout/gray_line" />
+    <include android:id="@id/back_light" style="@style/device_option" layout="@layout/device_more_option" />
+    <include android:id="@id/gray_line_tommy" layout="@layout/gray_line" />
+    <include android:id="@id/motion_display" style="@style/device_option" layout="@layout/device_more_option" />
+    <include android:id="@id/motion_display_tommy2" layout="@layout/device_switch_option" />
+    <include android:id="@id/motion_display_tommy2_line" layout="@layout/gray_line" />
+    <include android:id="@id/vibration_mode" layout="@layout/device_switch_option" />
+    <include layout="@layout/gray_line" />
+    <include android:id="@id/music_control" style="@style/device_option" layout="@layout/device_more_option" />
+    <include layout="@layout/gray_line" />
+    <TextView android:background="@color/device_bg_gray" android:text="@string/help_and_support" style="@style/device_label_text" />
+    <include layout="@layout/gray_line" />
+    <include android:id="@id/frequent_question" style="@style/device_option" layout="@layout/device_more_option" />
+    <include layout="@layout/gray_line" />
+    <TextView android:textColor="@color/device_red" android:id="@id/recovery_device" android:text="@string/recover_device" style="@style/device_option_text" />
+    <include layout="@layout/gray_line" />
+    <TextView android:textColor="@color/device_red" android:id="@id/disconnect_device" android:text="@string/disconnect_device" style="@style/device_option_text" />
+    <include layout="@layout/gray_line" />
+    <TextView android:textSize="15sp" android:background="@color/device_bg_gray" android:paddingBottom="10dp" android:layout_height="40dp" android:text="@string/unbind_device_tips" style="@style/device_label_text" />
+</LinearLayout>

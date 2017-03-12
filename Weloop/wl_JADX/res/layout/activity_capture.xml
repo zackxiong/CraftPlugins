@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="-1" android:layout_height="-1">
+    <RelativeLayout android:layout_width="-1" android:layout_height="-1">
+        <SurfaceView android:layout_gravity="11" android:id="@id/preview_view" android:layout_width="-1" android:layout_height="-1" />
+        <cn.hongfans.cyb.qr.view.ViewfinderView android:id="@id/viewfinder_view" android:layout_width="-2" android:layout_height="-2" />
+    </RelativeLayout>
+</FrameLayout>

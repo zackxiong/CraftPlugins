@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout app:orientation="1" app:layout_width="-1" app:layout_height="-1">
+    <com.yf.lib.ui.views.BottomTabLayout app:id="@id/tab_bottom" app:background="@color/white" app:layout_width="-1" app:layout_height="-1" app:libyf_BottomTabLayout_dividerHeight="1px" app:libyf_BottomTabLayout_dividerDrawable="@color/textcolor" />
+</LinearLayout>

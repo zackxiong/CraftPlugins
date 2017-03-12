@@ -1,0 +1,29 @@
+package gui.panels.controlPanel;
+
+import java.util.Vector;
+
+import javax.swing.Box;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+
+import pc.PC;
+
+public class ControlPanel extends JPanel{
+	private static final long serialVersionUID = -2823491917549154922L;
+	static JPanel jPanel_ctl = new JPanel();
+    static JLabel jlabel_ctlTitle = new JLabel("My computers:                                                                                              ");
+    static Box vctlBox1 = Box.createVerticalBox(),
+    		hctlBox1 = Box.createHorizontalBox(),
+    		hctlBox2 = Box.createHorizontalBox();
+    static Vector<PC>vecPCs = new Vector<PC>();
+    static Vector<String> vecFunctions = new Vector<String>();
+    static String []functions = {
+    	"Info","ScreenShoot","Functions","files"
+    };
+    static JList jlistPCs = new JList(vecPCs),
+    		jlistFunctions = new JList(vecFunctions);
+    static JScrollPane jScrollpane_pclist = new JScrollPane(jlistPCs), jScrollpane_funclist = new JScrollPane(jlistFunctions);
+    static JPanel jPanel_content = new JPanel();
+}

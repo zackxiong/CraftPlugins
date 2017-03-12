@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="0" android:background="0x106000b" android:layout_width="-1" android:layout_height="-2">
+    <com.yf.lib.ui.views.birthday.WheelView android:id="@id/year" android:background="#21212a" android:layout_width="-2" android:layout_height="-2" android:layout_weight="1.0" />
+    <com.yf.lib.ui.views.birthday.WheelView android:id="@id/month" android:background="#21212a" android:layout_width="-2" android:layout_height="-2" android:layout_weight="1.0" />
+    <com.yf.lib.ui.views.birthday.WheelView android:id="@id/day" android:background="#21212a" android:layout_width="-2" android:layout_height="-2" android:layout_weight="1.0" />
+</LinearLayout>

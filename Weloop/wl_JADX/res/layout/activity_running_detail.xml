@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout app:background="#f7f7f7" app:layout_width="-1" app:layout_height="-1">
+    <include app:id="@id/include" layout="@layout/all_title" />
+    <RelativeLayout app:id="@id/relativeLayout" app:layout_width="-1" app:layout_height="-1" app:layout_below="@id/include">
+        <WebView app:id="@id/rd_webview" app:layout_width="-1" app:layout_height="-1" app:layout_alignParentTop="true" app:layout_alignParentStart="true" />
+    </RelativeLayout>
+</RelativeLayout>

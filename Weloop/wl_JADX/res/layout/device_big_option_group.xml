@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="1" android:orientation="0" android:layout_width="-1" android:layout_height="-2">
+    <include android:id="@id/option_camera" layout="@layout/device_big_option" />
+    <include android:id="@id/option_watchface" layout="@layout/device_big_option" />
+    <include android:id="@id/option_upgrade" layout="@layout/device_big_option" />
+</LinearLayout>

@@ -1,0 +1,26 @@
+1488712302369	Rename field 'jlabel'
+1488712337602	Rename field 'f'
+1488712377006	Rename field 'jtextField'
+1488712419683	Rename field 'jtextarea'
+1488712427150	Rename field 'jlabel_logArea'
+1488712462808	Rename field 'df'
+1488712485901	Rename field 'jsp'
+1488713204782	Rename field 'logBox'
+1488713257751	Rename field 'logBox1'
+1488713266715	Rename field 'logBox2'
+1488714014919	Rename method 'createLogArea'
+1488870677678	Move method
+1488962078910	Copy method
+1488978409182	Rename type 'Info'
+1489019778628	Copy compilation unit
+1489019816712	Copy compilation unit
+1489019831733	Delete element
+1489019845240	Delete element
+1489019869369	Delete element
+1489019937800	Delete element
+1489020044936	Delete element
+1489020173607	Move compilation unit
+1489020180279	Move compilation unit
+1489038478951	Move compilation unit
+1489040013892	Move compilation unit
+1489125461786	Move method

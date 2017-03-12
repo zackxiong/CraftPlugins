@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:background="#eeefedf6" android:layout_width="-1" android:layout_height="-1">
+    <ListView android:id="@id/listViewScanner" android:layout_width="-1" android:layout_height="300dp" />
+    <TextView android:textSize="16sp" android:textColor="#000000" android:gravity="11" android:id="@id/empty" android:layout_width="-1" android:layout_height="-1" android:text="@string/dfu_no_sensor_found" />
+    <Button android:id="@id/buttonCancel" android:background="@drawable/btn_bg_rect_gray" android:layout_marginBottom="4dp" android:text="@string/dfu_button_label_cancel" style="@style/btn_link_style" />
+</LinearLayout>

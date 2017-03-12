@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout app:background="@color/whitegrey" app:layout_width="-1" app:layout_height="-1">
+    <include app:id="@id/layout1" app:layout_width="-1" app:layout_height="40dp" layout="@layout/all_title" />
+    <RelativeLayout app:id="@id/layout2" app:layout_width="-1" app:layout_height="-1" app:layout_alignParentBottom="true" app:layout_alignParentStart="true">
+        <TextView app:textSize="100sp" app:textStyle="1" app:textColor="@color/text_red" app:id="@id/tv_calories" app:layout_width="-2" app:layout_height="-2" app:layout_marginTop="52dp" app:text="100" app:layout_alignParentTop="true" app:layout_centerHorizontal="true" />
+        <TextView app:textSize="17sp" app:textStyle="2" app:layout_width="-2" app:layout_height="-2" app:layout_marginLeft="10dp" app:layout_marginBottom="29dp" app:text="@string/item_calories" app:layout_alignBottom="@id/tv_calories" app:layout_toEndOf="@id/tv_calories" />
+        <com.yf.smart.weloopx.android.ui.widget.RulerView app:id="@id/mScaleplateScrollView" app:background="@color/white" app:layout_width="-1" app:layout_height="70dp" app:layout_marginTop="200dp" app:indicator="@drawable/select_scale" app:indicatorWidth="25dp" app:indicatorHeight="20dp" app:indicator_centerHorizontal="true" app:scaleWidth="12dp" app:scaleLineWidth="2dp" app:scaleShortHeight="25dp" app:scaleLongHeight="50dp" app:scaleModular="100" app:scaleStart="100" app:scaleEnd="2001" app:scalePosition="100" app:scaleStep="10" app:scaleColor="@color/ruler_line_color" app:showModularNumber="false" app:modularNumberTextSize="18sp" />
+        <LinearLayout app:orientation="0" app:id="@id/layout3" app:background="@color/white" app:layout_width="-1" app:layout_height="30dp" app:layout_below="@id/mScaleplateScrollView">
+            <TextView app:textSize="17sp" app:textColor="@color/text_red" app:gravity="800003" app:id="@id/tv_interest_player" app:layout_width="0dp" app:layout_height="-2" app:text="@string/interest_player" app:layout_weight="1.0" app:layout_marginStart="10dp" />
+            <TextView app:textSize="17sp" app:gravity="11" app:id="@id/tv_amateur_player" app:layout_width="0dp" app:layout_height="-2" app:text="@string/amateur_player" app:layout_weight="1.0" />
+            <TextView app:textSize="17sp" app:gravity="800005" app:id="@id/tv_profess_player" app:layout_width="0dp" app:layout_height="-2" app:text="@string/professional_player" app:layout_weight="1.0" app:paddingEnd="10dp" />
+        </LinearLayout>
+        <TextView app:textSize="19sp" app:layout_width="-2" app:layout_height="-2" app:layout_marginTop="20dp" app:text="@string/equivalent_to" app:layout_below="@id/layout3" app:layout_centerHorizontal="true" />
+        <RelativeLayout app:id="@id/relativeLayout02" app:background="@color/white" app:layout_width="250dp" app:layout_height="100dp" app:layout_marginBottom="30dp" app:layout_above="@id/btn_finish" app:layout_centerHorizontal="true">
+            <ImageView app:id="@id/imgLabelWalk" app:background="@drawable/label_slow" app:layout_width="30dp" app:layout_height="30dp" app:layout_marginLeft="15dp" app:layout_marginTop="15dp" />
+            <TextView app:id="@id/textView6" app:layout_width="-2" app:layout_height="-2" app:layout_marginLeft="35dp" app:layout_marginTop="20dp" app:text="@string/text_walk" app:layout_alignLeft="@id/imgLabelWalk" />
+            <View app:background="@color/whitegrey" app:layout_width="80dp" app:layout_height="2dp" app:layout_marginLeft="15dp" app:layout_centerVertical="true" />
+            <View app:id="@id/view" app:background="@color/whitegrey" app:layout_width="80dp" app:layout_height="2dp" app:layout_marginLeft="40dp" app:layout_centerVertical="true" app:layout_marginEnd="18dp" app:layout_alignParentEnd="true" />
+            <TextView app:textStyle="1" app:textColor="@color/whitegrey" app:id="@id/textView5" app:layout_width="-2" app:layout_height="-2" app:text="@string/or" app:layout_centerHorizontal="true" app:layout_centerVertical="true" />
+            <ImageView app:id="@id/imgLabelRun" app:background="@drawable/label_run" app:layout_width="30dp" app:layout_height="30dp" app:layout_marginLeft="15dp" app:layout_marginTop="65dp" />
+            <TextView app:id="@id/textView7" app:layout_width="-2" app:layout_height="-2" app:layout_marginLeft="35dp" app:layout_marginTop="70dp" app:text="@string/text_run" app:layout_alignLeft="@id/imgLabelRun" />
+            <TextView app:id="@id/textWalkTarget" app:layout_width="-2" app:layout_height="-2" app:layout_marginLeft="35dp" app:text="54分钟" app:layout_alignTop="@id/textView6" app:layout_alignEnd="@id/view" />
+            <TextView app:id="@id/textRunTarget" app:layout_width="-2" app:layout_height="-2" app:layout_marginLeft="35dp" app:text="20分钟" app:layout_alignTop="@id/textView7" app:layout_alignEnd="@id/view" />
+        </RelativeLayout>
+        <Button app:textSize="19dp" app:textColor="@color/white" app:id="@id/btn_finish" app:background="@drawable/btn_register1" app:layout_width="220dp" app:layout_height="50dp" app:layout_marginBottom="15dp" app:text="@string/finish" app:layout_alignParentBottom="true" app:layout_centerHorizontal="true" />
+    </RelativeLayout>
+</RelativeLayout>

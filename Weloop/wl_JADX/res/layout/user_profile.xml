@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout app:orientation="1" app:background="@color/goal_bg" app:layout_width="-1" app:layout_height="-1">
+    <include app:id="@id/title_bar" app:layout_width="-1" app:layout_height="40dp" layout="@layout/user_profile_title" />
+    <ScrollView app:scrollbars="0" app:layout_width="-1" app:layout_height="0dp" app:layout_weight="1.0">
+        <RelativeLayout app:layout_width="-1" app:layout_height="-2" app:layout_marginTop="8dp">
+            <LinearLayout app:orientation="1" app:id="@id/profile" app:background="@drawable/user_profile_dialog_bg" app:paddingTop="18dp" app:layout_width="-1" app:layout_height="-2" app:layout_marginTop="50dp" app:paddingStart="20dp" app:paddingEnd="20dp" app:layout_marginStart="20dp" app:layout_marginEnd="20dp">
+                <RelativeLayout app:layout_width="-1" app:layout_height="-2">
+                    <include app:id="@id/active_point" app:layout_width="-2" app:layout_height="-2" app:layout_marginStart="120dp" app:layout_marginEnd="10dp" layout="@layout/device_more_option" />
+                    <LinearLayout app:orientation="1" app:layout_width="-1" app:layout_height="-2" app:layout_marginTop="10dp" app:layout_below="@id/active_point"
+                        <LinearLayout app:gravity="10" app:orientation="0" app:layout_width="-1" app:layout_height="-2" app:layout_marginTop="10dp" app:layout_marginBottom="10dp">
+                            <include app:gravity="10" app:id="@id/gold_count" app:layout_width="0dp" app:layout_height="-2" app:layout_weight="1.0" app:layout_marginStart="15dp" app:layout_marginEnd="15dp" layout="@layout/user_profile_item2" />
+                            <include layout="@layout/gray_line_vertical" />
+                            <include app:gravity="10" app:id="@id/silver_count" app:layout_width="0dp" app:layout_height="-2" app:layout_weight="1.0" app:layout_marginStart="15dp" app:layout_marginEnd="15dp" layout="@layout/user_profile_item2" />
+                            <include layout="@layout/gray_line_vertical" />
+                            <include app:gravity="10" app:id="@id/bronze_count" app:layout_width="0dp" app:layout_height="-2" app:layout_weight="1.0" app:layout_marginStart="15dp" app:layout_marginEnd="15dp" layout="@layout/user_profile_item2" />
+                        </LinearLayout>
+                        <include layout="@layout/gray_line" />
+                    </LinearLayout>
+                </RelativeLayout>
+                <ListView app:id="@id/profile_group" app:background="0x106000d" app:scrollbars="0" app:layout_width="-1" app:layout_height="350dp" app:divider="@color/device_gray" app:dividerHeight="1dp" />
+            </LinearLayout>
+            <FrameLayout app:layout_width="-1" app:layout_height="-1">
+                <com.yf.smart.weloopx.android.ui.widget.CircularImageView app:id="@id/user_head" app:layout_width="100dp" app:layout_height="100dp" app:src="@drawable/default_head" app:layout_marginStart="50dp" style="@style/portrait" />
+                <com.yf.smart.weloopx.android.ui.widget.CircularImageView app:id="@id/user_edit" app:layout_width="33dp" app:layout_height="33dp" app:layout_marginTop="62dp" app:src="@drawable/my_edit" app:layout_marginStart="121dp" app:border_width="0px" app:border_color="0x106000d" />
+                <TextView app:textSize="22sp" app:textColor="@color/ranking_normal" app:id="@id/nick_name" app:layout_width="-2" app:layout_height="-2" app:layout_marginLeft="160dp" app:layout_marginTop="15dp" app:maxLines="2" app:layout_marginEnd="20dp" />
+            </FrameLayout>
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

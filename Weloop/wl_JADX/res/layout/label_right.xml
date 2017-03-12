@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1"
+    <RelativeLayout android:id="@id/label_rl_center_line" android:layout_width="-2" android:layout_height="-2" android:layout_centerHorizontal="true">
+        <ImageView android:id="@id/label_center_line1" android:layout_height="25dp" style="@style/label_center_line" />
+        <ImageView android:id="@id/label_center_line2" android:visibility="2" android:layout_height="50dp" style="@style/label_center_line" />
+        <ImageView android:id="@id/label_center_line3" android:visibility="2" android:layout_height="75dp" style="@style/label_center_line" />
+    </RelativeLayout>
+    <ImageView android:id="@id/did_iv_label" android:src="@drawable/sleep_icon" android:layout_below="@id/label_rl_center_line" style="@style/label_center_mark" />
+    <LinearLayout android:gravity="13" android:id="@id/details" android:background="@drawable/tag_right" android:layout_alignTop="@id/did_iv_label" android:layout_toEndOf="@id/did_iv_label" style="@style/label_details">
+        <include layout="@layout/detail_right_item" />
+        <include layout="@layout/gray_line" />
+        <include layout="@layout/detail_right_item" />
+        <include layout="@layout/detail_right_item" />
+        <include layout="@layout/detail_right_item" />
+        <include layout="@layout/detail_right_item" />
+        <include layout="@layout/detail_right_item" />
+        <include layout="@layout/detail_right_item" />
+    </LinearLayout>
+    <TextView android:textColor="@color/goal_total_tv_msg" android:id="@id/did_tv_time" android:text="01:23" android:layout_alignTop="@id/did_iv_label" android:layout_marginEnd="8dp" android:layout_toStartOf="@id/did_iv_label" style="@style/label_start_time" />
+    <TextView android:textColor="@color/goal_total_tv_msg" android:id="@id/did_tv_label" android:text="@string/sleep" android:layout_alignTop="@id/did_iv_label" android:layout_marginEnd="8dp" android:layout_toStartOf="@id/did_tv_time" style="@style/label_start_time" />
+    <ImageView android:id="@id/label_item_iv_location" android:visibility="1" android:layout_width="30dp" android:layout_height="30dp" android:src="@drawable/location_icon" android:layout_alignBottom="@id/did_tv_label" android:layout_toStartOf="@id/did_tv_label" />
+    <View android:id="@id/center_line2" android:layout_height="-1" android:layout_below="@id/did_iv_label" android:layout_alignBottom="@id/details" style="@style/label_center_line" />
+</RelativeLayout>

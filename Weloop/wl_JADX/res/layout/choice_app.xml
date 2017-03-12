@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/user_green_bg" android:layout_width="-1" android:layout_height="-1"
+    <RelativeLayout android:id="@id/ca_rl_bottom" android:background="@color/black" android:layout_width="-1" android:layout_height="50dp" android:layout_alignParentBottom="true">
+        <TextView android:id="@id/ca_tv_center" android:background="#464d54" android:layout_width="1dp" android:layout_height="-1" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        <Button android:textSize="22sp" android:textColor="#ffffff" android:id="@id/ca_btn_cancel" android:background="@drawable/btn_sure" android:layout_width="-2" android:layout_height="-1" android:text="@string/cancel" android:layout_toLeftOf="@id/ca_tv_center" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+        <Button android:textSize="22sp" android:textColor="#ffffff" android:id="@id/ca_btn_sure" android:background="@drawable/btn_sure" android:layout_width="-2" android:layout_height="-1" android:text="@string/ok" android:layout_toRightOf="@id/ca_tv_center" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+        <TextView android:id="@id/ca_tv_top" android:background="#464d54" android:layout_width="-1" android:layout_height="1dp" android:layout_alignParentTop="true" />
+    </RelativeLayout>
+    <TextView android:id="@id/ca_tv_blue_line" android:background="#05c195" android:layout_width="-1" android:layout_height="1.3dp" android:layout_marginTop="10dp" android:layout_below="@id/rv_tv_msg" />
+    <ListView android:id="@id/ca_lv" android:background="@color/white" android:fadingEdge="0" android:layout_width="-1" android:layout_height="-2" android:listSelector="@drawable/list_selector_rect_gray" android:divider="@styleable/View_android_theme" android:dividerHeight="0sp" android:layout_above="@id/ca_rl_bottom" android:layout_below="@id/ca_tv_blue_line" android:layout_alignParentLeft="true" />
+    <TextView android:textAppearance="?unknown_attr_ref: 1010040" android:textSize="22sp" android:textColor="@color/white" android:id="@id/rv_tv_msg" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="10dp" android:layout_marginTop="14dp" android:text="@string/add_app" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    <ProgressBar android:id="@id/ca_pb" android:layout_width="-2" android:layout_height="-2" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+</RelativeLayout>

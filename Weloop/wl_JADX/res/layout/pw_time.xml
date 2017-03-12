@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="1" android:background="#000000" android:layout_width="-2" android:layout_height="-2">
+    <RelativeLayout android:layout_width="-1" android:layout_height="-2">
+        <include android:id="@id/timepicker" android:layout_width="-1" android:layout_height="-2" layout="@layout/include_timepicker" />
+        <View android:layout_width="-1" android:layout_height="-2" android:layout_alignTop="@id/timepicker" android:layout_alignBottom="@id/timepicker" />
+    </RelativeLayout>
+</LinearLayout>

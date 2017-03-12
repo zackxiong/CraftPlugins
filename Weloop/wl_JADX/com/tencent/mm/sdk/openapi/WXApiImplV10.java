@@ -1,0 +1,435 @@
+package com.tencent.mm.sdk.openapi;
+
+import android.app.Activity;
+import android.app.Application.ActivityLifecycleCallbacks;
+import android.app.Service;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.database.Cursor;
+import android.net.Uri;
+import android.os.Build.VERSION;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.util.Log;
+import com.tencent.mm.sdk.constants.Build;
+import com.tencent.mm.sdk.constants.ConstantsAPI;
+import com.tencent.mm.sdk.constants.ConstantsAPI.Token;
+import com.tencent.mm.sdk.constants.ConstantsAPI.WXApp;
+import com.tencent.mm.sdk.modelbase.BaseReq;
+import com.tencent.mm.sdk.modelbase.BaseResp;
+import com.tencent.mm.sdk.modelbiz.AddCardToWXCardPackage;
+import com.tencent.mm.sdk.modelmsg.GetMessageFromWX.Req;
+import com.tencent.mm.sdk.modelmsg.LaunchFromWX;
+import com.tencent.mm.sdk.modelmsg.SendAuth.Resp;
+import com.tencent.mm.sdk.modelmsg.SendMessageToWX;
+import com.tencent.mm.sdk.modelmsg.ShowMessageFromWX;
+import com.tencent.mm.sdk.modelpay.PayResp;
+import com.tencent.mm.sdk.p104a.C0721a;
+import com.tencent.mm.sdk.p104a.C0721a.C0717a;
+import com.tencent.mm.sdk.p104a.p105a.C0719a;
+import com.tencent.mm.sdk.p104a.p105a.C0719a.C0718a;
+import com.tencent.mm.sdk.p104a.p105a.C0720b;
+import com.tencent.mm.sdk.p106b.C0723a;
+import com.tencent.p099b.p100a.C0670a;
+import com.tencent.p099b.p100a.C0708t;
+import com.tencent.p099b.p100a.C0709u;
+import com.tencent.p099b.p100a.C0710v;
+import uk.co.chrisjenx.calligraphy.ProGuard;
+
+final class WXApiImplV10 implements IWXAPI {
+    private static final String TAG = "MicroMsg.SDK.WXApiImplV10";
+    private static ActivityLifecycleCb activityCb;
+    private static String wxappPayEntryClassname;
+    private String appId;
+    private boolean checkSignature;
+    private Context context;
+    private boolean detached;
+
+    private static final class ActivityLifecycleCb implements ActivityLifecycleCallbacks {
+        private static final int DELAYED = 800;
+        private static final String TAG = "MicroMsg.SDK.WXApiImplV10.ActivityLifecycleCb";
+        private Context context;
+        private Handler handler;
+        private boolean isForeground;
+        private Runnable onPausedRunnable;
+        private Runnable onResumedRunnable;
+
+        /* renamed from: com.tencent.mm.sdk.openapi.WXApiImplV10.ActivityLifecycleCb.1 */
+        class C07321 implements Runnable {
+            C07321() {
+            }
+
+            public void run() {
+                if (WXApiImplV10.activityCb != null && ActivityLifecycleCb.this.isForeground) {
+                    Log.v(ActivityLifecycleCb.TAG, "WXStat trigger onBackground");
+                    C0710v.m7095a(ActivityLifecycleCb.this.context, "onBackground_WX");
+                    ActivityLifecycleCb.this.isForeground = false;
+                }
+            }
+        }
+
+        /* renamed from: com.tencent.mm.sdk.openapi.WXApiImplV10.ActivityLifecycleCb.2 */
+        class C07332 implements Runnable {
+            C07332() {
+            }
+
+            public void run() {
+                if (WXApiImplV10.activityCb != null && !ActivityLifecycleCb.this.isForeground) {
+                    Log.v(ActivityLifecycleCb.TAG, "WXStat trigger onForeground");
+                    C0710v.m7095a(ActivityLifecycleCb.this.context, "onForeground_WX");
+                    ActivityLifecycleCb.this.isForeground = true;
+                }
+            }
+        }
+
+        private ActivityLifecycleCb(Context context) {
+            this.isForeground = false;
+            this.handler = new Handler(Looper.getMainLooper());
+            this.onPausedRunnable = new C07321();
+            this.onResumedRunnable = new C07332();
+            this.context = context;
+        }
+
+        public final void detach() {
+            this.handler.removeCallbacks(this.onResumedRunnable);
+            this.handler.removeCallbacks(this.onPausedRunnable);
+            this.context = null;
+        }
+
+        public final void onActivityCreated(Activity activity, Bundle bundle) {
+        }
+
+        public final void onActivityDestroyed(Activity activity) {
+        }
+
+        public final void onActivityPaused(Activity activity) {
+            Log.v(TAG, activity.getComponentName().getClassName() + "  onActivityPaused");
+            this.handler.removeCallbacks(this.onResumedRunnable);
+            this.handler.postDelayed(this.onPausedRunnable, 800);
+        }
+
+        public final void onActivityResumed(Activity activity) {
+            Log.v(TAG, activity.getComponentName().getClassName() + "  onActivityResumed");
+            this.handler.removeCallbacks(this.onPausedRunnable);
+            this.handler.postDelayed(this.onResumedRunnable, 800);
+        }
+
+        public final void onActivitySaveInstanceState(Activity activity, Bundle bundle) {
+        }
+
+        public final void onActivityStarted(Activity activity) {
+        }
+
+        public final void onActivityStopped(Activity activity) {
+        }
+    }
+
+    static {
+        activityCb = null;
+        wxappPayEntryClassname = null;
+    }
+
+    WXApiImplV10(Context context, String str, boolean z) {
+        this.checkSignature = false;
+        this.detached = false;
+        C0723a.m7147d(TAG, "<init>, appId = " + str + ", checkSignature = " + z);
+        this.context = context;
+        this.appId = str;
+        this.checkSignature = z;
+    }
+
+    private boolean checkSumConsistent(byte[] bArr, byte[] bArr2) {
+        if (bArr == null || bArr.length == 0 || bArr2 == null || bArr2.length == 0) {
+            C0723a.m7143a(TAG, "checkSumConsistent fail, invalid arguments");
+            return false;
+        } else if (bArr.length != bArr2.length) {
+            C0723a.m7143a(TAG, "checkSumConsistent fail, length is different");
+            return false;
+        } else {
+            for (int i = 0; i < bArr.length; i++) {
+                if (bArr[i] != bArr2[i]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+
+    private void initMta(Context context, String str) {
+        String str2 = "AWXOP" + str;
+        C0708t.m7053a(context, str2);
+        C0708t.m7078m();
+        C0708t.m7055a(C0709u.PERIOD);
+        C0708t.m7076k();
+        C0708t.m7060b(context, "Wechat_Sdk");
+        try {
+            C0710v.m7098a(context, str2, "2.0.3");
+        } catch (C0670a e) {
+            e.printStackTrace();
+        }
+    }
+
+    private boolean sendAddCardToWX(Context context, Bundle bundle) {
+        Cursor query = context.getContentResolver().query(Uri.parse("content://com.tencent.mm.sdk.comm.provider/addCardToWX"), null, null, new String[]{this.appId, bundle.getString("_wxapi_add_card_to_wx_card_list"), bundle.getString("_wxapi_basereq_transaction")}, null);
+        if (query != null) {
+            query.close();
+        }
+        return true;
+    }
+
+    private boolean sendJumpToBizProfileReq(Context context, Bundle bundle) {
+        Cursor query = context.getContentResolver().query(Uri.parse("content://com.tencent.mm.sdk.comm.provider/jumpToBizProfile"), null, null, new String[]{this.appId, bundle.getString("_wxapi_jump_to_biz_profile_req_to_user_name"), bundle.getString("_wxapi_jump_to_biz_profile_req_ext_msg"), bundle.getInt("_wxapi_jump_to_biz_profile_req_scene"), bundle.getInt("_wxapi_jump_to_biz_profile_req_profile_type")}, null);
+        if (query != null) {
+            query.close();
+        }
+        return true;
+    }
+
+    private boolean sendJumpToBizWebviewReq(Context context, Bundle bundle) {
+        Cursor query = context.getContentResolver().query(Uri.parse("content://com.tencent.mm.sdk.comm.provider/jumpToBizProfile"), null, null, new String[]{this.appId, bundle.getString("_wxapi_jump_to_biz_webview_req_to_user_name"), bundle.getString("_wxapi_jump_to_biz_webview_req_ext_msg"), bundle.getInt("_wxapi_jump_to_biz_webview_req_scene")}, null);
+        if (query != null) {
+            query.close();
+        }
+        return true;
+    }
+
+    private boolean sendPayReq(Context context, Bundle bundle) {
+        if (wxappPayEntryClassname == null) {
+            wxappPayEntryClassname = new MMSharedPreferences(context).getString("_wxapp_pay_entry_classname_", null);
+            C0723a.m7147d(TAG, "pay, set wxappPayEntryClassname = " + wxappPayEntryClassname);
+            if (wxappPayEntryClassname == null) {
+                C0723a.m7143a(TAG, "pay fail, wxappPayEntryClassname is null");
+                return false;
+            }
+        }
+        C0717a c0717a = new C0717a();
+        c0717a.f5366n = bundle;
+        c0717a.f5363k = WXApp.WXAPP_PACKAGE_NAME;
+        c0717a.f5364l = wxappPayEntryClassname;
+        return C0721a.m7137a(context, c0717a);
+    }
+
+    public final void detach() {
+        C0723a.m7147d(TAG, "detach");
+        this.detached = true;
+        if (activityCb != null && VERSION.SDK_INT >= 14) {
+            if (this.context instanceof Activity) {
+                ((Activity) this.context).getApplication().unregisterActivityLifecycleCallbacks(activityCb);
+            } else if (this.context instanceof Service) {
+                ((Service) this.context).getApplication().unregisterActivityLifecycleCallbacks(activityCb);
+            }
+            activityCb.detach();
+        }
+        this.context = null;
+    }
+
+    public final int getWXAppSupportAPI() {
+        if (this.detached) {
+            throw new IllegalStateException("getWXAppSupportAPI fail, WXMsgImpl has been detached");
+        } else if (isWXAppInstalled()) {
+            return new MMSharedPreferences(this.context).getInt("_build_info_sdk_int_", 0);
+        } else {
+            C0723a.m7143a(TAG, "open wx app failed, not installed or signature check failed");
+            return 0;
+        }
+    }
+
+    public final boolean handleIntent(Intent intent, IWXAPIEventHandler iWXAPIEventHandler) {
+        if (!WXApiImplComm.isIntentFromWx(intent, Token.WX_TOKEN_VALUE_MSG)) {
+            C0723a.m7146c(TAG, "handleIntent fail, intent not from weixin msg");
+            return false;
+        } else if (this.detached) {
+            throw new IllegalStateException("handleIntent fail, WXMsgImpl has been detached");
+        } else {
+            String stringExtra = intent.getStringExtra(ConstantsAPI.CONTENT);
+            int intExtra = intent.getIntExtra(ConstantsAPI.SDK_VERSION, 0);
+            String stringExtra2 = intent.getStringExtra(ConstantsAPI.APP_PACKAGE);
+            if (stringExtra2 == null || stringExtra2.length() == 0) {
+                C0723a.m7143a(TAG, "invalid argument");
+                return false;
+            } else if (checkSumConsistent(intent.getByteArrayExtra(ConstantsAPI.CHECK_SUM), C0720b.m7136a(stringExtra, intExtra, stringExtra2))) {
+                int intExtra2 = intent.getIntExtra("_wxapi_command_type", 0);
+                switch (intExtra2) {
+                    case ProGuard.styleable.View_android_focusable /*1*/:
+                        iWXAPIEventHandler.onResp(new Resp(intent.getExtras()));
+                        return true;
+                    case ProGuard.styleable.View_paddingStart /*2*/:
+                        iWXAPIEventHandler.onResp(new SendMessageToWX.Resp(intent.getExtras()));
+                        return true;
+                    case ProGuard.styleable.View_paddingEnd /*3*/:
+                        iWXAPIEventHandler.onReq(new Req(intent.getExtras()));
+                        return true;
+                    case ProGuard.styleable.View_theme /*4*/:
+                        iWXAPIEventHandler.onReq(new ShowMessageFromWX.Req(intent.getExtras()));
+                        return true;
+                    case ProGuard.styleable.View_backgroundTint /*5*/:
+                        iWXAPIEventHandler.onResp(new PayResp(intent.getExtras()));
+                        return true;
+                    case ProGuard.styleable.View_backgroundTintMode /*6*/:
+                        iWXAPIEventHandler.onReq(new LaunchFromWX.Req(intent.getExtras()));
+                        return true;
+                    case ProGuard.styleable.Toolbar_titleTextAppearance /*9*/:
+                        iWXAPIEventHandler.onResp(new AddCardToWXCardPackage.Resp(intent.getExtras()));
+                        return true;
+                    default:
+                        C0723a.m7143a(TAG, "unknown cmd = " + intExtra2);
+                        return false;
+                }
+            } else {
+                C0723a.m7143a(TAG, "checksum fail");
+                return false;
+            }
+        }
+    }
+
+    public final boolean isWXAppInstalled() {
+        boolean z = false;
+        if (this.detached) {
+            throw new IllegalStateException("isWXAppInstalled fail, WXMsgImpl has been detached");
+        }
+        try {
+            PackageInfo packageInfo = this.context.getPackageManager().getPackageInfo(WXApp.WXAPP_PACKAGE_NAME, 64);
+            if (packageInfo != null) {
+                z = WXApiImplComm.validateAppSignature(this.context, packageInfo.signatures, this.checkSignature);
+            }
+        } catch (NameNotFoundException e) {
+        }
+        return z;
+    }
+
+    public final boolean isWXAppSupportAPI() {
+        if (!this.detached) {
+            return getWXAppSupportAPI() >= Build.SDK_INT;
+        } else {
+            throw new IllegalStateException("isWXAppSupportAPI fail, WXMsgImpl has been detached");
+        }
+    }
+
+    public final boolean openWXApp() {
+        if (this.detached) {
+            throw new IllegalStateException("openWXApp fail, WXMsgImpl has been detached");
+        } else if (isWXAppInstalled()) {
+            try {
+                this.context.startActivity(this.context.getPackageManager().getLaunchIntentForPackage(WXApp.WXAPP_PACKAGE_NAME));
+                return true;
+            } catch (Exception e) {
+                C0723a.m7143a(TAG, "startActivity fail, exception = " + e.getMessage());
+                return false;
+            }
+        } else {
+            C0723a.m7143a(TAG, "open wx app failed, not installed or signature check failed");
+            return false;
+        }
+    }
+
+    public final boolean registerApp(String str) {
+        if (this.detached) {
+            throw new IllegalStateException("registerApp fail, WXMsgImpl has been detached");
+        } else if (WXApiImplComm.validateAppSignatureForPackage(this.context, WXApp.WXAPP_PACKAGE_NAME, this.checkSignature)) {
+            if (activityCb == null && VERSION.SDK_INT >= 14) {
+                if (this.context instanceof Activity) {
+                    initMta(this.context, str);
+                    activityCb = new ActivityLifecycleCb(null);
+                    ((Activity) this.context).getApplication().registerActivityLifecycleCallbacks(activityCb);
+                } else if (this.context instanceof Service) {
+                    initMta(this.context, str);
+                    activityCb = new ActivityLifecycleCb(null);
+                    ((Service) this.context).getApplication().registerActivityLifecycleCallbacks(activityCb);
+                } else {
+                    C0723a.m7145b(TAG, "context is not instanceof Activity or Service, disable WXStat");
+                }
+            }
+            C0723a.m7147d(TAG, "registerApp, appId = " + str);
+            if (str != null) {
+                this.appId = str;
+            }
+            C0723a.m7147d(TAG, "register app " + this.context.getPackageName());
+            C0718a c0718a = new C0718a();
+            c0718a.f5369o = WXApp.WXAPP_PACKAGE_NAME;
+            c0718a.f5370p = ConstantsAPI.ACTION_HANDLE_APP_REGISTER;
+            c0718a.f5367m = "weixin://registerapp?appid=" + this.appId;
+            return C0719a.m7135a(this.context, c0718a);
+        } else {
+            C0723a.m7143a(TAG, "register app failed for wechat app signature check failed");
+            return false;
+        }
+    }
+
+    public final boolean sendReq(BaseReq baseReq) {
+        if (this.detached) {
+            throw new IllegalStateException("sendReq fail, WXMsgImpl has been detached");
+        } else if (!WXApiImplComm.validateAppSignatureForPackage(this.context, WXApp.WXAPP_PACKAGE_NAME, this.checkSignature)) {
+            C0723a.m7143a(TAG, "sendReq failed for wechat app signature check failed");
+            return false;
+        } else if (baseReq.checkArgs()) {
+            C0723a.m7147d(TAG, "sendReq, req type = " + baseReq.getType());
+            Bundle bundle = new Bundle();
+            baseReq.toBundle(bundle);
+            if (baseReq.getType() == 5) {
+                return sendPayReq(this.context, bundle);
+            }
+            if (baseReq.getType() == 7) {
+                return sendJumpToBizProfileReq(this.context, bundle);
+            }
+            if (baseReq.getType() == 8) {
+                return sendJumpToBizWebviewReq(this.context, bundle);
+            }
+            if (baseReq.getType() == 9) {
+                return sendAddCardToWX(this.context, bundle);
+            }
+            C0717a c0717a = new C0717a();
+            c0717a.f5366n = bundle;
+            c0717a.f5365m = "weixin://sendreq?appid=" + this.appId;
+            c0717a.f5363k = WXApp.WXAPP_PACKAGE_NAME;
+            c0717a.f5364l = WXApp.WXAPP_MSG_ENTRY_CLASSNAME;
+            return C0721a.m7137a(this.context, c0717a);
+        } else {
+            C0723a.m7143a(TAG, "sendReq checkArgs fail");
+            return false;
+        }
+    }
+
+    public final boolean sendResp(BaseResp baseResp) {
+        if (this.detached) {
+            throw new IllegalStateException("sendResp fail, WXMsgImpl has been detached");
+        } else if (!WXApiImplComm.validateAppSignatureForPackage(this.context, WXApp.WXAPP_PACKAGE_NAME, this.checkSignature)) {
+            C0723a.m7143a(TAG, "sendResp failed for wechat app signature check failed");
+            return false;
+        } else if (baseResp.checkArgs()) {
+            Bundle bundle = new Bundle();
+            baseResp.toBundle(bundle);
+            C0717a c0717a = new C0717a();
+            c0717a.f5366n = bundle;
+            c0717a.f5365m = "weixin://sendresp?appid=" + this.appId;
+            c0717a.f5363k = WXApp.WXAPP_PACKAGE_NAME;
+            c0717a.f5364l = WXApp.WXAPP_MSG_ENTRY_CLASSNAME;
+            return C0721a.m7137a(this.context, c0717a);
+        } else {
+            C0723a.m7143a(TAG, "sendResp checkArgs fail");
+            return false;
+        }
+    }
+
+    public final void unregisterApp() {
+        if (this.detached) {
+            throw new IllegalStateException("unregisterApp fail, WXMsgImpl has been detached");
+        } else if (WXApiImplComm.validateAppSignatureForPackage(this.context, WXApp.WXAPP_PACKAGE_NAME, this.checkSignature)) {
+            C0723a.m7147d(TAG, "unregisterApp, appId = " + this.appId);
+            if (this.appId == null || this.appId.length() == 0) {
+                C0723a.m7143a(TAG, "unregisterApp fail, appId is empty");
+                return;
+            }
+            C0723a.m7147d(TAG, "unregister app " + this.context.getPackageName());
+            C0718a c0718a = new C0718a();
+            c0718a.f5369o = WXApp.WXAPP_PACKAGE_NAME;
+            c0718a.f5370p = ConstantsAPI.ACTION_HANDLE_APP_UNREGISTER;
+            c0718a.f5367m = "weixin://unregisterapp?appid=" + this.appId;
+            C0719a.m7135a(this.context, c0718a);
+        } else {
+            C0723a.m7143a(TAG, "unregister app failed for wechat app signature check failed");
+        }
+    }
+}
