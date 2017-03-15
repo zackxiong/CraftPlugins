@@ -15,6 +15,7 @@ extern InfoSenser* infosenser;
 extern Communicater* cmtr;
 extern bool checkerNeed;
 extern bool setterNeed;
+extern bool aliveKeeperNeed;
 extern std::string keeperPath;
 extern std::string thispath;
 extern const char* MY_SERVICE_NAME;

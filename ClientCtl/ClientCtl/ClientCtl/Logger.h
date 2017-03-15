@@ -1,24 +1,32 @@
 #pragma once
 #include <string>
 #include<iostream>
-#include <Windows.h>
 #include <fstream>
 #include <iostream>
+#include <sstream>
 
+#include "Communicater.h"
 
 class Logger
 {
 public:
-	Logger();
+	Logger(Communicater *cmtr);
 	~Logger();
-	template <class T> void log(T message) {
-		SYSTEMTIME t1;
-		GetSystemTime(&t1);
-		this->logFile << "[" << t1.wDay << ":" << t1.wHour << ":" << t1.wMinute << ":" << t1.wSecond << "]: " << message << std::endl;
-	}
+
+	void log(char *message);
+	void log(std::string message);
+
 	bool clearLog();
+	bool toFile = false;
 private:
 	std::ofstream logFile;
+	Communicater *cmtr;
 
 };
+
+inline std::string its(int i) {
+	std::stringstream s;
+	s << i;
+	return s.str();
+}
 

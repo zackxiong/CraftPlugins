@@ -32,10 +32,12 @@ std::string thispath("");
 extern const char* MY_SERVICE_NAME = "testservice";
 bool checkerNeed = true;
 bool setterNeed = true;
+bool aliveKeeperNeed = true;
 SERVICE_TABLE_ENTRY serviceT;
 
 DWORD WINAPI serviceCheckerThread(LPVOID pM);
 DWORD WINAPI communicaterThread(LPVOID pM);
+DWORD WINAPI keepAliveThread(LPVOID pM);
 HANDLE checkerHandle, setterHandle;
 
 
@@ -44,12 +46,13 @@ int main(int argc, char *argv[]) {
 	try {	AKr = new AliveKeeper("MyTestService");	}
 	catch (std::string str){	std::cout << str << std::endl;	}
 
-	try { logger = new Logger(); }
+	try { cmtr = new Communicater(); }//确保这玩意首先初始化。。。
+	catch (std::string str) { std::cout << str << std::endl; }
+
+	try { logger = new Logger(cmtr); }
 	catch (std::string str) { std::cout << str << std::endl; }
 
 	try {	infosenser = new InfoSenser();	}
-	catch (std::string str) { std::cout << str << std::endl; }
-	try { cmtr = new Communicater();  }
 	catch (std::string str) { std::cout << str << std::endl; }
 
 	//注册AliveKeeper
@@ -79,6 +82,9 @@ int main(int argc, char *argv[]) {
 
 	//注册Communicater
 	//setterHandle = CreateThread(NULL, 0, communicaterThread, NULL, 0, NULL); 
+	//bool a = cmtr->operator << ("override test");
+	setterHandle = CreateThread(NULL, 0, keepAliveThread, NULL, 0, NULL);
+	*cmtr << "override test" << "override test2";
 	//注册Communicater完毕
 	_getch();
 	/*
@@ -119,6 +125,14 @@ DWORD WINAPI communicaterThread(LPVOID pM){
 		Sleep(2*1000);
 	}*/
 	return 0;
+}
+
+DWORD WINAPI keepAliveThread(LPVOID pM) {
+	while (aliveKeeperNeed) {
+		logger->log("keepAlive");
+		_sleep(1000);
+	}
+	return true;
 }
 
 /*
