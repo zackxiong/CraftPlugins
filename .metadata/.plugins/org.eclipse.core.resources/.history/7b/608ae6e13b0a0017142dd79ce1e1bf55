@@ -1,0 +1,20 @@
+package pc;
+
+public class PC {
+	String name;
+	String hash = null;
+	
+	public PC(String hash){
+		name = "unamed";
+		this.hash = hash;
+	}
+	
+	public PC(String name){
+		this.name =  name;
+	}
+	@Override
+	public String toString(){
+		return name;
+	}
+
+}

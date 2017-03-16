@@ -3,12 +3,12 @@ package gui;
 import java.awt.Color;
 
 public class StatusFlag{
-	private static boolean//优先级从高到低
-			isOffline = false,
-			isError = false,
-			isWarning = false,
-			isPending = false,
-			isOk = false;
+	private static int//优先级从高到低
+			isOffline = 0,
+			isError = 0,
+			isWarning = 0,
+			isPending = 0;
+	private static  boolean	isOk = false;
 	/*private static int//优先级从高到低
 			countOffline = 0,
 			countError = 0,
@@ -18,20 +18,20 @@ public class StatusFlag{
 	int topCount = 0;*/
 	
 	public static Color getHighestStatus(){
-		if(isOffline){
-			isOffline = false;
+		if(isOffline > 0){
+			isOffline --;
 			return MyColor.color_offline;
 		}
-		if(isError){
-			isError = false;
+		if(isError > 0){
+			isError --;
 			return MyColor.color_error;
 		}
-		if(isWarning){
-			isWarning = false;
+		if(isWarning > 0){
+			isWarning --;
 			return MyColor.color_warning;
 		}
-		if(isPending){
-			isPending = false;
+		if(isPending > 0){
+			isPending --;
 			return MyColor.color_pending;
 		}
 		if(isOk){
@@ -42,36 +42,36 @@ public class StatusFlag{
 		}
 	}
 
-	public static boolean isOffline() {
+	public static int getIsOffline() {
 		return isOffline;
 	}
 
-	public static void setOffline(boolean isOffline) {
+	public static void setIsOffline(int isOffline) {
 		StatusFlag.isOffline = isOffline;
 	}
 
-	public static boolean isError() {
+	public static int getIsError() {
 		return isError;
 	}
 
-	public static void setError(boolean isError) {
-		StatusFlag.isError = isError;
+	public static void setIsError() {
+		StatusFlag.isError++;
 	}
 
-	public static boolean isWarning() {
+	public static int getIsWarning() {
 		return isWarning;
 	}
 
-	public static void setWarning(boolean isWarning) {
-		StatusFlag.isWarning = isWarning;
+	public static void setIsWarning() {
+		StatusFlag.isWarning++;
 	}
 
-	public static boolean isPending() {
+	public static int getIsPending() {
 		return isPending;
 	}
 
-	public static void setPending(boolean isPending) {
-		StatusFlag.isPending = isPending;
+	public static void setIsPending() {
+		StatusFlag.isPending++;
 	}
 
 	public static boolean isOk() {
@@ -81,4 +81,5 @@ public class StatusFlag{
 	public static void setOk(boolean isOk) {
 		StatusFlag.isOk = isOk;
 	}
+
 }

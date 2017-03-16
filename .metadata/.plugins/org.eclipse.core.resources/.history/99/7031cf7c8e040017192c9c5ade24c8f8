@@ -1,8 +1,0 @@
-package gui.panels.controlPanel;
-
-import javax.swing.JPanel;
-
-public class ControlPanel extends JPanel{
-	private static final long serialVersionUID = -2823491917549154922L;
-
-}

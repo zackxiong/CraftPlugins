@@ -1,7 +1,7 @@
 package communicater;
 
 public final class HeadDic {
-	public static byte 
+	public static int 
 		SEND_INFO = 0,
 		CLOSE_CONNECTION = 1,
 		SHUT_DOWN = 2,
@@ -13,5 +13,6 @@ public final class HeadDic {
 		DICTIONARY = 8,
 		FILE_NAME = 9,
 		FILE_INFO = 10,
-		FILE_CONTENT = 11;
+		FILE_CONTENT = 11,
+		KEEP_ALIVE = 12;
 }

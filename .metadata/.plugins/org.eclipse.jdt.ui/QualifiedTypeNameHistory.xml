@@ -54,4 +54,6 @@
 <fullyQualifiedTypeName name="gui.MyColor"/>
 <fullyQualifiedTypeName name="gui.StatusFlag"/>
 <fullyQualifiedTypeName name="javax.swing.JTextPane"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="java.io.OutputStream"/>
 </qualifiedTypeNameHistroy>

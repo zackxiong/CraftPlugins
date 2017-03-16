@@ -69,6 +69,7 @@ public class LogPanel extends JPanel implements Runnable{
  		//监视器
     	tflagChecker.start();
     	log("Starting Checker Thread on: "+tflagChecker.getId());
+    	log( "<html><font color=\"#FF0000\">我是红色字体</font></html> ");
     }
  		
  	public void log(String msg){
@@ -83,7 +84,7 @@ public class LogPanel extends JPanel implements Runnable{
  		try {
  			while(true){
  				this.jlabel_status.setForeground(StatusFlag.getHighestStatus());
- 				Thread.sleep(2000);
+ 				Thread.sleep(500);
  			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();

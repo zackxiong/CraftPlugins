@@ -1,0 +1,24 @@
+package pc;
+
+public class PC {
+	String name;
+	String hash = null;
+	
+	public PC(String hash){
+		this.name = "unamed";
+		this.hash = hash;
+	}
+	
+	public PC(String name, String hash){
+		this.name =  name;
+		this.hash = hash;
+	}
+	@Override
+	public String toString(){
+		return name+"|"+hash;
+	}
+	public boolean equals(){
+		
+	}
+
+}
