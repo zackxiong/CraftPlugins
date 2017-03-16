@@ -1,9 +1,0 @@
-package pc;
-
-public class PC {
-	
-	public String toString(){
-		return name;
-	}
-
-}

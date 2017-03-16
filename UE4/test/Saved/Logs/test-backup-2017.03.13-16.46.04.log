@@ -1,0 +1,1324 @@
+﻿Log file open, 03/13/17 13:26:19
+LogInit:Display: Running engine for game: test
+LogPlatformFile: Not using cached read wrapper
+LogInit:Display: RandInit(1986513277) SRandInit(1986513277).
+LogTaskGraph: Started task graph with 5 named threads and 8 total threads with 1 sets of task threads.
+LogStats: Stats thread started at 3.022861
+LogInit: Using libcurl 7.48.0-DEV
+LogInit:  - built for x86_64-unknown-linux-gnu
+LogInit:  - supports SSL with OpenSSL/1.0.2h
+LogInit:  - supports HTTP deflate (compression) using libz 1.2.8
+LogInit:  - other features:
+LogInit:      CURL_VERSION_SSL
+LogInit:      CURL_VERSION_LIBZ
+LogInit:      CURL_VERSION_IPV6
+LogInit:      CURL_VERSION_ASYNCHDNS
+LogInit:      CURL_VERSION_LARGEFILE
+LogInit:      CURL_VERSION_TLSAUTH_SRP
+LogInit:  Libcurl: checking if '/etc/pki/tls/certs/ca-bundle.crt' exists
+LogInit:  Libcurl: checking if '/etc/ssl/certs/ca-certificates.crt' exists
+LogInit:  CurlRequestOptions (configurable via config and command line):
+LogInit:  - bVerifyPeer = true  - Libcurl will verify peer certificate
+LogInit:  - bUseHttpProxy = false  - Libcurl will NOT use HTTP proxy
+LogInit:  - bDontReuseConnections = false  - Libcurl will reuse connections
+LogInit:  - CertBundlePath = /etc/ssl/certs/ca-certificates.crt  - Libcurl will set CURLOPT_CAINFO to it
+LogInit: Build: ++UE4+Release-4.15-CL-0
+LogInit: Engine Version: 4.15.0-0+++UE4+Release-4.15
+LogInit: Compatible Engine Version: 4.15.0-0+++UE4+Release-4.15
+LogInit: Net CL: 0
+LogDevObjectVersion: Number of dev versions registered: 14
+LogDevObjectVersion:   Dev-Blueprints (B0D832E4-1F89-4F0D-ACCF-7EB736FD4AA2): 8
+LogDevObjectVersion:   Dev-Build (E1C64328-A22C-4D53-A36C-8E866417BD8C): 0
+LogDevObjectVersion:   Dev-Core (375EC13C-06E4-48FB-B500-84F0262A717E): 2
+LogDevObjectVersion:   Dev-Editor (E4B068ED-F494-42E9-A231-DA0B2E46BB41): 14
+LogDevObjectVersion:   Dev-Framework (CFFC743F-43B0-4480-9391-14DF171D2073): 22
+LogDevObjectVersion:   Dev-Mobile (B02B49B5-BB20-44E9-A304-32B752E40360): 0
+LogDevObjectVersion:   Dev-Networking (A4E4105C-59A1-49B5-A7C5-40C4547EDFEE): 0
+LogDevObjectVersion:   Dev-Online (39C831C9-5AE6-47DC-9A44-9C173E1C8E7C): 0
+LogDevObjectVersion:   Dev-Physics (78F01B33-EBEA-4F98-B9B4-84EACCB95AA2): 0
+LogDevObjectVersion:   Dev-Platform (6631380F-2D4D-43E0-8009-CF276956A95A): 0
+LogDevObjectVersion:   Dev-Rendering (12F88B9F-8875-4AFC-A67C-D90C383ABD29): 12
+LogDevObjectVersion:   Dev-Sequencer (7B5AE74C-D270-4C10-A958-57980B212A5A): 3
+LogDevObjectVersion:   Dev-VR (D7296918-1DD6-4BDD-9DE2-64A83CC13884): 0
+LogDevObjectVersion:   Dev-LoadTimes (C2A15278-BFE7-4AFE-6C17-90FF531DF755): 1
+LogInit: Compiled (64-bit): Mar 13 2017 11:35:39
+LogInit: Compiled with Clang: 3.8.0 (tags/RELEASE_380/final)
+LogInit: Build Configuration: Development
+LogInit: Branch Name: ++UE4+Release-4.15
+LogInit: Command line: 
+LogInit: Base directory: /home/d0048/Program-code/UnrealEngine/Engine/Binaries/Linux/
+LogInit: Installed Engine Build: 0
+LogInit: Presizing for max 8388607 objects, including 0 objects not considered by GC, pre-allocating 0 bytes for permanent pool.
+LogInit: Object subsystem initialized
+[2017.03.13-05.26.19:888][  0]LogInit: Initializing SDL.
+[2017.03.13-05.26.20:604][  0]LogInit: Initialized SDL 2.0.4 revision: 10374 (hg-10374:dccf51aee79b with EpicExtensions) (compiled against 2.0.4)
+[2017.03.13-05.26.20:604][  0]LogInit: Display metrics:
+[2017.03.13-05.26.20:604][  0]LogInit:   PrimaryDisplayWidth: 1920
+[2017.03.13-05.26.20:604][  0]LogInit:   PrimaryDisplayHeight: 1080
+[2017.03.13-05.26.20:604][  0]LogInit:   PrimaryDisplayWorkAreaRect:
+[2017.03.13-05.26.20:604][  0]LogInit:     Left=0, Top=24, Right=1920, Bottom=1029
+[2017.03.13-05.26.20:604][  0]LogInit:   VirtualDisplayRect:
+[2017.03.13-05.26.20:604][  0]LogInit:     Left=0, Top=24, Right=1920, Bottom=1029
+[2017.03.13-05.26.20:604][  0]LogInit:   TitleSafePaddingSize: X=0.000 Y=0.000
+[2017.03.13-05.26.20:604][  0]LogInit:   ActionSafePaddingSize: X=0.000 Y=0.000
+[2017.03.13-05.26.20:604][  0]LogInit:   Number of monitors: 1
+[2017.03.13-05.26.20:604][  0]LogInit:     Monitor 0
+[2017.03.13-05.26.20:604][  0]LogInit:       Name: 0
+[2017.03.13-05.26.20:604][  0]LogInit:       ID: display0
+[2017.03.13-05.26.20:604][  0]LogInit:       NativeWidth: 1920
+[2017.03.13-05.26.20:604][  0]LogInit:       NativeHeight: 1080
+[2017.03.13-05.26.20:605][  0]LogInit:       bIsPrimary: true
+[2017.03.13-05.26.20:605][  0]LogLinux: Selected Device Profile: [Linux]
+[2017.03.13-05.26.20:605][  0]LogInit: Applying CVar settings loaded from the selected device profile: [Linux]
+[2017.03.13-05.26.20:692][  0]LogInit: Linux hardware info:
+[2017.03.13-05.26.20:692][  0]LogInit:  - we are the first instance of this executable
+[2017.03.13-05.26.20:692][  0]LogInit:  - this process' id (pid) is 6119, parent process' id (ppid) is 2888
+[2017.03.13-05.26.20:692][  0]LogInit:  - we are not running under debugger
+[2017.03.13-05.26.20:692][  0]LogInit:  - machine network name is 'PC-PC'
+[2017.03.13-05.26.20:692][  0]LogInit:  - user name is 'd0048' (d0048)
+[2017.03.13-05.26.20:692][  0]LogInit:  - we're logged in locally
+[2017.03.13-05.26.20:692][  0]LogInit:  - we're running with rendering
+[2017.03.13-05.26.20:692][  0]LogInit:  - CPU: GenuineIntel 'Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz' (signature: 0x506E3)
+[2017.03.13-05.26.20:692][  0]LogInit:  - Number of physical cores available for the process: 4
+[2017.03.13-05.26.20:692][  0]LogInit:  - Number of logical cores available for the process: 8
+[2017.03.13-05.26.20:692][  0]LogInit:  - Cache line size: 64
+[2017.03.13-05.26.20:692][  0]LogInit:  - Memory allocator used: binned
+[2017.03.13-05.26.20:692][  0]LogLinux: Benchmarking clocks:
+[2017.03.13-05.26.20:692][  0]LogLinux:  - CLOCK_REALTIME (id=0) can sustain 35562250 (35562K, 36M) calls per second without zero deltas.
+[2017.03.13-05.26.20:692][  0]LogLinux:  - CLOCK_MONOTONIC (id=1) can sustain 49371394 (49371K, 49M) calls per second without zero deltas.
+[2017.03.13-05.26.20:692][  0]LogLinux:  - CLOCK_MONOTONIC_RAW (id=4) can sustain 11406002 (11406K, 11M) calls per second without zero deltas.
+[2017.03.13-05.26.20:692][  0]LogLinux:  - CLOCK_MONOTONIC_COARSE (id=6) can sustain 176418311 (176418K, 176M) calls per second with 99.999853% zero deltas.
+[2017.03.13-05.26.20:692][  0]LogLinux: Selected clock_id 1 (CLOCK_MONOTONIC) since it is the fastest support clock without zero deltas.
+[2017.03.13-05.26.20:692][  0]LogInit: Linux-specific commandline switches:
+[2017.03.13-05.26.20:692][  0]LogInit:  -nodwarf (currently OFF): suppress parsing of DWARF debug info (callstacks will be generated faster, but won't have line numbers)
+[2017.03.13-05.26.20:692][  0]LogInit:  -ansimalloc - use malloc()/free() from libc (useful for tools like valgrind and electric fence)
+[2017.03.13-05.26.20:692][  0]LogInit:  -jemalloc - use jemalloc for all memory allocation
+[2017.03.13-05.26.20:692][  0]LogInit:  -binnedmalloc - use binned malloc  for all memory allocation
+[2017.03.13-05.26.20:692][  0]LogInit:  -httpproxy=ADDRESS:PORT - redirects HTTP requests to a proxy (only supported if compiled with libcurl)
+[2017.03.13-05.26.20:692][  0]LogInit:  -reuseconn - allow libcurl to reuse HTTP connections (only matters if compiled with libcurl)
+[2017.03.13-05.26.20:692][  0]LogInit:  -virtmemkb=NUMBER - sets process virtual memory (address space) limit (overrides VirtualMemoryLimitInKB value from .ini)
+[2017.03.13-05.26.20:692][  0]LogInit:  - Physical RAM available (not considering process quota): 8 GB (7873 MB, 8062120 KB, 8255610880 bytes)
+[2017.03.13-05.26.21:117][  0]LogTextLocalizationManager:Warning: Loaded localization resources contain conflicting entries for (Namespace:UObjectToolTips, Key:AnimNode_AssetPlayerBase:InternalTimeAccumulator):
+Localization Resource: (/home/d0048/Program-code/UnrealEngine/Engine/Content/Localization/EditorTutorials/zh-CN/EditorTutorials.locres) Source String Hash: (502993589) Localized String: (用于引用此节点中的资源的累积时间)
+Localization Resource: (/home/d0048/Program-code/UnrealEngine/Engine/Content/Localization/Engine/zh-CN/Engine.locres) Source String Hash: (502993589) Localized String: (引用该节点中资源所用的累计时间)
+[2017.03.13-05.26.21:118][  0]LogTextLocalizationManager:Warning: Loaded localization resources contain conflicting entries for (Namespace:UObjectToolTips, Key:AnimNode_AssetPlayerBase:bIgnoreForRelevancyTest):
+Localization Resource: (/home/d0048/Program-code/UnrealEngine/Engine/Content/Localization/EditorTutorials/zh-CN/EditorTutorials.locres) Source String Hash: (319969718) Localized String: (若为真，在状态中寻找最高权重动画的“相关动画”节点将忽视 此节点)
+Localization Resource: (/home/d0048/Program-code/UnrealEngine/Engine/Content/Localization/Engine/zh-CN/Engine.locres) Source String Hash: (319969718) Localized String: (如果为真，那么将会忽略查找最高权重动画的"相关动画"节点。
+这个节点)
+[2017.03.13-05.26.21:118][  0]LogTextLocalizationManager:Warning: Loaded localization resources contain conflicting entries for (Namespace:UObjectToolTips, Key:AnimNode_AssetPlayerBase:BlendWeight):
+Localization Resource: (/home/d0048/Program-code/UnrealEngine/Engine/Content/Localization/EditorTutorials/zh-CN/EditorTutorials.locres) Source String Hash: (-1232800293) Localized String: (此节点最后交会的混合权重)
+Localization Resource: (/home/d0048/Program-code/UnrealEngine/Engine/Content/Localization/Engine/zh-CN/Engine.locres) Source String Hash: (-1232800293) Localized String: (该节点上一次遇到的混合权重)
+[2017.03.13-05.26.23:833][  0]LogRHI: Initializing OpenGL RHI
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_VENDOR: Intel Open Source Technology Center
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_RENDERER: Mesa DRI Intel(R) HD Graphics 530 (Skylake GT2) 
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_VERSION: 4.3 (Core Profile) Mesa 12.0.6
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_SHADING_LANGUAGE_VERSION: 4.30
+[2017.03.13-05.26.23:833][  0]LogRHI: OpenGL Extensions:
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_3DFX_texture_compression_FXT1
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_AMD_conservative_depth
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_AMD_draw_buffers_blend
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_AMD_seamless_cubemap_per_texture
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_AMD_shader_stencil_export
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_AMD_shader_trinary_minmax
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_AMD_vertex_shader_layer
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_AMD_vertex_shader_viewport_index
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_ANGLE_texture_compression_dxt3
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_ANGLE_texture_compression_dxt5
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_APPLE_object_purgeable
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_ARB_ES2_compatibility
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_ARB_ES3_compatibility
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_ARB_arrays_of_arrays
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_ARB_base_instance
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_ARB_blend_func_extended
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_ARB_buffer_storage
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_ARB_clear_buffer_object
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_ARB_clear_texture
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_ARB_clip_control
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_ARB_compressed_texture_pixel_storage
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_ARB_compute_shader
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_ARB_conditional_render_inverted
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_ARB_conservative_depth
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_ARB_copy_buffer
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_ARB_copy_image
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_ARB_cull_distance
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_ARB_debug_output
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_ARB_depth_buffer_float
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_ARB_depth_clamp
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_ARB_derivative_control
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_ARB_direct_state_access
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_ARB_draw_buffers
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_ARB_draw_buffers_blend
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_ARB_draw_elements_base_vertex
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_ARB_draw_indirect
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_ARB_draw_instanced
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_ARB_explicit_attrib_location
+[2017.03.13-05.26.23:833][  0]LogRHI:   GL_ARB_explicit_uniform_location
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_fragment_coord_conventions
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_fragment_layer_viewport
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_fragment_shader
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_framebuffer_no_attachments
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_framebuffer_object
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_framebuffer_sRGB
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_get_program_binary
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_get_texture_sub_image
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_gpu_shader5
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_gpu_shader_fp64
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_half_float_pixel
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_half_float_vertex
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_instanced_arrays
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_internalformat_query
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_internalformat_query2
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_invalidate_subdata
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_map_buffer_alignment
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_map_buffer_range
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_multi_bind
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_multi_draw_indirect
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_occlusion_query2
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_pipeline_statistics_query
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_pixel_buffer_object
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_point_sprite
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_program_interface_query
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_provoking_vertex
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_query_buffer_object
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_robust_buffer_access_behavior
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_robustness
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_sample_shading
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_sampler_objects
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_seamless_cube_map
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_seamless_cubemap_per_texture
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_separate_shader_objects
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_shader_atomic_counters
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_shader_bit_encoding
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_shader_clock
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_shader_draw_parameters
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_shader_image_load_store
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_shader_image_size
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_shader_objects
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_shader_precision
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_shader_stencil_export
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_shader_storage_buffer_object
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_shader_subroutine
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_shader_texture_image_samples
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_shader_texture_lod
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_shading_language_420pack
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_shading_language_packing
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_stencil_texturing
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_sync
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_tessellation_shader
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_texture_barrier
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_texture_buffer_object
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_texture_buffer_object_rgb32
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_texture_buffer_range
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_texture_compression_bptc
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_texture_compression_rgtc
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_texture_cube_map_array
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_texture_float
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_texture_gather
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_texture_mirror_clamp_to_edge
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_texture_multisample
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_texture_non_power_of_two
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_texture_query_levels
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_texture_query_lod
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_texture_rectangle
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_texture_rg
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_texture_rgb10_a2ui
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_texture_stencil8
+[2017.03.13-05.26.23:834][  0]LogRHI:   GL_ARB_texture_storage
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_ARB_texture_storage_multisample
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_ARB_texture_swizzle
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_ARB_texture_view
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_ARB_timer_query
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_ARB_transform_feedback2
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_ARB_transform_feedback3
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_ARB_transform_feedback_instanced
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_ARB_uniform_buffer_object
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_ARB_vertex_array_bgra
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_ARB_vertex_array_object
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_ARB_vertex_attrib_64bit
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_ARB_vertex_attrib_binding
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_ARB_vertex_shader
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_ARB_vertex_type_10f_11f_11f_rev
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_ARB_vertex_type_2_10_10_10_rev
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_ARB_viewport_array
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_ATI_blend_equation_separate
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_ATI_texture_float
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_EXT_abgr
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_EXT_blend_equation_separate
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_EXT_draw_buffers2
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_EXT_draw_instanced
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_EXT_framebuffer_blit
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_EXT_framebuffer_multisample
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_EXT_framebuffer_multisample_blit_scaled
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_EXT_framebuffer_sRGB
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_EXT_packed_depth_stencil
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_EXT_packed_float
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_EXT_pixel_buffer_object
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_EXT_polygon_offset_clamp
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_EXT_provoking_vertex
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_EXT_shader_integer_mix
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_EXT_shader_samples_identical
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_EXT_texture_array
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_EXT_texture_compression_dxt1
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_EXT_texture_compression_rgtc
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_EXT_texture_compression_s3tc
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_EXT_texture_filter_anisotropic
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_EXT_texture_integer
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_EXT_texture_sRGB
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_EXT_texture_sRGB_decode
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_EXT_texture_shared_exponent
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_EXT_texture_snorm
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_EXT_texture_swizzle
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_EXT_timer_query
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_EXT_transform_feedback
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_EXT_vertex_array_bgra
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_IBM_multimode_draw_arrays
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_KHR_context_flush_control
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_KHR_debug
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_KHR_robust_buffer_access_behavior
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_KHR_robustness
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_KHR_texture_compression_astc_ldr
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_MESA_pack_invert
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_MESA_texture_signed_rgba
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_NV_conditional_render
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_NV_depth_clamp
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_NV_packed_depth_stencil
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_NV_texture_barrier
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_OES_EGL_image
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_OES_read_format
+[2017.03.13-05.26.23:835][  0]LogRHI:   GL_S3_s3tc
+[2017.03.13-05.26.23:837][  0]LogRHI:   GL_MAX_TEXTURE_SIZE: 8192
+[2017.03.13-05.26.23:837][  0]LogRHI:   GL_MAX_CUBE_MAP_TEXTURE_SIZE: 8192
+[2017.03.13-05.26.23:837][  0]LogRHI:   GL_MAX_ARRAY_TEXTURE_LAYERS: 2048
+[2017.03.13-05.26.23:837][  0]LogRHI:   GL_MAX_3D_TEXTURE_SIZE: 2048
+[2017.03.13-05.26.23:837][  0]LogRHI:   GL_MAX_RENDERBUFFER_SIZE: 8192
+[2017.03.13-05.26.23:837][  0]LogRHI:   GL_MAX_TEXTURE_IMAGE_UNITS: 32
+[2017.03.13-05.26.23:837][  0]LogRHI:   GL_MAX_DRAW_BUFFERS: 8
+[2017.03.13-05.26.23:838][  0]LogRHI:   GL_MAX_COLOR_ATTACHMENTS: 8
+[2017.03.13-05.26.23:838][  0]LogRHI:   GL_MAX_SAMPLES: 16
+[2017.03.13-05.26.23:838][  0]LogRHI:   GL_MAX_COLOR_TEXTURE_SAMPLES: 16
+[2017.03.13-05.26.23:838][  0]LogRHI:   GL_MAX_DEPTH_TEXTURE_SAMPLES: 16
+[2017.03.13-05.26.23:838][  0]LogRHI:   GL_MAX_INTEGER_SAMPLES: 16
+[2017.03.13-05.26.23:838][  0]LogRHI:   GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS: 192
+[2017.03.13-05.26.23:838][  0]LogRHI:   GL_MAX_VERTEX_ATTRIBS: 16
+[2017.03.13-05.26.23:838][  0]LogRHI:   GL_MAX_TEXTURE_MAX_ANISOTROPY_EXT: 16
+[2017.03.13-05.26.23:838][  0]LogRHI: OpenGL MajorVersion = 4, MinorVersion = 3, ShaderPlatform = GLSL_430, FeatureLevel = SM5
+[2017.03.13-05.26.23:917][  0]LogShaderCompilers: Guid format shader working directory is 15 characters bigger than the processId version (../../../../netbean-java/CraftPlugins/UE4/test/Intermediate/Shaders/WorkingDirectory/6119/).
+[2017.03.13-05.26.23:918][  0]LogShaderCompilers: Cleaned the shader compiler working directory '../../../../netbean-java/CraftPlugins/UE4/test/Intermediate/Shaders/tmp/0003863717030D0D001A039576DBA9ED/'.
+[2017.03.13-05.26.23:919][  0]LogShaderCompilers:Display: Using Local Shader Compiler.
+[2017.03.13-05.26.29:517][  0]LogTemp:Display: Loaded TP AllDesktopTargetPlatform
+[2017.03.13-05.26.29:665][  0]LogTemp:Display: Loaded TP LinuxNoEditorTargetPlatform
+[2017.03.13-05.26.29:807][  0]LogTemp:Display: Loaded TP LinuxServerTargetPlatform
+[2017.03.13-05.26.29:942][  0]LogTemp:Display: Loaded TP LinuxClientTargetPlatform
+[2017.03.13-05.26.30:062][  0]LogTemp:Display: Loaded TP LinuxTargetPlatform
+[2017.03.13-05.26.30:185][  0]LogTemp:Display: Failed to get target platform HTML5TargetPlatform
+[2017.03.13-05.26.30:326][  0]LogTemp:Display: Loaded TP Android_ETC1TargetPlatform
+[2017.03.13-05.26.30:454][  0]LogTemp:Display: Loaded TP Android_PVRTCTargetPlatform
+[2017.03.13-05.26.30:596][  0]LogTemp:Display: Loaded TP Android_ATCTargetPlatform
+[2017.03.13-05.26.31:178][  0]LogTemp:Display: Loaded TP Android_MultiTargetPlatform
+[2017.03.13-05.26.31:342][  0]LogTemp:Display: Loaded TP AndroidTargetPlatform
+[2017.03.13-05.26.31:342][  0]LogTemp:Display: Loaded TP Android_ETC2TargetPlatform
+[2017.03.13-05.26.31:342][  0]LogTemp:Display: Loaded TP Android_DXTTargetPlatform
+[2017.03.13-05.26.31:342][  0]LogTemp:Display: Loaded TP Android_ASTCTargetPlatform
+[2017.03.13-05.26.31:342][  0]LogTargetPlatformManager:Display: Building Assets For Linux
+[2017.03.13-05.26.31:681][  0]LogDerivedDataCache:Display: Max Cache Size: 512 MB
+[2017.03.13-05.26.31:681][  0]LogDerivedDataCache:Display: Starting with empty Boot cache
+[2017.03.13-05.26.31:682][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  Pak pak cache file ../../../../netbean-java/CraftPlugins/UE4/test/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+[2017.03.13-05.26.31:682][  0]LogDerivedDataCache: Unable to find inner node Pak for hierarchical cache Hierarchy.
+[2017.03.13-05.26.31:682][  0]LogDerivedDataCache: FDerivedDataBackendGraph:  EnginePak pak cache file ../../../Engine/DerivedDataCache/DDC.ddp not found, will not use a pak cache.
+[2017.03.13-05.26.31:682][  0]LogDerivedDataCache: Unable to find inner node EnginePak for hierarchical cache Hierarchy.
+[2017.03.13-05.26.31:718][  0]LogDerivedDataCache: Using Local data cache path ../../../Engine/DerivedDataCache: Writable
+[2017.03.13-05.26.31:719][  0]LogDerivedDataCache: Shared data cache path not found in *engine.ini, will not use an Shared cache.
+[2017.03.13-05.26.31:719][  0]LogDerivedDataCache: Unable to find inner node Shared for hierarchical cache Hierarchy.
+[2017.03.13-05.26.31:785][  0]LogSlate: Using Freetype 2.6.0
+[2017.03.13-05.26.31:845][  0]LogSlate: SlateFontCache - WITH_FREETYPE: 1, WITH_HARFBUZZ: 0
+[2017.03.13-05.26.31:845][  0]LogSlate: SlateFontCache - WITH_FREETYPE: 1, WITH_HARFBUZZ: 0
+[2017.03.13-05.26.33:716][  0]LogLinux: Selected Device Profile: [Linux]
+[2017.03.13-05.26.33:865][  0]LogContentStreaming: Texture pool size is 0.00 MB
+[2017.03.13-05.26.34:457][  0]LogMeshUtilities: Using QuadricMeshReduction for automatic static mesh reduction
+[2017.03.13-05.26.34:459][  0]LogMeshUtilities: No automatic skeletal mesh reduction module available
+[2017.03.13-05.26.34:459][  0]LogMeshUtilities: No automatic mesh merging module available
+[2017.03.13-05.26.34:459][  0]LogMeshUtilities: No distributed automatic mesh merging module available
+[2017.03.13-05.26.36:090][  0]LogNetVersion: GetLocalNetworkVersion: CL: 0, ProjectName: test, ProjectVersion: , EngineNetworkVersion: 2, GameNetworkVersion: 0, NetworkChecksum: 4210013586
+[2017.03.13-05.26.39:706][  0]LogAssetRegistry: FAssetRegistry took 0.0014 seconds to start up
+[2017.03.13-05.26.43:576][  0]LogPackageLocalizationCache: Processed 3 localized package path(s) for 4 prioritized culture(s) in 0.049884 seconds
+[2017.03.13-05.26.43:582][  0]LogUObjectArray: 32343 objects as part of root set at end of initial load.
+[2017.03.13-05.26.43:582][  0]LogUObjectAllocator: 7031048 out of 0 bytes used by permanent object pool.
+[2017.03.13-05.26.43:582][  0]LogUObjectArray: CloseDisregardForGC: 0/0 objects in disregard for GC pool
+[2017.03.13-05.26.43:914][  0]LogHAL: Linux SourceCodeAccessSettings: NullSourceCodeAccessor
+[2017.03.13-05.27.07:167][  0]LogUdpMessaging: Initializing bridge on interface 0.0.0.0:0 to multicast group 230.0.0.1:6666.
+[2017.03.13-05.27.08:637][  0]LogDesktopPlatform: DesktopPlatformLinux is not using LinuxNativeDialogs.
+[2017.03.13-05.27.08:887][  0]SourceControl: 信息 源码控制已禁用
+[2017.03.13-05.27.08:887][  0]SourceControl: 信息 源码控制已禁用
+[2017.03.13-05.27.09:641][  0]SourceControl: 信息 源码控制已禁用
+[2017.03.13-05.27.09:832][  0]SourceControl: 信息 源码控制已禁用
+[2017.03.13-05.27.11:063][  0]LogMaterial: Uniform references updated for custom material expression Custom.
+[2017.03.13-05.27.13:820][  0]LogEngine: Initializing Engine...
+[2017.03.13-05.27.13:937][  0]LogMaterial: Missing cached shader map for material MAT_LevelColorationLitLightmapUV, compiling. Is special engine material.
+[2017.03.13-05.27.13:939][  0]LogTemp:Display: Added material ShaderMap 0x00007F9954132E80 with Material 0x00007F9956290680 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.14:489][  0]LogTemp:Display: Kicking off shader compilation for MAT_LevelColorationLitLightmapUV, GameThreadShaderMap 0x00007F9954132E80
+[2017.03.13-05.27.14:511][  0]LogMaterial: Missing cached shader map for material ShadedLevelColorationLitMaterial, compiling. Is special engine material.
+[2017.03.13-05.27.14:513][  0]LogTemp:Display: Added material ShaderMap 0x00007F992A7FFC80 with Material 0x00007F9956293800 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.15:035][  0]LogTemp:Display: Kicking off shader compilation for ShadedLevelColorationLitMaterial, GameThreadShaderMap 0x00007F992A7FFC80
+[2017.03.13-05.27.15:083][  0]LogMaterial: Missing cached shader map for material ShadedLevelColorationUnlitMateri, compiling. Is special engine material.
+[2017.03.13-05.27.15:084][  0]LogTemp:Display: Added material ShaderMap 0x00007F992A7FF200 with Material 0x00007F992AC27380 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.15:263][  0]LogTemp:Display: Kicking off shader compilation for ShadedLevelColorationUnlitMateri, GameThreadShaderMap 0x00007F992A7FF200
+[2017.03.13-05.27.15:268][  0]LogMaterial: Missing cached shader map for material VertexColorMaterial, compiling. 
+[2017.03.13-05.27.15:270][  0]LogTemp:Display: Added material ShaderMap 0x00007F991D2A0580 with Material 0x00007F992AC28100 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.15:310][  0]LogTemp:Display: Kicking off shader compilation for VertexColorMaterial, GameThreadShaderMap 0x00007F991D2A0580
+[2017.03.13-05.27.15:313][  0]LogMaterial: Missing cached shader map for material VertexColorViewMode_ColorOnly, compiling. 
+[2017.03.13-05.27.15:314][  0]LogTemp:Display: Added material ShaderMap 0x00007F991D29FB00 with Material 0x00007F991D46F000 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.15:321][  0]LogTemp:Display: Kicking off shader compilation for VertexColorViewMode_ColorOnly, GameThreadShaderMap 0x00007F991D29FB00
+[2017.03.13-05.27.15:348][  0]LogMaterial: Missing cached shader map for material VertexColorViewMode_AlphaAsColor, compiling. 
+[2017.03.13-05.27.15:349][  0]LogTemp:Display: Added material ShaderMap 0x00007F991CD1B500 with Material 0x00007F991CB81A00 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.15:357][  0]LogTemp:Display: Kicking off shader compilation for VertexColorViewMode_AlphaAsColor, GameThreadShaderMap 0x00007F991CD1B500
+[2017.03.13-05.27.15:361][  0]LogMaterial: Missing cached shader map for material VertexColorViewMode_RedOnly, compiling. 
+[2017.03.13-05.27.15:362][  0]LogTemp:Display: Added material ShaderMap 0x00007F991C800E80 with Material 0x00007F991C7EE700 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.15:368][  0]LogTemp:Display: Kicking off shader compilation for VertexColorViewMode_RedOnly, GameThreadShaderMap 0x00007F991C800E80
+[2017.03.13-05.27.15:371][  0]LogMaterial: Missing cached shader map for material VertexColorViewMode_GreenOnly, compiling. 
+[2017.03.13-05.27.15:372][  0]LogTemp:Display: Added material ShaderMap 0x00007F991C7FC880 with Material 0x00007F991C7E8B80 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.15:380][  0]LogTemp:Display: Kicking off shader compilation for VertexColorViewMode_GreenOnly, GameThreadShaderMap 0x00007F991C7FC880
+[2017.03.13-05.27.15:383][  0]LogMaterial: Missing cached shader map for material VertexColorViewMode_BlueOnly, compiling. 
+[2017.03.13-05.27.15:384][  0]LogTemp:Display: Added material ShaderMap 0x00007F991C7F8280 with Material 0x00007F991C4D8600 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.15:393][  0]LogTemp:Display: Kicking off shader compilation for VertexColorViewMode_BlueOnly, GameThreadShaderMap 0x00007F991C7F8280
+[2017.03.13-05.27.15:396][  0]LogMaterial: Missing cached shader map for material RemoveSurfaceMaterial, compiling. 
+[2017.03.13-05.27.15:397][  0]LogTemp:Display: Added material ShaderMap 0x00007F991C7F4380 with Material 0x00007F991C4D2600 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.15:400][  0]LogTemp:Display: Kicking off shader compilation for RemoveSurfaceMaterial, GameThreadShaderMap 0x00007F991C7F4380
+[2017.03.13-05.27.15:403][  0]LogMaterial: Missing cached shader map for material DebugMeshMaterial, compiling. 
+[2017.03.13-05.27.15:404][  0]LogTemp:Display: Added material ShaderMap 0x00007F991C3BB380 with Material 0x00007F991C4CFC00 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.15:422][  0]LogTemp:Display: Kicking off shader compilation for DebugMeshMaterial, GameThreadShaderMap 0x00007F991C3BB380
+[2017.03.13-05.27.15:487][  0]LogMaterial: Missing cached shader map for material M_InvalidLightmapSettings, compiling. 
+[2017.03.13-05.27.15:488][  0]LogTemp:Display: Added material ShaderMap 0x00007F991C3B5F80 with Material 0x00007F991C0AB880 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.15:519][  0]LogTemp:Display: Kicking off shader compilation for M_InvalidLightmapSettings, GameThreadShaderMap 0x00007F991C3B5F80
+[2017.03.13-05.27.15:524][  0]LogMaterial: Missing cached shader map for material GizmoMaterial, compiling. 
+[2017.03.13-05.27.15:525][  0]LogTemp:Display: Added material ShaderMap 0x00007F991BDDE580 with Material 0x00007F991BD3C200 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.15:536][  0]LogTemp:Display: Kicking off shader compilation for GizmoMaterial, GameThreadShaderMap 0x00007F991BDDE580
+[2017.03.13-05.27.15:540][  0]LogMaterial: Missing cached shader map for material PhAT_JointLimitMaterial, compiling. 
+[2017.03.13-05.27.15:542][  0]LogTemp:Display: Added material ShaderMap 0x00007F991BDD9500 with Material 0x00007F991B94BE80 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.15:554][  0]LogTemp:Display: Kicking off shader compilation for PhAT_JointLimitMaterial, GameThreadShaderMap 0x00007F991BDD9500
+[2017.03.13-05.27.15:559][  0]LogMaterial: Missing cached shader map for material GeomMaterial, compiling. 
+[2017.03.13-05.27.15:560][  0]LogTemp:Display: Added material ShaderMap 0x00007F991B8C5980 with Material 0x00007F991B942580 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.15:572][  0]LogTemp:Display: Kicking off shader compilation for GeomMaterial, GameThreadShaderMap 0x00007F991B8C5980
+[2017.03.13-05.27.15:577][  0]LogMaterial: Missing cached shader map for material EditorBrushMaterial, compiling. 
+[2017.03.13-05.27.15:578][  0]LogTemp:Display: Added material ShaderMap 0x00007F991B8C1A80 with Material 0x00007F991B67A880 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.15:593][  0]LogTemp:Display: Kicking off shader compilation for EditorBrushMaterial, GameThreadShaderMap 0x00007F991B8C1A80
+[2017.03.13-05.27.15:617][  0]LogMaterial: Missing cached shader map for material BoneWeightMaterial, compiling. 
+[2017.03.13-05.27.15:619][  0]LogTemp:Display: Added material ShaderMap 0x00007F991B8BD100 with Material 0x00007F991B674100 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.15:729][  0]LogTemp:Display: Kicking off shader compilation for BoneWeightMaterial, GameThreadShaderMap 0x00007F991B8BD100
+[2017.03.13-05.27.15:736][  0]LogMaterial: Missing cached shader map for material PreviewShadowIndicatorMaterial, compiling. 
+[2017.03.13-05.27.15:737][  0]LogTemp:Display: Added material ShaderMap 0x00007F991A909280 with Material 0x00007F991A84F200 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.15:755][  0]LogTemp:Display: Kicking off shader compilation for PreviewShadowIndicatorMaterial, GameThreadShaderMap 0x00007F991A909280
+[2017.03.13-05.27.16:448][  0]LogAIModule: Creating AISystem for world Untitled
+[2017.03.13-05.27.16:480][  0]LogALAudio: ALAudio device opened : OpenAL Soft
+[2017.03.13-05.27.16:482][  0]LogALAudio: AL_VENDOR      : OpenAL Community
+[2017.03.13-05.27.16:482][  0]LogALAudio: AL_RENDERER    : OpenAL Soft
+[2017.03.13-05.27.16:482][  0]LogALAudio: AL_VERSION     : 1.1 ALSOFT 1.15.1
+[2017.03.13-05.27.16:482][  0]LogALAudio: AL_EXTENSIONS  : AL_EXT_ALAW AL_EXT_DOUBLE AL_EXT_EXPONENT_DISTANCE AL_EXT_FLOAT32 AL_EXT_IMA4 AL_EXT_LINEAR_DISTANCE AL_EXT_MCFORMATS AL_EXT_MULAW AL_EXT_MULAW_MCFORMATS AL_EXT_OFFSET AL_EXT_source_distance_model AL_LOKI_quadriphonic AL_SOFT_buffer_samples AL_SOFT_buffer_sub_data AL_SOFTX_deferred_updates AL_SOFT_direct_channels AL_SOFT_loop_points AL_SOFT_source_latency
+[2017.03.13-05.27.16:483][  0]LogInit: FAudioDevice initialized.
+[2017.03.13-05.27.16:552][  0]LogDerivedDataCache: Saved boot cache 0.07s 53MB ../../../../netbean-java/CraftPlugins/UE4/test/DerivedDataCache/Boot.ddc.
+[2017.03.13-05.27.16:572][  0]LogInit: Texture streaming: Enabled
+[2017.03.13-05.27.17:098][  0]LogEngineSessionManager: EngineSessionManager initialized
+[2017.03.13-05.27.18:069][  0]LogInit: Transaction tracking system initialized
+[2017.03.13-05.27.19:425][  0]BlueprintLog: New page: 编辑器加载
+[2017.03.13-05.27.22:624][  0]LocalizationService: 信息 本地化服务已被禁用
+[2017.03.13-05.27.24:633][  0]LogTcpMessaging: Initializing TcpMessaging bridge
+[2017.03.13-05.27.25:660][  0]LogConsoleResponse:Display: 
+[2017.03.13-05.27.25:680][  0]LogMaterial: Missing cached shader map for material Cross_Mat, compiling. 
+[2017.03.13-05.27.25:681][  0]LogTemp:Display: Added material ShaderMap 0x00007F9961A7D300 with Material 0x00007F9960B8C780 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.25:702][  0]LogTemp:Display: Kicking off shader compilation for Cross_Mat, GameThreadShaderMap 0x00007F9961A7D300
+[2017.03.13-05.27.25:706][  0]LogMaterial: Missing cached shader map for material PhAT_BoneSelectedMaterial, compiling. 
+[2017.03.13-05.27.25:707][  0]LogTemp:Display: Added material ShaderMap 0x00007F9961F84780 with Material 0x00007F9960B8BA00 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.25:715][  0]LogTemp:Display: Kicking off shader compilation for PhAT_BoneSelectedMaterial, GameThreadShaderMap 0x00007F9961F84780
+[2017.03.13-05.27.25:719][  0]LogMaterial: Missing cached shader map for material PhAT_ElemSelectedMaterial, compiling. 
+[2017.03.13-05.27.25:721][  0]LogTemp:Display: Added material ShaderMap 0x00007F9962500300 with Material 0x00007F9963338300 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.25:732][  0]LogTemp:Display: Kicking off shader compilation for PhAT_ElemSelectedMaterial, GameThreadShaderMap 0x00007F9962500300
+[2017.03.13-05.27.25:736][  0]LogMaterial: Missing cached shader map for material PhAT_NoCollisionMaterial, compiling. 
+[2017.03.13-05.27.25:738][  0]LogTemp:Display: Added material ShaderMap 0x00007F9962504580 with Material 0x00007F9963332180 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.25:748][  0]LogTemp:Display: Kicking off shader compilation for PhAT_NoCollisionMaterial, GameThreadShaderMap 0x00007F9962504580
+[2017.03.13-05.27.25:751][  0]LogMaterial: Missing cached shader map for material PhAT_UnselectedMaterial, compiling. 
+[2017.03.13-05.27.25:753][  0]LogTemp:Display: Added material ShaderMap 0x00007F9962A65D80 with Material 0x00007F9963CC2280 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.25:764][  0]LogTemp:Display: Kicking off shader compilation for PhAT_UnselectedMaterial, GameThreadShaderMap 0x00007F9962A65D80
+[2017.03.13-05.27.25:779][  0]LogMaterial: Missing cached shader map for material Tick_Mat, compiling. 
+[2017.03.13-05.27.25:780][  0]LogTemp:Display: Added material ShaderMap 0x00007F9962A6A000 with Material 0x00007F9963CBAD80 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.25:800][  0]LogTemp:Display: Kicking off shader compilation for Tick_Mat, GameThreadShaderMap 0x00007F9962A6A000
+[2017.03.13-05.27.25:831][  0]LogMaterial: Missing cached shader map for material WidgetGridVertexColorMaterial_Ma, compiling. 
+[2017.03.13-05.27.25:832][  0]LogTemp:Display: Added material ShaderMap 0x00007F996301F380 with Material 0x00007F996824B580 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.25:843][  0]LogTemp:Display: Kicking off shader compilation for WidgetGridVertexColorMaterial_Ma, GameThreadShaderMap 0x00007F996301F380
+[2017.03.13-05.27.25:847][  0]LogMaterial: Missing cached shader map for material WidgetMaterial, compiling. 
+[2017.03.13-05.27.25:848][  0]LogTemp:Display: Added material ShaderMap 0x00007F9963316280 with Material 0x00007F996836B880 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.25:862][  0]LogTemp:Display: Kicking off shader compilation for WidgetMaterial, GameThreadShaderMap 0x00007F9963316280
+[2017.03.13-05.27.25:866][  0]LogMaterial: Missing cached shader map for material WidgetMaterial_Current, compiling. 
+[2017.03.13-05.27.25:867][  0]LogTemp:Display: Added material ShaderMap 0x00007F996331A180 with Material 0x00007F9957356800 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.25:882][  0]LogTemp:Display: Kicking off shader compilation for WidgetMaterial_Current, GameThreadShaderMap 0x00007F996331A180
+[2017.03.13-05.27.25:887][  0]LogMaterial: Missing cached shader map for material WidgetMaterial_X, compiling. 
+[2017.03.13-05.27.25:892][  0]LogTemp:Display: Added material ShaderMap 0x00007F996331E080 with Material 0x00007F99570ABC00 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.25:908][  0]LogTemp:Display: Kicking off shader compilation for WidgetMaterial_X, GameThreadShaderMap 0x00007F996331E080
+[2017.03.13-05.27.25:913][  0]LogMaterial: Missing cached shader map for material WidgetMaterial_Y, compiling. 
+[2017.03.13-05.27.25:914][  0]LogTemp:Display: Added material ShaderMap 0x00007F99681C0E00 with Material 0x00007F9956E09700 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.25:929][  0]LogTemp:Display: Kicking off shader compilation for WidgetMaterial_Y, GameThreadShaderMap 0x00007F99681C0E00
+[2017.03.13-05.27.25:935][  0]LogMaterial: Missing cached shader map for material WidgetMaterial_Z, compiling. 
+[2017.03.13-05.27.25:936][  0]LogTemp:Display: Added material ShaderMap 0x00007F99681CF500 with Material 0x00007F99570AA280 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.25:951][  0]LogTemp:Display: Kicking off shader compilation for WidgetMaterial_Z, GameThreadShaderMap 0x00007F99681CF500
+[2017.03.13-05.27.25:958][  0]LogMaterial: Missing cached shader map for material WidgetVertexColorMaterial, compiling. 
+[2017.03.13-05.27.25:960][  0]LogTemp:Display: Added material ShaderMap 0x00007F9971C62D80 with Material 0x00007F99546B7680 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.25:977][  0]LogTemp:Display: Kicking off shader compilation for WidgetVertexColorMaterial, GameThreadShaderMap 0x00007F9971C62D80
+[2017.03.13-05.27.26:041][  0]LogMaterial: Missing cached shader map for material LevelGridMaterial, compiling. 
+[2017.03.13-05.27.26:050][  0]LogTemp:Display: Added material ShaderMap 0x00007F997698E900 with Material 0x00007F99519E9780 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.26:082][  0]LogTemp:Display: Kicking off shader compilation for LevelGridMaterial, GameThreadShaderMap 0x00007F997698E900
+[2017.03.13-05.27.26:123][  0]LogMaterial: Missing cached shader map for material BlinkingCaret, compiling. 
+[2017.03.13-05.27.26:126][  0]LogTemp:Display: Added material ShaderMap 0x00007F99681C5080 with Material 0x00007F9953F67E00 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.26:148][  0]LogTemp:Display: Kicking off shader compilation for BlinkingCaret, GameThreadShaderMap 0x00007F99681C5080
+[2017.03.13-05.27.26:174][  0]LogMaterial: Missing cached shader map for material M_StreamingPause, compiling. 
+[2017.03.13-05.27.26:177][  0]LogTemp:Display: Added material ShaderMap 0x00007F998550E600 with Material 0x00007F9953F6D680 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.26:191][  0]LogTemp:Display: Kicking off shader compilation for M_StreamingPause, GameThreadShaderMap 0x00007F998550E600
+[2017.03.13-05.27.26:247][  0]LogFileCache: Scanning file cache for directory '/home/d0048/Program-code/netbean-java/CraftPlugins/UE4/test/Content/' took 0.00s
+[2017.03.13-05.27.26:247][  0]LogCook:Display: Max memory allowance for cook 16384mb min free memory 0mb
+[2017.03.13-05.27.26:247][  0]LogCook:Display: Mobile HDR setting 1
+[2017.03.13-05.27.29:902][  0]SourceControl: 信息 源码控制已禁用
+[2017.03.13-05.27.29:948][  0]LogFactory: FactoryCreateFile: PackFactory with PackFactory (0 0 /home/d0048/Program-code/UnrealEngine/FeaturePacks/StarterContent.upack)
+[2017.03.13-05.27.30:102][  0]LogPackFactory: Finished extracting 8 files (including 0 errors).
+[2017.03.13-05.27.30:118][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Props/SM_DoorFrame.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/SM_DoorFrame.uasset"
+[2017.03.13-05.27.30:152][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Props/SM_MatPreviewMesh_02.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/SM_MatPreviewMesh_02.uasset"
+[2017.03.13-05.27.30:164][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Props/SM_Stairs.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/SM_Stairs.uasset"
+[2017.03.13-05.27.30:175][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Props/SM_Couch.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/SM_Couch.uasset"
+[2017.03.13-05.27.30:177][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Props/SM_Door.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/SM_Door.uasset"
+[2017.03.13-05.27.30:188][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Props/MaterialSphere.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/MaterialSphere.uasset"
+[2017.03.13-05.27.30:189][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Props/SM_CornerFrame.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/SM_CornerFrame.uasset"
+[2017.03.13-05.27.30:204][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Props/SM_Rock.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/SM_Rock.uasset"
+[2017.03.13-05.27.30:206][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Props/SM_WindowFrame.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/SM_WindowFrame.uasset"
+[2017.03.13-05.27.30:217][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Props/SM_TableRound.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/SM_TableRound.uasset"
+[2017.03.13-05.27.30:231][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Props/SM_Lamp_Ceiling.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/SM_Lamp_Ceiling.uasset"
+[2017.03.13-05.27.30:232][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Props/SM_GlassWindow.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/SM_GlassWindow.uasset"
+[2017.03.13-05.27.30:233][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Props/SM_Lamp_Wall.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/SM_Lamp_Wall.uasset"
+[2017.03.13-05.27.30:238][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Props/SM_Shelf.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/SM_Shelf.uasset"
+[2017.03.13-05.27.30:240][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Props/SM_PillarFrame300.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/SM_PillarFrame300.uasset"
+[2017.03.13-05.27.30:250][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Props/SM_Bush.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/SM_Bush.uasset"
+[2017.03.13-05.27.30:261][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Props/SM_Statue.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/SM_Statue.uasset"
+[2017.03.13-05.27.30:267][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Props/SM_PillarFrame.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/SM_PillarFrame.uasset"
+[2017.03.13-05.27.30:278][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Props/SM_Chair.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/SM_Chair.uasset"
+[2017.03.13-05.27.30:286][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Props/Materials/M_Statue.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/Materials/M_Statue.uasset"
+[2017.03.13-05.27.30:292][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Props/Materials/M_Lamp.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/Materials/M_Lamp.uasset"
+[2017.03.13-05.27.30:293][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Props/Materials/M_StatueGlass.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/Materials/M_StatueGlass.uasset"
+[2017.03.13-05.27.30:302][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Props/Materials/M_Chair.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/Materials/M_Chair.uasset"
+[2017.03.13-05.27.30:303][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Props/Materials/M_MaterialSphere_Plain.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/Materials/M_MaterialSphere_Plain.uasset"
+[2017.03.13-05.27.30:304][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Props/Materials/M_MaterialSphere.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/Materials/M_MaterialSphere.uasset"
+[2017.03.13-05.27.30:312][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Props/Materials/M_Shelf.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/Materials/M_Shelf.uasset"
+[2017.03.13-05.27.30:388][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Props/Materials/M_Rock.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/Materials/M_Rock.uasset"
+[2017.03.13-05.27.30:398][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Props/Materials/M_Frame.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/Materials/M_Frame.uasset"
+[2017.03.13-05.27.30:400][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Props/Materials/M_TableRound.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/Materials/M_TableRound.uasset"
+[2017.03.13-05.27.30:411][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Props/Materials/M_Door.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/Materials/M_Door.uasset"
+[2017.03.13-05.27.30:412][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Props/Materials/M_Bush.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/Materials/M_Bush.uasset"
+[2017.03.13-05.27.30:493][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Shapes/Shape_Wedge_A.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Shapes/Shape_Wedge_A.uasset"
+[2017.03.13-05.27.30:498][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Shapes/Shape_Wedge_B.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Shapes/Shape_Wedge_B.uasset"
+[2017.03.13-05.27.30:508][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Shapes/Shape_Trim_90_In.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Shapes/Shape_Trim_90_In.uasset"
+[2017.03.13-05.27.30:516][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Shapes/Shape_Tube.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Shapes/Shape_Tube.uasset"
+[2017.03.13-05.27.30:523][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Shapes/Shape_Pipe_180.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Shapes/Shape_Pipe_180.uasset"
+[2017.03.13-05.27.30:524][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Shapes/Shape_TriPyramid.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Shapes/Shape_TriPyramid.uasset"
+[2017.03.13-05.27.30:525][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Shapes/Shape_Trim_90_Out.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Shapes/Shape_Trim_90_Out.uasset"
+[2017.03.13-05.27.30:529][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Shapes/Shape_Cube.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Shapes/Shape_Cube.uasset"
+[2017.03.13-05.27.30:539][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Shapes/Shape_Torus.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Shapes/Shape_Torus.uasset"
+[2017.03.13-05.27.30:546][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Shapes/Shape_NarrowCapsule.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Shapes/Shape_NarrowCapsule.uasset"
+[2017.03.13-05.27.30:593][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Shapes/Shape_Plane.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Shapes/Shape_Plane.uasset"
+[2017.03.13-05.27.30:594][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Shapes/Shape_Cone.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Shapes/Shape_Cone.uasset"
+[2017.03.13-05.27.30:609][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Shapes/Shape_Sphere.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Shapes/Shape_Sphere.uasset"
+[2017.03.13-05.27.30:615][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Shapes/Shape_Pipe_90.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Shapes/Shape_Pipe_90.uasset"
+[2017.03.13-05.27.30:626][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Shapes/Shape_WideCapsule.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Shapes/Shape_WideCapsule.uasset"
+[2017.03.13-05.27.30:630][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Shapes/Shape_QuadPyramid.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Shapes/Shape_QuadPyramid.uasset"
+[2017.03.13-05.27.30:638][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Shapes/Shape_Pipe.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Shapes/Shape_Pipe.uasset"
+[2017.03.13-05.27.30:639][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Shapes/Shape_Cylinder.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Shapes/Shape_Cylinder.uasset"
+[2017.03.13-05.27.30:641][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Shapes/Shape_Trim.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Shapes/Shape_Trim.uasset"
+[2017.03.13-05.27.30:655][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Architecture/Wall_400x400.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Architecture/Wall_400x400.uasset"
+[2017.03.13-05.27.30:666][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Architecture/Floor_400x400.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Architecture/Floor_400x400.uasset"
+[2017.03.13-05.27.30:676][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Architecture/Wall_Window_400x300.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Architecture/Wall_Window_400x300.uasset"
+[2017.03.13-05.27.30:691][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Architecture/Pillar_50x500.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Architecture/Pillar_50x500.uasset"
+[2017.03.13-05.27.30:704][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Architecture/Wall_400x200.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Architecture/Wall_400x200.uasset"
+[2017.03.13-05.27.30:723][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Architecture/SM_AssetPlatform.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Architecture/SM_AssetPlatform.uasset"
+[2017.03.13-05.27.30:735][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Architecture/Wall_Window_400x400.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Architecture/Wall_Window_400x400.uasset"
+[2017.03.13-05.27.30:741][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Architecture/Wall_400x300.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Architecture/Wall_400x300.uasset"
+[2017.03.13-05.27.30:750][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Architecture/Wall_Door_400x300.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Architecture/Wall_Door_400x300.uasset"
+[2017.03.13-05.27.30:759][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Architecture/Wall_Door_400x400.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Architecture/Wall_Door_400x400.uasset"
+[2017.03.13-05.27.30:766][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Architecture/Wall_500x500.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Architecture/Wall_500x500.uasset"
+[2017.03.13-05.27.30:778][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Brick_Clay_Old.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Brick_Clay_Old.uasset"
+[2017.03.13-05.27.30:855][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Wood_Walnut.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Wood_Walnut.uasset"
+[2017.03.13-05.27.30:863][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_CobbleStone_Smooth.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_CobbleStone_Smooth.uasset"
+[2017.03.13-05.27.30:864][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Wood_Pine.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Wood_Pine.uasset"
+[2017.03.13-05.27.30:877][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Metal_Brushed_Nickel.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Metal_Brushed_Nickel.uasset"
+[2017.03.13-05.27.30:878][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Brick_Cut_Stone.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Brick_Cut_Stone.uasset"
+[2017.03.13-05.27.30:880][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Ceramic_Tile_Checker.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Ceramic_Tile_Checker.uasset"
+[2017.03.13-05.27.30:889][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Basic_Wall.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Basic_Wall.uasset"
+[2017.03.13-05.27.30:901][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Metal_Copper.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Metal_Copper.uasset"
+[2017.03.13-05.27.30:909][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Brick_Clay_New.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Brick_Clay_New.uasset"
+[2017.03.13-05.27.30:920][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Ground_Moss.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Ground_Moss.uasset"
+[2017.03.13-05.27.30:934][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Metal_Gold.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Metal_Gold.uasset"
+[2017.03.13-05.27.30:941][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Metal_Burnished_Steel.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Metal_Burnished_Steel.uasset"
+[2017.03.13-05.27.30:947][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Tech_Panel.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Tech_Panel.uasset"
+[2017.03.13-05.27.30:955][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Metal_Chrome.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Metal_Chrome.uasset"
+[2017.03.13-05.27.30:968][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Tech_Hex_Tile_Pulse.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Tech_Hex_Tile_Pulse.uasset"
+[2017.03.13-05.27.30:969][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_AssetPlatform.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_AssetPlatform.uasset"
+[2017.03.13-05.27.30:970][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_ColorGrid_LowSpec.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_ColorGrid_LowSpec.uasset"
+[2017.03.13-05.27.30:981][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Metal_Steel.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Metal_Steel.uasset"
+[2017.03.13-05.27.30:994][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Concrete_Poured.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Concrete_Poured.uasset"
+[2017.03.13-05.27.30:996][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Tech_Checker_Dot.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Tech_Checker_Dot.uasset"
+[2017.03.13-05.27.30:997][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Rock_Basalt.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Rock_Basalt.uasset"
+[2017.03.13-05.27.30:998][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Wood_Oak.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Wood_Oak.uasset"
+[2017.03.13-05.27.31:100][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Tech_Hex_Tile.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Tech_Hex_Tile.uasset"
+[2017.03.13-05.27.31:101][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Glass.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Glass.uasset"
+[2017.03.13-05.27.31:102][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Ground_Gravel.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Ground_Gravel.uasset"
+[2017.03.13-05.27.31:150][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Wood_Floor_Walnut_Worn.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Wood_Floor_Walnut_Worn.uasset"
+[2017.03.13-05.27.31:151][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Metal_Rust.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Metal_Rust.uasset"
+[2017.03.13-05.27.31:152][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Wood_Floor_Walnut_Polished.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Wood_Floor_Walnut_Polished.uasset"
+[2017.03.13-05.27.31:159][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Brick_Hewn_Stone.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Brick_Hewn_Stone.uasset"
+[2017.03.13-05.27.31:163][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Ground_Grass.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Ground_Grass.uasset"
+[2017.03.13-05.27.31:164][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Concrete_Tiles.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Concrete_Tiles.uasset"
+[2017.03.13-05.27.31:174][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_CobbleStone_Rough.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_CobbleStone_Rough.uasset"
+[2017.03.13-05.27.31:175][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Water_Ocean.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Water_Ocean.uasset"
+[2017.03.13-05.27.31:176][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Water_Lake.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Water_Lake.uasset"
+[2017.03.13-05.27.31:199][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Rock_Sandstone.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Rock_Sandstone.uasset"
+[2017.03.13-05.27.31:208][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Concrete_Grime.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Concrete_Grime.uasset"
+[2017.03.13-05.27.31:225][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Brick_Clay_Beveled.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Brick_Clay_Beveled.uasset"
+[2017.03.13-05.27.31:347][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Basic_Floor.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Basic_Floor.uasset"
+[2017.03.13-05.27.31:379][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_CobbleStone_Pebble.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_CobbleStone_Pebble.uasset"
+[2017.03.13-05.27.31:396][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Rock_Slate.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Rock_Slate.uasset"
+[2017.03.13-05.27.31:414][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Rock_Marble_Polished.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Rock_Marble_Polished.uasset"
+[2017.03.13-05.27.31:435][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Materials/M_Concrete_Panels.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Materials/M_Concrete_Panels.uasset"
+[2017.03.13-05.27.31:583][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Wood_Walnut_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Wood_Walnut_D.uasset"
+[2017.03.13-05.27.31:633][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_CobbleStone_Rough_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_CobbleStone_Rough_N.uasset"
+[2017.03.13-05.27.31:763][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Spark_Core.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Spark_Core.uasset"
+[2017.03.13-05.27.31:885][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Concrete_Grime_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Concrete_Grime_D.uasset"
+[2017.03.13-05.27.32:159][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_CobbleStone_Rough_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_CobbleStone_Rough_D.uasset"
+[2017.03.13-05.27.32:176][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Dust_Particle_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Dust_Particle_D.uasset"
+[2017.03.13-05.27.32:196][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Frame_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Frame_N.uasset"
+[2017.03.13-05.27.32:215][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Shelf_M.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Shelf_M.uasset"
+[2017.03.13-05.27.32:217][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Concrete_Tiles_Variation_M.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Concrete_Tiles_Variation_M.uasset"
+[2017.03.13-05.27.32:222][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Burst_M.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Burst_M.uasset"
+[2017.03.13-05.27.32:260][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_RockMesh_M.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_RockMesh_M.uasset"
+[2017.03.13-05.27.32:286][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Tech_Panel_M.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Tech_Panel_M.uasset"
+[2017.03.13-05.27.32:287][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Single_Tile_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Single_Tile_N.uasset"
+[2017.03.13-05.27.32:557][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Brick_Clay_Old_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Brick_Clay_Old_D.uasset"
+[2017.03.13-05.27.32:764][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Lamp_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Lamp_N.uasset"
+[2017.03.13-05.27.32:888][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Ground_Gravel_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Ground_Gravel_D.uasset"
+[2017.03.13-05.27.33:283][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Rock_Basalt_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Rock_Basalt_D.uasset"
+[2017.03.13-05.27.33:541][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Brick_Clay_Beveled_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Brick_Clay_Beveled_D.uasset"
+[2017.03.13-05.27.33:664][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Brick_Hewn_Stone_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Brick_Hewn_Stone_N.uasset"
+[2017.03.13-05.27.33:958][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_CobbleStone_Smooth_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_CobbleStone_Smooth_D.uasset"
+[2017.03.13-05.27.34:328][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Concrete_Tiles_M.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Concrete_Tiles_M.uasset"
+[2017.03.13-05.27.34:581][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Shelf_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Shelf_N.uasset"
+[2017.03.13-05.27.34:764][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Concrete_Tiles_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Concrete_Tiles_N.uasset"
+[2017.03.13-05.27.34:929][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Brick_Clay_New_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Brick_Clay_New_N.uasset"
+[2017.03.13-05.27.35:214][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_TableRound_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_TableRound_N.uasset"
+[2017.03.13-05.27.35:297][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Wood_Oak_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Wood_Oak_D.uasset"
+[2017.03.13-05.27.35:498][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Statue_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Statue_N.uasset"
+[2017.03.13-05.27.35:639][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Ground_Grass_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Ground_Grass_N.uasset"
+[2017.03.13-05.27.35:878][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Brick_Clay_Beveled_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Brick_Clay_Beveled_N.uasset"
+[2017.03.13-05.27.36:142][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Metal_Rust_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Metal_Rust_N.uasset"
+[2017.03.13-05.27.36:443][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Perlin_Noise_M.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Perlin_Noise_M.uasset"
+[2017.03.13-05.27.36:835][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Metal_Gold_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Metal_Gold_D.uasset"
+[2017.03.13-05.27.36:976][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Door_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Door_N.uasset"
+[2017.03.13-05.27.36:986][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Checker_Noise_M.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Checker_Noise_M.uasset"
+[2017.03.13-05.27.37:202][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Ground_Moss_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Ground_Moss_N.uasset"
+[2017.03.13-05.27.37:527][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Rock_Sandstone_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Rock_Sandstone_D.uasset"
+[2017.03.13-05.27.37:799][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Tech_Panel_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Tech_Panel_N.uasset"
+[2017.03.13-05.27.37:879][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Metal_Gold_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Metal_Gold_N.uasset"
+[2017.03.13-05.27.38:043][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_CobbleStone_Pebble_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_CobbleStone_Pebble_N.uasset"
+[2017.03.13-05.27.38:208][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Tech_Dot_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Tech_Dot_N.uasset"
+[2017.03.13-05.27.38:248][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_CobbleStone_Pebble_M.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_CobbleStone_Pebble_M.uasset"
+[2017.03.13-05.27.38:292][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Explosion_SubUV.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Explosion_SubUV.uasset"
+[2017.03.13-05.27.38:552][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Brick_Clay_Old_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Brick_Clay_Old_N.uasset"
+[2017.03.13-05.27.38:792][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Bush_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Bush_N.uasset"
+[2017.03.13-05.27.38:811][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Lamp_M.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Lamp_M.uasset"
+[2017.03.13-05.27.38:924][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Metal_Copper_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Metal_Copper_D.uasset"
+[2017.03.13-05.27.39:169][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Wood_Walnut_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Wood_Walnut_N.uasset"
+[2017.03.13-05.27.39:264][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Ground_Gravel_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Ground_Gravel_N.uasset"
+[2017.03.13-05.27.39:544][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Detail_Rocky_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Detail_Rocky_N.uasset"
+[2017.03.13-05.27.39:687][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Ground_Grass_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Ground_Grass_D.uasset"
+[2017.03.13-05.27.39:955][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Wood_Floor_Walnut_M.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Wood_Floor_Walnut_M.uasset"
+[2017.03.13-05.27.40:128][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Frame_M.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Frame_M.uasset"
+[2017.03.13-05.27.40:256][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Brick_Clay_New_M.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Brick_Clay_New_M.uasset"
+[2017.03.13-05.27.40:459][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Tech_Hex_Tile_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Tech_Hex_Tile_N.uasset"
+[2017.03.13-05.27.40:475][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Chair_M.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Chair_M.uasset"
+[2017.03.13-05.27.40:549][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Wood_Oak_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Wood_Oak_N.uasset"
+[2017.03.13-05.27.40:798][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Brick_Clay_Beveled_M.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Brick_Clay_Beveled_M.uasset"
+[2017.03.13-05.27.41:385][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_ground_Moss_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_ground_Moss_D.uasset"
+[2017.03.13-05.27.42:116][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Rock_Slate_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Rock_Slate_N.uasset"
+[2017.03.13-05.27.42:336][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Statue_M.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Statue_M.uasset"
+[2017.03.13-05.27.42:413][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Concrete_Tiles_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Concrete_Tiles_D.uasset"
+[2017.03.13-05.27.42:504][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Concrete_Poured_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Concrete_Poured_N.uasset"
+[2017.03.13-05.27.42:776][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Smoke_SubUV.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Smoke_SubUV.uasset"
+[2017.03.13-05.27.42:899][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_MacroVariation.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_MacroVariation.uasset"
+[2017.03.13-05.27.43:369][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Rock_Sandstone_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Rock_Sandstone_N.uasset"
+[2017.03.13-05.27.43:564][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Wood_Pine_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Wood_Pine_N.uasset"
+[2017.03.13-05.27.43:681][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Wood_Pine_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Wood_Pine_D.uasset"
+[2017.03.13-05.27.43:971][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_RockMesh_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_RockMesh_N.uasset"
+[2017.03.13-05.27.43:994][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Smoke_Tiled_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Smoke_Tiled_D.uasset"
+[2017.03.13-05.27.44:005][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Bush_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Bush_D.uasset"
+[2017.03.13-05.27.44:018][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Door_M.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Door_M.uasset"
+[2017.03.13-05.27.44:086][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Metal_Steel_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Metal_Steel_N.uasset"
+[2017.03.13-05.27.44:299][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Fire_Tiled_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Fire_Tiled_D.uasset"
+[2017.03.13-05.27.44:641][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Brick_Cut_Stone_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Brick_Cut_Stone_N.uasset"
+[2017.03.13-05.27.44:787][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Tech_Dot_M.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Tech_Dot_M.uasset"
+[2017.03.13-05.27.44:922][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Water_M.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Water_M.uasset"
+[2017.03.13-05.27.44:994][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Brick_Clay_New_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Brick_Clay_New_D.uasset"
+[2017.03.13-05.27.45:328][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Brick_Cut_Stone_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Brick_Cut_Stone_D.uasset"
+[2017.03.13-05.27.45:649][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Rock_Marble_Polished_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Rock_Marble_Polished_D.uasset"
+[2017.03.13-05.27.45:676][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Tech_Hex_Tile_M.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Tech_Hex_Tile_M.uasset"
+[2017.03.13-05.27.45:794][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Metal_Rust_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Metal_Rust_D.uasset"
+[2017.03.13-05.27.46:030][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Fire_SubUV.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Fire_SubUV.uasset"
+[2017.03.13-05.27.46:046][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Ceramic_Tile_M.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Ceramic_Tile_M.uasset"
+[2017.03.13-05.27.46:144][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Rock_Smooth_Granite_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Rock_Smooth_Granite_D.uasset"
+[2017.03.13-05.27.46:414][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Rock_Slate_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Rock_Slate_D.uasset"
+[2017.03.13-05.27.46:759][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Concrete_Panels_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Concrete_Panels_D.uasset"
+[2017.03.13-05.27.46:949][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_CobbleStone_Smooth_M.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_CobbleStone_Smooth_M.uasset"
+[2017.03.13-05.27.46:977][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_TableRound_M.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_TableRound_M.uasset"
+[2017.03.13-05.27.47:257][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Rock_Basalt_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Rock_Basalt_N.uasset"
+[2017.03.13-05.27.47:521][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Chair_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Chair_N.uasset"
+[2017.03.13-05.27.47:551][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Wood_Floor_Walnut_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Wood_Floor_Walnut_N.uasset"
+[2017.03.13-05.27.47:830][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Metal_Aluminum_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Metal_Aluminum_D.uasset"
+[2017.03.13-05.27.48:034][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Ceramic_Tile_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Ceramic_Tile_N.uasset"
+[2017.03.13-05.27.48:117][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Brick_Hewn_Stone_M.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Brick_Hewn_Stone_M.uasset"
+[2017.03.13-05.27.49:134][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_CobbleStone_Pebble_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_CobbleStone_Pebble_D.uasset"
+[2017.03.13-05.27.49:390][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Brick_Hewn_Stone_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Brick_Hewn_Stone_D.uasset"
+[2017.03.13-05.27.49:499][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_CobbleStone_Smooth_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_CobbleStone_Smooth_N.uasset"
+[2017.03.13-05.27.49:964][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Concrete_Poured_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Concrete_Poured_D.uasset"
+[2017.03.13-05.27.50:110][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Water_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Water_N.uasset"
+[2017.03.13-05.27.50:159][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Metal_Steel_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Metal_Steel_D.uasset"
+[2017.03.13-05.27.50:414][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Concrete_Panels_N.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Concrete_Panels_N.uasset"
+[2017.03.13-05.27.50:488][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Wood_Floor_Walnut_D.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Wood_Floor_Walnut_D.uasset"
+[2017.03.13-05.27.50:659][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Textures/T_Gradinet_01.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Textures/T_Gradinet_01.uasset"
+[2017.03.13-05.27.51:612][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/HDRI/HDRI_Epic_Courtyard_Daylight.uasset"
+[2017.03.13-05.27.52:487][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Particles/P_Explosion.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Particles/P_Explosion.uasset"
+[2017.03.13-05.27.52:571][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Particles/P_Smoke.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Particles/P_Smoke.uasset"
+[2017.03.13-05.27.52:639][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Particles/P_Steam_Lit.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Particles/P_Steam_Lit.uasset"
+[2017.03.13-05.27.52:706][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Particles/P_Fire.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Particles/P_Fire.uasset"
+[2017.03.13-05.27.52:718][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Particles/P_Sparks.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Particles/P_Sparks.uasset"
+[2017.03.13-05.27.52:762][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Particles/P_Ambient_Dust.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Particles/P_Ambient_Dust.uasset"
+[2017.03.13-05.27.52:769][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Particles/Materials/m_flare_01.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Particles/Materials/m_flare_01.uasset"
+[2017.03.13-05.27.52:779][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Particles/Materials/M_explosion_subUV.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Particles/Materials/M_explosion_subUV.uasset"
+[2017.03.13-05.27.52:790][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Particles/Materials/M_Spark.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Particles/Materials/M_Spark.uasset"
+[2017.03.13-05.27.52:791][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Particles/Materials/M_Heat_Distortion.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Particles/Materials/M_Heat_Distortion.uasset"
+[2017.03.13-05.27.52:799][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Particles/Materials/M_Dust_Particle.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Particles/Materials/M_Dust_Particle.uasset"
+[2017.03.13-05.27.52:801][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Particles/Materials/M_smoke_subUV.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Particles/Materials/M_smoke_subUV.uasset"
+[2017.03.13-05.27.52:811][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Particles/Materials/M_Fire_SubUV.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Particles/Materials/M_Fire_SubUV.uasset"
+[2017.03.13-05.27.52:817][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Particles/Materials/M_radial_ramp.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Particles/Materials/M_radial_ramp.uasset"
+[2017.03.13-05.27.52:821][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Particles/Materials/M_Burst.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Particles/Materials/M_Burst.uasset"
+[2017.03.13-05.27.52:821][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Particles/Materials/M_Radial_Gradient.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Particles/Materials/M_Radial_Gradient.uasset"
+[2017.03.13-05.27.52:862][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Maps/Minimal_Default.umap" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Maps/Minimal_Default.umap"
+[2017.03.13-05.27.52:925][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Maps/StarterMap.umap" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Maps/StarterMap.umap"
+[2017.03.13-05.27.53:144][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Maps/Minimal_Default_BuiltData.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Maps/Minimal_Default_BuiltData.uasset"
+[2017.03.13-05.27.53:155][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Maps/Advanced_Lighting.umap" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Maps/Advanced_Lighting.umap"
+[2017.03.13-05.27.53:163][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Maps/Advanced_Lighting_BuiltData.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Maps/Advanced_Lighting_BuiltData.uasset"
+[2017.03.13-05.27.53:323][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Maps/StarterMap_BuiltData.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Maps/StarterMap_BuiltData.uasset"
+[2017.03.13-05.27.53:604][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Audio/Explosion02.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Audio/Explosion02.uasset"
+[2017.03.13-05.27.53:631][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Audio/Starter_Birds01.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Audio/Starter_Birds01.uasset"
+[2017.03.13-05.27.53:653][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Audio/Smoke01.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Audio/Smoke01.uasset"
+[2017.03.13-05.27.53:740][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Audio/Starter_Wind06.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Audio/Starter_Wind06.uasset"
+[2017.03.13-05.27.53:904][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Audio/Starter_Music01.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Audio/Starter_Music01.uasset"
+[2017.03.13-05.27.54:083][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Audio/Fire01_Cue.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Audio/Fire01_Cue.uasset"
+[2017.03.13-05.27.54:134][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Audio/Starter_Background_Cue.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Audio/Starter_Background_Cue.uasset"
+[2017.03.13-05.27.54:220][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Audio/Steam01.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Audio/Steam01.uasset"
+[2017.03.13-05.27.54:227][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Audio/Fire_Sparks01.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Audio/Fire_Sparks01.uasset"
+[2017.03.13-05.27.54:229][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Audio/Steam01_Cue.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Audio/Steam01_Cue.uasset"
+[2017.03.13-05.27.54:230][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Audio/Fire_Sparks01_Cue.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Audio/Fire_Sparks01_Cue.uasset"
+[2017.03.13-05.27.54:230][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Audio/Light02_Cue.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Audio/Light02_Cue.uasset"
+[2017.03.13-05.27.54:247][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Audio/Fire01.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Audio/Fire01.uasset"
+[2017.03.13-05.27.54:260][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Audio/Collapse01.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Audio/Collapse01.uasset"
+[2017.03.13-05.27.54:261][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Audio/Collapse_Cue.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Audio/Collapse_Cue.uasset"
+[2017.03.13-05.27.54:263][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Audio/Explosion01.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Audio/Explosion01.uasset"
+[2017.03.13-05.27.54:264][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Audio/Smoke01_Cue.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Audio/Smoke01_Cue.uasset"
+[2017.03.13-05.27.54:272][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Audio/Starter_Music_Cue.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Audio/Starter_Music_Cue.uasset"
+[2017.03.13-05.27.54:273][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Audio/Light01_Cue.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Audio/Light01_Cue.uasset"
+[2017.03.13-05.27.54:277][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Audio/Light01.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Audio/Light01.uasset"
+[2017.03.13-05.27.54:313][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Audio/Starter_Wind05.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Audio/Starter_Wind05.uasset"
+[2017.03.13-05.27.54:315][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Audio/Explosion_Cue.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Audio/Explosion_Cue.uasset"
+[2017.03.13-05.27.54:320][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Audio/Light02.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Audio/Light02.uasset"
+[2017.03.13-05.27.54:468][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Audio/Collapse02.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Audio/Collapse02.uasset"
+[2017.03.13-05.27.54:496][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Blueprints/Blueprint_Effect_Steam.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Blueprints/Blueprint_Effect_Steam.uasset"
+[2017.03.13-05.27.54:557][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Blueprints/Blueprint_WallSconce.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Blueprints/Blueprint_WallSconce.uasset"
+[2017.03.13-05.27.54:569][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Blueprints/Blueprint_Effect_Fire.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Blueprints/Blueprint_Effect_Fire.uasset"
+[2017.03.13-05.27.54:571][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Blueprints/Blueprint_CeilingLight.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Blueprints/Blueprint_CeilingLight.uasset"
+[2017.03.13-05.27.54:573][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Blueprints/Blueprint_Effect_Explosion.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Blueprints/Blueprint_Effect_Explosion.uasset"
+[2017.03.13-05.27.54:586][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Blueprints/BP_LightStudio.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Blueprints/BP_LightStudio.uasset"
+[2017.03.13-05.27.54:587][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Blueprints/Blueprint_Effect_Sparks.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Blueprints/Blueprint_Effect_Sparks.uasset"
+[2017.03.13-05.27.54:588][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Blueprints/Blueprint_Effect_Smoke.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Blueprints/Blueprint_Effect_Smoke.uasset"
+[2017.03.13-05.27.54:596][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Blueprints/Assets/M_LightStage_Skybox_Black.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Blueprints/Assets/M_LightStage_Skybox_Black.uasset"
+[2017.03.13-05.27.54:606][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Blueprints/Assets/M_LightStage_Skybox_Master.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Blueprints/Assets/M_LightStage_Skybox_Master.uasset"
+[2017.03.13-05.27.54:629][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Blueprints/Assets/Skybox.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Blueprints/Assets/Skybox.uasset"
+[2017.03.13-05.27.54:630][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Blueprints/Assets/SunlightColorLUT.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Blueprints/Assets/SunlightColorLUT.uasset"
+[2017.03.13-05.27.54:631][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Blueprints/Assets/M_LightStage_Arrows.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Blueprints/Assets/M_LightStage_Arrows.uasset"
+[2017.03.13-05.27.54:737][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Blueprints/Assets/M_LightStage_Skybox_HDRI.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Blueprints/Assets/M_LightStage_Skybox_HDRI.uasset"
+[2017.03.13-05.27.54:753][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Blueprints/Assets/SM_Arrows.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Blueprints/Assets/SM_Arrows.uasset"
+[2017.03.13-05.27.54:755][  0]LogPackFactory: Copied "../../../Samples/StarterContent/Content/StarterContent/Blueprints/Assets/FogBrightnessLUT.uasset" to "../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Blueprints/Assets/FogBrightnessLUT.uasset"
+[2017.03.13-05.27.55:148][  0]LogTexture:Display: 正在构建贴图: T_Frame_N (BC5)
+[2017.03.13-05.27.56:347][  0]LogTexture:Display: 正在构建贴图: T_Frame_M (DXT1)
+[2017.03.13-05.27.57:085][  0]LogMaterial: Missing cached shader map for material M_Frame, compiling. 
+[2017.03.13-05.27.57:087][  0]LogTemp:Display: Added material ShaderMap 0x00007F98F3BCFE80 with Material 0x00007F99565B5600 to ShaderMapsBeingCompiled
+[2017.03.13-05.27.57:144][  0]LogTemp:Display: Kicking off shader compilation for M_Frame, GameThreadShaderMap 0x00007F98F3BCFE80
+[2017.03.13-05.27.57:176][  0]LogStaticMesh: 正在构建静态网格物体SM_DoorFrame...
+[2017.03.13-05.27.57:397][  0]LogStaticMesh: Built static mesh [0.24s] /Game/StarterContent/Props/SM_DoorFrame.SM_DoorFrame
+[2017.03.13-05.27.59:240][  0]LogRenderer: Reallocating scene render targets to support 256x256 NumSamples 1 (Frame:2).
+[2017.03.13-05.28.02:311][  0]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/StarterContent/Props/SM_DoorFrame" FILE="../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/SM_DoorFrame.uasset" SILENT=true
+[2017.03.13-05.28.02:509][  0]LogSavePackage: Save=187.87ms
+[2017.03.13-05.28.02:509][  0]LogSavePackage: Moving '../../../../netbean-java/CraftPlugins/UE4/test/Saved/SM_DoorFrame07AC38E502030D0D001C016D7CB9E5A0.tmp' to '../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/SM_DoorFrame.uasset'
+[2017.03.13-05.28.02:528][  0]LogSavePackage:Display: Finished SavePackage ../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Props/SM_DoorFrame.uasset
+[2017.03.13-05.28.02:529][  0]LogFeaturePack:Warning: Inserted 1 feature packs
+[2017.03.13-05.28.02:554][  0]Cmd: MAP LOAD FILE="../../../../netbean-java/CraftPlugins/UE4/test/Content/StarterContent/Maps/Minimal_Default.umap" TEMPLATE=0 SHOWPROGRESS=1 FEATURELEVEL=3
+[2017.03.13-05.28.02:555][  0]LightingResults: New page: 光照构建
+[2017.03.13-05.28.02:755][  0]MapCheck: New page: 地图检测
+[2017.03.13-05.28.02:755][  0]LightingResults: New page: 光照构建
+[2017.03.13-05.28.04:599][  0]LogTexture:Display: 正在构建贴图: T_TableRound_N (BC5)
+[2017.03.13-05.28.05:921][  0]LogTexture:Display: 正在构建贴图: T_TableRound_M (DXT1)
+[2017.03.13-05.28.06:743][  0]LogMaterial: Missing cached shader map for material M_TableRound, compiling. 
+[2017.03.13-05.28.06:745][  0]LogTemp:Display: Added material ShaderMap 0x00007F98F37BB500 with Material 0x00007F9955F7C180 to ShaderMapsBeingCompiled
+[2017.03.13-05.28.06:793][  0]LogTemp:Display: Kicking off shader compilation for M_TableRound, GameThreadShaderMap 0x00007F98F37BB500
+[2017.03.13-05.28.06:820][  0]LogStaticMesh: 正在构建静态网格物体SM_TableRound...
+[2017.03.13-05.28.06:963][  0]LogStaticMesh: Built static mesh [0.14s] /Game/StarterContent/Props/SM_TableRound.SM_TableRound
+[2017.03.13-05.28.07:165][  0]LogTexture:Display: 正在构建贴图: T_Statue_N (BC5)
+[2017.03.13-05.28.07:700][  0]LogTexture:Display: 正在构建贴图: T_Statue_M (AutoDXT)
+[2017.03.13-05.28.08:685][  0]LogMaterial: Missing cached shader map for material M_Statue, compiling. 
+[2017.03.13-05.28.08:687][  0]LogTemp:Display: Added material ShaderMap 0x00007F98F5063700 with Material 0x00007F9955F89B00 to ShaderMapsBeingCompiled
+[2017.03.13-05.28.08:738][  0]LogTemp:Display: Kicking off shader compilation for M_Statue, GameThreadShaderMap 0x00007F98F5063700
+[2017.03.13-05.28.08:829][  0]LogStaticMesh: 正在构建静态网格物体SM_Statue...
+[2017.03.13-05.28.08:936][  0]LogStaticMesh: Built static mesh [0.11s] /Game/StarterContent/Props/SM_Statue.SM_Statue
+[2017.03.13-05.28.08:985][  0]LogStaticMesh: 正在构建静态网格物体SM_Chair...
+[2017.03.13-05.28.09:030][  0]LogStaticMesh: Built static mesh [0.05s] /Game/StarterContent/Props/SM_Chair.SM_Chair
+[2017.03.13-05.28.09:142][  0]LogMaterial: Missing cached shader map for material M_Basic_Floor, compiling. 
+[2017.03.13-05.28.09:145][  0]LogTemp:Display: Added material ShaderMap 0x00007F98F5063380 with Material 0x00007F9955F80080 to ShaderMapsBeingCompiled
+[2017.03.13-05.28.09:226][  0]LogTemp:Display: Kicking off shader compilation for M_Basic_Floor, GameThreadShaderMap 0x00007F98F5063380
+[2017.03.13-05.28.09:354][  0]LogStaticMesh: 正在构建静态网格物体Floor_400x400...
+[2017.03.13-05.28.09:354][  0]LogStaticMesh: Built static mesh [0.09s] /Game/StarterContent/Architecture/Floor_400x400.Floor_400x400
+[2017.03.13-05.28.09:428][  0]LogMaterial: Missing cached shader map for material M_StatueGlass, compiling. 
+[2017.03.13-05.28.09:481][  0]LogTemp:Display: Added material ShaderMap 0x00007F98F07BD500 with Material 0x00007F9955F7CF00 to ShaderMapsBeingCompiled
+[2017.03.13-05.28.09:671][  0]LogTemp:Display: Kicking off shader compilation for M_StatueGlass, GameThreadShaderMap 0x00007F98F07BD500
+[2017.03.13-05.28.10:148][  0]LogTexture:Display: 正在构建贴图: T_Chair_N (BC5)
+[2017.03.13-05.28.11:005][  0]LogTexture:Display: 正在构建贴图: T_Chair_M (AutoDXT)
+[2017.03.13-05.28.12:127][  0]LogMaterial: Missing cached shader map for material M_Chair, compiling. 
+[2017.03.13-05.28.12:129][  0]LogTemp:Display: Added material ShaderMap 0x00007F98F07BD180 with Material 0x00007F9955A1CC80 to ShaderMapsBeingCompiled
+[2017.03.13-05.28.12:181][  0]LogTemp:Display: Kicking off shader compilation for M_Chair, GameThreadShaderMap 0x00007F98F07BD180
+[2017.03.13-05.28.12:743][  0]LogTexture:Display: 正在构建贴图: T_Metal_Copper_D (AutoDXT)
+[2017.03.13-05.28.17:133][  0]LogTexture:Display: 正在构建贴图: T_Metal_Gold_N (BC5)
+[2017.03.13-05.28.18:314][  0]LogTexture:Display: 正在构建贴图: T_MacroVariation (AutoDXT)
+[2017.03.13-05.28.22:294][  0]LogMaterial: Missing cached shader map for material M_Metal_Copper, compiling. 
+[2017.03.13-05.28.22:316][  0]LogTemp:Display: Added material ShaderMap 0x00007F98F07BD880 with Material 0x00007F995703B000 to ShaderMapsBeingCompiled
+[2017.03.13-05.28.22:367][  0]LogTemp:Display: Kicking off shader compilation for M_Metal_Copper, GameThreadShaderMap 0x00007F98F07BD880
+[2017.03.13-05.28.22:997][  0]LogTexture:Display: 正在构建贴图: T_Metal_Aluminum_D (AutoDXT)
+[2017.03.13-05.28.26:932][  0]LogMaterial: Missing cached shader map for material M_Metal_Burnished_Steel, compiling. 
+[2017.03.13-05.28.26:935][  0]LogTemp:Display: Added material ShaderMap 0x00007F98EBBBC400 with Material 0x00007F995703F980 to ShaderMapsBeingCompiled
+[2017.03.13-05.28.26:984][  0]LogTemp:Display: Kicking off shader compilation for M_Metal_Burnished_Steel, GameThreadShaderMap 0x00007F98EBBBC400
+[2017.03.13-05.28.26:995][  0]LogMaterial: Missing cached shader map for material M_Metal_Brushed_Nickel, compiling. 
+[2017.03.13-05.28.26:997][  0]LogTemp:Display: Added material ShaderMap 0x00007F98EB3E9080 with Material 0x00007F995703F200 to ShaderMapsBeingCompiled
+[2017.03.13-05.28.27:037][  0]LogTemp:Display: Kicking off shader compilation for M_Metal_Brushed_Nickel, GameThreadShaderMap 0x00007F98EB3E9080
+[2017.03.13-05.28.27:064][  0]LogTexture:Display: 正在构建贴图: HQ_Lightmap1_1 (AutoDXT)
+[2017.03.13-05.28.27:181][  0]LogTexture:Display: 正在构建贴图: HQ_Lightmap1_2 (AutoDXT)
+[2017.03.13-05.28.27:202][  0]LogTexture:Display: 正在构建贴图: LQ_Lightmap_1_1 (DXT1)
+[2017.03.13-05.28.27:272][  0]LogTexture:Display: 正在构建贴图: LQ_Lightmap_1_2 (DXT1)
+[2017.03.13-05.28.27:295][  0]LogTexture:Display: 正在构建贴图: SkyOcclusion1_1 (AutoDXT)
+[2017.03.13-05.28.27:368][  0]LogTexture:Display: 正在构建贴图: SkyOcclusion1_2 (AutoDXT)
+[2017.03.13-05.28.27:375][  0]LogTexture:Display: 正在构建贴图: ShadowMapTexture2D_2 (G8)
+[2017.03.13-05.28.27:417][  0]LogTexture:Display: 正在构建贴图: ShadowMapTexture2D_3 (G8)
+[2017.03.13-05.28.30:458][  0]LogMaterial: Missing cached shader map for material M_Sky_Panning_Clouds2, compiling. 
+[2017.03.13-05.28.30:534][  0]LogTemp:Display: Added material ShaderMap 0x00007F98F0859980 with Material 0x00007F9957920A00 to ShaderMapsBeingCompiled
+[2017.03.13-05.28.30:542][  0]LogTemp:Display: Kicking off shader compilation for M_Sky_Panning_Clouds2, GameThreadShaderMap 0x00007F98F0859980
+[2017.03.13-05.28.31:484][  0]LogAudioDerivedData:Display: 正在构建压缩的音频格式OGG波形Starter_Wind06...
+[2017.03.13-05.28.32:942][  0]LogAudioDerivedData:Display: 正在构建压缩的音频格式OGG波形Starter_Birds01...
+[2017.03.13-05.28.33:348][  0]LogAudioDerivedData:Display: 正在构建压缩的音频格式OGG波形Starter_Wind05...
+[2017.03.13-05.28.34:364][  0]LogAIModule: Creating AISystem for world Minimal_Default
+[2017.03.13-05.28.35:965][  0]LogTexture:Display: 正在构建贴图: S_AudioComponent_AutoActivate (BGRA8)
+[2017.03.13-05.28.37:014][  0]LogEditorServer: Finished looking for orphan Actors (0.021 secs)
+[2017.03.13-05.28.37:288][  0]Cmd: MAP CHECKDEP NOCLEARLOG
+[2017.03.13-05.28.41:581][  0]MapCheck: 信息 地图检测完成：0个错误，0 个警告，用时4,184.845毫秒完成。
+[2017.03.13-05.28.41:622][  0]LogFileHelpers: Loading map 'Minimal_Default' took 39.078
+[2017.03.13-05.28.59:308][  0]LogCollectionManager: Loaded 0 collections in 0.001819 seconds
+[2017.03.13-05.29.00:208][  0]LogFileCache: Scanning file cache for directory '/home/d0048/Program-code/netbean-java/CraftPlugins/UE4/test/Saved/Collections/' took 0.03s
+[2017.03.13-05.29.00:208][  0]LogFileCache: Scanning file cache for directory '/home/d0048/Program-code/netbean-java/CraftPlugins/UE4/test/Content/Developers/d0048/Collections/' took 0.00s
+[2017.03.13-05.29.00:208][  0]LogFileCache: Scanning file cache for directory '/home/d0048/Program-code/netbean-java/CraftPlugins/UE4/test/Content/Collections/' took 0.00s
+[2017.03.13-05.29.00:208][  0]LogContentBrowser: Native class hierarchy populated in 0.2065 seconds. Added 2231 classes and 427 folders.
+[2017.03.13-05.29.00:378][  0]LogCollectionManager: Rebuilt the GUID cache for 0 collections in 0.000002 seconds
+[2017.03.13-05.29.01:446][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: Construct from data asset -  0.000 s
+[2017.03.13-05.29.01:446][  0]LogStats: UGameplayTagsManager::ConstructGameplayTagTree: GameplayTagTreeChangedEvent.Broadcast -  0.000 s
+[2017.03.13-05.29.01:720][  0]LogContentBrowser: Native class hierarchy updated for 'WidgetCarousel' in 0.0014 seconds. Added 0 classes and 0 folders.
+[2017.03.13-05.29.04:419][  0]LogContentBrowser: Native class hierarchy updated for 'AddContentDialog' in 0.0015 seconds. Added 0 classes and 0 folders.
+[2017.03.13-05.29.05:006][  0]LogContentBrowser: Native class hierarchy updated for 'SceneOutliner' in 0.0011 seconds. Added 1 classes and 2 folders.
+[2017.03.13-05.29.05:815][  0]LogCrashTracker: Crashtracker disabled due to settings.
+[2017.03.13-05.29.38:393][  0]LogTexture:Display: 正在构建贴图: Blueprint_64x (BGRA8)
+[2017.03.13-05.29.38:793][  0]LogTexture:Display: 正在构建贴图: icon_Editor_Preferences_General_40x (BGRA8)
+[2017.03.13-05.29.38:842][  0]LogTexture:Display: 正在构建贴图: Paper2DSprite_TutorialIcon (BGRA8)
+[2017.03.13-05.29.38:884][  0]LogTexture:Display: 正在构建贴图: icon_ShowSkeletalMeshes_40x (BGRA8)
+[2017.03.13-05.29.38:902][  0]LogTexture:Display: 正在构建贴图: Landscape (BGRA8)
+[2017.03.13-05.29.38:927][  0]LogTexture:Display: 正在构建贴图: Foliage (BGRA8)
+[2017.03.13-05.29.43:595][  0]LogContentBrowser: Native class hierarchy updated for 'HierarchicalLODOutliner' in 0.0853 seconds. Added 1 classes and 2 folders.
+[2017.03.13-05.29.43:648][  0]LogLoad: (Engine Initialization) Total time: 210.34 seconds
+[2017.03.13-05.29.43:648][  0]LogLoad: (Engine Initialization) Total Blueprint compile time: 1.05 seconds
+[2017.03.13-05.29.43:648][  0]LogExternalProfiler: No external profilers were discovered.  External profiling features will not be available.
+[2017.03.13-05.29.44:467][  0]LogSlate: Took 0.022086 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Regular.ttf' (155K)
+[2017.03.13-05.29.44:632][  0]LogSlate: Took 0.064171 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/DroidSansFallback.ttf' (3848K)
+[2017.03.13-05.29.44:998][  0]LogSlate: Took 0.017577 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Bold.ttf' (160K)
+[2017.03.13-05.29.45:355][  0]LogSlate: Took 0.090292 seconds to synchronously load lazily loaded font '../../../Engine/Content/Editor/Slate/Fonts/FontAwesome.ttf' (139K)
+[2017.03.13-05.29.54:652][  0]LogRenderer: Reallocating scene render targets to support 1208x552 NumSamples 1 (Frame:3).
+[2017.03.13-05.29.54:652][  0]LogSlate: Took 0.046507 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (159K)
+[2017.03.13-05.29.58:267][  0]LogLinux: Setting swap interval to 'Immediate'
+[2017.03.13-05.30.00:201][  0]LogContentStreaming: Texture pool size now 1000 MB
+[2017.03.13-05.30.01:577][  0]LogTexture:Display: 正在构建贴图: icon_tab_Levels_40x (BGRA8)
+[2017.03.13-05.30.03:303][  2]LogLinux: Setting swap interval to 'Immediate'
+[2017.03.13-05.30.03:467][  3]LogAssetRegistry: Asset discovery search completed in 203.7616 seconds
+[2017.03.13-05.30.03:467][  3]LogCollectionManager: Rebuilt the object cache for 0 collections in 0.000007 seconds (found 0 objects)
+[2017.03.13-05.30.03:467][  3]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000089 seconds (updated 0 objects)
+[2017.03.13-05.30.05:482][  4]LogTexture:Display: 正在构建贴图: LevelGrid1DStripes (BGRA8)
+[2017.03.13-05.30.05:614][  4]LogMaterial: Missing cached shader map for material LevelGridMaterial2, compiling. 
+[2017.03.13-05.30.05:630][  4]LogTemp:Display: Added material ShaderMap 0x00007F994F0D1400 with Material 0x00007F98C894A180 to ShaderMapsBeingCompiled
+[2017.03.13-05.30.05:694][  4]LogTemp:Display: Kicking off shader compilation for LevelGridMaterial2, GameThreadShaderMap 0x00007F994F0D1400
+[2017.03.13-05.30.07:021][ 25]LogTemp:Display: Finished compile of shader map 0x00007F9954132E80
+[2017.03.13-05.30.07:021][ 25]LogTemp:Display: Shader map MAT_LevelColorationLitLightmapUV complete, GameThreadShaderMap 0x00007F9954132E80, marking material MAT_LevelColorationLitLightmapUV as finished
+[2017.03.13-05.30.07:021][ 25]LogTemp:Display: Marking material as finished 0x00007F9956290680
+[2017.03.13-05.30.19:440][235]LogLinux: Setting swap interval to 'Immediate'
+[2017.03.13-05.30.20:777][258]LogTexture:Display: 正在构建贴图: CameraActor_64x (BGRA8)
+[2017.03.13-05.30.20:826][258]LogTexture:Display: 正在构建贴图: BlueprintInterface_64x (BGRA8)
+[2017.03.13-05.30.20:836][258]LogTexture:Display: 正在构建贴图: BlueprintMacroLibrary_64x (BGRA8)
+[2017.03.13-05.30.22:264][258]LogTexture:Display: 正在构建贴图: IOS (BGRA8)
+[2017.03.13-05.30.22:275][258]LogTexture:Display: 正在构建贴图: android_Icon (BGRA8)
+[2017.03.13-05.30.22:375][258]LogTexture:Display: 正在构建贴图: Paper2DFlipbook_TutorialIcon (BGRA8)
+[2017.03.13-05.30.58:199][933]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (BP_Sky_Sphere)
+[2017.03.13-05.31.00:980][959]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (BP_Sky_Sphere)
+[2017.03.13-05.31.09:281][105]LogTemp:Display: Finished compile of shader map 0x00007F992A7FFC80
+[2017.03.13-05.31.09:282][105]LogTemp:Display: Shader map ShadedLevelColorationLitMaterial complete, GameThreadShaderMap 0x00007F992A7FFC80, marking material ShadedLevelColorationLitMaterial as finished
+[2017.03.13-05.31.09:282][105]LogTemp:Display: Marking material as finished 0x00007F9956293800
+[2017.03.13-05.32.09:303][243]LogLinux: Setting swap interval to 'Immediate'
+[2017.03.13-05.32.14:702][428]LogLinux: Setting swap interval to 'Immediate'
+[2017.03.13-05.32.21:386][544]LogTemp:Display: Finished compile of shader map 0x00007F992A7FF200
+[2017.03.13-05.32.21:387][544]LogTemp:Display: Shader map ShadedLevelColorationUnlitMateri complete, GameThreadShaderMap 0x00007F992A7FF200, marking material ShadedLevelColorationUnlitMateri as finished
+[2017.03.13-05.32.21:387][544]LogTemp:Display: Marking material as finished 0x00007F992AC27380
+[2017.03.13-05.32.26:551][637]LogLinux: Setting swap interval to 'Immediate'
+[2017.03.13-05.32.29:750][720]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Chair)
+[2017.03.13-05.32.31:234][734]LogLinux: Setting swap interval to 'Immediate'
+[2017.03.13-05.32.33:274][814]LogLinux: Setting swap interval to 'Immediate'
+[2017.03.13-05.32.39:473][923]LogTemp:Display: Finished compile of shader map 0x00007F991D2A0580
+[2017.03.13-05.32.39:474][923]LogTemp:Display: Shader map VertexColorMaterial complete, GameThreadShaderMap 0x00007F991D2A0580, marking material VertexColorMaterial as finished
+[2017.03.13-05.32.39:474][923]LogTemp:Display: Marking material as finished 0x00007F992AC28100
+[2017.03.13-05.32.43:975][  9]LogTemp:Display: Finished compile of shader map 0x00007F991D29FB00
+[2017.03.13-05.32.43:976][  9]LogTemp:Display: Shader map VertexColorViewMode_ColorOnly complete, GameThreadShaderMap 0x00007F991D29FB00, marking material VertexColorViewMode_ColorOnly as finished
+[2017.03.13-05.32.43:977][  9]LogTemp:Display: Marking material as finished 0x00007F991D46F000
+[2017.03.13-05.32.44:041][ 10]LogTemp:Display: Finished compile of shader map 0x00007F991CD1B500
+[2017.03.13-05.32.44:042][ 10]LogTemp:Display: Shader map VertexColorViewMode_AlphaAsColor complete, GameThreadShaderMap 0x00007F991CD1B500, marking material VertexColorViewMode_AlphaAsColor as finished
+[2017.03.13-05.32.44:042][ 10]LogTemp:Display: Marking material as finished 0x00007F991CB81A00
+[2017.03.13-05.32.47:748][ 76]LogTemp:Display: Finished compile of shader map 0x00007F991C800E80
+[2017.03.13-05.32.47:749][ 76]LogTemp:Display: Shader map VertexColorViewMode_RedOnly complete, GameThreadShaderMap 0x00007F991C800E80, marking material VertexColorViewMode_RedOnly as finished
+[2017.03.13-05.32.47:749][ 76]LogTemp:Display: Marking material as finished 0x00007F991C7EE700
+[2017.03.13-05.32.48:749][ 93]LogTemp:Display: Finished compile of shader map 0x00007F991C7F8280
+[2017.03.13-05.32.48:749][ 93]LogTemp:Display: Shader map VertexColorViewMode_BlueOnly complete, GameThreadShaderMap 0x00007F991C7F8280, marking material VertexColorViewMode_BlueOnly as finished
+[2017.03.13-05.32.48:749][ 93]LogTemp:Display: Marking material as finished 0x00007F991C4D8600
+[2017.03.13-05.32.48:824][ 94]LogTemp:Display: Finished compile of shader map 0x00007F991C7FC880
+[2017.03.13-05.32.48:824][ 94]LogTemp:Display: Shader map VertexColorViewMode_GreenOnly complete, GameThreadShaderMap 0x00007F991C7FC880, marking material VertexColorViewMode_GreenOnly as finished
+[2017.03.13-05.32.48:824][ 94]LogTemp:Display: Marking material as finished 0x00007F991C7E8B80
+[2017.03.13-05.32.48:830][ 94]LogTemp:Display: Finished compile of shader map 0x00007F991C7F4380
+[2017.03.13-05.32.48:830][ 94]LogTemp:Display: Shader map RemoveSurfaceMaterial complete, GameThreadShaderMap 0x00007F991C7F4380, marking material RemoveSurfaceMaterial as finished
+[2017.03.13-05.32.48:830][ 94]LogTemp:Display: Marking material as finished 0x00007F991C4D2600
+[2017.03.13-05.32.52:216][156]LogUObjectGlobals:Warning: 寻找对象'Object 无.ContentBrowser'失败
+[2017.03.13-05.32.53:723][186]LogTemp:Display: Finished compile of shader map 0x00007F991C3BB380
+[2017.03.13-05.32.53:723][186]LogTemp:Display: Shader map DebugMeshMaterial complete, GameThreadShaderMap 0x00007F991C3BB380, marking material DebugMeshMaterial as finished
+[2017.03.13-05.32.53:723][186]LogTemp:Display: Marking material as finished 0x00007F991C4CFC00
+[2017.03.13-05.33.04:615][386]LogLinux: Setting swap interval to 'Immediate'
+[2017.03.13-05.33.06:404][418]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (BP_Sky_Sphere)
+[2017.03.13-05.33.08:351][449]LogTemp:Display: Finished compile of shader map 0x00007F991BDDE580
+[2017.03.13-05.33.08:352][449]LogTemp:Display: Shader map GizmoMaterial complete, GameThreadShaderMap 0x00007F991BDDE580, marking material GizmoMaterial as finished
+[2017.03.13-05.33.08:352][449]LogTemp:Display: Marking material as finished 0x00007F991BD3C200
+[2017.03.13-05.33.09:251][464]LogTemp:Display: Finished compile of shader map 0x00007F991C3B5F80
+[2017.03.13-05.33.09:252][464]LogTemp:Display: Shader map M_InvalidLightmapSettings complete, GameThreadShaderMap 0x00007F991C3B5F80, marking material M_InvalidLightmapSettings as finished
+[2017.03.13-05.33.09:252][464]LogTemp:Display: Marking material as finished 0x00007F991C0AB880
+[2017.03.13-05.33.14:411][556]LogTemp:Display: Finished compile of shader map 0x00007F991BDD9500
+[2017.03.13-05.33.14:411][556]LogTemp:Display: Shader map PhAT_JointLimitMaterial complete, GameThreadShaderMap 0x00007F991BDD9500, marking material PhAT_JointLimitMaterial as finished
+[2017.03.13-05.33.14:411][556]LogTemp:Display: Marking material as finished 0x00007F991B94BE80
+[2017.03.13-05.33.20:316][660]LogTemp:Display: Finished compile of shader map 0x00007F991B8C5980
+[2017.03.13-05.33.20:316][660]LogTemp:Display: Shader map GeomMaterial complete, GameThreadShaderMap 0x00007F991B8C5980, marking material GeomMaterial as finished
+[2017.03.13-05.33.20:316][660]LogTemp:Display: Marking material as finished 0x00007F991B942580
+[2017.03.13-05.33.22:990][706]LogTemp:Display: Finished compile of shader map 0x00007F991B8C1A80
+[2017.03.13-05.33.22:991][706]LogTemp:Display: Shader map EditorBrushMaterial complete, GameThreadShaderMap 0x00007F991B8C1A80, marking material EditorBrushMaterial as finished
+[2017.03.13-05.33.22:991][706]LogTemp:Display: Marking material as finished 0x00007F991B67A880
+[2017.03.13-05.33.47:311][886]LogTemp:Display: Finished compile of shader map 0x00007F991A909280
+[2017.03.13-05.33.47:311][886]LogTemp:Display: Shader map PreviewShadowIndicatorMaterial complete, GameThreadShaderMap 0x00007F991A909280, marking material PreviewShadowIndicatorMaterial as finished
+[2017.03.13-05.33.47:311][886]LogTemp:Display: Marking material as finished 0x00007F991A84F200
+[2017.03.13-05.33.48:308][889]LogTemp:Display: Finished compile of shader map 0x00007F991B8BD100
+[2017.03.13-05.33.48:308][889]LogTemp:Display: Shader map BoneWeightMaterial complete, GameThreadShaderMap 0x00007F991B8BD100, marking material BoneWeightMaterial as finished
+[2017.03.13-05.33.48:308][889]LogTemp:Display: Marking material as finished 0x00007F991B674100
+[2017.03.13-05.33.52:636][902]LogTemp:Display: Finished compile of shader map 0x00007F9961F84780
+[2017.03.13-05.33.52:636][902]LogTemp:Display: Shader map PhAT_BoneSelectedMaterial complete, GameThreadShaderMap 0x00007F9961F84780, marking material PhAT_BoneSelectedMaterial as finished
+[2017.03.13-05.33.52:636][902]LogTemp:Display: Marking material as finished 0x00007F9960B8BA00
+[2017.03.13-05.33.52:968][903]LogTemp:Display: Finished compile of shader map 0x00007F9961A7D300
+[2017.03.13-05.33.52:968][903]LogTemp:Display: Shader map Cross_Mat complete, GameThreadShaderMap 0x00007F9961A7D300, marking material Cross_Mat as finished
+[2017.03.13-05.33.52:968][903]LogTemp:Display: Marking material as finished 0x00007F9960B8C780
+[2017.03.13-05.33.53:633][905]LogTemp:Display: Finished compile of shader map 0x00007F9962A65D80
+[2017.03.13-05.33.53:633][905]LogTemp:Display: Shader map PhAT_UnselectedMaterial complete, GameThreadShaderMap 0x00007F9962A65D80, marking material PhAT_UnselectedMaterial as finished
+[2017.03.13-05.33.53:633][905]LogTemp:Display: Marking material as finished 0x00007F9963CC2280
+[2017.03.13-05.33.54:303][907]LogTemp:Display: Finished compile of shader map 0x00007F9962504580
+[2017.03.13-05.33.54:303][907]LogTemp:Display: Shader map PhAT_NoCollisionMaterial complete, GameThreadShaderMap 0x00007F9962504580, marking material PhAT_NoCollisionMaterial as finished
+[2017.03.13-05.33.54:303][907]LogTemp:Display: Marking material as finished 0x00007F9963332180
+[2017.03.13-05.33.54:308][907]LogTemp:Display: Finished compile of shader map 0x00007F9962500300
+[2017.03.13-05.33.54:308][907]LogTemp:Display: Shader map PhAT_ElemSelectedMaterial complete, GameThreadShaderMap 0x00007F9962500300, marking material PhAT_ElemSelectedMaterial as finished
+[2017.03.13-05.33.54:308][907]LogTemp:Display: Marking material as finished 0x00007F9963338300
+[2017.03.13-05.33.58:785][920]LogSlate: Took 0.016829 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (159K)
+[2017.03.13-05.33.58:972][921]LogLinux: Setting swap interval to 'Immediate'
+[2017.03.13-05.34.02:166][978]LogTemp:Display: Finished compile of shader map 0x00007F996301F380
+[2017.03.13-05.34.02:167][978]LogTemp:Display: Shader map WidgetGridVertexColorMaterial_Ma complete, GameThreadShaderMap 0x00007F996301F380, marking material WidgetGridVertexColorMaterial_Ma as finished
+[2017.03.13-05.34.02:167][978]LogTemp:Display: Marking material as finished 0x00007F996824B580
+[2017.03.13-05.34.02:517][984]LogTemp:Display: Finished compile of shader map 0x00007F9962A6A000
+[2017.03.13-05.34.02:518][984]LogTemp:Display: Shader map Tick_Mat complete, GameThreadShaderMap 0x00007F9962A6A000, marking material Tick_Mat as finished
+[2017.03.13-05.34.02:518][984]LogTemp:Display: Marking material as finished 0x00007F9963CBAD80
+[2017.03.13-05.34.04:491][ 15]LogTemp:Display: Finished compile of shader map 0x00007F9963316280
+[2017.03.13-05.34.04:491][ 15]LogTemp:Display: Shader map WidgetMaterial complete, GameThreadShaderMap 0x00007F9963316280, marking material WidgetMaterial as finished
+[2017.03.13-05.34.04:492][ 15]LogTemp:Display: Marking material as finished 0x00007F996836B880
+[2017.03.13-05.34.08:734][ 83]LogTemp:Display: Finished compile of shader map 0x00007F996331E080
+[2017.03.13-05.34.08:735][ 83]LogTemp:Display: Shader map WidgetMaterial_X complete, GameThreadShaderMap 0x00007F996331E080, marking material WidgetMaterial_X as finished
+[2017.03.13-05.34.08:735][ 83]LogTemp:Display: Marking material as finished 0x00007F99570ABC00
+[2017.03.13-05.34.08:797][ 84]LogTemp:Display: Finished compile of shader map 0x00007F996331A180
+[2017.03.13-05.34.08:797][ 84]LogTemp:Display: Shader map WidgetMaterial_Current complete, GameThreadShaderMap 0x00007F996331A180, marking material WidgetMaterial_Current as finished
+[2017.03.13-05.34.08:797][ 84]LogTemp:Display: Marking material as finished 0x00007F9957356800
+[2017.03.13-05.34.20:026][272]LogTemp:Display: Finished compile of shader map 0x00007F99681CF500
+[2017.03.13-05.34.20:026][272]LogTemp:Display: Shader map WidgetMaterial_Z complete, GameThreadShaderMap 0x00007F99681CF500, marking material WidgetMaterial_Z as finished
+[2017.03.13-05.34.20:027][272]LogTemp:Display: Marking material as finished 0x00007F99570AA280
+[2017.03.13-05.34.20:047][272]LogTemp:Display: Finished compile of shader map 0x00007F99681C0E00
+[2017.03.13-05.34.20:047][272]LogTemp:Display: Shader map WidgetMaterial_Y complete, GameThreadShaderMap 0x00007F99681C0E00, marking material WidgetMaterial_Y as finished
+[2017.03.13-05.34.20:047][272]LogTemp:Display: Marking material as finished 0x00007F9956E09700
+[2017.03.13-05.34.26:376][379]LogTemp:Display: Finished compile of shader map 0x00007F9971C62D80
+[2017.03.13-05.34.26:376][379]LogTemp:Display: Shader map WidgetVertexColorMaterial complete, GameThreadShaderMap 0x00007F9971C62D80, marking material WidgetVertexColorMaterial as finished
+[2017.03.13-05.34.26:377][379]LogTemp:Display: Marking material as finished 0x00007F99546B7680
+[2017.03.13-05.34.32:603][483]LogTemp:Display: Finished compile of shader map 0x00007F997698E900
+[2017.03.13-05.34.32:603][483]LogTemp:Display: Shader map LevelGridMaterial complete, GameThreadShaderMap 0x00007F997698E900, marking material LevelGridMaterial as finished
+[2017.03.13-05.34.32:604][483]LogTemp:Display: Marking material as finished 0x00007F99519E9780
+[2017.03.13-05.34.38:732][581]LogTemp:Display: Finished compile of shader map 0x00007F998550E600
+[2017.03.13-05.34.38:733][581]LogTemp:Display: Shader map M_StreamingPause complete, GameThreadShaderMap 0x00007F998550E600, marking material M_StreamingPause as finished
+[2017.03.13-05.34.38:733][581]LogTemp:Display: Marking material as finished 0x00007F9953F6D680
+[2017.03.13-05.34.38:877][582]LogTemp:Display: Finished compile of shader map 0x00007F99681C5080
+[2017.03.13-05.34.38:877][582]LogTemp:Display: Shader map BlinkingCaret complete, GameThreadShaderMap 0x00007F99681C5080, marking material BlinkingCaret as finished
+[2017.03.13-05.34.38:877][582]LogTemp:Display: Marking material as finished 0x00007F9953F67E00
+[2017.03.13-05.34.50:698][778]LogTemp:Display: Finished compile of shader map 0x00007F98F3BCFE80
+[2017.03.13-05.34.50:698][778]LogTemp:Display: Shader map M_Frame complete, GameThreadShaderMap 0x00007F98F3BCFE80, marking material M_Frame as finished
+[2017.03.13-05.34.50:698][778]LogTemp:Display: Marking material as finished 0x00007F99565B5600
+[2017.03.13-05.34.58:388][898]LogTemp:Display: Finished compile of shader map 0x00007F98F37BB500
+[2017.03.13-05.34.58:388][898]LogTemp:Display: Shader map M_TableRound complete, GameThreadShaderMap 0x00007F98F37BB500, marking material M_TableRound as finished
+[2017.03.13-05.34.58:388][898]LogTemp:Display: Marking material as finished 0x00007F9955F7C180
+[2017.03.13-05.35.12:727][126]LogTemp:Display: Finished compile of shader map 0x00007F98F5063700
+[2017.03.13-05.35.12:727][126]LogTemp:Display: Shader map M_Statue complete, GameThreadShaderMap 0x00007F98F5063700, marking material M_Statue as finished
+[2017.03.13-05.35.12:727][126]LogTemp:Display: Marking material as finished 0x00007F9955F89B00
+[2017.03.13-05.36.05:325][239]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (BP_Sky_Sphere)
+[2017.03.13-05.36.06:361][241]LogTemp:Display: Finished compile of shader map 0x00007F98F07BD180
+[2017.03.13-05.36.06:361][241]LogTemp:Display: Shader map M_Chair complete, GameThreadShaderMap 0x00007F98F07BD180, marking material M_Chair as finished
+[2017.03.13-05.36.06:361][241]LogTemp:Display: Marking material as finished 0x00007F9955A1CC80
+[2017.03.13-05.36.06:978][245]LogTemp:Display: Finished compile of shader map 0x00007F98F07BD500
+[2017.03.13-05.36.06:978][245]LogTemp:Display: Shader map M_StatueGlass complete, GameThreadShaderMap 0x00007F98F07BD500, marking material M_StatueGlass as finished
+[2017.03.13-05.36.06:978][245]LogTemp:Display: Marking material as finished 0x00007F9955F7CF00
+[2017.03.13-05.36.07:586][247]LogTemp:Display: Finished compile of shader map 0x00007F98F5063380
+[2017.03.13-05.36.07:586][247]LogTemp:Display: Shader map M_Basic_Floor complete, GameThreadShaderMap 0x00007F98F5063380, marking material M_Basic_Floor as finished
+[2017.03.13-05.36.07:586][247]LogTemp:Display: Marking material as finished 0x00007F9955F80080
+[2017.03.13-05.36.07:641][249]LogTemp:Display: Finished compile of shader map 0x00007F98F07BD880
+[2017.03.13-05.36.07:641][249]LogTemp:Display: Shader map M_Metal_Copper complete, GameThreadShaderMap 0x00007F98F07BD880, marking material M_Metal_Copper as finished
+[2017.03.13-05.36.07:641][249]LogTemp:Display: Marking material as finished 0x00007F995703B000
+[2017.03.13-05.36.07:794][252]LogTemp:Display: Finished compile of shader map 0x00007F98EBBBC400
+[2017.03.13-05.36.07:794][252]LogTemp:Display: Shader map M_Metal_Burnished_Steel complete, GameThreadShaderMap 0x00007F98EBBBC400, marking material M_Metal_Burnished_Steel as finished
+[2017.03.13-05.36.07:794][252]LogTemp:Display: Marking material as finished 0x00007F995703F980
+[2017.03.13-05.36.07:808][252]LogTemp:Display: Finished compile of shader map 0x00007F994F0D1400
+[2017.03.13-05.36.07:808][252]LogTemp:Display: Shader map LevelGridMaterial2 complete, GameThreadShaderMap 0x00007F994F0D1400, marking material LevelGridMaterial2 as finished
+[2017.03.13-05.36.07:808][252]LogTemp:Display: Marking material as finished 0x00007F98C894A180
+[2017.03.13-05.36.07:983][254]LogTemp:Display: Finished compile of shader map 0x00007F98EB3E9080
+[2017.03.13-05.36.07:983][254]LogTemp:Display: Shader map M_Metal_Brushed_Nickel complete, GameThreadShaderMap 0x00007F98EB3E9080, marking material M_Metal_Brushed_Nickel as finished
+[2017.03.13-05.36.07:983][254]LogTemp:Display: Marking material as finished 0x00007F995703F200
+[2017.03.13-05.36.07:992][254]LogTemp:Display: Finished compile of shader map 0x00007F98F0859980
+[2017.03.13-05.36.07:992][254]LogTemp:Display: Shader map M_Sky_Panning_Clouds2 complete, GameThreadShaderMap 0x00007F98F0859980, marking material M_Sky_Panning_Clouds2 as finished
+[2017.03.13-05.36.07:992][254]LogTemp:Display: Marking material as finished 0x00007F9957920A00
+[2017.03.13-05.36.15:652][372]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Table)
+[2017.03.13-05.36.19:190][408]LogLinux: Setting swap interval to 'Immediate'
+[2017.03.13-05.36.24:067][561]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (BP_Sky_Sphere)
+[2017.03.13-05.36.24:863][576]LogEditorViewport: Clicking on Actor (context menu): BP_Sky_Sphere_C (BP_Sky_Sphere)
+[2017.03.13-05.36.25:808][578]LogLinux: Setting swap interval to 'Immediate'
+[2017.03.13-05.36.26:593][630]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (BP_Sky_Sphere)
+[2017.03.13-05.36.58:341][399]LogEditorViewport: Clicking on Actor (context menu): BP_Sky_Sphere_C (BP_Sky_Sphere)
+[2017.03.13-05.36.58:471][401]LogLinux: Setting swap interval to 'Immediate'
+[2017.03.13-05.37.03:557][823]LogEditorViewport: Clicking on Actor (context menu): BP_Sky_Sphere_C (BP_Sky_Sphere)
+[2017.03.13-05.37.03:667][825]LogLinux: Setting swap interval to 'Immediate'
+[2017.03.13-05.37.04:785][914]LogLinux: Setting swap interval to 'Immediate'
+[2017.03.13-05.37.05:100][916]LogLinux: Setting swap interval to 'Immediate'
+[2017.03.13-05.37.05:852][959]LogLinux: Setting swap interval to 'Immediate'
+[2017.03.13-05.37.06:619][ 10]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (BP_Sky_Sphere)
+[2017.03.13-05.37.07:976][105]LogTemp: Repeting last play command: 选中的视口
+[2017.03.13-05.37.08:099][105]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel' has LevelScriptBlueprint '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel.Minimal_Default' with GeneratedClass '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default_C' with ClassGeneratedBy '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel.Minimal_Default'
+[2017.03.13-05.37.08:122][105]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2017.03.13-05.37.08:295][105]PIE: New page: PIE会话: Minimal_Default (2017年3月13日 下午1:37:08)
+[2017.03.13-05.37.08:311][105]LogPlayLevel: Creating play world package: /Game/StarterContent/Maps/UEDPIE_0_Minimal_Default
+[2017.03.13-05.37.08:793][105]LogPlayLevel: PIE: StaticDuplicateObject took: (0.482121s)
+[2017.03.13-05.37.08:957][105]LogAIModule: Creating AISystem for world Minimal_Default
+[2017.03.13-05.37.09:034][105]LogPlayLevel: PIE: World Init took: (0.240412s)
+[2017.03.13-05.37.09:034][105]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/StarterContent/Maps/Minimal_Default.Minimal_Default to /Game/StarterContent/Maps/UEDPIE_0_Minimal_Default.Minimal_Default (0.723644s)
+[2017.03.13-05.37.09:639][105]LogALAudio: ALAudio device opened : OpenAL Soft
+[2017.03.13-05.37.09:650][105]LogALAudio: AL_VENDOR      : OpenAL Community
+[2017.03.13-05.37.09:650][105]LogALAudio: AL_RENDERER    : OpenAL Soft
+[2017.03.13-05.37.09:650][105]LogALAudio: AL_VERSION     : 1.1 ALSOFT 1.15.1
+[2017.03.13-05.37.09:650][105]LogALAudio: AL_EXTENSIONS  : AL_EXT_ALAW AL_EXT_DOUBLE AL_EXT_EXPONENT_DISTANCE AL_EXT_FLOAT32 AL_EXT_IMA4 AL_EXT_LINEAR_DISTANCE AL_EXT_MCFORMATS AL_EXT_MULAW AL_EXT_MULAW_MCFORMATS AL_EXT_OFFSET AL_EXT_source_distance_model AL_LOKI_quadriphonic AL_SOFT_buffer_samples AL_SOFT_buffer_sub_data AL_SOFTX_deferred_updates AL_SOFT_direct_channels AL_SOFT_loop_points AL_SOFT_source_latency
+[2017.03.13-05.37.09:650][105]LogInit: FAudioDevice initialized.
+[2017.03.13-05.37.09:777][105]LogAudioDerivedData:Display: 正在构建压缩的音频格式OGG波形StartPlayInEditor...
+[2017.03.13-05.37.09:960][105]LogLoad: Game class is 'GameModeBase'
+[2017.03.13-05.37.10:069][105]LogWorld: Bringing World /Game/StarterContent/Maps/UEDPIE_0_Minimal_Default.Minimal_Default up for play (max tick rate 0) at 2017.03.13-13.37.10
+[2017.03.13-05.37.10:119][105]LogWorld: Bringing up level for play took: 0.076611
+[2017.03.13-05.37.10:917][105]LogContentBrowser: Native class hierarchy updated for 'MovieSceneCapture' in 0.0567 seconds. Added 11 classes and 0 folders.
+[2017.03.13-05.37.11:085][105]PIE: 信息 /Game/StarterContent/Maps/UEDPIE_0_Minimal_Default的‘在编辑器中播放’的起始时间3.044
+[2017.03.13-05.37.11:086][105]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel' has LevelScriptBlueprint '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel.Minimal_Default' with GeneratedClass '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default_C' with ClassGeneratedBy '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel.Minimal_Default'
+[2017.03.13-05.37.23:051][371]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel' has LevelScriptBlueprint '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel.Minimal_Default' with GeneratedClass '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default_C' with ClassGeneratedBy '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel.Minimal_Default'
+[2017.03.13-05.37.23:253][371]LogAudioDerivedData:Display: 正在构建压缩的音频格式OGG波形EndPlayInEditor...
+[2017.03.13-05.37.23:364][371]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel' has LevelScriptBlueprint '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel.Minimal_Default' with GeneratedClass '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default_C' with ClassGeneratedBy '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel.Minimal_Default'
+[2017.03.13-05.37.23:400][371]LogALAudio: Closing ALAudio device : OpenAL Soft
+[2017.03.13-05.37.24:878][473]LogTemp: Repeting last play command: 选中的视口
+[2017.03.13-05.37.24:893][473]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel' has LevelScriptBlueprint '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel.Minimal_Default' with GeneratedClass '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default_C' with ClassGeneratedBy '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel.Minimal_Default'
+[2017.03.13-05.37.24:893][473]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2017.03.13-05.37.24:894][473]PIE: New page: PIE会话: Minimal_Default (2017年3月13日 下午1:37:24)
+[2017.03.13-05.37.24:908][473]LogPlayLevel: Creating play world package: /Game/StarterContent/Maps/UEDPIE_0_Minimal_Default
+[2017.03.13-05.37.24:915][473]LogPlayLevel: PIE: StaticDuplicateObject took: (0.007191s)
+[2017.03.13-05.37.24:916][473]LogAIModule: Creating AISystem for world Minimal_Default
+[2017.03.13-05.37.24:916][473]LogPlayLevel: PIE: World Init took: (0.000642s)
+[2017.03.13-05.37.24:916][473]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/StarterContent/Maps/Minimal_Default.Minimal_Default to /Game/StarterContent/Maps/UEDPIE_0_Minimal_Default.Minimal_Default (0.008099s)
+[2017.03.13-05.37.24:934][473]LogALAudio: ALAudio device opened : OpenAL Soft
+[2017.03.13-05.37.24:935][473]LogALAudio: AL_VENDOR      : OpenAL Community
+[2017.03.13-05.37.24:935][473]LogALAudio: AL_RENDERER    : OpenAL Soft
+[2017.03.13-05.37.24:935][473]LogALAudio: AL_VERSION     : 1.1 ALSOFT 1.15.1
+[2017.03.13-05.37.24:935][473]LogALAudio: AL_EXTENSIONS  : AL_EXT_ALAW AL_EXT_DOUBLE AL_EXT_EXPONENT_DISTANCE AL_EXT_FLOAT32 AL_EXT_IMA4 AL_EXT_LINEAR_DISTANCE AL_EXT_MCFORMATS AL_EXT_MULAW AL_EXT_MULAW_MCFORMATS AL_EXT_OFFSET AL_EXT_source_distance_model AL_LOKI_quadriphonic AL_SOFT_buffer_samples AL_SOFT_buffer_sub_data AL_SOFTX_deferred_updates AL_SOFT_direct_channels AL_SOFT_loop_points AL_SOFT_source_latency
+[2017.03.13-05.37.24:935][473]LogInit: FAudioDevice initialized.
+[2017.03.13-05.37.24:946][473]LogLoad: Game class is 'GameModeBase'
+[2017.03.13-05.37.24:949][473]LogWorld: Bringing World /Game/StarterContent/Maps/UEDPIE_0_Minimal_Default.Minimal_Default up for play (max tick rate 0) at 2017.03.13-13.37.24
+[2017.03.13-05.37.24:949][473]LogWorld: Bringing up level for play took: 0.001700
+[2017.03.13-05.37.24:951][473]PIE: 信息 /Game/StarterContent/Maps/UEDPIE_0_Minimal_Default的‘在编辑器中播放’的起始时间0.059
+[2017.03.13-05.37.24:951][473]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel' has LevelScriptBlueprint '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel.Minimal_Default' with GeneratedClass '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default_C' with ClassGeneratedBy '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel.Minimal_Default'
+[2017.03.13-05.37.55:087][124]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel' has LevelScriptBlueprint '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel.Minimal_Default' with GeneratedClass '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default_C' with ClassGeneratedBy '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel.Minimal_Default'
+[2017.03.13-05.37.55:157][124]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel' has LevelScriptBlueprint '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel.Minimal_Default' with GeneratedClass '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default_C' with ClassGeneratedBy '/Game/StarterContent/Maps/Minimal_Default.Minimal_Default:PersistentLevel.Minimal_Default'
+[2017.03.13-05.37.55:183][124]LogALAudio: Closing ALAudio device : OpenAL Soft
+[2017.03.13-05.37.57:331][277]LogLinux: Setting swap interval to 'Immediate'
+[2017.03.13-05.37.58:925][387]LogLinux: Setting swap interval to 'Immediate'
+[2017.03.13-05.38.01:246][544]LogLinux: Setting swap interval to 'Immediate'
+[2017.03.13-05.38.02:708][652]LogLinux: Setting swap interval to 'Immediate'
+[2017.03.13-05.38.05:088][855]LogLinux: Setting swap interval to 'Immediate'
+[2017.03.13-05.38.07:770][ 49]LogLinux: Setting swap interval to 'Immediate'
+[2017.03.13-05.38.12:016][403]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Floor)
+[2017.03.13-05.39.54:487][866]Cmd: QUIT_EDITOR
+[2017.03.13-05.39.54:604][866]LogALAudio: Closing ALAudio device : OpenAL Soft
+[2017.03.13-05.39.54:650][866]LogExit: Preparing to exit.
+[2017.03.13-05.39.56:131][866]LogExit: Editor shut down
+[2017.03.13-05.39.56:133][866]LogExit: Transaction tracking system shut down
+[2017.03.13-05.39.57:639][866]LogObj: Freed 0b from 0 cluster array pools.
+[2017.03.13-05.39.57:639][866]LogExit: Object subsystem successfully closed.
+[2017.03.13-05.39.57:966][866]LogModuleManager: Shutting down and abandoning module MovieSceneCapture (442)
+[2017.03.13-05.39.57:966][866]LogModuleManager: Shutting down and abandoning module HierarchicalLODOutliner (440)
+[2017.03.13-05.39.58:098][866]LogModuleManager: Shutting down and abandoning module CrashTracker (438)
+[2017.03.13-05.39.58:098][866]LogModuleManager: Shutting down and abandoning module SceneOutliner (436)
+[2017.03.13-05.39.58:098][866]LogModuleManager: Shutting down and abandoning module AddContentDialog (434)
+[2017.03.13-05.39.58:288][866]LogModuleManager: Shutting down and abandoning module WidgetCarousel (433)
+[2017.03.13-05.39.58:288][866]LogModuleManager: Shutting down and abandoning module EditorWidgets (430)
+[2017.03.13-05.39.58:288][866]LogModuleManager: Shutting down and abandoning module CollectionManager (428)
+[2017.03.13-05.39.58:288][866]LogModuleManager: Shutting down and abandoning module StatsViewer (426)
+[2017.03.13-05.39.58:288][866]LogModuleManager: Shutting down and abandoning module FoliageEdit (424)
+[2017.03.13-05.39.58:327][866]LogModuleManager: Shutting down and abandoning module LandscapeEditor (422)
+[2017.03.13-05.39.58:363][866]LogModuleManager: Shutting down and abandoning module SceneDepthPickerMode (420)
+[2017.03.13-05.39.58:365][866]LogModuleManager: Shutting down and abandoning module ActorPickerMode (418)
+[2017.03.13-05.39.58:365][866]LogModuleManager: Shutting down and abandoning module GeometryMode (416)
+[2017.03.13-05.39.58:365][866]LogModuleManager: Shutting down and abandoning module TextureAlignMode (414)
+[2017.03.13-05.39.58:393][866]LogModuleManager: Shutting down and abandoning module BspMode (412)
+[2017.03.13-05.39.58:406][866]LogModuleManager: Shutting down and abandoning module HardwareSurvey (410)
+[2017.03.13-05.39.58:412][866]LogModuleManager: Shutting down and abandoning module SequenceRecorderSections (408)
+[2017.03.13-05.39.58:427][866]LogModuleManager: Shutting down and abandoning module SequenceRecorder (406)
+[2017.03.13-05.39.58:444][866]LogModuleManager: Shutting down and abandoning module AutomationWorker (404)
+[2017.03.13-05.39.58:460][866]LogModuleManager: Shutting down and abandoning module AvfMediaFactory (402)
+[2017.03.13-05.39.58:495][866]LogModuleManager: Shutting down and abandoning module AvfMediaEditor (400)
+[2017.03.13-05.39.58:504][866]LogModuleManager: Shutting down and abandoning module MfMediaFactory (398)
+[2017.03.13-05.39.58:511][866]LogModuleManager: Shutting down and abandoning module MfMediaEditor (396)
+[2017.03.13-05.39.58:519][866]LogModuleManager: Shutting down and abandoning module WmfMediaFactory (394)
+[2017.03.13-05.39.58:525][866]LogModuleManager: Shutting down and abandoning module WmfMediaEditor (392)
+[2017.03.13-05.39.58:533][866]LogModuleManager: Shutting down and abandoning module AndroidMediaFactory (390)
+[2017.03.13-05.39.58:540][866]LogModuleManager: Shutting down and abandoning module Media (389)
+[2017.03.13-05.39.58:540][866]LogModuleManager: Shutting down and abandoning module AndroidMediaEditor (386)
+[2017.03.13-05.39.58:548][866]LogModuleManager: Shutting down and abandoning module LevelSequenceEditor (384)
+[2017.03.13-05.39.58:605][866]LogModuleManager: Shutting down and abandoning module PlacementMode (383)
+[2017.03.13-05.39.58:605][866]LogModuleManager: Shutting down and abandoning module MatineeToLevelSequence (380)
+[2017.03.13-05.39.58:605][866]LogModuleManager: Shutting down and abandoning module SmartSnapping (378)
+[2017.03.13-05.39.58:606][866]LogModuleManager: Shutting down and abandoning module CharacterAI (376)
+[2017.03.13-05.39.58:625][866]LogModuleManager: Shutting down and abandoning module SessionServices (374)
+[2017.03.13-05.39.58:625][866]LogModuleManager: Shutting down and abandoning module ViewportSnapping (372)
+[2017.03.13-05.39.58:625][866]LogModuleManager: Shutting down and abandoning module ViewportInteraction (370)
+[2017.03.13-05.39.58:625][866]LogModuleManager: Shutting down and abandoning module LogVisualizer (368)
+[2017.03.13-05.39.58:654][866]LogModuleManager: Shutting down and abandoning module IntroTutorials (366)
+[2017.03.13-05.39.58:670][866]LogModuleManager: Shutting down and abandoning module GameProjectGeneration (365)
+[2017.03.13-05.39.58:671][866]LogModuleManager: Shutting down and abandoning module EditorLiveStreaming (362)
+[2017.03.13-05.39.58:671][866]LogModuleManager: Shutting down and abandoning module AndroidPlatformEditor (360)
+[2017.03.13-05.39.58:700][866]LogModuleManager: Shutting down and abandoning module TcpMessaging (359)
+[2017.03.13-05.39.58:809][866]LogModuleManager: Shutting down and abandoning module AndroidDeviceDetection (357)
+[2017.03.13-05.39.59:402][866]LogModuleManager: Shutting down and abandoning module IOSPlatformEditor (354)
+[2017.03.13-05.39.59:456][866]LogModuleManager: Shutting down and abandoning module HTML5PlatformEditor (352)
+[2017.03.13-05.39.59:456][866]LogModuleManager: Shutting down and abandoning module AndroidRuntimeSettings (350)
+[2017.03.13-05.39.59:456][866]LogModuleManager: Shutting down and abandoning module IOSRuntimeSettings (348)
+[2017.03.13-05.39.59:456][866]LogModuleManager: Shutting down and abandoning module InputBindingEditor (346)
+[2017.03.13-05.39.59:464][866]LogModuleManager: Shutting down and abandoning module NiagaraEditor (344)
+[2017.03.13-05.39.59:484][866]LogModuleManager: Shutting down and abandoning module MergeActors (342)
+[2017.03.13-05.39.59:505][866]LogModuleManager: Shutting down and abandoning module SizeMap (340)
+[2017.03.13-05.39.59:514][866]LogModuleManager: Shutting down and abandoning module TreeMap (338)
+[2017.03.13-05.39.59:526][866]LogModuleManager: Shutting down and abandoning module ReferenceViewer (336)
+[2017.03.13-05.39.59:526][866]LogModuleManager: Shutting down and abandoning module LocalizationDashboard (334)
+[2017.03.13-05.39.59:576][866]LogModuleManager: Shutting down and abandoning module LocalizationService (333)
+[2017.03.13-05.39.59:592][866]LogModuleManager: Shutting down and abandoning module HardwareTargeting (330)
+[2017.03.13-05.39.59:592][866]LogModuleManager: Shutting down and abandoning module DeviceProfileEditor (328)
+[2017.03.13-05.39.59:611][866]LogModuleManager: Shutting down and abandoning module UndoHistory (326)
+[2017.03.13-05.39.59:619][866]LogModuleManager: Shutting down and abandoning module UserFeedback (324)
+[2017.03.13-05.39.59:619][866]LogModuleManager: Shutting down and abandoning module XmlParser (322)
+[2017.03.13-05.39.59:619][866]LogModuleManager: Shutting down and abandoning module Blutility (320)
+[2017.03.13-05.39.59:619][866]LogModuleManager: Shutting down and abandoning module ProjectSettingsViewer (318)
+[2017.03.13-05.39.59:625][866]LogModuleManager: Shutting down and abandoning module ProjectTargetPlatformEditor (317)
+[2017.03.13-05.39.59:636][866]LogModuleManager: Shutting down and abandoning module EditorSettingsViewer (314)
+[2017.03.13-05.39.59:655][866]LogModuleManager: Shutting down and abandoning module SettingsEditor (312)
+[2017.03.13-05.39.59:716][866]LogModuleManager: Shutting down and abandoning module ProjectLauncher (310)
+[2017.03.13-05.39.59:756][866]LogModuleManager: Shutting down and abandoning module SessionFrontend (308)
+[2017.03.13-05.39.59:778][866]LogModuleManager: Shutting down and abandoning module ProfilerClient (306)
+[2017.03.13-05.39.59:794][866]LogModuleManager: Shutting down and abandoning module DeviceManager (304)
+[2017.03.13-05.39.59:831][866]LogModuleManager: Shutting down and abandoning module TargetDeviceServices (303)
+[2017.03.13-05.39.59:842][866]LogModuleManager: Shutting down and abandoning module AutomationController (300)
+[2017.03.13-05.39.59:865][866]LogModuleManager: Shutting down and abandoning module AutomationWindow (298)
+[2017.03.13-05.39.59:902][866]LogModuleManager: Shutting down and abandoning module Layers (296)
+[2017.03.13-05.39.59:928][866]LogModuleManager: Shutting down and abandoning module ComponentVisualizers (294)
+[2017.03.13-05.39.59:928][866]LogModuleManager: Shutting down and abandoning module DetailCustomizations (292)
+[2017.03.13-05.39.59:976][866]LogModuleManager: Shutting down and abandoning module PackagesDialog (290)
+[2017.03.13-05.39.59:994][866]LogModuleManager: Shutting down and abandoning module Persona (288)
+[2017.03.13-05.40.00:062][866]LogModuleManager: Shutting down and abandoning module AnimGraph (287)
+[2017.03.13-05.40.00:062][866]LogModuleManager: Shutting down and abandoning module Kismet (284)
+[2017.03.13-05.40.00:064][866]LogModuleManager: Shutting down and abandoning module GraphEditor (282)
+[2017.03.13-05.40.00:098][866]LogModuleManager: Shutting down and abandoning module ClassViewer (280)
+[2017.03.13-05.40.00:113][866]LogModuleManager: Shutting down and abandoning module Toolbox (278)
+[2017.03.13-05.40.00:120][866]LogModuleManager: Shutting down and abandoning module ModuleUI (276)
+[2017.03.13-05.40.00:126][866]LogModuleManager: Shutting down and abandoning module MovieSceneTools (274)
+[2017.03.13-05.40.00:186][866]LogModuleManager: Shutting down and abandoning module OutputLog (272)
+[2017.03.13-05.40.00:186][866]LogModuleManager: Shutting down and abandoning module GammaUI (270)
+[2017.03.13-05.40.00:207][866]LogModuleManager: Shutting down and abandoning module Documentation (268)
+[2017.03.13-05.40.00:210][866]LogModuleManager: Shutting down and abandoning module GeometryCache (266)
+[2017.03.13-05.40.00:210][866]LogModuleManager: Shutting down and abandoning module GeometryCacheEd (265)
+[2017.03.13-05.40.00:210][866]LogModuleManager: Shutting down and abandoning module Niagara (262)
+[2017.03.13-05.40.00:210][866]LogModuleManager: Shutting down and abandoning module StreamingPauseRendering (260)
+[2017.03.13-05.40.00:223][866]LogModuleManager: Shutting down and abandoning module AnalyticsET (258)
+[2017.03.13-05.40.00:223][866]LogModuleManager: Shutting down and abandoning module PortalServices (256)
+[2017.03.13-05.40.00:223][866]LogModuleManager: Shutting down and abandoning module PortalRpc (254)
+[2017.03.13-05.40.00:223][866]LogModuleManager: Shutting down and abandoning module MessagingRpc (252)
+[2017.03.13-05.40.00:223][866]LogModuleManager: Shutting down and abandoning module AIModule (250)
+[2017.03.13-05.40.00:245][866]LogModuleManager: Shutting down and abandoning module GameplayDebugger (249)
+[2017.03.13-05.40.00:245][866]LogModuleManager: Shutting down and abandoning module AITestSuite (247)
+[2017.03.13-05.40.00:245][866]LogModuleManager: Shutting down and abandoning module ProfilerService (244)
+[2017.03.13-05.40.00:371][866]LogModuleManager: Shutting down and abandoning module TaskGraph (242)
+[2017.03.13-05.40.00:384][866]LogModuleManager: Shutting down and abandoning module LightPropagationVolumeEditor (240)
+[2017.03.13-05.40.00:406][866]LogModuleManager: Shutting down and abandoning module EpicSurvey (238)
+[2017.03.13-05.40.00:433][866]LogModuleManager: Shutting down and abandoning module SuperSearchEditor (236)
+[2017.03.13-05.40.00:433][866]LogModuleManager: Shutting down and abandoning module SuperSearch (235)
+[2017.03.13-05.40.00:433][866]LogModuleManager: Shutting down and abandoning module SpeedTreeImporter (232)
+[2017.03.13-05.40.00:433][866]LogModuleManager: Shutting down and abandoning module MobileLauncherProfileWizard (230)
+[2017.03.13-05.40.00:447][866]LogModuleManager: Shutting down and abandoning module PluginBrowser (228)
+[2017.03.13-05.40.00:474][866]LogModuleManager: Shutting down and abandoning module MediaPlayerEditor (226)
+[2017.03.13-05.40.00:484][866]LogModuleManager: Shutting down and abandoning module PaperTiledImporter (224)
+[2017.03.13-05.40.00:484][866]LogModuleManager: Shutting down and abandoning module PaperSpriteSheetImporter (222)
+[2017.03.13-05.40.00:492][866]LogModuleManager: Shutting down and abandoning module Paper2DEditor (220)
+[2017.03.13-05.40.00:502][866]LogModuleManager: Shutting down and abandoning module MeshPaint (219)
+[2017.03.13-05.40.00:526][866]LogModuleManager: Shutting down and abandoning module LevelEditor (217)
+[2017.03.13-05.40.00:528][866]LogModuleManager: Shutting down and abandoning module PixelInspectorModule (216)
+[2017.03.13-05.40.00:546][866]LogModuleManager: Shutting down and abandoning module MainFrame (214)
+[2017.03.13-05.40.00:554][866]LogModuleManager: Shutting down and abandoning module HotReload (213)
+[2017.03.13-05.40.00:563][866]LogModuleManager: Shutting down and abandoning module ContentBrowser (209)
+[2017.03.13-05.40.00:568][866]LogModuleManager: Shutting down and abandoning module UObjectPlugin (204)
+[2017.03.13-05.40.00:568][866]LogModuleManager: Shutting down and abandoning module PerforceSourceControl (202)
+[2017.03.13-05.40.00:610][866]LogModuleManager: Shutting down and abandoning module GitSourceControl (200)
+[2017.03.13-05.40.00:620][866]LogModuleManager: Shutting down and abandoning module CodeLiteSourceCodeAccess (198)
+[2017.03.13-05.40.00:630][866]LogModuleManager: Shutting down and abandoning module SubversionSourceControl (196)
+[2017.03.13-05.40.00:641][866]LogModuleManager: Shutting down and abandoning module SourceControl (195)
+[2017.03.13-05.40.00:642][866]LogModuleManager: Shutting down and abandoning module KDevelopSourceCodeAccess (192)
+[2017.03.13-05.40.00:646][866]LogModuleManager: Shutting down and abandoning module DesktopPlatform (191)
+[2017.03.13-05.40.00:658][866]LogModuleManager: Shutting down and abandoning module CustomMeshComponent (188)
+[2017.03.13-05.40.00:658][866]LogModuleManager: Shutting down and abandoning module ProceduralMeshComponentEditor (186)
+[2017.03.13-05.40.00:666][866]LogModuleManager: Shutting down and abandoning module ProceduralMeshComponent (184)
+[2017.03.13-05.40.00:666][866]LogModuleManager: Shutting down and abandoning module CableComponent (182)
+[2017.03.13-05.40.00:666][866]LogModuleManager: Shutting down and abandoning module ArchVisCharacter (180)
+[2017.03.13-05.40.00:666][866]LogModuleManager: Shutting down and abandoning module MobilePatchingUtils (178)
+[2017.03.13-05.40.00:666][866]LogModuleManager: Shutting down and abandoning module LightPropagationVolumeRuntime (176)
+[2017.03.13-05.40.00:666][866]LogModuleManager: Shutting down and abandoning module GameplayTagsEditor (174)
+[2017.03.13-05.40.00:689][866]LogModuleManager: Shutting down and abandoning module FacialAnimationEditor (172)
+[2017.03.13-05.40.00:689][866]LogModuleManager: Shutting down and abandoning module FacialAnimation (170)
+[2017.03.13-05.40.00:689][866]LogModuleManager: Shutting down and abandoning module UdpMessaging (168)
+[2017.03.13-05.40.00:809][866]LogModuleManager: Shutting down and abandoning module Paper2D (166)
+[2017.03.13-05.40.00:809][866]LogModuleManager: Shutting down and abandoning module NullSourceCodeAccess (164)
+[2017.03.13-05.40.00:809][866]LogModuleManager: Shutting down and abandoning module LocationServicesBPLibrary (162)
+[2017.03.13-05.40.00:809][866]LogModuleManager: Shutting down and abandoning module PhysXVehiclesEditor (160)
+[2017.03.13-05.40.00:809][866]LogModuleManager: Shutting down and abandoning module PhysXVehicles (158)
+[2017.03.13-05.40.00:809][866]LogModuleManager: Shutting down and abandoning module MediaAssets (156)
+[2017.03.13-05.40.00:809][866]LogModuleManager: Shutting down and abandoning module GameLiveStreaming (154)
+[2017.03.13-05.40.00:809][866]LogModuleManager: Shutting down and abandoning module VREditor (152)
+[2017.03.13-05.40.00:810][866]LogModuleManager: Shutting down and abandoning module GameplayTasksEditor (150)
+[2017.03.13-05.40.00:810][866]LogModuleManager: Shutting down and abandoning module BehaviorTreeEditor (148)
+[2017.03.13-05.40.00:810][866]LogModuleManager: Shutting down and abandoning module FunctionalTesting (146)
+[2017.03.13-05.40.00:810][866]LogModuleManager: Shutting down and abandoning module CollisionAnalyzer (144)
+[2017.03.13-05.40.00:824][866]LogModuleManager: Shutting down and abandoning module UMG (142)
+[2017.03.13-05.40.00:824][866]LogModuleManager: Shutting down and abandoning module UMGEditor (141)
+[2017.03.13-05.40.00:843][866]LogModuleManager: Shutting down and abandoning module Sequencer (140)
+[2017.03.13-05.40.00:888][866]LogModuleManager: Shutting down and abandoning module AssetTools (138)
+[2017.03.13-05.40.00:908][866]LogModuleManager: Shutting down and abandoning module MessageLog (137)
+[2017.03.13-05.40.00:908][866]LogModuleManager: Shutting down and abandoning module WorkspaceMenuStructure (136)
+[2017.03.13-05.40.00:908][866]LogModuleManager: Shutting down and abandoning module SlateReflector (130)
+[2017.03.13-05.40.00:939][866]LogModuleManager: Shutting down and abandoning module Slate (128)
+[2017.03.13-05.40.00:939][866]LogModuleManager: Shutting down and abandoning module EditorStyle (126)
+[2017.03.13-05.40.00:988][866]LogModuleManager: Shutting down and abandoning module Messaging (124)
+[2017.03.13-05.40.00:988][866]LogModuleManager: Shutting down and abandoning module SourceCodeAccess (122)
+[2017.03.13-05.40.00:988][866]LogModuleManager: Shutting down and abandoning module HeadMountedDisplay (120)
+[2017.03.13-05.40.00:988][866]LogModuleManager: Shutting down and abandoning module ALAudio (118)
+[2017.03.13-05.40.00:988][866]LogModuleManager: Shutting down and abandoning module Networking (116)
+[2017.03.13-05.40.01:008][866]LogModuleManager: Shutting down and abandoning module Core (112)
+[2017.03.13-05.40.01:008][866]LogModuleManager: Shutting down and abandoning module AssetRegistry (110)
+[2017.03.13-05.40.01:163][866]LogModuleManager: Shutting down and abandoning module DirectoryWatcher (109)
+[2017.03.13-05.40.01:169][866]LogModuleManager: Shutting down and abandoning module KismetCompiler (106)
+[2017.03.13-05.40.01:181][866]LogModuleManager: Shutting down and abandoning module PhysXFormats (104)
+[2017.03.13-05.40.01:182][866]LogModuleManager: Shutting down and abandoning module MeshUtilities (102)
+[2017.03.13-05.40.01:182][866]LogModuleManager: Shutting down and abandoning module QuadricMeshReduction (101)
+[2017.03.13-05.40.01:276][866]LogModuleManager: Shutting down and abandoning module PropertyEditor (99)
+[2017.03.13-05.40.01:277][866]LogModuleManager: Shutting down and abandoning module DerivedDataCache (96)
+[2017.03.13-05.40.01:346][866]LogDerivedDataCache: Shutdown
+[2017.03.13-05.40.01:347][866]LogModuleManager: Shutting down and abandoning module TargetPlatform (94)
+[2017.03.13-05.40.01:347][866]LogModuleManager: Shutting down and abandoning module ShaderFormatOpenGL (93)
+[2017.03.13-05.40.01:529][866]LogModuleManager: Shutting down and abandoning module TextureFormatUncompressed (91)
+[2017.03.13-05.40.01:564][866]LogModuleManager: Shutting down and abandoning module TextureFormatPVR (89)
+[2017.03.13-05.40.01:624][866]LogModuleManager: Shutting down and abandoning module TextureFormatDXT (87)
+[2017.03.13-05.40.01:675][866]LogModuleManager: Shutting down and abandoning module TextureFormatIntelISPCTexComp (85)
+[2017.03.13-05.40.01:682][866]LogModuleManager: Shutting down and abandoning module TextureFormatASTC (83)
+[2017.03.13-05.40.01:688][866]LogModuleManager: Shutting down and abandoning module ImageWrapper (82)
+[2017.03.13-05.40.01:688][866]LogModuleManager: Shutting down and abandoning module AudioFormatOpus (79)
+[2017.03.13-05.40.01:692][866]LogModuleManager: Shutting down and abandoning module AudioFormatOgg (77)
+[2017.03.13-05.40.01:699][866]LogModuleManager: Shutting down and abandoning module AndroidTargetPlatform (75)
+[2017.03.13-05.40.01:699][866]LogModuleManager: Shutting down and abandoning module Android_ETC2TargetPlatform (73)
+[2017.03.13-05.40.01:700][866]LogModuleManager: Shutting down and abandoning module Android_DXTTargetPlatform (71)
+[2017.03.13-05.40.01:700][866]LogModuleManager: Shutting down and abandoning module Android_ASTCTargetPlatform (69)
+[2017.03.13-05.40.01:700][866]LogModuleManager: Shutting down and abandoning module Android_MultiTargetPlatform (67)
+[2017.03.13-05.40.01:700][866]LogModuleManager: Shutting down and abandoning module Android_ATCTargetPlatform (65)
+[2017.03.13-05.40.01:700][866]LogModuleManager: Shutting down and abandoning module Android_PVRTCTargetPlatform (63)
+[2017.03.13-05.40.01:700][866]LogModuleManager: Shutting down and abandoning module Android_ETC1TargetPlatform (61)
+[2017.03.13-05.40.01:700][866]LogModuleManager: Shutting down and abandoning module HTML5TargetPlatform (59)
+[2017.03.13-05.40.01:707][866]LogModuleManager: Shutting down and abandoning module LinuxTargetPlatform (57)
+[2017.03.13-05.40.01:708][866]LogModuleManager: Shutting down and abandoning module LinuxClientTargetPlatform (55)
+[2017.03.13-05.40.01:708][866]LogModuleManager: Shutting down and abandoning module LinuxServerTargetPlatform (53)
+[2017.03.13-05.40.01:708][866]LogModuleManager: Shutting down and abandoning module LinuxNoEditorTargetPlatform (51)
+[2017.03.13-05.40.01:708][866]LogModuleManager: Shutting down and abandoning module AllDesktopTargetPlatform (49)
+[2017.03.13-05.40.01:708][866]LogModuleManager: Shutting down and abandoning module InputCore (46)
+[2017.03.13-05.40.01:708][866]LogModuleManager: Shutting down and abandoning module Settings (44)
+[2017.03.13-05.40.01:708][866]LogModuleManager: Shutting down and abandoning module OnlineSubsystem (42)
+[2017.03.13-05.40.01:708][866]LogOnline:Display: Unloading online subsystem: NULL
+[2017.03.13-05.40.01:729][866]LogModuleManager: Shutting down and abandoning module HTTP (41)
+[2017.03.13-05.40.01:729][866]LogHttp:Display: Http module shutting down, but needs to wait on 1 outstanding Http requests:
+[2017.03.13-05.40.01:729][866]LogHttp:Display: 	verb=[POST] url=[https://datarouter.ol.epicgames.com/datarouter/api/v1/public/data?SessionID=%7B065C788A-1003-0D0D-001B-026579FFC4D5%7D&AppID=UEEditor.UnrealEngine.Release&AppVersion=4.15.0-0%2B%2B%2BUE4%2BRelease-4.15&UserID=000245d600030a0d0025004f95f54486%7C%7Cce27abace4c94a6eace864300cb55a8d&AppEnvironment=datacollector-source&UploadType=eteventstream] status=Processing
+[2017.03.13-05.40.01:775][866]LogModuleManager: Shutting down and abandoning module SSL (40)
+[2017.03.13-05.40.01:778][866]LogModuleManager: Shutting down and abandoning module OnlineBlueprintSupport (36)
+[2017.03.13-05.40.01:778][866]LogModuleManager: Shutting down and abandoning module LinuxDeviceProfileSelector (32)
+[2017.03.13-05.40.01:788][866]LogModuleManager: Shutting down and abandoning module ExampleDeviceProfileSelector (30)
+[2017.03.13-05.40.01:799][866]LogModuleManager: Shutting down and abandoning module AudioEditor (28)
+[2017.03.13-05.40.01:799][866]LogModuleManager: Shutting down and abandoning module TextureCompressor (26)
+[2017.03.13-05.40.01:805][866]LogModuleManager: Shutting down and abandoning module ShaderCore (24)
+[2017.03.13-05.40.01:805][866]LogModuleManager: Shutting down and abandoning module Landscape (22)
+[2017.03.13-05.40.01:805][866]LogModuleManager: Shutting down and abandoning module SlateRHIRenderer (20)
+[2017.03.13-05.40.01:811][866]LogModuleManager: Shutting down and abandoning module OpenGLDrv (18)
+[2017.03.13-05.40.01:811][866]LogModuleManager: Shutting down and abandoning module AnimGraphRuntime (16)
+[2017.03.13-05.40.01:811][866]LogModuleManager: Shutting down and abandoning module Renderer (14)
+[2017.03.13-05.40.01:831][866]LogModuleManager: Shutting down and abandoning module Engine (12)
+[2017.03.13-05.40.01:832][866]LogModuleManager: Shutting down and abandoning module CoreUObject (10)
+[2017.03.13-05.40.01:832][866]LogModuleManager: Shutting down and abandoning module NetworkFile (8)
+[2017.03.13-05.40.01:853][866]LogModuleManager: Shutting down and abandoning module StreamingFile (6)
+[2017.03.13-05.40.01:859][866]LogModuleManager: Shutting down and abandoning module SandboxFile (4)
+[2017.03.13-05.40.01:860][866]LogModuleManager: Shutting down and abandoning module PakFile (2)
+[2017.03.13-05.40.01:870][866]LogExit: Exiting.
+[2017.03.13-05.40.01:871][866]LogInit: Tearing down SDL.
+[2017.03.13-05.40.01:934][866]Log file closed, 03/13/17 13:40:01
