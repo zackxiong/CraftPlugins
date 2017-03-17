@@ -1,8 +1,6 @@
 package gui.panels.controlPanel;
 
 
-import gui.StatusFlag;
-
 import java.awt.Font;
 import java.util.Vector;
 
@@ -30,8 +28,8 @@ public class ControlPanel extends JPanel{
     public String []functions = {
     	"Info","ScreenShoot","Functions","files"
     };
-    public JList jlistPCs = new JList(vecPCs),
-    		jlistFunctions = new JList(vecFunctions);
+    public JList <PC>jlistPCs = new JList<PC>(vecPCs);
+    public JList <String>jlistFunctions = new JList<String>(vecFunctions);
     public JScrollPane jScrollpane_pclist = new JScrollPane(jlistPCs), jScrollpane_funclist = new JScrollPane(jlistFunctions);
     public JPanel jPanel_content = new JPanel();
     

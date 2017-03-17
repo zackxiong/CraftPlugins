@@ -1,0 +1,17 @@
+package main;
+
+import communicater.Controller;
+import gui.Gui;
+
+public class Entery {
+
+	/**
+	 * @param args
+	 */
+	@SuppressWarnings("unused")
+	public static void main(String[] args) {
+		Gui.startGui(args);
+		Controller ctlr = new Controller();
+	}
+
+}

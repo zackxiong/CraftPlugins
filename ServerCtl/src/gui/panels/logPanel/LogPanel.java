@@ -1,9 +1,7 @@
 package gui.panels.logPanel;
 
-import gui.MyColor;
 import gui.StatusFlag;
 
-import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.text.SimpleDateFormat;
@@ -17,7 +15,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.JTextPane;
 
 public class LogPanel extends JPanel implements Runnable{
 	private static final long serialVersionUID = -6111206288933781387L;
@@ -69,7 +66,7 @@ public class LogPanel extends JPanel implements Runnable{
  		//监视器
     	tflagChecker.start();
     	log("Starting Checker Thread on: "+tflagChecker.getId());
-    	log( "<html><font color=\"#FF0000\">我是红色字体</font></html> ");
+    	//log( "<html><font color=\"#FF0000\">我是红色字体</font></html> ");
     }
  		
  	public void log(String msg){

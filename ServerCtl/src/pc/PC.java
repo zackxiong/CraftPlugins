@@ -1,8 +1,11 @@
 package pc;
 
+import pc.info.InfoSet;
+
 public class PC {
 	String name;
 	final String hash;
+	public InfoSet info;
 	
 	public PC(String hash){
 		this.name = "unamed";
