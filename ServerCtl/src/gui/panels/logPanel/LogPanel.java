@@ -70,14 +70,15 @@ public class LogPanel extends JPanel implements Runnable{
     }
  		
  	public void log(String msg){
- 		//jtextarea.setText(jlabel.getText().replace("</html>", "")+msg+"<br></html>");
- 		jTextArea_logArea.setText(jTextArea_logArea.getText()+"["+df_date.format(new Date())+"] "+msg+"\n");
- 		jTextArea_logArea.setCaretPosition(jTextArea_logArea.getText().length());
- 		System.out.print("["+df_date.format(new Date())+"] "+msg+"\n");
+ 		synchronized (LogPanel.class){
+ 			//jtextarea.setText(jlabel.getText().replace("</html>", "")+msg+"<br></html>");
+ 			jTextArea_logArea.setText(jTextArea_logArea.getText()+"["+df_date.format(new Date())+"] "+msg+"\n");
+ 			jTextArea_logArea.setCaretPosition(jTextArea_logArea.getText().length());
+ 			System.out.print("["+df_date.format(new Date())+"] "+msg+"\n");
+ 		}
  	}
  	@Override
  	public void run(){
- 		
  		try {
  			while(true){
  				this.jlabel_status.setForeground(StatusFlag.getHighestStatus());

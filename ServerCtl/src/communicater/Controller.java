@@ -2,10 +2,7 @@ package communicater;
 
 import gui.Gui;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.HashSet;
@@ -14,15 +11,13 @@ import pc.PC;
 
 public class Controller implements Runnable{
 	int port;
-	Reciever reciever = new Reciever();
-	Sender sender = new Sender();
-	HashSet<Thread> threads = new HashSet<Thread>();
-	MyRunnable listen = new MyRunnable();
+	int activeCount = 0;
+	HashSet<Reciever> recievers = new HashSet<Reciever>();
+	//MyRunnable listen = new MyRunnable();
+	//HashSet<WeakReference<Reciever>> connections = new HashSet<WeakReference<Reciever>>();
 	
 	private ServerSocket ss;
 	private Socket socket;
-	private BufferedReader in;
-	private PrintWriter out;
 	
 	public Controller(){
 		this(1800);
@@ -44,35 +39,28 @@ public class Controller implements Runnable{
 		Thread t = new Thread(this);
 		t.start();
 	}
-	
-	//@Override
+
+	@Override
 	public void run(){
+		this.activeCount++;
 			while (true){
 				try{
 					gui.Gui.log("Thread activated:" + Thread.currentThread().getId());
 					socket = ss.accept();//本句阻塞！！！
+					Reciever reciever = new Reciever(socket, this);
+					this.recievers.add(reciever);
 					gui.Gui.log("Accept connection with port:"+socket.getPort()
-							+"\n"+ "Close status: " + ss.isClosed()
-							+"\n"+ "Now reading:");
-					in = new BufferedReader(new InputStreamReader(socket.getInputStream()));   
-					out = new PrintWriter(socket.getOutputStream(),true);
-					String line;
-					do{
-						line = in.readLine();
-						if(line != null)
-							gui.Gui.log(line);
-						if(line == "close")
-							break;
-					} while(line != null);
-					gui.Gui.log("Closing session" + socket.getLocalSocketAddress()+":"+socket.getPort());
-					out.close();   
-					in.close();   
-					socket.close();
+							+"\n"+ "Now handled by Reciever num:" + reciever.toString());
 				}
 				catch(Exception e){
-					e.printStackTrace();
+					Gui.displayException(e);
 				}
 			}
+	}
+	
+	@Override
+	protected void finalize(){
+		
 	}
 }
 

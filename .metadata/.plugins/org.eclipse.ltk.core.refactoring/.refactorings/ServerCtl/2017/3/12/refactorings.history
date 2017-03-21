@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;communicater.Dictionaries&apos; to &apos;Head&apos;&#x0A;- Original project: &apos;ServerCtl&apos;&#x0A;- Original element: &apos;communicater.Dictionaries&apos;&#x0A;- Renamed element: &apos;communicater.Head&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Dictionaries&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;communicater{Dictionaries.java[Dictionaries" matchStrategy="1" name="Head" qualified="false" references="true" similarDeclarations="false" stamp="1490081096217" textual="false" version="1.0"/>
+</session>

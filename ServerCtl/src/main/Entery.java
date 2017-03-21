@@ -1,7 +1,7 @@
 package main;
 
 import communicater.Controller;
-import communicater.Dictionaries;
+import communicater.Head;
 import gui.Gui;
 
 public class Entery {
@@ -12,7 +12,7 @@ public class Entery {
 	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		Gui.startGui(args);
-		Dictionaries.setup();
+		Head.setup();
 		Controller ctlr = new Controller();
 	}
 
