@@ -7,6 +7,9 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.HashSet;
+import communicater.packages.Package;
+
+import communicater.packages.Phaser;
 
 public class Reciever implements Runnable{
 	
@@ -34,20 +37,24 @@ public class Reciever implements Runnable{
 
 	@Override
 	public void run() {
+		//byte []int = new byte[bufLength];
 		myCtlr.activeCount++;
 		try{
 			Gui.log("Now reading:");
 			in = new BufferedReader(new InputStreamReader(cs.getInputStream()));   
 			out = new PrintWriter(cs.getOutputStream(),true);
-			String line;
+			String lData;
 			do{//read loop
-				line = in.readLine();
-				if(line != null)
-					gui.Gui.log(line);
-					line.getBytes()[0];
-				if(line == "close")
-					break;
-			} while(line != null);
+				lData = in.readLine();
+				if(lData.length() != this.myCtlr.pakLength){
+					gui.Gui.log("Broken package from"+this.hashCode()+", dropped!");
+					lData = null; break;//丢掉损坏的包
+				}
+				else{
+					Package pak = this.myCtlr.phaser.phase(lData);
+				}
+				
+			} while(lData != null);
 			
 			gui.Gui.log("Closing session" + cs.getLocalSocketAddress()+":"+cs.getPort());
 			out.close();

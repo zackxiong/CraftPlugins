@@ -1,0 +1,16 @@
+package communicater.packages;
+
+public class Phaser {
+	int length;
+	
+	public Phaser() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Package phase(String data, int pakLength){
+		
+		return null;
+	}
+
+}

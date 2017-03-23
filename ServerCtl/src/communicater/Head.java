@@ -23,7 +23,7 @@ public final class Head {
 	public static int 
 		INVALID = -1,
 		SEND_INFO = 0,
-		CLOSE_CONNECTION = 1,
+		CLOSE_CONNECTION = -1,
 		SHUT_DOWN = 2,
 		LOCK_ALL = 3,
 		SEND_FILE = 4,

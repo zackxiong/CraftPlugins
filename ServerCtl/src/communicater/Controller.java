@@ -7,12 +7,17 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.HashSet;
 
+import communicater.packages.Phaser;
+
 import pc.PC;
 
 public class Controller implements Runnable{
 	int port;
 	int activeCount = 0;
 	HashSet<Reciever> recievers = new HashSet<Reciever>();
+	
+	public final int pakLength = 800;
+	public Phaser phaser = new Phaser(this.pakLength);
 	//MyRunnable listen = new MyRunnable();
 	//HashSet<WeakReference<Reciever>> connections = new HashSet<WeakReference<Reciever>>();
 	

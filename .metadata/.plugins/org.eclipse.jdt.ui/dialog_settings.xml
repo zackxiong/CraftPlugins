@@ -45,6 +45,13 @@
 	</section>
 	<section name="RenameInformationPopup">
 	</section>
+	<section name="DialogBounds_AddUnimplementedConstructorsDialog">
+		<item value="648" key="DIALOG_WIDTH"/>
+		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="850" key="DIALOG_HEIGHT"/>
+		<item value="637" key="DIALOG_X_ORIGIN"/>
+		<item value="0" key="DIALOG_Y_ORIGIN"/>
+	</section>
 	<section name="completion_proposal_size">
 	</section>
 	<section name="JarPackageWizard">
@@ -152,6 +159,9 @@
 		<item value="false" key="Comments"/>
 		<item value="1" key="VisibilityModifier"/>
 		<item value="false" key="FinalModifier"/>
+	</section>
+	<section name="AddUnimplementedConstructorsDialog">
+		<item value="false" key="OmitCallToSuper"/>
 	</section>
 	<section name="BuildPathsPropertyPage">
 		<item value="2" key="pageIndex"/>
