@@ -1,4 +1,7 @@
 #pragma once
 #include "stdafx.h"
 
-extern struct HeadDir headDic;
+struct HeadDic {
+	int
+		keepAlive = 1;
+};

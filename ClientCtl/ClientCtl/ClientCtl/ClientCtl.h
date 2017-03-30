@@ -22,5 +22,5 @@ extern const char* MY_SERVICE_NAME;
 
 extern DWORD WINAPI serviceCheckerThread(LPVOID pM);
 extern DWORD WINAPI communicaterThread(LPVOID pM);
-extern HANDLE checkerHandle, setterHandle;
+extern HANDLE checkerHandle, setterHandle, aliveKeeperHandle;
 extern Logger* logger;

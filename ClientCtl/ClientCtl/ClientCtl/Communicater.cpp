@@ -145,9 +145,9 @@ int Communicater::mySend(std::string message){
 	if (iResult == SOCKET_ERROR) {
 		std::cout << "Connect error" << std::endl;
 		printf("send failed: %d\n", WSAGetLastError());
-		return iResult;
+		return false;
 	}
-	return iResult;
+	return true;
 }
 
 int Communicater::mySend(int number) {
@@ -157,9 +157,19 @@ int Communicater::mySend(int number) {
 	if (iResult == SOCKET_ERROR) {
 		std::cout << "Connect error" << std::endl;
 		printf("send failed: %d\n", WSAGetLastError());
-		return iResult;
+		return false;
 	}
-	return iResult;
+	return true;
+}
+
+int Communicater::mySend(byte data[]) {
+	iResult = send(ConnectSocket, (char*)data, (int)sizeof(data), 0);
+	if (iResult == SOCKET_ERROR) {
+		std::cout << "Connect error" << std::endl;
+		printf("send failed: %d\n", WSAGetLastError());
+		return false;
+	}
+	return true;
 }
 
 Communicater &operator << (Communicater &c, char *a){

@@ -28,6 +28,7 @@ public:
 	bool myConnect();
 	int mySend(std::string message);
 	int mySend(int number);
+	int mySend(byte data[]);
 
 	friend Communicater &Communicater::operator << (Communicater &c, char *a); //жиди<<
 	friend Communicater &Communicater::operator << (Communicater &c, std::string a);
