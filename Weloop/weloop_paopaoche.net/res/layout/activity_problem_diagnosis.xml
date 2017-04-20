@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:ProgressWheel2="http://schemas.android.com/apk/res-auto">
+    <include android:id="@id/pd_rl_title" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_alignParentTop="true" android:layout_alignParentStart="true" layout="@layout/all_title" />
+    <WebView android:id="@id/pd_webview" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/pd_rl_title" android:layout_alignParentStart="true" />
+    <FrameLayout android:layout_gravity="center_horizontal" android:id="@id/layout_Frame" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.todddavies.components.progressbar.ProgressWheel2 android:layout_gravity="center" android:id="@id/progressbar" android:layout_width="87.0dip" android:layout_height="87.0dip" ProgressWheel2:pw_textColor="@color/whitegrey" ProgressWheel2:pw_textSize="24.0sp" ProgressWheel2:pw_barColor="#ff2ce9a0" ProgressWheel2:pw_rimColor="@color/whitegrey" ProgressWheel2:pw_rimWidth="25.0dip" ProgressWheel2:pw_spinSpeed="3.0dip" ProgressWheel2:pw_circleColor="@color/whitegrey" ProgressWheel2:pw_barWidth="5.0dip" ProgressWheel2:pw_contourColor="@color/whitegrey" />
+        <com.yf.gattlib.view.ShakeImageView android:layout_gravity="center" android:id="@id/iv_is_newest" android:visibility="invisible" android:layout_width="100.0dip" android:layout_height="100.0dip" android:src="@drawable/is_newest" />
+        <com.yf.gattlib.view.RotateImageView android:layout_gravity="center" android:id="@id/iv_checking" android:visibility="invisible" android:layout_width="100.0dip" android:layout_height="100.0dip" android:src="@drawable/checking" />
+        <RelativeLayout android:layout_gravity="center" android:layout_width="100.0dip" android:layout_height="100.0dip">
+            <TextView android:textSize="22.0sp" android:textColor="#ff2ce9a0" android:gravity="center_horizontal" android:id="@id/tv_version_indicator" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+            <TextView android:textSize="20.0sp" android:textColor="#fff59710" android:gravity="center_horizontal" android:id="@id/tv_new_version" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="V3.12" android:layout_below="@id/tv_version_indicator" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+        <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:id="@id/lt_percent" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:textSize="33.0sp" android:textColor="#ff2ce9a0" android:id="@id/tv_percent_number" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" />
+            <TextView android:textSize="12.0sp" android:textColor="#ff2ce9a0" android:id="@id/tv_percent_flag" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="%" />
+        </LinearLayout>
+    </FrameLayout>
+</RelativeLayout>

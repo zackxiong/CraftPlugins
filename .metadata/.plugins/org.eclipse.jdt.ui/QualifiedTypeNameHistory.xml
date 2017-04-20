@@ -54,10 +54,10 @@
 <fullyQualifiedTypeName name="pc.info.CurrentInfo"/>
 <fullyQualifiedTypeName name="pc.info.InfoSet"/>
 <fullyQualifiedTypeName name="java.net.Socket"/>
-<fullyQualifiedTypeName name="gui.Gui"/>
 <fullyQualifiedTypeName name="java.lang.ref.WeakReference"/>
 <fullyQualifiedTypeName name="communicater.Dictionaries"/>
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="communicater.packages.Phaser"/>
 <fullyQualifiedTypeName name="communicater.Head"/>
+<fullyQualifiedTypeName name="gui.Gui"/>
 </qualifiedTypeNameHistroy>

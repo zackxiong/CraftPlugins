@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.yf.lib.ui.views.BottomTabLayout android:id="@id/tab_bottom" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" app:libyf_BottomTabLayout_dividerHeight="1.0px" app:libyf_BottomTabLayout_dividerDrawable="@color/textcolor" />
+</LinearLayout>

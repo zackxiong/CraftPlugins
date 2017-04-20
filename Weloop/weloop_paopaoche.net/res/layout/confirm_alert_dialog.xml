@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/alert_find_bg" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="?android:textAppearanceMedium" android:textSize="20.0sp" android:textColor="@color/white" android:gravity="center" android:id="@id/rv_tv_msg" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="70.0dip" android:text="@string/exit_alarm_edit" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
+    <View android:id="@id/ad_view_line" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="10.0dip" android:layout_below="@id/rv_tv_msg" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/ad_ll_btns" android:layout_width="fill_parent" android:layout_height="55.0dip" android:layout_below="@id/ad_view_line" android:layout_centerHorizontal="true">
+        <Button android:textSize="22.0sp" android:textColor="@color/white" android:id="@id/rv_tv_cancel" android:background="@null" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/cancel" android:layout_weight="1.0" />
+        <View android:id="@id/ad_view_ver_line" android:background="@color/white" android:layout_width="1.0dip" android:layout_height="fill_parent" android:layout_above="@id/ad_ll_btns" />
+        <Button android:textSize="22.0sp" android:textColor="@color/white" android:id="@id/rv_tv_sure" android:background="@null" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/sure" android:layout_weight="1.0" />
+    </LinearLayout>
+</RelativeLayout>

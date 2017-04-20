@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@color/goal_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/label_rl_center_line" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerHorizontal="true">
+        <ImageView android:id="@id/label_center_line1" android:visibility="visible" android:layout_height="25.0dip" style="@style/label_center_line" />
+        <ImageView android:id="@id/label_center_line2" android:visibility="gone" android:layout_height="50.0dip" style="@style/label_center_line" />
+        <ImageView android:id="@id/label_center_line3" android:visibility="gone" android:layout_height="75.0dip" style="@style/label_center_line" />
+    </RelativeLayout>
+    <LinearLayout android:id="@id/ll_content" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:layout_below="@id/label_rl_center_line">
+        <include layout="@layout/label_content" />
+    </LinearLayout>
+    <View android:id="@id/did_v_templine" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="20.0dip" android:layout_below="@id/ll_content" />
+    <RelativeLayout android:visibility="visible" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_below="@id/ll_content">
+        <View android:gravity="center" android:layout_gravity="center" android:id="@id/did_v_bottom_line" android:visibility="visible" android:layout_height="fill_parent" android:layout_marginLeft="0.0dip" android:layout_marginRight="0.0dip" style="@style/label_center_line" />
+        <TextView android:textSize="15.0sp" android:textColor="@color/goal_total_tv_msg" android:gravity="center" android:layout_gravity="center" android:id="@id/did_tv_time" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="01:23" android:layout_toLeftOf="@id/did_v_bottom_line" android:layout_centerVertical="true" />
+        <TextView android:textSize="15.0sp" android:textColor="@color/goal_total_tv_msg" android:gravity="center" android:layout_gravity="center" android:id="@id/did_tv_label" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/sleep" android:layout_toRightOf="@id/did_v_bottom_line" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <ImageView android:id="@id/did_iv_label" android:layout_marginTop="-20.0dip" android:src="@drawable/sleep_icon" android:layout_below="@id/did_v_templine" style="@style/label_center_mark" />
+</RelativeLayout>

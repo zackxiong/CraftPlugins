@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="20.0sp" android:textColor="@color/libyf_text_gray1" android:gravity="center_vertical" android:id="@id/option_name" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <com.yf.lib.ui.views.OptionToggleButton android:gravity="center_vertical" android:id="@id/option_toggle" android:background="@drawable/libyf_toggle_selector" android:layout_width="52.0dip" android:layout_height="26.0dip" android:textOn="" android:textOff="" android:text="" />
+</merge>

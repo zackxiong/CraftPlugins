@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/ac_rl_title" android:layout_width="fill_parent" android:layout_height="@dimen/all_title_height" android:layout_alignParentStart="true" layout="@layout/all_title" />
+    <RelativeLayout android:id="@id/ac_rl_name" android:background="@color/white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="55.0dip" android:layout_marginTop="25.0dip" android:layout_below="@id/ac_rl_title" android:layout_alignParentStart="true">
+        <include layout="@layout/gray_line" />
+        <EditText android:textSize="22.0sp" android:gravity="center" android:id="@id/ae_et_name" android:background="@null" android:layout_width="wrap_content" android:layout_height="fill_parent" android:hint="@string/unname_alarm" android:maxLength="5" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+            <requestFocus />
+        </EditText>
+        <include android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_alignParentBottom="true" layout="@layout/gray_line" />
+    </RelativeLayout>
+    <TextView android:textAppearance="?android:textAppearanceMedium" android:textSize="18.0sp" android:textColor="#ff9b9baa" android:gravity="center_vertical" android:id="@id/ae_tv_set_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="12.0dip" android:text="@string/set_time" android:layout_below="@id/ac_rl_name" android:layout_alignParentStart="true" />
+    <LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:id="@id/ae_layout_numberpicker" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:layout_below="@id/ae_tv_set_time">
+        <include android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_alignParentTop="true" layout="@layout/gray_line" />
+        <TimePicker android:layout_gravity="center_vertical" android:id="@id/ae_tp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" style="@style/timePicker" />
+        <include android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_alignParentBottom="true" layout="@layout/gray_line" />
+    </LinearLayout>
+    <TextView android:textAppearance="?android:textAppearanceMedium" android:textSize="18.0sp" android:textColor="#ff9b9baa" android:gravity="center_vertical" android:id="@id/ae_tv_set_times" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="12.0dip" android:text="@string/repear_times" android:layout_below="@id/ae_layout_numberpicker" android:layout_alignParentStart="true" />
+    <LinearLayout android:id="@id/ae_ll_repeat_times" android:layout_width="fill_parent" android:layout_height="55.0dip" android:layout_marginTop="10.0dip" android:layout_below="@id/ae_tv_set_times">
+        <CheckBox android:id="@id/Monday" android:layout_marginLeft="15.0dip" android:text="@string/monday_for_short" style="@style/alarm_cb_style" />
+        <CheckBox android:id="@id/Tuesday" android:text="@string/tuesday_for_short" style="@style/alarm_cb_style" />
+        <CheckBox android:id="@id/Wednesday" android:text="@string/wednesday_for_short" style="@style/alarm_cb_style" />
+        <CheckBox android:id="@id/Thursday" android:text="@string/thursday_for_short" style="@style/alarm_cb_style" />
+        <CheckBox android:id="@id/Friday" android:text="@string/friday_for_short" style="@style/alarm_cb_style" />
+        <CheckBox android:id="@id/Saturday" android:text="@string/saturday_for_short" style="@style/alarm_cb_style" />
+        <CheckBox android:id="@id/Sunday" android:layout_marginRight="15.0dip" android:text="@string/sunday_for_short" style="@style/alarm_cb_style" />
+    </LinearLayout>
+    <Button android:textSize="21.0sp" android:textColor="@color/white" android:id="@id/ae_btn_save" android:background="@drawable/btn_register1" android:layout_width="250.0dip" android:layout_height="50.0dip" android:layout_marginTop="20.0dip" android:text="@string/save" android:layout_below="@id/ae_ll_repeat_times" android:layout_centerHorizontal="true" />
+</RelativeLayout>

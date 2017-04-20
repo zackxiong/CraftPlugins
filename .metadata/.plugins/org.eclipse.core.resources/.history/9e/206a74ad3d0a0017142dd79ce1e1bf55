@@ -1,8 +1,0 @@
-package pc.info;
-
-import java.io.OutputStream;
-
-public interface Info {
-	public String printAll(OutputStream stream);
-
-}

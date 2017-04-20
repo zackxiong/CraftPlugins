@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/trajectory_rl_title" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" layout="@layout/all_title" />
+    <com.baidu.mapapi.map.MapView android:id="@id/trajectory_baidumap" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/trajectory_rl_title" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/linearLayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/trajectory_rl_title" android:layout_centerHorizontal="true">
+        <include android:id="@id/trajectoy_rl_calories" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_below="@id/linearLayout" android:layout_centerHorizontal="true" layout="@layout/activity_trajectory_item" />
+        <include android:id="@id/trajectoy_rl_steps" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_below="@id/linearLayout" android:layout_centerHorizontal="true" layout="@layout/activity_trajectory_item" />
+        <include android:id="@id/trajectoy_rl_distance" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_below="@id/linearLayout" android:layout_centerHorizontal="true" layout="@layout/activity_trajectory_item" />
+        <include android:id="@id/trajectoy_rl_speed" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_below="@id/linearLayout" android:layout_centerHorizontal="true" layout="@layout/activity_trajectory_item" />
+    </LinearLayout>
+    <Button android:id="@id/trajectory_btn_upload" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="上传" android:layout_below="@id/linearLayout" android:layout_alignParentEnd="true" />
+    <Button android:id="@id/trajectory_btn_download" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="下载" android:layout_below="@id/trajectory_btn_upload" android:layout_alignStart="@id/trajectory_btn_upload" />
+    <TextView android:id="@id/tv_locationinfo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="下载" android:layout_below="@id/trajectory_btn_download" />
+</RelativeLayout>

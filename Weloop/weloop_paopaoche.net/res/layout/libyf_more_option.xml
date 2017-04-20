@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="20.0sp" android:textColor="@color/libyf_text_gray1" android:gravity="center_vertical" android:id="@id/option_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="name" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/value_group" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:textSize="20.0sp" android:textColor="@color/libyf_text_gray2" android:gravity="center_vertical" android:id="@id/option_value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="value" android:layout_marginEnd="5.0dip" />
+        <ImageView android:id="@id/option_more" android:layout_width="11.0dip" android:layout_height="18.0dip" android:src="@drawable/libyf_arrow" android:scaleType="fitCenter" />
+    </LinearLayout>
+</merge>

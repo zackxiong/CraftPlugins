@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@drawable/welcome_page1" android:layoutAnimation="@anim/layout_fade_in" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="23.0sp" android:textColor="@color/whitegrey" android:id="@id/textViewWelcome1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="40.0dip" android:layout_marginBottom="157.0dip" android:text="@string/device_change" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+    <TextView android:textSize="20.0sp" android:textColor="@color/whitegrey" android:id="@id/textViewPrompt1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="33.0dip" android:text="@string/welcome_page1_prompt" android:layout_alignTop="@id/textViewWelcome1" android:layout_alignStart="@id/textViewWelcome1" />
+</RelativeLayout>

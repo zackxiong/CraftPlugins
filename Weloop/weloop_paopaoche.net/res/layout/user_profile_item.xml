@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/profile_item" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginTop="10.0dip">
+        <ImageView android:id="@id/option_tag_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/tag_life_calorie" android:scaleType="center" android:layout_centerVertical="true" android:layout_marginStart="15.0dip" android:layout_alignParentStart="true" />
+        <TextView android:textSize="16.0sp" android:textColor="@color/ranking_gray" android:id="@id/option_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip" android:layout_alignBottom="@id/option_tag_icon" android:layout_marginStart="10.0dip" android:layout_toEndOf="@id/option_tag_icon" />
+        <TextView android:textSize="16.0sp" android:textColor="@color/ranking_gray" android:id="@id/option_unit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignBottom="@id/option_name" android:layout_toEndOf="@id/option_name" />
+        <ImageView android:id="@id/option_unit_icon" android:layout_width="16.0dip" android:layout_height="16.0dip" android:src="@drawable/unit_calorie" android:scaleType="fitXY" android:layout_alignParentTop="true" android:contentDescription="@string/app_name" android:layout_marginEnd="5.0dip" android:layout_alignParentEnd="true" />
+        <TextView android:textSize="28.0sp" android:textStyle="bold" android:textColor="@color/ranking_normal" android:gravity="center_vertical" android:id="@id/option_value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip" android:layout_centerVertical="true" android:layout_toStartOf="@id/option_unit_icon" />
+    </RelativeLayout>
+</FrameLayout>

@@ -1,9 +1,0 @@
-package communicater.packages;
-
-import communicater.Head;
-
-public class Package {
-	public int head = Head.INVALID;
-	public String content;
-
-}

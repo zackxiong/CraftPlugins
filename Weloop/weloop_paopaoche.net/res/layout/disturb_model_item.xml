@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center_vertical" android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="50.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="20.0sp" android:textColor="@color/text_gray1" android:id="@id/option_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:text="@string/anti_lost" android:layout_alignParentLeft="true" android:layout_marginStart="22.0dip" android:layout_marginEnd="10.0dip" />
+    <RelativeLayout android:id="@id/rl_interval_times" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true">
+        <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="@color/gray" android:id="@id/tv_interval_start" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="21:00" android:layout_centerVertical="true" android:layout_marginEnd="95.0dip" android:layout_alignParentEnd="true" />
+        <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="@color/gray" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="-" android:layout_centerVertical="true" android:layout_marginEnd="88.0dip" android:layout_alignParentEnd="true" />
+        <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="@color/gray" android:id="@id/tv_interval_end" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="21:00" android:layout_centerVertical="true" android:layout_marginEnd="45.0dip" android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    <ImageView android:id="@id/iv_selected" android:background="@drawable/disturb_select" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginEnd="10.0dip" android:layout_alignParentEnd="true" />
+</RelativeLayout>

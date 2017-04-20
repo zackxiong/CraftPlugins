@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/user_green_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/ws_rl_title" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_alignParentTop="true" android:layout_alignParentStart="true" layout="@layout/all_title" />
+    <LinearLayout android:orientation="vertical" android:id="@id/layout2" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="110.0dip">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginStart="30.0dip" android:layout_marginEnd="30.0dip">
+            <EditText android:textColor="@color/white" android:textColorHint="@color/hintcolor" android:linksClickable="false" android:layout_gravity="center_vertical" android:id="@id/editPhone" android:background="@null" android:layout_width="0.0dip" android:layout_height="40.0dip" android:layout_marginBottom="5.0dip" android:hint="@string/phone_num" android:maxLength="11" android:layout_weight="1.0" android:inputType="phone" style="@style/partent_one" />
+            <Button android:textSize="18.0sp" android:textColor="@color/white" android:gravity="end|center" android:id="@id/arp_btn_get_verifycode" android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/send_check_code" />
+        </LinearLayout>
+        <View android:id="@id/line" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginStart="20.0dip" android:layout_marginEnd="20.0dip" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginStart="30.0dip" android:layout_marginEnd="30.0dip">
+            <EditText android:textColor="@color/white" android:textColorHint="@color/hintcolor" android:layout_gravity="center_vertical" android:id="@id/editCode" android:background="@null" android:layout_width="0.0dip" android:layout_height="40.0dip" android:layout_marginTop="5.0dip" android:hint="@string/verify_code" android:maxLength="4" android:numeric="integer" android:layout_weight="1.0" />
+            <Button android:textSize="18.0sp" android:textColor="@color/white" android:gravity="end|center" android:id="@id/arp_btn_commit" android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sure" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:id="@id/arp_ll_war" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_marginStart="30.0dip" android:layout_marginEnd="20.0dip">
+            <TextView android:textSize="9.0sp" android:textColor="@color/hintcolor" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/register_tips" />
+            <TextView android:textSize="10.0sp" android:textColor="@color/white" android:id="@id/txtRegister_tips" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+    <TextView android:textAppearance="?android:textAppearanceSmall" android:textColor="@color/white" android:id="@id/arp_tv_or" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="30.0dip" android:text="@string/or" android:layout_below="@id/layout2" android:layout_centerHorizontal="true" />
+    <Button android:textSize="19.0sp" android:textColor="@color/white" android:id="@id/arp_btn_wechat" android:background="@drawable/btn_register1" android:paddingLeft="30.0dip" android:paddingRight="30.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="45.0dip" android:layout_marginTop="30.0dip" android:text="@string/wechat_register" android:drawableLeft="@drawable/wechat_logo" android:layout_below="@id/arp_tv_or" android:layout_centerHorizontal="true" android:layout_marginStart="20.0dip" android:layout_marginEnd="20.0dip" />
+    <TextView android:textColor="@color/white" android:id="@id/tv_verification_code" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="50.0dip" android:text="@string/can_not_receive_code" android:layout_centerInParent="true" />
+</RelativeLayout>

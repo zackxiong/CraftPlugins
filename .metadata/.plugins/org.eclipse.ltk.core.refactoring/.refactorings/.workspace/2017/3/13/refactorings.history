@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 0 packages to &apos;ServerCtl/src/gui.panels&apos;&#x0A;- Destination element: &apos;ServerCtl/src/gui.panels&apos;&#x0A;- Update references to refactored element" description="Move packages" destination="=ServerCtl/src&lt;gui.panels" flags="589830" fragments="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.movePackages" stamp="1490772134746" version="1.0"/>
+</session>

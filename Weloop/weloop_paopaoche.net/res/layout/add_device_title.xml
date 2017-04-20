@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/add_device_bg" style="@style/title_style"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:id="@id/at_tv_title" android:text="@string/add_device" style="@style/title_center_text" />
+    <TextView android:id="@id/at_back" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/back" android:drawableLeft="@drawable/update_back" android:layout_marginStart="7.299988dip" style="@style/title_text" />
+</RelativeLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout style="@style/title_style"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="20.0sp" android:id="@id/at_tv_title" style="@style/title_center_text" />
+    <Button android:textSize="15.0sp" android:textColor="@color/white" android:id="@id/at_btn_left" android:background="@android:color/transparent" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginLeft="7.299988dip" android:text="@string/back" android:layout_centerVertical="true" android:drawableStart="@drawable/update_back" />
+    <Button android:textSize="15.0sp" android:textColor="@color/white" android:id="@id/at_btn_right" android:background="@android:color/transparent" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_centerVertical="true" android:layout_marginEnd="7.299988dip" android:layout_alignParentEnd="true" />
+    <View android:id="@id/at_view_point" android:background="@drawable/redpoint" android:visibility="gone" android:layout_width="8.0dip" android:layout_height="8.0dip" android:layout_marginTop="3.0dip" android:layout_alignTop="@id/at_btn_right" android:layout_alignRight="@id/at_btn_right" />
+    <View android:id="@id/at_view_point_start" android:background="@drawable/redpoint" android:visibility="gone" android:layout_width="8.0dip" android:layout_height="8.0dip" android:layout_marginTop="3.0dip" android:layout_alignTop="@id/at_btn_left" android:layout_alignRight="@id/at_btn_left" />
+</RelativeLayout>

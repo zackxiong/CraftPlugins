@@ -1,6 +1,0 @@
-package pc.info;
-
-public class InfoSet {
-	public CurrentInfo currentInfo = new CurrentInfo();
-
-}

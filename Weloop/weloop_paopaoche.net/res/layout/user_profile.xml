@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/goal_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include android:id="@id/title_bar" android:layout_width="fill_parent" android:layout_height="40.0dip" layout="@layout/user_profile_title" />
+    <ScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip">
+            <LinearLayout android:orientation="vertical" android:id="@id/profile" android:background="@drawable/user_profile_dialog_bg" android:paddingTop="18.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="50.0dip" android:paddingStart="20.0dip" android:paddingEnd="20.0dip" android:layout_marginStart="20.0dip" android:layout_marginEnd="20.0dip">
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                    <include android:id="@id/active_point" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="120.0dip" android:layout_marginEnd="10.0dip" layout="@layout/device_more_option" />
+                    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_below="@id/active_point">
+                        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip">
+                            <include android:gravity="center_vertical" android:id="@id/gold_count" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_marginStart="15.0dip" android:layout_marginEnd="15.0dip" layout="@layout/user_profile_item2" />
+                            <include layout="@layout/gray_line_vertical" />
+                            <include android:gravity="center_vertical" android:id="@id/silver_count" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_marginStart="15.0dip" android:layout_marginEnd="15.0dip" layout="@layout/user_profile_item2" />
+                            <include layout="@layout/gray_line_vertical" />
+                            <include android:gravity="center_vertical" android:id="@id/bronze_count" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_marginStart="15.0dip" android:layout_marginEnd="15.0dip" layout="@layout/user_profile_item2" />
+                        </LinearLayout>
+                        <include layout="@layout/gray_line" />
+                    </LinearLayout>
+                </RelativeLayout>
+                <ListView android:id="@id/profile_group" android:background="@android:color/transparent" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="350.0dip" android:divider="@color/device_gray" android:dividerHeight="1.0dip" />
+            </LinearLayout>
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <com.yf.smart.weloopx.android.ui.widget.CircularImageView android:id="@id/user_head" android:layout_width="100.0dip" android:layout_height="100.0dip" android:src="@drawable/default_head" android:layout_marginStart="50.0dip" style="@style/portrait" />
+                <com.yf.smart.weloopx.android.ui.widget.CircularImageView android:id="@id/user_edit" android:layout_width="33.0dip" android:layout_height="33.0dip" android:layout_marginTop="62.0dip" android:src="@drawable/my_edit" android:layout_marginStart="121.0dip" app:border_width="0.0px" app:border_color="@android:color/transparent" />
+                <TextView android:textSize="22.0sp" android:textColor="@color/ranking_normal" android:id="@id/nick_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="160.0dip" android:layout_marginTop="15.0dip" android:maxLines="2" android:layout_marginEnd="20.0dip" />
+            </FrameLayout>
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

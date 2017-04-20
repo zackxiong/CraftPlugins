@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@color/device_bg_gray" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include android:id="@id/goal_include" android:layout_width="fill_parent" android:layout_height="40.0dip" layout="@layout/all_title" />
+    <com.handmark.pulltorefresh.library.PullToRefreshScrollView android:id="@id/pull_refresh_scrollview" android:background="@color/device_bg_gray" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/goal_include" app:ptrShowIndicator="false">
+        <LinearLayout android:orientation="vertical" android:id="@id/scroll_child" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+            <RelativeLayout android:id="@id/my_rl_profile" android:background="@color/device_bg_gray" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <RelativeLayout android:orientation="horizontal" android:id="@id/profile" android:background="@color/device_bg_gray" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:layout_marginStart="10.0dip" android:layout_marginEnd="10.0dip">
+                    <com.yf.smart.weloopx.android.ui.widget.CircularImageView android:id="@id/portrait" android:layout_width="80.0dip" android:layout_height="80.0dip" android:src="@null" android:layout_alignParentStart="true" style="@style/portrait" />
+                    <TextView android:textSize="22.0sp" android:id="@id/nick_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:layout_marginStart="15.0dip" android:layout_toEndOf="@id/portrait" />
+                    <ImageView android:id="@id/option_more" android:layout_width="14.0dip" android:layout_height="22.0dip" android:src="@drawable/arrow" android:scaleType="fitCenter" android:layout_centerVertical="true" android:contentDescription="@string/app_name" android:layout_alignParentEnd="true" />
+                    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:baselineAligned="false" android:layout_below="@id/nick_name" android:layout_marginStart="15.0dip" android:layout_marginEnd="30.0dip" android:layout_toEndOf="@id/portrait">
+                        <include android:id="@id/standard_reaching_rate" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_marginEnd="10.0dip" layout="@layout/profile_head_item" />
+                        <include android:id="@id/active_point" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0" android:layout_marginEnd="10.0dip" layout="@layout/profile_head_item" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+            <RelativeLayout android:background="@color/device_bg_gray" android:paddingTop="10.0dip" android:paddingBottom="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="horizontal" android:background="@color/device_bg_gray" android:layout_width="fill_parent" android:layout_height="wrap_content" android:baselineAligned="false">
+                    <LinearLayout android:orientation="vertical" android:id="@id/my_message_filter" android:background="@color/device_bg_gray" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/my_message_filter" android:contentDescription="@string/app_name" />
+                        <TextView android:textStyle="bold" android:textColor="@color/ranking_gray" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/message_filter" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="vertical" android:id="@id/my_reminders" android:background="@color/device_bg_gray" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/my_reminders" android:contentDescription="@string/app_name" />
+                        <TextView android:textStyle="bold" android:textColor="@color/ranking_gray" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/reminders" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="vertical" android:id="@id/my_alarm" android:background="@color/device_bg_gray" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/my_alarm" android:contentDescription="@string/app_name" />
+                        <TextView android:textStyle="bold" android:textColor="@color/ranking_gray" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/set_alarm" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="vertical" android:id="@id/my_anti_disturb" android:background="@color/device_bg_gray" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0">
+                        <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/my_anti_disturb" android:contentDescription="@string/app_name" />
+                        <TextView android:textStyle="bold" android:textColor="@color/ranking_gray" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/night_anti_disturb" />
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+            <include layout="@layout/gray_line" />
+            <include android:id="@id/best_day" layout="@layout/user_profile_item" />
+            <View android:layout_gravity="end" android:background="@color/device_gray" android:layout_width="340.0dip" android:layout_height="1.0dip" />
+            <include android:id="@id/best_week" layout="@layout/user_profile_item" />
+            <View android:layout_gravity="end" android:background="@color/device_gray" android:layout_width="340.0dip" android:layout_height="1.0dip" />
+            <include android:id="@id/carrer_sum" layout="@layout/user_profile_item" />
+            <View android:layout_gravity="end" android:background="@color/device_gray" android:layout_width="340.0dip" android:layout_height="1.0dip" />
+            <include android:id="@id/series_finish_day" layout="@layout/user_profile_item" />
+            <View android:layout_gravity="end" android:background="@color/device_gray" android:layout_width="340.0dip" android:layout_height="1.0dip" />
+            <RelativeLayout android:background="@color/device_bg_gray" android:layout_width="fill_parent" android:layout_height="25.0dip" />
+            <include android:id="@id/my_rl_download_history_data" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginTop="2.0dip" android:layout_marginBottom="2.0dip" android:layout_marginStart="10.0dip" android:layout_marginEnd="10.0dip" layout="@layout/device_more_option" />
+            <include layout="@layout/gray_line" />
+            <include android:id="@id/set_target" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginTop="2.0dip" android:layout_marginBottom="2.0dip" android:layout_marginStart="20.0dip" android:layout_marginEnd="10.0dip" layout="@layout/device_more_option" />
+            <include layout="@layout/gray_line" />
+            <include android:id="@id/sync_swich" layout="@layout/device_switch_option" />
+            <include layout="@layout/gray_line" />
+            <RelativeLayout android:background="@color/white" android:layout_width="fill_parent" android:layout_height="44.0dip">
+                <TextView android:textSize="20.0sp" android:textColor="@color/text_gray1" android:gravity="center_vertical" android:id="@id/my_tv_location_msg" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/trajectory" android:layout_marginStart="20.0dip" android:layout_alignParentStart="true" />
+                <com.yf.smart.weloopx.android.ui.widget.OptionToggleButton android:id="@id/my_otb_location" android:background="@drawable/toggle_selector" android:layout_width="52.0dip" android:layout_height="26.0dip" android:textOn="" android:textOff="" android:text="" android:layout_centerVertical="true" android:layout_marginEnd="10.0dip" android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+            <include layout="@layout/gray_line" />
+            <RelativeLayout android:id="@id/my_rl_bind" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="44.0dip">
+                <TextView android:textSize="20.0sp" android:textColor="@color/text_gray1" android:gravity="center_vertical" android:id="@id/my_tv_bind_account" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/account_bind" android:layout_marginStart="20.0dip" android:layout_alignParentStart="true" />
+                <TextView android:textSize="15.0sp" android:textColor="@color/red" android:gravity="center" android:id="@id/my_tv_bind_msg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/unbind" android:layout_centerVertical="true" android:layout_marginEnd="30.0dip" android:layout_alignParentEnd="true" />
+                <ImageView android:id="@id/my_iv_bind_go" android:layout_width="11.0dip" android:layout_height="18.0dip" android:src="@drawable/arrow" android:scaleType="fitCenter" android:layout_centerVertical="true" android:contentDescription="@string/app_name" android:layout_marginEnd="10.0dip" android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+            <RelativeLayout android:id="@id/my_rl_bind_info" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="44.0dip">
+                <ImageView android:id="@id/my_iv_wechat" android:layout_width="35.0dip" android:layout_height="35.0dip" android:src="@drawable/wechat_bind" android:scaleType="fitCenter" android:layout_centerVertical="true" android:contentDescription="@string/app_name" android:layout_marginStart="20.0dip" android:layout_alignParentStart="true" />
+                <ImageView android:id="@id/my_iv_phone" android:layout_width="35.0dip" android:layout_height="35.0dip" android:src="@drawable/phone_bind" android:scaleType="fitCenter" android:layout_centerVertical="true" android:contentDescription="@string/app_name" android:layout_marginStart="10.0dip" android:layout_toEndOf="@id/my_iv_wechat" />
+            </RelativeLayout>
+            <include layout="@layout/gray_line" />
+            <include android:id="@id/my_rl_version_info" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginTop="2.0dip" android:layout_marginBottom="2.0dip" android:layout_marginStart="20.0dip" android:layout_marginEnd="10.0dip" layout="@layout/device_more_option" />
+            <include layout="@layout/gray_line" />
+            <include android:id="@id/my_rl_evaluation" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginTop="2.0dip" android:layout_marginBottom="2.0dip" android:layout_marginStart="10.0dip" android:layout_marginEnd="10.0dip" layout="@layout/device_more_option" />
+            <include android:id="@id/my_rl_goal_notification" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginTop="2.0dip" android:layout_marginBottom="2.0dip" android:layout_marginStart="20.0dip" android:layout_marginEnd="10.0dip" layout="@layout/device_more_option" />
+        </LinearLayout>
+    </com.handmark.pulltorefresh.library.PullToRefreshScrollView>
+</RelativeLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="16.0sp" android:textColor="@color/green" android:gravity="center_horizontal" android:id="@id/label" android:layout_width="fill_parent" android:layout_height="30.0dip" android:text="12月1日-7日" />
+    <com.yf.smart.weloopx.android.ui.widget.ChartView android:id="@id/chart" android:layout_width="wrap_content" android:layout_height="wrap_content" app:ySize="160.0dip" app:labelHeight="20.0dip" />
+</LinearLayout>
