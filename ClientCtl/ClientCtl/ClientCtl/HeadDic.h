@@ -2,6 +2,8 @@
 #include "stdafx.h"
 
 struct HeadDic {
-	int
-		keepAlive = 1;
+	char*
+		keepAlive = "alive";
 };
+
+extern HeadDic headDic;

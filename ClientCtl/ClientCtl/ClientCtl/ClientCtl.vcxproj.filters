@@ -51,6 +51,12 @@
     <ClInclude Include="HeadDic.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Phaser.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Package.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -78,6 +84,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="HeadDic.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Phaser.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Package.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

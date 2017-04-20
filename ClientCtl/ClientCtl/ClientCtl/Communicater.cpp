@@ -19,7 +19,9 @@ Communicater::Communicater(){
 Communicater::Communicater(const char * ip, const char* port){
 	this->connectTillSuccess(ip, port);
 	//send
-	this->mySend("012345678");
+	this->ip = ip;
+	this->port = port;
+	this->mySend("connected");
 }
 
 

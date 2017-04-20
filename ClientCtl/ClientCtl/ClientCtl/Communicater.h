@@ -20,6 +20,8 @@ public:
 		hints;
 	SOCKET ConnectSocket = INVALID_SOCKET;
 	bool socketSuccess;
+	const char * ip;
+	const char* port;
 
 	bool connectTillSuccess(const char * ip, const char * port);
 	bool connectTillSuccess(const char * ip, const char * port, int count);

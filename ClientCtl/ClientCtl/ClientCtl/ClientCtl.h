@@ -1,4 +1,5 @@
 
+#pragma once
 #include "stdafx.h"
 
 #include "Windows.h"
@@ -8,6 +9,8 @@
 #include "Logger.h"
 #include "InfoSenser.h"
 #include "Communicater.h"
+#include "HeadDic.h"
+
 
 extern AliveKeeper* AKr;
 extern Logger* logger;
@@ -24,3 +27,4 @@ extern DWORD WINAPI serviceCheckerThread(LPVOID pM);
 extern DWORD WINAPI communicaterThread(LPVOID pM);
 extern HANDLE checkerHandle, setterHandle, aliveKeeperHandle;
 extern Logger* logger;
+bool send_keepalive_message();

