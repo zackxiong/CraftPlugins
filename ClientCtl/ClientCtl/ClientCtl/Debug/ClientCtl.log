@@ -1,15 +1,12 @@
-﻿  Phaser.cpp
-d:\netbeans-java\craftplugins\clientctl\clientctl\clientctl\phaser.cpp(24): warning C4101: “e”: 未引用的局部变量
+﻿  md5.cpp
   Package.cpp
-  正在生成代码...
-  正在编译...
-  ClientCtl.cpp
-d:\netbeans-java\craftplugins\clientctl\clientctl\clientctl\clientctl.cpp(142): warning C4101: “dwE”: 未引用的局部变量
-d:\netbeans-java\craftplugins\clientctl\clientctl\clientctl\clientctl.cpp(153): warning C4800: “int”: 将值强制为布尔值“true”或“false”(性能警告)
+  HeadDic.cpp
+  Communicater.cpp
   正在生成代码...
   正在跳过...(未检测到相关更改)
   Service.cpp
+  Phaser.cpp
   Logger.cpp
-  Communicater.cpp
+  ClientCtl.cpp
   ClientCtl.vcxproj -> D:\netbeans-java\CraftPlugins\ClientCtl\ClientCtl\Debug\ClientCtl.exe
   ClientCtl.vcxproj -> D:\netbeans-java\CraftPlugins\ClientCtl\ClientCtl\Debug\ClientCtl.pdb (Full PDB)

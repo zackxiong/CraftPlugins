@@ -128,6 +128,8 @@ DWORD WINAPI communicaterThread(LPVOID pM){
 }
 
 DWORD WINAPI keepAliveThread(LPVOID pM) {
+	Phaser phaser;
+	phaser.set_content("test");
 	while(true){
 		while (aliveKeeperNeed) {
 			_sleep(1000);

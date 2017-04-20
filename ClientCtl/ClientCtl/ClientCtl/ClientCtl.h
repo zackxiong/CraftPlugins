@@ -10,6 +10,7 @@
 #include "InfoSenser.h"
 #include "Communicater.h"
 #include "HeadDic.h"
+#include "Phaser.h"
 
 
 extern AliveKeeper* AKr;

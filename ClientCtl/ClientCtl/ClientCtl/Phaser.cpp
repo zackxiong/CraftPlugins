@@ -51,3 +51,30 @@ bool Phaser::set_content(char * content){
 		return false;
 	}
 }
+
+Package Phaser::finalize(){
+	Package pkg;
+	try {
+		std::string raw_package = intent + content;//合并头和内容，开始计算md5
+		//断点：准备弄好算MD5，然后写keepalive
+		int i;
+		unsigned char encrypt[] = "admin";//21232f297a57a5a743894a0e4a801fc3
+		unsigned char decrypt[16];
+		MD5_CTX md5;
+		MD5Init(&md5);
+		MD5Update(&md5, encrypt, strlen((char *)encrypt));
+		MD5Final(&md5, decrypt);
+		printf("加密前:%s\n加密后:", encrypt);
+		for (i = 0; i<16; i++)
+		{
+			printf("%02x", decrypt[i]);
+		}
+
+		std::string beg("<package>"), end("</package>");
+		std::string fine_package = beg + raw_package + end;
+	}
+	catch (void* e) {
+		return pkg;
+	}
+	return this->package;
+}
