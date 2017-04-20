@@ -1,9 +1,7 @@
 package gui.panels.logPanel;
 
-import gui.MyColor;
 import gui.StatusFlag;
 
-import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.text.SimpleDateFormat;
@@ -17,7 +15,6 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import javax.swing.JTextPane;
 
 public class LogPanel extends JPanel implements Runnable{
 	private static final long serialVersionUID = -6111206288933781387L;
@@ -69,21 +66,23 @@ public class LogPanel extends JPanel implements Runnable{
  		//监视器
     	tflagChecker.start();
     	log("Starting Checker Thread on: "+tflagChecker.getId());
+    	//log( "<html><font color=\"#FF0000\">我是红色字体</font></html> ");
     }
  		
  	public void log(String msg){
- 		//jtextarea.setText(jlabel.getText().replace("</html>", "")+msg+"<br></html>");
- 		jTextArea_logArea.setText(jTextArea_logArea.getText()+"["+df_date.format(new Date())+"] "+msg+"\n");
- 		jTextArea_logArea.setCaretPosition(jTextArea_logArea.getText().length());
- 		System.out.print("["+df_date.format(new Date())+"] "+msg+"\n");
+ 		synchronized (LogPanel.class){
+ 			//jtextarea.setText(jlabel.getText().replace("</html>", "")+msg+"<br></html>");
+ 			jTextArea_logArea.setText(jTextArea_logArea.getText()+"["+df_date.format(new Date())+"] "+msg+"\n");
+ 			jTextArea_logArea.setCaretPosition(jTextArea_logArea.getText().length());
+ 			System.out.print("["+df_date.format(new Date())+"] "+msg+"\n");
+ 		}
  	}
  	@Override
  	public void run(){
- 		
  		try {
  			while(true){
  				this.jlabel_status.setForeground(StatusFlag.getHighestStatus());
- 				Thread.sleep(2000);
+ 				Thread.sleep(500);
  			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();

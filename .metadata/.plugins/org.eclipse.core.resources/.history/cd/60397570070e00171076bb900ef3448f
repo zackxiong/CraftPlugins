@@ -1,0 +1,6 @@
+package communicater.packages;
+
+public class Package {
+	public int head;
+
+}

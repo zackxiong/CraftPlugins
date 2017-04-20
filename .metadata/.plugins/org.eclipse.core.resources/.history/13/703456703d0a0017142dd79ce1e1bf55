@@ -1,0 +1,5 @@
+package pc.info;
+
+public interface Info {
+
+}

@@ -1,0 +1,11 @@
+package communicater.packages;
+
+public class Phaser {
+	int length;
+	
+	public Package phase(String data, int pakLength){
+		
+		return null;
+	}
+
+}

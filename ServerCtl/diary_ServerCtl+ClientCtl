@@ -1,0 +1,7 @@
+Diary_ServerCtl+ClientCtl
+2017年 03月 17日 星期五 08:09:05 CST
+I almost forgot about the diary stuff even if I have been doing it for a month or more. Till now, some of the fundamental classes has been written. What's focused on is the protocol part in that how to encrypt and decrypt the packages. Also, how to define my own packages. 
+
+I need to further complete the test encapsulation of basic classes so that I could build functions on them. 
+
+Even if this tool was first designed to be a substitute of TeamViewer in that TeamViewer is too slow, it's now turning more into a rootkit. 

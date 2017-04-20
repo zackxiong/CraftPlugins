@@ -1,0 +1,6 @@
+package pc.info;
+
+public interface Info {
+	public String printAll(Stream stream)
+
+}

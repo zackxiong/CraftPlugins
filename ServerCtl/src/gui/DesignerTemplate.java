@@ -3,12 +3,7 @@ package gui;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.JTextArea;
-import java.awt.BorderLayout;
-import javax.swing.JScrollPane;
 import java.awt.GridLayout;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
 
 public class DesignerTemplate {
 

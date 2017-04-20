@@ -18,7 +18,7 @@ public class Gui extends JFrame{
 
 
 	public static void startGui(String[] args) {
-    	StatusFlag.setPending(true);
+    	StatusFlag.setIsPending();
 		//frame 初始化
         jFrame_mainWindow.setVisible(true);  
         jFrame_mainWindow.setSize(1000,800);  
@@ -48,7 +48,7 @@ public class Gui extends JFrame{
 	}
 	
 	public static void displayException(Exception e){
-		StatusFlag.setError(true);
+		StatusFlag.setIsError();
 		String errInfo = "Error message: " + e.getMessage();
 		for(StackTraceElement ste : e.getStackTrace()){
 			errInfo = errInfo + "\n" + ste.toString();

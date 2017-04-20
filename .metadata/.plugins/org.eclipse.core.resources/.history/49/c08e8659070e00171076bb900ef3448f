@@ -1,0 +1,5 @@
+package communicater.packages;
+
+public class Package {
+
+}

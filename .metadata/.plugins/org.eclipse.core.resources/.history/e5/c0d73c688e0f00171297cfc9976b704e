@@ -1,0 +1,23 @@
+package communicater.packages;
+
+import communicater.Head;
+
+public class Phaser {
+	int length = 800;
+	
+	public Phaser(int length) {
+		super();
+		this.length = length;
+	}
+
+	public Package phase(String data, int pakLength){
+		this.length = pakLength;
+		return this.phase(data);
+	}
+	
+	public Package phase(String data){
+		if(data.startsWith(Head.INVALID+""));
+		return null;
+	}
+
+}
