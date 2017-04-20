@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/goal_bg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:custom="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="horizontal" android:id="@id/goal_rl_total" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginTop="10.0dip">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:textColor="@color/goal_total_tv" android:id="@id/goal_tv_activity_score" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
+            <TextView android:textAppearance="?android:textAppearanceSmall" android:textStyle="bold" android:textColor="@color/goal_total_tv_msg" android:id="@id/textView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/completeness" android:layout_below="@id/goal_tv_activity_score" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:textColor="@color/goal_total_tv" android:id="@id/goal_tv_distance" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0.00" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
+            <TextView android:textAppearance="?android:textAppearanceSmall" android:textStyle="bold" android:textColor="@color/goal_total_tv_msg" android:id="@id/textView0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/distance_km" android:layout_below="@id/goal_tv_distance" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <TextView android:textAppearance="?android:textAppearanceMedium" android:textColor="@color/goal_total_tv" android:id="@id/goal_tv_steps" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
+            <TextView android:textAppearance="?android:textAppearanceSmall" android:textStyle="bold" android:textColor="@color/goal_total_tv_msg" android:id="@id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/steps" android:layout_below="@id/goal_tv_steps" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+    </LinearLayout>
+    <RelativeLayout android:id="@id/relmainlayout" android:layout_width="fill_parent" android:layout_height="210.0dip" android:layout_below="@id/goal_rl_total">
+        <Button android:id="@id/btndailyleft" android:background="@drawable/daily_to_left_style" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <com.yf.smart.weloopx.android.ui.widget.SmoothCircularProgressBar android:id="@id/circleProgressBar" android:layout_width="200.0dip" android:layout_height="200.0dip" android:layout_centerInParent="true" custom:barWidth="10.0dip" custom:barColors="@array/bar_colors" custom:finishedColors="@array/finished_colors" custom:bgColors="@array/bg_colors" />
+        <Button android:id="@id/btndailyright" android:background="@drawable/back_today" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="25.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <RelativeLayout android:id="@id/lilbarlayout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerInParent="true">
+            <TextView android:textSize="54.0sp" android:textColor="@color/goal_total_tv" android:id="@id/txtvalue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:layout_centerInParent="true" />
+            <ImageView android:background="@drawable/unit_calorie" android:layout_width="18.0dip" android:layout_height="18.0dip" android:layout_marginTop="5.0dip" android:layout_toRightOf="@id/txtvalue" android:layout_alignTop="@id/txtvalue" />
+            <TextView android:textSize="18.0sp" android:textColor="@color/gray" android:id="@id/txttime" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="今天" android:layout_above="@id/txtvalue" android:layout_centerHorizontal="true" />
+            <View android:id="@id/dv_line" android:background="@color/gray" android:visibility="visible" android:layout_width="110.0dip" android:layout_height="1.0dip" android:layout_below="@id/txtvalue" android:layout_centerHorizontal="true" />
+            <TextView android:textSize="22.0sp" android:textColor="@color/gray" android:id="@id/txtpedometervalue" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:layout_below="@id/dv_line" android:layout_centerHorizontal="true" />
+            <TextView android:textSize="16.0sp" android:textColor="@color/gray" android:id="@id/txtinfo" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/item_calories" android:layout_below="@id/txtpedometervalue" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/dvh_rl_war" android:background="@drawable/board" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="40.0dip" android:layout_below="@id/relmainlayout" android:layout_centerHorizontal="true">
+        <TextView android:textSize="16.0sp" android:textColor="#ff9b9b9b" android:id="@id/dvh_tv_war" android:paddingLeft="20.0dip" android:paddingTop="10.0dip" android:paddingRight="20.0dip" android:paddingBottom="10.0dip" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/pull_down_updata" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+</RelativeLayout>

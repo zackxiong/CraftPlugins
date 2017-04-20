@@ -1,9 +1,0 @@
-package pc.info;
-
-public interface Info {
-	
-	public Info(){
-		
-	}
-
-}

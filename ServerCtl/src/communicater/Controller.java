@@ -26,11 +26,6 @@ public class Controller implements Runnable{
 	
 	public Controller(){
 		this(1800);
-		try {
-			Gui.addPC(new PC("test from controller"), this.getClass());
-		} catch (Exception e) {
-			//Gui.displayException(e);
-		}
 	}
 
 	public Controller(int port){

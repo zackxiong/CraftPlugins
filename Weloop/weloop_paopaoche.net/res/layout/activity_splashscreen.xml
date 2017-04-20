@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/imageView1" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/start" android:scaleType="fitXY" />
+    <TextView android:textSize="14.0sp" android:textColor="#ff888888" android:gravity="center_horizontal" android:layout_gravity="bottom" android:id="@id/tv_version" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" android:singleLine="true" />
+</FrameLayout>

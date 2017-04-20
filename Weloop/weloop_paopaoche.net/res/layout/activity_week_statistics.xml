@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="#fff7f7f7" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/ws_rl_title" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_alignParentTop="true" android:layout_alignParentStart="true" layout="@layout/all_title" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/ws_rl_title">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:orientation="horizontal" android:id="@id/ws_ll_btns" android:layout_width="fill_parent" android:layout_height="35.0dip" android:layout_alignParentStart="true">
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <Button android:textSize="18.0sp" android:textColor="@color/green" android:id="@id/ws_btn_sport" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/amount_exericise" android:drawableBottom="@color/green" />
+                    <View android:id="@id/ws_v_sport_line" android:background="@color/green" android:layout_width="fill_parent" android:layout_height="2.5dip" android:layout_alignParentBottom="true" />
+                </RelativeLayout>
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <Button android:textSize="18.0sp" android:textColor="@color/green" android:id="@id/ws_btn_sleep" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/sleep_time" />
+                    <View android:id="@id/ws_v_sleep_line" android:background="@color/green" android:layout_width="fill_parent" android:layout_height="2.5dip" android:layout_alignParentBottom="true" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/sw_ll_week_sleep" android:background="@color/white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/week_total_height" android:layout_below="@id/ws_ll_btns" android:layout_centerHorizontal="true">
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <TextView android:id="@id/sw_sleep_tv_awake_time" android:layout_marginTop="10.0dip" android:text="0%" style="@style/statistics_week_average" />
+                    <TextView android:id="@id/ws_tv_average_daiy_calories_msg_title" android:text="@string/awake_time" android:layout_below="@id/sw_sleep_tv_awake_time" style="@style/statistics_week_average_msg" />
+                    <ImageView android:background="@drawable/awake_sleep_icon" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginRight="1.0dip" android:layout_marginBottom="2.0dip" android:layout_toLeftOf="@id/ws_tv_average_daiy_calories_msg_title" android:layout_alignBottom="@id/ws_tv_average_daiy_calories_msg_title" />
+                </RelativeLayout>
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <TextView android:id="@id/sw_sleep_tv_shallow_time" android:layout_marginTop="10.0dip" android:text="0%" style="@style/statistics_week_average" />
+                    <TextView android:id="@id/sw_sleep_tv_shallow_time_msg" android:text="@string/shallow_sleep_time" android:layout_below="@id/sw_sleep_tv_shallow_time" style="@style/statistics_week_average_msg" />
+                    <ImageView android:background="@drawable/shallow_sleep_icon" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginRight="1.0dip" android:layout_marginBottom="2.0dip" android:layout_toLeftOf="@id/sw_sleep_tv_shallow_time_msg" android:layout_alignBottom="@id/sw_sleep_tv_shallow_time_msg" />
+                </RelativeLayout>
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <TextView android:id="@id/sw_sleep_tv_deep_time" android:layout_marginTop="10.0dip" android:text="0%" style="@style/statistics_week_average" />
+                    <TextView android:id="@id/sw_sleep_tv_deep_time_msg" android:text="@string/deep_sleep_time" android:layout_below="@id/sw_sleep_tv_deep_time" style="@style/statistics_week_average_msg" />
+                    <ImageView android:background="@drawable/deep_sleep_icon" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginRight="1.0dip" android:layout_marginBottom="2.0dip" android:layout_toLeftOf="@id/sw_sleep_tv_deep_time_msg" android:layout_alignBottom="@id/sw_sleep_tv_deep_time_msg" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout android:orientation="horizontal" android:id="@id/sw_ll_week_sport" android:background="@color/white" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="@dimen/week_total_height" android:layout_below="@id/ws_ll_btns" android:layout_centerHorizontal="true">
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <TextView android:id="@id/sw_sport_tv_activity_point" android:layout_marginTop="10.0dip" android:text="0" style="@style/statistics_week_average" />
+                    <TextView android:text="@string/activity_point" android:layout_below="@id/sw_sport_tv_activity_point" style="@style/statistics_week_average_msg" />
+                </RelativeLayout>
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <TextView android:id="@id/sw_sport_tv_calories" android:layout_marginTop="10.0dip" android:text="0" style="@style/statistics_week_average" />
+                    <TextView android:id="@id/sw_sport_tv_shallow_time_msg" android:text="@string/calorie" android:layout_below="@id/sw_sport_tv_calories" style="@style/statistics_week_average_msg" />
+                </RelativeLayout>
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <TextView android:id="@id/sw_sport_tv_distance" android:layout_marginTop="10.0dip" android:text="0" style="@style/statistics_week_average" />
+                    <TextView android:text="@string/distance_km" android:layout_below="@id/sw_sport_tv_distance" style="@style/statistics_week_average_msg" />
+                </RelativeLayout>
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <TextView android:id="@id/sw_sport_tv_steps" android:layout_marginTop="10.0dip" android:text="0" style="@style/statistics_week_average" />
+                    <TextView android:text="@string/steps" android:layout_below="@id/sw_sport_tv_steps" style="@style/statistics_week_average_msg" />
+                </RelativeLayout>
+            </LinearLayout>
+            <android.support.v4.view.ViewPager android:id="@id/ws_viewpager" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/week_view_pager" android:layout_marginTop="@dimen/week_total_height" android:layout_below="@id/ws_ll_btns" />
+            <LinearLayout android:id="@id/ws_ll_total_data" android:layout_marginTop="5.0dip" android:layout_below="@id/ws_viewpager" style="@style/statistics_ll_item">
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <TextView android:textSize="30.0sp" android:id="@id/ws_tv_average_daiy_calories" style="@style/statistics_week_average" />
+                    <TextView android:textStyle="bold" android:textColor="@color/gray" android:id="@id/ws_tv_average_daiy_calories_msg" android:text="@string/average_daily_calories" android:layout_below="@id/ws_tv_average_daiy_calories" style="@style/statistics_week_average_msg" />
+                </RelativeLayout>
+                <View android:layout_gravity="center" android:background="@color/gray" android:layout_width="1.0dip" android:layout_height="60.0dip" />
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+                    <TextView android:textSize="30.0sp" android:id="@id/ws_tv_average_daiy_state" style="@style/statistics_week_average" />
+                    <TextView android:textStyle="bold" android:textColor="@color/gray" android:id="@id/ws_tv_average_daiy_state_msg" android:text="@string/compare_last_week" android:layout_below="@id/ws_tv_average_daiy_state" style="@style/statistics_week_average_msg" />
+                </RelativeLayout>
+            </LinearLayout>
+            <RelativeLayout android:layout_marginTop="8.0dip" android:layout_below="@id/ws_ll_total_data" style="@style/statistics_ll_item">
+                <ImageView android:id="@id/ws_iv_mark" android:background="@drawable/run_icon" android:layout_width="35.0dip" android:layout_height="35.0dip" android:layout_marginLeft="30.0dip" android:layout_marginTop="25.0dip" android:layout_alignParentTop="true" />
+                <SeekBar android:id="@id/ws_sb" android:layout_width="fill_parent" android:layout_height="25.0dip" android:layout_marginLeft="10.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="5.0dip" android:progressDrawable="@drawable/seekbar_sport" android:thumb="@null" android:layout_alignBottom="@id/ws_iv_mark" android:layout_toEndOf="@id/ws_iv_mark" />
+                <TextView android:textAppearance="?android:textAppearanceMedium" android:textSize="15.0sp" android:textColor="@color/gray" android:id="@id/ws_tv_mark" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="健康运动时间(周)" android:layout_below="@id/ws_iv_mark" android:layout_alignStart="@id/ws_iv_mark" />
+                <TextView android:textAppearance="?android:textAppearanceMedium" android:textSize="15.0sp" android:textColor="@color/gray" android:id="@id/ws_tv_cur_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignTop="@id/ws_tv_mark" android:layout_alignEnd="@id/ws_sb" />
+            </RelativeLayout>
+            <ProgressBar android:id="@id/ws_pb" android:layout_width="45.0dip" android:layout_height="45.0dip" android:layout_marginTop="48.0dip" android:layout_centerInParent="true" style="?android:attr/progressBarStyleLarge" />
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

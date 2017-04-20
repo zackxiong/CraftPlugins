@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/aii_rl_parent" android:layout_width="fill_parent" android:layout_height="60.0dip">
+        <TextView android:id="@id/aii_tv_topline" android:background="@color/line" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_alignParentTop="true" />
+        <TextView android:id="@id/aii_tv_bottom_line" android:background="@color/line" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_alignParentBottom="true" />
+        <TextView android:id="@id/aii_tv_bottom_center_line" android:background="@color/line" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_alignParentLeft="true" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+        <TextView android:textAppearance="?android:textAppearanceLarge" android:textSize="19.0sp" android:textColor="#ff444444" android:id="@id/aii_tv_app_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:ems="7" android:singleLine="true" android:layout_toRightOf="@id/aii_iv_icon" android:layout_centerVertical="true" />
+        <TextView android:visibility="invisible" android:layout_width="1.0dip" android:layout_height="50.0dip" android:layout_alignRight="@id/aii_tv_bottom_center_line" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/aii_iv_del" android:background="@drawable/app_unchoice" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginRight="15.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:contentDescription="@string/action_settings" />
+        <ImageView android:id="@id/aii_iv_icon" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginLeft="12.0dip" android:layout_alignParentLeft="true" android:layout_centerVertical="true" android:contentDescription="@string/action_settings" />
+    </RelativeLayout>
+</FrameLayout>

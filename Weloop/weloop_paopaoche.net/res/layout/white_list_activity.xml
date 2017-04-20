@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/whitegrey" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/ul_rl_titlebar" android:background="@color/green" android:layout_width="fill_parent" android:layout_height="45.0dip">
+        <TextView android:textSize="22.0sp" android:textColor="#ffffffff" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/message_filter" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/wlf_iv_back" android:background="@drawable/update_back" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginLeft="7.299988dip" android:layout_alignParentLeft="true" android:layout_centerVertical="true" android:onClick="back" android:contentDescription="@string/app_name" />
+        <ImageView android:id="@id/ac_btn_add" android:background="@drawable/add" android:visibility="invisible" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginRight="7.299988dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:onClick="add" android:contentDescription="@string/app_name" />
+    </RelativeLayout>
+    <TextView android:textAppearance="?android:textAppearanceLarge" android:textSize="15.0sp" android:textColor="@color/text_normal" android:id="@id/rv_tv_msg" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="14.0dip" android:text="@string/message_filter_tips" android:layout_below="@id/ul_rl_titlebar" android:layout_alignParentLeft="true" />
+    <RelativeLayout android:background="@drawable/app_item_bg_normal" android:layout_width="320.0dip" android:layout_height="45.0dip" android:layout_marginTop="70.0dip" android:layout_centerHorizontal="true">
+        <Button android:id="@id/plus" android:background="@drawable/plus" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_centerHorizontal="true" android:layout_centerVertical="true" android:onClick="add" />
+    </RelativeLayout>
+    <ListView android:id="@id/wlf_lv" android:scrollbars="none" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="40.0dip" android:listSelector="@drawable/list_selector_rect_gray" android:divider="@null" android:dividerHeight="0.0sp" android:layout_below="@id/rv_tv_msg" android:layout_alignParentLeft="true" />
+</RelativeLayout>

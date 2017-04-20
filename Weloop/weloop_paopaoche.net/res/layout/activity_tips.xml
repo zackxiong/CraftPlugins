@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:background="@drawable/alert_find_bg" android:layout_width="200.0dip" android:layout_height="90.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="?android:textAppearanceLarge" android:textSize="19.0sp" android:textColor="@color/whitegrey" android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/rv_tv_msg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/alread_find_phone" android:layout_weight="0.9" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <TextView android:background="#ff65686b" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_alignParentTop="true" />
+        <TextView android:id="@id/at_tv_msg" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/app_name" />
+        <Button android:textAppearance="?android:textAppearanceLarge" android:textSize="19.0sp" android:textColor="#ff05c195" android:id="@id/btn_ok" android:background="@null" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="5.0dip" android:text="@string/ok" android:onClick="onOk" />
+    </RelativeLayout>
+</LinearLayout>

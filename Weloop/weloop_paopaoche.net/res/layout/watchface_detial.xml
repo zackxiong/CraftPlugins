@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="vertical" android:background="@drawable/alert_bg" android:paddingTop="10.0dip" android:paddingBottom="15.0dip" android:layout_width="320.0dip" android:layout_height="240.0dip" android:paddingStart="20.0dip" android:paddingEnd="20.0dip">
+        <TextView android:textSize="22.0sp" android:textColor="@color/text_gray1" android:gravity="center" android:id="@id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" android:text="@string/watchface_info" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/btn_root" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+            <Button android:textSize="22.0sp" android:textColor="@color/watchface_detail_btn_text_color" android:id="@id/exit_favorite" android:background="@drawable/shape_yellow_selector" android:layout_width="0.0dip" android:layout_height="50.0dip" android:text="@string/exit_favorite" android:layout_weight="1.0" android:layout_marginEnd="10.0dip" />
+            <Button android:textSize="22.0sp" android:textColor="@color/watchface_detail_btn_text_color" android:id="@id/sync" android:background="@drawable/shape_blue_selector" android:layout_width="0.0dip" android:layout_height="50.0dip" android:text="@string/synchronize" android:layout_weight="1.0" android:layout_marginStart="10.0dip" />
+        </LinearLayout>
+        <ImageView android:id="@id/watchface_img" android:layout_width="90.0dip" android:layout_height="100.0dip" android:layout_marginTop="8.0dip" android:src="@drawable/watchface_null" android:scaleType="fitCenter" android:layout_below="@id/title" android:layout_alignParentStart="true" />
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/btn_root" android:layout_below="@id/title" android:layout_marginStart="10.0dip" android:layout_toEndOf="@id/watchface_img">
+            <include android:id="@id/name" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" layout="@layout/watchface_detail_item" />
+            <include android:id="@id/author" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" layout="@layout/watchface_detail_item" />
+            <include android:id="@id/download" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" layout="@layout/watchface_detail_item" />
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>

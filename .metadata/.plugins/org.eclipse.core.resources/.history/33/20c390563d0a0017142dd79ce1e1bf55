@@ -1,9 +1,0 @@
-package pc.info;
-
-public class Info {
-	
-	public Info(){
-		
-	}
-
-}
