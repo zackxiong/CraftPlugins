@@ -153,6 +153,24 @@ int Communicater::mySend(std::string message){
 	return true;
 }
 
+int Communicater::mySend(Package p) {
+	std::string message = p.str_data;
+	if (message.find("\n") != message.npos) {
+		std::cout << "line break found" << std::endl;
+	}
+	else {
+		//message.append("\n");
+		std::cout << "line break added(canceled)" << std::endl;
+	}
+	iResult = send(ConnectSocket, message.data(), (int)strlen(message.data()), 0);
+	if (iResult == SOCKET_ERROR) {
+		std::cout << "Connect error" << std::endl;
+		printf("send failed: %d\n", WSAGetLastError());
+		return false;
+	}
+	return true;
+}
+
 int Communicater::mySend(int number) {
 	char message[99];
 	itoa(number, message, 10);
@@ -180,8 +198,7 @@ bool Communicater::send_keep_alive(){
 	p.set_type(headDic.keepAlive);
 	p.set_intent(headDic.keepAlive);
 	p.set_content(headDic.keepAlive);
-	p.finalize();
-	return (bool)this->mySend(headDic.keepAlive);
+	return (bool)this->mySend(p.finalize().is_done?p.finalize():Package());
 }
 
 Communicater &operator << (Communicater &c, char *a){

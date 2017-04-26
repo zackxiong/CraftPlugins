@@ -29,6 +29,7 @@ public:
 	bool myLookUp(const char * ip, const char* port);
 	bool myConnect();
 	int mySend(std::string message);
+	int mySend(Package p);
 	int mySend(int number);
 	int mySend(byte data[]);
 

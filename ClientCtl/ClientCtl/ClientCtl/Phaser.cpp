@@ -73,12 +73,13 @@ Package Phaser::finalize(){
 		}
 		this->hash = std::string("<hash>") + unc_to_str(decrypt) + std::string("</hash>");//临时计算hash
 		
-		std::string beg("<package>"), end("</package>");
+		std::string beg("<package>"), end("</package>\n");//整个end可以用于判断
 		std::string fine_package = beg + raw_package + end;
 		std::cout << "Phaser: phased: " << std::endl << fine_package.data() << std::endl;
 
 		std::cout << "Now generating package!" << std::endl;
-		this->package.data = fine_package.data();
+		this->package.c_data = fine_package.data();
+		this->package.str_data = fine_package;
 		this->package.is_done = true;
 	}
 	catch (void* e) {

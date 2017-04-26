@@ -1,7 +1,4 @@
-﻿  Phaser.cpp
-d:\netbeans-java\craftplugins\clientctl\clientctl\clientctl\phaser.cpp(24): warning C4101: “e”: 未引用的局部变量
-d:\netbeans-java\craftplugins\clientctl\clientctl\clientctl\phaser.cpp(37): warning C4101: “e”: 未引用的局部变量
-d:\netbeans-java\craftplugins\clientctl\clientctl\clientctl\phaser.cpp(50): warning C4101: “e”: 未引用的局部变量
-d:\netbeans-java\craftplugins\clientctl\clientctl\clientctl\phaser.cpp(84): warning C4101: “e”: 未引用的局部变量
+﻿  Communicater.cpp
+d:\netbeans-java\craftplugins\clientctl\clientctl\clientctl\communicater.cpp(201): warning C4800: “int”: 将值强制为布尔值“true”或“false”(性能警告)
   ClientCtl.vcxproj -> D:\netbeans-java\CraftPlugins\ClientCtl\ClientCtl\Debug\ClientCtl.exe
   ClientCtl.vcxproj -> D:\netbeans-java\CraftPlugins\ClientCtl\ClientCtl\Debug\ClientCtl.pdb (Full PDB)
