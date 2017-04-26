@@ -19,3 +19,5 @@ public:
 
 };
 
+unsigned char* str_to_unc(std::string str);
+std::string unc_to_str(unsigned char* unc);

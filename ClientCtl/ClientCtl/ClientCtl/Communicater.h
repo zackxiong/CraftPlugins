@@ -6,7 +6,7 @@
 #include "Service.h"
 #include <string>
 #include <Windows.h>
-
+#include "Phaser.h"
 
 class Communicater{
 public:
@@ -31,6 +31,8 @@ public:
 	int mySend(std::string message);
 	int mySend(int number);
 	int mySend(byte data[]);
+
+	bool send_keep_alive();
 
 	friend Communicater &Communicater::operator << (Communicater &c, char *a); //жиди<<
 	friend Communicater &Communicater::operator << (Communicater &c, std::string a);

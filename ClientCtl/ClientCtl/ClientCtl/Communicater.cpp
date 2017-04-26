@@ -7,6 +7,7 @@
 #include <Windows.h>
 #include "Communicater.h"
 #include <ws2tcpip.h>
+#include "HeadDic.h"
 
 #pragma comment(lib,"ws2_32.lib") 
 
@@ -172,6 +173,15 @@ int Communicater::mySend(byte data[]) {
 		return false;
 	}
 	return true;
+}
+
+bool Communicater::send_keep_alive(){
+	Phaser p;
+	p.set_type(headDic.keepAlive);
+	p.set_intent(headDic.keepAlive);
+	p.set_content(headDic.keepAlive);
+	p.finalize();
+	return (bool)this->mySend(headDic.keepAlive);
 }
 
 Communicater &operator << (Communicater &c, char *a){

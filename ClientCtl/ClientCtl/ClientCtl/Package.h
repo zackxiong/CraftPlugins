@@ -4,7 +4,7 @@ class Package
 public:
 	char* type, intent, content, hash;
 	bool is_done;
-	char* data;
+	const char* data;
 
 	Package();
 	~Package();

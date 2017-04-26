@@ -3,7 +3,7 @@
 
 
 Package::Package(){
-
+	this->is_done = false;
 }
 
 
