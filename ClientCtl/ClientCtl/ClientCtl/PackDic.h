@@ -1,6 +1,7 @@
 #pragma once
 #include "stdafx.h"
 #include "InfoSenser.h"
+#include "HexTrans.h"
 #include "Phaser.h"
 
 

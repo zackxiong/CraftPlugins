@@ -6,6 +6,10 @@ struct IntentDic intentDic;
 struct ContentDic contentDic;
 
 bool init_dic(InfoSenser* i) {
-	//contentDic.ID = to_MD5(i->);
+	contentDic.ID = const_cast<char*>( 
+		std::string( 
+			std::string("</id>") 
+			+ to_MD5(std::string(i->macAdd1))
+			+ std::string("</id>")).data() ) ;
 	return true;
 }

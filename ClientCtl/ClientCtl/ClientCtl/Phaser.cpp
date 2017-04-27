@@ -102,6 +102,10 @@ std::string unc_to_str(unsigned char* unc) {
 	return std::string(ch);
 }
 
+char* unc_to_c(unsigned char* unc) {
+	return reinterpret_cast<char*>(unc);
+}
+
 std::string to_MD5(unsigned char* unc) {
 	int i;
 	unsigned char *encrypt = unc;
@@ -117,7 +121,7 @@ std::string to_MD5(unsigned char* unc) {
 	for (i = 0; i<16; i++) {
 		printf("%02x", encrypt[i]);
 	}
-	return unc_to_str(encrypt);
+	return bytes_to_hexstring(unc_to_c(encrypt),strlen(unc_to_c(encrypt)));
 }
 
 std::string to_MD5(std::string str) {
@@ -136,5 +140,5 @@ std::string to_MD5(std::string str) {
 	for (i = 0; i<16; i++) {
 		printf("%02x", encrypt[i]);
 	}
-	return unc_to_str(encrypt);
+	return bytes_to_hexstring(unc_to_c(encrypt), strlen(unc_to_c(encrypt)));
 }

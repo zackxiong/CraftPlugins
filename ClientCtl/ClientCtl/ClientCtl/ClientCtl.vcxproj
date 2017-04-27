@@ -154,6 +154,7 @@
     <ClInclude Include="ClientCtl.h" />
     <ClInclude Include="Communicater.h" />
     <ClInclude Include="GetSysInfo.h" />
+    <ClInclude Include="HexTrans.h" />
     <ClInclude Include="IPHelper\Iphlpapi.h" />
     <ClInclude Include="PackDic.h" />
     <ClInclude Include="InfoSenser.h" />
@@ -171,6 +172,7 @@
     <ClCompile Include="ClientCtl.cpp" />
     <ClCompile Include="Communicater.cpp" />
     <ClCompile Include="GetSysInfo.cpp" />
+    <ClCompile Include="HexTrans.cpp" />
     <ClCompile Include="InfoSenser.cpp" />
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="md5.cpp" />

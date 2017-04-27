@@ -197,7 +197,7 @@ bool Communicater::send_keep_alive(){
 	Phaser p;
 	p.set_type(intentDic.keepAlive);
 	p.set_intent(intentDic.keepAlive);
-	p.set_content(intentDic.keepAlive);
+	p.set_content(contentDic.ID);
 	return (bool)this->mySend(p.finalize().is_done?p.finalize():Package());
 }
 
