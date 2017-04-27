@@ -19,6 +19,7 @@ public:
 	~InfoSenser();
 
 	std::string GetMac();
+	bool refresh();
 	bool printNetInfo();
 	bool printHWInfo();
 	bool printDriveInfo();
@@ -43,6 +44,7 @@ public:
 	int  interfaceCount;//网卡信息
 	//CString *InterfaceName;
 	std::vector<CString> InterfaceNames;
+	std::string macAdd1;
 	DWORD dwgraphicCardNum;//显卡信息
 	CString *chgraphicCardNames;
 

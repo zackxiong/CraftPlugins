@@ -55,7 +55,6 @@ int main(int argc, char *argv[]) {
 
 	try {	infosenser = new InfoSenser();	}
 	catch (std::string str) { std::cout << str << std::endl; }
-
 	//注册AliveKeeper
 	AKr->registerService();
 	//setterHandle = CreateThread(NULL, 0, serviceCheckerThread, NULL, 0, NULL);

@@ -9,85 +9,7 @@
 #pragma comment(lib,"ws2_32.lib") 
 
 InfoSenser::InfoSenser(){
-	this->InterfaceNames.clear();
-	CString test[3000];
-	this->chDriveInfo = test;
-	//this->chDriveInfo = new CString[300];
-	this->gSI = new GetSysInfo();
-
-	//获取系统信息
-	GetSystemInfo(&sysInfo);
-	osvi.dwOSVersionInfoSize = sizeof(osvi);
-	this->sysSuccess = true;
-	if (!GetVersionEx((LPOSVERSIONINFOW)&osvi)) {
-		sysSuccess = false; 
-		std::cout << "Error init os info" << std::endl;
-		throw "Error init os info";
-	}
-	this->isWow64 = this->gSI->IsWow64();
-
-	//获取CPU信息
-	this->gSI->GetCpuInfo(this->chProcessorName, this->chProcessorType, this->dwProcessorNum, this->dwMaxClockSpeed);
-
-	//获取硬盘信息
-	this->gSI->GetDiskInfo(this->dwdriveNum, this->chDriveInfo);
-	GetVolumeInformation((LPCWSTR)"c:\\",
-		(LPWSTR)m_Volume,
-		256,
-		&m_SerialNum,
-		&m_FileNameLength,
-		&m_FileSysFlag,
-		(LPWSTR)m_FileSysName,
-		256);
-
-	//获取内存信息
-	statex.dwLength = sizeof(statex);
-	if ((!sysSuccess) | (!GlobalMemoryStatusEx(&statex))){
-		sysSuccess = false;
-		std::cout << "Error init memory info" << std::endl;
-		throw "Error init memory info";
-	}
-	//this->gSI->GetMemoryInfo(this->dwTotalPhy_d, this->dwTotalVirtual);
-
-	//获取网络信息
-	this->netSuccess = true;
-	if (WSAStartup(MAKEWORD(2, 0), &WSAData)){// 初始化Windows sockets API
-		std::cout<<"WSAStartup failed "<<WSAGetLastError()<<std::endl;
-		netSuccess = false;
-		throw "WSAStartup failed";
-	}
-
-	//获取主机名
-	if ((!netSuccess) | gethostname(hostName, sizeof(hostName))){
-		std::cout<<"Error: "<<WSAGetLastError()<<std::endl;
-		netSuccess = false;
-		throw "Error: " + WSAGetLastError();
-	}
-
-	host = gethostbyname(hostName);
-	if (!host) {
-		netSuccess = false;
-		std::cout << "Error: " << WSAGetLastError() << std::endl;
-		throw "Error: " + WSAGetLastError();
-	}
-
-	//获取网卡信息
-	this->interfaceCount = this->gSI->GetInterFaceCount();
-	int count = this->interfaceCount;
-	CString interfaceName;
-	std::vector<CString>::iterator it = this->InterfaceNames.begin();
-	while (count-- > 0) {
-		this->gSI->GetInterFaceName(interfaceName, count);
-		if (interfaceName)
-			this->InterfaceNames.push_back(interfaceName);
-		else
-			std::cout << "Null name of Interface error!" << std::endl;
-	}
-	this->GetMac();
-	/*
-	//获取显卡信息
-	this->gSI->GetDisplayCardInfo(this->dwgraphicCardNum, this->chgraphicCardNames);
-	*/
+	this->refresh();
 }
 
 /**
@@ -120,6 +42,91 @@ std::string InfoSenser::GetMac()
 	return(sret);
 }
 
+bool InfoSenser::refresh(){
+	this->InterfaceNames.clear();
+	CString test[3000];
+	this->chDriveInfo = test;
+	//this->chDriveInfo = new CString[300];
+	this->gSI = new GetSysInfo();
+
+	//获取系统信息
+	GetSystemInfo(&sysInfo);
+	osvi.dwOSVersionInfoSize = sizeof(osvi);
+	this->sysSuccess = true;
+	if (!GetVersionEx((LPOSVERSIONINFOW)&osvi)) {
+		sysSuccess = false;
+		std::cout << "Error init os info" << std::endl;
+		throw "Error init os info";
+	}
+	this->isWow64 = this->gSI->IsWow64();
+
+	//获取CPU信息
+	this->gSI->GetCpuInfo(this->chProcessorName, this->chProcessorType, this->dwProcessorNum, this->dwMaxClockSpeed);
+
+	//获取硬盘信息
+	this->gSI->GetDiskInfo(this->dwdriveNum, this->chDriveInfo);
+	GetVolumeInformation((LPCWSTR)"c:\\",
+		(LPWSTR)m_Volume,
+		256,
+		&m_SerialNum,
+		&m_FileNameLength,
+		&m_FileSysFlag,
+		(LPWSTR)m_FileSysName,
+		256);
+
+	//获取内存信息
+	statex.dwLength = sizeof(statex);
+	if ((!sysSuccess) | (!GlobalMemoryStatusEx(&statex))) {
+		sysSuccess = false;
+		std::cout << "Error init memory info" << std::endl;
+		throw "Error init memory info";
+	}
+	//this->gSI->GetMemoryInfo(this->dwTotalPhy_d, this->dwTotalVirtual);
+
+	//获取网络信息
+	this->netSuccess = true;
+	if (WSAStartup(MAKEWORD(2, 0), &WSAData)) {// 初始化Windows sockets API
+		std::cout << "WSAStartup failed " << WSAGetLastError() << std::endl;
+		netSuccess = false;
+		throw "WSAStartup failed";
+	}
+
+	//获取主机名
+	if ((!netSuccess) | gethostname(hostName, sizeof(hostName))) {
+		std::cout << "Error: " << WSAGetLastError() << std::endl;
+		netSuccess = false;
+		throw "Error: " + WSAGetLastError();
+	}
+
+	host = gethostbyname(hostName);
+	if (!host) {
+		netSuccess = false;
+		std::cout << "Error: " << WSAGetLastError() << std::endl;
+		throw "Error: " + WSAGetLastError();
+	}
+
+	//获取网卡信息
+	this->interfaceCount = this->gSI->GetInterFaceCount();
+	int count = this->interfaceCount;
+	CString interfaceName;
+	std::vector<CString>::iterator it = this->InterfaceNames.begin();
+	while (count-- > 0) {
+		this->gSI->GetInterFaceName(interfaceName, count);
+		if (interfaceName)
+			this->InterfaceNames.push_back(interfaceName);
+		else
+			std::cout << "Null name of Interface error!" << std::endl;
+	}
+	this->macAdd1 = this->GetMac();
+	/*
+	//获取显卡信息
+	this->gSI->GetDisplayCardInfo(this->dwgraphicCardNum, this->chgraphicCardNames);
+	*/
+	return true;
+}
+
+
+
 
 InfoSenser::~InfoSenser(){
 	WSACleanup();
@@ -138,6 +145,7 @@ bool InfoSenser::printNetInfo(){
 		for (int i = 0; host->h_addr_list[i] != 0; i++) {
 			std::cout << "该主机IP" << i + 1 << ":        " << inet_ntoa(*(struct in_addr*)*host->h_addr_list) << std::endl;
 		}
+		std::cout << "第一个MAC:        " << this->macAdd1 << std::endl;
 		return true;
 	}
 	else 	std::cout << "获取网络信息失败";

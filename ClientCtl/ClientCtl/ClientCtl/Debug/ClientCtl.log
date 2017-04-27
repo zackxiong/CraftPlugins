@@ -1,2 +1,6 @@
-﻿  ClientCtl.vcxproj -> D:\netbeans-java\CraftPlugins\ClientCtl\ClientCtl\Debug\ClientCtl.exe
+﻿  InfoSenser.cpp
+d:\netbeans-java\craftplugins\clientctl\clientctl\clientctl\infosenser.cpp(61): warning C4800: “BOOL”: 将值强制为布尔值“true”或“false”(性能警告)
+d:\netbeans-java\craftplugins\clientctl\clientctl\clientctl\infosenser.cpp(166): warning C4477: “printf”: 格式字符串“%u”需要类型“unsigned int”的参数，但可变参数 1 拥有了类型“LPVOID”
+d:\netbeans-java\craftplugins\clientctl\clientctl\clientctl\infosenser.cpp(167): warning C4477: “printf”: 格式字符串“%u”需要类型“unsigned int”的参数，但可变参数 1 拥有了类型“LPVOID”
+  ClientCtl.vcxproj -> D:\netbeans-java\CraftPlugins\ClientCtl\ClientCtl\Debug\ClientCtl.exe
   ClientCtl.vcxproj -> D:\netbeans-java\CraftPlugins\ClientCtl\ClientCtl\Debug\ClientCtl.pdb (Full PDB)
