@@ -42,6 +42,7 @@ HANDLE checkerHandle, setterHandle, aliveKeeperHandle;
 
 
 int main(int argc, char *argv[]) {
+	std::cout << argv[0];
 	//初始化我的对象
 	try {	AKr = new AliveKeeper("MyTestService");	}
 	catch (std::string str){	std::cout << str << std::endl;	}
@@ -82,8 +83,11 @@ int main(int argc, char *argv[]) {
 
 	//注册Communicater
 	//setterHandle = CreateThread(NULL, 0, communicaterThread, NULL, 0, NULL); 
-	//bool a = cmtr->operator << ("override test");
-	aliveKeeperHandle = CreateThread(NULL, 0, keepAliveThread, NULL, 0, NULL);
+	//初始化标识字典
+	init_dic(infosenser);
+	//初始化标识字典完毕
+
+	aliveKeeperHandle = CreateThread(NULL, 0, keepAliveThread, NULL, 0, NULL);//开启keepalive
 	*cmtr << "override test" << "override test2";
 	//注册Communicater完毕
 	_getch();

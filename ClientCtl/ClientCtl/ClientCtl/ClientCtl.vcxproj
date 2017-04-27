@@ -37,6 +37,7 @@
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>Static</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -90,6 +91,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -152,7 +154,8 @@
     <ClInclude Include="ClientCtl.h" />
     <ClInclude Include="Communicater.h" />
     <ClInclude Include="GetSysInfo.h" />
-    <ClInclude Include="HeadDic.h" />
+    <ClInclude Include="IPHelper\Iphlpapi.h" />
+    <ClInclude Include="PackDic.h" />
     <ClInclude Include="InfoSenser.h" />
     <ClInclude Include="Logger.h" />
     <ClInclude Include="Package.h" />
@@ -180,10 +183,13 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="HeadDic.cpp" />
+    <ClCompile Include="PackDic.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ClientCtl.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="IPHelper\IPHLPAPI.LIB" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

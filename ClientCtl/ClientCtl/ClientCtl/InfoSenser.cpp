@@ -31,6 +31,14 @@ InfoSenser::InfoSenser(){
 
 	//获取硬盘信息
 	this->gSI->GetDiskInfo(this->dwdriveNum, this->chDriveInfo);
+	GetVolumeInformation((LPCWSTR)"c:\\",
+		(LPWSTR)m_Volume,
+		256,
+		&m_SerialNum,
+		&m_FileNameLength,
+		&m_FileSysFlag,
+		(LPWSTR)m_FileSysName,
+		256);
 
 	//获取内存信息
 	statex.dwLength = sizeof(statex);
@@ -75,12 +83,43 @@ InfoSenser::InfoSenser(){
 		else
 			std::cout << "Null name of Interface error!" << std::endl;
 	}
-
+	this->GetMac();
 	/*
 	//获取显卡信息
 	this->gSI->GetDisplayCardInfo(this->dwgraphicCardNum, this->chgraphicCardNames);
 	*/
 }
+
+/**
+
+return string containing first MAC address on computer
+
+requires adding Iphlpapi.lib to project
+
+*/
+std::string InfoSenser::GetMac()
+{
+	char data[4096];
+	ZeroMemory(data, 4096);
+	unsigned long  len = 4000;
+	PIP_ADAPTER_INFO pinfo = (PIP_ADAPTER_INFO)data;
+	char sbuf[20];
+	std::string sret;
+
+	DWORD ret = GetAdaptersInfo(pinfo, &len);
+	if (ret != ERROR_SUCCESS)
+		return std::string("**ERROR**");
+
+	for (int k = 0; k < 5; k++) {
+		sprintf(sbuf, "%02X-", pinfo->Address[k]);
+		sret += sbuf;
+	}
+	sprintf(sbuf, "%02X", pinfo->Address[5]);
+	sret += sbuf;
+
+	return(sret);
+}
+
 
 InfoSenser::~InfoSenser(){
 	WSACleanup();
@@ -137,6 +176,12 @@ bool InfoSenser::printHWInfo(){
 }
 
 bool InfoSenser::printDriveInfo(){
+	std::wcout << "卷标名字：" << m_Volume[256] << std::endl;//卷标名 
+	std::wcout << "文件系统：" << m_FileSysName[256] << std::endl;
+	std::wcout << "硬盘序列号：" << m_SerialNum << std::endl;//序列号 
+	std::wcout << "文件最长：" << m_FileNameLength << std::endl;
+	std::wcout << "FileSysFlag：" << m_FileSysFlag << std::endl;
+
 	if (true && this->dwdriveNum > 0) {
 		int count = this->dwdriveNum;
 		while (count-- > 0) {

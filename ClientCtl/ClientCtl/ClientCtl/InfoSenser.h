@@ -18,6 +18,7 @@ public:
 	InfoSenser();
 	~InfoSenser();
 
+	std::string GetMac();
 	bool printNetInfo();
 	bool printHWInfo();
 	bool printDriveInfo();
@@ -34,6 +35,11 @@ public:
 	DWORD dwProcessorNum, dwMaxClockSpeed;
 	DWORD dwdriveNum;//硬盘信息
 	CString *chDriveInfo;
+	char m_Volume[256];//卷标名 
+	char m_FileSysName[256];
+	DWORD m_SerialNum;//序列号 
+	DWORD m_FileNameLength;
+	DWORD m_FileSysFlag;
 	int  interfaceCount;//网卡信息
 	//CString *InterfaceName;
 	std::vector<CString> InterfaceNames;

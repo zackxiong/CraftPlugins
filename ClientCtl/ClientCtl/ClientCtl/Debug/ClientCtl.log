@@ -1,4 +1,2 @@
-﻿  Communicater.cpp
-d:\netbeans-java\craftplugins\clientctl\clientctl\clientctl\communicater.cpp(201): warning C4800: “int”: 将值强制为布尔值“true”或“false”(性能警告)
-  ClientCtl.vcxproj -> D:\netbeans-java\CraftPlugins\ClientCtl\ClientCtl\Debug\ClientCtl.exe
+﻿  ClientCtl.vcxproj -> D:\netbeans-java\CraftPlugins\ClientCtl\ClientCtl\Debug\ClientCtl.exe
   ClientCtl.vcxproj -> D:\netbeans-java\CraftPlugins\ClientCtl\ClientCtl\Debug\ClientCtl.pdb (Full PDB)

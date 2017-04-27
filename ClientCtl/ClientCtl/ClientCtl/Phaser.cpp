@@ -57,7 +57,7 @@ Package Phaser::finalize(){
 		std::string raw_package = intent + content;//合并头和内容，开始计算md5
 
 		int i;
-		const char* buffer = raw_package.data();
+		//const char* buffer = raw_package.data();
 		unsigned char *encrypt = str_to_unc(raw_package);
 		unsigned char decrypt[16];
 		MD5_CTX md5;
@@ -71,9 +71,11 @@ Package Phaser::finalize(){
 		for (i = 0; i<16; i++) {
 			printf("%02x", encrypt[i]);
 		}
+
 		this->hash = std::string("<hash>") + unc_to_str(decrypt) + std::string("</hash>");//临时计算hash
 		
-		std::string beg("<package>"), end("</package>\n");//整个end可以用于判断
+		//std::string beg("<?xml version="1.0" encoding="ISO - 8859 - 1"?> <package>"), end("</package>\n");//整个end可以用于判断
+		std::string beg("<?xml version=\"1.0\" ?> <package>"), end("</package>\n");//整个end可以用于判断
 		std::string fine_package = beg + raw_package + end;
 		std::cout << "Phaser: phased: " << std::endl << fine_package.data() << std::endl;
 
@@ -98,4 +100,41 @@ unsigned char* str_to_unc(std::string str) {
 std::string unc_to_str(unsigned char* unc) {
 	char* ch = reinterpret_cast<char*>(unc);
 	return std::string(ch);
+}
+
+std::string to_MD5(unsigned char* unc) {
+	int i;
+	unsigned char *encrypt = unc;
+	unsigned char decrypt[16];
+	MD5_CTX md5;
+	MD5Init(&md5);
+	MD5Update(&md5, encrypt, strlen((char *)encrypt));
+	MD5Final(&md5, decrypt);
+	printf("加密前:%s\n加密后:", encrypt);
+	for (i = 0; i<16; i++) {
+		printf("%02x", decrypt[i]);
+	}
+	for (i = 0; i<16; i++) {
+		printf("%02x", encrypt[i]);
+	}
+	return unc_to_str(encrypt);
+}
+
+std::string to_MD5(std::string str) {
+	unsigned char *unc = str_to_unc(str);
+	int i;
+	unsigned char *encrypt = unc;
+	unsigned char decrypt[16];
+	MD5_CTX md5;
+	MD5Init(&md5);
+	MD5Update(&md5, encrypt, strlen((char *)encrypt));
+	MD5Final(&md5, decrypt);
+	printf("加密前:%s\n加密后:", encrypt);
+	for (i = 0; i<16; i++) {
+		printf("%02x", decrypt[i]);
+	}
+	for (i = 0; i<16; i++) {
+		printf("%02x", encrypt[i]);
+	}
+	return unc_to_str(encrypt);
 }

@@ -21,3 +21,5 @@ public:
 
 unsigned char* str_to_unc(std::string str);
 std::string unc_to_str(unsigned char* unc);
+std::string to_MD5(std::string str);
+std::string to_MD5(unsigned char* unc);

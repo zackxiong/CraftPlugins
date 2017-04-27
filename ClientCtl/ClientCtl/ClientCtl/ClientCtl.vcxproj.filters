@@ -48,9 +48,6 @@
     <ClInclude Include="GetSysInfo.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="HeadDic.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="Phaser.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -58,6 +55,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="md5.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PackDic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="IPHelper\Iphlpapi.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -86,9 +89,6 @@
     <ClCompile Include="GetSysInfo.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="HeadDic.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="Phaser.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -98,10 +98,18 @@
     <ClCompile Include="md5.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="PackDic.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ClientCtl.rc">
       <Filter>资源文件</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="IPHelper\IPHLPAPI.LIB">
+      <Filter>头文件</Filter>
+    </Library>
   </ItemGroup>
 </Project>

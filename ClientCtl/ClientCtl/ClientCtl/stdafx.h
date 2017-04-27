@@ -11,7 +11,7 @@
 #define DEBUG
 #define STICKY_MODE
 #define SOCKET_PORT "1800"
-#define SERVER_ADDR "127.0.0.1"
+#define SERVER_ADDR "172.16.16.5"
 
 #include "targetver.h"
 
