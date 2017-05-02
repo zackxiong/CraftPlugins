@@ -3,17 +3,16 @@
 #include "InfoSenser.h"
 #include "HexTrans.h"
 #include "Phaser.h"
+#include <iostream>
 
 
 bool init_dic(InfoSenser *i);
 struct IntentDic {
-	char*
-		keepAlive = "alive";
+	std::string keepAlive;
 };
 extern IntentDic intentDic;
 
 struct ContentDic {
-	char*
-		ID = "alive";
+	std::string ID;
 };
 extern ContentDic contentDic;

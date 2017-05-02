@@ -7,13 +7,17 @@
 #include <string>
 #include <Windows.h>
 #include "Phaser.h"
+#include <vector>
+//#include <algorithm>
 
 class Communicater{
 public:
 	Communicater();
 	Communicater(const char* ip, const char* port);
 	~Communicater();
-	
+
+	std::vector<Package> quene;
+
 	WSADATA wsaData;
 	struct addrinfo *result = NULL,
 		*ptr = NULL,
@@ -34,6 +38,7 @@ public:
 	int mySend(byte data[]);
 
 	bool send_keep_alive();
+	bool heart_beat();
 
 	friend Communicater &Communicater::operator << (Communicater &c, char *a); //жиди<<
 	friend Communicater &Communicater::operator << (Communicater &c, std::string a);

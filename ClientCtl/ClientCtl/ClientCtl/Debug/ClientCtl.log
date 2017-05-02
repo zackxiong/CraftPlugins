@@ -1,25 +1,4 @@
-﻿  stdafx.cpp
-  md5.cpp
-  Service.cpp
-  Phaser.cpp
-d:\netbeans-java\craftplugins\clientctl\clientctl\clientctl\phaser.cpp(24): warning C4101: “e”: 未引用的局部变量
-d:\netbeans-java\craftplugins\clientctl\clientctl\clientctl\phaser.cpp(37): warning C4101: “e”: 未引用的局部变量
-d:\netbeans-java\craftplugins\clientctl\clientctl\clientctl\phaser.cpp(50): warning C4101: “e”: 未引用的局部变量
-d:\netbeans-java\craftplugins\clientctl\clientctl\clientctl\phaser.cpp(87): warning C4101: “e”: 未引用的局部变量
-  Package.cpp
-  PackDic.cpp
-  Logger.cpp
-  InfoSenser.cpp
-d:\netbeans-java\craftplugins\clientctl\clientctl\clientctl\infosenser.cpp(61): warning C4800: “BOOL”: 将值强制为布尔值“true”或“false”(性能警告)
-d:\netbeans-java\craftplugins\clientctl\clientctl\clientctl\infosenser.cpp(166): warning C4477: “printf”: 格式字符串“%u”需要类型“unsigned int”的参数，但可变参数 1 拥有了类型“LPVOID”
-d:\netbeans-java\craftplugins\clientctl\clientctl\clientctl\infosenser.cpp(167): warning C4477: “printf”: 格式字符串“%u”需要类型“unsigned int”的参数，但可变参数 1 拥有了类型“LPVOID”
-  HexTrans.cpp
-  GetSysInfo.cpp
-  Communicater.cpp
-d:\netbeans-java\craftplugins\clientctl\clientctl\clientctl\communicater.cpp(201): warning C4800: “int”: 将值强制为布尔值“true”或“false”(性能警告)
-  ClientCtl.cpp
-d:\netbeans-java\craftplugins\clientctl\clientctl\clientctl\clientctl.cpp(145): warning C4101: “dwE”: 未引用的局部变量
-  AliveKeeper.cpp
-  正在生成代码...
+﻿  ClientCtl.cpp
+d:\netbeans-java\craftplugins\clientctl\clientctl\clientctl\clientctl.cpp(146): warning C4101: “dwE”: 未引用的局部变量
   ClientCtl.vcxproj -> D:\netbeans-java\CraftPlugins\ClientCtl\ClientCtl\Debug\ClientCtl.exe
   ClientCtl.vcxproj -> D:\netbeans-java\CraftPlugins\ClientCtl\ClientCtl\Debug\ClientCtl.pdb (Full PDB)

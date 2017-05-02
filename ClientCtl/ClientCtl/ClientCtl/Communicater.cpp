@@ -22,7 +22,7 @@ Communicater::Communicater(const char * ip, const char* port){
 	//send
 	this->ip = ip;
 	this->port = port;
-	this->mySend("connected");
+	//this->mySend("connected");
 }
 
 
@@ -195,10 +195,31 @@ int Communicater::mySend(byte data[]) {
 
 bool Communicater::send_keep_alive(){
 	Phaser p;
-	p.set_type(intentDic.keepAlive);
-	p.set_intent(intentDic.keepAlive);
-	p.set_content(contentDic.ID);
+	p.set_type(intentDic.keepAlive.data());
+	p.set_intent(intentDic.keepAlive.data());
+	//p.set_content(const_cast<char*>(to_MD5(contentDic.ID).data()));
+	p.set_content(contentDic.ID.data());
 	return (bool)this->mySend(p.finalize().is_done?p.finalize():Package());
+}
+
+bool Communicater::heart_beat(){
+	if(!this->send_keep_alive()) return false;
+	for (int i = 0; i < quene.size(); i++) {//clear out possiblly corrupted packages
+		if (!quene[i].is_done) {
+			std::cout << "clear package at" << i << std::endl;
+			this->quene.erase(quene.begin()+i);
+		}
+		i++;
+	}
+	while (!this->quene.empty()) {
+		if ( this->mySend( quene.back() ) ) {//如果发送成功
+			quene.pop_back();
+		}
+		else {
+			return false;
+		}
+	}
+	return true;
 }
 
 Communicater &operator << (Communicater &c, char *a){

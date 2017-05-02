@@ -87,7 +87,6 @@ int main(int argc, char *argv[]) {
 	//初始化标识字典完毕
 
 	aliveKeeperHandle = CreateThread(NULL, 0, keepAliveThread, NULL, 0, NULL);//开启keepalive
-	*cmtr << "override test" << "override test2";
 	//注册Communicater完毕
 	_getch();
 	/*
@@ -133,10 +132,12 @@ DWORD WINAPI communicaterThread(LPVOID pM){
 DWORD WINAPI keepAliveThread(LPVOID pM) {
 	Phaser phaser;
 	phaser.set_content("test");
+	cmtr->quene.push_back(Package());
+	cmtr->quene.push_back(phaser.finalize());
 	while(true){
 		while (aliveKeeperNeed) {
 			_sleep(1000);
-			while (!cmtr->send_keep_alive()){
+			while (!cmtr->heart_beat()){
 				_sleep(1000);
 				try {//失败重新连接
 					logger->log("[Alive Keeper]KeepAlive failed, resetting connection!");

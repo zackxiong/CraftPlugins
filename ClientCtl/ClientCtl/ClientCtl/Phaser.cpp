@@ -52,6 +52,45 @@ bool Phaser::set_content(char * content){
 	}
 }
 
+bool Phaser::set_type(const char * type) {
+	try {
+		std::string raw_type(type);
+		std::string beg("<type>"), end("</type>");
+		std::string fine_type = beg + raw_type + end;
+		this->type = fine_type;
+		return true;
+	}
+	catch (void* e) {
+		return false;
+	}
+}
+
+bool Phaser::set_intent(const char * intent) {
+	try {
+		std::string raw_intent(intent);
+		std::string beg("<intent>"), end("</intent>");
+		std::string fine_intent = beg + raw_intent + end;
+		this->intent = fine_intent;
+		return true;
+	}
+	catch (void* e) {
+		return false;
+	}
+}
+
+bool Phaser::set_content(const char * content) {
+	try {
+		std::string raw_content(content);
+		std::string beg("<content>"), end("</content>");
+		std::string fine_content = beg + raw_content + end;
+		this->content = fine_content;
+		return true;
+	}
+	catch (void* e) {
+		return false;
+	}
+}
+
 Package Phaser::finalize(){
 	try {
 		std::string raw_package = intent + content;//合并头和内容，开始计算md5
@@ -72,7 +111,8 @@ Package Phaser::finalize(){
 			printf("%02x", encrypt[i]);
 		}
 
-		this->hash = std::string("<hash>") + unc_to_str(decrypt) + std::string("</hash>");//临时计算hash
+		this->hash = std::string("<hash>") + bytes_to_hexstring(unc_to_c(decrypt),12) + std::string("</hash>");//临时计算hash
+		raw_package = raw_package + hash;
 		
 		//std::string beg("<?xml version="1.0" encoding="ISO - 8859 - 1"?> <package>"), end("</package>\n");//整个end可以用于判断
 		std::string beg("<?xml version=\"1.0\" ?> <package>"), end("</package>\n");//整个end可以用于判断
@@ -121,7 +161,27 @@ std::string to_MD5(unsigned char* unc) {
 	for (i = 0; i<16; i++) {
 		printf("%02x", encrypt[i]);
 	}
-	return bytes_to_hexstring(unc_to_c(encrypt),strlen(unc_to_c(encrypt)));
+	//return bytes_to_hexstring(unc_to_c(encrypt),strlen(unc_to_c(encrypt)));
+	return bytes_to_hexstring(unc_to_c(decrypt), 12);
+}
+
+std::string to_MD5(char* c) {
+	int i;
+	unsigned char *encrypt = str_to_unc(std::string(c));
+	unsigned char decrypt[16];
+	MD5_CTX md5;
+	MD5Init(&md5);
+	MD5Update(&md5, encrypt, strlen((char *)encrypt));
+	MD5Final(&md5, decrypt);
+	printf("加密前:%s\n加密后:", encrypt);
+	for (i = 0; i<16; i++) {
+		printf("%02x", decrypt[i]);
+	}
+	for (i = 0; i<16; i++) {
+		printf("%02x", encrypt[i]);
+	}
+	//return bytes_to_hexstring(unc_to_c(encrypt), strlen(unc_to_c(encrypt)));
+	return bytes_to_hexstring(unc_to_c(decrypt), 12);
 }
 
 std::string to_MD5(std::string str) {
@@ -140,5 +200,13 @@ std::string to_MD5(std::string str) {
 	for (i = 0; i<16; i++) {
 		printf("%02x", encrypt[i]);
 	}
-	return bytes_to_hexstring(unc_to_c(encrypt), strlen(unc_to_c(encrypt)));
+	//return bytes_to_hexstring(unc_to_c(encrypt), strlen(unc_to_c(encrypt)));
+	return bytes_to_hexstring(unc_to_c(decrypt), 12);
+}
+
+char* consc_to_c(const char* c) {
+	//char *cp = new char[strlen(c)];
+	//memcpy(cp, c, strlen(c)+1);
+	char* cp = (char*)(c);
+	return cp;
 }
