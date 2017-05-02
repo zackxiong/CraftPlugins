@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:orientation="1" android:id="@id/view3" android:background="@drawable/welcome_page3" android:layoutAnimation="@anim/layout_fade_in" android:layout_width="-1" android:layout_height="-1">
-    <TextView android:textSize="23sp" android:textColor="@color/whitegrey" android:id="@id/textViewWelcome3" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="40dp" android:layout_marginBottom="157dp" android:text="@string/competition_compete" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
-    <TextView android:textSize="20sp" android:textColor="@color/whitegrey" android:id="@id/textViewPrompt3" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="33dp" android:text="@string/welcome_page3_prompt" android:layout_alignTop="@id/textViewWelcome3" android:layout_alignStart="@id/textViewWelcome3" />
-    <Button android:textColor="@color/white" android:id="@id/btn_goInto" android:background="@drawable/btn_register2" android:layout_width="@dimen/welcome_btn_goInto_width" android:layout_height="25dp" android:layout_marginTop="14dp" android:text="@string/go_into" android:layout_below="@id/textViewPrompt3" android:onClick="onEnterClicked" android:layout_alignStart="@id/textViewPrompt3" />
-</RelativeLayout>

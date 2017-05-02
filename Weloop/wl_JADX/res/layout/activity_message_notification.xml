@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout app:layout_width="-1" app:layout_height="-1">
-    <include app:id="@id/include" layout="@layout/all_title" />
-    <com.handmark.pulltorefresh.library.PullToRefreshListView app:scrollbarStyle="2000000" app:id="@id/mn_lv_content" app:scrollbars="0" app:fadingEdge="0" app:layout_width="-1" app:layout_height="-1" app:layout_marginTop="5dp" app:stackFromBottom="false" app:cacheColorHint="#00000000" app:divider="@styleable/View_android_theme" app:layout_below="@id/include" app:fastScrollEnabled="false" app:headerDividersEnabled="false" app:footerDividersEnabled="false" app:smoothScrollbar="true" app:ptrShowIndicator="false" />
-</RelativeLayout>

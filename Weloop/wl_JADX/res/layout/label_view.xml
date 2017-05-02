@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout android:layout_width="-1" android:layout_height="-1">
-    <include android:id="@id/left_label" layout="@layout/label_left" />
-</FrameLayout>

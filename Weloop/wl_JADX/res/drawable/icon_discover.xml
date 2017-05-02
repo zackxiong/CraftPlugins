@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector>
-    <item android:state_selected="true" android:drawable="@drawable/my_press" />
-    <item android:state_checked="true" android:drawable="@drawable/my_press" />
-    <item android:drawable="@drawable/my_normal" />
-</selector>

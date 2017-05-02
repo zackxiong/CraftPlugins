@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout style="@style/title_style"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="18.0sp" android:textColor="@color/white" android:id="@id/title_more" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="7.299988dip" android:layout_centerVertical="true" />
-    <TextView android:textSize="20.0sp" android:id="@id/at_tv_title" android:text="Title" style="@style/title_center_text" />
-    <TextView android:textSize="18.0sp" android:textColor="@color/white" android:id="@id/switch_device" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginEnd="7.299988dip" android:layout_alignParentEnd="true" />
-</RelativeLayout>

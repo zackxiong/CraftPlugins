@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="left" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="4.0dip" android:layout_marginBottom="4.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">>
-<TextView android:id="@id/option_name" android:text="深睡" style="@style/label_detail_right_name" />
-    <TextView android:id="@id/option_value" android:text="155" style="@style/label_detail_right_value" />
-</LinearLayout>

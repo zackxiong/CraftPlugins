@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="-1" android:layout_height="-2">
-    <LinearLayout android:orientation="1" android:id="@id/pop_layout" android:layout_width="-1" android:layout_height="-2" android:weightSum="1.0">
-        <Button android:textSize="18sp" android:textColor="@color/black" android:layout_gravity="1" android:id="@id/btn_friend" android:background="@drawable/btn_bg_normal_select_photo" android:layout_width="300dp" android:layout_height="45dp" android:layout_marginTop="15dp" android:text="@string/wechat_friend" />
-        <Button android:textSize="18sp" android:textColor="@color/black" android:layout_gravity="1" android:id="@id/btn_circle" android:background="@drawable/btn_bg_normal_select_photo" android:layout_width="300dp" android:layout_height="45dp" android:layout_marginTop="15dp" android:text="@string/wechat_circle" />
-        <Button android:textSize="18sp" android:textColor="@color/red" android:layout_gravity="1" android:id="@id/btn_cancel" android:background="@drawable/btn_bg_normal_select_photo" android:layout_width="300dp" android:layout_height="45dp" android:layout_marginTop="15dp" android:layout_marginBottom="15dp" android:text="@string/cancel" />
-    </LinearLayout>
-</RelativeLayout>

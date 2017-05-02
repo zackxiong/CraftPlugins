@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout app:orientation="1" app:background="#906045" app:layout_width="-1" app:layout_height="-1">
-    <com.yf.smart.weloopx.android.ui.widget.RulerView app:id="@id/test" app:background="0x106000b" app:layout_width="-1" app:layout_height="200dp" app:indicator="@drawable/select_scale" app:indicatorWidth="20dp" app:indicatorHeight="20dp" app:indicator_centerHorizontal="true" app:scaleWidth="12dp" app:scaleLineWidth="1dp" app:scaleShortHeight="30dp" app:scaleLongHeight="40dp" app:scaleModular="10" app:scaleStart="90" app:scaleEnd="201" app:scalePosition="100" app:scaleColor="@color/gray" />
-</LinearLayout>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merge android:layout_width="-1" android:layout_height="-1">
-    <TextView android:textSize="20sp" android:textColor="@color/libyf_text_gray1" android:gravity="10" android:id="@id/option_name" android:layout_width="-2" android:layout_height="-2" android:text="name" />
-    <LinearLayout android:gravity="10" android:orientation="0" android:id="@id/value_group" android:layout_width="-2" android:layout_height="-2">
-        <TextView android:textSize="20sp" android:textColor="@color/libyf_text_gray2" android:gravity="10" android:id="@id/option_value" android:layout_width="-2" android:layout_height="-2" android:text="value" android:layout_marginEnd="5dp" />
-        <ImageView android:id="@id/option_more" android:layout_width="11dp" android:layout_height="18dp" android:src="@drawable/libyf_arrow" android:scaleType="3" />
-    </LinearLayout>
-</merge>

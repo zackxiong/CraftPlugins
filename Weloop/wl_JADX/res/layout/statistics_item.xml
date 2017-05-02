@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout app:orientation="1" app:layout_width="-2" app:layout_height="-2">
-    <TextView app:textSize="16sp" app:textColor="@color/green" app:gravity="1" app:id="@id/label" app:layout_width="-1" app:layout_height="30dp" app:text="12月1日-7日" />
-    <com.yf.smart.weloopx.android.ui.widget.ChartView app:id="@id/chart" app:layout_width="-2" app:layout_height="-2" app:ySize="160dp" app:labelHeight="20dp" />
-</LinearLayout>

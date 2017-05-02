@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="-1" android:layout_height="-1">
-    <include android:id="@id/ar_rl_title" android:layout_width="-2" android:layout_height="@dimen/all_title_height" android:layout_centerHorizontal="true" layout="@layout/all_title" />
-    <Button android:textSize="45sp" android:textColor="@color/gray" android:gravity="11" android:id="@id/ar_btn_add" android:background="@drawable/app_item_bg_normal" android:layout_width="-1" android:layout_height="-2" android:layout_marginLeft="40dp" android:layout_marginTop="20dp" android:layout_marginRight="40dp" android:text="+" android:layout_below="@id/ar_rl_title" android:layout_centerHorizontal="true" />
-    <ListView android:id="@id/reminders_lv_content" android:scrollbars="0" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="40dp" android:layout_marginTop="20dp" android:layout_marginRight="40dp" android:layout_below="@id/ar_btn_add" android:layout_centerHorizontal="true" />
-</RelativeLayout>

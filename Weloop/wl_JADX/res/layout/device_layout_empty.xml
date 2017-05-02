@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="1" android:id="@id/white_group" android:background="@color/white" android:layout_width="-1" android:layout_height="-2">
-    <TextView android:background="@color/device_bg_gray" android:text="@string/help_and_support" style="@style/device_label_text" />
-    <include layout="@layout/gray_line" />
-    <include android:id="@id/frequent_question" style="@style/device_option" layout="@layout/device_more_option" />
-    <include layout="@layout/gray_line" />
-    <include android:id="@id/send_log" style="@style/device_option" layout="@layout/device_more_option" />
-</LinearLayout>

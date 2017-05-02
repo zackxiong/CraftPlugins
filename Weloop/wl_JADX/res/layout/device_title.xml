@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout style="@style/title_style">
-    <TextView android:textSize="18sp" android:textColor="@color/white" android:id="@id/title_more" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="7.3dp" android:layout_centerVertical="true" />
-    <TextView android:textSize="20sp" android:id="@id/at_tv_title" android:text="Title" style="@style/title_center_text" />
-    <TextView android:textSize="18sp" android:textColor="@color/white" android:id="@id/switch_device" android:layout_width="-2" android:layout_height="-2" android:layout_centerVertical="true" android:layout_marginEnd="7.3dp" android:layout_alignParentEnd="true" />
-</RelativeLayout>

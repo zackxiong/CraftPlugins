@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merge android:layout_width="-1" android:layout_height="-1">
-    <FrameLayout android:id="@id/realtabcontent" android:layout_width="-1" android:layout_height="0dp" android:layout_weight="1.0" />
-    <View android:id="@id/libyf_divider" android:background="#787878" android:visibility="2" android:layout_width="-1" android:layout_height="0dp" />
-    <com.yf.lib.ui.fragments.FragmentTabHost android:id="0x1020012" android:layout_width="-1" android:layout_height="-2">
-        <FrameLayout android:id="0x1020011" android:layout_width="0dp" android:layout_height="0dp" android:layout_weight="0.0" />
-    </com.yf.lib.ui.fragments.FragmentTabHost>
-</merge>

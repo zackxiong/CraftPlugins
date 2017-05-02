@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="1" android:layout_width="-1" android:layout_height="-1"
-    <LinearLayout android:gravity="10" android:orientation="0" android:id="@id/watch_big_options" android:background="@color/device_bg_gray" android:paddingTop="10dp" android:layout_width="-1" android:layout_height="-2">
-        <TextView android:id="@id/option_camera" android:layout_width="0dp" android:text="@string/option_camera" android:drawableTop="@drawable/option_camera" android:layout_weight="1.0" style="@style/watch_big_option" />
-        <TextView android:id="@id/option_watchface" android:layout_width="0dp" android:text="@string/option_watchface" android:drawableTop="@drawable/option_watchface" android:layout_weight="1.0" style="@style/watch_big_option" />
-        <TextView android:id="@id/option_upgrade" android:layout_width="0dp" android:text="@string/option_upgrade" android:drawableTop="@drawable/option_update" android:layout_weight="1.0" style="@style/watch_big_option" />
-    </LinearLayout>
-</LinearLayout>

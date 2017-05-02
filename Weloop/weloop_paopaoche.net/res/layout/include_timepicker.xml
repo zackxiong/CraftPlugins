@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="horizontal" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="wrap_content"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.yf.lib.ui.views.birthday.WheelView android:id="@id/year" android:background="#ff21212a" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" />
-    <com.yf.lib.ui.views.birthday.WheelView android:id="@id/month" android:background="#ff21212a" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" />
-    <com.yf.lib.ui.views.birthday.WheelView android:id="@id/day" android:background="#ff21212a" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1.0" />
-</LinearLayout>

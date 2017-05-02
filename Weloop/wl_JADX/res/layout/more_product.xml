@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="1" android:background="@color/white" android:layout_width="-1" android:layout_height="-1">
-    <include android:id="@id/more_title" layout="@layout/all_title" />
-    <ProgressBar android:id="@id/more_pb" android:layout_width="-1" android:layout_height="4dp" android:max="100" android:progressDrawable="@drawable/webview_progress_bar_states" style="?unknown_attr_ref: 1010078" />
-    <WebView android:id="@id/more_webview" android:scrollbars="0" android:layout_width="-1" android:layout_height="-1" />
-</LinearLayout>

@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout app:orientation="1" app:layout_width="-1" app:layout_height="-1">
-    <TextView app:textColor="@color/white" app:layout_gravity="1" app:id="@id/rl_tv_no_friend" app:background="@drawable/alert_find_bg" app:padding="10dp" app:visibility="2" app:layout_width="-2" app:layout_height="-2" app:layout_marginTop="20dp" app:text="暂无好友，点击右上角图标显示好友" />
-    <com.handmark.pulltorefresh.library.PullToRefreshListView app:scrollbarStyle="2000000" app:id="@id/pull_list" app:scrollbars="0" app:fadingEdge="0" app:layout_width="-1" app:layout_height="-1" app:listSelector="@drawable/ranking_list_item_bg" app:stackFromBottom="false" app:cacheColorHint="#00000000" app:divider="@color/ranking_list_divider" app:dividerHeight="1dp" app:fastScrollEnabled="false" app:headerDividersEnabled="false" app:footerDividersEnabled="false" app:smoothScrollbar="true" app:ptrShowIndicator="false" />
-</LinearLayout>

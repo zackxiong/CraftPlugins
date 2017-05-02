@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<set android:shareInterpolator="false">
-    <translate android:duration="@integer/libyf_anim_default_duration" android:fromXDelta="-100%" android:toXDelta="0%" android:fromYDelta="0%" android:toYDelta="0%" />
-</set>

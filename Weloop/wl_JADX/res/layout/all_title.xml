@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout style="@style/title_style">
-    <TextView android:textSize="20sp" android:id="@id/at_tv_title" style="@style/title_center_text" />
-    <Button android:textSize="15sp" android:textColor="@color/white" android:id="@id/at_btn_left" android:background="0x106000d" android:visibility="0" android:layout_width="-2" android:layout_height="30dp" android:layout_marginLeft="7.3dp" android:text="@string/back" android:layout_centerVertical="true" android:drawableStart="@drawable/update_back" />
-    <Button android:textSize="15sp" android:textColor="@color/white" android:id="@id/at_btn_right" android:background="0x106000d" android:visibility="0" android:layout_width="-2" android:layout_height="30dp" android:layout_centerVertical="true" android:layout_marginEnd="7.3dp" android:layout_alignParentEnd="true" />
-    <View android:id="@id/at_view_point" android:background="@drawable/redpoint" android:visibility="2" android:layout_width="8dp" android:layout_height="8dp" android:layout_marginTop="3dp" android:layout_alignTop="@id/at_btn_right" android:layout_alignRight="@id/at_btn_right" />
-    <View android:id="@id/at_view_point_start" android:background="@drawable/redpoint" android:visibility="2" android:layout_width="8dp" android:layout_height="8dp" android:layout_marginTop="3dp" android:layout_alignTop="@id/at_btn_left" android:layout_alignRight="@id/at_btn_left" />
-</RelativeLayout>

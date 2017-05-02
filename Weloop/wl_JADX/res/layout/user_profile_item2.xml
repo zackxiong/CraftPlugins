@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-1" android:layout_height="-2">
-    <ImageView android:id="@id/option_tag_icon" android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/gold" android:scaleType="1" />
-    <TextView android:textSize="20sp" android:textStyle="1" android:gravity="800015" android:id="@id/option_value" android:layout_width="0dp" android:layout_height="-2" android:singleLine="true" android:layout_weight="1.0" android:layout_marginStart="4dp" />
-</LinearLayout>

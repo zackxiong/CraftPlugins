@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:background="#e8e8e8" android:layout_width="-1" android:layout_height="30dp">
-    <TextView android:textSize="17sp" android:id="@id/ti_tv_time" android:layout_width="-2" android:layout_height="-2" android:singleLine="true" android:layout_centerVertical="true" android:layout_marginStart="10dp" android:layout_alignParentStart="true" />
-    <TextView android:textSize="17sp" android:gravity="11" android:id="@id/ti_tv_distance" android:layout_width="-2" android:layout_height="-2" android:singleLine="true" android:layout_centerVertical="true" android:layout_marginEnd="10dp" android:layout_alignParentEnd="true" />
-    <TextView android:id="@id/ti_tv_pace" android:visibility="2" android:layout_width="-2" android:layout_height="-2" />
-    <TextView android:id="@id/ti_tv_duraction" android:visibility="2" android:layout_width="-2" android:layout_height="-2" />
-</RelativeLayout>

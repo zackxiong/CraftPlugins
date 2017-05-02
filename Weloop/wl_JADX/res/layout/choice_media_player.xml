@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:background="@color/white" android:layout_width="-1" android:layout_height="-2"
-    <RelativeLayout android:id="@id/cmp_rl_bottom" android:layout_width="-1" android:layout_height="50dp" android:layout_alignParentBottom="true">
-        <Button android:textSize="22sp" android:textColor="@color/white" android:gravity="11" android:id="@id/cmp_btn_always" android:background="@drawable/btn_button" android:layout_width="-1" android:layout_height="-1" android:text="@string/ok" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
-    </RelativeLayout>
-    <TextView android:textAppearance="?unknown_attr_ref: 1010040" android:textSize="22sp" android:textColor="@color/white" android:id="@id/cmp_tv_msg" android:background="@color/green" android:paddingLeft="10dp" android:paddingTop="10dp" android:paddingBottom="10dp" android:layout_width="-1" android:layout_height="-2" android:text="@string/music_player" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
-    <ListView android:id="@id/cmp_lv" android:fadingEdge="0" android:layout_width="-1" android:layout_height="-2" android:listSelector="@drawable/list_selector_rect_gray" android:divider="@styleable/View_android_theme" android:dividerHeight="0sp" android:layout_above="@id/cmp_rl_bottom" android:layout_below="@id/cmp_tv_msg" android:layout_alignParentLeft="true" />
-    <ProgressBar android:id="@id/cmp_pb" android:layout_width="-2" android:layout_height="-2" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
-</RelativeLayout>

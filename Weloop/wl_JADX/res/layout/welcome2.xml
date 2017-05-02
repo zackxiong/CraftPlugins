@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:orientation="1" android:background="@drawable/welcome_page2" android:layoutAnimation="@anim/layout_fade_in" android:layout_width="-1" android:layout_height="-1">
-    <TextView android:textSize="23sp" android:textColor="@color/whitegrey" android:id="@id/textViewWelcome2" android:layout_width="-2" android:layout_height="-2" android:layout_marginLeft="40dp" android:layout_marginBottom="156dp" android:text="@string/sport_goal" android:layout_alignParentBottom="true" android:layout_marginEnd="115dp" android:layout_alignParentEnd="true" />
-    <TextView android:textSize="20sp" android:textColor="@color/whitegrey" android:id="@id/textViewPrompt2" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="33dp" android:text="@string/welcome_page2_prompt" android:layout_alignTop="@id/textViewWelcome2" android:layout_alignStart="@id/textViewWelcome2" />
-</RelativeLayout>

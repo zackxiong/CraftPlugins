@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<merge android:layout_width="-1" android:layout_height="-1">
-    <TextView android:textSize="20sp" android:textColor="@color/libyf_text_gray1" android:gravity="10" android:id="@id/option_name" android:layout_width="-2" android:layout_height="-2" />
-    <com.yf.lib.ui.views.OptionToggleButton android:gravity="10" android:id="@id/option_toggle" android:background="@drawable/libyf_toggle_selector" android:layout_width="52dp" android:layout_height="26dp" android:textOn="" android:textOff="" android:text="" />
-</merge>

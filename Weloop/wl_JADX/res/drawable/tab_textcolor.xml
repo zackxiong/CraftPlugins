@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector>
-    <item android:state_checked="false" android:color="@color/textcolor" />
-    <item android:state_checked="true" android:color="@color/textcolor_checked" />
-</selector>

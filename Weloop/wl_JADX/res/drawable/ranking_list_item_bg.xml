@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector>
-    <item android:state_focused="true" android:drawable="@color/ranking_item_bg_focused" />
-    <item android:drawable="@color/ranking_item_bg_normal" />
-</selector>

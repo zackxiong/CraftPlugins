@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout style="@style/title_style"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="20.0sp" android:id="@id/at_tv_title" android:text="@string/personal_home_page" style="@style/title_center_text" />
-    <TextView android:textSize="15.0sp" android:gravity="center_vertical" android:id="@id/at_back" android:layout_width="wrap_content" android:layout_height="30.0dip" android:text="@string/back" android:layout_centerVertical="true" android:drawableStart="@drawable/update_back" android:layout_marginStart="7.299988dip" style="@style/title_text" />
-    <TextView android:textSize="15.0sp" android:gravity="center_vertical" android:id="@id/at_edit" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginEnd="7.299988dip" android:layout_alignParentEnd="true" style="@style/title_text" />
-</RelativeLayout>

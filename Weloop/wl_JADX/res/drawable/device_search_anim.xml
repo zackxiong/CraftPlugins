@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<animation-list android:oneshot="false">
-    <item android:duration="500" android:drawable="@drawable/search1" />
-    <item android:duration="500" android:drawable="@drawable/search2" />
-    <item android:duration="500" android:drawable="@drawable/search3" />
-    <item android:duration="500" android:drawable="@drawable/search4" />
-</animation-list>

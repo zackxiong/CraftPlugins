@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:orientation="0" android:background="@drawable/device_bg" android:layout_width="-1" android:layout_height="-2">
-    <ImageView android:id="@id/option_more" android:layout_width="-2" android:layout_height="-2" android:src="@drawable/device_searchfail" android:layout_marginStart="30dp" />
-    <RelativeLayout android:orientation="1" android:id="@id/device_info" android:layout_width="-2" android:layout_height="-2" android:layout_marginStart="20dp" android:layout_toEndOf="@id/option_more">
-        <TextView android:textSize="23sp" android:textColor="@color/device_gray" android:id="@id/option_name" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="25dp" android:text="搜索不到设备？" />
-        <TextView android:textSize="23sp" android:textColor="@color/device_gray" android:gravity="10" android:id="@id/option_value" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="17dp" android:text="点击查看解决方案" android:layout_below="@id/option_name" />
-    </RelativeLayout>
-    <ImageView android:id="@id/option_tag_icon" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="73dp" android:src="@drawable/device_unlink" android:layout_marginEnd="60dp" android:layout_alignParentEnd="true" />
-</RelativeLayout>

@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="vertical" android:background="#ff906045" android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <com.yf.smart.weloopx.android.ui.widget.RulerView android:id="@id/test" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="200.0dip" app:indicator="@drawable/select_scale" app:indicatorWidth="20.0dip" app:indicatorHeight="20.0dip" app:indicator_centerHorizontal="true" app:scaleWidth="12.0dip" app:scaleLineWidth="1.0dip" app:scaleShortHeight="30.0dip" app:scaleLongHeight="40.0dip" app:scaleModular="10" app:scaleStart="90" app:scaleEnd="201" app:scalePosition="100" app:scaleColor="@color/gray" />
-</LinearLayout>

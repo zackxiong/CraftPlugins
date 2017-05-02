@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TextView android:textAppearance="?unknown_attr_ref: 101039f" android:textColor="@color/ranking_normal" android:gravity="10" android:id="@id/text" android:layout_width="-1" android:layout_height="-2" android:minHeight="?unknown_attr_ref: 1010387" android:paddingStart="?unknown_attr_ref: 10103bd" android:paddingEnd="?unknown_attr_ref: 10103be" />

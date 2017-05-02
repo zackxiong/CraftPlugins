@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <ImageView android:id="@id/device_icon" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
-    <TextView android:textSize="22.0sp" android:textColor="@color/text_gray1" android:id="@id/device_name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" android:text="WeLoop Tommy" android:layout_toRightOf="@id/device_icon" android:layout_alignParentTop="true" />
-    <TextView android:textSize="18.0sp" android:textColor="@color/text_gray1" android:id="@id/device_id" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ID:7YJ9" android:layout_toRightOf="@id/device_icon" android:layout_below="@id/device_name" />
-    <ImageView android:id="@id/connect_status" android:layout_width="60.0dip" android:layout_height="20.0dip" android:layout_marginLeft="10.0dip" android:src="@drawable/bt_unlinked" android:layout_toRightOf="@id/device_id" android:layout_below="@id/device_name" />
-</RelativeLayout>

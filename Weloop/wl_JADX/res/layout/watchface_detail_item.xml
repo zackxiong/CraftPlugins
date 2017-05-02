@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:orientation="0" android:layout_width="-1" android:layout_height="-1">
-    <TextView android:textSize="18sp" android:textColor="@color/text_gray1" android:gravity="30" android:id="@id/option_name" android:layout_width="-2" android:layout_height="-2" android:text="Now" />
-    <TextView android:textSize="18sp" android:textColor="@color/text_gray1" android:id="@id/option_value" android:layout_width="-2" android:layout_height="-2" android:text="Now x x x x" android:singleLine="true" android:layout_marginStart="6dp" />
-</LinearLayout>

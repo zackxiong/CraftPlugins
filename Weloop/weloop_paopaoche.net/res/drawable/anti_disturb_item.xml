@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_pressed="true" android:drawable="@color/ranking_item_bg_normal" />
-    <item android:drawable="@color/device_gray" android:state_activated="true" />
-    <item android:drawable="@color/ranking_item_bg_focused" />
-</selector>

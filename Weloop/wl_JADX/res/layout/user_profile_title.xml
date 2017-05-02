@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout style="@style/title_style">
-    <TextView android:textSize="20sp" android:id="@id/at_tv_title" android:text="@string/personal_home_page" style="@style/title_center_text" />
-    <TextView android:textSize="15sp" android:gravity="10" android:id="@id/at_back" android:layout_width="-2" android:layout_height="30dp" android:text="@string/back" android:layout_centerVertical="true" android:drawableStart="@drawable/update_back" android:layout_marginStart="7.3dp" style="@style/title_text" />
-    <TextView android:textSize="15sp" android:gravity="10" android:id="@id/at_edit" android:layout_width="-2" android:layout_height="30dp" android:layout_marginEnd="7.3dp" android:layout_alignParentEnd="true" style="@style/title_text" />
-</RelativeLayout>

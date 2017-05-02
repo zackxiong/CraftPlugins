@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:background="@drawable/tran_black" android:layout_width="-1" android:layout_height="-2">
-    <TextView android:textAppearance="?unknown_attr_ref: 1010041" android:textSize="22sp" android:textColor="@color/white" android:id="@id/ti_value" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="5dp" android:text="3900" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
-    <TextView android:textAppearance="?unknown_attr_ref: 1010042" android:textSize="12sp" android:textColor="@color/white" android:gravity="1" android:id="@id/ti_msg" android:layout_width="-2" android:layout_height="-2" android:layout_marginTop="2dp" android:text="卡路里" android:layout_below="@id/ti_value" android:layout_centerHorizontal="true" />
-    <View android:layout_width="-1" android:layout_height="5dp" android:layout_below="@id/ti_msg" />
-</RelativeLayout>

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector>
-    <item android:state_selected="true" android:drawable="@drawable/on_now_new_version_press" />
-    <item android:state_checked="true" android:drawable="@drawable/on_now_new_version_press" />
-    <item android:drawable="@drawable/on_now_new_version_normal" />
-</selector>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector>
-    <item android:state_pressed="false">
-        <shape>
-            <gradient android:startColor="#bbffffff" android:endColor="#bbffffff" android:type="1" android:gradientRadius="50.0" />
-            <corners android:radius="5dp" />
-        </shape>
-    </item>
-</selector>

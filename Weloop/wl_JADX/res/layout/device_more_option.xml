@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:orientation="0" android:background="@color/white" android:layout_width="-1" android:layout_height="-2" android:layout_marginStart="22dp" android:layout_marginEnd="10dp">
-    <TextView android:textSize="20sp" android:textColor="@color/text_gray1" android:gravity="10" android:id="@id/option_name" android:layout_width="-2" android:layout_height="-2" android:text="@string/device_language" android:layout_centerVertical="true" android:layout_alignParentStart="true" />
-    <LinearLayout android:gravity="10" android:orientation="0" android:layout_width="-2" android:layout_height="-2" android:layout_centerVertical="true" android:layout_alignParentEnd="true">
-        <TextView android:textSize="20sp" android:textColor="@color/text_gray2" android:gravity="10" android:id="@id/option_value" android:layout_width="-2" android:layout_height="-2" android:text="EN" android:layout_marginEnd="10dp" />
-        <ImageView android:id="@id/option_more" android:layout_width="11dp" android:layout_height="18dp" android:src="@drawable/arrow" android:scaleType="3" />
-    </LinearLayout>
-</RelativeLayout>

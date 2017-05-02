@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:orientation="1" android:background="@color/goal_bg" android:layout_width="-1" android:layout_height="-1">
-    <include android:id="@id/goal_include" android:layout_width="-1" android:layout_height="40dp" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" layout="@layout/all_title" />
-    <android.support.v4.view.ViewPager android:layout_gravity="11" android:id="@id/everypagerday" android:persistentDrawingCache="1" android:layout_width="-1" android:layout_height="-1" android:flipInterval="30" android:layout_below="@id/goal_include" />
-</RelativeLayout>

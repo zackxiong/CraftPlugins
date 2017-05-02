@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector>
-    <item android:state_pressed="true" android:color="@color/all_title_bg" />
-    <item android:color="@color/ranking_gray" />
-</selector>
