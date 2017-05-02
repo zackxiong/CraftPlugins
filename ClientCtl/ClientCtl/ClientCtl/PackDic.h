@@ -8,7 +8,10 @@
 
 bool init_dic(InfoSenser *i);
 struct IntentDic {
-	std::string keepAlive;
+	std::string 
+		keepAlive,
+		sendInfo,
+		sendRealTimeInfo;
 };
 extern IntentDic intentDic;
 

@@ -203,7 +203,10 @@ bool Communicater::send_keep_alive(){
 }
 
 bool Communicater::heart_beat(){
-	if(!this->send_keep_alive()) return false;
+	extern bool keep_Alive_Need;
+
+	if(keep_Alive_Need && !this->send_keep_alive()) return false;
+	keep_Alive_Need = false;
 	for (int i = 0; i < quene.size(); i++) {//clear out possiblly corrupted packages
 		if (!quene[i].is_done) {
 			std::cout << "clear package at" << i << std::endl;

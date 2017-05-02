@@ -7,6 +7,8 @@ struct ContentDic contentDic;
 
 bool init_dic(InfoSenser* i) {
 	intentDic.keepAlive = std::string("KeepAlive");
+	intentDic.sendInfo = std::string("SendInfo");
+	intentDic.sendRealTimeInfo = std::string("SendRealTimeInfo");
 
 	contentDic.ID = 
 		(std::string("</id>") 

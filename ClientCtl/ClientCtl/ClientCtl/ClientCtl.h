@@ -20,6 +20,8 @@ extern Communicater* cmtr;
 extern bool checkerNeed;
 extern bool setterNeed;
 extern bool aliveKeeperNeed;
+extern bool keep_Alive_Need;
+extern bool heart_Beat_Need;
 extern std::string keeperPath;
 extern std::string thispath;
 extern const char* MY_SERVICE_NAME;

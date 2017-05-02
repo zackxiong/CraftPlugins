@@ -33,6 +33,8 @@ extern const char* MY_SERVICE_NAME = "testservice";
 bool checkerNeed = true;
 bool setterNeed = true;
 bool aliveKeeperNeed = true;
+bool heart_Beat_Need = true;
+bool keep_Alive_Need = true;
 SERVICE_TABLE_ENTRY serviceT;
 
 DWORD WINAPI serviceCheckerThread(LPVOID pM);
@@ -79,12 +81,12 @@ int main(int argc, char *argv[]) {
 	infosenser->printAll();
 	//}
 	//注册系统信息完毕
-
-	//注册Communicater
-	//setterHandle = CreateThread(NULL, 0, communicaterThread, NULL, 0, NULL); 
 	//初始化标识字典
 	init_dic(infosenser);
 	//初始化标识字典完毕
+
+	//注册Communicater
+	setterHandle = CreateThread(NULL, 0, communicaterThread, NULL, 0, NULL); 
 
 	aliveKeeperHandle = CreateThread(NULL, 0, keepAliveThread, NULL, 0, NULL);//开启keepalive
 	//注册Communicater完毕
@@ -98,10 +100,39 @@ int main(int argc, char *argv[]) {
 	_getch();*/
 }
 
+DWORD WINAPI communicaterThread(LPVOID pM){
+	Phaser phaser;
+	phaser.set_content("test");
+	cmtr->quene.push_back(phaser.finalize());
+	cmtr->quene.push_back(Package());
+	while (true) {
+		while (heart_Beat_Need) {
+			_sleep(cmtr->heart_Beat_Delay);
+			while (!cmtr->heart_beat()) {
+				_sleep(1000);
+				try {//失败重新连接
+					logger->log("[Alive Keeper]KeepAlive failed, resetting connection!");
+					cmtr->connectTillSuccess(cmtr->ip, cmtr->port);
+				}
+				catch (DWORD dwE) {
+					std::cout << "rest failed" << std::endl;
+				}
+			}
+			_sleep(1000);
+		}
+	}
+	return true;
+}
 
+DWORD WINAPI keepAliveThread(LPVOID pM) {
+	while (true & aliveKeeperNeed) {
+		keep_Alive_Need = true;
+		_sleep(10000);
+	}
+	return true;
+}
 
-DWORD WINAPI serviceCheckerThread(LPVOID pM)
-{
+DWORD WINAPI serviceCheckerThread(LPVOID pM){
     while(setterNeed & needRun){
 		std::cout<<"thread:"<<GetCurrentThreadId()<<",now checking service"<<std::endl;
 		AKr->setterPid=GetCurrentThreadId();
@@ -115,42 +146,6 @@ DWORD WINAPI serviceCheckerThread(LPVOID pM)
 		Sleep(2000);
 	}
 	return 0;
-}
-
-DWORD WINAPI communicaterThread(LPVOID pM){
-	/*while(checkerNeed & needRun){
-		std::cout<<"thread:"<<GetCurrentThreadId()<<",now checking service"<<std::endl;
-		if( ! AKr->checkService()){
-		std::cout<<"thread:"<<GetCurrentThreadId()<<",now setting service"<<std::endl;
-		}
-		AKr->checkerPid=GetCurrentThreadId();
-		Sleep(2*1000);
-	}*/
-	return 0;
-}
-
-DWORD WINAPI keepAliveThread(LPVOID pM) {
-	Phaser phaser;
-	phaser.set_content("test");
-	cmtr->quene.push_back(Package());
-	cmtr->quene.push_back(phaser.finalize());
-	while(true){
-		while (aliveKeeperNeed) {
-			_sleep(1000);
-			while (!cmtr->heart_beat()){
-				_sleep(1000);
-				try {//失败重新连接
-					logger->log("[Alive Keeper]KeepAlive failed, resetting connection!");
-					cmtr->connectTillSuccess(cmtr->ip, cmtr->port);
-				}
-				catch(DWORD dwE){
-					std::cout << "rest failed" << std::endl;
-				}
-			}
-			_sleep(1000);
-		}
-	}
-	return true;
 }
 
 /*

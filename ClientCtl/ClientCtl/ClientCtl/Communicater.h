@@ -36,6 +36,7 @@ public:
 	int mySend(Package p);
 	int mySend(int number);
 	int mySend(byte data[]);
+	int heart_Beat_Delay = 1000;
 
 	bool send_keep_alive();
 	bool heart_beat();
