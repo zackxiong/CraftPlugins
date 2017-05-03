@@ -39,25 +39,20 @@ public class Reciever implements Runnable{
 	public void run() {
 		//byte []int = new byte[bufLength];
 		myCtlr.activeCount++;
+		String lData, packData = new String("");
 		try{
 			Gui.log("Now reading:");
 			in = new BufferedReader(new InputStreamReader(cs.getInputStream()));   
 			out = new PrintWriter(cs.getOutputStream(),true);
-			String lData, packData = new String("");
 			do{//read loop
 				lData = in.readLine();
-				if(lData.endsWith("</Package>\n")){//检测到结束
-					Package pak = this.myCtlr.phaser.phase(packData);
-				}
-				else{
+				if(lData.endsWith("</Package>\n")){
 					packData = packData + lData;
 				}
-				if(packData.length() > this.myCtlr.pakLength){
-					lData = ""; packData = "";
-					gui.Gui.log("Illegal operation from:" + cs.getInetAddress() + ":" + cs.getPort() + "\n" +
-							"To:" + "reciever[" + this.hashCode() + "]:" + cs.getLocalPort() + "\n" +
-									"	Reaction:dropped");
+				else{
+					Package pak = this.myCtlr.phaser.phase(lData);
 				}
+				
 			} while(lData != null);
 			
 			gui.Gui.log("Closing session" + cs.getLocalSocketAddress()+":"+cs.getPort());

@@ -43,21 +43,17 @@ public class Reciever implements Runnable{
 			Gui.log("Now reading:");
 			in = new BufferedReader(new InputStreamReader(cs.getInputStream()));   
 			out = new PrintWriter(cs.getOutputStream(),true);
-			String lData, packData = new String("");
+			String lData, packData;
 			do{//read loop
 				lData = in.readLine();
-				if(lData.endsWith("</Package>\n")){//检测到结束
-					Package pak = this.myCtlr.phaser.phase(packData);
+				if(lData.length() != this.myCtlr.pakLength){
+					gui.Gui.log("Broken package from"+this.hashCode()+", dropped!");
+					lData = null; break;//丢掉损坏的包
 				}
 				else{
-					packData = packData + lData;
+					Package pak = this.myCtlr.phaser.phase(lData);
 				}
-				if(packData.length() > this.myCtlr.pakLength){
-					lData = ""; packData = "";
-					gui.Gui.log("Illegal operation from:" + cs.getInetAddress() + ":" + cs.getPort() + "\n" +
-							"To:" + "reciever[" + this.hashCode() + "]:" + cs.getLocalPort() + "\n" +
-									"	Reaction:dropped");
-				}
+				
 			} while(lData != null);
 			
 			gui.Gui.log("Closing session" + cs.getLocalSocketAddress()+":"+cs.getPort());

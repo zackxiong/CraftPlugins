@@ -55,8 +55,7 @@ public class Reciever implements Runnable{
 				if(packData.length() > this.myCtlr.pakLength){
 					lData = ""; packData = "";
 					gui.Gui.log("Illegal operation from:" + cs.getInetAddress() + ":" + cs.getPort() + "\n" +
-							"To:" + "reciever[" + this.hashCode() + "]:" + cs.getLocalPort() + "\n" +
-									"	Reaction:dropped");
+							"to:" + "reciever[" + this.hashCode() + "]:" + cs.getLocalPort());
 				}
 			} while(lData != null);
 			

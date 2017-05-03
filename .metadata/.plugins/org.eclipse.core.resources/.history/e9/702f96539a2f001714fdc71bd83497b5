@@ -46,18 +46,14 @@ public class Reciever implements Runnable{
 			String lData, packData = new String("");
 			do{//read loop
 				lData = in.readLine();
-				if(lData.endsWith("</Package>\n")){//检测到结束
+				if(lData.endsWith("</Package>\n")){
 					Package pak = this.myCtlr.phaser.phase(packData);
 				}
 				else{
 					packData = packData + lData;
+					
 				}
-				if(packData.length() > this.myCtlr.pakLength){
-					lData = ""; packData = "";
-					gui.Gui.log("Illegal operation from:" + cs.getInetAddress() + ":" + cs.getPort() + "\n" +
-							"To:" + "reciever[" + this.hashCode() + "]:" + cs.getLocalPort() + "\n" +
-									"	Reaction:dropped");
-				}
+				
 			} while(lData != null);
 			
 			gui.Gui.log("Closing session" + cs.getLocalSocketAddress()+":"+cs.getPort());
