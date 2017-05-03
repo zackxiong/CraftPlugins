@@ -223,6 +223,15 @@ bool Communicater::heart_beat(){
 	return true;
 }
 
+bool Communicater::send_Men_CPU(){
+	char total[10], avail[10];
+	_gcvt(infosenser->get_MEM_State()[0], 2, total);
+	_gcvt(infosenser->get_MEM_State()[1], 2, avail);
+	Phaser();dfg
+	//std::string message = std::string(infosenser->get_MEM_State()[0]);
+	return false;
+}
+
 Communicater &operator << (Communicater &c, char *a){
 	std::cout << "sending:" << a << std::endl;
 	if (c.mySend(a) == SOCKET_ERROR) {

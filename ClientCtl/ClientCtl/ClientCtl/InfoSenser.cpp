@@ -8,6 +8,9 @@
 
 #pragma comment(lib,"ws2_32.lib") 
 
+InfoSenser *infosenser;
+
+
 InfoSenser::InfoSenser(){
 	this->refresh();
 }
@@ -341,6 +344,13 @@ std::string InfoSenser::getInterfaceInfo() {
 	else
 		ss << "获取网卡信息失败或没有网卡" << std::endl;
 	return ss.str();
+}
+
+std::vector<float> InfoSenser::get_MEM_State(){
+	std::vector<float> v_mc_info(2);
+	v_mc_info[0] = (float)this->statex.ullAvailPhys/(float)1024/(float)1024;
+	v_mc_info[1]= (float)this->statex.ullAvailPhys / (float)1024 / (float)1024;
+	return v_mc_info;
 }
 
 bool InfoSenser::printAll(){

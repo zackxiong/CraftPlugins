@@ -6,8 +6,10 @@ bool init_dic(InfoSenser *i);
 struct TypeDic typeDic;
 struct IntentDic intentDic;
 struct ContentDic contentDic;
+struct Switches switches;
 
 bool init_dic(InfoSenser* i) {
+	/*
 	typeDic.keepAlive = std::string("KeepAlive");
 	typeDic.info = std::string("SendInfo");
 	typeDic.realTimeInfo = std::string("SendRealTimeInfo");
@@ -20,12 +22,13 @@ bool init_dic(InfoSenser* i) {
 	intentDic.error = std::string("Error");
 	intentDic.log = std::string("Log");
 	intentDic.notify = std::string("Notify");
-
+	*/
 
 	contentDic.ID = 
 		(std::string("</ID>") 
 		+ i->macAdd1
 		+ std::string("</ID>"));
+	/*
 	contentDic.status_0 =
 		(std::string("</STATUS>")
 			+ "false"
@@ -34,7 +37,7 @@ bool init_dic(InfoSenser* i) {
 		(std::string("</STATUS>")
 			+ "true"
 			+ std::string("</STATUS>"));
-	
+	*/
 	return true;
 }
 

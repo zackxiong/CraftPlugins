@@ -24,7 +24,7 @@
 
 AliveKeeper* AKr;
 Logger* logger;
-InfoSenser* infosenser;
+//InfoSenser* infosenser;自动包含在infosensor.h里面
 Communicater* cmtr;
 std::string command;
 std::string keeperPath("");

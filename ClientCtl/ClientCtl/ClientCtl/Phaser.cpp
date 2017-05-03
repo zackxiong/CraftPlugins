@@ -8,6 +8,17 @@ Phaser::Phaser()
 
 }
 
+Phaser::Phaser(char * typ, char * in, char * con){
+	this->set_type(typ);
+	this->set_intent(in);
+	this->set_content(con);
+}
+
+Phaser::Phaser(std::string typ, std::string in, std::string con){
+	this->set_type(typ);
+	this->set_intent(in);
+	this->set_content(con);
+}
 
 Phaser::~Phaser(){
 

@@ -9,6 +9,7 @@
 #include "Phaser.h"
 #include <vector>
 #include "PackDic.h"
+#include <stdlib.h>
 
 //#include <algorithm>
 
@@ -42,6 +43,7 @@ public:
 
 	bool send_keep_alive();
 	bool heart_beat();
+	bool send_Men_CPU();
 
 	friend Communicater &Communicater::operator << (Communicater &c, char *a); //жиди<<
 	friend Communicater &Communicater::operator << (Communicater &c, std::string a);

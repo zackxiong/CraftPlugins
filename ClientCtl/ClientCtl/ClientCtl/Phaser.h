@@ -8,6 +8,8 @@ class Phaser
 {
 public:
 	Phaser();
+	Phaser(char* typ, char* in, char* con);
+	Phaser(std::string typ, std::string  in, std::string con);
 	~Phaser();
 
 

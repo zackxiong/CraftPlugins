@@ -35,6 +35,7 @@ public:
 	std::string getDriveInfo();
 	std::string getCPUInfo();
 	std::string getInterfaceInfo();
+	std::vector<float> get_MEM_State();//返回状态，共2个,total/avail,in mb
 	//std::string getfGraphicCardInfo();
 	//std::string getTotalVirtualMemInfo();
 	std::string getAll();
@@ -75,3 +76,4 @@ protected:
 	WSADATA WSAData; //初始化套接字临时使用
 };
 
+extern InfoSenser *infosenser;
