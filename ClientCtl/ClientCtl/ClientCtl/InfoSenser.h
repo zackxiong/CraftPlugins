@@ -10,6 +10,7 @@
 //#include <winsock.h>
 #include <afxwin.h>
 #include "GetSysInfo.h"
+#include <sstream>
 
 
 class InfoSenser
@@ -28,6 +29,15 @@ public:
 	//bool printfGraphicCardInfo();
 	//bool printTotalVirtualMemInfo();
 	bool printAll();
+
+	std::string getNetInfo();
+	std::string getHWInfo();
+	std::string getDriveInfo();
+	std::string getCPUInfo();
+	std::string getInterfaceInfo();
+	//std::string getfGraphicCardInfo();
+	//std::string getTotalVirtualMemInfo();
+	std::string getAll();
 
 	GetSysInfo* gSI;
 	

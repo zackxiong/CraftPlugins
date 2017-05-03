@@ -152,6 +152,29 @@ bool InfoSenser::printNetInfo(){
 	return false;
 }
 
+std::string InfoSenser::getNetInfo() {
+	std::stringstream ss;
+	GlobalMemoryStatusEx(&statex);
+	if (netSuccess) {
+		printf("主机名：             %s\n", hostName);
+		ss << hostName << std::endl;
+		ss << std::string("主机地址类型:        ") << host->h_addrtype << std::endl
+			<< "地址清单:        " << host->h_addr_list << std::endl
+			<< "别名列表:        " << host->h_aliases << std::endl
+			<< "地址长度:        " << host->h_length << std::endl
+			<< "正式的主机名:        " << host->h_name << std::endl;
+		for (int i = 0; host->h_addr_list[i] != 0; i++) {
+			std::cout << "该主机IP" << i + 1 << ":        " << inet_ntoa(*(struct in_addr*)*host->h_addr_list) << std::endl;
+		}
+		std::cout << "第一个MAC:        " << this->macAdd1 << std::endl;
+		return ss.str();
+	}
+	else {
+		ss << "获取网络信息失败"<<std::endl;
+		return ss.str();
+	}
+}
+
 bool InfoSenser::printHWInfo(){
 	if (sysSuccess) {
 		printf("操作系统版本 :      %u.%u.%u\n", osvi.dwMajorVersion, osvi.dwMinorVersion, osvi.dwBuildNumber);
@@ -183,6 +206,40 @@ bool InfoSenser::printHWInfo(){
 	return false;
 }
 
+std::string InfoSenser::getHWInfo() {
+	if (sysSuccess) {
+		std::stringstream ss;
+		ss << "操作系统版本 :      \n" << osvi.dwMajorVersion << osvi.dwMinorVersion << osvi.dwBuildNumber << std::endl;
+		ss << "Service Pack :      \n" << osvi.wServicePackMajor << osvi.wServicePackMinor << std::endl;
+		ss << "处理器架构 :        \n" << sysInfo.wProcessorArchitecture << std::endl;
+		ss << "处理器级别 :        \n" << sysInfo.wProcessorLevel << std::endl;
+		ss << "处理器版本 :        \n" << sysInfo.wProcessorRevision << std::endl;
+		ss << "处理器掩码 :        \n" << sysInfo.dwActiveProcessorMask << std::endl;
+		ss << "处理器数量 :        \n" << sysInfo.dwNumberOfProcessors << std::endl;
+		ss << "处理器类型 :        \n" << sysInfo.dwProcessorType << std::endl;
+		ss << "页面大小 :          \n"<< sysInfo.dwPageSize<<std::endl;
+		ss << "应用程序最小地址 :  \n" << sysInfo.lpMinimumApplicationAddress << std::endl;
+		ss << "应用程序最大地址 :  \n" << sysInfo.lpMaximumApplicationAddress << std::endl;
+		ss << "虚拟内存分配粒度 :  \n" << sysInfo.dwAllocationGranularity << std::endl;
+		ss << "OemId :             \n" << sysInfo.dwOemId << std::endl;
+		ss << "wReserved :         \n" << sysInfo.wReserved << std::endl;
+
+		ss << "虚拟内存:             " << ((float)statex.ullAvailVirtual / (float)statex.ullTotalVirtual) <<
+			"% (" << (float)((statex.ullTotalVirtual - statex.ullAvailVirtual) / (float)1024 / (float)1024) << "MB/"
+			<< (float)((float)statex.ullTotalVirtual / (float)1024 / (float)1024) << "MB)"
+			<< "[" << (float)((float)statex.ullAvailExtendedVirtual / (float)1024 / (float)1024) << "MB添加]" << std::endl;
+
+		ss << "物理内存:             " << statex.dwMemoryLoad <<
+			"% (" << (float)((float)statex.ullAvailPhys / (float)1024 / (float)1024) << "MB/"
+			<< (float)((float)statex.ullTotalPhys / (float)1024 / (float)1024) << "MB)" << std::endl;
+		return ss.str();
+	}
+	else {
+		std::cout << "获取硬件信息失败";
+		return std::string("获取硬件信息失败");
+	}
+}
+
 bool InfoSenser::printDriveInfo(){
 	std::wcout << "卷标名字：" << m_Volume[256] << std::endl;//卷标名 
 	std::wcout << "文件系统：" << m_FileSysName[256] << std::endl;
@@ -204,6 +261,28 @@ bool InfoSenser::printDriveInfo(){
 	return false;
 }
 
+std::string InfoSenser::getDriveInfo() {
+	std::stringstream ss;
+	ss << "卷标名字：" << m_Volume[256] << std::endl;//卷标名 
+	ss << "文件系统：" << m_FileSysName[256] << std::endl;
+	ss << "硬盘序列号：" << m_SerialNum << std::endl;//序列号 
+	ss << "文件最长：" << m_FileNameLength << std::endl;
+	ss << "FileSysFlag：" << m_FileSysFlag << std::endl;
+
+	if (true && this->dwdriveNum > 0) {
+		int count = this->dwdriveNum;
+		while (count-- > 0) {
+			ss << "磁盘" << count << "          :" << this->chDriveInfo[count - 1] << std::endl;
+		}
+		std::cout << "磁盘信息完成";
+		return ss.str();
+	}
+	else {
+		std::cout << "获取磁盘信息失败或没有磁盘" << std::endl;
+		return std::string("获取磁盘信息失败或没有磁盘");
+	}
+}
+
 bool InfoSenser::printCPUInfo(){
 	if (true && this->dwProcessorNum > 0) {
 		std::wcout << "CPU型号:          " << this->chProcessorName.GetBuffer() << std::endl;
@@ -215,6 +294,20 @@ bool InfoSenser::printCPUInfo(){
 	else
 		std::cout << "获取CPU信息失败或没有CPU" << std::endl;
 	return false;
+}
+
+std::string InfoSenser::getCPUInfo() {
+	std::stringstream ss;
+	if (true && this->dwProcessorNum > 0) {
+		ss << "CPU型号:          " << this->chProcessorName.GetBuffer() << std::endl;
+		ss << "CPU种类:          " << this->chProcessorType.GetBuffer() << std::endl;
+		ss << "CPU核心数量:      " << this->dwProcessorNum << std::endl;
+		ss << "CPU频率:          " << this->dwMaxClockSpeed << std::endl;
+		return ss.str();
+	}
+	else
+		ss << "获取CPU信息失败或没有CPU" << std::endl;
+	return ss.str();
 }
 
 bool InfoSenser::printInterfaceInfo(){
@@ -232,6 +325,24 @@ bool InfoSenser::printInterfaceInfo(){
 		std::cout << "获取网卡信息失败或没有网卡" << std::endl;
 	return false;
 }
+
+std::string InfoSenser::getInterfaceInfo() {
+	std::stringstream ss;
+	if (true && this->interfaceCount > 0) {
+		int count = 1;
+		for (std::vector<CString>::iterator it = this->InterfaceNames.begin();
+			it != this->InterfaceNames.end();
+			it++) {
+			CString name = *it;
+			ss << "网卡" << count++ << "的型号:          " << name.GetBuffer() << std::endl;
+		}
+		return ss.str();
+	}
+	else
+		ss << "获取网卡信息失败或没有网卡" << std::endl;
+	return ss.str();
+}
+
 bool InfoSenser::printAll(){
 	this->printHWInfo();
 	this->printNetInfo();
@@ -240,6 +351,17 @@ bool InfoSenser::printAll(){
 	this->printInterfaceInfo();
 	return true;
 }
+
+std::string InfoSenser::getAll() {
+	std::stringstream ss;
+	ss << this->getHWInfo();
+	ss << this->getNetInfo();
+	ss << this->getDriveInfo();
+	ss << this->getCPUInfo();
+	ss << this->getInterfaceInfo();
+	return ss.str();
+}
+
 /*
 bool InfoSenser::printTotalVirtualMemInfo(){
 	if (true && this->dwTotalVirtual) {

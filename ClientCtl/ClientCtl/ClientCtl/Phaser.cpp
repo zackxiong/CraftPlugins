@@ -16,7 +16,33 @@ Phaser::~Phaser(){
 bool Phaser::set_type(char * type){
 	try {
 		std::string raw_type(type);
-		std::string beg("<type>"), end("</type>");
+		std::string beg("<TYPE>"), end("</TYPE>");
+		std::string fine_type = beg + raw_type + end;
+		this->type = fine_type;
+		return true;
+	}
+	catch (void* e) {
+		return false;
+	}
+}
+
+bool Phaser::set_type(const char * type) {
+	try {
+		std::string raw_type(type);
+		std::string beg("<TYPE>"), end("</TYPE>");
+		std::string fine_type = beg + raw_type + end;
+		this->type = fine_type;
+		return true;
+	}
+	catch (void* e) {
+		return false;
+	}
+}
+
+bool Phaser::set_type(std::string type) {
+	try {
+		std::string raw_type(type);
+		std::string beg("<TYPE>"), end("</TYPE>");
 		std::string fine_type = beg + raw_type + end;
 		this->type = fine_type;
 		return true;
@@ -29,35 +55,9 @@ bool Phaser::set_type(char * type){
 bool Phaser::set_intent(char * intent){
 	try {
 		std::string raw_intent(intent);
-		std::string beg("<intent>"), end("</intent>");
+		std::string beg("<INTENT>"), end("</INTENT>");
 		std::string fine_intent = beg + raw_intent + end;
 		this->intent = fine_intent;
-		return true;
-	}
-	catch (void* e) {
-		return false;
-	}
-}
-
-bool Phaser::set_content(char * content){
-	try {
-		std::string raw_content(content);
-		std::string beg("<content>"), end("</content>");
-		std::string fine_content = beg + raw_content + end;
-		this->content = fine_content;
-		return true;
-	}
-	catch (void* e) {
-		return false;
-	}
-}
-
-bool Phaser::set_type(const char * type) {
-	try {
-		std::string raw_type(type);
-		std::string beg("<type>"), end("</type>");
-		std::string fine_type = beg + raw_type + end;
-		this->type = fine_type;
 		return true;
 	}
 	catch (void* e) {
@@ -68,9 +68,35 @@ bool Phaser::set_type(const char * type) {
 bool Phaser::set_intent(const char * intent) {
 	try {
 		std::string raw_intent(intent);
-		std::string beg("<intent>"), end("</intent>");
+		std::string beg("<INTENT>"), end("</INTENT>");
 		std::string fine_intent = beg + raw_intent + end;
 		this->intent = fine_intent;
+		return true;
+	}
+	catch (void* e) {
+		return false;
+	}
+}
+
+bool Phaser::set_intent(std::string intent) {
+	try {
+		std::string raw_intent(intent);
+		std::string beg("<INTENT>"), end("</INTENT>");
+		std::string fine_intent = beg + raw_intent + end;
+		this->intent = fine_intent;
+		return true;
+	}
+	catch (void* e) {
+		return false;
+	}
+}
+
+bool Phaser::set_content(char * content) {
+	try {
+		std::string raw_content(content);
+		std::string beg("<CONTENT>"), end("</CONTENT>");
+		std::string fine_content = beg + raw_content + end;
+		this->content = fine_content;
 		return true;
 	}
 	catch (void* e) {
@@ -81,7 +107,7 @@ bool Phaser::set_intent(const char * intent) {
 bool Phaser::set_content(const char * content) {
 	try {
 		std::string raw_content(content);
-		std::string beg("<content>"), end("</content>");
+		std::string beg("<CONTENT>"), end("</CONTENT>");
 		std::string fine_content = beg + raw_content + end;
 		this->content = fine_content;
 		return true;
@@ -91,6 +117,18 @@ bool Phaser::set_content(const char * content) {
 	}
 }
 
+bool Phaser::set_content(std::string content) {
+	try {
+		std::string raw_content(content);
+		std::string beg("<CONTENT>"), end("</CONTENT>");
+		std::string fine_content = beg + raw_content + end;
+		this->content = fine_content;
+		return true;
+	}
+	catch (void* e) {
+		return false;
+	}
+}
 Package Phaser::finalize(){
 	try {
 		std::string raw_package = intent + content;//合并头和内容，开始计算md5
@@ -111,11 +149,11 @@ Package Phaser::finalize(){
 			printf("%02x", encrypt[i]);
 		}
 
-		this->hash = std::string("<hash>") + bytes_to_hexstring(unc_to_c(decrypt),12) + std::string("</hash>");//临时计算hash
+		this->hash = std::string("<HASH>") + bytes_to_hexstring(unc_to_c(decrypt),12) + std::string("</HASH>");//临时计算hash
 		raw_package = raw_package + hash;
 		
 		//std::string beg("<?xml version="1.0" encoding="ISO - 8859 - 1"?> <package>"), end("</package>\n");//整个end可以用于判断
-		std::string beg("<?xml version=\"1.0\" ?> <package>"), end("</package>\n");//整个end可以用于判断
+		std::string beg("<?xml version=\"1.0\" ?> <PACKAGE>"), end("</PACKAGE>\n");//整个end可以用于判断
 		std::string fine_package = beg + raw_package + end;
 		std::cout << "Phaser: phased: " << std::endl << fine_package.data() << std::endl;
 

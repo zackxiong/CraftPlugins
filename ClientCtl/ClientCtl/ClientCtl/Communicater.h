@@ -8,6 +8,8 @@
 #include <Windows.h>
 #include "Phaser.h"
 #include <vector>
+#include "PackDic.h"
+
 //#include <algorithm>
 
 class Communicater{

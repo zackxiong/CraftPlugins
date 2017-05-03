@@ -6,6 +6,8 @@
 #include <sstream>
 
 #include "Communicater.h"
+#include "Phaser.h"
+#include "PackDic.h"
 
 class Logger
 {
@@ -15,12 +17,15 @@ public:
 
 	void log(char *message);
 	void log(std::string message);
+	void error(char* message);
+	void error(std::string message);
 
 	bool clearLog();
 	bool toFile = false;
-private:
+protected:
 	std::ofstream logFile;
 	Communicater *cmtr;
+	Phaser phaser;
 
 };
 

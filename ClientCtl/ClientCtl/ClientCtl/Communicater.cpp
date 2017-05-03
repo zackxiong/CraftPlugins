@@ -1,13 +1,11 @@
 #include "stdafx.h"
 #include "InfoSenser.h"
 #include "Service.h"
-#include "InfoSenser.h"
 #include <string>
 #include <iostream>
 #include <Windows.h>
 #include "Communicater.h"
 #include <ws2tcpip.h>
-#include "PackDic.h"
 
 #pragma comment(lib,"ws2_32.lib") 
 
@@ -195,8 +193,8 @@ int Communicater::mySend(byte data[]) {
 
 bool Communicater::send_keep_alive(){
 	Phaser p;
-	p.set_type(intentDic.keepAlive.data());
-	p.set_intent(intentDic.keepAlive.data());
+	p.set_type(typeDic.keepAlive.data());
+	p.set_intent(typeDic.keepAlive.data());
 	//p.set_content(const_cast<char*>(to_MD5(contentDic.ID).data()));
 	p.set_content(contentDic.ID.data());
 	return (bool)this->mySend(p.finalize().is_done?p.finalize():Package());

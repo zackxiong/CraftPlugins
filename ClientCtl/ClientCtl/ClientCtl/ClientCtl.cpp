@@ -102,7 +102,7 @@ int main(int argc, char *argv[]) {
 
 DWORD WINAPI communicaterThread(LPVOID pM){
 	Phaser phaser;
-	phaser.set_content("test");
+	phaser.set_content(contentDic.string(infosenser->getAll()));
 	cmtr->quene.push_back(phaser.finalize());
 	cmtr->quene.push_back(Package());
 	while (true) {

@@ -10,8 +10,6 @@ public:
 	Phaser();
 	~Phaser();
 
-	Package package;
-	std::string type, intent, content, hash;
 
 	bool set_type(char *type);
 	bool set_intent(char *intent);
@@ -21,8 +19,15 @@ public:
 	bool set_intent(const char *intent);
 	bool set_content(const char *content);
 
+	bool set_type(std::string type);
+	bool set_intent(std::string intent);
+	bool set_content(std::string content);
+
 	Package finalize();
 
+protected:
+	Package package;
+	std::string type, intent, content, hash;
 };
 
 unsigned char* str_to_unc(std::string str);

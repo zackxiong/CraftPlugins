@@ -6,16 +6,34 @@
 #include <iostream>
 
 
-bool init_dic(InfoSenser *i);
-struct IntentDic {
+extern bool init_dic(InfoSenser *i);
+struct TypeDic {
 	std::string 
 		keepAlive,
-		sendInfo,
-		sendRealTimeInfo;
+		info,
+		realTimeInfo,
+		changeState;
+};
+extern TypeDic typeDic;
+
+struct IntentDic {
+	std::string
+		onLine,
+		offLine,
+		activate,
+		log,
+		error,
+		notify
+		;
 };
 extern IntentDic intentDic;
 
 struct ContentDic {
-	std::string ID;
+	std::string ID,
+		status_0,
+		status_1
+		;
+
+	std::string string(std::string str);
 };
 extern ContentDic contentDic;
