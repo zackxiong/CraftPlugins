@@ -32,6 +32,25 @@ protected:
 	std::string type, intent, content, hash;
 };
 
+class DePhaser
+{
+public:
+	DePhaser();
+	DePhaser(char* typ, char* in, char* con);
+	DePhaser(std::string typ, std::string  in, std::string con);
+	~DePhaser();
+
+	Package finalize();
+
+protected:
+	Package package;
+	std::string type, intent, content, hash;
+};
+
+struct XML_Node {
+
+};
+
 unsigned char* str_to_unc(std::string str);
 std::string unc_to_str(unsigned char* unc);
 char* unc_to_c(unsigned char* unc);

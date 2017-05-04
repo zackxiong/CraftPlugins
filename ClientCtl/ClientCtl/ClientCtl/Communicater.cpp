@@ -201,10 +201,15 @@ bool Communicater::send_keep_alive(){
 }
 
 bool Communicater::heart_beat(){
-	extern bool keep_Alive_Need;
-
-	if(keep_Alive_Need && !this->send_keep_alive()) return false;
+	extern bool keep_Alive_Need;//ka加上检测通畅
+	if (keep_Alive_Need && !this->send_keep_alive()) {
+		quene.clear();
+		return false;
+	}
 	keep_Alive_Need = false;
+
+	this->send_Mem();
+
 	for (int i = 0; i < quene.size(); i++) {//clear out possiblly corrupted packages
 		if (!quene[i].is_done) {
 			std::cout << "clear package at" << i << std::endl;
@@ -217,19 +222,40 @@ bool Communicater::heart_beat(){
 			quene.pop_back();
 		}
 		else {
+			if(quene.size() > this->quene_MAX) //保证队列不会溢出
+				quene.clear();
 			return false;
 		}
 	}
 	return true;
 }
 
-bool Communicater::send_Men_CPU(){
-	char total[10], avail[10];
-	_gcvt(infosenser->get_MEM_State()[0], 2, total);
-	_gcvt(infosenser->get_MEM_State()[1], 2, avail);
-	Phaser();dfg
-	//std::string message = std::string(infosenser->get_MEM_State()[0]);
+bool Communicater::send_Mem(){
+	if (switches.report_MEM) {
+		Package pak = Phaser(typeDic.info,
+			intentDic.update,
+			contentDic.men_info(infosenser->get_MEM_State())
+		).finalize();
+		
+		for (int i = 0; i < quene.size(); i++) {
+			if (quene[i].hash == pak.hash)
+				return true;
+			/*char sample[3]{quene[i].content[11],quene[i].content[12],quene[i].content[13]};
+			char tmplate[3]{'M','E','M'};
+			std::cout << "Sample:" << sample << "Template:" << tmplate <<"|"<<quene[i].content<< std::endl;
+			if (strcmp(sample, tmplate)) {
+				this->quene.erase(quene.begin() + i);
+				this->quene.push_back(pak);
+				std::wcout << "Replaced:" << std::endl << pak.hash << std::endl;
+				return true;
+			}*/
+			i++;
+		}
+		this->quene.push_back(pak);
+		std::wcout << "Pushed:" << std::endl << pak.hash << std::endl;
+	}else
 	return false;
+	//std::string message = std::string(infosenser->get_MEM_State()[0]);
 }
 
 Communicater &operator << (Communicater &c, char *a){

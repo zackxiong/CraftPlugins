@@ -43,7 +43,6 @@ public:
 
 	bool send_keep_alive();
 	bool heart_beat();
-	bool send_Men_CPU();
 
 	friend Communicater &Communicater::operator << (Communicater &c, char *a); //重载<<
 	friend Communicater &Communicater::operator << (Communicater &c, std::string a);
@@ -51,4 +50,6 @@ public:
 
 protected:
 	int iResult;
+	int quene_MAX = 10;//包队列最大容量
+	bool send_Mem();
 };

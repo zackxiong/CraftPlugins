@@ -48,3 +48,16 @@ std::string ContentDic::string(std::string str){
 			+ std::string("</STRING>"))
 		);
 }
+
+std::string ContentDic::men_info(std::vector<float> men_info){
+	char total[10], avail[10];
+	_gcvt(infosenser->get_MEM_State()[0], 2, total);
+	_gcvt(infosenser->get_MEM_State()[1], 2, avail);
+	return "<MEMEORY>" + std::string("<TOTAL>") + total + std::string("</TOTAL>") + std::string("<AVAIL>") + avail + std::string("</AVAIL>") + "</MEMORY>";
+}
+inline std::string ContentDic::men_info(float total, float avail){
+	std::vector<float>info(2);
+	info[0] = total;
+	info[1] = avail;
+	return this->men_info(info);
+}

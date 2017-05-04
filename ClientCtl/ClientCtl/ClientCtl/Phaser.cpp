@@ -25,16 +25,13 @@ Phaser::~Phaser(){
 }
 
 bool Phaser::set_type(char * type){
-	try {
-		std::string raw_type(type);
-		std::string beg("<TYPE>"), end("</TYPE>");
-		std::string fine_type = beg + raw_type + end;
-		this->type = fine_type;
-		return true;
-	}
-	catch (void* e) {
-		return false;
-	}
+	const char* c_type = type;
+	return this->set_type(c_type);
+}
+
+bool Phaser::set_type(std::string type) {
+	const char* c_type = type.data();
+	return this->set_type(c_type);
 }
 
 bool Phaser::set_type(const char * type) {
@@ -43,19 +40,7 @@ bool Phaser::set_type(const char * type) {
 		std::string beg("<TYPE>"), end("</TYPE>");
 		std::string fine_type = beg + raw_type + end;
 		this->type = fine_type;
-		return true;
-	}
-	catch (void* e) {
-		return false;
-	}
-}
-
-bool Phaser::set_type(std::string type) {
-	try {
-		std::string raw_type(type);
-		std::string beg("<TYPE>"), end("</TYPE>");
-		std::string fine_type = beg + raw_type + end;
-		this->type = fine_type;
+		this->package.type = consc_to_c(this->type.data());
 		return true;
 	}
 	catch (void* e) {
@@ -64,16 +49,13 @@ bool Phaser::set_type(std::string type) {
 }
 
 bool Phaser::set_intent(char * intent){
-	try {
-		std::string raw_intent(intent);
-		std::string beg("<INTENT>"), end("</INTENT>");
-		std::string fine_intent = beg + raw_intent + end;
-		this->intent = fine_intent;
-		return true;
-	}
-	catch (void* e) {
-		return false;
-	}
+	const char* c_intent = intent;
+	return this->set_intent(c_intent);
+}
+
+bool Phaser::set_intent(std::string intent) {
+	const char* c_intent = intent.data();
+	return this->set_intent(c_intent);
 }
 
 bool Phaser::set_intent(const char * intent) {
@@ -82,19 +64,7 @@ bool Phaser::set_intent(const char * intent) {
 		std::string beg("<INTENT>"), end("</INTENT>");
 		std::string fine_intent = beg + raw_intent + end;
 		this->intent = fine_intent;
-		return true;
-	}
-	catch (void* e) {
-		return false;
-	}
-}
-
-bool Phaser::set_intent(std::string intent) {
-	try {
-		std::string raw_intent(intent);
-		std::string beg("<INTENT>"), end("</INTENT>");
-		std::string fine_intent = beg + raw_intent + end;
-		this->intent = fine_intent;
+		this->package.intent = consc_to_c(this->intent.data());
 		return true;
 	}
 	catch (void* e) {
@@ -103,16 +73,13 @@ bool Phaser::set_intent(std::string intent) {
 }
 
 bool Phaser::set_content(char * content) {
-	try {
-		std::string raw_content(content);
-		std::string beg("<CONTENT>"), end("</CONTENT>");
-		std::string fine_content = beg + raw_content + end;
-		this->content = fine_content;
-		return true;
-	}
-	catch (void* e) {
-		return false;
-	}
+	const char* c_content = content;
+	return this->set_content(c_content);
+}
+
+bool Phaser::set_content(std::string content) {
+	const char* c_content = content.data();
+	return this->set_content(c_content);
 }
 
 bool Phaser::set_content(const char * content) {
@@ -121,6 +88,7 @@ bool Phaser::set_content(const char * content) {
 		std::string beg("<CONTENT>"), end("</CONTENT>");
 		std::string fine_content = beg + raw_content + end;
 		this->content = fine_content;
+		this->package.content = consc_to_c(this->content.data());
 		return true;
 	}
 	catch (void* e) {
@@ -128,18 +96,6 @@ bool Phaser::set_content(const char * content) {
 	}
 }
 
-bool Phaser::set_content(std::string content) {
-	try {
-		std::string raw_content(content);
-		std::string beg("<CONTENT>"), end("</CONTENT>");
-		std::string fine_content = beg + raw_content + end;
-		this->content = fine_content;
-		return true;
-	}
-	catch (void* e) {
-		return false;
-	}
-}
 Package Phaser::finalize(){
 	try {
 		std::string raw_package = intent + content;//合并头和内容，开始计算md5
@@ -152,23 +108,25 @@ Package Phaser::finalize(){
 		MD5Init(&md5);
 		MD5Update(&md5, encrypt, strlen((char *)encrypt));
 		MD5Final(&md5, decrypt);
-		printf("加密前:%s\n加密后:", encrypt);
+		/*printf("加密前:%s\n加密后:", encrypt);
 		for (i = 0; i<16; i++){
 			printf("%02x", decrypt[i]);
 		}
 		for (i = 0; i<16; i++) {
 			printf("%02x", encrypt[i]);
-		}
+		}*/
 
 		this->hash = std::string("<HASH>") + bytes_to_hexstring(unc_to_c(decrypt),12) + std::string("</HASH>");//临时计算hash
 		raw_package = raw_package + hash;
+		this->package.hash = consc_to_c(hash.data());
+		this->hash = hash;
 		
 		//std::string beg("<?xml version="1.0" encoding="ISO - 8859 - 1"?> <package>"), end("</package>\n");//整个end可以用于判断
 		std::string beg("<?xml version=\"1.0\" ?> <PACKAGE>"), end("</PACKAGE>\n");//整个end可以用于判断
 		std::string fine_package = beg + raw_package + end;
-		std::cout << "Phaser: phased: " << std::endl << fine_package.data() << std::endl;
+		//std::cout << "Phaser: phased: " << std::endl << fine_package.data() << std::endl;
 
-		std::cout << "Now generating package!" << std::endl;
+		//std::cout << "Now generating package!" << std::endl;
 		this->package.c_data = fine_package.data();
 		this->package.str_data = fine_package;
 		this->package.is_done = true;
@@ -203,13 +161,13 @@ std::string to_MD5(unsigned char* unc) {
 	MD5Init(&md5);
 	MD5Update(&md5, encrypt, strlen((char *)encrypt));
 	MD5Final(&md5, decrypt);
-	printf("加密前:%s\n加密后:", encrypt);
+	/*printf("加密前:%s\n加密后:", encrypt);
 	for (i = 0; i<16; i++) {
 		printf("%02x", decrypt[i]);
 	}
 	for (i = 0; i<16; i++) {
 		printf("%02x", encrypt[i]);
-	}
+	}*/
 	//return bytes_to_hexstring(unc_to_c(encrypt),strlen(unc_to_c(encrypt)));
 	return bytes_to_hexstring(unc_to_c(decrypt), 12);
 }
@@ -222,13 +180,13 @@ std::string to_MD5(char* c) {
 	MD5Init(&md5);
 	MD5Update(&md5, encrypt, strlen((char *)encrypt));
 	MD5Final(&md5, decrypt);
-	printf("加密前:%s\n加密后:", encrypt);
+	/*printf("加密前:%s\n加密后:", encrypt);
 	for (i = 0; i<16; i++) {
 		printf("%02x", decrypt[i]);
 	}
 	for (i = 0; i<16; i++) {
 		printf("%02x", encrypt[i]);
-	}
+	}*/
 	//return bytes_to_hexstring(unc_to_c(encrypt), strlen(unc_to_c(encrypt)));
 	return bytes_to_hexstring(unc_to_c(decrypt), 12);
 }
@@ -242,13 +200,13 @@ std::string to_MD5(std::string str) {
 	MD5Init(&md5);
 	MD5Update(&md5, encrypt, strlen((char *)encrypt));
 	MD5Final(&md5, decrypt);
-	printf("加密前:%s\n加密后:", encrypt);
+	/*printf("加密前:%s\n加密后:", encrypt);
 	for (i = 0; i<16; i++) {
 		printf("%02x", decrypt[i]);
 	}
 	for (i = 0; i<16; i++) {
 		printf("%02x", encrypt[i]);
-	}
+	}*/
 	//return bytes_to_hexstring(unc_to_c(encrypt), strlen(unc_to_c(encrypt)));
 	return bytes_to_hexstring(unc_to_c(decrypt), 12);
 }

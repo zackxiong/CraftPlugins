@@ -11,7 +11,7 @@ struct TypeDic {
 	std::string
 		keepAlive = std::string("KeepAlive"),
 		info = std::string("SendInfo"),
-		realTimeInfo = std::string("SendRealTimeInfo"),
+		//realTimeInfo = std::string("SendRealTimeInfo"),//并不需要这玩意。。。
 		changeState = std::string("ChangeState")
 		;
 };
@@ -24,7 +24,8 @@ struct IntentDic {
 		onLine = std::string("Online"),
 		error = std::string("Error"),
 		log = std::string("Log"),
-		notify = std::string("Notify")
+		notify = std::string("Notify"),
+		update = std::string("Update")
 		;
 };
 extern IntentDic intentDic;
@@ -36,12 +37,14 @@ struct ContentDic {
 		;
 
 	std::string string(std::string str);
+	std::string men_info(std::vector<float> men_info);
+	std::string men_info(float total, float avail);
 };
 extern ContentDic contentDic;
 
 struct Switches {
 	bool
-		report_MEM = false;
+		report_MEM = true;
 };
 
 extern Switches switches;
