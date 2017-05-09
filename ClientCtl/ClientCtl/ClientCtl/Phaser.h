@@ -3,6 +3,7 @@
 #include <iostream>
 #include "md5.h"
 #include "HexTrans.h"
+#include "tinyxml2.h"
 
 class Phaser
 {
@@ -45,6 +46,8 @@ public:
 protected:
 	Package package;
 	std::string type, intent, content, hash;
+	tinyxml2::XMLDocument doc;
+	
 };
 
 struct XML_Node {
