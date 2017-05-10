@@ -232,9 +232,9 @@ bool Communicater::heart_beat(){
 
 bool Communicater::send_Mem(){
 	if (switches.report_MEM) {
-		Package pak = Phaser(typeDic.info,
-			intentDic.update,
-			contentDic.men_info(infosenser->get_MEM_State())
+		Package pak = Phaser(typeDic.info.data(),
+			intentDic.update.data(),
+			contentDic.men_info(infosenser->get_MEM_State()).data()
 		).finalize();
 		
 		for (int i = 0; i < quene.size(); i++) {

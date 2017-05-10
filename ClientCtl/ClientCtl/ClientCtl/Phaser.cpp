@@ -1,24 +1,39 @@
 #include "stdafx.h"
 #include "Phaser.h"
 
-
-Phaser::Phaser()
-	:package()
+XML_format::XML_format(char * version, char * encoding, char * stand_alone)
 {
-
+	this->version = version;
+	this->encoding = encoding;
+	this->stand_alone = stand_alone;
 }
 
-Phaser::Phaser(char * typ, char * in, char * con){
-	this->set_type(typ);
-	this->set_intent(in);
-	this->set_content(con);
+XML_format::~XML_format()
+{
 }
 
+/*Phaser::Phaser(){
+	new(this) Phaser(nullptr, nullptr, nullptr);
+}
+Phaser::Phaser(XML_format = XML_format(), char * typ, char * in, char * con)
+{
+}
+*/
+Phaser::Phaser(const char * typ, const char * in, const char * con, XML_format format)
+	:package(),
+	xml_buffer(),
+	printer(),
+	format()
+{
+	if(typ!=nullptr) this->set_type(typ);
+	if(typ!=nullptr) this->set_intent(in);
+	if(typ != nullptr) this->set_content(con);
+	this->format = format;
+}
+/*
 Phaser::Phaser(std::string typ, std::string in, std::string con){
-	this->set_type(typ);
-	this->set_intent(in);
-	this->set_content(con);
-}
+	new(this) Phaser(type.data(), in.data(), con.data());
+}*/
 
 Phaser::~Phaser(){
 
@@ -137,6 +152,12 @@ Package Phaser::finalize(){
 	return this->package;
 }
 
+const char* Phaser::get_current_data()
+{
+	return this->printer.CStr();
+}
+
+
 unsigned char* str_to_unc(std::string str) {
 	const char* consc = str.data();
 	const unsigned char *cunc = reinterpret_cast<const unsigned char*>(consc);
@@ -216,4 +237,14 @@ char* consc_to_c(const char* c) {
 	//memcpy(cp, c, strlen(c)+1);
 	char* cp = (char*)(c);
 	return cp;
+}
+
+bool xml_CheckResult(tinyxml2::XMLError result)
+{
+	if (result != tinyxml2::XML_SUCCESS)
+		return true;
+	else {
+		printf("Error: %i\n", result);
+		return false;
+	}
 }
