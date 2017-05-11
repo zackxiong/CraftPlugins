@@ -29,6 +29,18 @@ Phaser::Phaser(const char * typ, const char * in, const char * con, XML_format f
 	if(typ!=nullptr) this->set_intent(in);
 	if(typ != nullptr) this->set_content(con);
 	this->format = format;
+	xml_buffer.NewDeclaration();
+	this->n_Root = this->xml_buffer.NewElement(this->default_root_node_name);//package
+	this->e_Type = this->xml_buffer.NewElement(typeDic.default_node_name.data());//type
+	this->e_Intent = this->xml_buffer.NewElement(intentDic.default_node_name.data());//intent
+	this->e_Content = this->xml_buffer.NewElement(contentDic.default_node_name.data());//content
+	this->e_Hash = this->xml_buffer.NewElement(this->default_hash_node_name);//hash
+	this->n_Root->InsertEndChild(this->e_Type);
+	this->n_Root->InsertEndChild(this->e_Intent);
+	this->n_Root->InsertEndChild(this->e_Content);
+	this->n_Root->InsertEndChild(this->e_Hash);
+
+	xml_buffer.InsertFirstChild(n_Root);
 }
 /*
 Phaser::Phaser(std::string typ, std::string in, std::string con){
@@ -51,11 +63,14 @@ bool Phaser::set_type(std::string type) {
 
 bool Phaser::set_type(const char * type) {
 	try {
-		std::string raw_type(type);
+		/*std::string raw_type(type);
 		std::string beg("<TYPE>"), end("</TYPE>");
 		std::string fine_type = beg + raw_type + end;
 		this->type = fine_type;
-		this->package.type = consc_to_c(this->type.data());
+		this->package.type = consc_to_c(this->type.data());*/
+		this->e_Type->SetText(type);
+		this->type = type;
+		this->package.type = const_cast <char*>(type);
 		return true;
 	}
 	catch (void* e) {
@@ -74,12 +89,15 @@ bool Phaser::set_intent(std::string intent) {
 }
 
 bool Phaser::set_intent(const char * intent) {
-	try {
+	try {/*
 		std::string raw_intent(intent);
 		std::string beg("<INTENT>"), end("</INTENT>");
 		std::string fine_intent = beg + raw_intent + end;
 		this->intent = fine_intent;
-		this->package.intent = consc_to_c(this->intent.data());
+		this->package.intent = consc_to_c(this->intent.data());*/
+		this->e_Intent->SetText(intent);
+		this->intent = intent;
+		this->package.intent = const_cast <char*>(intent);
 		return true;
 	}
 	catch (void* e) {
@@ -98,12 +116,15 @@ bool Phaser::set_content(std::string content) {
 }
 
 bool Phaser::set_content(const char * content) {
-	try {
+	try {/*
 		std::string raw_content(content);
 		std::string beg("<CONTENT>"), end("</CONTENT>");
 		std::string fine_content = beg + raw_content + end;
 		this->content = fine_content;
-		this->package.content = consc_to_c(this->content.data());
+		this->package.content = consc_to_c(this->content.data());*/
+		this->e_Content->SetText(content);
+		this->content = content;
+		this->package.content = const_cast <char*>(content);
 		return true;
 	}
 	catch (void* e) {
@@ -131,19 +152,19 @@ Package Phaser::finalize(){
 			printf("%02x", encrypt[i]);
 		}*/
 
-		this->hash = std::string("<HASH>") + bytes_to_hexstring(unc_to_c(decrypt),12) + std::string("</HASH>");//临时计算hash
-		raw_package = raw_package + hash;
-		this->package.hash = consc_to_c(hash.data());
-		this->hash = hash;
-		
+		this->hash = bytes_to_hexstring(unc_to_c(decrypt),12);//临时计算hash
+		//raw_package = raw_package + hash;
+		this->package.hash = consc_to_c(this->hash.data());
+		this->e_Hash->SetText(this->hash.data());
 		//std::string beg("<?xml version="1.0" encoding="ISO - 8859 - 1"?> <package>"), end("</package>\n");//整个end可以用于判断
-		std::string beg("<?xml version=\"1.0\" ?> <PACKAGE>"), end("</PACKAGE>\n");//整个end可以用于判断
-		std::string fine_package = beg + raw_package + end;
+		//std::string beg("<?xml version=\"1.0\" ?> <PACKAGE>"), end("</PACKAGE>\n");//整个end可以用于判断
+		//std::string fine_package = beg + raw_package + end;
 		//std::cout << "Phaser: phased: " << std::endl << fine_package.data() << std::endl;
 
 		//std::cout << "Now generating package!" << std::endl;
-		this->package.c_data = fine_package.data();
-		this->package.str_data = fine_package;
+		this->xml_buffer.Print(&printer);
+		this->package.c_data = this->printer.CStr();
+		this->package.str_data = std::string(this->printer.CStr());
 		this->package.is_done = true;
 	}
 	catch (void* e) {
