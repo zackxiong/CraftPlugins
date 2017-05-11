@@ -4,12 +4,14 @@
 #include "md5.h"
 #include "HexTrans.h"
 #include "tinyxml2.h"
+#include "PackDic.h"
 
 class XML_format {
 public:
 	XML_format(char* version = "1.0", char *encoding = "utf-8", char *stand_alone = "");
 	~XML_format();
 	friend bool XML_format::operator == (XML_format &c, XML_format sample);
+	//tinyxml2::XMLDeclaration * decl = new tinyxml2::XMLDeclaration("1.0", "utf-8", "");
 protected:
 	char *version;
 	char *encoding;
@@ -49,6 +51,12 @@ protected:
 	tinyxml2::XMLDocument xml_buffer;
 	tinyxml2::XMLPrinter printer;
 	XML_format format;
+	char* default_root_node_name = "PACKAGE";
+	char* default_hash_node_name = "HASH";
+	tinyxml2::XMLDeclaration* declearation;
+	tinyxml2::XMLNode * n_Root;
+	tinyxml2::XMLElement *e_Type, *e_Intent, *e_Content, *e_Hash;
+
 };
 
 /*

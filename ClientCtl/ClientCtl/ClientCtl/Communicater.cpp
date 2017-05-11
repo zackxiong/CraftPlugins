@@ -192,12 +192,17 @@ int Communicater::mySend(byte data[]) {
 }
 
 bool Communicater::send_keep_alive(){
-	Phaser p;
-	p.set_type(typeDic.keepAlive.data());
-	p.set_intent(typeDic.keepAlive.data());
-	//p.set_content(const_cast<char*>(to_MD5(contentDic.ID).data()));
-	p.set_content(contentDic.ID.data());
-	return (bool)this->mySend(p.finalize().is_done?p.finalize():Package());
+	if (switches.report_ALIVE) {
+		std::cout << "Reporting Alive." << std::endl;
+		Phaser p;
+		p.set_type(typeDic.keepAlive.data());
+		p.set_intent(typeDic.keepAlive.data());
+		//p.set_content(const_cast<char*>(to_MD5(contentDic.ID).data()));
+		p.set_content(contentDic.ID.data());
+		return (bool)this->mySend(p.finalize().is_done ? p.finalize() : Package());
+	}
+	else
+		return true;
 }
 
 bool Communicater::heart_beat(){
@@ -232,6 +237,7 @@ bool Communicater::heart_beat(){
 
 bool Communicater::send_Mem(){
 	if (switches.report_MEM) {
+		std::cout << "reporting mem" << std::endl;
 		Package pak = Phaser(typeDic.info.data(),
 			intentDic.update.data(),
 			contentDic.men_info(infosenser->get_MEM_State()).data()
