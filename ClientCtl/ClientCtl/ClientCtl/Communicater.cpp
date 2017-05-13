@@ -194,6 +194,9 @@ int Communicater::mySend(byte data[]) {
 bool Communicater::send_keep_alive(){
 	if (switches.report_ALIVE) {
 		std::cout << "Reporting Alive." << std::endl;
+		if (this->p_alive_Buffer) {//ÓÅÏÈÓÃ»º´æ
+			return (bool)this->mySend(p_alive_Buffer);
+		}
 		Phaser p;
 		p.set_type(typeDic.keepAlive.data());
 		p.set_intent(typeDic.keepAlive.data());

@@ -25,22 +25,21 @@ Phaser::Phaser(const char * typ, const char * in, const char * con, XML_format f
 	printer(),
 	format()
 {
-	if(typ!=nullptr) this->set_type(typ);
-	if(typ!=nullptr) this->set_intent(in);
-	if(typ != nullptr) this->set_content(con);
 	this->format = format;
 	xml_buffer.NewDeclaration();
-	this->n_Root = this->xml_buffer.NewElement(this->default_root_node_name);//package
+	this->n_Root = this->xml_buffer.NewElement(this->default_root_node_name);//package生成节点
 	this->e_Type = this->xml_buffer.NewElement(typeDic.default_node_name.data());//type
 	this->e_Intent = this->xml_buffer.NewElement(intentDic.default_node_name.data());//intent
 	this->e_Content = this->xml_buffer.NewElement(contentDic.default_node_name.data());//content
 	this->e_Hash = this->xml_buffer.NewElement(this->default_hash_node_name);//hash
-	this->n_Root->InsertEndChild(this->e_Type);
+	this->n_Root->InsertEndChild(this->e_Type);//插入节点
 	this->n_Root->InsertEndChild(this->e_Intent);
 	this->n_Root->InsertEndChild(this->e_Content);
 	this->n_Root->InsertEndChild(this->e_Hash);
-
 	xml_buffer.InsertFirstChild(n_Root);
+	if (typ != nullptr) this->set_type(typ);//输入参数（if any）
+	if (typ != nullptr) this->set_intent(in);
+	if (typ != nullptr) this->set_content(con);
 }
 /*
 Phaser::Phaser(std::string typ, std::string in, std::string con){

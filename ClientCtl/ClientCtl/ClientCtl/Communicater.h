@@ -42,6 +42,7 @@ public:
 	int heart_Beat_Delay = 1000;
 
 	bool send_keep_alive();
+	Package p_alive_Buffer = Package();
 	bool heart_beat();
 
 	friend Communicater &Communicater::operator << (Communicater &c, char *a); //жиди<<

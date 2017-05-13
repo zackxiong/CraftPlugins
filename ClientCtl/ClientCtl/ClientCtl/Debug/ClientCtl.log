@@ -1,17 +1,12 @@
-﻿  Communicater.cpp
-d:\netbeans-java\craftplugins\clientctl\clientctl\clientctl\communicater.cpp(202): warning C4800: “int”: 将值强制为布尔值“true”或“false”(性能警告)
-d:\netbeans-java\craftplugins\clientctl\clientctl\clientctl\communicater.cpp(218): warning C4018: “<”: 有符号/无符号不匹配
-d:\netbeans-java\craftplugins\clientctl\clientctl\clientctl\communicater.cpp(230): warning C4018: “>”: 有符号/无符号不匹配
-d:\netbeans-java\craftplugins\clientctl\clientctl\clientctl\communicater.cpp(246): warning C4018: “<”: 有符号/无符号不匹配
-  正在生成代码...
-d:\netbeans-java\craftplugins\clientctl\clientctl\clientctl\communicater.cpp(265): warning C4715: “Communicater::send_Mem”: 不是所有的控件路径都返回值
-  正在编译...
-  PackDic.cpp
+﻿  ClientCtl.cpp
+d:\netbeans-java\craftplugins\clientctl\clientctl\clientctl\clientctl.cpp(117): warning C4101: “dwE”: 未引用的局部变量
   正在生成代码...
   正在跳过...(未检测到相关更改)
   Service.cpp
   Phaser.cpp
+  Package.cpp
+  PackDic.cpp
   Logger.cpp
-  ClientCtl.cpp
+  Communicater.cpp
   ClientCtl.vcxproj -> D:\netbeans-java\CraftPlugins\ClientCtl\ClientCtl\Debug\ClientCtl.exe
   ClientCtl.vcxproj -> D:\netbeans-java\CraftPlugins\ClientCtl\ClientCtl\Debug\ClientCtl.pdb (Full PDB)
