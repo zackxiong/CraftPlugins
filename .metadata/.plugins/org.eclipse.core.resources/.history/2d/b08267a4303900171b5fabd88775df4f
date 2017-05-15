@@ -1,0 +1,86 @@
+package gui.panels.controlPanel;
+
+import gui.Gui;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class FileChooserPanel extends JPanel{
+
+	private static final long serialVersionUID = -6143438348516086903L; 
+	
+	public FilePanel fileChooser = new FilePanel();
+	public CommandPanel commandChooser = new CommandPanel();
+	
+	public FileChooserPanel(){
+		this.add(fileChooser);
+		this.add(commandChooser);
+		Gui.log("Chooser init.");
+	}
+	
+}
+
+class FilePanel extends JPanel implements ActionListener{
+	JLabel pathLabel = new JLabel("Chooser a file");
+	JButton selectButton = new JButton("Choose");
+	JButton clearButton = new JButton("Clear");
+	JFileChooser fileChooser = new JFileChooser("D:\\");
+	File selectedFile;
+	
+	public FilePanel(){
+		this.add(pathLabel);
+		this.add(selectButton);
+		this.add(clearButton);
+		this.selectButton.addActionListener(this);
+		Gui.log("File chooser init.");
+	}
+	
+	public File select(){
+		fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+		int returnVal = fileChooser.showOpenDialog(fileChooser);
+		if(returnVal == JFileChooser.FILES_ONLY){
+			this.selectedFile = this.fileChooser.getSelectedFile();
+			this.pathLabel.setText(this.selectedFile.getAbsolutePath());
+			return fileChooser.getSelectedFile();
+		}
+		return (File)null;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		this.select();
+	}
+}
+
+class CommandPanel extends JPanel implements ActionListener{
+	JButton enterButton = new JButton("Enter");
+	JButton clearButton = new JButton("Clear");
+	
+	public CommandPanel(){
+		enterButton.setActionCommand("enter");
+		clearButton.setActionCommand("clear");
+		this.add(clearButton);
+		this.add(enterButton);
+		this.enterButton.addActionListener(this);
+		this.clearButton.addActionListener(this);
+		Gui.log("Command chooser init.");
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getActionCommand()=="enter"){
+			
+		}
+		if(e.getActionCommand()=="clear"){
+			
+		}
+	}
+}
+
+

@@ -1,0 +1,36 @@
+package gui.panels.controlPanel;
+
+import java.io.File;
+
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.filechooser.FileSystemView;
+
+public class FileChooserPanel extends JPanel{
+
+private static final long serialVersionUID = -6143438348516086903L;
+	
+	JLabel pathLabel = new JLabel("Chooser a file");
+	JButton selectButton = new JButton("Choose");
+	JFileChooser fileChooser = new JFileChooser("D:\\");
+	File selectedFile;
+	
+	public FileChooserPanel(){
+		this.add(pathLabel);
+		this.add(selectButton);
+	}
+	
+	public File select(){
+		fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+		int returnVal = fileChooser.showOpenDialog(fileChooser);
+		if(returnVal == JFileChooser.FILES_ONLY){
+			this.selectedFile = this.fileChooser.getSelectedFile();
+			this.pathLabel.setText(this.selectedFile.getName());
+		return fileChooser.getSelectedFile();
+		}
+		return (File)null;
+	}
+
+}

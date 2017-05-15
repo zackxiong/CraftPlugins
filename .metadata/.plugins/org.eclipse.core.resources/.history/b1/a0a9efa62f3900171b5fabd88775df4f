@@ -1,0 +1,83 @@
+package gui.panels.controlPanel;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+
+import javax.swing.JButton;
+import javax.swing.JFileChooser;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class FileChooserPanel extends JPanel{
+
+	private static final long serialVersionUID = -6143438348516086903L; 
+	
+	public FilePanel fileChooser = new FilePanel();
+	public CommandPanel commandChooser = new CommandPanel();
+	
+	public FileChooserPanel(){
+		this.add(fileChooser);
+		this.add(commandChooser);
+	}
+	
+}
+
+class FilePanel extends JPanel implements ActionListener{
+	JLabel pathLabel = new JLabel("Chooser a file");
+	JButton selectButton = new JButton("Choose");
+	JFileChooser fileChooser = new JFileChooser("D:\\");
+	File selectedFile;
+	
+	public FilePanel(){
+		this.add(pathLabel);
+		this.add(selectButton);
+		this.selectButton.addActionListener(this);
+	}
+	
+	public File select(){
+		fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+		int returnVal = fileChooser.showOpenDialog(fileChooser);
+		if(returnVal == JFileChooser.FILES_ONLY){
+			this.selectedFile = this.fileChooser.getSelectedFile();
+			this.pathLabel.setText(this.selectedFile.getAbsolutePath());
+			return fileChooser.getSelectedFile();
+		}
+		return (File)null;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		this.select();
+	}
+}
+
+class CommandPanel extends JPanel implements ActionListener{
+	JButton enterButton = new JButton("Enter");
+	JButton clearButton = new JButton("Clear");
+	
+	public CommandPanel(){
+		this.add(clearButton);
+		this.add(enterButton);
+		this.enterButton.addActionListener(this);
+		this.clearButton.addActionListener(this);
+	}
+	
+	public File select(){
+		fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+		int returnVal = fileChooser.showOpenDialog(fileChooser);
+		if(returnVal == JFileChooser.FILES_ONLY){
+			this.selectedFile = this.fileChooser.getSelectedFile();
+			this.pathLabel.setText(this.selectedFile.getName());
+			return fileChooser.getSelectedFile();
+		}
+		return (File)null;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+	}
+}
+
+

@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.bukkit.scoreboard.Scoreboard"/>
-<fullyQualifiedTypeName name="org.bukkit.scoreboard.Team"/>
-<fullyQualifiedTypeName name="org.bukkit.scoreboard.DisplaySlot"/>
-<fullyQualifiedTypeName name="guiLogger.Gui"/>
-<fullyQualifiedTypeName name="org.bukkit.scoreboard.Score"/>
-<fullyQualifiedTypeName name="org.bukkit.event.player.PlayerTeleportEvent"/>
-<fullyQualifiedTypeName name="org.bukkit.event.player.PlayerMoveEvent"/>
-<fullyQualifiedTypeName name="org.bukkit.World"/>
-<fullyQualifiedTypeName name="guiLogger.Broadcaster"/>
 <fullyQualifiedTypeName name="org.bukkit.entity.Player"/>
 <fullyQualifiedTypeName name="org.bukkit.event.Listener"/>
 <fullyQualifiedTypeName name="java.util.Set"/>
@@ -34,9 +25,7 @@
 <fullyQualifiedTypeName name="javax.swing.ListSelectionModel"/>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
 <fullyQualifiedTypeName name="pc.PC"/>
-<fullyQualifiedTypeName name="javax.swing.JLabel"/>
 <fullyQualifiedTypeName name="javax.swing.JButton"/>
-<fullyQualifiedTypeName name="javax.swing.JPanel"/>
 <fullyQualifiedTypeName name="gui.panels.logPanel.LogPanel"/>
 <fullyQualifiedTypeName name="gui.panels.IdlePanel"/>
 <fullyQualifiedTypeName name="gui.panels.controlPanel.ControlPanel"/>
@@ -46,7 +35,6 @@
 <fullyQualifiedTypeName name="java.io.InputStream"/>
 <fullyQualifiedTypeName name="java.io.OutputStream"/>
 <fullyQualifiedTypeName name="java.util.Properties"/>
-<fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="java.io.FileReader"/>
 <fullyQualifiedTypeName name="gui.StatusFlag"/>
 <fullyQualifiedTypeName name="java.io.FileWriter"/>
@@ -59,5 +47,17 @@
 <fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="communicater.packages.Phaser"/>
 <fullyQualifiedTypeName name="communicater.Head"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="enterence.Tester"/>
+<fullyQualifiedTypeName name="gui.panels.controlPanel.CommandPanel"/>
+<fullyQualifiedTypeName name="javax.swing.JTextArea"/>
+<fullyQualifiedTypeName name="javax.swing.JTextField"/>
+<fullyQualifiedTypeName name="javax.swing.JPanel"/>
+<fullyQualifiedTypeName name="gui.panels.controlPanel.ResultPanel"/>
+<fullyQualifiedTypeName name="javax.swing.JLabel"/>
+<fullyQualifiedTypeName name="java.util.Timer"/>
 <fullyQualifiedTypeName name="gui.Gui"/>
+<fullyQualifiedTypeName name="org.omg.SendingContext.RunTime"/>
+<fullyQualifiedTypeName name="java.util.TimerTask"/>
+<fullyQualifiedTypeName name="java.math.BigDecimal"/>
 </qualifiedTypeNameHistroy>

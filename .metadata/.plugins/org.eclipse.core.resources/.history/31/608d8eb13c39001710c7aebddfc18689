@@ -1,0 +1,30 @@
+package gui.panels.controlPanel;
+
+import java.math.BigDecimal;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class ResultPanel extends JPanel{
+
+	JLabel t_time = new JLabel("time:");
+	JLabel time = new JLabel("");
+	
+	public ResultPanel(){
+		this.add(t_time);
+		this.add(time);
+	}
+	
+	public void setTime(int i){
+		double d = i/1000;
+		BigDecimal bd = new BigDecimal(d);
+		this.time.setText(bd.toEngineeringString()+"s");
+	}
+	
+	string DoubleToString(double d)
+	{
+	   string s=d.ToString("R");
+	   return s.Contains(".")?s:s+".0";
+	}
+
+}
