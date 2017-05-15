@@ -1,6 +1,8 @@
 package enterence;
 
 import gui.Gui;
+import gui.MyColor;
+import gui.StatusFlag;
 import gui.panels.controlPanel.ResultPanel;
 
 import java.io.File;
@@ -43,6 +45,13 @@ public class Tester {
 	}
 	
 	public void start(){
+		if(Gui.isRunning){
+			Gui.displayException(new Exception("Still Running"));
+			return;
+		}
+		Gui.isRunning = true;
+		StatusFlag.isOverride = true;
+		Gui.logPanel.jlabel_status.setForeground(MyColor.color_pending);
 		int finalTime = 0;
 		if(useFile){
 			if(file == null){
@@ -56,9 +65,10 @@ public class Tester {
 			this.timer.schedule(new TimerTask() {
 				int time = 0;
 				public void run() {
-		            time++;
+		            time = time+1;
 					if(runnable.isDone){
 						Gui.time = time;
+						harvest();
 						this.cancel();
 					}
 		        }
@@ -76,7 +86,7 @@ public class Tester {
 			this.timer.schedule(new TimerTask() {
 				int time = 0;
 				public void run() {
-		            time++;
+		            time = time+1;
 					if(runnable.isDone){
 						Gui.time = time;
 						harvest();
@@ -91,6 +101,9 @@ public class Tester {
 		int time = Gui.time;
 		Gui.time = 0;
 		this.result.setTime(time);
+		Gui.logPanel.jlabel_status.setForeground(MyColor.color_ok);
+		StatusFlag.isOverride = false;
+		Gui.isRunning = false;
 	}
 	
 
@@ -101,6 +114,7 @@ class CommandRunnable implements Runnable{
 	boolean isError =false;
 	String path;
 	Runtime rt;
+	int result;
 	public CommandRunnable(String path, Runtime rt){
 		super();
 		this.path = path;
@@ -109,12 +123,15 @@ class CommandRunnable implements Runnable{
 	@Override
 	public void run() {
 		try {
-			rt.exec(path);
-		} catch (IOException e) {
+			Gui.currentProcess = rt.exec(path);
+			result = Gui.currentProcess.waitFor();
+		} catch (Exception e) {
 			Gui.displayException(e);
 			this.isError = true;
 		}
 		this.isDone = true;
+		if(result != 0)
+			isError = true;
 	}
 	
 }

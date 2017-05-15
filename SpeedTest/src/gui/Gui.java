@@ -14,11 +14,13 @@ public class Gui extends JFrame{
 	private static final long serialVersionUID = 1L;
     static JFrame jFrame_mainWindow = new JFrame();
     static GridLayout mainLayout = new GridLayout(3,2);//layout类型
-	static LogPanel logPanel = new LogPanel();
+	public static LogPanel logPanel = new LogPanel();
 	static FileChooserPanel chooserPanel = new FileChooserPanel();
 	static ResultPanel resultPanel = new ResultPanel();
 	static Tester tester = new Tester(resultPanel);
 	public static int time = 0;
+	public static boolean isRunning = false;
+	public static Process currentProcess;
 
 
 	public static void startGui(String[] args) {

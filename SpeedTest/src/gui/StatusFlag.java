@@ -8,6 +8,7 @@ public class StatusFlag{
 			isError = 0,
 			isWarning = 0,
 			isPending = 0;
+	public static boolean isOverride = false;
 	private static  boolean	isOk = false;
 	/*private static int//优先级从高到低
 			countOffline = 0,

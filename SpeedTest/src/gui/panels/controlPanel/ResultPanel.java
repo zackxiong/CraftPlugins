@@ -16,13 +16,24 @@ public class ResultPanel extends JPanel{
 	}
 	
 	public void setTime(int i){
+		i = (int) (i/0.89);
 		String buffer = i+"";
-		if(buffer.contains(".")){
-			String[] bufferCut = buffer.split(".");
-			buffer = bufferCut[0]+bufferCut[1];
+		if(buffer.length()<3){
+			switch(buffer.length()){
+				case 1:
+					buffer = "0.00"+buffer;
+					break;
+				case 2:
+					buffer = "0.0"+buffer;
+					break;
+			}
+				
 		}
-
-		this.time.setText(buffer+"s");
+		else{
+			buffer = buffer.substring(0, buffer.length()-3)+"."+buffer.substring(buffer.length()-3, buffer.length());
+		}
+		
+		this.time.setText(buffer+" s");
 	}
 
 }

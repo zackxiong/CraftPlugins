@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="22" version="2.0">
+<workbench progressCount="19" version="2.0">
 <workbenchAdvisor/>
 <window height="681" maximized="true" width="998" x="423" y="24">
 <fastViewData fastViewLocation="1024"/>
@@ -70,19 +70,19 @@
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Gui.java" partName="Gui.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/SpeedTest/src/gui/Gui.java" title="Gui.java" tooltip="SpeedTest/src/gui/Gui.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SpeedTest/src/gui/Gui.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="679" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="778" selectionTopPixel="0"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FileChooserPanel.java" partName="FileChooserPanel.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/SpeedTest/src/gui/panels/controlPanel/FileChooserPanel.java" title="FileChooserPanel.java" tooltip="SpeedTest/src/gui/panels/controlPanel/FileChooserPanel.java" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FileChooserPanel.java" partName="FileChooserPanel.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/SpeedTest/src/gui/panels/controlPanel/FileChooserPanel.java" title="FileChooserPanel.java" tooltip="SpeedTest/src/gui/panels/controlPanel/FileChooserPanel.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SpeedTest/src/gui/panels/controlPanel/FileChooserPanel.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2883" selectionTopPixel="836"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2921" selectionTopPixel="1151"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Tester.java" partName="Tester.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/SpeedTest/src/enterence/Tester.java" title="Tester.java" tooltip="SpeedTest/src/enterence/Tester.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SpeedTest/src/enterence/Tester.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="18" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2730" selectionTopPixel="1241"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ResultPanel.java" partName="ResultPanel.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/SpeedTest/src/gui/panels/controlPanel/ResultPanel.java" title="ResultPanel.java" tooltip="SpeedTest/src/gui/panels/controlPanel/ResultPanel.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ResultPanel.java" partName="ResultPanel.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/SpeedTest/src/gui/panels/controlPanel/ResultPanel.java" title="ResultPanel.java" tooltip="SpeedTest/src/gui/panels/controlPanel/ResultPanel.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SpeedTest/src/gui/panels/controlPanel/ResultPanel.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="419" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="346" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
@@ -120,7 +120,6 @@
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
 <category IMemento.internal.id="Errors"/>
-<category IMemento.internal.id="Warnings"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="120" org.eclipse.ui.ide.markerType="120" org.eclipse.ui.ide.pathField="160" org.eclipse.ui.ide.resourceField="120" org.eclipse.ui.ide.severityAndDescriptionField="400"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -321,163 +320,163 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SpeedTest/src/gui/Gui.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SpeedTest/src/gui/panels/controlPanel/FileChooserPanel.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SpeedTest/src/enterence/Tester.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SpeedTest/src/gui/panels/controlPanel/ResultPanel.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SpeedTest/src/gui/Gui.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SpeedTest/src/gui/panels/controlPanel/ResultPanel.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SpeedTest/src/gui/panels/controlPanel/FileChooserPanel.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SpeedTest/src/gui/Gui.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SpeedTest/src/gui/StatusFlag.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SpeedTest/src/gui/MyColor.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SpeedTest/src/gui/panels/logPanel/LogPanel.java"/>
 </editors>
-<item historyLabel="FileChooserPanel.java" index="1">
-<position info="not_deleted" x="1871" y="0"/>
+<item historyLabel="ResultPanel.java" index="1">
+<position info="not_deleted" x="346" y="0"/>
 </item>
-<item historyLabel="Gui.java" index="0">
-<position info="not_deleted" x="266" y="0"/>
+<item historyLabel="Tester.java" index="0">
+<position info="not_deleted" x="1060" y="0"/>
 </item>
-<item historyLabel="Gui.java" index="0">
-<position info="not_deleted" x="1242" y="0"/>
+<item historyLabel="Gui.java" index="3">
+<position info="not_deleted" x="476" y="0"/>
 </item>
-<item historyLabel="ResultPanel.java" index="3">
+<item historyLabel="Tester.java" index="0">
+<position info="not_deleted" x="2166" y="0"/>
+</item>
+<item historyLabel="StatusFlag.java" index="4">
+<position/>
+</item>
+<item historyLabel="Tester.java" index="0">
+<position info="not_deleted" x="2166" y="0"/>
+</item>
+<item historyLabel="MyColor.java" index="5">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="Tester.java" index="0">
+<position info="not_deleted" x="2166" y="0"/>
+</item>
+<item historyLabel="Gui.java" index="3">
+<position info="not_deleted" x="476" y="0"/>
+</item>
+<item historyLabel="StatusFlag.java" index="4">
+<position info="not_deleted" x="204" y="0"/>
+</item>
+<item historyLabel="LogPanel.java" index="6">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="LogPanel.java" index="6">
+<position info="not_deleted" x="3257" y="0"/>
+</item>
+<item historyLabel="StatusFlag.java" index="4">
+<position info="not_deleted" x="204" y="0"/>
+</item>
+<item historyLabel="LogPanel.java" index="6">
+<position info="not_deleted" x="3257" y="0"/>
+</item>
+<item historyLabel="StatusFlag.java" index="4">
+<position info="not_deleted" x="204" y="0"/>
+</item>
+<item historyLabel="LogPanel.java" index="6">
+<position info="not_deleted" x="3257" y="0"/>
+</item>
+<item historyLabel="StatusFlag.java" index="4">
 <position info="not_deleted" x="177" y="0"/>
 </item>
-<item historyLabel="ResultPanel.java" index="3">
-<position info="not_deleted" x="222" y="0"/>
+<item historyLabel="LogPanel.java" index="6">
+<position info="not_deleted" x="3257" y="0"/>
 </item>
-<item historyLabel="ResultPanel.java" index="3">
-<position info="not_deleted" x="242" y="0"/>
+<item historyLabel="LogPanel.java" index="6">
+<position info="not_deleted" x="3362" y="0"/>
 </item>
-<item historyLabel="ResultPanel.java" index="3">
-<position info="not_deleted" x="262" y="0"/>
+<item historyLabel="StatusFlag.java" index="4">
+<position info="not_deleted" x="177" y="0"/>
 </item>
-<item historyLabel="Tester.java" index="2">
-<position info="not_deleted" x="471" y="0"/>
+<item historyLabel="Gui.java" index="3">
+<position info="not_deleted" x="476" y="0"/>
 </item>
-<item historyLabel="Tester.java" index="2">
-<position info="not_deleted" x="798" y="0"/>
+<item historyLabel="Tester.java" index="0">
+<position info="not_deleted" x="992" y="0"/>
 </item>
-<item historyLabel="Tester.java" index="2">
-<position info="not_deleted" x="190" y="0"/>
+<item historyLabel="ResultPanel.java" index="1">
+<position info="not_deleted" x="346" y="0"/>
 </item>
-<item historyLabel="Tester.java" index="2">
-<position info="not_deleted" x="1263" y="0"/>
+<item historyLabel="Tester.java" index="0">
+<position info="not_deleted" x="940" y="21"/>
 </item>
-<item historyLabel="Tester.java" index="2">
-<position info="not_deleted" x="1250" y="0"/>
+<item historyLabel="ResultPanel.java" index="1">
+<position info="not_deleted" x="32" y="0"/>
 </item>
-<item historyLabel="Tester.java" index="2">
-<position info="not_deleted" x="910" y="0"/>
+<item historyLabel="Tester.java" index="0">
+<position info="not_deleted" x="2225" y="0"/>
 </item>
-<item historyLabel="Tester.java" index="2">
-<position info="not_deleted" x="1444" y="0"/>
+<item historyLabel="FileChooserPanel.java" index="2">
+<position info="not_deleted" x="1334" y="0"/>
 </item>
-<item historyLabel="Tester.java" index="2">
-<position info="not_deleted" x="1455" y="0"/>
+<item historyLabel="Tester.java" index="0">
+<position info="not_deleted" x="2225" y="0"/>
 </item>
-<item historyLabel="Tester.java" index="2">
-<position info="not_deleted" x="363" y="0"/>
+<item historyLabel="FileChooserPanel.java" index="2">
+<position info="not_deleted" x="711" y="0"/>
 </item>
-<item historyLabel="Tester.java" index="2">
-<position info="not_deleted" x="915" y="0"/>
+<item historyLabel="Gui.java" index="3">
+<position info="not_deleted" x="794" y="0"/>
 </item>
-<item historyLabel="Gui.java" index="0">
-<position info="not_deleted" x="677" y="0"/>
+<item historyLabel="FileChooserPanel.java" index="2">
+<position info="not_deleted" x="2477" y="0"/>
 </item>
-<item historyLabel="Tester.java" index="2">
-<position info="not_deleted" x="1319" y="0"/>
+<item historyLabel="Tester.java" index="0">
+<position info="not_deleted" x="2547" y="0"/>
 </item>
-<item historyLabel="Tester.java" index="2">
-<position info="not_deleted" x="1055" y="0"/>
+<item historyLabel="FileChooserPanel.java" index="2">
+<position info="not_deleted" x="2477" y="0"/>
 </item>
-<item historyLabel="Gui.java" index="4">
-<position info="not_deleted" x="706" y="0"/>
+<item historyLabel="Gui.java" index="3">
+<position info="not_deleted" x="778" y="0"/>
 </item>
-<item historyLabel="Tester.java" index="2">
-<position info="not_deleted" x="1200" y="0"/>
+<item historyLabel="Tester.java" index="0">
+<position info="not_deleted" x="2547" y="0"/>
 </item>
-<item historyLabel="Gui.java" index="4">
-<position info="not_deleted" x="677" y="0"/>
+<item historyLabel="FileChooserPanel.java" index="2">
+<position info="not_deleted" x="2477" y="0"/>
 </item>
-<item historyLabel="Tester.java" index="2">
-<position info="not_deleted" x="1719" y="0"/>
+<item historyLabel="Gui.java" index="3">
+<position info="not_deleted" x="778" y="0"/>
 </item>
-<item historyLabel="Gui.java" index="4">
-<position info="not_deleted" x="679" y="0"/>
+<item historyLabel="Tester.java" index="0">
+<position info="not_deleted" x="2530" y="0"/>
 </item>
-<item historyLabel="Tester.java" index="2">
-<position info="not_deleted" x="1719" y="0"/>
+<item historyLabel="Gui.java" index="3">
+<position info="not_deleted" x="778" y="0"/>
 </item>
-<item historyLabel="Tester.java" index="2">
-<position info="not_deleted" x="1310" y="0"/>
+<item historyLabel="Tester.java" index="0">
+<position info="not_deleted" x="2730" y="0"/>
 </item>
-<item historyLabel="Tester.java" index="2">
-<position info="not_deleted" x="1746" y="0"/>
+<item historyLabel="ResultPanel.java" index="1">
+<position info="not_deleted" x="346" y="0"/>
 </item>
-<item historyLabel="Tester.java" index="2">
-<position info="not_deleted" x="1660" y="0"/>
+<item historyLabel="Tester.java" index="0">
+<position info="not_deleted" x="2730" y="0"/>
 </item>
-<item historyLabel="ResultPanel.java" index="5">
-<position info="not_deleted" x="292" y="0"/>
+<item historyLabel="FileChooserPanel.java" index="2">
+<position info="not_deleted" x="2477" y="0"/>
 </item>
-<item historyLabel="ResultPanel.java" index="5">
-<position info="not_deleted" x="324" y="0"/>
+<item historyLabel="FileChooserPanel.java" index="2">
+<position info="not_deleted" x="709" y="0"/>
 </item>
-<item historyLabel="ResultPanel.java" index="5">
-<position/>
+<item historyLabel="FileChooserPanel.java" index="2">
+<position info="not_deleted" x="708" y="0"/>
 </item>
-<item historyLabel="ResultPanel.java" index="5">
-<position info="not_deleted" x="492" y="0"/>
+<item historyLabel="FileChooserPanel.java" index="2">
+<position info="not_deleted" x="1073" y="0"/>
 </item>
-<item historyLabel="Tester.java" index="2">
-<position info="not_deleted" x="1816" y="0"/>
+<item historyLabel="FileChooserPanel.java" index="2">
+<position info="not_deleted" x="864" y="0"/>
 </item>
-<item historyLabel="Tester.java" index="2">
-<position info="not_deleted" x="1818" y="0"/>
+<item historyLabel="FileChooserPanel.java" index="2">
+<position info="not_deleted" x="1076" y="0"/>
 </item>
-<item historyLabel="Tester.java" index="2">
-<position info="not_deleted" x="1814" y="0"/>
+<item historyLabel="Gui.java" index="3">
+<position info="not_deleted" x="778" y="0"/>
 </item>
-<item historyLabel="FileChooserPanel.java" index="6">
-<position info="not_deleted" x="1871" y="0"/>
-</item>
-<item historyLabel="Tester.java" index="2">
-<position info="not_deleted" x="1816" y="0"/>
-</item>
-<item historyLabel="FileChooserPanel.java" index="6">
-<position info="not_deleted" x="2883" y="0"/>
-</item>
-<item historyLabel="Tester.java" index="2">
-<position info="not_deleted" x="18" y="0"/>
-</item>
-<item historyLabel="ResultPanel.java" index="5">
-<position info="not_deleted" x="492" y="0"/>
-</item>
-<item historyLabel="ResultPanel.java" index="5">
-<position/>
-</item>
-<item historyLabel="ResultPanel.java" index="5">
-<position info="not_deleted" x="465" y="0"/>
-</item>
-<item historyLabel="ResultPanel.java" index="5">
-<position info="not_deleted" x="348" y="0"/>
-</item>
-<item historyLabel="ResultPanel.java" index="5">
-<position info="not_deleted" x="374" y="0"/>
-</item>
-<item historyLabel="ResultPanel.java" index="5">
-<position info="not_deleted" x="376" y="0"/>
-</item>
-<item historyLabel="ResultPanel.java" index="5">
-<position info="not_deleted" x="464" y="0"/>
-</item>
-<item historyLabel="ResultPanel.java" index="5">
-<position info="not_deleted" x="460" y="0"/>
-</item>
-<item historyLabel="ResultPanel.java" index="5">
-<position info="not_deleted" x="445" y="0"/>
-</item>
-<item active="true" historyLabel="ResultPanel.java" index="5">
-<position info="not_deleted" x="458" y="0"/>
+<item active="true" historyLabel="FileChooserPanel.java" index="2">
+<position info="not_deleted" x="1076" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -496,11 +495,17 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ResultPanel.java" tooltip="SpeedTest/src/gui/panels/controlPanel/ResultPanel.java">
-<persistable path="/SpeedTest/src/gui/panels/controlPanel/ResultPanel.java"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LogPanel.java" tooltip="SpeedTest/src/gui/panels/logPanel/LogPanel.java">
 <persistable path="/SpeedTest/src/gui/panels/logPanel/LogPanel.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="StatusFlag.java" tooltip="SpeedTest/src/gui/StatusFlag.java">
+<persistable path="/SpeedTest/src/gui/StatusFlag.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MyColor.java" tooltip="SpeedTest/src/gui/MyColor.java">
+<persistable path="/SpeedTest/src/gui/MyColor.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ResultPanel.java" tooltip="SpeedTest/src/gui/panels/controlPanel/ResultPanel.java">
+<persistable path="/SpeedTest/src/gui/panels/controlPanel/ResultPanel.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Gui.java" tooltip="ServerCtl/src/gui/Gui.java">
 <persistable path="/ServerCtl/src/gui/Gui.java"/>
@@ -534,12 +539,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ControlPanel.java" tooltip="Desktool/src/gui/panels/controlPanel/ControlPanel.java">
 <persistable path="/Desktool/src/gui/panels/controlPanel/ControlPanel.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Gui.java" tooltip="Desktool/src/gui/Gui.java">
-<persistable path="/Desktool/src/gui/Gui.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Head.java" tooltip="ServerCtl/src/communicater/Head.java">
-<persistable path="/ServerCtl/src/communicater/Head.java"/>
 </file>
 </mruList>
 </workbench>

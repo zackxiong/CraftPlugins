@@ -30,13 +30,11 @@
 <fullyQualifiedTypeName name="gui.panels.IdlePanel"/>
 <fullyQualifiedTypeName name="gui.panels.controlPanel.ControlPanel"/>
 <fullyQualifiedTypeName name="java.awt.Color"/>
-<fullyQualifiedTypeName name="gui.MyColor"/>
 <fullyQualifiedTypeName name="javax.swing.JTextPane"/>
 <fullyQualifiedTypeName name="java.io.InputStream"/>
 <fullyQualifiedTypeName name="java.io.OutputStream"/>
 <fullyQualifiedTypeName name="java.util.Properties"/>
 <fullyQualifiedTypeName name="java.io.FileReader"/>
-<fullyQualifiedTypeName name="gui.StatusFlag"/>
 <fullyQualifiedTypeName name="java.io.FileWriter"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="pc.info.CurrentInfo"/>
@@ -49,7 +47,6 @@
 <fullyQualifiedTypeName name="communicater.Head"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="enterence.Tester"/>
-<fullyQualifiedTypeName name="gui.panels.controlPanel.CommandPanel"/>
 <fullyQualifiedTypeName name="javax.swing.JTextArea"/>
 <fullyQualifiedTypeName name="javax.swing.JTextField"/>
 <fullyQualifiedTypeName name="javax.swing.JPanel"/>
@@ -60,4 +57,7 @@
 <fullyQualifiedTypeName name="org.omg.SendingContext.RunTime"/>
 <fullyQualifiedTypeName name="java.util.TimerTask"/>
 <fullyQualifiedTypeName name="java.math.BigDecimal"/>
+<fullyQualifiedTypeName name="gui.panels.controlPanel.CommandPanel"/>
+<fullyQualifiedTypeName name="gui.MyColor"/>
+<fullyQualifiedTypeName name="gui.StatusFlag"/>
 </qualifiedTypeNameHistroy>

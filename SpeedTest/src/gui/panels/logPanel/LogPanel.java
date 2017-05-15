@@ -81,8 +81,10 @@ public class LogPanel extends JPanel implements Runnable{
  	public void run(){
  		try {
  			while(true){
- 				this.jlabel_status.setForeground(StatusFlag.getHighestStatus());
- 				Thread.sleep(500);
+ 				if(!StatusFlag.isOverride){
+ 					this.jlabel_status.setForeground(StatusFlag.getHighestStatus());
+ 					Thread.sleep(500);
+ 				}
  			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();
