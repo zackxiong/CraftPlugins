@@ -46,7 +46,8 @@ public class Tester {
 	
 	public void start(){
 		if(Gui.isRunning){
-			Gui.displayException(new Exception("Still Running"));
+			//Gui.displayException(new Exception("Still Running"));
+			Gui.log("Process still running, use killall to kill it.");
 			return;
 		}
 		Gui.isRunning = true;
@@ -58,6 +59,7 @@ public class Tester {
 				Gui.log("File not selected!");
 				return;
 			}
+			Gui.log("Running file:   "+file.getAbsolutePath());
 			final CommandRunnable runnable = new CommandRunnable(file.getAbsolutePath(), this.rt);
 			Thread t = new Thread(runnable);
 			
@@ -79,6 +81,7 @@ public class Tester {
 				Gui.log("Command not set");
 				return;
 			}
+			Gui.log("Running command:   "+command);
 			final CommandRunnable runnable = new CommandRunnable(command, this.rt);
 			Thread t = new Thread(runnable);
 			

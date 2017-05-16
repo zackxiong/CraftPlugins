@@ -16,7 +16,7 @@ public class ResultPanel extends JPanel{
 	}
 	
 	public void setTime(int i){
-		i = (int) (i/0.908);//微调interval 
+		i = (int) (i/0.89);//微调interval 
 		String buffer = i+"";
 		if(buffer.length()<3){
 			switch(buffer.length()){

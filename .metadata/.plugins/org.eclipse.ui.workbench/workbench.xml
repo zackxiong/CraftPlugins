@@ -72,17 +72,17 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SpeedTest/src/gui/Gui.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="778" selectionTopPixel="0"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FileChooserPanel.java" partName="FileChooserPanel.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/SpeedTest/src/gui/panels/controlPanel/FileChooserPanel.java" title="FileChooserPanel.java" tooltip="SpeedTest/src/gui/panels/controlPanel/FileChooserPanel.java" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="FileChooserPanel.java" partName="FileChooserPanel.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/SpeedTest/src/gui/panels/controlPanel/FileChooserPanel.java" title="FileChooserPanel.java" tooltip="SpeedTest/src/gui/panels/controlPanel/FileChooserPanel.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SpeedTest/src/gui/panels/controlPanel/FileChooserPanel.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2921" selectionTopPixel="1151"/>
 </editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Tester.java" partName="Tester.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/SpeedTest/src/enterence/Tester.java" title="Tester.java" tooltip="SpeedTest/src/enterence/Tester.java" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Tester.java" partName="Tester.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/SpeedTest/src/enterence/Tester.java" title="Tester.java" tooltip="SpeedTest/src/enterence/Tester.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SpeedTest/src/enterence/Tester.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2730" selectionTopPixel="1241"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1792" selectionTopPixel="684"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ResultPanel.java" partName="ResultPanel.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/SpeedTest/src/gui/panels/controlPanel/ResultPanel.java" title="ResultPanel.java" tooltip="SpeedTest/src/gui/panels/controlPanel/ResultPanel.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SpeedTest/src/gui/panels/controlPanel/ResultPanel.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="346" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="347" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
@@ -118,9 +118,6 @@
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
-<expanded>
-<category IMemento.internal.id="Errors"/>
-</expanded>
 <columnWidths org.eclipse.ui.ide.locationField="120" org.eclipse.ui.ide.markerType="120" org.eclipse.ui.ide.pathField="160" org.eclipse.ui.ide.resourceField="120" org.eclipse.ui.ide.severityAndDescriptionField="400"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.resourceField"/>
@@ -325,64 +322,38 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SpeedTest/src/gui/panels/controlPanel/FileChooserPanel.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SpeedTest/src/gui/Gui.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SpeedTest/src/gui/StatusFlag.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SpeedTest/src/gui/MyColor.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SpeedTest/src/gui/panels/logPanel/LogPanel.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SpeedTest/src/gui/panels/controlPanel/ResultPanel.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/blockode/src/game/Blockode.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/blockode/src/config.yml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" path="/blockode/src/plugin.yml"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/SpeedTest/src/enterence/Tester.java"/>
 </editors>
-<item historyLabel="ResultPanel.java" index="1">
-<position info="not_deleted" x="346" y="0"/>
-</item>
-<item historyLabel="Tester.java" index="0">
-<position info="not_deleted" x="1060" y="0"/>
-</item>
-<item historyLabel="Gui.java" index="3">
-<position info="not_deleted" x="476" y="0"/>
-</item>
-<item historyLabel="Tester.java" index="0">
-<position info="not_deleted" x="2166" y="0"/>
-</item>
-<item historyLabel="StatusFlag.java" index="4">
-<position/>
-</item>
-<item historyLabel="Tester.java" index="0">
-<position info="not_deleted" x="2166" y="0"/>
-</item>
-<item historyLabel="MyColor.java" index="5">
+<item historyLabel="LogPanel.java" index="5">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="Tester.java" index="0">
-<position info="not_deleted" x="2166" y="0"/>
-</item>
-<item historyLabel="Gui.java" index="3">
-<position info="not_deleted" x="476" y="0"/>
-</item>
-<item historyLabel="StatusFlag.java" index="4">
-<position info="not_deleted" x="204" y="0"/>
-</item>
-<item historyLabel="LogPanel.java" index="6">
-<position info="not_deleted" x="0" y="0"/>
-</item>
-<item historyLabel="LogPanel.java" index="6">
+<item historyLabel="LogPanel.java" index="5">
 <position info="not_deleted" x="3257" y="0"/>
 </item>
 <item historyLabel="StatusFlag.java" index="4">
 <position info="not_deleted" x="204" y="0"/>
 </item>
-<item historyLabel="LogPanel.java" index="6">
+<item historyLabel="LogPanel.java" index="5">
 <position info="not_deleted" x="3257" y="0"/>
 </item>
 <item historyLabel="StatusFlag.java" index="4">
 <position info="not_deleted" x="204" y="0"/>
 </item>
-<item historyLabel="LogPanel.java" index="6">
+<item historyLabel="LogPanel.java" index="5">
 <position info="not_deleted" x="3257" y="0"/>
 </item>
 <item historyLabel="StatusFlag.java" index="4">
 <position info="not_deleted" x="177" y="0"/>
 </item>
-<item historyLabel="LogPanel.java" index="6">
+<item historyLabel="LogPanel.java" index="5">
 <position info="not_deleted" x="3257" y="0"/>
 </item>
-<item historyLabel="LogPanel.java" index="6">
+<item historyLabel="LogPanel.java" index="5">
 <position info="not_deleted" x="3362" y="0"/>
 </item>
 <item historyLabel="StatusFlag.java" index="4">
@@ -475,8 +446,38 @@
 <item historyLabel="Gui.java" index="3">
 <position info="not_deleted" x="778" y="0"/>
 </item>
-<item active="true" historyLabel="FileChooserPanel.java" index="2">
+<item historyLabel="FileChooserPanel.java" index="2">
 <position info="not_deleted" x="1076" y="0"/>
+</item>
+<item historyLabel="ResultPanel.java" index="6">
+<position info="not_deleted" x="347" y="0"/>
+</item>
+<item historyLabel="Blockode.java" index="7">
+<position info="not_deleted" x="3" y="0"/>
+</item>
+<item historyLabel="ResultPanel.java" index="6">
+<position info="not_deleted" x="347" y="0"/>
+</item>
+<item historyLabel="config.yml" index="8">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="plugin.yml" index="9">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="config.yml" index="8">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="ResultPanel.java" index="6">
+<position info="not_deleted" x="347" y="0"/>
+</item>
+<item historyLabel="FileChooserPanel.java" index="2">
+<position info="not_deleted" x="2921" y="0"/>
+</item>
+<item historyLabel="Tester.java" index="10">
+<position info="not_deleted" x="2892" y="0"/>
+</item>
+<item active="true" historyLabel="Tester.java" index="10">
+<position info="not_deleted" x="986" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -495,6 +496,15 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="plugin.yml" tooltip="blockode/src/plugin.yml">
+<persistable path="/blockode/src/plugin.yml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.PropertiesFileEditor" name="config.yml" tooltip="blockode/src/config.yml">
+<persistable path="/blockode/src/config.yml"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Blockode.java" tooltip="blockode/src/game/Blockode.java">
+<persistable path="/blockode/src/game/Blockode.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="LogPanel.java" tooltip="SpeedTest/src/gui/panels/logPanel/LogPanel.java">
 <persistable path="/SpeedTest/src/gui/panels/logPanel/LogPanel.java"/>
 </file>
@@ -530,15 +540,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Controller.java" tooltip="ServerCtl/src/communicater/Controller.java">
 <persistable path="/ServerCtl/src/communicater/Controller.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="Desktool/src/enterence/Main.java">
-<persistable path="/Desktool/src/enterence/Main.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InfoPanel.java" tooltip="Desktool/src/gui/panels/controlPanel/InfoPanel.java">
-<persistable path="/Desktool/src/gui/panels/controlPanel/InfoPanel.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ControlPanel.java" tooltip="Desktool/src/gui/panels/controlPanel/ControlPanel.java">
-<persistable path="/Desktool/src/gui/panels/controlPanel/ControlPanel.java"/>
 </file>
 </mruList>
 </workbench>
