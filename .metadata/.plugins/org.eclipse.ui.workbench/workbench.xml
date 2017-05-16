@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="19" version="2.0">
+<workbench progressCount="22" version="2.0">
 <workbenchAdvisor/>
 <window height="681" maximized="true" width="998" x="423" y="24">
 <fastViewData fastViewLocation="1024"/>
@@ -78,7 +78,7 @@
 </editor>
 <editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Tester.java" partName="Tester.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/SpeedTest/src/enterence/Tester.java" title="Tester.java" tooltip="SpeedTest/src/enterence/Tester.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SpeedTest/src/enterence/Tester.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1792" selectionTopPixel="684"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1228" selectionTopPixel="684"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ResultPanel.java" partName="ResultPanel.java" path="/home/d0048/Program-code/netbean-java/CraftPlugins/SpeedTest/src/gui/panels/controlPanel/ResultPanel.java" title="ResultPanel.java" tooltip="SpeedTest/src/gui/panels/controlPanel/ResultPanel.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/SpeedTest/src/gui/panels/controlPanel/ResultPanel.java"/>
