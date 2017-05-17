@@ -9,6 +9,7 @@
 #endif
 
 #define DEBUG
+//#define MD5_DEBUG
 #define STICKY_MODE
 #define SOCKET_PORT "1800"
 #define SERVER_ADDR "127.0.0.1"

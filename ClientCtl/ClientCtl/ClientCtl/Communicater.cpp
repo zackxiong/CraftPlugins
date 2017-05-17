@@ -245,28 +245,18 @@ bool Communicater::send_Mem(){
 		p.set_type(typeDic.info.data());
 		p.set_intent(intentDic.update.data());
 		p.set_content(contentDic.men_info(infosenser->get_MEM_State(), &p));
-
 		Package pak = p.finalize();
 		
 		for (int i = 0; i < quene.size(); i++) {
 			if (quene[i].hash == pak.hash)
 				return true;
-			/*char sample[3]{quene[i].content[11],quene[i].content[12],quene[i].content[13]};
-			char tmplate[3]{'M','E','M'};
-			std::cout << "Sample:" << sample << "Template:" << tmplate <<"|"<<quene[i].content<< std::endl;
-			if (strcmp(sample, tmplate)) {
-				this->quene.erase(quene.begin() + i);
-				this->quene.push_back(pak);
-				std::wcout << "Replaced:" << std::endl << pak.hash << std::endl;
-				return true;
-			}*/
 			i++;
 		}
 		this->quene.push_back(pak);
 		std::wcout << "Mem Pushed:" << std::endl << pak.hash << std::endl;
+		return true;
 	}else
-	return false;
-	//std::string message = std::string(infosenser->get_MEM_State()[0]);
+		return true;
 }
 
 Communicater &operator << (Communicater &c, char *a){

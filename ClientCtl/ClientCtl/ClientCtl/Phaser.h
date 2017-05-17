@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <sstream>
 
 #ifndef PACKAGE
 #include "Package.h"
@@ -24,7 +25,12 @@
 #ifndef PACKDIC
 #include "PackDic.h"
 #define PACKDIC
-#endif 
+#endif
+
+#ifndef LOGGER
+#include "Logger.h"
+#define LOGGER
+#endif
 
 
 class XML_format {
@@ -38,7 +44,6 @@ protected:
 	char *encoding;
 	char *stand_alone;
 };
-
 
 class Phaser
 {
@@ -112,3 +117,4 @@ std::string to_MD5(std::string str);
 std::string to_MD5(char* c);
 std::string to_MD5(unsigned char* unc);
 bool xml_CheckResult(tinyxml2::XMLError result);
+std::string i_to_str(int i);

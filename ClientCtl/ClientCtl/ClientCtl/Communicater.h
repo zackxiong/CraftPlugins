@@ -3,16 +3,25 @@
 
 #define DEFAULT_BUFLEN 512
 
-#include "Service.h"
 #include <string>
 #include <Windows.h>
+#include <stdlib.h>
+#include <vector>
+
+#ifndef SERVICE
+#include "Service.h"
+#define SERVICE
+#endif
+
 #ifndef PHASER
 #include "Phaser.h"
 #define PHASER
 #endif
-#include <vector>
+
+#ifndef PACKDIC
 #include "PackDic.h"
-#include <stdlib.h>
+#define PACKDIC
+#endif // !
 
 //#include <algorithm>
 

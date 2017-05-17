@@ -8,11 +8,12 @@ Logger::Logger(Communicater *cmtr)
 	:logFile("log.txt", std::ios::ate | std::ios::out | std::ios::app)
 {
 	this->cmtr = cmtr;
+	this->phaser = new Phaser();
 }
 
 
 Logger::~Logger(){
-
+	delete phaser;
 }
 
 void Logger::log(char * message){
@@ -30,10 +31,10 @@ void Logger::log(char * message){
 		//*cmtr << msg;
 		std::cout << "[" << (int)t1.wDay << ":" << (int)t1.wHour << ":" << (int)t1.wMinute << ":" << (int)t1.wSecond << "]: "
 			<< message << std::endl;
-		phaser.set_type(typeDic.info);
-		phaser.set_intent(intentDic.log);
-		phaser.set_content(contentDic.string(msg));
-		cmtr->quene.push_back(phaser.finalize());
+		phaser->set_type(typeDic.info);
+		phaser->set_intent(intentDic.log);
+		phaser->set_content(contentDic.string(msg));
+		cmtr->quene.push_back(phaser->finalize());
 	}
 }
 
@@ -55,10 +56,10 @@ void Logger::error(char* message) {
 	//*cmtr << msg;
 	std::cout << "[" << (int)t1.wDay << ":" << (int)t1.wHour << ":" << (int)t1.wMinute << ":" << (int)t1.wSecond << "]: "
 		<< message << std::endl;
-	phaser.set_type(typeDic.info);
-	phaser.set_intent(intentDic.error);
-	phaser.set_content(contentDic.string(msg));
-	cmtr->quene.push_back(phaser.finalize());
+	phaser->set_type(typeDic.info);
+	phaser->set_intent(intentDic.error);
+	phaser->set_content(contentDic.string(msg));
+	cmtr->quene.push_back(phaser->finalize());
 }
 
 void Logger::error(std::string message) {

@@ -35,7 +35,7 @@
 #include "Phaser.h"
 #define PHASER
 #endif
-
+class Communicater;
 extern AliveKeeper* AKr;
 extern Logger* logger;
 extern InfoSenser* infosenser;

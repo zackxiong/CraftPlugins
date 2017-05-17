@@ -5,9 +5,23 @@
 #include <iostream>
 #include <sstream>
 
-#include "Communicater.h"
+#ifndef PHASER
 #include "Phaser.h"
+#define PHASER
+#endif // !
+
+#ifndef COMMUNICATER
+#include "Communicater.h"
+#define COMMUNICATER
+#endif // !
+
+#ifndef PACKDIC
 #include "PackDic.h"
+#define PACKDIC
+#endif // !
+
+class Communicater;
+class Phaser;
 
 class Logger
 {
@@ -25,7 +39,7 @@ public:
 protected:
 	std::ofstream logFile;
 	Communicater *cmtr;
-	Phaser phaser;
+	Phaser* phaser;
 
 };
 

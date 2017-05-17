@@ -348,8 +348,9 @@ std::string InfoSenser::getInterfaceInfo() {
 
 std::vector<float> InfoSenser::get_MEM_State(){
 	std::vector<float> v_mc_info(2);
-	v_mc_info[0] = (float)this->statex.ullAvailPhys/(float)1024/(float)1024;
-	v_mc_info[1]= (float)this->statex.ullAvailPhys / (float)1024 / (float)1024;
+	v_mc_info[0] = (int)(this->statex.ullTotalPhys/1024/1024);
+	v_mc_info[1]= (int)(this->statex.ullAvailPhys/1024/1024);
+	std::cout << v_mc_info[0] << "|" << v_mc_info[1] << std::endl;
 	return v_mc_info;
 }
 
