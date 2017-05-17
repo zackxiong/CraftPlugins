@@ -5,13 +5,36 @@
 #include "Windows.h"
 #include <iostream>
 #include <conio.h>
-#include "AliveKeeper.h"
-#include "Logger.h"
-#include "InfoSenser.h"
-#include "Communicater.h"
-#include "PackDic.h"
-#include "Phaser.h"
 
+#ifndef ALIVEKEEPER
+#include "AliveKeeper.h"
+#define ALIVEKEEPER
+#endif
+
+#ifndef LOGGER
+#include "Logger.h"
+#define LOGGER
+#endif
+
+#ifndef INFOSENSER
+#include "InfoSenser.h"
+#define INFOSENSER
+#endif
+
+#ifndef COMMUNICATER
+#include "Communicater.h"
+#define COMMUNICATER
+#endif
+
+#ifndef PACKDIC
+#include "PackDic.h"
+#define PACKDIC
+#endif
+
+#ifndef PHASER
+#include "Phaser.h"
+#define PHASER
+#endif
 
 extern AliveKeeper* AKr;
 extern Logger* logger;

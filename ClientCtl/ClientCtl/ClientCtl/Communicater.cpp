@@ -241,10 +241,12 @@ bool Communicater::heart_beat(){
 bool Communicater::send_Mem(){
 	if (switches.report_MEM) {
 		std::cout << "reporting mem" << std::endl;
-		Package pak = Phaser(typeDic.info.data(),
-			intentDic.update.data(),
-			contentDic.men_info(infosenser->get_MEM_State()).data()
-		).finalize();
+		Phaser p;
+		p.set_type(typeDic.info.data());
+		p.set_intent(intentDic.update.data());
+		p.set_content(contentDic.men_info(infosenser->get_MEM_State(), &p));
+
+		Package pak = p.finalize();
 		
 		for (int i = 0; i < quene.size(); i++) {
 			if (quene[i].hash == pak.hash)
@@ -261,7 +263,7 @@ bool Communicater::send_Mem(){
 			i++;
 		}
 		this->quene.push_back(pak);
-		std::wcout << "Pushed:" << std::endl << pak.hash << std::endl;
+		std::wcout << "Mem Pushed:" << std::endl << pak.hash << std::endl;
 	}else
 	return false;
 	//std::string message = std::string(infosenser->get_MEM_State()[0]);

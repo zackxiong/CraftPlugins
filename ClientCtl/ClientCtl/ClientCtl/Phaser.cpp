@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Phaser.h"
 
+
 XML_format::XML_format(char * version, char * encoding, char * stand_alone)
 {
 	this->version = version;
@@ -32,11 +33,6 @@ Phaser::Phaser(const char * typ, const char * in, const char * con, XML_format f
 	this->e_Intent = this->xml_buffer.NewElement(intentDic.default_node_name.data());//intent
 	this->e_Content = this->xml_buffer.NewElement(contentDic.default_node_name.data());//content
 	this->e_Hash = this->xml_buffer.NewElement(this->default_hash_node_name);//hash
-	this->n_Root->InsertEndChild(this->e_Type);//插入节点
-	this->n_Root->InsertEndChild(this->e_Intent);
-	this->n_Root->InsertEndChild(this->e_Content);
-	this->n_Root->InsertEndChild(this->e_Hash);
-	xml_buffer.InsertFirstChild(n_Root);
 	if (typ != nullptr) this->set_type(typ);//输入参数（if any）
 	if (typ != nullptr) this->set_intent(in);
 	if (typ != nullptr) this->set_content(con);
@@ -58,6 +54,12 @@ bool Phaser::set_type(char * type){
 bool Phaser::set_type(std::string type) {
 	const char* c_type = type.data();
 	return this->set_type(c_type);
+}
+
+bool Phaser::set_type(tinyxml2::XMLElement * type)
+{
+	this->e_Type = type;
+	return true;
 }
 
 bool Phaser::set_type(const char * type) {
@@ -104,6 +106,12 @@ bool Phaser::set_intent(const char * intent) {
 	}
 }
 
+bool Phaser::set_intent(tinyxml2::XMLElement * intent)
+{
+	this->e_Intent = intent;
+	return true;
+}
+
 bool Phaser::set_content(char * content) {
 	const char* c_content = content;
 	return this->set_content(c_content);
@@ -131,8 +139,20 @@ bool Phaser::set_content(const char * content) {
 	}
 }
 
+bool Phaser::set_content(tinyxml2::XMLElement * content)
+{
+	this->e_Content = content;
+	return true;
+}
+
 Package Phaser::finalize(){
 	try {
+		this->n_Root->InsertEndChild(this->e_Type);//插入节点
+		this->n_Root->InsertEndChild(this->e_Intent);
+		this->n_Root->InsertEndChild(this->e_Content);
+		this->n_Root->InsertEndChild(this->e_Hash);
+		xml_buffer.InsertFirstChild(n_Root);
+
 		std::string raw_package = intent + content;//合并头和内容，开始计算md5
 
 		int i;
@@ -164,7 +184,7 @@ Package Phaser::finalize(){
 		this->xml_buffer.Print(&printer);
 		this->package.c_data = this->printer.CStr();
 		this->package.str_data = std::string(this->printer.CStr());
-		this->package.is_done = true;
+		package.is_done = true;
 	}
 	catch (void* e) {
 		return Package();
@@ -175,6 +195,11 @@ Package Phaser::finalize(){
 const char* Phaser::get_current_data()
 {
 	return this->printer.CStr();
+}
+
+tinyxml2::XMLElement * Phaser::new_Element(char* name)
+{
+	return this->xml_buffer.NewElement(name);
 }
 
 

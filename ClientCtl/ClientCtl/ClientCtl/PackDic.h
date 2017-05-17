@@ -1,15 +1,24 @@
 #pragma once
-#include "stdafx.h"
-#include "InfoSenser.h"
-#include "HexTrans.h"
-#include "Phaser.h"
 #include <iostream>
+
+#ifndef INFOSENSER
+#include "InfoSenser.h"
+#define INFOSENSER
+#endif
+
+#ifndef PHASER
+#include "Phaser.h"
+#define PHASER
+#endif
+
 /*
 #ifndef DIC_STRING_DEFINED
 typedef std::string std::string;
 #define DIC_STRING_DEFINED
 #endif // !DIC_STRING_DEFINED
 */
+
+class Phaser;
 
 extern bool init_dic(InfoSenser *i);
 struct TypeDic {
@@ -40,13 +49,13 @@ extern IntentDic intentDic;
 struct ContentDic {
 	std::string ID,
 		default_node_name = std::string("CONTENT"),
-		status_0 = (std::string("</STATUS>") + "false" + std::string("</STATUS>")),
-		status_1 = (std::string("</STATUS>") + "true" + std::string("</STATUS>"))
+		status_0 = std::string("false"),
+		status_1 = std::string("true")
 		;
 
 	std::string string(std::string str);
-	std::string men_info(std::vector<float> men_info);
-	std::string men_info(float total, float avail);
+	tinyxml2::XMLElement *men_info(std::vector<float> men_info, Phaser *p);
+	tinyxml2::XMLElement * men_info(float total, float avail, Phaser *p);
 };
 extern ContentDic contentDic;
 

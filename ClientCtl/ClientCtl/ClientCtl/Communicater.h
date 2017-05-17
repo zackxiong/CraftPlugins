@@ -6,7 +6,10 @@
 #include "Service.h"
 #include <string>
 #include <Windows.h>
+#ifndef PHASER
 #include "Phaser.h"
+#define PHASER
+#endif
 #include <vector>
 #include "PackDic.h"
 #include <stdlib.h>

@@ -1,12 +1,3 @@
-﻿  ClientCtl.cpp
-d:\netbeans-java\craftplugins\clientctl\clientctl\clientctl\clientctl.cpp(117): warning C4101: “dwE”: 未引用的局部变量
-  正在生成代码...
-  正在跳过...(未检测到相关更改)
-  Service.cpp
-  Phaser.cpp
-  Package.cpp
-  PackDic.cpp
-  Logger.cpp
-  Communicater.cpp
+﻿  PackDic.cpp
   ClientCtl.vcxproj -> D:\netbeans-java\CraftPlugins\ClientCtl\ClientCtl\Debug\ClientCtl.exe
   ClientCtl.vcxproj -> D:\netbeans-java\CraftPlugins\ClientCtl\ClientCtl\Debug\ClientCtl.pdb (Full PDB)

@@ -3,6 +3,7 @@
 #ifndef _AFXDLL
 #define _AFXDLL
 #endif
+#define INFOSENSER
 //#include <AFX.h>
 #include <string>
 #include <vector>

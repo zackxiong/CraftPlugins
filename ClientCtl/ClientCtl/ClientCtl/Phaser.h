@@ -1,10 +1,31 @@
 #pragma once
-#include "Package.h"
 #include <iostream>
+
+#ifndef PACKAGE
+#include "Package.h"
+#define PACKAGE
+#endif
+
+#ifndef MD5
 #include "md5.h"
+#define MD5
+#endif
+
+#ifndef HEXTRANS
 #include "HexTrans.h"
+#define HEXTRANS
+#endif
+
+#ifndef TINYXML2
 #include "tinyxml2.h"
+#define TINYXML2
+#endif
+
+#ifndef PACKDIC
 #include "PackDic.h"
+#define PACKDIC
+#endif 
+
 
 class XML_format {
 public:
@@ -40,6 +61,12 @@ public:
 	bool set_type(std::string type);
 	bool set_intent(std::string intent);
 	bool set_content(std::string content);
+
+	bool set_type(tinyxml2::XMLElement *type);
+	bool set_intent(tinyxml2::XMLElement * intent);
+	bool set_content(tinyxml2::XMLElement * content);
+
+	tinyxml2::XMLElement* new_Element(char* name);
 
 	const char* get_current_data();
 
