@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item value="/home/d0048/Program-code/mc-debug/API" key="org.eclipse.jdt.ui.lastextjar"/>
+	<item value="/home/d0048/Program-code/netbean-java/CraftPlugins/ServerCtl/src" key="org.eclipse.jdt.ui.lastextjar"/>
 	<item value="/home/d0048/Program-code/netbean-java/Desktool" key="org.eclipse.jdt.ui.last.external.project"/>
 	<section name="SelfEncapsulateFieldWizard">
 		<item value="false" key="GenerateJavadoc"/>

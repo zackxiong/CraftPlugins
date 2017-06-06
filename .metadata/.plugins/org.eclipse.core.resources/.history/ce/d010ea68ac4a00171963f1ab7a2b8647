@@ -1,0 +1,41 @@
+package communicater.packages;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
+import communicater.Head;
+
+public class DePhaser {
+	int length = 800;
+	Package pak = new Package();
+	DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+	
+	public DePhaser(int length) {
+		super();
+		this.length = length;
+	}
+
+	public Package phase(String data, int pakLength){
+		this.length = pakLength;
+		return this.dePhase(data);
+	}
+	
+	public Package dePhase(String data){
+        Document doc = builder.parse(data);
+        Element element = doc.getDocumentElement();
+		if(data.startsWith(Head.INVALID+"")){
+			return pak;//默认即为invalid
+		}
+		if(data.startsWith(Head.CLOSE_CONNECTION+"")){
+			return pak;
+		}
+		if(data.startsWith(Head.ERROR+"")){
+			return pak;
+		}
+		return null;
+	}
+
+}

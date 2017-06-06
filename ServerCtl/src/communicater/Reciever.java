@@ -7,9 +7,11 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.HashSet;
+
+import pc.PC;
 import communicater.packages.Package;
 
-import communicater.packages.Phaser;
+import communicater.packages.DePhaser;
 
 public class Reciever implements Runnable{
 	
@@ -18,10 +20,19 @@ public class Reciever implements Runnable{
 	private PrintWriter out;
 	private Controller myCtlr;
 	private HashSet<? extends Package> revQuene = new HashSet(5);
+	private DePhaser dePhaser;
+	public PC myPc;
 
 	public Reciever(Socket cs, Controller ctlr){
 		this.cs = cs;
 		this.myCtlr = ctlr;
+		try{
+			dePhaser = new DePhaser(this.myCtlr.pakLength);
+		}
+		catch(Exception e){
+			Gui.displayException(e);
+			this.forceClose();
+		}
 	}
 	
 	public void forceClose(){
@@ -29,6 +40,8 @@ public class Reciever implements Runnable{
 			out.close();   
 			in.close();   
 			cs.close();
+			this.myCtlr.activeCount--;
+			this.myCtlr.connectedPCs.remove(this.myPc);
 		}
 		catch(Exception e){
 			Gui.displayException(e);
@@ -47,7 +60,7 @@ public class Reciever implements Runnable{
 			do{//read loop
 				lData = in.readLine();
 				if(lData.endsWith("</Package>\n")){//检测到结束
-					Package pak = this.myCtlr.phaser.phase(packData);
+					Package pak = dePhaser.dePhase(packData);
 				}
 				else{
 					packData = packData + lData;
@@ -61,11 +74,7 @@ public class Reciever implements Runnable{
 			} while(lData != null);
 			
 			gui.Gui.log("Closing session" + cs.getLocalSocketAddress()+":"+cs.getPort());
-			out.close();
-			in.close();
-			cs.close();
-			this.myCtlr.activeCount--;
-			this.myCtlr.recievers.remove(this);
+			this.forceClose();
 		}
 		catch(Exception e){
 			Gui.displayException(e);

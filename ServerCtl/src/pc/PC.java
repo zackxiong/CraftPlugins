@@ -1,20 +1,23 @@
 package pc;
 
+import communicater.Reciever;
+import communicater.Sender;
+
 import pc.info.InfoSet;
 
 public class PC {
 	String name;
-	final String hash;
+	public String hash;
 	public InfoSet info;
+	public Reciever reciever;
+	public Sender sender;
+	public boolean isReal = false;
 	
-	public PC(String hash){
-		this.name = "unamed";
-		this.hash = hash;
-	}
-	
-	public PC(String name, String hash){
-		this.name =  name;
-		this.hash = hash;
+	public PC(Sender sen, Reciever rec){
+		this.sender = sen;
+		this.reciever = rec;
+		sender.myPc = this;
+		reciever.myPc = this;
 	}
 	
 	@Override

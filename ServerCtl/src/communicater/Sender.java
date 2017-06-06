@@ -7,12 +7,15 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
+import pc.PC;
+
 public class Sender implements Runnable{
 	public final int packSize = 200;//包长度，byte为单位
 	Socket cs;
 	private BufferedReader in;
 	private PrintWriter out;
 	private Controller myCtlr;
+	public PC myPc;
 
 	public Sender(Socket cs, Controller ctlr){
 		this.cs = cs;
@@ -54,7 +57,7 @@ public class Sender implements Runnable{
 			in.close();
 			cs.close();
 			this.myCtlr.activeCount--;
-			this.myCtlr.recievers.remove(this);
+			this.myCtlr.connectedPCs.remove(this.myPc);
 		}
 		catch(Exception e){
 			Gui.displayException(e);
