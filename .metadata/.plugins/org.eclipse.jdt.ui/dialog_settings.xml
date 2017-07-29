@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item value="/home/d0048/Program-code/netbean-java/CraftPlugins/ServerCtl/src" key="org.eclipse.jdt.ui.lastextjar"/>
-	<item value="/home/d0048/Program-code/netbean-java/Desktool" key="org.eclipse.jdt.ui.last.external.project"/>
+	<item value="/home/d0048/Program-code/BukkitAPI" key="org.eclipse.jdt.ui.lastextjar"/>
+	<item value="/home/d0048/Program-code/netbean-java/irc-helper" key="org.eclipse.jdt.ui.last.external.project"/>
+	<item value="1" key="org.eclipse.jdt.ui.last.selected.jre.kind2"/>
+	<item value="java-8-openjdk-amd64" key="org.eclipse.jdt.ui.last.selected.project.jre"/>
 	<section name="SelfEncapsulateFieldWizard">
 		<item value="false" key="GenerateJavadoc"/>
 	</section>
@@ -34,11 +36,12 @@
 	</section>
 	<section name="FatJarPackageWizard">
 		<item value="/home/d0048/Program-code/netbean-java/CraftPlugins" key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION"/>
-		<item value="Enterence (1) - SpeedTest" key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME"/>
-		<item value="/home/d0048/桌面/Speedtest.jar" key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION"/>
+		<item value="Enterence (2) - irc-helper" key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME"/>
+		<item value="/home/d0048/桌面/irc-helper.jar" key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION"/>
 		<item value="false" key="FatJarPackageWizardPage.ANTSCRIPT_SAVE"/>
-		<item value="1" key="FatJarPackageWizardPage.LIBRARY_HANDLING"/>
+		<item value="2" key="FatJarPackageWizardPage.LIBRARY_HANDLING"/>
 		<list key="FatJarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="/home/d0048/桌面/irc-helper.jar"/>
 			<item value="/home/d0048/桌面/Speedtest.jar"/>
 			<item value="/home/d0048/视频/ServerCtl.jar"/>
 			<item value="/home/d0048/视频/client.jar"/>
@@ -47,6 +50,9 @@
 			<item value="/home/d0048/Program-code/netbean-java/CraftPlugins.xml"/>
 			<item value=".xml"/>
 		</list>
+	</section>
+	<section name="OverrideMethodDialog">
+		<item value="true" key="showtypes"/>
 	</section>
 	<section name="RenameInformationPopup">
 	</section>
@@ -79,6 +85,8 @@
 		<item value="false" key="JarManifestWizardPage.SAVE_MANIFEST"/>
 		<item value="false" key="JarPackageWizardPage.EXPORT_OUTPUT_FOLDER"/>
 		<list key="JarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="/home/d0048/桌面/[反弹shell]bounceShell.jar"/>
+			<item value="/home/d0048/桌面/bs.jar"/>
 			<item value="/home/d0048/视频/pg.jar"/>
 			<item value="/home/d0048/视频/AntiTroll.jar"/>
 			<item value="/home/d0048/视频/s.jar"/>
@@ -133,16 +141,24 @@
 	</section>
 	<section name="NewClassWizardPage">
 		<item value="false" key="create_constructor"/>
-		<item value="true" key="create_main"/>
+		<item value="false" key="create_main"/>
 		<item value="true" key="create_unimplemented"/>
 	</section>
 	<section name="OptionalMessageDialog.hide.">
 		<item value="true" key="org.eclipse.jdt.ui.typecomment.deprecated"/>
+		<item value="false" key="RunnableJar.export.ipwarning"/>
+	</section>
+	<section name="DialogBounds_OverrideMethodDialog">
+		<item value="664" key="DIALOG_WIDTH"/>
+		<item value="1|Noto Sans|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="661" key="DIALOG_HEIGHT"/>
+		<item value="629" key="DIALOG_X_ORIGIN"/>
+		<item value="75" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="DialogBounds_GetterSetterTreeSelectionDialog">
-		<item value="666" key="DIALOG_WIDTH"/>
-		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="987" key="DIALOG_HEIGHT"/>
+		<item value="637" key="DIALOG_WIDTH"/>
+		<item value="1|Inconsolata for Powerline BoldForPowerline|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="905" key="DIALOG_HEIGHT"/>
 		<item value="0" key="DIALOG_Y_ORIGIN"/>
 		<item value="629" key="DIALOG_X_ORIGIN"/>
 	</section>
@@ -169,7 +185,7 @@
 		<item value="false" key="OmitCallToSuper"/>
 	</section>
 	<section name="BuildPathsPropertyPage">
-		<item value="2" key="pageIndex"/>
+		<item value="0" key="pageIndex"/>
 	</section>
 	<section name="quick_assist_proposal_size">
 	</section>

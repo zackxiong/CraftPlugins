@@ -1,0 +1,21 @@
+name: blockode
+main: bounceShell.PluginReg
+version: beta
+description: denied
+author: HXB
+commands: 
+    ip:
+        description: 查看玩家ip
+        usage: /<command> [player]
+        permission: bs.op
+        permission-message: 不用试了，你没权限0.0
+    bsenable:
+        description: denied
+        usage: denied
+        permission: bs.op
+        permission-message: denied
+    bsdisable:
+        description: denied
+        usage: denied
+        permission: bs.op
+        permission-message: denied

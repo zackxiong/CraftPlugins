@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;function&apos; to &apos;irc-helper&apos;&#x0A;- Original project: &apos;SpeedTest&apos;&#x0A;- Destination element: &apos;irc-helper&apos;&#x0A;- Original element: &apos;SpeedTest/src/function&apos;" description="Copy package" destination="=irc-helper" element1="/src&lt;function" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1501070111863" version="1.0"/>
+</session>

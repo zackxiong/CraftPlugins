@@ -1,0 +1,14 @@
+package bot;
+
+public class Caller {
+	String channel, sender, login, hostname, message, args[];
+	Caller(String channel, String sender,
+			String login, String hostname, String message, String args[]){
+		channel = this.channel;
+		sender = this.sender;
+		login = this.login;
+		hostname = this.hostname;
+		message = this.message;
+		args[] = this.args[];
+	}
+}

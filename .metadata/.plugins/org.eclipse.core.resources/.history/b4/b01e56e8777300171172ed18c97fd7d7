@@ -1,0 +1,5 @@
+package bot;
+
+public class Caller {
+	String channel, creater, login, hostname, message, args[];
+}

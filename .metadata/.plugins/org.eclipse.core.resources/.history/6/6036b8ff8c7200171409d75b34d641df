@@ -1,0 +1,10 @@
+package bot;
+
+import java.util.HashMap;
+import java.util.HashSet;
+
+public class Records {
+	HashSet<String> verifiedUsers = new HashSet<String>();
+	HashSet<String> mutedUsers = new HashSet<String>();
+	HashMap<String, HashSet<String>> records = new HashMap<String, HashSet<String>>();
+}

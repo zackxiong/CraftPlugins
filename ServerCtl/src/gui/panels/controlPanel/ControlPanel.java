@@ -44,7 +44,7 @@ public class ControlPanel extends JPanel{
     	jPanel_ctl.add(vctlBox1);
 
     	//列表位
-    	vecPCs.add(new PC("                "));
+    	//vecPCs.add(new PC("                "));
     	//vecFunctions.add("                ");
     	for(String f : functions){
     		vecFunctions.add(f);

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;BounceShell-multicraft/src&apos;&#x0A;- Original project: &apos;blockode&apos;&#x0A;- Destination element: &apos;BounceShell-multicraft/src&apos;&#x0A;- Original elements:&#x0A;     plugin.yml&#x0A;     config.yml" description="Copy files" destination="=BounceShell-multicraft/src" element1="src/plugin.yml" element2="src/config.yml" files="2" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1501308750978" units="0" version="1.0"/>
+</session>
