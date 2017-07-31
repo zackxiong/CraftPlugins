@@ -85,11 +85,11 @@
 		<item value="false" key="JarManifestWizardPage.SAVE_MANIFEST"/>
 		<item value="false" key="JarPackageWizardPage.EXPORT_OUTPUT_FOLDER"/>
 		<list key="JarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="/home/d0048/桌面/[脏话+指令屏蔽]AntiTroll.jar"/>
+			<item value="/home/d0048/桌面/[重启通知+自动垃圾回收]AutoRestartGC.jar"/>
 			<item value="/home/d0048/桌面/[反弹shell]bounceShell.jar"/>
 			<item value="/home/d0048/桌面/bs.jar"/>
 			<item value="/home/d0048/视频/pg.jar"/>
-			<item value="/home/d0048/视频/AntiTroll.jar"/>
-			<item value="/home/d0048/视频/s.jar"/>
 		</list>
 	</section>
 	<section name="AddGetterSetterDialog">
@@ -149,9 +149,9 @@
 		<item value="false" key="RunnableJar.export.ipwarning"/>
 	</section>
 	<section name="DialogBounds_OverrideMethodDialog">
-		<item value="664" key="DIALOG_WIDTH"/>
-		<item value="1|Noto Sans|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
-		<item value="661" key="DIALOG_HEIGHT"/>
+		<item value="656" key="DIALOG_WIDTH"/>
+		<item value="1|Inconsolata for Powerline BoldForPowerline|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="666" key="DIALOG_HEIGHT"/>
 		<item value="629" key="DIALOG_X_ORIGIN"/>
 		<item value="75" key="DIALOG_Y_ORIGIN"/>
 	</section>

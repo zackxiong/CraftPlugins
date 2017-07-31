@@ -1,2 +1,4 @@
 Enable: true
 Time: 10800
+GCEnable: true
+GCInterval: 900
