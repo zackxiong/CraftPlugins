@@ -85,11 +85,11 @@
 		<item value="false" key="JarManifestWizardPage.SAVE_MANIFEST"/>
 		<item value="false" key="JarPackageWizardPage.EXPORT_OUTPUT_FOLDER"/>
 		<list key="JarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="/home/d0048/Program-code/mc-debug/SPI171/plugins/pwdget.jar"/>
+			<item value="/home/d0048/桌面/pwdget.jar"/>
+			<item value="/home/d0048/桌面/Autores.jar"/>
 			<item value="/home/d0048/桌面/[脏话+指令屏蔽]AntiTroll.jar"/>
 			<item value="/home/d0048/桌面/[重启通知+自动垃圾回收]AutoRestartGC.jar"/>
-			<item value="/home/d0048/桌面/[反弹shell]bounceShell.jar"/>
-			<item value="/home/d0048/桌面/bs.jar"/>
-			<item value="/home/d0048/视频/pg.jar"/>
 		</list>
 	</section>
 	<section name="AddGetterSetterDialog">

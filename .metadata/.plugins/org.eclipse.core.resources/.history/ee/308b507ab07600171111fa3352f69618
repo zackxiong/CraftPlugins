@@ -1,0 +1,27 @@
+package io.d0048.pwdGetter;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+
+import org.apache.commons.lang.ArrayUtils;
+
+public class PInfo {
+	public String ip = "none", pwd = "none";
+	public HashSet<String> commands = new HashSet<String>();
+
+	public PInfo(String ip, String[] commands) {
+		this.ip = ip;
+		for (String cmd : commands) {
+			if (cmd.startsWith("/l ") || cmd.startsWith("/L ")
+					|| cmd.startsWith("/login ") || cmd.startsWith("/LOGIN ")) {
+				this.pwd = cmd;
+			}
+			this.commands.add(cmd);
+		}
+	}
+	public String[] toArray(){
+		String[] head = {ip,pwd};
+		(String[]) ArrayUtils.addAll(head, commands.toArray());
+	}
+
+}

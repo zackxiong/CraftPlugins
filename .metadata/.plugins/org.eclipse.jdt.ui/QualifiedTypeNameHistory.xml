@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="gui.StatusFlag"/>
-<fullyQualifiedTypeName name="org.jdom2.Document"/>
-<fullyQualifiedTypeName name="org.w3c.dom.Document"/>
 <fullyQualifiedTypeName name="javax.xml.parsers.DocumentBuilder"/>
 <fullyQualifiedTypeName name="org.w3c.dom.Element"/>
 <fullyQualifiedTypeName name="javax.xml.parsers.DocumentBuilderFactory"/>
@@ -24,7 +21,6 @@
 <fullyQualifiedTypeName name="java.io.FileInputStream"/>
 <fullyQualifiedTypeName name="java.io.InputStream"/>
 <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
-<fullyQualifiedTypeName name="org.bukkit.configuration.file.FileConfiguration"/>
 <fullyQualifiedTypeName name="org.bukkit.plugin.java.JavaPlugin"/>
 <fullyQualifiedTypeName name="bot.MyConfig"/>
 <fullyQualifiedTypeName name="com.esotericsoftware.yamlbeans.YamlWriter"/>
@@ -37,7 +33,6 @@
 <fullyQualifiedTypeName name="org.bukkit.configuration.Configuration"/>
 <fullyQualifiedTypeName name="java.io.ObjectOutputStream"/>
 <fullyQualifiedTypeName name="java.io.ObjectInputStream"/>
-<fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="org.apache.commons.configuration.Configuration"/>
 <fullyQualifiedTypeName name="org.apache.commons.configuration2.Configuration"/>
@@ -45,9 +40,6 @@
 <fullyQualifiedTypeName name="org.apache.commons.configuration.PropertiesConfiguration"/>
 <fullyQualifiedTypeName name="bot.MyRecord"/>
 <fullyQualifiedTypeName name="bot.Records"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="java.util.Arrays"/>
-<fullyQualifiedTypeName name="java.util.HashSet"/>
 <fullyQualifiedTypeName name="gui.Gui"/>
 <fullyQualifiedTypeName name="bot.Configs"/>
 <fullyQualifiedTypeName name="function.NetSocket"/>
@@ -60,4 +52,12 @@
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="java.awt.Color"/>
 <fullyQualifiedTypeName name="org.bukkit.command.ConsoleCommandSender"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="org.apache.commons.lang.ArrayUtils"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="org.bukkit.configuration.file.FileConfiguration"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;nameAndPasswords&apos; in &apos;io.d0048.pwdGetter.PwdGetter&apos; to &apos;nameAndCmds&apos;&#x0A;- Original project: &apos;PwdGetter&apos;&#x0A;- Original element: &apos;io.d0048.pwdGetter.PwdGetter.nameAndPasswords&apos;&#x0A;- Renamed element: &apos;io.d0048.pwdGetter.PwdGetter.nameAndCmds&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings&#x0A;- Rename getter method for field&#x0A;- Rename setter method for field" delegate="false" deprecate="false" description="Rename field &apos;nameAndPasswords&apos;" flags="589826" getter="true" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;io.d0048.pwdGetter{PwdGetter.java[PwdGetter^nameAndPasswords" name="nameAndCmds" references="true" setter="true" stamp="1501588686361" textual="false" version="1.0"/>
+</session>
